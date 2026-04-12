@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dlx:*)",
+      "Bash(npm install:*)",
+      "Bash(grep \"\"shiki\"\":*)",
+      "Bash(npx tsc:*)",
+      "Bash(gh api:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(npm list:*)",
+      "Bash(npm run:*)",
+      "Bash(find \"C:\\\\Code\\\\base7-landing\\\\app\" -type d -name \"\\(*\" 2>/dev/null)",
+      "Bash(ls -la \"C:\\\\Code\\\\base7-landing\\\\app\\\\\\(home\\)\\\\\\(\\\\.\\)projects\")",
+      "Bash(ls -la \"C:/Code/base7-landing/app/\\(home\\)/\\(.\\)projects\")"
+    ]
+  }
+}

@@ -15,7 +15,7 @@ type SitemapEntry = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://base7.com";
+  const baseUrl = "https://amajor.ai";
   const currentDate = new Date();
 
   // Main pages

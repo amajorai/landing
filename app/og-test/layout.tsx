@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "OG Image Test | Base 7",
+  title: "OG Image Test | A Major",
   description: "Test page for dynamic OG image generation",
 };
 

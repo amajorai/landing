@@ -30,7 +30,7 @@ export default function robots(): ExtendedRobots {
         disallow: ["/private/", "/api/"],
       },
     ],
-    sitemap: "https://base7.com/sitemap.xml",
+    sitemap: "https://amajor.ai/sitemap.xml",
     llmsPath: "/llms.txt",
     securityTxt: "/.well-known/security.txt",
   };

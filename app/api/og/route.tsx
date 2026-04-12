@@ -164,7 +164,7 @@ export async function GET(request: NextRequest) {
               margin: "0",
             }}
           >
-            base7.com
+            amajor.ai
           </p>
         </div>
       </div>,

@@ -15,7 +15,7 @@ export default function ContentSection() {
             <FadeIn delay={0.2} direction="left" duration={0.5}>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  A Major is a Singapore-based software studio. We build{" "}
+                  A Major is a Singapore-based software agency. We build{" "}
                   websites, mobile and desktop apps, browser extensions, and
                   enterprise systems and stay directly involved from the first
                   conversation to launch day. If it runs on a screen, we can

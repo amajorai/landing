@@ -27,7 +27,7 @@ export default function ServicesSection() {
             we also build software
           </h2>
           <p className="mt-3 max-w-xl text-muted-foreground">
-            A Major is a Singapore-based software company. We work with
+            A Major is a Singapore-based software agency. We work with
             organisations to deliver modern websites and digital platforms that
             support their growth, from discovery through to launch.
           </p>

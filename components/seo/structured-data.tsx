@@ -10,7 +10,7 @@ export default function StructuredData() {
     logo: "https://amajor.ai/logos/amajor-submark.svg",
     sameAs: ["https://x.com/j14wei", "https://www.linkedin.com/company/base07"],
     description:
-      "A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses.",
+      "A Major is a Singapore-based software agency specialising in web design, software development, and digital solutions for businesses.",
   };
 
   // Website schema
@@ -80,7 +80,7 @@ export default function StructuredData() {
         name: "What does A Major do?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A Major is a Singapore-based software studio. We build websites, mobile and desktop apps, browser extensions, and enterprise systems for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
+          text: "A Major is a Singapore-based software agency. We build websites, mobile and desktop apps, browser extensions, and enterprise systems for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
         },
       },
       {

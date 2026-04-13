@@ -6,8 +6,8 @@
 export const analyticsConfig = {
   // Plausible Analytics configuration
   plausible: {
-    domain: "base07.com",
-    customDomain: "https://quasarite.com",
+    domain: "amajor.ai",
+    customDomain: "https://stats.jiaweing.com",
     enabled: process.env.NODE_ENV === "production",
   },
 

@@ -4,7 +4,7 @@ import type { BlogPost, Page } from "@/lib/notion";
 export const siteConfig = {
   name: "A Major",
   description:
-    "A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses.",
+    "A Major is a Singapore-based software agency specialising in web design, software development, and digital solutions for businesses.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amajor.ai",
   ogImage: "https://amajor.ai/og/index.png",
   links: {

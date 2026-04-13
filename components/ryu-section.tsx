@@ -14,7 +14,7 @@ export default function RyuSection() {
                   className="h-5 w-5 object-contain"
                   src="/logos/ryu.png"
                 />
-                The company behind Ryu
+                The agency behind Ryu
               </h2>
               <span className="inline-flex items-center gap-1.5 text-muted-foreground text-xs">
                 <span className="relative flex size-2">

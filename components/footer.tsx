@@ -152,7 +152,7 @@ export default function FooterSection() {
             <meta content="2025-01-01" itemProp="foundingDate" />
             <meta content="https://amajor.ai" itemProp="url" />
             <meta
-              content="A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses."
+              content="A Major is a Singapore-based software agency specialising in web design, software development, and digital solutions for businesses."
               itemProp="description"
             />
           </span>

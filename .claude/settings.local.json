@@ -1,35 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm dlx:*)",
-      "Bash(npm install:*)",
-      "Bash(grep \"\"shiki\"\":*)",
-      "Bash(npx tsc:*)",
-      "Bash(gh api:*)",
-      "Bash(ls:*)",
-      "Bash(grep:*)",
-      "Bash(npm list:*)",
-      "Bash(npm run:*)",
-      "Bash(find \"C:\\\\Code\\\\base7-landing\\\\app\" -type d -name \"\\(*\" 2>/dev/null)",
-      "Bash(ls -la \"C:\\\\Code\\\\base7-landing\\\\app\\\\\\(home\\)\\\\\\(\\\\.\\)projects\")",
-      "Bash(ls -la \"C:/Code/base7-landing/app/\\(home\\)/\\(.\\)projects\")",
-      "WebSearch",
-      "WebFetch(domain:copyhackers.com)",
-      "WebFetch(domain:www.julian.com)",
-      "WebFetch(domain:zoconnected.com)",
-      "Bash(curl -L -o public/logos/chrome.svg \"https://svgl.app/library/chrome.svg\")",
-      "Bash(curl -L -o public/logos/edge.svg \"https://svgl.app/library/edge.svg\")",
-      "Bash(curl -L -o public/logos/windows.svg \"https://svgl.app/library/windows.svg\")",
-      "Bash(curl -L -o public/logos/firefox.svg \"https://svgl.app/library/firefox_browser.svg\")",
-      "Bash(curl -L -o public/logos/google-cloud.svg \"https://svgl.app/library/google_cloud.svg\")",
-      "Bash(curl:*)",
-      "Bash(taskkill /F /PID 47612)",
-      "Bash(taskkill /F /PID 70344)",
-      "Bash(npm uninstall:*)",
-      "mcp__context7__resolve-library-id",
-      "mcp__context7__query-docs",
-      "Bash(dir \"C:\\\\Code\\\\portfolio-dex\\\\public\")",
-      "Bash(pkill:*)"
+      "Bash(xargs grep:*)"
     ]
   }
 }

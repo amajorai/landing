@@ -80,7 +80,7 @@ export default function StructuredData() {
         name: "What does A Major do?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A Major is a Singapore-based software company. We design and build websites, web applications, and digital platforms for businesses across industries, with a clear process, transparent communication, and close collaboration from discovery to launch.",
+          text: "A Major is a Singapore-based software studio. We build websites, mobile and desktop apps, browser extensions, and enterprise systems for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
         },
       },
       {
@@ -88,7 +88,7 @@ export default function StructuredData() {
         name: "What kind of software do you build?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Websites, web apps, mobile apps, desktop software, and digital platforms. We work with businesses across industries who need high-performance software built properly, with a founder personally involved in every project.",
+          text: "Websites, mobile and desktop apps, browser extensions, and enterprise systems. If it runs on a screen, we can build it. We work with businesses that need high-performance software built properly, with a founder personally involved in every project.",
         },
       },
       {

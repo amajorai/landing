@@ -55,15 +55,15 @@ export default function FAQsFour() {
   ];
 
   return (
-    <section className="py-10 md:py-14" id="faq">
-      <div className="mx-auto max-w-5xl px-4 md:px-6">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="font-medium text-2xl tracking-tighter">
-            You should know these before working with us
-          </h2>
-        </div>
+    <section className="pt-10 md:pt-14" id="faq">
+      <div className="mx-auto mb-6 max-w-5xl px-6">
+        <h2 className="font-medium text-2xl tracking-tighter">
+          You should know these before working with us
+        </h2>
+      </div>
 
-        <div className="mx-auto mt-12 max-w-xl">
+      <div className="border-border border-y border-dashed">
+        <div className="mx-auto max-w-5xl px-6 py-8">
           <Accordion
             className="w-full rounded-2xl bg-muted p-1 dark:bg-muted/50"
             collapsible
@@ -75,11 +75,13 @@ export default function FAQsFour() {
                   className="peer rounded-xl border-none px-7 py-1 data-[state=open]:border-none data-[state=open]:bg-card data-[state=open]:shadow-sm dark:data-[state=open]:bg-muted"
                   value={item.id}
                 >
-                  <AccordionTrigger className="cursor-pointer font-semibold text-lg hover:no-underline">
+                  <AccordionTrigger className="cursor-pointer font-semibold text-base hover:no-underline">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-base">{item.answer}</p>
+                    <p className="text-muted-foreground text-sm">
+                      {item.answer}
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
                 <hr className="mx-7 border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
@@ -87,7 +89,7 @@ export default function FAQsFour() {
             ))}
           </Accordion>
 
-          <p className="mt-6 px-8 text-center text-muted-foreground">
+          <p className="mt-8 text-muted-foreground text-sm">
             Have more questions?{" "}
             <Link
               className="font-medium text-primary hover:underline"

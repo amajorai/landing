@@ -9,7 +9,7 @@ const services = [
   {
     title: "software development",
     description:
-      "Web apps, mobile apps, desktop software, and digital platforms. Built properly, from discovery to launch.",
+      "Websites, mobile and desktop apps, browser extensions, enterprise systems. If it runs on a screen, we can build it.",
   },
   {
     title: "digital solutions",

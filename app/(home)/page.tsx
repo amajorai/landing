@@ -4,15 +4,19 @@ import FAQsFour from "@/components/faqs-4";
 import FeaturesSection from "@/components/features-6";
 import HeroSection from "@/components/hero-section";
 import Partners from "@/components/partners";
+import ProjectsShowcase from "@/components/projects-showcase";
 import RyuSection from "@/components/ryu-section";
 import StatsSection from "@/components/stats-4";
 import TeamSection from "@/components/team";
 import { FadeIn } from "@/components/ui/fade-in";
+import { getProjects } from "@/lib/notion";
 
 // Revalidate every hour
 export const revalidate = 3600;
 
 export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <>
       <div>
@@ -24,6 +28,12 @@ export default async function Home() {
       <FadeIn>
         <ContentSection />
       </FadeIn>
+
+      {projects.length > 0 && (
+        <FadeIn>
+          <ProjectsShowcase projects={projects} />
+        </FadeIn>
+      )}
 
       <FadeIn>
         <RyuSection />

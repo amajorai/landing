@@ -16,15 +16,19 @@ export default function ContentSection() {
               <div className="space-y-4">
                 <p className="text-muted-foreground">
                   A Major is a Singapore-based software studio. We build{" "}
-                  <span className="font-semibold text-accent-foreground">
-                    websites, web apps, and digital platforms
-                  </span>{" "}
-                  and stay directly involved from the first conversation to
-                  launch day. No disappearing after handoff.
+                  websites, mobile and desktop apps, browser extensions, and
+                  enterprise systems and stay directly involved from the first
+                  conversation to launch day. If it runs on a screen, we can
+                  build it.
                 </p>
                 <p className="text-muted-foreground">
                   We&apos;re also the team behind{" "}
-                  <span className="font-semibold text-accent-foreground">
+                  <span className="inline-flex items-center gap-1 font-semibold text-accent-foreground">
+                    <img
+                      alt="Ryu"
+                      className="inline-block h-3.5 w-3.5 object-contain"
+                      src="/logos/ryu.png"
+                    />
                     Ryu
                   </span>
                   , an orchestration layer for AI agents. A single binary that

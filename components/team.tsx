@@ -3,53 +3,49 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 export default function TeamSection() {
   return (
-    <section className="py-10 md:py-14" id="team">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="pt-10 md:pt-14" id="team">
+      <div className="mx-auto mb-6 max-w-5xl px-6">
         <FadeIn duration={0.4}>
-          <h2 className="mb-4 font-medium text-2xl tracking-tighter">
-            Our founder
-          </h2>
+          <h2 className="font-medium text-2xl tracking-tighter">Our founder</h2>
         </FadeIn>
+      </div>
 
-        <div className="space-y-8 pt-4">
-          <FadeIn delay={0.1} duration={0.4}>
-            <div className="flex items-center gap-4">
-              <div className="size-16 rounded-full border border-dashed bg-background p-0.5 shadow shadow-zinc-950/5">
-                <img
-                  alt="Jia Wei Ng"
-                  className="aspect-square rounded-full object-cover"
-                  height="460"
-                  loading="lazy"
-                  src="/team/jiawei.jpg"
-                  width="460"
-                />
-              </div>
-              <div>
-                <p className="font-medium text-sm">Jia Wei Ng</p>
-                <p className="text-muted-foreground text-xs">
-                  CEO & Co-Founder
-                </p>
-                <div className="mt-1 flex gap-3 text-muted-foreground">
-                  <a
-                    href="https://www.linkedin.com/in/jiaweing"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <LinkedinIcon className="size-3.5" />
-                  </a>
-                  <a
-                    href="https://jiaweing.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Globe className="size-3.5" />
-                  </a>
-                </div>
+      <FadeIn duration={0.4}>
+        <div className="border-border border-y border-dashed">
+          <div className="flex items-center gap-4 border-border border-b border-dashed p-6">
+            <div className="size-16 shrink-0 rounded-full border border-dashed bg-background p-0.5 shadow shadow-zinc-950/5">
+              <img
+                alt="Jia Wei Ng"
+                className="aspect-square rounded-full object-cover"
+                height="460"
+                loading="lazy"
+                src="/team/jiawei2.jpg"
+                width="460"
+              />
+            </div>
+            <div>
+              <p className="font-medium text-sm">Jia Wei Ng</p>
+              <p className="text-muted-foreground text-xs">CEO & Co-Founder</p>
+              <div className="mt-2 flex gap-3 text-muted-foreground">
+                <a
+                  href="https://www.linkedin.com/in/jiaweing"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <LinkedinIcon className="size-3.5" />
+                </a>
+                <a
+                  href="https://jiaweing.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Globe className="size-3.5" />
+                </a>
               </div>
             </div>
-          </FadeIn>
+          </div>
 
-          <FadeIn delay={0.2} duration={0.4}>
+          <div className="p-6">
             <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
               <p>
                 Jia Wei holds a Bachelor&apos;s degree in Computer Science from
@@ -58,23 +54,31 @@ export default function TeamSection() {
                 web, mobile, and enterprise platforms.
               </p>
               <p>
-                Prior to A Major, Jia Wei served as Business Director at Base 7
-                LLP, designing and building apps for clients across industries.
-                He also led development of a medicine delivery routing system
-                for Singapore&apos;s public hospitals at Better Age Solutions,
-                and delivered blockchain-based enterprise applications for
-                document provenance and commodity tokenisation at 1Citadel.
+                Prior to A Major, Jia Wei served as Business Director at{" "}
+                <span className="inline-flex items-center gap-1 font-medium text-accent-foreground">
+                  <img
+                    alt="Base 7"
+                    className="inline-block h-3 w-3 object-contain dark:invert"
+                    src="/logos/base7-submark.svg"
+                  />
+                  Base 7
+                </span>
+                , designing and building apps for clients across industries. He
+                also led development of a medicine delivery routing system for
+                Singapore&apos;s public hospitals at Better Age Solutions, and
+                delivered blockchain-based enterprise applications for document
+                provenance and commodity tokenisation at 1Citadel.
               </p>
               <p>
                 At A Major, Jia Wei remains personally involved in every
                 engagement. You are not handed off to a junior designer or an
-                outsourced team,your project is led by the founder, with direct
+                outsourced team. Your project is led by the founder, with direct
                 access throughout.
               </p>
             </div>
-          </FadeIn>
+          </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

@@ -19,7 +19,7 @@ export default function TeamSection() {
                 className="aspect-square rounded-full object-cover"
                 height="460"
                 loading="lazy"
-                src="/team/jiawei2.jpg"
+                src="/team/jiawei-new.JPG"
                 width="460"
               />
             </div>

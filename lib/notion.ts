@@ -276,97 +276,97 @@ const getProperty = (
   return "";
 };
 
-export const getBlogPosts = unstable_cache(
-  async (): Promise<BlogPost[]> => {
-    const notion = getNotionClient();
-    const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
+// Uncached fetch functions for OG generation script
+export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
+  const notion = getNotionClient();
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 
-    if (!databaseId) return [];
+  if (!databaseId) return [];
 
-    try {
-      const filter = {
-        property: "Status",
-        status: { equals: "Published" },
-      };
-      const sorts = [{ property: "Date", direction: "descending" }];
+  try {
+    const filter = {
+      property: "Status",
+      status: { equals: "Published" },
+    };
+    const sorts = [{ property: "Date", direction: "descending" }];
 
-      const allResults: any[] = [];
-      let cursor: string | undefined;
+    const allResults: any[] = [];
+    let cursor: string | undefined;
 
-      do {
-        let response: any;
+    do {
+      let response: any;
 
-        if (notion.dataSources) {
-          response = await notion.dataSources.query({
-            data_source_id: databaseId,
-            filter,
-            sorts,
-            start_cursor: cursor,
-            page_size: 100,
-          });
-        } else {
-          response = await notion.databases.query({
-            database_id: databaseId,
-            filter,
-            sorts,
-            start_cursor: cursor,
-            page_size: 100,
-          });
-        }
-
-        allResults.push(...response.results);
-        cursor = response.has_more ? response.next_cursor : undefined;
-      } while (cursor);
-
-      const now = new Date();
-      const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-
-      return allResults
-        .map((page: any) => {
-          // robust title extraction
-          const title =
-            getProperty(page, "Title", "title") ||
-            getProperty(page, "Name", "title") ||
-            "Untitled";
-
-          const tags = getTagsAsArray(page);
-          const tagColors = getTagColorMap(page);
-
-          const banner =
-            page.properties?.Banner?.files?.[0]?.file?.url ||
-            page.properties?.Banner?.files?.[0]?.external?.url ||
-            page.properties?.Cover?.files?.[0]?.file?.url ||
-            page.properties?.Cover?.files?.[0]?.external?.url ||
-            page.cover?.external?.url ||
-            page.cover?.file?.url ||
-            undefined;
-
-          return {
-            id: page.id,
-            slug: getProperty(page, "Slug", "rich_text") || "",
-            title,
-            date: getProperty(page, "Date", "date") || page.created_time,
-            description: getProperty(page, "Excerpt", "rich_text") || "",
-            authors: getProperty(page, "Author", "people") || [],
-            tags,
-            tagColors,
-            cover: banner,
-            readingTime: 0, // Will be calculated on demand
-          } as BlogPost;
-        })
-        .filter((post: BlogPost) => {
-          if (!post.slug) return false;
-          if (!post.date) return true;
-          return post.date.slice(0, 10) <= todayStr;
+      if (notion.dataSources) {
+        response = await notion.dataSources.query({
+          data_source_id: databaseId,
+          filter,
+          sorts,
+          start_cursor: cursor,
+          page_size: 100,
         });
-    } catch (error) {
-      console.error("Failed to fetch blog posts:", error);
-      return [];
-    }
-  },
-  ["blog-posts"],
-  { revalidate: 1800 }
-);
+      } else {
+        response = await notion.databases.query({
+          database_id: databaseId,
+          filter,
+          sorts,
+          start_cursor: cursor,
+          page_size: 100,
+        });
+      }
+
+      allResults.push(...response.results);
+      cursor = response.has_more ? response.next_cursor : undefined;
+    } while (cursor);
+
+    const now = new Date();
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+    return allResults
+      .map((page: any) => {
+        const title =
+          getProperty(page, "Title", "title") ||
+          getProperty(page, "Name", "title") ||
+          "Untitled";
+
+        const tags = getTagsAsArray(page);
+        const tagColors = getTagColorMap(page);
+
+        const banner =
+          page.properties?.Banner?.files?.[0]?.file?.url ||
+          page.properties?.Banner?.files?.[0]?.external?.url ||
+          page.properties?.Cover?.files?.[0]?.file?.url ||
+          page.properties?.Cover?.files?.[0]?.external?.url ||
+          page.cover?.external?.url ||
+          page.cover?.file?.url ||
+          undefined;
+
+        return {
+          id: page.id,
+          slug: getProperty(page, "Slug", "rich_text") || "",
+          title,
+          date: getProperty(page, "Date", "date") || page.created_time,
+          description: getProperty(page, "Excerpt", "rich_text") || "",
+          authors: getProperty(page, "Author", "people") || [],
+          tags,
+          tagColors,
+          cover: banner,
+          readingTime: 0,
+        } as BlogPost;
+      })
+      .filter((post: BlogPost) => {
+        if (!post.slug) return false;
+        if (!post.date) return true;
+        return post.date.slice(0, 10) <= todayStr;
+      });
+  } catch (error) {
+    console.error("Failed to fetch blog posts:", error);
+    return [];
+  }
+};
+
+export const getBlogPosts = unstable_cache(fetchBlogPosts, ["blog-posts"], {
+  revalidate: 1800,
+});
 
 export const getBlogPost = unstable_cache(
   async (
@@ -459,51 +459,51 @@ export const getBlogPost = unstable_cache(
   { revalidate: 1800 }
 );
 
-export const getPages = unstable_cache(
-  async (): Promise<Page[]> => {
-    const notion = getNotionClient();
-    const databaseId = process.env.NOTION_PAGES_DATABASE_ID;
-    if (!databaseId) return [];
+// Uncached fetch function for pages
+export const fetchPages = async (): Promise<Page[]> => {
+  const notion = getNotionClient();
+  const databaseId = process.env.NOTION_PAGES_DATABASE_ID;
+  if (!databaseId) return [];
 
-    try {
-      let response;
-      const filter = {
-        property: "Status",
-        status: {
-          equals: "Published",
-        },
-      };
+  try {
+    let response;
+    const filter = {
+      property: "Status",
+      status: {
+        equals: "Published",
+      },
+    };
 
-      if (notion.dataSources) {
-        response = await notion.dataSources.query({
-          data_source_id: databaseId,
-          filter,
-        });
-      } else {
-        response = await notion.databases.query({
-          database_id: databaseId,
-          filter,
-        });
-      }
-
-      return response.results
-        .map((page: any) => ({
-          id: page.id,
-          slug: getProperty(page, "Slug", "rich_text") || "",
-          title: getProperty(page, "Title", "title") || "Untitled",
-          lastEdited: page.last_edited_time,
-          cover:
-            page.cover?.external?.url || page.cover?.file?.url || undefined,
-        }))
-        .filter((p: Page) => p.slug);
-    } catch (e) {
-      console.error("Failed to fetch pages", e);
-      return [];
+    if (notion.dataSources) {
+      response = await notion.dataSources.query({
+        data_source_id: databaseId,
+        filter,
+      });
+    } else {
+      response = await notion.databases.query({
+        database_id: databaseId,
+        filter,
+      });
     }
-  },
-  ["pages"],
-  { revalidate: 1800 }
-);
+
+    return response.results
+      .map((page: any) => ({
+        id: page.id,
+        slug: getProperty(page, "Slug", "rich_text") || "",
+        title: getProperty(page, "Title", "title") || "Untitled",
+        lastEdited: page.last_edited_time,
+        cover: page.cover?.external?.url || page.cover?.file?.url || undefined,
+      }))
+      .filter((p: Page) => p.slug);
+  } catch (e) {
+    console.error("Failed to fetch pages", e);
+    return [];
+  }
+};
+
+export const getPages = unstable_cache(fetchPages, ["pages"], {
+  revalidate: 1800,
+});
 
 export const getPage = unstable_cache(
   async (
@@ -565,63 +565,64 @@ export const getPage = unstable_cache(
   { revalidate: 1800 }
 );
 
-export const getProjects = unstable_cache(
-  async (): Promise<Project[]> => {
-    const notion = getNotionClient();
-    const databaseId = process.env.NOTION_PROJECTS_DATABASE_ID;
+// Uncached fetch function for projects
+export const fetchProjects = async (): Promise<Project[]> => {
+  const notion = getNotionClient();
+  const databaseId = process.env.NOTION_PROJECTS_DATABASE_ID;
 
-    if (!databaseId) return [];
+  if (!databaseId) return [];
 
-    try {
-      let response;
-      const sorts = [
-        {
-          property: "Year", // Assuming 'Year' property exists for sorting
-          direction: "descending" as const,
-        },
-      ];
+  try {
+    let response;
+    const sorts = [
+      {
+        property: "Year",
+        direction: "descending" as const,
+      },
+    ];
 
-      if (notion.dataSources) {
-        response = await notion.dataSources.query({
-          data_source_id: databaseId,
-          sorts,
-        });
-      } else {
-        response = await notion.databases.query({
-          database_id: databaseId,
-          sorts,
-        });
-      }
-
-      return response.results
-        .map((page: any) => ({
-          id: page.id,
-          slug: getProperty(page, "Slug", "rich_text") || "",
-          title: getProperty(page, "Title", "title") || "Untitled",
-          description: getProperty(page, "Description", "rich_text") || "",
-          url: getProperty(page, "Link", "url") || "",
-          github: getProperty(page, "GitHub", "url") || "",
-          techStack: getProperty(page, "Tech Stack", "multi_select") || [],
-          year: getProperty(page, "Year", "rich_text") || "",
-          cover:
-            page.properties?.Banner?.files?.[0]?.file?.url ||
-            page.properties?.Banner?.files?.[0]?.external?.url ||
-            page.properties?.Image?.files?.[0]?.file?.url ||
-            page.properties?.Image?.files?.[0]?.external?.url ||
-            page.cover?.external?.url ||
-            page.cover?.file?.url ||
-            undefined,
-          screenshots: [], // List view doesn't need screenshots
-        }))
-        .filter((p: Project) => p.title);
-    } catch (e) {
-      console.error("Failed to fetch projects", e);
-      return [];
+    if (notion.dataSources) {
+      response = await notion.dataSources.query({
+        data_source_id: databaseId,
+        sorts,
+      });
+    } else {
+      response = await notion.databases.query({
+        database_id: databaseId,
+        sorts,
+      });
     }
-  },
-  ["projects"],
-  { revalidate: 1800 }
-);
+
+    return response.results
+      .map((page: any) => ({
+        id: page.id,
+        slug: getProperty(page, "Slug", "rich_text") || "",
+        title: getProperty(page, "Title", "title") || "Untitled",
+        description: getProperty(page, "Description", "rich_text") || "",
+        url: getProperty(page, "Link", "url") || "",
+        github: getProperty(page, "GitHub", "url") || "",
+        techStack: getProperty(page, "Tech Stack", "multi_select") || [],
+        year: getProperty(page, "Year", "rich_text") || "",
+        cover:
+          page.properties?.Banner?.files?.[0]?.file?.url ||
+          page.properties?.Banner?.files?.[0]?.external?.url ||
+          page.properties?.Image?.files?.[0]?.file?.url ||
+          page.properties?.Image?.files?.[0]?.external?.url ||
+          page.cover?.external?.url ||
+          page.cover?.file?.url ||
+          undefined,
+        screenshots: [],
+      }))
+      .filter((p: Project) => p.title);
+  } catch (e) {
+    console.error("Failed to fetch projects", e);
+    return [];
+  }
+};
+
+export const getProjects = unstable_cache(fetchProjects, ["projects"], {
+  revalidate: 1800,
+});
 
 export const getProject = unstable_cache(
   async (

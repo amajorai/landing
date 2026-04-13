@@ -2,40 +2,21 @@ import { type ChildProcess, spawn } from "child_process";
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
+import { fetchBlogPosts, fetchPages, fetchProjects } from "@/lib/notion";
 
-const PORT = 3456;
+const PORT = 3001;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${PORT}`;
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function isServerRunning(url: string): Promise<boolean> {
   try {
-    const res = await fetch(`${url}/api/og-routes`);
-    return res.ok || res.status < 500;
+    const res = await fetch(url);
+    // Check if it's actually the Next.js server by verifying the response
+    const text = await res.text();
+    return (res.ok || res.status < 500) && text.includes("A Major");
   } catch (e) {
     return false;
-  }
-}
-
-async function getRoutes(): Promise<string[]> {
-  const url = `${BASE_URL}/api/og-routes`;
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      const text = await response.text();
-      console.error(
-        `Fetch failed: ${response.status} ${response.statusText}`,
-        text
-      );
-      throw new Error(
-        `Failed to fetch routes: ${response.status} ${response.statusText}`
-      );
-    }
-    return response.json();
-  } catch (e) {
-    console.error(`Error fetching routes from ${url}:`, e);
-    // Fallback if API fails
-    return ["/"];
   }
 }
 
@@ -84,9 +65,21 @@ async function main() {
   }
 
   try {
-    // 1. Gather paths from API endpoint (requires Next.js server context for unstable_cache)
+    // 1. Gather paths directly from Notion (no API call needed)
     console.log("Fetching routes...");
-    const routes = await getRoutes();
+    const pages = await fetchPages();
+    const projects = await fetchProjects();
+    const blogPosts = await fetchBlogPosts();
+
+    const routes = [
+      "/",
+      "/blog",
+      "/projects",
+      ...pages.map((p) => `/${p.slug}`),
+      ...projects.map((p) => `/projects/${p.slug}`),
+      ...blogPosts.map((p) => `/blog/${p.slug}`),
+    ];
+
     console.log(`Found ${routes.length} routes to screenshot.`);
 
     // 2. Launch Puppeteer

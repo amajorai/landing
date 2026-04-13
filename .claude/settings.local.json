@@ -28,7 +28,8 @@
       "Bash(npm uninstall:*)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
-      "Bash(dir \"C:\\\\Code\\\\portfolio-dex\\\\public\")"
+      "Bash(dir \"C:\\\\Code\\\\portfolio-dex\\\\public\")",
+      "Bash(pkill:*)"
     ]
   }
 }

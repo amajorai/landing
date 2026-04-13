@@ -5,7 +5,8 @@
     </td>
     <td align="right">
       <h1>A Major</h1>
-      <h3 style="margin-top: -10px;">The key to AI agents. We don't build the AI. We make it all play together.</h3>
+      <h3 style="margin-top: -10px;">Software that just works. Experts you can talk to. Built for humans, by humans.
+</h3>
     </td>
   </tr>
 </table>

@@ -10,7 +10,9 @@
       "Bash(taskkill:*)",
       "Bash(cmd:*)",
       "Bash(grep -E \"\\\\.\\(ts|tsx\\)$\")",
-      "Bash(grep -l \"floatingButton\\\\|floating-button\" node_modules/@calcom/embed-snippet/dist/*.js)"
+      "Bash(grep -l \"floatingButton\\\\|floating-button\" node_modules/@calcom/embed-snippet/dist/*.js)",
+      "Bash(find . -type f \\\\\\( -name \"*.ts\" -o -name \"*.tsx\" \\\\\\) -exec grep -l \"toc\\\\|TableOfContents\\\\|useActiveHeading\" {} \\\\;)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")"
     ]
   }
 }

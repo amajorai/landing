@@ -4,7 +4,7 @@ import path from "path";
 import puppeteer from "puppeteer";
 import { fetchBlogPosts, fetchPages, fetchProjects } from "@/lib/notion";
 
-const PORT = 3001;
+const PORT = 3456;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${PORT}`;
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -12,9 +12,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 async function isServerRunning(url: string): Promise<boolean> {
   try {
     const res = await fetch(url);
-    // Check if it's actually the Next.js server by verifying the response
-    const text = await res.text();
-    return (res.ok || res.status < 500) && text.includes("A Major");
+    return res.ok || res.status < 500;
   } catch (e) {
     return false;
   }
@@ -22,7 +20,7 @@ async function isServerRunning(url: string): Promise<boolean> {
 
 async function startServer(): Promise<ChildProcess> {
   console.log(
-    `Starting local production server for OG generation on port ${PORT}...`
+    `Starting local reproduction server for OG generation on port ${PORT}...`
   );
   const server = spawn("bun", ["start", "--", "-p", String(PORT)], {
     stdio: "inherit",
@@ -65,7 +63,7 @@ async function main() {
   }
 
   try {
-    // 1. Gather paths directly from Notion (no API call needed)
+    // 1. Gather paths
     console.log("Fetching routes...");
     const pages = await fetchPages();
     const projects = await fetchProjects();
@@ -105,7 +103,7 @@ async function main() {
       const url = `${BASE_URL}${route}`;
       // Clean filename: remove leading slash, replace others with dash
       const fileName =
-        route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "-");
+        route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "-"); // e.g. "projects/foo" -> "projects-foo"
 
       const filePath = path.join(ogDir, `${fileName}.png`);
 

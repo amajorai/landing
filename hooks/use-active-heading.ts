@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export function useActiveHeading(headingIds: string[]): string | null {
-  const [activeId, setActiveId] = useState<string | null>(null);
+export function useActiveHeading(headingIds: string[]): string {
+  const [activeId, setActiveId] = useState<string>("");
+  const visibleHeadings = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (headingIds.length === 0) return;
@@ -12,13 +13,21 @@ export function useActiveHeading(headingIds: string[]): string | null {
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-            break;
+            visibleHeadings.current.add(entry.target.id);
+          } else {
+            visibleHeadings.current.delete(entry.target.id);
           }
         }
+
+        const firstVisible = headingIds.find((id) =>
+          visibleHeadings.current.has(id)
+        );
+        const next =
+          firstVisible ?? Array.from(visibleHeadings.current)[0] ?? "";
+        setActiveId(next);
       },
       {
-        rootMargin: "-10% 0px -80% 0px",
+        rootMargin: "-100px 0px -40% 0px",
         threshold: 0,
       }
     );

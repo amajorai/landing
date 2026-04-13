@@ -4,6 +4,7 @@ import FAQsFour from "@/components/faqs-4";
 import FeaturesSection from "@/components/features-6";
 import HeroSection from "@/components/hero-section";
 import Partners from "@/components/partners";
+import ProcessSection from "@/components/process-section";
 import ProjectsShowcase from "@/components/projects-showcase";
 import RyuSection from "@/components/ryu-section";
 import StatsSection from "@/components/stats-4";
@@ -27,6 +28,10 @@ export default async function Home() {
 
       <FadeIn>
         <ContentSection />
+      </FadeIn>
+
+      <FadeIn>
+        <ProcessSection />
       </FadeIn>
 
       {projects.length > 0 && (

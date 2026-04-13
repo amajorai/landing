@@ -16,7 +16,13 @@
       "WebSearch",
       "WebFetch(domain:copyhackers.com)",
       "WebFetch(domain:www.julian.com)",
-      "WebFetch(domain:zoconnected.com)"
+      "WebFetch(domain:zoconnected.com)",
+      "Bash(curl -L -o public/logos/chrome.svg \"https://svgl.app/library/chrome.svg\")",
+      "Bash(curl -L -o public/logos/edge.svg \"https://svgl.app/library/edge.svg\")",
+      "Bash(curl -L -o public/logos/windows.svg \"https://svgl.app/library/windows.svg\")",
+      "Bash(curl -L -o public/logos/firefox.svg \"https://svgl.app/library/firefox_browser.svg\")",
+      "Bash(curl -L -o public/logos/google-cloud.svg \"https://svgl.app/library/google_cloud.svg\")",
+      "Bash(curl:*)"
     ]
   }
 }

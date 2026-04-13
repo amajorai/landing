@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function RyuSection() {
@@ -49,6 +50,25 @@ export default function RyuSection() {
               Premium desktop agent UI. Pick your engine: Claude, GPT, Gemini,
               or any local model. One interface, any backend.
             </p>
+            <div className="flex items-center gap-2 pt-1">
+              <span className="text-muted-foreground text-xs">
+                Available on:
+              </span>
+              <Image
+                alt="Apple macOS"
+                className="h-3.5 w-auto dark:invert"
+                height={14}
+                src="/logos/apple.svg"
+                width={14}
+              />
+              <Image
+                alt="Microsoft Windows"
+                className="h-3.5 w-auto"
+                height={14}
+                src="/logos/microsoft.svg"
+                width={14}
+              />
+            </div>
           </div>
           {/* Ryu Gateway */}
           <div className="col-span-2 space-y-2 border-border border-r border-b border-dashed p-6 md:border-r-0">
@@ -64,6 +84,23 @@ export default function RyuSection() {
               Self-hostable AI proxy. Swap one URL and get model routing,
               logging, rate limiting, and access control. No code changes.
             </p>
+            <div className="flex items-center gap-2 pt-1">
+              <span className="text-muted-foreground text-xs">Works with:</span>
+              <Image
+                alt="Anthropic Claude"
+                className="h-3.5 w-auto dark:invert"
+                height={14}
+                src="/logos/anthropic_black_wordmark.svg"
+                width={60}
+              />
+              <Image
+                alt="OpenAI"
+                className="h-3 w-auto dark:invert"
+                height={12}
+                src="/logos/openai_wordmark_light.svg"
+                width={50}
+              />
+            </div>
           </div>
           {/* AI integration */}
           <div className="col-span-1 space-y-2 border-border border-r border-b border-dashed p-6">

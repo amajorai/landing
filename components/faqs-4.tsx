@@ -14,13 +14,13 @@ export default function FAQsFour() {
       id: "item-1",
       question: "What does A Major do?",
       answer:
-        "A Major is a Singapore-based software company. We design and build websites, web applications, and digital platforms for businesses across industries,with a clear process, transparent communication, and close collaboration from discovery to launch.",
+        "A Major is a Singapore-based software studio. We build websites, web apps, and digital platforms for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
     },
     {
       id: "item-2",
       question: "What kind of software do you build?",
       answer:
-        "Websites, web apps, mobile apps, desktop software, and digital platforms. We work with businesses across industries who need high-performance software built properly,with a clear process, transparent communication, and a founder personally involved in every project.",
+        "Websites, web apps, mobile apps, desktop software, and digital platforms. We work with businesses that need high-performance software built properly, with transparent communication, a fixed scope, and a founder who stays accountable throughout.",
     },
     {
       id: "item-3",
@@ -32,25 +32,25 @@ export default function FAQsFour() {
       id: "item-4",
       question: "Do you work with startups or established businesses?",
       answer:
-        "Both. We work with early-stage startups who need to move fast, and with established businesses who need a reliable team to deliver properly. If you have a clear problem and the motivation to solve it, we want to work with you.",
+        "Both. We work with early-stage startups who need to move fast, and with established businesses who need a reliable team that delivers. If you have a real problem and the motivation to solve it, we want to talk.",
     },
     {
       id: "item-5",
       question: "How long does a project take?",
       answer:
-        "Most projects move from discovery to launch in under 30 days. We scope everything upfront so there are no surprises. More complex platforms take longer,we'll give you a clear timeline once we understand what you need.",
+        "Most projects move from discovery to launch in under 30 days. We scope everything upfront so there are no surprises. More complex platforms take longer. We'll give you a clear timeline once we understand what you need.",
     },
     {
       id: "item-6",
       question: "What's it like working with you?",
       answer:
-        "Straightforward. We start with a discovery conversation, agree on a scope and plan, then build in stages with regular check-ins. No jargon, no surprise invoices. You'll have direct access to the founder throughout, and a finished product you actually understand and can grow with.",
+        "Straightforward. We start with a discovery conversation, agree on a scope and timeline, then build in stages with regular check-ins. No jargon, no surprise invoices. You have direct access to the founder throughout, and you end up with a product you actually understand and can grow with.",
     },
     {
       id: "item-7",
       question: "How do we get started?",
       answer:
-        "Reach out through our contact form or book a call. Tell us what you're building or what problem you're trying to solve, and we'll take it from there. We get back to everyone within 24 hours.",
+        "Fill out the project form or book a call. Tell us what you're building or what problem you're trying to solve, and we'll take it from there. We respond to every inquiry within 24 hours.",
     },
   ];
 
@@ -93,6 +93,7 @@ export default function FAQsFour() {
               className="font-medium text-primary hover:underline"
               href="https://tally.so/r/wLoJKj"
               rel="noopener noreferrer"
+              target="_blank"
             >
               Get in touch and we'll get back to you within 24 hours
             </Link>

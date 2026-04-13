@@ -55,12 +55,16 @@ export function MobileNav({ className }: MobileNavProps) {
                 <MobileLink
                   href="https://tally.so/r/wLoJKj"
                   onOpenChange={setOpen}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Build with us
                 </MobileLink>
                 <MobileLink
                   href="https://tally.so/r/3x6PdG"
                   onOpenChange={setOpen}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Become a partner
                 </MobileLink>

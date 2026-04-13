@@ -4,17 +4,17 @@ export default function StatsSection() {
       <div className="mx-auto mb-6 max-w-5xl px-6">
         <div className="relative z-10 max-w-xl space-y-3">
           <h2 className="font-medium text-2xl tracking-tighter">
-            Built on experience
+            Why businesses choose us
           </h2>
           <p className="text-muted-foreground">
-            A Major brings together design, engineering, and project management
-            to deliver software that works for businesses across industries,
-            from Singapore and beyond.
+            Most agencies make you wait months, charge for every email, and hand
+            your project to someone you&apos;ve never met. We do the opposite:
+            scope upfront, direct access to the founder, and a finished product
+            inside 30 days.
           </p>
           <p className="text-muted-foreground">
-            Our team includes professional software engineers and UX/UI
-            designers, each with many years of industry experience. Every
-            project is backed by a team that knows what it&apos;s doing.
+            Design, engineering, and project management under one roof. No
+            subcontracting, no surprises, no scope creep.
           </p>
         </div>
       </div>
@@ -39,9 +39,10 @@ export default function StatsSection() {
         <div className="col-span-2 p-6">
           <blockquote className="space-y-2 border-l-4 pl-4">
             <p className="text-muted-foreground text-sm">
-              We don&apos;t just build software and hand it over. Every
-              engagement is managed end-to-end, with direct access to the
-              founder throughout, and a clear process from discovery to launch.
+              I&apos;ve seen too many businesses pay good money for software
+              they can&apos;t maintain, understand, or grow with. That&apos;s
+              the problem we exist to solve. You get direct access to me
+              throughout. Not a project manager relaying messages.
             </p>
             <cite className="block font-medium text-sm">
               Jia Wei Ng, Founder

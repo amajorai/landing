@@ -19,10 +19,10 @@ export default function RyuSection() {
               </span>
             </div>
             <p className="text-muted-foreground">
-              We built Ryu because managing AI agents shouldn't need a team of
-              ML engineers to figure out. A single binary that wraps any agent
-              engine with security, routing, memory, and tools. Built by humans,
-              for humans who just want AI that works.
+              We built Ryu because running AI agents in production
+              shouldn&apos;t require a team of ML engineers. A single binary
+              that wraps any agent engine with security, model routing, memory,
+              and tools. Swap one URL. Get everything else for free.
             </p>
           </div>
         </FadeIn>
@@ -52,6 +52,8 @@ export default function RyuSection() {
           <a
             className="inline-flex items-center gap-1 font-medium text-sm underline-offset-4 hover:underline"
             href="https://ryuhq.com"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Learn more about Ryu →
           </a>

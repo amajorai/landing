@@ -31,8 +31,12 @@ export default function HeroSection() {
                     className="!py-0 !h-9 rounded-full px-4"
                     size="lg"
                   >
-                    <Link href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106">
-                      <span className="btn-label">Get Started</span>
+                    <Link
+                      href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span className="btn-label">Start a Project</span>
                     </Link>
                   </Button>
                   <span className="inline-flex items-center gap-2 text-muted-foreground text-sm">

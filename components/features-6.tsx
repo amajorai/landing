@@ -4,31 +4,32 @@ const features = [
   {
     title: "Web design",
     description:
-      "Modern, high-performance websites designed to support your growth.",
+      "Websites that load fast, look sharp, and turn visitors into leads. Not just good-looking mockups.",
   },
   {
     title: "Software development",
     description:
-      "Web apps, mobile apps, and desktop software. Built from discovery to launch.",
+      "Web apps, mobile apps, and desktop software. We own the full process so you're not managing three vendors.",
   },
   {
     title: "Digital solutions",
     description:
-      "End-to-end delivery for businesses. Design, engineering, copywriting, and project management.",
+      "Design, engineering, copywriting, and project management under one roof. One contact. Full accountability.",
   },
   {
     title: "Discovery and planning",
     description:
-      "We start by understanding your goals. Clear planning before a single line of code.",
+      "We map out exactly what we're building before writing a single line of code. No scope creep, no surprises.",
   },
   {
-    title: "Rapid delivery",
-    description: "Most projects go from discovery to launch in under 30 days.",
+    title: "30-day delivery",
+    description:
+      "Discovery to launch in under a month. We scope everything upfront and hold ourselves to it.",
   },
   {
     title: "Founder-led",
     description:
-      "Every project is led personally by the founder. You are not handed off to a junior team.",
+      "The founder leads every project personally. You are never handed off to a junior or an outsourced team.",
   },
 ];
 
@@ -37,7 +38,9 @@ export default function FeaturesSection() {
     <section className="pt-10 md:pt-14">
       <div className="mx-auto mb-6 max-w-5xl px-6">
         <FadeIn duration={0.4}>
-          <h2 className="font-medium text-2xl tracking-tighter">What we do</h2>
+          <h2 className="font-medium text-2xl tracking-tighter">
+            What you get
+          </h2>
         </FadeIn>
       </div>
 

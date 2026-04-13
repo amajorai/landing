@@ -15,19 +15,19 @@ export default function ContentSection() {
             <FadeIn delay={0.2} direction="left" duration={0.5}>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  A Major is a Singapore-based software company. We design and
-                  build{" "}
+                  A Major is a Singapore-based software studio. We build{" "}
                   <span className="font-semibold text-accent-foreground">
                     websites, web apps, and digital platforms
                   </span>{" "}
-                  for businesses.
+                  and stay directly involved from the first conversation to
+                  launch day. No disappearing after handoff.
                 </p>
                 <p className="text-muted-foreground">
                   We&apos;re also the team behind{" "}
                   <span className="font-semibold text-accent-foreground">
                     Ryu
-                  </span>{" "}
-                  , the orchestration layer for AI agents. A single binary that
+                  </span>
+                  , an orchestration layer for AI agents. A single binary that
                   wraps any agent engine with security, model routing, memory,
                   and tools.
                 </p>

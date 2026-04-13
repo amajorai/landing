@@ -1,7 +1,7 @@
-import { Logo } from "@/components/logo";
-import { FadeIn } from "@/components/ui/fade-in";
 import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/components/logo";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const links = [
   { title: "manifesto", href: "/manifesto" },
@@ -11,7 +11,7 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="border-t border-border pb-16 pt-10 md:pb-20 md:pt-14">
+    <footer className="border-border border-t border-dashed bg-background pt-10 pb-16 md:pt-14 md:pb-20">
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn duration={0.4}>
           <Link
@@ -55,7 +55,7 @@ export default function FooterSection() {
             <a
               aria-label="X/Twitter"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://x.com/j14wei"
+              href="https://x.com/amajorai"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -70,7 +70,7 @@ export default function FooterSection() {
             <a
               aria-label="LinkedIn"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://www.linkedin.com/company/base07"
+              href="https://www.linkedin.com/company/amajor"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -82,7 +82,7 @@ export default function FooterSection() {
                 width={16}
               />
             </a>
-            <a
+            {/* <a
               aria-label="Threads"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
               href="https://www.threads.net/@j14.wei"
@@ -141,25 +141,23 @@ export default function FooterSection() {
                 src="/logos/youtube.svg"
                 width={16}
               />
-            </a>
+            </a> */}
           </div>
         </FadeIn>
-        <FadeIn delay={0.3} duration={0.4}>
-          <div className="mt-8 mb-4 px-4 text-center text-muted-foreground text-sm">
-            <span itemScope itemType="http://schema.org/Organization">
-              © {new Date().getFullYear()}{" "}
-              <span itemProp="name">A Major Pte. Ltd.</span>,{" "}
-              <span itemProp="location">Singapore</span>. <br />
-              (UEN: <span itemProp="taxID">202616096G</span>)
-              <meta content="2025-01-01" itemProp="foundingDate" />
-              <meta content="https://amajor.ai" itemProp="url" />
-              <meta
-                content="A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses."
-                itemProp="description"
-              />
-            </span>
-          </div>
-        </FadeIn>
+        <div className="mt-8 mb-4 px-4 text-center text-muted-foreground text-sm">
+          <span itemScope itemType="http://schema.org/Organization">
+            © {new Date().getFullYear()}{" "}
+            <span itemProp="name">A Major Pte. Ltd.</span>,{" "}
+            <span itemProp="location">Singapore</span>. <br />
+            (UEN: <span itemProp="taxID">202616096G</span>)
+            <meta content="2025-01-01" itemProp="foundingDate" />
+            <meta content="https://amajor.ai" itemProp="url" />
+            <meta
+              content="A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses."
+              itemProp="description"
+            />
+          </span>
+        </div>
       </div>
     </footer>
   );

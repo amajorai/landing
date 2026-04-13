@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
 import { ProgressiveBlur } from "@/components/progressive-blur";
@@ -11,7 +11,10 @@ import { FadeIn } from "@/components/ui/fade-in";
 const menuItems = [
   { name: "blog", href: "/blog" },
   { name: "about", href: "/about" },
-  { name: "become a partner", href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106" },
+  {
+    name: "become a partner",
+    href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
+  },
   { name: "book a call", href: "https://cal.com/jiaweing/amajor" },
 ];
 
@@ -46,7 +49,7 @@ export default function Header() {
   return (
     <header>
       <nav
-        className={`fixed z-60 w-full transition-transform duration-300 ${
+        className={`fixed z-60 w-full border-b border-dashed transition-transform duration-300 ${
           scrollState.visible ? "translate-y-0" : "-translate-y-full"
         }`}
         data-state={menuState && "active"}
@@ -57,11 +60,7 @@ export default function Header() {
             {/* Logo + Nav links — centered */}
             <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
               <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
-                <Link
-                  aria-label="home"
-                  className="flex items-center"
-                  href="/"
-                >
+                <Link aria-label="home" className="flex items-center" href="/">
                   <Logo />
                 </Link>
               </FadeIn>
@@ -101,7 +100,11 @@ export default function Header() {
             {/* New Project button + Theme toggle — right */}
             <div className="ml-auto hidden items-center gap-3 lg:flex">
               <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
-                <Button asChild className="h-8 rounded-full px-3 text-xs" size="sm">
+                <Button
+                  asChild
+                  className="h-8 rounded-full px-3 text-xs"
+                  size="sm"
+                >
                   <a
                     href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
                     rel="noopener noreferrer"

@@ -6,13 +6,15 @@ export default function TeamSection() {
     <section className="py-10 md:py-14" id="team">
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn duration={0.4}>
-          <h2 className="mb-4 font-medium text-2xl tracking-tighter">Our founder</h2>
+          <h2 className="mb-4 font-medium text-2xl tracking-tighter">
+            Our founder
+          </h2>
         </FadeIn>
 
         <div className="space-y-8 pt-4">
           <FadeIn delay={0.1} duration={0.4}>
             <div className="flex items-center gap-4">
-              <div className="size-16 rounded-full border bg-background p-0.5 shadow shadow-zinc-950/5">
+              <div className="size-16 rounded-full border border-dashed bg-background p-0.5 shadow shadow-zinc-950/5">
                 <img
                   alt="Jia Wei Ng"
                   className="aspect-square rounded-full object-cover"
@@ -24,7 +26,9 @@ export default function TeamSection() {
               </div>
               <div>
                 <p className="font-medium text-sm">Jia Wei Ng</p>
-                <p className="text-muted-foreground text-xs">CEO & Co-Founder</p>
+                <p className="text-muted-foreground text-xs">
+                  CEO & Co-Founder
+                </p>
                 <div className="mt-1 flex gap-3 text-muted-foreground">
                   <a
                     href="https://www.linkedin.com/in/jiaweing"
@@ -64,13 +68,8 @@ export default function TeamSection() {
               <p>
                 At A Major, Jia Wei remains personally involved in every
                 engagement. You are not handed off to a junior designer or an
-                outsourced team,your project is led by the founder, with
-                direct access throughout.
-              </p>
-              <p>
-                A Major&apos;s team also includes 2 professional software
-                engineers, each with many years of industry experience. Every
-                project is backed by a team that knows what it&apos;s doing.
+                outsourced team,your project is led by the founder, with direct
+                access throughout.
               </p>
             </div>
           </FadeIn>

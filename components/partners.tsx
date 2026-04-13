@@ -4,10 +4,13 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 export default function PartnersSection() {
   return (
-    <section className="relative z-10 bg-background pb-10">
+    <section className="relative z-10 bg-background py-10 md:py-14">
       <div className="m-auto max-w-5xl px-6">
         <FadeIn duration={0.5}>
-          <div className="flex flex-row items-center justify-start gap-6 overflow-x-auto">
+          <p className="mb-4 text-center text-muted-foreground text-sm">
+            We are partners with the world's leading technology companies
+          </p>
+          <div className="flex flex-row flex-wrap items-center justify-center gap-6">
             <Image
               alt="AWS Logo - Cloud Partner"
               className="h-4 w-auto"
@@ -65,10 +68,6 @@ export default function PartnersSection() {
               width={60}
             />
           </div>
-        </FadeIn>
-
-        <FadeIn delay={0.2} duration={0.5}>
-          <p className="mt-4 text-muted-foreground text-sm">We are partners with the world's leading technology companies</p>
         </FadeIn>
       </div>
     </section>

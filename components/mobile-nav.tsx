@@ -24,7 +24,7 @@ export function MobileNav({ className }: MobileNavProps) {
       <Drawer onOpenChange={setOpen} open={open}>
         <DrawerTrigger asChild>
           <Button
-            className="h-14 w-14 rounded-full border border-white/10 bg-transparent/20 text-foreground shadow-2xl backdrop-blur-xl transition-all duration-200 hover:bg-transparent/30"
+            className="h-14 w-14 rounded-full border border-white/10 border-dashed bg-transparent/20 text-foreground shadow-2xl backdrop-blur-xl transition-all duration-200 hover:bg-transparent/30"
             size="icon"
           >
             <Menu className="size-6" />

@@ -86,7 +86,7 @@ export default function RootLayout({
             <Header />
             <MobileNav />
             <SeasonalEffects />
-            <div className="relative mx-auto max-w-2xl border-x border-border divide-y divide-border">
+            <div className="relative mx-auto max-w-2xl divide-y divide-dashed divide-border border-border border-x border-dashed">
               {children}
             </div>
             <FooterSection />

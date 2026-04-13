@@ -15,24 +15,21 @@ export default function ContentSection() {
             <FadeIn delay={0.2} direction="left" duration={0.5}>
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  A Major is a Singapore-based technology company specialising
-                  in{" "}
+                  A Major is a Singapore-based software company. We design and
+                  build{" "}
                   <span className="font-semibold text-accent-foreground">
-                    web design, software development, and digital solutions
+                    websites, web apps, and digital platforms
                   </span>{" "}
                   for businesses.
                 </p>
                 <p className="text-muted-foreground">
-                  We work with organisations across industries to deliver
-                  modern, high-performance websites and digital platforms that
-                  support their growth. Our team brings together expertise in
-                  design, engineering, copywriting, and project management to
-                  deliver end-to-end solutions.
-                </p>
-                <p className="text-muted-foreground">
-                  From discovery through to launch, every project is managed
-                  with a clear process, transparent communication, and close
-                  collaboration with the client.
+                  We&apos;re also the team behind{" "}
+                  <span className="font-semibold text-accent-foreground">
+                    Ryu
+                  </span>{" "}
+                  , the orchestration layer for AI agents. A single binary that
+                  wraps any agent engine with security, model routing, memory,
+                  and tools.
                 </p>
               </div>
             </FadeIn>

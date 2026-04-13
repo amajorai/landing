@@ -9,7 +9,7 @@ const services = [
   {
     title: "software development",
     description:
-      "Web apps, mobile apps, desktop software, and digital platforms — built properly, from discovery to launch.",
+      "Web apps, mobile apps, desktop software, and digital platforms. Built properly, from discovery to launch.",
   },
   {
     title: "digital solutions",
@@ -28,13 +28,13 @@ export default function ServicesSection() {
           </h2>
           <p className="mt-3 max-w-xl text-muted-foreground">
             A Major is a Singapore-based software company. We work with
-            organisations to deliver modern websites and digital platforms
-            that support their growth — from discovery through to launch.
+            organisations to deliver modern websites and digital platforms that
+            support their growth, from discovery through to launch.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1} duration={0.4}>
-          <div className="mt-12 grid gap-8 border-t pt-10 sm:grid-cols-3">
+          <div className="mt-12 grid gap-8 border-t border-dashed pt-10 sm:grid-cols-3">
             {services.map((service, index) => (
               <div key={index}>
                 <h3 className="font-medium text-sm">{service.title}</h3>
@@ -48,13 +48,12 @@ export default function ServicesSection() {
 
         <FadeIn delay={0.2} duration={0.4}>
           <div className="mt-12 rounded-2xl bg-muted px-8 py-7 dark:bg-muted/50">
-            <p className="text-sm font-medium">founder-led, hands-on</p>
-            <p className="mt-2 text-muted-foreground text-sm leading-relaxed max-w-2xl">
-              Every engagement is led personally by Jia Wei Ng — founder,
-              software engineer, CS graduate from the University of Glasgow
-              with 7+ years across web, mobile, and enterprise platforms.
-              You are not handed off to a junior designer or an outsourced
-              team.
+            <p className="font-medium text-sm">founder-led, hands-on</p>
+            <p className="mt-2 max-w-2xl text-muted-foreground text-sm leading-relaxed">
+              Every engagement is led personally by Jia Wei Ng, founder,
+              software engineer, CS graduate from the University of Glasgow with
+              7+ years across web, mobile, and enterprise platforms. You are not
+              handed off to a junior designer or an outsourced team.
             </p>
           </div>
         </FadeIn>

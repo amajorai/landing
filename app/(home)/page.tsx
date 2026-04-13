@@ -4,6 +4,7 @@ import FAQsFour from "@/components/faqs-4";
 import FeaturesSection from "@/components/features-6";
 import HeroSection from "@/components/hero-section";
 import Partners from "@/components/partners";
+import RyuSection from "@/components/ryu-section";
 import StatsSection from "@/components/stats-4";
 import TeamSection from "@/components/team";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -18,13 +19,14 @@ export default async function Home() {
         <FadeIn>
           <HeroSection />
         </FadeIn>
-        <FadeIn>
-          <Partners />
-        </FadeIn>
       </div>
 
       <FadeIn>
         <ContentSection />
+      </FadeIn>
+
+      <FadeIn>
+        <RyuSection />
       </FadeIn>
 
       <FadeIn>
@@ -41,6 +43,10 @@ export default async function Home() {
 
       <FadeIn>
         <FAQsFour />
+      </FadeIn>
+
+      <FadeIn>
+        <Partners />
       </FadeIn>
 
       <FadeIn>

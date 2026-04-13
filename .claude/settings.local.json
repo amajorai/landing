@@ -12,7 +12,11 @@
       "Bash(npm run:*)",
       "Bash(find \"C:\\\\Code\\\\base7-landing\\\\app\" -type d -name \"\\(*\" 2>/dev/null)",
       "Bash(ls -la \"C:\\\\Code\\\\base7-landing\\\\app\\\\\\(home\\)\\\\\\(\\\\.\\)projects\")",
-      "Bash(ls -la \"C:/Code/base7-landing/app/\\(home\\)/\\(.\\)projects\")"
+      "Bash(ls -la \"C:/Code/base7-landing/app/\\(home\\)/\\(.\\)projects\")",
+      "WebSearch",
+      "WebFetch(domain:copyhackers.com)",
+      "WebFetch(domain:www.julian.com)",
+      "WebFetch(domain:zoconnected.com)"
     ]
   }
 }

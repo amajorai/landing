@@ -1,6 +1,6 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { Check, X } from "lucide-react";
+import { Calendar, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -33,7 +33,7 @@ export default function HeroSection() {
       <main className="pt-16 lg:pt-20">
         <section className="overflow-hidden bg-white dark:bg-transparent">
           <div className="relative mx-auto max-w-5xl px-6 py-12 lg:py-14">
-            <div className="relative z-10 mx-auto px-10 xl:px-0">
+            <div className="relative z-10 mx-auto">
               <FadeIn direction="down" duration={0.6}>
                 <h1 className="font-semibold text-2xl tracking-tighter">
                   Software that just works. Experts you can talk to.
@@ -92,7 +92,7 @@ export default function HeroSection() {
               </div>
               <div className="grid grid-cols-3 border-border border-t border-l border-dashed">
                 <div
-                  className="cursor-pointer border-border border-r border-b border-dashed p-8 transition-colors duration-200 hover:bg-accent/50"
+                  className="group cursor-pointer border-border border-t border-r border-b border-l border-dashed p-8 transition-colors duration-200 hover:bg-accent/50"
                   onClick={handleBookCall}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -103,32 +103,26 @@ export default function HeroSection() {
                   tabIndex={0}
                 >
                   <div className="flex flex-col items-center gap-3">
-                    <Check
-                      className="size-8 text-green-600 dark:text-green-400"
-                      strokeWidth={3}
-                    />
-                    <span className="font-medium text-green-600 text-xs dark:text-green-400">
+                    <div className="relative size-8">
+                      <Check
+                        className="absolute inset-0 size-8 text-green-600 transition-all duration-300 ease-out group-hover:rotate-90 group-hover:scale-0 group-hover:opacity-0 dark:text-green-400"
+                        strokeWidth={3}
+                      />
+                      <Calendar
+                        className="absolute inset-0 size-8 -rotate-90 scale-0 text-green-600 opacity-0 transition-all duration-300 ease-out group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100 dark:text-green-400"
+                        strokeWidth={3}
+                      />
+                    </div>
+                    <span className="font-medium text-green-600 text-xs transition-all duration-300 ease-out group-hover:text-green-700 dark:text-green-400 dark:group-hover:text-green-300">
                       Available
                     </span>
                   </div>
                 </div>
-                <div className="border-border border-r border-b border-dashed bg-muted/40 p-8 dark:bg-muted/10">
-                  <div className="flex flex-col items-center gap-3">
-                    <X
-                      className="size-8 text-muted-foreground"
-                      strokeWidth={3}
-                    />
-                    <span className="text-muted-foreground text-xs">Taken</span>
-                  </div>
+                <div className="flex items-center justify-center border-border border-r border-b border-dashed bg-muted/40 p-8 dark:bg-muted/10">
+                  <X className="size-8 text-muted-foreground" strokeWidth={3} />
                 </div>
-                <div className="border-border border-r border-b border-dashed bg-muted/40 p-8 dark:bg-muted/10">
-                  <div className="flex flex-col items-center gap-3">
-                    <X
-                      className="size-8 text-muted-foreground"
-                      strokeWidth={3}
-                    />
-                    <span className="text-muted-foreground text-xs">Taken</span>
-                  </div>
+                <div className="flex items-center justify-center border-border border-r border-b border-dashed bg-muted/40 p-8 dark:bg-muted/10">
+                  <X className="size-8 text-muted-foreground" strokeWidth={3} />
                 </div>
               </div>
             </div>

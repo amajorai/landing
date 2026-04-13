@@ -181,6 +181,17 @@
   scrollbar-color: var(--border) transparent;
 }
 
+/* Text selection highlight color */
+::selection {
+  background-color: oklch(0.6 0.2 250);
+  color: white;
+}
+
+.dark ::selection {
+  background-color: oklch(0.5 0.2 250);
+  color: white;
+}
+
 /* Marquee animation for partners logo scroll */
 @keyframes marquee {
   from {

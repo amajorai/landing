@@ -3,62 +3,18 @@ import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
 
-const PORT = 3000;
+const PORT = 3456;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${PORT}`;
-const OG_DIR = path.join(process.cwd(), "public", "og");
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function isServerRunning(url: string): Promise<boolean> {
   try {
     const res = await fetch(`${url}/api/og-routes`);
-    return res.ok;
-  } catch {
+    return res.ok || res.status < 500;
+  } catch (e) {
     return false;
   }
-}
-
-async function buildProject() {
-  console.log("Building project...");
-  return new Promise<void>((resolve, reject) => {
-    const build = spawn("bun", ["run", "build"], {
-      stdio: "inherit",
-      shell: true,
-      env: { ...process.env, NODE_ENV: "production" },
-    });
-
-    build.on("close", (code) => {
-      if (code === 0) {
-        resolve();
-      } else {
-        reject(new Error(`Build failed with code ${code}`));
-      }
-    });
-  });
-}
-
-async function startServer(): Promise<ChildProcess> {
-  console.log("Starting local production server...");
-  const server = spawn("bun", ["start"], {
-    stdio: "inherit",
-    shell: true,
-    env: { ...process.env, NODE_ENV: "production" },
-  });
-
-  // Wait for server to be ready
-  let attempts = 0;
-  while (attempts < 60) {
-    if (await isServerRunning(BASE_URL)) {
-      console.log("Server is running!");
-      // Give it a little more time to stabilize
-      await wait(3000);
-      return server;
-    }
-    await wait(1000);
-    attempts++;
-  }
-
-  throw new Error("Server failed to start within 60 seconds");
 }
 
 async function getRoutes(): Promise<string[]> {
@@ -78,33 +34,62 @@ async function getRoutes(): Promise<string[]> {
     return response.json();
   } catch (e) {
     console.error(`Error fetching routes from ${url}:`, e);
-
-    // Fallback if API fails (e.g. strict cache issues), though API is preferred
+    // Fallback if API fails
     return ["/"];
   }
 }
 
-async function generateImages() {
+async function startServer(): Promise<ChildProcess> {
+  console.log(
+    `Starting local production server for OG generation on port ${PORT}...`
+  );
+  const server = spawn("bun", ["start", "--", "-p", String(PORT)], {
+    stdio: "inherit",
+    shell: true,
+    env: {
+      ...process.env,
+      NODE_ENV: "production",
+      PORT: String(PORT),
+      OG_BUILD_INCLUDE_UNPUBLISHED: "true",
+    },
+  });
+
+  // Wait for server to be ready
+  let attempts = 0;
+  while (attempts < 60) {
+    if (await isServerRunning(BASE_URL)) {
+      console.log("Server is ready!");
+      return server;
+    }
+    await wait(1000);
+    attempts++;
+  }
+
+  throw new Error("Server failed to start in time.");
+}
+
+async function main() {
+  console.log("Starting OG generation...");
+
   let serverProcess: ChildProcess | null = null;
+  const isRunning = await isServerRunning(BASE_URL);
+
+  if (isRunning) {
+    console.log("Using existing server instance.");
+    console.warn(
+      "Existing server may not include unpublished posts unless OG_BUILD_INCLUDE_UNPUBLISHED=true is set."
+    );
+  } else {
+    serverProcess = await startServer();
+  }
 
   try {
-    // Build the project first
-    await buildProject();
-
-    if (!fs.existsSync(OG_DIR)) {
-      fs.mkdirSync(OG_DIR, { recursive: true });
-    }
-
-    if (await isServerRunning(BASE_URL)) {
-      console.log("Using existing server instance.");
-    } else {
-      serverProcess = await startServer();
-    }
-
+    // 1. Gather paths from API endpoint (requires Next.js server context for unstable_cache)
     console.log("Fetching routes...");
     const routes = await getRoutes();
-    console.log(`Found ${routes.length} routes to process.`);
+    console.log(`Found ${routes.length} routes to screenshot.`);
 
+    // 2. Launch Puppeteer
     const browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -112,29 +97,45 @@ async function generateImages() {
     const page = await browser.newPage();
     await page.setViewport({ width: 1200, height: 630 });
 
+    const ogDir = path.join(process.cwd(), "public", "og");
+    if (!fs.existsSync(ogDir)) {
+      fs.mkdirSync(ogDir, { recursive: true });
+    }
+
+    const skipExisting =
+      process.argv.includes("--skip-existing") ||
+      process.argv.includes("--skip");
+    if (skipExisting) console.log("Skipping routes with existing OG images.");
+
+    // 3. Screenshot
     for (const route of routes) {
       const url = `${BASE_URL}${route}`;
       // Clean filename: remove leading slash, replace others with dash
-      // e.g. "/" -> "index.png"
-      // e.g. "/projects/foo" -> "projects-foo.png"
       const fileName =
-        route === "/"
-          ? "index.png"
-          : `${route.replace(/^\//, "").replace(/\//g, "-")}.png`;
+        route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "-");
 
-      const filePath = path.join(OG_DIR, fileName);
+      const filePath = path.join(ogDir, `${fileName}.png`);
 
-      console.log(`Generating: ${route} -> ${fileName}`);
+      if (skipExisting && fs.existsSync(filePath)) {
+        console.log(`Skipping ${route} (already exists)`);
+        continue;
+      }
 
-      try {
-        await page.goto(url, {
-          waitUntil: "networkidle0",
-          timeout: 60_000,
-        });
-
-        await page.screenshot({ path: filePath });
-      } catch (error) {
-        console.error(`Failed to generate OG for ${route}:`, error);
+      console.log(`Screenshotting ${route} -> ${fileName}.png`);
+      let success = false;
+      for (const waitUntil of ["networkidle2", "domcontentloaded"] as const) {
+        try {
+          await page.goto(url, { waitUntil, timeout: 60_000 });
+          await page.screenshot({ path: filePath });
+          success = true;
+          break;
+        } catch (e) {
+          if (waitUntil === "domcontentloaded") {
+            console.error(`Failed to screenshot ${route}:`, e);
+          } else {
+            console.warn(`Retrying ${route} with looser wait strategy...`);
+          }
+        }
       }
     }
 
@@ -145,14 +146,12 @@ async function generateImages() {
     process.exit(1);
   } finally {
     if (serverProcess) {
-      console.log("Stopping server...");
-      if (process.platform === "win32" && serverProcess.pid) {
-        spawn("taskkill", ["/pid", serverProcess.pid.toString(), "/f", "/t"]);
-      } else {
-        serverProcess.kill();
-      }
+      console.log("Stopping local server...");
+      serverProcess.kill();
+      // Force exit if needed
+      process.exit(0);
     }
   }
 }
 
-generateImages();
+main();

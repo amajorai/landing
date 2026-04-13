@@ -56,10 +56,25 @@ export default function FAQsFour() {
 
   return (
     <section className="pt-10 md:pt-14" id="faq">
-      <div className="mx-auto mb-6 max-w-5xl px-6">
+      <div className="mx-auto mb-2 max-w-5xl px-6">
         <h2 className="font-medium text-2xl tracking-tighter">
           You should know these before working with us
         </h2>
+      </div>
+
+      <div className="mx-auto mb-6 max-w-5xl px-6">
+        <p className="text-muted-foreground text-sm">
+          Have more questions?{" "}
+          <Link
+            className="font-medium text-primary hover:underline"
+            href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Get in touch and we'll get back to you within 24 hours
+          </Link>
+          .
+        </p>
       </div>
 
       <div className="border-border border-y border-dashed">
@@ -84,19 +99,6 @@ export default function FAQsFour() {
               </div>
             ))}
           </Accordion>
-
-          <p className="mt-8 text-muted-foreground text-sm">
-            Have more questions?{" "}
-            <Link
-              className="font-medium text-primary hover:underline"
-              href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Get in touch and we'll get back to you within 24 hours
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "A Major is a Singapore-based software company specialising in web design, software development, and digital solutions for businesses.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amajor.ai",
-  ogImage: "https://amajor.ai/api/og",
+  ogImage: "https://amajor.ai/og/index.png",
   links: {
     twitter: "https://twitter.com/j14wei",
     github: "https://github.com/amajor",
@@ -65,7 +65,6 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
       ? `${title} \u00A0·\u00A0 ${siteConfig.name}`
       : siteConfig.name;
   const pageDescription = description || siteConfig.description;
-  const pageImage = image || siteConfig.ogImage;
   const pageUrl = url ? new URL(url, siteConfig.url) : siteConfig.url;
 
   // Construct static OG image path
@@ -76,15 +75,12 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
   }
   const staticOgImage = new URL(staticOgPath, siteConfig.url).toString();
 
+  // Use custom image if provided, otherwise use static OG image
+  const ogImageUrl = image || staticOgImage;
+
   const openGraphImages = [
     {
-      url: staticOgImage,
-      width: 1200,
-      height: 630,
-      alt: title || siteConfig.name,
-    },
-    {
-      url: pageImage,
+      url: ogImageUrl,
       width: 1200,
       height: 630,
       alt: title || siteConfig.name,
@@ -120,7 +116,7 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: [pageImage],
+      images: [ogImageUrl],
       creator: siteConfig.links.twitter.replace("https://twitter.com/", "@"),
     },
     robots: {

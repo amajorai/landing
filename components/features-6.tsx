@@ -29,7 +29,7 @@ const features = [
   {
     title: "Founder-led",
     description:
-      "The founder leads every project personally. You are never handed off to a junior or an outsourced team.",
+      "The founder leads every project personally, backed by a lean team of engineers and designers. You are never handed off to juniors or outsourced.",
   },
 ];
 

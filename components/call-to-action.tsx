@@ -19,16 +19,12 @@ export default function CallToAction() {
             Tell us what you&apos;re building. We&apos;ll respond within 24
             hours.
           </p>
-          <p className="mt-3 text-muted-foreground text-sm">
-            We limit intake each month so every project gets the focus it
-            deserves. Every time.
-          </p>
 
-          <div className="mx-auto mt-10 max-w-sm space-y-4 lg:mt-12">
+          <div className="mx-auto mt-6 max-w-sm">
             <div className="relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] bg-background pr-3 has-[input:focus]:ring-muted">
               <div className="md:pr-1.5 lg:pr-0">
                 <Link
-                  href="https://tally.so/r/wLoJKj"
+                  href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -36,18 +32,24 @@ export default function CallToAction() {
                 </Link>
               </div>
             </div>
-            <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+            <div className="mt-8 flex flex-col items-center gap-2">
+              <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+                </span>
+                <span>
+                  <span className="font-medium text-foreground">
+                    {spots} client spots
+                  </span>{" "}
+                  remaining in {month}
+                </span>
               </span>
-              <span>
-                <span className="font-medium text-foreground">
-                  {spots} client spots
-                </span>{" "}
-                remaining in {month}
-              </span>
-            </span>
+              <p className="text-muted-foreground/70 text-xs">
+                We limit intake each month so every project gets the focus it
+                deserves.
+              </p>
+            </div>
           </div>
         </div>
       </div>

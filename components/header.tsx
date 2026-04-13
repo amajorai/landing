@@ -12,7 +12,7 @@ const menuItems = [
   { name: "blog", href: "/blog" },
   { name: "about", href: "/about" },
   {
-    name: "become a partner",
+    name: "careers",
     href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
   },
   { name: "book a call", href: "https://cal.com/jiaweing/amajor" },
@@ -49,7 +49,7 @@ export default function Header() {
   return (
     <header>
       <nav
-        className={`fixed z-60 w-full border-b border-dashed transition-transform duration-300 ${
+        className={`fixed z-60 w-full transition-transform duration-300 ${
           scrollState.visible ? "translate-y-0" : "-translate-y-full"
         }`}
         data-state={menuState && "active"}

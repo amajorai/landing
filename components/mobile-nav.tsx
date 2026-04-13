@@ -53,7 +53,7 @@ export function MobileNav({ className }: MobileNavProps) {
                 </MobileLink>
                 {/* Removed Setup/Books as they might not exist, keeping requested links plus what was in header */}
                 <MobileLink
-                  href="https://tally.so/r/wLoJKj"
+                  href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
                   onOpenChange={setOpen}
                   rel="noopener noreferrer"
                   target="_blank"

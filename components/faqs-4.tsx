@@ -12,33 +12,33 @@ export default function FAQsFour() {
   const faqItems = [
     {
       id: "item-1",
-      question: "What does A Major do?",
+      question: "How much does a project cost?",
       answer:
-        "A Major is a Singapore-based software studio. We build websites, web apps, and digital platforms for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
+        "It depends on scope, and we don't quote before we understand what you actually need. We work on a fixed-project basis, not hourly, so everything is agreed upfront. No billing surprises. Reach out and we'll give you a straight answer once we've had a conversation.",
     },
     {
       id: "item-2",
-      question: "What kind of software do you build?",
+      question: "Do you work with clients outside Singapore?",
       answer:
-        "Websites, web apps, mobile apps, desktop software, and digital platforms. We work with businesses that need high-performance software built properly, with transparent communication, a fixed scope, and a founder who stays accountable throughout.",
+        "Yes. Most of our work is done remotely and we've worked with clients across Asia and beyond. We communicate over video, async tools, and whatever works for your timezone.",
     },
     {
       id: "item-3",
-      question: 'What does "founder-led" mean in practice?',
-      answer:
-        "It means Jia Wei, our founder, is directly involved in your project from discovery to launch. You're not handed off to a junior designer or an outsourced team. You get someone with 7+ years of engineering experience, a CS degree from the University of Glasgow, and a track record across web, mobile, and enterprise platforms.",
-    },
-    {
-      id: "item-4",
       question: "Do you work with startups or established businesses?",
       answer:
         "Both. We work with early-stage startups who need to move fast, and with established businesses who need a reliable team that delivers. If you have a real problem and the motivation to solve it, we want to talk.",
     },
     {
-      id: "item-5",
-      question: "How long does a project take?",
+      id: "item-4",
+      question: "Can you work with our existing codebase or team?",
       answer:
-        "Most projects move from discovery to launch in under 30 days. We scope everything upfront so there are no surprises. More complex platforms take longer. We'll give you a clear timeline once we understand what you need.",
+        "Yes. We can jump into an existing project, extend what's already built, or work alongside your in-house team. We assess what's there first and give you an honest read before committing.",
+    },
+    {
+      id: "item-5",
+      question: "What happens after we launch?",
+      answer:
+        "We don't disappear at launch. We offer post-launch support and can stay on for ongoing development, maintenance, or iteration. That's something we agree on before we start, so there are no gaps.",
     },
     {
       id: "item-6",
@@ -91,7 +91,7 @@ export default function FAQsFour() {
             Have more questions?{" "}
             <Link
               className="font-medium text-primary hover:underline"
-              href="https://tally.so/r/wLoJKj"
+              href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
               rel="noopener noreferrer"
               target="_blank"
             >

@@ -30,7 +30,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <main className="pt-16 lg:pt-20">
+      <main className="pt-24 lg:pt-20">
         <section className="overflow-hidden bg-white dark:bg-transparent">
           <div className="relative mx-auto max-w-5xl px-6 py-12 lg:py-14">
             <div className="relative z-10 mx-auto">

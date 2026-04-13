@@ -12,7 +12,7 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="border-border border-t border-dashed bg-background pt-10 pb-16 md:pt-14 md:pb-20">
+    <footer className="border-border border-t border-dashed bg-background pt-10 pb-28 md:pt-14 md:pb-20">
       <div className="mx-auto max-w-5xl px-6">
         <FadeIn duration={0.4}>
           <Link

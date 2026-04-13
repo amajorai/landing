@@ -217,3 +217,10 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Push Cal.com floating button above mobile bottom nav */
+@media (max-width: 1023px) {
+  #cal-floating-button-amajor {
+    bottom: 72px !important;
+  }
+}

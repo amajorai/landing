@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 import { Logo } from "@/components/logo";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -25,13 +26,12 @@ export default function FooterSection() {
 
         <FadeIn delay={0.1} duration={0.4}>
           <div className="my-8 flex flex-col flex-wrap items-center justify-center gap-4 text-sm sm:flex-row md:gap-6">
-            {links.map((link, index) => (
-              <>
+            {links.map((link) => (
+              <Fragment key={link.title}>
                 {link.href.startsWith("/") ? (
                   <Link
                     className="block px-2 py-1 text-center text-muted-foreground duration-150 hover:text-primary"
                     href={link.href as any}
-                    key={index}
                   >
                     <span>{link.title}</span>
                   </Link>
@@ -39,14 +39,13 @@ export default function FooterSection() {
                   <a
                     className="block px-2 py-1 text-center text-muted-foreground duration-150 hover:text-primary"
                     href={link.href}
-                    key={index}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <span>{link.title}</span>
                   </a>
                 )}
-              </>
+              </Fragment>
             ))}
           </div>
         </FadeIn>

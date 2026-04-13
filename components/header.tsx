@@ -15,7 +15,10 @@ const menuItems = [
     name: "careers",
     href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
   },
-  { name: "book a call", href: "https://cal.com/jiaweing/amajor" },
+  {
+    name: "brand kit",
+    href: "https://amajor.notion.site/7917e0bbe55683feb1bb019132b83c9d?v=5b97e0bbe55682e09fc308819305d413",
+  },
 ];
 
 export default function Header() {

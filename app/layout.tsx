@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sileo";
 import { PlausibleWrapper } from "@/components/analytics/plausible-provider";
+import { FloatingBookingButton } from "@/components/floating-booking-button";
 import FooterSection from "@/components/footer";
 import Header from "@/components/header";
 import { MobileNav } from "@/components/mobile-nav";
@@ -85,6 +86,7 @@ export default function RootLayout({
           >
             <Header />
             <MobileNav />
+            <FloatingBookingButton />
             <SeasonalEffects />
             <div className="relative mx-auto max-w-2xl divide-y divide-dashed divide-border border-border border-x border-dashed">
               {children}

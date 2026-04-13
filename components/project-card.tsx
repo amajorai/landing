@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GenerativeGradient } from "@/components/generative-gradient";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -15,6 +15,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const router = useRouter();
+
   // Motion values for 3D tilt
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -48,7 +50,18 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
   return (
     <FadeIn delay={index * 0.05}>
-      <Link className="block h-full" href={`/projects/${project.slug}`}>
+      <div
+        aria-label={`View ${project.title} project`}
+        className="block h-full cursor-pointer"
+        onClick={() => router.push(`/projects/${project.slug}`)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            router.push(`/projects/${project.slug}`);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
         <div style={{ perspective: 1000 }}>
           <motion.div
             className="group relative aspect-[4/5] cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-zinc-900/50 transition-colors hover:bg-zinc-900 dark:border-white/10"
@@ -172,7 +185,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             </div>
           </motion.div>
         </div>
-      </Link>
+      </div>
     </FadeIn>
   );
 }

@@ -1,4 +1,4 @@
-import { Globe, LinkedinIcon } from "lucide-react";
+import { BadgeCheck, Globe, LinkedinIcon } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function TeamSection() {
@@ -24,7 +24,13 @@ export default function TeamSection() {
               />
             </div>
             <div>
-              <p className="font-medium text-sm">Jia Wei Ng</p>
+              <div className="inline-flex items-center gap-1.5">
+                <p className="font-medium text-sm">Jia Wei Ng</p>
+                <BadgeCheck
+                  className="size-4 text-blue-600 dark:text-blue-400"
+                  strokeWidth={3}
+                />
+              </div>
               <p className="text-muted-foreground text-xs">CEO & Co-Founder</p>
               <div className="mt-2 flex gap-3 text-muted-foreground">
                 <a

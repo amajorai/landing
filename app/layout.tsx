@@ -6,7 +6,6 @@ import { PlausibleWrapper } from "@/components/analytics/plausible-provider";
 import { FloatingBookingButton } from "@/components/floating-booking-button";
 import FooterSection from "@/components/footer";
 import Header from "@/components/header";
-import { MobileNav } from "@/components/mobile-nav";
 import { SeasonalEffects } from "@/components/SeasonalEffects";
 import SEO from "@/components/seo";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
@@ -85,7 +84,6 @@ export default function RootLayout({
             enableSystem
           >
             <Header />
-            <MobileNav />
             <FloatingBookingButton />
             <SeasonalEffects />
             <div className="relative mx-auto max-w-3xl divide-y divide-dashed divide-border border-border border-x border-dashed">

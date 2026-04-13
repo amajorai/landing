@@ -7,11 +7,11 @@ export default function RyuSection() {
       <div className="mx-auto max-w-5xl space-y-6 px-6">
         <FadeIn duration={0.4}>
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col items-start gap-1.5 md:flex-row md:items-center md:gap-3">
               <h2 className="flex items-center gap-2 font-medium text-2xl tracking-tighter">
                 <img
                   alt="Ryu"
-                  className="h-5 w-5 object-contain"
+                  className="order-last h-5 w-5 object-contain md:order-first"
                   src="/logos/ryu.png"
                 />
                 The agency behind Ryu

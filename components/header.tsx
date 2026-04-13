@@ -1,4 +1,5 @@
 "use client";
+import { getCalApi } from "@calcom/embed-react";
 import { BookOpen, Briefcase, Info, Layers, Plus } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -130,13 +131,58 @@ export default function Header() {
       {/* Mobile bottom app bar */}
       <div className="lg:hidden">
         <ProgressiveBlur
-          height="90px"
+          height="100px"
           position="bottom"
           useThemeBackground={true}
         />
         <nav className="fixed bottom-0 z-60 w-full">
           <div className="relative flex items-center justify-around px-6 pt-3 pb-6">
-            {menuItems.map((item, index) => {
+            {/* Left 2 items */}
+            {menuItems.slice(0, 2).map((item, index) => {
+              const Icon = item.icon;
+              return item.href.startsWith("/") ? (
+                <Link
+                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+                  href={item.href as any}
+                  key={index}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="text-[10px]">{item.name}</span>
+                </Link>
+              ) : (
+                <a
+                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+                  href={item.href}
+                  key={index}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="text-[10px]">{item.name}</span>
+                </a>
+              );
+            })}
+
+            {/* Center Book a Call button */}
+            <button
+              className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+              onClick={async () => {
+                const cal = await getCalApi({ namespace: "amajor" });
+                cal("modal", {
+                  calLink: "jiaweing/amajor",
+                  config: { layout: "month_view" },
+                });
+              }}
+              type="button"
+            >
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-background">
+                <Plus className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-[10px]">Book</span>
+            </button>
+
+            {/* Right 2 items */}
+            {menuItems.slice(2).map((item, index) => {
               const Icon = item.icon;
               return item.href.startsWith("/") ? (
                 <Link

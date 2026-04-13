@@ -1,26 +1,24 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import { Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function FloatingBookingButton() {
-  useEffect(() => {
-    (async () => {
-      const cal = await getCalApi({ namespace: "amajor" });
-      cal("floatingButton", {
-        calLink: "jiaweing/amajor",
-        config: { layout: "month_view" },
-        buttonText: "Book a Call",
-      });
-      cal("ui", {
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#09090b" },
-          dark: { "cal-brand": "#ffffff" },
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
+  const handleBookCall = async () => {
+    const cal = await getCalApi({ namespace: "amajor" });
+    cal("modal", {
+      calLink: "jiaweing/amajor",
+      config: { layout: "month_view" },
+    });
+  };
 
-  return null;
+  return (
+    <Button
+      className="fixed right-6 bottom-24 z-50 hidden rounded-full shadow-lg lg:flex"
+      onClick={handleBookCall}
+    >
+      <Calendar className="h-4 w-4" />
+      Book a Call
+    </Button>
+  );
 }

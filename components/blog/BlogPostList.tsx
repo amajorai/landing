@@ -3,13 +3,15 @@
 import { format } from "date-fns";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { BlogPostHoverCard } from "@/components/blog/BlogPostHoverCard";
 import { PostTags } from "@/components/blog/PostTags";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Input } from "@/components/ui/input";
+import { Toggle } from "@/components/ui/toggle";
 import type { BlogPost } from "@/lib/notion";
 import { getTagColorClass } from "@/lib/tag-colors";
+import { cn } from "@/lib/utils";
 
 interface BlogPostListProps {
   posts: BlogPost[];
@@ -26,20 +28,28 @@ export function BlogPostList({ posts }: BlogPostListProps) {
     return tags ? tags.split(",") : [];
   }, [searchParams]);
 
-  // Extract all unique tags from posts with their colors
-  const tagsWithColors = useMemo(() => {
-    const tagMap = new Map<string, string>();
-    posts.forEach((post) => {
-      post.tags.forEach((tag) => {
-        if (post.tagColors?.[tag]) {
-          tagMap.set(tag, post.tagColors[tag]);
+  // All unique tags sorted alphabetically
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    for (const post of posts) {
+      for (const tag of post.tags ?? []) {
+        tags.add(tag);
+      }
+    }
+    return [...tags].sort((a, b) => a.localeCompare(b));
+  }, [posts]);
+
+  // Tag name -> notion color
+  const tagColors = useMemo(() => {
+    const colorMap: Record<string, string> = {};
+    for (const post of posts) {
+      for (const tag of post.tags ?? []) {
+        if (post.tagColors?.[tag] && !colorMap[tag]) {
+          colorMap[tag] = post.tagColors[tag];
         }
-      });
-    });
-    return Array.from(tagMap.entries()).map(([name, color]) => ({
-      name,
-      color,
-    }));
+      }
+    }
+    return colorMap;
   }, [posts]);
 
   // Filter posts based on search and tags
@@ -47,8 +57,8 @@ export function BlogPostList({ posts }: BlogPostListProps) {
     return posts.filter((post) => {
       // Tag filter
       if (selectedTags.length > 0) {
-        const hasAllTags = selectedTags.every((tag) => post.tags.includes(tag));
-        if (!hasAllTags) return false;
+        const hasAnyTag = selectedTags.some((tag) => post.tags.includes(tag));
+        if (!hasAnyTag) return false;
       }
 
       // Search filter
@@ -61,7 +71,12 @@ export function BlogPostList({ posts }: BlogPostListProps) {
         const matchesTags = post.tags.some((tag) =>
           tag.toLowerCase().includes(query)
         );
-        return matchesTitle || matchesDescription || matchesTags;
+        const matchesAuthor = post.authors?.some((a) =>
+          a.name.toLowerCase().includes(query)
+        );
+        return (
+          matchesTitle || matchesDescription || matchesTags || matchesAuthor
+        );
       }
 
       return true;
@@ -100,58 +115,61 @@ export function BlogPostList({ posts }: BlogPostListProps) {
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
-  // Update search query in URL
+  const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Update search query in URL (debounced)
   const handleSearchChange = (value: string) => {
     setSearchQuery(value);
-    const params = new URLSearchParams(searchParams);
-    if (value.trim()) {
-      params.set("q", value);
-    } else {
-      params.delete("q");
-    }
-    router.push(`?${params.toString()}`, { scroll: false });
+    if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+    searchDebounceRef.current = setTimeout(() => {
+      const params = new URLSearchParams(searchParams);
+      if (value.trim()) {
+        params.set("q", value);
+      } else {
+        params.delete("q");
+      }
+      router.push(`?${params.toString()}`, { scroll: false });
+    }, 300);
   };
 
   return (
     <div className="space-y-6">
-      {/* Search and Filters */}
-      <div className="space-y-4">
-        {/* Search Input */}
+      {/* Tag Filters — rendered first so search overlaps via z-index */}
+      {allTags.length > 0 && (
         <FadeIn delay={0}>
-          <div className="relative">
-            <Input
-              className="border-0 bg-muted"
-              onChange={(e) => handleSearchChange(e.target.value)}
-              placeholder="Search posts..."
-              value={searchQuery}
-            />
+          <div className="relative z-0 mx-2 -mb-6 flex flex-wrap justify-center rounded-xl rounded-b-none bg-muted/50 px-1 py-2">
+            {allTags.map((tag) => (
+              <Toggle
+                aria-label={`Filter by ${tag}`}
+                className="h-7 gap-1.5 border-0 px-2 text-foreground text-xs shadow-none hover:text-current"
+                key={tag}
+                onPressedChange={() => toggleTag(tag)}
+                pressed={selectedTags.includes(tag)}
+                size="sm"
+                variant="default"
+              >
+                <span
+                  className={cn(
+                    "h-1.5 w-1.5 rounded-full",
+                    getTagColorClass(tag, tagColors[tag])
+                  )}
+                />
+                <span className="capitalize">{tag}</span>
+              </Toggle>
+            ))}
           </div>
         </FadeIn>
+      )}
 
-        {/* Tag Filters */}
-        {tagsWithColors.length > 0 && (
-          <FadeIn delay={0.1}>
-            <div className="flex flex-wrap gap-2">
-              {tagsWithColors.map(({ name, color }) => (
-                <button
-                  className={`rounded-full px-3 py-1 text-sm transition-colors ${
-                    selectedTags.includes(name) ? "bg-muted" : "hover:bg-muted"
-                  }`}
-                  key={name}
-                  onClick={() => toggleTag(name)}
-                >
-                  <span className="flex items-center gap-2">
-                    <span
-                      className={`h-2 w-2 rounded-full ${getTagColorClass(name, color)}`}
-                    />
-                    <span>{name}</span>
-                  </span>
-                </button>
-              ))}
-            </div>
-          </FadeIn>
-        )}
-      </div>
+      {/* Search Input — sits on top of tags card */}
+      <FadeIn delay={0.05}>
+        <Input
+          className="!bg-muted relative z-10 h-12 border-0 shadow-none"
+          onChange={(e) => handleSearchChange(e.target.value)}
+          placeholder="Search"
+          value={searchQuery}
+        />
+      </FadeIn>
 
       {/* Posts List */}
       {groupedPosts.length === 0 ? (

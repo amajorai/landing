@@ -524,13 +524,15 @@ export function NotionBlock({
           id={block.id}
           onClick={() => handleCopyHeadingLink(block.id)}
         >
-          {renderRichText(
-            rt,
-            tracker,
-            localHighlightIndex,
-            blockOffset,
-            onWordClick
-          )}
+          <span>
+            {renderRichText(
+              rt,
+              tracker,
+              localHighlightIndex,
+              blockOffset,
+              onWordClick
+            )}
+          </span>
           <HeadingAnchor id={block.id} />
         </h1>
       );
@@ -544,13 +546,15 @@ export function NotionBlock({
           id={block.id}
           onClick={() => handleCopyHeadingLink(block.id)}
         >
-          {renderRichText(
-            rt,
-            tracker,
-            localHighlightIndex,
-            blockOffset,
-            onWordClick
-          )}
+          <span>
+            {renderRichText(
+              rt,
+              tracker,
+              localHighlightIndex,
+              blockOffset,
+              onWordClick
+            )}
+          </span>
           <HeadingAnchor id={block.id} />
         </h2>
       );
@@ -564,13 +568,15 @@ export function NotionBlock({
           id={block.id}
           onClick={() => handleCopyHeadingLink(block.id)}
         >
-          {renderRichText(
-            rt,
-            tracker,
-            localHighlightIndex,
-            blockOffset,
-            onWordClick
-          )}
+          <span>
+            {renderRichText(
+              rt,
+              tracker,
+              localHighlightIndex,
+              blockOffset,
+              onWordClick
+            )}
+          </span>
           <HeadingAnchor id={block.id} />
         </h3>
       );

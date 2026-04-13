@@ -29,7 +29,7 @@ export interface BlogPost {
   title: string;
   date: string;
   description: string;
-  authors: { name: string; avatar?: string }[];
+  authors: { name: string; avatar?: string; slug: string }[];
   tags: string[];
   tagColors?: Record<string, string>;
   cover?: string;
@@ -267,14 +267,40 @@ const getProperty = (
   if (type === "url") return p.url || "";
   if (type === "people")
     return (
-      p.people?.map((person: any) => ({
-        name: person.name,
-        avatar: person.avatar_url,
-      })) || []
+      p.people
+        ?.filter((person: any) => person.name)
+        .map((person: any) => ({
+          name: person.name,
+          avatar: person.avatar_url,
+          slug: person.name
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^a-z0-9-]/g, ""),
+        })) || []
     );
 
   return "";
 };
+
+function extractAuthors(page: any): BlogPost["authors"] {
+  const name = getProperty(page, "Author Name", "rich_text") as string;
+  const slug = getProperty(page, "Author Slug", "rich_text") as string;
+  const avatarFiles = page.properties?.["Author Avatar"]?.files;
+  const avatar =
+    avatarFiles?.[0]?.file?.url || avatarFiles?.[0]?.external?.url || undefined;
+  console.log(
+    "[extractAuthors] name:",
+    name,
+    "slug:",
+    slug,
+    "avatar:",
+    avatar,
+    "avatarFiles:",
+    JSON.stringify(avatarFiles)
+  );
+  if (!(name && slug)) return [];
+  return [{ name, avatar, slug }];
+}
 
 // Uncached fetch functions for OG generation script
 export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
@@ -346,7 +372,7 @@ export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
           title,
           date: getProperty(page, "Date", "date") || page.created_time,
           description: getProperty(page, "Excerpt", "rich_text") || "",
-          authors: getProperty(page, "Author", "people") || [],
+          authors: extractAuthors(page),
           tags,
           tagColors,
           cover: banner,
@@ -439,7 +465,7 @@ export const getBlogPost = unstable_cache(
         title,
         date: getProperty(page, "Date", "date") || page.created_time,
         description: getProperty(page, "Excerpt", "rich_text") || "",
-        authors: getProperty(page, "Author", "people") || [],
+        authors: extractAuthors(page),
         tags,
         tagColors,
         cover: banner,

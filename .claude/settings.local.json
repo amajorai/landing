@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(pnpm tsc:*)",
+      "Bash(bun tsc:*)",
+      "Bash(grep -E \"\\\\.\\(tsx?|jsx?\\)$\")",
+      "Bash(ls:*)",
+      "Bash(tasklist)",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx\\)$\")"
     ]
   }
 }

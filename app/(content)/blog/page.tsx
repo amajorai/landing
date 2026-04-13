@@ -18,7 +18,7 @@ export default async function BlogPage() {
   return (
     <>
       <FadeIn>
-        <h3 className="mb-4 font-semibold">blog</h3>
+        <h3 className="mb-4 font-semibold">Blog</h3>
       </FadeIn>
       <Suspense
         fallback={

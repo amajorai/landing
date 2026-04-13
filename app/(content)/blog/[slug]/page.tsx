@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlogAuthor } from "@/components/blog/BlogAuthor";
 import { BlogTextToSpeech } from "@/components/blog/BlogTextToSpeech";
 import { MobileTocSheet } from "@/components/blog/MobileTocSheet";
 import { NotionRenderer } from "@/components/markdown-renderer";
@@ -28,7 +29,7 @@ export async function generateStaticParams() {
   }));
 }
 
-import { generateBlogMetadata } from "@/lib/metadata";
+import { generateBlogJsonLd, generateBlogMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
@@ -106,19 +107,10 @@ export default async function BlogPostPage({
 
           <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
             {post.authors && post.authors.length > 0 && (
-              <div className="flex items-center gap-2">
-                {post.authors[0].avatar && (
-                  <img
-                    alt={post.authors[0].name}
-                    className="h-6 w-6 rounded-full object-cover"
-                    src={post.authors[0].avatar}
-                  />
-                )}
-                <span className="font-medium text-foreground">
-                  {post.authors.map((a) => a.name).join(", ")}
-                </span>
+              <>
+                <BlogAuthor authors={post.authors} avatarSize="medium" />
                 <span>•</span>
-              </div>
+              </>
             )}
             <time dateTime={post.date}>
               {format(new Date(post.date), "MMMM d, yyyy")}
@@ -152,6 +144,12 @@ export default async function BlogPostPage({
           </FadeIn>
         </BlogTextToSpeech>
       )}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBlogJsonLd(post)),
+        }}
+        type="application/ld+json"
+      />
     </>
   );
 }

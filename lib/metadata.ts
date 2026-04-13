@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { BlogPost, Page } from "@/lib/notion";
+import type { BlogPost, Page, Project } from "@/lib/notion";
 
 export const siteConfig = {
   name: "A Major",
@@ -159,9 +159,22 @@ export function generatePageMetadata(page: Page): Metadata {
   return generateMetadata({
     title: page.title,
     description: page.description,
+    image: page.cover,
     modifiedTime: page.lastEdited,
     url: `/${page.slug}`,
     type: "website",
+  });
+}
+
+export function generateProjectMetadata(project: Project): Metadata {
+  return generateMetadata({
+    title: project.title,
+    description: project.description,
+    image: project.cover,
+    url: `/projects/${project.slug}`,
+    type: "article",
+    category: "project",
+    tags: project.techStack,
   });
 }
 

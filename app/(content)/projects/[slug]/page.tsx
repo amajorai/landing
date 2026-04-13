@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { NotionRenderer } from "@/components/markdown-renderer";
 import ProjectGallery from "@/components/project-gallery";
 import { FadeIn } from "@/components/ui/fade-in";
-import { generateMetadata as generateMeta } from "@/lib/metadata";
+import { generateProjectMetadata } from "@/lib/metadata";
 import {
   extractDescriptionFromBlocks,
   getProject,
@@ -41,12 +41,7 @@ export async function generateMetadata({
 
   const description =
     project.description || extractDescriptionFromBlocks(blocks);
-  return generateMeta({
-    title: project.title,
-    description,
-    image: project.cover,
-    url: `/projects/${project.slug}`,
-  });
+  return generateProjectMetadata({ ...project, description });
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

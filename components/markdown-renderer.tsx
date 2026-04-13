@@ -42,11 +42,11 @@ export function NotionRenderer({
 }: NotionRendererProps) {
   const groups = groupBlocks(blocks);
   return (
-    <div className="max-w-none">
+    <div className="prose dark:prose-invert max-w-none">
       {groups.map((group, i) => {
         if (group.type === "numbered_list") {
           return (
-            <ol className="my-4 list-decimal space-y-1 pl-5" key={i}>
+            <ol className="my-4 ml-1 list-decimal space-y-1" key={i}>
               {group.blocks.map((block) => (
                 <div data-block-id={block.id} key={block.id}>
                   <NotionBlock
@@ -61,7 +61,7 @@ export function NotionRenderer({
         }
         if (group.type === "bulleted_list") {
           return (
-            <ul className="my-4 list-disc space-y-1 pl-5" key={i}>
+            <ul className="my-4 ml-1 list-disc space-y-1" key={i}>
               {group.blocks.map((block) => (
                 <div data-block-id={block.id} key={block.id}>
                   <NotionBlock

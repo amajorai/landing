@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const menuItems = [
-  { name: "blog", href: "/blog" },
-  { name: "about", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "About", href: "/about" },
   {
-    name: "careers",
+    name: "Careers",
     href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
   },
   {
-    name: "brand kit",
+    name: "Brand Kit",
     href: "https://amajor.notion.site/7917e0bbe55683feb1bb019132b83c9d?v=5b97e0bbe55682e09fc308819305d413",
   },
 ];

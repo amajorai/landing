@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { generateProjectMetadata } from "@/lib/metadata";
 import { getProject, getProjects } from "@/lib/notion";
 import ProjectModalClient from "./project-modal-client";
 
@@ -28,9 +29,7 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: project.title,
-  };
+  return generateProjectMetadata(project);
 }
 
 export default async function ProjectModal({ params }: ProjectModalProps) {

@@ -163,23 +163,8 @@ export default function Header() {
               );
             })}
 
-            {/* Center Book a Call button */}
-            <button
-              className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
-              onClick={async () => {
-                const cal = await getCalApi({ namespace: "amajor" });
-                cal("modal", {
-                  calLink: "jiaweing/amajor",
-                  config: { layout: "month_view" },
-                });
-              }}
-              type="button"
-            >
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-background">
-                <Plus className="h-3.5 w-3.5" />
-              </div>
-              <span className="text-[10px]">Book</span>
-            </button>
+            {/* Center spacer to reserve space for floating button */}
+            <div className="w-14" />
 
             {/* Right 2 items */}
             {menuItems.slice(2).map((item, index) => {
@@ -206,6 +191,21 @@ export default function Header() {
                 </a>
               );
             })}
+
+            {/* Floating center Book button — elevated above the bar */}
+            <button
+              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+              onClick={async () => {
+                const cal = await getCalApi({ namespace: "amajor" });
+                cal("modal", {
+                  calLink: "jiaweing/amajor",
+                  config: { layout: "month_view" },
+                });
+              }}
+              type="button"
+            >
+              <Plus className="h-6 w-6" />
+            </button>
           </div>
         </nav>
       </div>

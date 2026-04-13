@@ -81,16 +81,16 @@ export default function RyuSection() {
               capture, or internal assistants.
             </p>
           </div>
-          {/* Workflow automation */}
-          <div className="col-span-1 space-y-2 border-border border-r border-b border-dashed p-6">
+          {/* Workflow automation — wide bottom left */}
+          <div className="col-span-1 space-y-2 border-border border-r border-b border-dashed p-6 md:col-span-3">
             <h3 className="font-medium text-sm">Workflow automation</h3>
             <p className="text-muted-foreground text-sm">
               Replace manual processes with code. If your team is doing it by
               hand, we can automate it.
             </p>
           </div>
-          {/* Ryu agent deployments — wide bottom right */}
-          <div className="col-span-1 space-y-2 border-border border-r border-b border-dashed p-6 md:col-span-3 md:border-r-0">
+          {/* Ryu agent deployments */}
+          <div className="col-span-1 space-y-2 border-border border-r border-b border-dashed p-6 md:border-r-0">
             <h3 className="font-medium text-sm">Ryu agent deployments</h3>
             <p className="text-muted-foreground text-sm">
               Production-ready AI agent infrastructure using Ryu. Security,

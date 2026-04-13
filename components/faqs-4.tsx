@@ -64,15 +64,11 @@ export default function FAQsFour() {
 
       <div className="border-border border-y border-dashed">
         <div className="mx-auto max-w-5xl px-6 py-8">
-          <Accordion
-            className="w-full rounded-2xl bg-muted p-1 dark:bg-muted/50"
-            collapsible
-            type="single"
-          >
+          <Accordion className="w-full" collapsible type="single">
             {faqItems.map((item) => (
               <div className="group" key={item.id}>
                 <AccordionItem
-                  className="peer rounded-xl border-none px-7 py-1 data-[state=open]:border-none data-[state=open]:bg-card data-[state=open]:shadow-sm dark:data-[state=open]:bg-muted"
+                  className="peer border-none px-0 py-1"
                   value={item.id}
                 >
                   <AccordionTrigger className="cursor-pointer font-semibold text-base hover:no-underline">
@@ -84,7 +80,7 @@ export default function FAQsFour() {
                     </p>
                   </AccordionContent>
                 </AccordionItem>
-                <hr className="mx-7 border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
+                <hr className="border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
               </div>
             ))}
           </Accordion>

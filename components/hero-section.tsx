@@ -1,6 +1,6 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { BadgeCheck, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -47,10 +47,10 @@ export default function HeroSection() {
                   >
                     Built for humans, by humans.
                   </p>
-                  <div className="relative flex size-5 items-center justify-center">
+                  <div className="relative flex size-5 items-center justify-center rounded-full bg-blue-600 dark:bg-blue-400">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75" />
-                    <BadgeCheck
-                      className="relative size-5 text-blue-600 dark:text-blue-400"
+                    <Check
+                      className="relative size-3 text-white"
                       strokeWidth={3}
                     />
                   </div>

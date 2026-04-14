@@ -471,7 +471,7 @@ export default function RyuSection() {
       <FadeIn duration={0.4}>
         <div className="mt-6 grid grid-cols-1 border-border border-t border-l border-dashed md:grid-cols-2">
           {/* Ryu App — tall left card */}
-          <div className="relative col-span-1 flex flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:row-span-2">
+          <div className="relative col-span-1 flex flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:row-span-2 md:h-[560px]">
             <h3 className="flex items-center gap-1.5 font-medium text-base">
               <img
                 alt="Ryu"

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -12,8 +13,25 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="border-border border-t border-dashed bg-background pt-10 pb-28 md:pt-14 md:pb-20">
-      <div className="mx-auto max-w-5xl px-6">
+    <footer className="relative overflow-hidden border-border border-t border-dashed bg-background pt-10 pb-28 md:pt-14 md:pb-48">
+      {/* Giant watermark text — half-visible from bottom */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 bottom-0 left-0 flex select-none justify-center overflow-hidden"
+        style={{ zIndex: 0 }}
+      >
+        <span
+          className="whitespace-nowrap font-bold text-foreground leading-none tracking-tighter"
+          style={{
+            fontSize: "clamp(7rem, 22vw, 30rem)",
+            transform: "translateY(40%)",
+            opacity: 0.01,
+          }}
+        >
+          amajor
+        </span>
+      </div>
+      <div className="relative mx-auto max-w-5xl px-6" style={{ zIndex: 1 }}>
         <FadeIn duration={0.4}>
           <Link
             aria-label="go home"

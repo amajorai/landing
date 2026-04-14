@@ -27,8 +27,12 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="py-20" id="contact">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="relative overflow-hidden py-20" id="contact">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-blue-600),var(--color-white)_100%)] dark:opacity-100"
+      />
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="font-medium text-2xl tracking-tighter">
             Ready to build something that works?
@@ -39,10 +43,8 @@ export default function CallToAction() {
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">
-            <div className="relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] bg-background pr-3 has-[input:focus]:ring-muted">
-              <div className="md:pr-1.5 lg:pr-0">
-                <Button onClick={handleBookCall}>Book a Call</Button>
-              </div>
+            <div className="flex justify-center">
+              <Button onClick={handleBookCall}>Book a Call</Button>
             </div>
             <div className="mt-8 flex flex-col items-center gap-2">
               <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">

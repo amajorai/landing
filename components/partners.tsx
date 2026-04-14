@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import LogoLoop from "@/components/reactbits/logo-loop";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function PartnersSection() {
@@ -10,7 +11,7 @@ export default function PartnersSection() {
           <p className="mb-4 text-center text-muted-foreground text-sm">
             We are partners with the world's leading technology companies
           </p>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-6">
+          <LogoLoop>
             <Image
               alt="AWS Logo - Cloud Partner"
               className="h-4 w-auto"
@@ -45,11 +46,11 @@ export default function PartnersSection() {
             />
             <Image
               alt="OpenAI Logo - AI Partner"
-              className="h-4 w-auto dark:invert"
+              className="h-5 w-auto dark:invert"
               height={24}
               priority
               src="/logos/openai_wordmark_light.svg"
-              width={80}
+              width={100}
             />
             <Image
               alt="Microsoft Logo - Technology Partner"
@@ -67,7 +68,7 @@ export default function PartnersSection() {
               src="/logos/vercel_wordmark.svg"
               width={60}
             />
-          </div>
+          </LogoLoop>
         </FadeIn>
       </div>
     </section>

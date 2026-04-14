@@ -1,7 +1,9 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
 import { Calendar, Check, X } from "lucide-react";
+import Prism from "@/components/reactbits/prism";
 import { Button } from "@/components/ui/button";
+import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function HeroSection() {
@@ -31,11 +33,33 @@ export default function HeroSection() {
   return (
     <>
       <main className="pt-6 lg:pt-20">
-        <section className="overflow-hidden bg-white dark:bg-transparent">
+        <section className="relative overflow-hidden bg-white dark:bg-transparent">
+          {/* Prism WebGL background — only behind text area, dark mode only */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 hidden dark:block"
+            style={{ zIndex: 0, opacity: 0.35, bottom: "auto", height: "100%" }}
+          >
+            <Prism
+              animationType="rotate"
+              bloom={0.8}
+              colorFrequency={1.2}
+              glow={0.8}
+              noise={0.15}
+              scale={3.8}
+              timeScale={0.3}
+              transparent={true}
+            />
+          </div>
+          <DotGridBackground
+            className="text-zinc-950 opacity-[0.05] dark:text-white dark:opacity-[0.09]"
+            dotRadius={1}
+            spacing={28}
+          />
           <div className="relative mx-auto max-w-5xl px-6 py-20 lg:py-14">
             <div className="relative z-10 mx-auto">
               <FadeIn direction="down" duration={0.6}>
-                <h1 className="font-semibold text-2xl tracking-tighter">
+                <h1 className="font-semibold text-2xl text-foreground tracking-tighter">
                   Software that just works. Experts you can talk to.
                 </h1>
               </FadeIn>
@@ -70,8 +94,10 @@ export default function HeroSection() {
               </FadeIn>
             </div>
           </div>
+        </section>
 
-          {/* Spots Grid - Full Width Bento Layout */}
+        {/* Spots Grid - below Prism area */}
+        <section className="relative bg-background">
           <FadeIn delay={0.5} duration={0.5}>
             <div className="border-border border-t border-dashed">
               <div className="flex flex-col gap-2 py-4 text-center">

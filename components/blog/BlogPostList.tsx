@@ -202,7 +202,7 @@ export function BlogPostList({ posts }: BlogPostListProps) {
                         )}
                         <BlogPostHoverCard slug={post.slug}>
                           <Link
-                            className="min-w-0 truncate font-medium text-foreground hover:underline"
+                            className="font-medium text-foreground hover:underline"
                             href={`/blog/${post.slug}`}
                           >
                             {post.title}

@@ -134,7 +134,7 @@ export function BlogPostList({ posts }: BlogPostListProps) {
 
   return (
     <div className="space-y-6">
-      {/* Tag Filters — rendered first so search overlaps via z-index */}
+      {/* Tag Filters - rendered first so search overlaps via z-index */}
       {allTags.length > 0 && (
         <FadeIn delay={0}>
           <div className="relative z-0 mx-2 -mb-6 flex flex-wrap justify-center rounded-xl rounded-b-none bg-muted/50 px-1 py-2">
@@ -161,7 +161,7 @@ export function BlogPostList({ posts }: BlogPostListProps) {
         </FadeIn>
       )}
 
-      {/* Search Input — sits on top of tags card */}
+      {/* Search Input - sits on top of tags card */}
       <FadeIn delay={0.05}>
         <Input
           className="!bg-muted relative z-10 h-12 border-0 shadow-none"

@@ -34,7 +34,7 @@ export default function HeroSection() {
     <>
       <main className="pt-6 lg:pt-20">
         <section className="relative overflow-hidden bg-white dark:bg-transparent">
-          {/* Prism WebGL background — only behind text area, dark mode only */}
+          {/* Prism WebGL background - only behind text area, dark mode only */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 top-0 hidden dark:block"

@@ -75,7 +75,7 @@ function TOCItemLink({
         style={{ width: getLineWidth(heading.level) }}
       />
 
-      {/* Animated text — slides in on group hover, or always visible when alwaysExpanded */}
+      {/* Animated text - slides in on group hover, or always visible when alwaysExpanded */}
       <div
         className={`grid w-full transition-[grid-template-rows] duration-300 ease-in-out ${alwaysExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr] delay-200 group-hover:grid-rows-[1fr] group-hover:delay-0"}`}
       >

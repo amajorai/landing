@@ -81,7 +81,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      {/* Fixed TOC sidebar — only shown on wide viewports */}
+      {/* Fixed TOC sidebar - only shown on wide viewports */}
       {headings.length > 0 && (
         <div className="fixed top-0 right-6 hidden h-screen w-64 items-center xl:flex">
           <TableOfContents headings={headings} />

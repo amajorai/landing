@@ -182,6 +182,14 @@
 * {
   scrollbar-width: thin; /* Keep scrollbar track for Firefox */
   scrollbar-color: transparent transparent;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+input,
+textarea,
+[contenteditable] {
+  user-select: text;
 }
 
 /* Show scrollbar thumb on hover for Firefox */

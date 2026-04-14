@@ -496,11 +496,11 @@ const EXTENSIONS = [
     active: true,
   },
   {
-    name: "Tab Manager Pro",
-    desc: "Smart tab grouping & search",
+    name: "Client Portal",
+    desc: "Project updates & file sharing",
     active: false,
   },
-  { name: "Privacy Shield", desc: "Tracker & ad blocker", active: true },
+  { name: "Lead Capture", desc: "Qualify visitors, book calls", active: true },
 ];
 
 function ExtensionVisual() {
@@ -982,7 +982,7 @@ const CHAT_MESSAGES = [
   },
   {
     role: "agent" as const,
-    text: "Let's scope it first — no cost until you're sure. Here's what I'd recommend...",
+    text: "Let's scope it first. No cost until you're sure. Here's what I'd recommend...",
   },
 ];
 

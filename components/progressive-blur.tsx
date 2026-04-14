@@ -79,7 +79,7 @@ const ProgressiveBlur = ({
 export { ProgressiveBlur };
 
 /**
- * Skiper 41 Canvas_Landing_004 — React + framer motion
+ * Skiper 41 Canvas_Landing_004 - React + framer motion
  * Inspired by and adapted from https://devouringdetails.com/
  * We respect the original creators. This is an inspired rebuild with our own taste and does not claim any ownership.
  * These animations aren’t associated with the devouringdetails.com . They’re independent recreations meant to study interaction design

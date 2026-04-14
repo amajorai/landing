@@ -67,7 +67,7 @@ export default function Header() {
           />
           <div className="relative z-[60] m-auto px-6 py-2">
             <div className="relative flex items-center pt-6 pb-3 lg:py-4">
-              {/* Mobile logo — centered, hidden on desktop */}
+              {/* Mobile logo - centered, hidden on desktop */}
               <div className="absolute left-1/2 -translate-x-1/2 lg:hidden">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <Link
@@ -80,7 +80,7 @@ export default function Header() {
                 </FadeIn>
               </div>
 
-              {/* Logo + Nav links — centered */}
+              {/* Logo + Nav links - centered */}
               <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <Link
@@ -124,7 +124,7 @@ export default function Header() {
                 </ul>
               </div>
 
-              {/* New Project button + Theme toggle — right */}
+              {/* New Project button + Theme toggle - right */}
               <div className="ml-auto hidden items-center gap-3 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <Button
@@ -184,7 +184,7 @@ export default function Header() {
               );
             })}
 
-            {/* Slot 2: invisible placeholder — Plus button floats here */}
+            {/* Slot 2: invisible placeholder - Plus button floats here */}
             <div aria-hidden="true" />
 
             {/* Slots 3–4: right items */}
@@ -213,7 +213,7 @@ export default function Header() {
               );
             })}
 
-            {/* Floating center Book button — elevated above the bar */}
+            {/* Floating center Book button - elevated above the bar */}
             <button
               className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
               onClick={async () => {

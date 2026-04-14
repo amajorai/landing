@@ -16,7 +16,7 @@ const RYU_MESSAGES = [
   { role: "user" as const, text: "Any blockers flagged?" },
   {
     role: "agent" as const,
-    text: "Yes — deployment blocked on API keys. Jia Wei is assigned.",
+    text: "Yes. Deployment blocked on API keys. Jia Wei is assigned.",
   },
   { role: "user" as const, text: "Escalate to urgent" },
   { role: "agent" as const, text: "Escalated. Jia Wei notified on Slack." },
@@ -109,9 +109,9 @@ function RyuAppVisual() {
 }
 
 const GATEWAY_ROUTES = [
-  { from: "Your app", to: "Claude Opus 4.6", latency: 42 },
-  { from: "Your app", to: "GPT 5.4", latency: 61 },
-  { from: "Your app", to: "Gemini 3.1 Pro", latency: 38 },
+  { from: "OpenClaw", to: "Ryu", latency: 42 },
+  { from: "ZeroClaw", to: "Ryu", latency: 61 },
+  { from: "Hermes Agent", to: "Ryu", latency: 38 },
 ];
 
 function GatewayVisual() {
@@ -248,7 +248,8 @@ function AIIntegrationVisual() {
   );
 }
 
-const CHATBOT_FULL_RESPONSE = "Go to Settings → Account → Reset password.";
+const CHATBOT_FULL_RESPONSE =
+  "Sure, I'll book a 30-min call with the team for you. What's your availability?";
 
 function ChatbotVisual() {
   const [typed, setTyped] = useState("");
@@ -283,7 +284,7 @@ function ChatbotVisual() {
       <div className="flex items-start gap-1.5">
         <div className="mt-0.5 size-4 shrink-0 rounded-full bg-muted/30" />
         <div className="rounded-xl rounded-tl-sm bg-muted/25 px-2 py-1 text-[9px] text-muted-foreground/70">
-          How do I reset my password?
+          I&apos;d like to discuss a project. What&apos;s next?
         </div>
       </div>
       <div className="flex flex-row-reverse items-start gap-1.5">
@@ -376,7 +377,7 @@ const AGENT_LAYERS = [
   { label: "Your agent", stable: true },
   { label: "Memory", stable: true },
   { label: "Tools (12)", stable: true },
-  { label: "Ryu runtime", stable: false },
+  { label: "Ryu runtime", stable: true },
 ];
 
 function AgentDeployVisual() {
@@ -452,9 +453,10 @@ export default function RyuSection() {
             </div>
             <p className="text-muted-foreground">
               We built Ryu because running AI agents in production
-              shouldn&apos;t require a team of ML engineers. A single binary
-              that wraps any agent engine with security, model routing, memory,
-              and tools. Swap one URL. Get everything else for free.
+              shouldn&apos;t require a team of ML engineers. Bring your own
+              agent: OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it
+              with security, memory, and tools. Swap one URL. Get everything
+              else for free.
             </p>
             <a
               className="inline-flex items-center gap-1 font-medium text-foreground text-sm underline-offset-4 hover:underline"
@@ -470,7 +472,7 @@ export default function RyuSection() {
 
       <FadeIn duration={0.4}>
         <div className="mt-6 grid grid-cols-1 border-border border-t border-l border-dashed md:grid-cols-2">
-          {/* Ryu App — tall left card */}
+          {/* Ryu App - tall left card */}
           <div className="relative col-span-1 flex flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:row-span-2 md:h-[560px]">
             <h3 className="flex items-center gap-1.5 font-medium text-base">
               <img
@@ -481,8 +483,8 @@ export default function RyuSection() {
               Ryu App
             </h3>
             <p className="text-muted-foreground text-sm">
-              Premium desktop agent UI. Pick your engine: Claude, GPT, Gemini,
-              or any local model. One interface, any backend.
+              Premium desktop agent UI. Bring your own agent, any framework, any
+              backend. One interface to run, monitor, and chat with it.
             </p>
             <div className="flex items-center gap-2 pt-1">
               <span className="text-muted-foreground text-xs">
@@ -517,25 +519,22 @@ export default function RyuSection() {
               Ryu Gateway
             </h3>
             <p className="text-muted-foreground text-sm">
-              Self-hostable AI proxy. Swap one URL and get model routing,
-              logging, rate limiting, and access control. No code changes.
+              Self-hostable agent gateway. Point any agent framework at Ryu and
+              get observability, rate limiting, auth, and access control. No
+              code changes to your agent.
             </p>
             <div className="flex items-center gap-2 pt-1">
               <span className="text-muted-foreground text-xs">Works with:</span>
-              <Image
-                alt="Anthropic Claude"
-                className="h-3.5 w-auto dark:invert"
-                height={14}
-                src="/logos/anthropic_black_wordmark.svg"
-                width={60}
-              />
-              <Image
-                alt="OpenAI"
-                className="h-4 w-auto dark:invert"
-                height={16}
-                src="/logos/openai_wordmark_light.svg"
-                width={66}
-              />
+              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
+                OpenClaw
+              </span>
+              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
+                ZeroClaw
+              </span>
+              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
+                Hermes
+              </span>
+              <span className="text-[9px] text-muted-foreground/40">+ any</span>
             </div>
             <GatewayVisual />
           </div>
@@ -560,7 +559,7 @@ export default function RyuSection() {
             <ChatbotVisual />
           </div>
 
-          {/* Ryu agent deployments — beside Chatbots */}
+          {/* Ryu agent deployments - beside Chatbots */}
           <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10">
             <h3 className="font-medium text-base">Ryu agent deployments</h3>
             <p className="text-muted-foreground text-sm">

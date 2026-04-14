@@ -240,9 +240,9 @@ export default function ContentSection() {
                   />
                   Ryu
                 </span>
-                , an orchestration layer for AI agents. A single binary that
-                wraps any agent engine with security, model routing, memory, and
-                tools.
+                , an orchestration layer for AI agents. Bring your own agent:
+                OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it with
+                security, memory, and tools.
               </p>
             </div>
           </FadeIn>

@@ -89,7 +89,7 @@ function CareerTimeline() {
   return (
     <div className="overflow-x-auto">
       <div className="relative min-w-[480px] px-3 pt-5 pb-1">
-        {/* Track line — top = pt-5 (20px) + half dot container (9px) = 29px */}
+        {/* Track line - top = pt-5 (20px) + half dot container (9px) = 29px */}
         <div className="absolute top-[29px] right-[32px] left-[32px] h-px bg-border/25">
           <div
             className="h-full bg-primary/35 transition-all ease-out"

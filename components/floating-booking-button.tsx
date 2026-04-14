@@ -20,9 +20,6 @@ export function FloatingBookingButton() {
                       width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
                       padding 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .bubble-btn:hover {
-          transform: scale(1.08);
-        }
         .bubble-btn .morph-text {
           max-width: 0;
           margin-left: 0;

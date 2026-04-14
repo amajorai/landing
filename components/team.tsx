@@ -153,7 +153,7 @@ function CareerTimeline() {
 export default function TeamSection() {
   return (
     <section className="pt-10 md:pt-14" id="team">
-      <div className="mx-auto mb-6 max-w-5xl px-6">
+      <div className="mb-6 px-6">
         <FadeIn duration={0.4}>
           <h2 className="font-medium text-2xl tracking-tighter">Our founder</h2>
         </FadeIn>

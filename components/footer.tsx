@@ -6,9 +6,9 @@ import { Logo } from "@/components/logo";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const links = [
-  { title: "manifesto", href: "/manifesto" },
-  { title: "about", href: "/about" },
-  { title: "brand story", href: "/story" },
+  { title: "Manifesto", href: "/manifesto" },
+  { title: "About", href: "/about" },
+  { title: "Brand Story", href: "/story" },
 ];
 
 export default function FooterSection() {
@@ -21,11 +21,11 @@ export default function FooterSection() {
         style={{ zIndex: 0 }}
       >
         <span
-          className="whitespace-nowrap font-bold text-foreground leading-none tracking-tighter"
+          className="whitespace-nowrap bg-gradient-to-b from-primary/6 to-transparent bg-clip-text font-bold text-transparent leading-none tracking-tighter"
           style={{
             fontSize: "clamp(7rem, 22vw, 30rem)",
             transform: "translateY(40%)",
-            opacity: 0.01,
+            WebkitTextStroke: "1px hsl(var(--foreground) / 0.07)",
           }}
         >
           amajor

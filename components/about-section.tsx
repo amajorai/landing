@@ -216,7 +216,7 @@ export default function ContentSection() {
     <section className="py-10 md:py-14" id="about">
       <div className="mx-auto max-w-5xl space-y-4 px-6">
         <FadeIn duration={0.4}>
-          <h2 className="relative z-10 max-w-xl font-medium text-2xl tracking-tighter">
+          <h2 className="relative z-10 font-medium text-2xl tracking-tighter">
             Who we are
           </h2>
         </FadeIn>

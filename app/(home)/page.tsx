@@ -1,15 +1,15 @@
+import ContentSection from "@/components/about-section";
 import CallToAction from "@/components/call-to-action";
-import ContentSection from "@/components/content-1";
-import FAQsFour from "@/components/faqs-4";
-import FeaturesSection from "@/components/features-6";
+import FAQsFour from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
 import Partners from "@/components/partners";
 import ProcessSection from "@/components/process-section";
 import ProjectsShowcase from "@/components/projects-showcase";
 import RyuSection from "@/components/ryu-section";
-import StatsSection from "@/components/stats-4";
+import FeaturesSection from "@/components/services-section";
 import TeamSection from "@/components/team";
 import { FadeIn } from "@/components/ui/fade-in";
+import StatsSection from "@/components/why-us-section";
 import { getProjects } from "@/lib/notion";
 
 // Revalidate every hour

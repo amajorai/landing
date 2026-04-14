@@ -8,9 +8,73 @@ import {
   useTransform,
 } from "framer-motion";
 import { Check } from "lucide-react";
-import { useEffect, useRef } from "react";
-import AnimatedList from "@/components/reactbits/animated-list";
+import { useEffect, useRef, useState } from "react";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
+
+const PERKS = [
+  "Fixed scope, no billing surprises",
+  "Direct access to the founder",
+  "Fast turnaround, no long waits",
+  "Design, engineering, PM in one team",
+  "Full deployment included",
+  "Post-launch support available",
+  "Clean, documented handover",
+  "No subcontracting, ever",
+  "Weekly progress updates",
+  "You own everything we build",
+];
+
+const PERK_H = 52;
+const PERK_VISIBLE = 5;
+
+function AutoScrollList() {
+  const posRef = useRef(0);
+  const [pos, setPos] = useState(0);
+  const [transitioning, setTransitioning] = useState(true);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTransitioning(true);
+      posRef.current += PERK_H;
+      if (posRef.current >= PERKS.length * PERK_H) {
+        setTimeout(() => {
+          setTransitioning(false);
+          posRef.current = 0;
+          setPos(0);
+        }, 500);
+      } else {
+        setPos(posRef.current);
+      }
+    }, 1800);
+    return () => clearInterval(id);
+  }, []);
+
+  const doubled = [...PERKS, ...PERKS];
+
+  return (
+    <div className="overflow-hidden" style={{ height: PERK_H * PERK_VISIBLE }}>
+      <div
+        style={{
+          transform: `translateY(-${pos}px)`,
+          transition: transitioning
+            ? "transform 0.5s cubic-bezier(0.4,0,0.2,1)"
+            : "none",
+        }}
+      >
+        {doubled.map((item, i) => (
+          <div className="pb-2" key={i} style={{ height: PERK_H }}>
+            <div className="flex h-full items-center gap-3 rounded-lg border border-border/40 bg-muted/10 px-4">
+              <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-green-500/15">
+                <Check className="size-3 text-green-500" strokeWidth={3} />
+              </span>
+              <p className="text-sm">{item}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function AnimatedNumber({
   value,
@@ -100,42 +164,12 @@ export default function StatsSection() {
           </div>
         </div>
 
-        {/* Right: AnimatedList of key differentiators */}
+        {/* Right: auto-scrolling perks */}
         <div className="p-6">
           <p className="mb-3 text-muted-foreground text-xs uppercase tracking-widest">
             What you get
           </p>
-          <AnimatedList
-            enableArrowNavigation={false}
-            items={[
-              "Fixed scope, no billing surprises",
-              "Direct access to the founder",
-              "Fast turnaround, no long waits",
-              "Design, engineering, PM in one team",
-              "Full deployment included",
-              "Post-launch support available",
-              "Clean, documented handover",
-              "No subcontracting, ever",
-              "Weekly progress updates",
-              "You own everything we build",
-            ]}
-            maxHeight={300}
-            renderItem={(item, _index, selected) => (
-              <div
-                className={`flex items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${
-                  selected
-                    ? "border-border bg-accent"
-                    : "border-border/40 bg-muted/10"
-                }`}
-              >
-                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-green-500/15">
-                  <Check className="size-3 text-green-500" strokeWidth={3} />
-                </span>
-                <p className="text-sm">{item}</p>
-              </div>
-            )}
-            showGradients={false}
-          />
+          <AutoScrollList />
         </div>
       </div>
     </section>

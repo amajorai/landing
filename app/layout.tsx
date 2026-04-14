@@ -86,7 +86,7 @@ export default function RootLayout({
             <Header />
             <FloatingBookingButton />
             <SeasonalEffects />
-            <div className="relative mx-auto max-w-3xl divide-y divide-dashed divide-border border-border border-x border-dashed">
+            <div className="relative mx-auto max-w-4xl divide-y divide-dashed divide-border border-border border-x border-dashed">
               {children}
             </div>
             <FooterSection />

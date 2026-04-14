@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 // ── 1. Live activity feed ─────────────────────────────────────────────────────
 
@@ -213,61 +214,64 @@ function ArchDiagram() {
 
 export default function ContentSection() {
   return (
-    <section className="py-10 md:py-14" id="about">
-      <div className="mx-auto max-w-5xl space-y-4 px-6">
+    <section className="relative pt-10 md:pt-14" id="about">
+      <StarMark
+        style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+      />
+      <div className="mx-auto max-w-5xl px-6">
         <FadeIn duration={0.4}>
           <h2 className="relative z-10 font-medium text-2xl tracking-tighter">
             Who we are
           </h2>
         </FadeIn>
-
-        <div className="relative space-y-4">
-          <FadeIn delay={0.2} direction="left" duration={0.5}>
-            <div className="space-y-4">
-              <p className="text-muted-foreground">
-                A Major is a Singapore-based software agency. We build websites,
-                mobile and desktop apps, browser extensions, and enterprise
-                systems and stay directly involved from the first conversation
-                to launch day. If it runs on a screen, we can build it.
-              </p>
-              <p className="text-muted-foreground">
-                We&apos;re also the team behind{" "}
-                <span className="inline-flex items-center gap-1 font-semibold text-accent-foreground">
-                  <img
-                    alt="Ryu"
-                    className="inline-block h-3.5 w-3.5 object-contain"
-                    src="/logos/ryu.png"
-                  />
-                  Ryu
-                </span>
-                , an orchestration layer for AI agents. Bring your own agent:
-                OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it with
-                security, memory, and tools.
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.35} duration={0.5}>
-            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {/* Activity feed */}
-              <div className="rounded-xl border border-border/40 bg-muted/10 p-4">
-                <p className="mb-3 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
-                  Live activity
-                </p>
-                <ActivityFeed />
-              </div>
-
-              {/* Architecture diagram */}
-              <div className="rounded-xl border border-border/40 bg-muted/10 p-4">
-                <p className="mb-3 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
-                  How we ship
-                </p>
-                <ArchDiagram />
-              </div>
-            </div>
-          </FadeIn>
-        </div>
       </div>
+
+      <FadeIn delay={0.2} duration={0.5}>
+        <div className="relative mt-6 grid grid-cols-1 border-border border-t border-l border-dashed md:grid-cols-2">
+          {/* Description */}
+          <div className="col-span-1 space-y-4 border-border border-r border-b border-dashed p-6 md:col-span-2 md:p-10">
+            <p className="text-muted-foreground">
+              A Major is a Singapore-based software agency. We build websites,
+              mobile and desktop apps, browser extensions, and enterprise
+              systems and stay directly involved from the first conversation to
+              launch day. If it runs on a screen, we can build it.
+            </p>
+            <p className="text-muted-foreground">
+              We&apos;re also the team behind{" "}
+              <span className="inline-flex items-center gap-1 font-semibold text-accent-foreground">
+                <img
+                  alt="Ryu"
+                  className="inline-block h-3.5 w-3.5 object-contain"
+                  src="/logos/ryu.png"
+                />
+                Ryu
+              </span>
+              , an orchestration layer for AI agents. Bring your own agent:
+              OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it with
+              security, memory, and tools.
+            </p>
+          </div>
+
+          {/* Activity feed */}
+          <div className="col-span-1 border-border border-r border-b border-dashed p-6 md:p-10">
+            <p className="mb-3 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
+              Live activity
+            </p>
+            <ActivityFeed />
+          </div>
+
+          {/* Architecture diagram */}
+          <div className="col-span-1 border-border border-r border-b border-dashed p-6 md:p-10">
+            <p className="mb-3 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
+              How we ship
+            </p>
+            <ArchDiagram />
+          </div>
+        </div>
+      </FadeIn>
     </section>
   );
 }

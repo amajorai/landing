@@ -23,6 +23,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 // ── Visual components ───────────────────────────────────────────────────────
 
@@ -1071,7 +1072,7 @@ const features: Feature[] = [
     title: "Web design",
     description:
       "Websites that load fast, look sharp, and turn visitors into leads. Not just good-looking mockups.",
-    className: "col-span-2 flex flex-col",
+    className: "md:col-span-2 flex flex-col",
     icon: Palette,
     visual: <BrowserMockup />,
   },
@@ -1174,7 +1175,7 @@ const features: Feature[] = [
     title: "MVP scoping",
     description:
       "Not sure what to build first? We'll help you define the smallest version that proves the idea.",
-    className: "col-span-2 flex flex-col",
+    className: "md:col-span-2 flex flex-col",
     icon: Lightbulb,
     visual: <KanbanBoard />,
   },
@@ -1240,20 +1241,32 @@ export default function FeaturesSection() {
       </div>
 
       <FadeIn duration={0.4}>
-        <div className="grid grid-cols-2 border-border border-t border-l border-dashed">
+        <div className="relative grid grid-cols-1 border-border border-t border-l border-dashed md:grid-cols-2">
+          {/* Side border stars */}
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const isFullWidth = feature.className.includes("col-span-2");
             return (
               <div
                 className={[
-                  "space-y-6 overflow-hidden border-border border-r border-b border-dashed p-10",
+                  "relative space-y-6 overflow-hidden border-border border-r border-b border-dashed p-10",
                   feature.className,
                 ].join(" ")}
                 key={index}
                 style={{
-                  height: feature.className.includes("col-span-2")
-                    ? "340px"
-                    : "300px",
+                  minHeight: "300px",
                 }}
               >
                 <div className="flex items-center gap-2">

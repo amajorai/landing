@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import FuzzyText from "@/components/reactbits/fuzzy-text";
+import { CrossMark } from "@/components/ui/cross-mark";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 // ── Step 1: Scope visual ─────────────────────────────────────────────────────
 
@@ -307,7 +309,65 @@ export default function ProcessSection() {
       </div>
 
       <FadeIn duration={0.4}>
-        <div className="grid grid-cols-1 border-border border-y border-dashed md:grid-cols-3">
+        <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-3">
+          {/* Side border stars */}
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
+          {/* Column divider crosses */}
+          <div
+            className="hidden md:block"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "33.333%",
+              transform: "translate(-50%, 0)",
+              width: 24,
+              height: 13,
+              overflow: "hidden",
+            }}
+          >
+            <CrossMark style={{ top: -11, left: 0 }} />
+          </div>
+          <div
+            className="hidden md:block"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "66.667%",
+              transform: "translate(-50%, 0)",
+              width: 24,
+              height: 13,
+              overflow: "hidden",
+            }}
+          >
+            <CrossMark style={{ top: -11, left: 0 }} />
+          </div>
+          <CrossMark
+            className="hidden md:block"
+            style={{
+              bottom: 0,
+              left: "33.333%",
+              transform: "translate(-50%, 50%)",
+            }}
+          />
+          <CrossMark
+            className="hidden md:block"
+            style={{
+              bottom: 0,
+              left: "66.667%",
+              transform: "translate(-50%, 50%)",
+            }}
+          />
           {steps.map((step, index) => (
             <div
               className={[

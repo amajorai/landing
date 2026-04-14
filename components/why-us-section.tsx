@@ -10,6 +10,7 @@ import {
 import { Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
+import { StarMark } from "@/components/ui/star-mark";
 
 const PERKS = [
   "Fixed scope, no billing surprises",
@@ -129,10 +130,23 @@ export default function StatsSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 border-border border-y border-dashed md:grid-cols-2">
+      <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-2">
+        {/* Side border stars */}
+        <StarMark
+          style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+        />
+        <StarMark
+          style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+        />
+        <StarMark
+          style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+        />
+        <StarMark
+          style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+        />
         {/* Left: stats + blockquote */}
         <div className="border-border border-r border-dashed">
-          <div className="grid grid-cols-2">
+          <div className="relative grid grid-cols-2">
             <div className="space-y-2 border-border border-r border-b border-dashed p-6">
               <AnimatedNumber suffix="+" value={7} />
               <p className="text-muted-foreground text-sm">
@@ -157,10 +171,10 @@ export default function StatsSection() {
                 You get direct access to me throughout. Not a project manager
                 relaying messages.
               </p>
-              <cite className="block font-medium text-sm">
-                Jia Wei Ng, Founder
-              </cite>
             </blockquote>
+            <cite className="mt-3 block pl-4 font-medium text-sm not-italic">
+              Jia Wei Ng, Founder
+            </cite>
           </div>
         </div>
 

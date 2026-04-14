@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 // ── Inline visuals ────────────────────────────────────────────────────────────
 
@@ -345,11 +346,13 @@ function WorkflowVisual() {
   }, []);
 
   return (
-    <div className="mt-4 flex items-stretch gap-2">
-      {WORKFLOW_STEPS.map((s, i) => (
-        <div className="flex flex-1 items-center gap-2" key={i}>
+    <>
+      {/* Mobile: 2-col grid, no arrows */}
+      <div className="mt-4 grid grid-cols-2 gap-2 sm:hidden">
+        {WORKFLOW_STEPS.map((s, i) => (
           <div
-            className={`flex flex-1 flex-col gap-1 rounded-lg border p-3 transition-all duration-300 ${activeStep === i ? s.activeColor : s.color}`}
+            className={`flex flex-col gap-1 rounded-lg border p-3 transition-all duration-300 ${activeStep === i ? s.activeColor : s.color}`}
+            key={i}
           >
             <span
               className={`font-medium text-[10px] leading-tight transition-colors duration-300 ${activeStep === i ? "text-foreground/90" : "text-foreground/70"}`}
@@ -360,16 +363,37 @@ function WorkflowVisual() {
               {s.desc}
             </span>
           </div>
-          {i < WORKFLOW_STEPS.length - 1 && (
+        ))}
+      </div>
+      {/* Desktop: horizontal flow with arrows */}
+      <div className="mt-4 hidden grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-2 sm:grid">
+        {WORKFLOW_STEPS.flatMap((s, i) => [
+          <div
+            className={`flex min-w-0 flex-col gap-1 rounded-lg border p-3 transition-all duration-300 ${activeStep === i ? s.activeColor : s.color}`}
+            key={s.label}
+          >
             <span
-              className={`shrink-0 text-xs transition-colors duration-300 ${activeStep > i ? "text-foreground/40" : "text-muted-foreground/30"}`}
+              className={`truncate font-medium text-[10px] leading-tight transition-colors duration-300 ${activeStep === i ? "text-foreground/90" : "text-foreground/70"}`}
             >
-              →
+              {s.label}
             </span>
-          )}
-        </div>
-      ))}
-    </div>
+            <span className="truncate text-[9px] text-muted-foreground/50 leading-tight">
+              {s.desc}
+            </span>
+          </div>,
+          ...(i < WORKFLOW_STEPS.length - 1
+            ? [
+                <span
+                  className={`text-center text-xs transition-colors duration-300 ${activeStep > i ? "text-foreground/40" : "text-muted-foreground/30"}`}
+                  key={`arrow-${i}`}
+                >
+                  →
+                </span>,
+              ]
+            : []),
+        ])}
+      </div>
+    </>
   );
 }
 
@@ -471,7 +495,20 @@ export default function RyuSection() {
       </div>
 
       <FadeIn duration={0.4}>
-        <div className="mt-6 grid grid-cols-1 border-border border-t border-l border-dashed md:grid-cols-2">
+        <div className="relative mt-6 grid min-w-0 grid-cols-1 overflow-hidden border-border border-t border-l border-dashed md:grid-cols-2">
+          {/* Side border stars */}
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           {/* Ryu App - tall left card */}
           <div className="relative col-span-1 flex flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:row-span-2 md:h-[560px]">
             <h3 className="flex items-center gap-1.5 font-medium text-base">
@@ -570,7 +607,7 @@ export default function RyuSection() {
           </div>
 
           {/* Workflow automation */}
-          <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10 md:col-span-2">
+          <div className="col-span-1 flex min-w-0 flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:col-span-2">
             <h3 className="font-medium text-base">Workflow automation</h3>
             <p className="text-muted-foreground text-sm">
               Replace manual processes with code. If your team is doing it by

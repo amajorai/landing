@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { StarMark } from "@/components/ui/star-mark";
 import type { Project } from "@/lib/notion";
 
 interface ProjectsShowcaseProps {
@@ -20,7 +21,19 @@ export default function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
   }
 
   return (
-    <section className="py-16" id="portfolio">
+    <section className="relative py-16" id="portfolio">
+      <StarMark
+        style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+      />
+      <StarMark
+        style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+      />
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <div className="relative z-10 flex flex-row">
           <h2 className="font-medium text-2xl tracking-tighter">our work</h2>

@@ -25,7 +25,9 @@ export default function FooterSection() {
           style={{
             fontSize: "clamp(7rem, 22vw, 30rem)",
             transform: "translateY(40%)",
-            WebkitTextStroke: "1px hsl(var(--foreground) / 0.07)",
+            WebkitTextStroke: "8px hsl(var(--foreground) / 0.45)",
+            textShadow:
+              "3px 3px 0 hsl(var(--foreground)/0.22), 6px 6px 0 hsl(var(--foreground)/0.18), 9px 9px 0 hsl(var(--foreground)/0.14), 12px 12px 0 hsl(var(--foreground)/0.10), 15px 15px 0 hsl(var(--foreground)/0.07), 18px 18px 0 hsl(var(--foreground)/0.04)",
           }}
         >
           amajor

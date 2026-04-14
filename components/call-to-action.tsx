@@ -1,6 +1,7 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
 import { Button } from "@/components/ui/button";
+import { StarMark } from "@/components/ui/star-mark";
 
 export default function CallToAction() {
   const currentDate = new Date();
@@ -28,6 +29,18 @@ export default function CallToAction() {
 
   return (
     <section className="relative overflow-hidden py-20" id="contact">
+      <StarMark
+        style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+      />
+      <StarMark
+        style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-blue-600),var(--color-white)_100%)] dark:opacity-100"
@@ -47,11 +60,6 @@ export default function CallToAction() {
               <Button onClick={handleBookCall}>Book a Call</Button>
             </div>
             <div className="mt-8 flex flex-col items-center gap-2">
-              <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">
-                <span className="font-medium text-muted-foreground/60 line-through">
-                  {currentMonth} fully booked
-                </span>
-              </span>
               <span className="inline-flex items-center justify-center gap-2 text-sm">
                 <span className="relative flex size-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
@@ -59,6 +67,11 @@ export default function CallToAction() {
                 </span>
                 <span className="font-medium text-foreground">
                   {spots} spot available in {nextMonth}
+                </span>
+              </span>
+              <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                <span className="font-medium text-muted-foreground/60 line-through">
+                  {currentMonth} fully booked
                 </span>
               </span>
               <p className="text-muted-foreground/70 text-xs">

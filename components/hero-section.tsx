@@ -4,8 +4,10 @@ import { Calendar, Check, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import Prism from "@/components/reactbits/prism";
 import { Button } from "@/components/ui/button";
+import { CornerMark } from "@/components/ui/corner-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 function AnimatedBar({
   target,
@@ -75,7 +77,19 @@ export default function HeroSection() {
 
   return (
     <>
-      <main className="pt-6 lg:pt-20">
+      <main className="relative pt-6 lg:pt-20">
+        <StarMark
+          style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+        />
+        <StarMark
+          style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+        />
+        <StarMark
+          style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+        />
+        <StarMark
+          style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+        />
         <section className="relative overflow-hidden bg-white dark:bg-transparent">
           {/* Prism WebGL background - only behind text area, dark mode only */}
           <div
@@ -142,24 +156,12 @@ export default function HeroSection() {
         {/* Spots Grid - below Prism area */}
         <section className="relative bg-background">
           <FadeIn delay={0.5} duration={0.5}>
-            <div className="border-border border-t border-dashed">
-              <div className="flex flex-col gap-2 py-4 text-center">
-                <span className="text-muted-foreground text-sm">
-                  <span className="font-medium text-muted-foreground/60 line-through">
-                    {currentMonth} fully booked
-                  </span>
-                </span>
-                <span className="inline-flex items-center justify-center gap-2 text-sm">
-                  <span className="relative flex size-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
-                    <span className="relative inline-flex size-2 rounded-full bg-green-500" />
-                  </span>
-                  <span className="font-medium text-foreground">
-                    1 of 3 spots available in {nextMonth}
-                  </span>
-                </span>
-              </div>
+            <div className="relative border-border border-t border-dashed">
+              <CornerMark corner="tl" size={10} />
+              <CornerMark corner="tr" size={10} />
               <div className="relative grid grid-cols-3 border-border border-t border-l border-dashed">
+                <CornerMark corner="bl" size={10} />
+                <CornerMark corner="br" size={10} />
                 {/* Perforation notches — left divider */}
                 <div className="absolute -top-[7px] left-[calc(33.333%-7px)] z-10 size-3.5 rounded-full border border-border border-dashed bg-background" />
                 <div className="absolute -bottom-[7px] left-[calc(33.333%-7px)] z-10 size-3.5 rounded-full border border-border border-dashed bg-background" />
@@ -193,8 +195,12 @@ export default function HeroSection() {
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <div className="h-2 w-20 rounded-full border border-green-500/30 bg-green-500/15" />
-                      <div className="h-1.5 w-12 rounded-full bg-muted/30" />
+                      <div className="relative h-2 w-20 overflow-hidden rounded-full border border-green-500/30 bg-green-500/15">
+                        <div className="absolute inset-0 -translate-x-full animate-[shimmer_2.5s_0.5s_infinite] bg-gradient-to-r from-transparent via-green-400/20 to-transparent" />
+                      </div>
+                      <div className="relative h-1.5 w-12 overflow-hidden rounded-full bg-green-500/10">
+                        <div className="absolute inset-0 -translate-x-full animate-[shimmer_2.5s_0.9s_infinite] bg-gradient-to-r from-transparent via-green-400/15 to-transparent" />
+                      </div>
                     </div>
                     <span className="text-[10px] text-muted-foreground/50">
                       from {nextMonth}
@@ -247,6 +253,22 @@ export default function HeroSection() {
                     <AnimatedBar delay={500} target={45} />
                   </div>
                 </div>
+              </div>
+              <div className="relative flex flex-col gap-2 border-border border-t border-dashed py-4 text-center">
+                <span className="inline-flex items-center justify-center gap-2 text-sm">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                    <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+                  </span>
+                  <span className="font-medium text-foreground">
+                    1 of 3 spots available in {nextMonth}
+                  </span>
+                </span>
+                <span className="text-muted-foreground text-sm">
+                  <span className="font-medium text-muted-foreground/60 line-through">
+                    {currentMonth} fully booked
+                  </span>
+                </span>
               </div>
             </div>
           </FadeIn>

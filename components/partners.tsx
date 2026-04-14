@@ -2,10 +2,17 @@
 import Image from "next/image";
 import LogoLoop from "@/components/reactbits/logo-loop";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 export default function PartnersSection() {
   return (
     <section className="relative z-10 bg-background py-10 md:py-14">
+      <StarMark
+        style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+      />
+      <StarMark
+        style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+      />
       <div className="m-auto max-w-5xl px-6">
         <FadeIn duration={0.5}>
           <p className="mb-4 text-center text-muted-foreground text-sm">

@@ -77,7 +77,7 @@ export default function FAQsFour() {
         </p>
       </div>
 
-      <div className="border-border border-y border-dashed">
+      <div className="relative border-border border-y border-dashed">
         <div className="mx-auto max-w-5xl px-6 py-8">
           <Accordion className="w-full" collapsible type="single">
             {faqItems.map((item) => (

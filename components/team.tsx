@@ -2,8 +2,8 @@
 
 import { BadgeCheck, Check, Globe, LinkedinIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import PixelCard from "@/components/reactbits/pixel-card";
 import { FadeIn } from "@/components/ui/fade-in";
+import { StarMark } from "@/components/ui/star-mark";
 
 // ── Career timeline visual ────────────────────────────────────────────────────
 
@@ -155,62 +155,69 @@ export default function TeamSection() {
     <section className="pt-10 md:pt-14" id="team">
       <div className="mb-6 px-6">
         <FadeIn duration={0.4}>
-          <h2 className="font-medium text-2xl tracking-tighter">Our founder</h2>
+          <h2 className="mx-auto max-w-2xl font-medium text-2xl tracking-tighter">
+            Our founder
+          </h2>
         </FadeIn>
       </div>
 
       <FadeIn duration={0.4}>
-        <div className="border-border border-y border-dashed">
-          <div className="flex items-center gap-4 border-border border-b border-dashed p-6">
-            <PixelCard
-              className="size-16 shrink-0 rounded-full border border-dashed bg-background p-0.5 shadow shadow-zinc-950/5"
-              variant="default"
-            >
+        <div className="relative border-border border-y border-dashed">
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
+          <div className="relative border-border border-b border-dashed p-6">
+            <div className="mx-auto flex max-w-2xl items-center gap-4">
               <img
                 alt="Jia Wei Ng"
-                className="aspect-square rounded-full object-cover"
+                className="size-16 shrink-0 rounded-full object-cover"
                 height="460"
                 loading="lazy"
                 src="/team/jiawei-new.jpg"
                 width="460"
               />
-            </PixelCard>
-            <div>
-              <div className="inline-flex items-center gap-1.5">
-                <p className="font-medium text-sm">Jia Wei Ng</p>
-                <div className="relative flex size-4 items-center justify-center">
-                  <BadgeCheck
-                    className="size-4 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400"
-                    strokeWidth={3}
-                  />
-                  <Check
-                    className="absolute size-2 text-white"
-                    strokeWidth={5}
-                  />
+              <div>
+                <div className="inline-flex items-center gap-1.5">
+                  <p className="font-medium text-sm">Jia Wei Ng</p>
+                  <div className="relative flex size-4 items-center justify-center">
+                    <BadgeCheck
+                      className="size-4 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400"
+                      strokeWidth={3}
+                    />
+                    <Check
+                      className="absolute size-2 text-white"
+                      strokeWidth={5}
+                    />
+                  </div>
                 </div>
-              </div>
-              <p className="text-muted-foreground text-xs">CEO & Co-Founder</p>
-              <div className="mt-2 flex gap-3 text-muted-foreground">
-                <a
-                  href="https://www.linkedin.com/in/jiaweing"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <LinkedinIcon className="size-3.5" />
-                </a>
-                <a
-                  href="https://jiaweing.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Globe className="size-3.5" />
-                </a>
+                <p className="text-muted-foreground text-xs">
+                  CEO & Co-Founder
+                </p>
+                <div className="mt-2 flex gap-3 text-muted-foreground">
+                  <a
+                    href="https://www.linkedin.com/in/jiaweing"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <LinkedinIcon className="size-3.5" />
+                  </a>
+                  <a
+                    href="https://jiaweing.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Globe className="size-3.5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="p-6">
-            <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+            <div className="mx-auto max-w-2xl space-y-4 text-muted-foreground text-sm leading-relaxed">
               <p>
                 Jia Wei holds a Bachelor&apos;s degree in Computer Science from
                 the University of Glasgow and has over 7 years of professional
@@ -243,24 +250,28 @@ export default function TeamSection() {
           </div>
 
           {/* Career timeline visualization */}
-          <div className="border-border border-t border-dashed px-6 py-5">
-            <p className="mb-4 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
-              Career journey
-            </p>
-            <CareerTimeline />
+          <div className="relative border-border border-t border-dashed px-6 py-5">
+            <div className="mx-auto max-w-2xl">
+              <p className="mb-4 text-[9px] text-muted-foreground/50 uppercase tracking-widest">
+                Career journey
+              </p>
+              <CareerTimeline />
+            </div>
           </div>
 
-          <div className="border-border border-t border-dashed p-6">
-            <blockquote className="border-l-4 pl-4">
-              <p className="text-muted-foreground text-sm">
-                In music theory, A Major is the key that defines the structure,
-                letting every instrument play in harmony. That&apos;s what we
-                build.
-              </p>
-              <cite className="mt-4 block font-medium text-sm">
+          <div className="relative border-border border-t border-dashed p-6">
+            <div className="mx-auto max-w-2xl">
+              <blockquote className="border-l-4 pl-4">
+                <p className="text-muted-foreground text-sm">
+                  In music theory, A Major is the key that defines the
+                  structure, letting every instrument play in harmony.
+                  That&apos;s what we build.
+                </p>
+              </blockquote>
+              <cite className="mt-4 block pl-4 font-medium text-sm not-italic">
                 Jia Wei Ng, Founder
               </cite>
-            </blockquote>
+            </div>
           </div>
         </div>
       </FadeIn>

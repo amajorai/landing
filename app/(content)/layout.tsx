@@ -4,7 +4,7 @@ export default function ContentLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen px-6 pt-16 pb-16 lg:pt-30">
+    <main className="min-h-screen px-6 pt-20 pb-16 lg:pt-30">
       <div className="mx-auto max-w-2xl">{children}</div>
     </main>
   );

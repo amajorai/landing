@@ -56,9 +56,30 @@ export default function Header() {
             scrollState.visible ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <ProgressiveBlur useThemeBackground={true} />
+          <ProgressiveBlur
+            className="lg:hidden"
+            height="90px"
+            useThemeBackground={true}
+          />
+          <ProgressiveBlur
+            className="hidden lg:block"
+            useThemeBackground={true}
+          />
           <div className="relative z-[60] m-auto px-6 py-2">
-            <div className="relative flex items-center py-3 lg:py-4">
+            <div className="relative flex items-center pt-6 pb-3 lg:py-4">
+              {/* Mobile logo — centered, hidden on desktop */}
+              <div className="absolute left-1/2 -translate-x-1/2 lg:hidden">
+                <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
+                  <Link
+                    aria-label="home"
+                    className="flex items-center"
+                    href="/"
+                  >
+                    <Logo />
+                  </Link>
+                </FadeIn>
+              </div>
+
               {/* Logo + Nav links — centered */}
               <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
@@ -136,8 +157,8 @@ export default function Header() {
           useThemeBackground={true}
         />
         <nav className="fixed bottom-0 z-60 w-full">
-          <div className="relative flex items-center justify-around px-6 pt-3 pb-6">
-            {/* Left 2 items */}
+          <div className="relative grid grid-cols-5 items-center px-6 pt-3 pb-6">
+            {/* Slots 0–1: left items */}
             {menuItems.slice(0, 2).map((item, index) => {
               const Icon = item.icon;
               return item.href.startsWith("/") ? (
@@ -163,10 +184,10 @@ export default function Header() {
               );
             })}
 
-            {/* Center spacer to reserve space for floating button */}
-            <div className="w-14" />
+            {/* Slot 2: invisible placeholder — Plus button floats here */}
+            <div aria-hidden="true" />
 
-            {/* Right 2 items */}
+            {/* Slots 3–4: right items */}
             {menuItems.slice(2).map((item, index) => {
               const Icon = item.icon;
               return item.href.startsWith("/") ? (
@@ -194,7 +215,7 @@ export default function Header() {
 
             {/* Floating center Book button — elevated above the bar */}
             <button
-              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+              className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
               onClick={async () => {
                 const cal = await getCalApi({ namespace: "amajor" });
                 cal("modal", {

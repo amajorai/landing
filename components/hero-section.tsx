@@ -32,7 +32,7 @@ export default function HeroSection() {
     <>
       <main className="pt-6 lg:pt-20">
         <section className="overflow-hidden bg-white dark:bg-transparent">
-          <div className="relative mx-auto max-w-5xl px-6 py-12 lg:py-14">
+          <div className="relative mx-auto max-w-5xl px-6 py-20 lg:py-14">
             <div className="relative z-10 mx-auto">
               <FadeIn direction="down" duration={0.6}>
                 <h1 className="font-semibold text-2xl tracking-tighter">

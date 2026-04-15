@@ -1,4 +1,22 @@
+import {
+  AlertTriangle,
+  BookOpen,
+  CheckCircle2,
+  ChevronRight,
+  ExternalLink,
+  GraduationCap,
+  Lightbulb,
+  Users,
+  Wrench,
+} from "lucide-react";
+import Link from "next/link";
 import { ServiceLogo } from "@/components/services/service-logo";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { type ServiceConfig, servicesConfig } from "@/lib/services-config";
@@ -152,6 +170,20 @@ const categoryLabel: Record<string, string> = {
   design: "Design",
   cms: "CMS",
   tooling: "Tooling",
+  database: "Database",
+  auth: "Auth",
+  payments: "Payments",
+  offering: "Service",
+};
+
+const linkTypeIcon: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
+  docs: BookOpen,
+  tutorial: GraduationCap,
+  community: Users,
+  tool: Wrench,
 };
 
 interface TechPageLayoutProps {
@@ -160,19 +192,40 @@ interface TechPageLayoutProps {
 
 export function TechPageLayout({ service }: TechPageLayoutProps) {
   const Visualization = vizMap[service.visualizationKey] ?? null;
+  const challengesHeading =
+    service.pageType === "cms" ? "Common problems" : "Why it's hard";
 
   return (
     <div className="mx-auto max-w-4xl space-y-16">
+      {/* Breadcrumb */}
       <FadeIn>
-        <section className="space-y-8 py-8">
-          {/* Visualization above header */}
+        <nav
+          aria-label="Breadcrumb"
+          className="flex items-center gap-1.5 pt-4 text-muted-foreground text-sm"
+        >
+          <Link className="transition-colors hover:text-foreground" href="/">
+            Home
+          </Link>
+          <ChevronRight className="h-3.5 w-3.5" />
+          <Link
+            className="transition-colors hover:text-foreground"
+            href="/services"
+          >
+            Services
+          </Link>
+          <ChevronRight className="h-3.5 w-3.5" />
+          <span className="text-foreground">{service.name}</span>
+        </nav>
+      </FadeIn>
+
+      <FadeIn>
+        <section className="space-y-8">
           {Visualization && (
             <div className="mb-20 h-[200px] w-full lg:h-[260px]">
               <Visualization />
             </div>
           )}
 
-          {/* Eyebrow: logo + category badge */}
           <div className="flex items-center gap-3">
             <ServiceLogo service={service} size={28} />
             <span className="rounded-full border border-border px-3 py-1 font-mono text-muted-foreground text-xs uppercase tracking-wider">
@@ -180,18 +233,167 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
             </span>
           </div>
 
-          {/* Page header */}
           <PageHeader line1={service.name} line2={service.tagline} />
 
-          {/* Description */}
           <p className="max-w-2xl text-muted-foreground leading-relaxed">
             {service.description}
           </p>
 
-          {/* Feature cards */}
+          {/* Overview — longer SEO-rich paragraph */}
+          {service.overview && (
+            <div className="max-w-2xl space-y-2 border-border border-l-2 pl-4">
+              <p className="text-muted-foreground leading-relaxed">
+                {service.overview}
+              </p>
+            </div>
+          )}
+
+          {/* Quickstart */}
+          {service.quickstart && (
+            <div className="space-y-3">
+              <h2 className="font-semibold text-lg">Quick start</h2>
+              <div className="overflow-x-auto rounded-lg border border-border bg-muted/30 p-4">
+                <pre className="font-mono text-sm leading-relaxed">
+                  <code>{service.quickstart}</code>
+                </pre>
+              </div>
+              {service.docsUrl && (
+                <p className="text-muted-foreground text-sm">
+                  Read the full documentation at{" "}
+                  <a
+                    className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80"
+                    href={service.docsUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {service.docsUrl.replace(/^https?:\/\//, "")}
+                  </a>
+                </p>
+              )}
+            </div>
+          )}
+
           <FeatureCards features={service.features} />
         </section>
       </FadeIn>
+
+      {/* Challenges */}
+      {service.challenges && service.challenges.length > 0 && (
+        <FadeIn>
+          <section>
+            <h2 className="mb-6 font-semibold text-xl">{challengesHeading}</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {service.challenges.map((challenge) => (
+                <div
+                  className="rounded-lg border border-border border-dashed p-5"
+                  key={challenge.title}
+                >
+                  <div className="mb-2 flex items-center gap-2">
+                    <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500" />
+                    <h3 className="font-medium text-sm">{challenge.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {challenge.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
+      {/* Best practices */}
+      {service.bestPractices && service.bestPractices.length > 0 && (
+        <FadeIn>
+          <section>
+            <h2 className="mb-6 font-semibold text-xl">Best practices</h2>
+            <div className="space-y-4">
+              {service.bestPractices.map((bp) => (
+                <div
+                  className="rounded-lg border border-border border-dashed p-5"
+                  key={bp.tip}
+                >
+                  <div className="mb-1 flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                    <h3 className="font-medium text-sm">{bp.tip}</h3>
+                  </div>
+                  {bp.detail && (
+                    <p className="ml-6 text-muted-foreground text-sm leading-relaxed">
+                      {bp.detail}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
+      {/* Useful links */}
+      {service.usefulLinks && service.usefulLinks.length > 0 && (
+        <FadeIn>
+          <section>
+            <h2 className="mb-6 font-semibold text-xl">Useful resources</h2>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {service.usefulLinks.map((link) => {
+                const Icon = linkTypeIcon[link.type] ?? Lightbulb;
+                return (
+                  <a
+                    className="group flex items-center gap-3 rounded-lg border border-border border-dashed p-4 transition-colors hover:bg-muted/30"
+                    href={link.url}
+                    key={link.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Icon className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    <span className="flex-1 font-medium text-sm">
+                      {link.title}
+                    </span>
+                    <ExternalLink className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
+      {/* FAQ */}
+      {service.faq && service.faq.length > 0 && (
+        <FadeIn>
+          <section>
+            <h2 className="mb-6 font-semibold text-xl">
+              Frequently asked questions
+            </h2>
+            <div className="rounded-lg border border-border border-dashed">
+              <div className="px-6 py-6">
+                <Accordion className="w-full" collapsible type="single">
+                  {service.faq.map((item, i) => (
+                    <div className="group" key={i}>
+                      <AccordionItem
+                        className="border-none px-0 py-1"
+                        value={`faq-${i}`}
+                      >
+                        <AccordionTrigger className="cursor-pointer font-semibold text-base hover:no-underline">
+                          {item.question}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
+                      {i < service.faq!.length - 1 && (
+                        <hr className="border-dashed peer-data-[state=open]:opacity-0" />
+                      )}
+                    </div>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+      )}
 
       {/* Sub-tech cards */}
       {service.subTechs.length > 0 && (

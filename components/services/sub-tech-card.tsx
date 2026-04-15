@@ -19,9 +19,9 @@ export function SubTechCard({ subTech, service }: SubTechCardProps) {
           {service?.name ?? subTech.slug}
         </h3>
       </div>
-      {(service?.tagline ?? subTech.description) && (
+      {service?.tagline && (
         <p className="text-muted-foreground text-sm leading-relaxed">
-          {service?.tagline ?? subTech.description}
+          {service.tagline}
         </p>
       )}
     </Link>

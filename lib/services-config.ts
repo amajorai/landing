@@ -10,14 +10,38 @@ export type ServiceCategory =
   | "auth"
   | "payments";
 
+export type PageType = "tech" | "cms" | "offering";
+export type TargetAudience = "developers" | "businesses" | "both";
+
 export interface SubTech {
   slug: string;
 }
 
 export interface ServiceFeature {
-  icon: string; // Lucide icon name
+  icon: string;
+  title: string;
+  description?: string;
+}
+
+export interface ServiceChallenge {
   title: string;
   description: string;
+}
+
+export interface ServiceBestPractice {
+  tip: string;
+  detail?: string;
+}
+
+export interface ServiceLink {
+  title: string;
+  url: string;
+  type: "docs" | "tutorial" | "community" | "tool";
+}
+
+export interface ServiceFaq {
+  question: string;
+  answer: string;
 }
 
 export interface ServiceConfig {
@@ -28,12 +52,21 @@ export interface ServiceConfig {
   description: string;
   accentColor: string;
   visualizationKey: string;
-  logo: string | null; // path under /logos/services/ (light mode)
-  logoDark?: string | null; // alternate path for dark mode
-  logoDarkInvert?: boolean; // invert light logo on dark mode instead of swapping
-  lucideIcon?: string; // Lucide icon name used when logo is null
+  logo: string | null;
+  logoDark?: string | null;
+  logoDarkInvert?: boolean;
+  lucideIcon?: string;
   features: ServiceFeature[];
   subTechs: SubTech[];
+  pageType?: PageType;
+  targetAudience?: TargetAudience;
+  overview?: string;
+  challenges?: ServiceChallenge[];
+  bestPractices?: ServiceBestPractice[];
+  usefulLinks?: ServiceLink[];
+  faq?: ServiceFaq[];
+  quickstart?: string;
+  docsUrl?: string;
 }
 
 export const servicesConfig: ServiceConfig[] = [
@@ -42,6 +75,8 @@ export const servicesConfig: ServiceConfig[] = [
     slug: "react",
     name: "React",
     category: "frontend",
+    pageType: "tech",
+    targetAudience: "developers",
     tagline: "Fast, interactive UIs that users love",
     description:
       "We build production-grade React applications — from marketing sites to complex SaaS dashboards. Our team works with the full React ecosystem including Next.js for server-side rendering and React Native for mobile.",
@@ -98,6 +133,88 @@ export const servicesConfig: ServiceConfig[] = [
       },
       {
         slug: "trpc",
+      },
+    ],
+    overview:
+      "React is a JavaScript library for building user interfaces, maintained by Meta and a massive open-source community. It introduced the component model that most modern UI frameworks now follow — composable, declarative views driven by state. React dominates the frontend landscape powering everything from startups to Fortune 500 dashboards. But building production-grade React apps requires deep knowledge of rendering strategies, state management, performance tuning, and the ever-evolving ecosystem.",
+    challenges: [
+      {
+        title: "State management complexity",
+        description:
+          "As apps grow, choosing between Context, Redux, Zustand, Jotai, or server state libraries like TanStack Query becomes a critical architectural decision that's hard to reverse.",
+      },
+      {
+        title: "Server vs. client components",
+        description:
+          "React Server Components and the App Router fundamentally change how you think about data fetching, but mixing server and client boundaries introduces subtle bugs and performance pitfalls.",
+      },
+      {
+        title: "Performance at scale",
+        description:
+          "Re-renders, bundle size, hydration costs, and Core Web Vitals all demand careful attention — what works in a demo breaks in production with real data.",
+      },
+      {
+        title: "Ecosystem churn",
+        description:
+          "The React ecosystem moves fast. Keeping up with new patterns (RSC, use(), Server Actions) while maintaining existing code is a full-time job.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Co-locate state with the components that use it",
+        detail:
+          "Avoid lifting state higher than necessary. Use composition and component boundaries to keep re-renders contained.",
+      },
+      {
+        tip: "Default to Server Components",
+        detail:
+          "In Next.js App Router, keep components on the server unless they need interactivity. This reduces bundle size and speeds up initial load.",
+      },
+      {
+        tip: "Use Suspense boundaries for data loading",
+        detail:
+          "Wrap async components in Suspense to show loading states without blocking the entire page from rendering.",
+      },
+      {
+        tip: "Memoize expensive computations, not everything",
+        detail:
+          "useMemo and useCallback help with genuinely expensive work, but over-memoization adds complexity with no benefit.",
+      },
+    ],
+    usefulLinks: [
+      { title: "React Documentation", url: "https://react.dev", type: "docs" },
+      { title: "Next.js Docs", url: "https://nextjs.org/docs", type: "docs" },
+      {
+        title: "TanStack Query",
+        url: "https://tanstack.com/query",
+        type: "tool",
+      },
+      {
+        title: "React TypeScript Cheatsheet",
+        url: "https://react-typescript-cheatsheet.netlify.app",
+        type: "tutorial",
+      },
+    ],
+    faq: [
+      {
+        question: "When should I use React vs. Vue or Svelte?",
+        answer:
+          "React is the best choice when you need a large talent pool, a mature ecosystem, and long-term support. Vue excels for progressive adoption, and Svelte for smaller apps with minimal overhead. For enterprise or SaaS projects, React's ecosystem is unmatched.",
+      },
+      {
+        question: "Do I need Next.js to use React?",
+        answer:
+          "No — React works standalone with Vite or other bundlers. But Next.js adds server-side rendering, file-based routing, and API routes that most production apps need. We recommend Next.js for any project that values SEO or fast initial loads.",
+      },
+      {
+        question: "How much does it cost to build a React application?",
+        answer:
+          "Costs vary widely based on complexity. A marketing site might be $5K–15K, while a full SaaS dashboard can be $30K–100K+. We scope every project with a free consultation so you know exactly what you're paying for.",
+      },
+      {
+        question: "Can you take over an existing React codebase?",
+        answer:
+          "Absolutely. We regularly inherit codebases, audit them for tech debt and performance issues, and incrementally improve them while shipping new features.",
       },
     ],
   },
@@ -266,6 +383,8 @@ export const servicesConfig: ServiceConfig[] = [
     slug: "wordpress",
     name: "WordPress",
     category: "cms",
+    pageType: "cms",
+    targetAudience: "businesses",
     tagline: "Content-driven sites your team can actually manage",
     description:
       "We build custom WordPress sites that go far beyond themes — bespoke Gutenberg block libraries, headless WP with Next.js frontends, and WooCommerce stores optimized for conversion.",
@@ -319,6 +438,96 @@ export const servicesConfig: ServiceConfig[] = [
       },
       {
         slug: "react",
+      },
+    ],
+    overview:
+      "WordPress powers over 40% of all websites on the internet — from small business sites to major publishers. But most WordPress sites are slow, insecure, and hard to maintain because they were built with off-the-shelf themes and too many plugins. We build WordPress differently: custom block editors your team can actually use, headless architectures for blazing-fast frontends, and WooCommerce stores that convert. Whether you need a redesign, migration, or ground-up build, we deliver WordPress that performs.",
+    challenges: [
+      {
+        title: "Plugin bloat and security risks",
+        description:
+          "Most WordPress sites rely on dozens of plugins that conflict, slow down page loads, and create security vulnerabilities. Each plugin is a potential attack surface.",
+      },
+      {
+        title: "Slow page speeds",
+        description:
+          "Generic themes and unoptimized hosting cause poor Core Web Vitals scores, hurting both user experience and Google rankings.",
+      },
+      {
+        title: "Difficult content management",
+        description:
+          "Without custom block editors, your team is stuck fighting page builders or editing raw HTML — neither is productive.",
+      },
+      {
+        title: "Migration complexity",
+        description:
+          "Moving from another platform (Wix, Squarespace, Drupal) to WordPress without losing SEO equity, content, or redirects requires careful planning.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use custom Gutenberg blocks instead of page builders",
+        detail:
+          "Page builders add 500KB+ of JS and make content locked-in. Custom blocks give editors the same drag-and-drop feel with clean, portable markup.",
+      },
+      {
+        tip: "Implement full-page caching and a CDN",
+        detail:
+          "WordPress should serve cached HTML from edge servers — typical TTFB drops from 2s to under 200ms.",
+      },
+      {
+        tip: "Minimize plugins, maximize custom code",
+        detail:
+          "Every plugin is a dependency you don't control. Build critical functionality as custom plugins or theme functions.",
+      },
+      {
+        tip: "Set up staging environments and version control",
+        detail:
+          "Never edit production directly. Use Git-based workflows with staging deployments so changes are tested before going live.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "WordPress Developer Resources",
+        url: "https://developer.wordpress.org",
+        type: "docs",
+      },
+      {
+        title: "WordPress Block Editor Handbook",
+        url: "https://developer.wordpress.org/block-editor",
+        type: "docs",
+      },
+      {
+        title: "WPBeginner Guides",
+        url: "https://www.wpbeginner.com",
+        type: "tutorial",
+      },
+      {
+        title: "WordPress Security Best Practices",
+        url: "https://wordpress.org/documentation/article/hardening-wordpress/",
+        type: "docs",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does a WordPress redesign cost?",
+        answer:
+          "A custom WordPress redesign typically ranges from $5,000 to $25,000 depending on the number of page templates, custom functionality, and content migration needs. We provide detailed quotes after a free consultation.",
+      },
+      {
+        question: "WordPress vs Webflow — which should I choose?",
+        answer:
+          "Webflow is great for simple marketing sites with visual editing. WordPress wins when you need e-commerce (WooCommerce), complex content workflows, multilingual support, or deep integrations. We help you make the right call.",
+      },
+      {
+        question: "Can you migrate my site to WordPress without losing SEO?",
+        answer:
+          "Yes. We handle full content migration with 301 redirects, metadata transfer, and schema markup preservation so your search rankings stay intact.",
+      },
+      {
+        question: "Do you offer WordPress maintenance and hosting?",
+        answer:
+          "We offer ongoing maintenance plans that include security updates, performance monitoring, backups, and priority support. Hosting is available through our managed infrastructure partners.",
       },
     ],
   },
@@ -1953,6 +2162,8 @@ export const servicesConfig: ServiceConfig[] = [
     slug: "woocommerce",
     name: "WooCommerce",
     category: "cms",
+    pageType: "cms",
+    targetAudience: "businesses",
     tagline: "E-commerce on WordPress that converts",
     description:
       "WooCommerce powers 30% of all online stores. We build custom WooCommerce experiences — bespoke product pages, checkout flows, payment gateway integrations, and headless storefronts with fast frontends.",
@@ -1986,6 +2197,86 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     subTechs: [{ slug: "wordpress" }, { slug: "stripe" }],
+    overview:
+      "WooCommerce is the most popular e-commerce platform in the world, powering over 5 million online stores. Built on WordPress, it gives you full control over your store — products, checkout, shipping, taxes, and payments. But turning WooCommerce into a high-converting, fast, and scalable store requires custom development far beyond installing a theme. We build WooCommerce stores that are optimized for conversion, speed, and your specific business model.",
+    challenges: [
+      {
+        title: "Slow page loads hurt conversions",
+        description:
+          "Default WooCommerce themes are bloated. Every extra second of load time can reduce conversions by 7% — and most stores load in 4+ seconds.",
+      },
+      {
+        title: "Checkout abandonment",
+        description:
+          "Complex or generic checkout flows cause 70% of shoppers to abandon their cart. Custom checkout UX tailored to your products makes the difference.",
+      },
+      {
+        title: "Payment gateway integration",
+        description:
+          "Connecting Stripe, PayPal, local payment methods, subscriptions, and split payments requires custom plugin work that theme settings can't handle.",
+      },
+      {
+        title: "Scaling with traffic",
+        description:
+          "WooCommerce on shared hosting falls over during sales events. Proper caching, CDN, and database optimization are essential for growth.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Optimize product images with WebP and lazy loading",
+        detail:
+          "Compress product images to WebP format and lazy-load below-the-fold images to cut page weight by 60%+.",
+      },
+      {
+        tip: "Simplify the checkout to one page",
+        detail:
+          "Remove unnecessary fields, enable guest checkout, and integrate express payment (Apple Pay, Google Pay) to reduce abandonment.",
+      },
+      {
+        tip: "Use object caching for database queries",
+        detail:
+          "Redis or Memcached object caching can reduce WooCommerce database queries by 80%, dramatically improving response times.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "WooCommerce Documentation",
+        url: "https://woocommerce.com/documentation/",
+        type: "docs",
+      },
+      {
+        title: "WooCommerce Developer Blog",
+        url: "https://developer.woocommerce.com/blog/",
+        type: "community",
+      },
+      {
+        title: "Stripe for WooCommerce",
+        url: "https://woocommerce.com/products/stripe/",
+        type: "tool",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does a custom WooCommerce store cost?",
+        answer:
+          "Custom WooCommerce stores typically range from $8,000 to $40,000+ depending on product catalog size, custom features (subscriptions, configurators), and third-party integrations. We scope every project individually.",
+      },
+      {
+        question: "Can you migrate my Shopify store to WooCommerce?",
+        answer:
+          "Yes. We handle full migrations from Shopify, Magento, BigCommerce, and other platforms — including products, orders, customers, and SEO redirects.",
+      },
+      {
+        question: "WooCommerce vs Shopify — which is better?",
+        answer:
+          "Shopify is simpler to start with but charges transaction fees and limits customization. WooCommerce gives you full control, no transaction fees, and infinite flexibility — but requires proper development to get right. We make WooCommerce work like it should.",
+      },
+      {
+        question: "Do you build WooCommerce plugins?",
+        answer:
+          "Yes. We build custom WooCommerce plugins for specific business logic — custom shipping calculators, product configurators, B2B pricing engines, and more.",
+      },
+    ],
   },
   {
     slug: "mongoose",

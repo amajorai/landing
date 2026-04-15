@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ServiceLogo } from "@/components/services/service-logo";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { offeringsConfig } from "@/lib/offerings-config";
 import {
   authServices,
   backendServices,
@@ -29,6 +30,24 @@ function ServiceNavItem({ service }: { service: ServiceConfig }) {
   );
 }
 
+function OfferingNavItem({
+  offering,
+}: {
+  offering: (typeof offeringsConfig)[number];
+}) {
+  return (
+    <NavigationMenuLink asChild className="flex-row items-center gap-2.5 p-0">
+      <Link
+        className="flex items-center gap-2.5 rounded-sm px-2 py-1.5 transition-colors hover:bg-accent"
+        href={`/services/${offering.slug}` as any}
+      >
+        <ServiceLogo service={offering as unknown as ServiceConfig} size={16} />
+        <span className="text-sm">{offering.name}</span>
+      </Link>
+    </NavigationMenuLink>
+  );
+}
+
 function Column({
   label,
   services,
@@ -52,7 +71,23 @@ function Column({
 
 export function ServicesNavContent() {
   return (
-    <div className="w-[600px] p-3">
+    <div className="w-[640px] p-3">
+      {/* Offerings row */}
+      <div className="mb-3 border-border border-b pb-3">
+        <p className="mb-1 px-2 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+          Our services
+        </p>
+        <div className="grid grid-cols-4 gap-x-2">
+          {offeringsConfig.map((o) => (
+            <OfferingNavItem key={o.slug} offering={o} />
+          ))}
+        </div>
+      </div>
+
+      {/* Tech stack grid */}
+      <p className="mb-1 px-2 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+        Technology expertise
+      </p>
       <div className="grid grid-cols-4 gap-x-4 gap-y-4">
         <div className="space-y-4">
           <Column label="Frontend" services={frontendServices} />

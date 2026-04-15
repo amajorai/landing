@@ -20,10 +20,30 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
+
+const featureSlugMap: Record<string, string> = {
+  "Web design": "web-design",
+  "Web apps": "web-apps",
+  "Mobile apps": "mobile-apps",
+  "Browser extensions": "browser-extensions",
+  "Enterprise systems": "enterprise-systems",
+  "SaaS products": "saas-products",
+  "UI/UX design": "ui-ux-design",
+  "DevOps & infrastructure": "devops",
+  "Performance optimisation": "performance-optimization",
+  "MVP scoping": "mvp-scoping",
+  "Legacy modernisation": "legacy-modernisation",
+  "Digital transformation": "digital-transformation",
+  "White-label builds": "white-label",
+  "SEO optimisation": "seo-optimization",
+  "Full deployment": "full-deployment",
+  Consultancy: "consultancy",
+};
 
 // ── Visual components ───────────────────────────────────────────────────────
 
@@ -1258,17 +1278,15 @@ export default function FeaturesSection() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const isFullWidth = feature.className.includes("col-span-2");
-            return (
-              <div
-                className={[
-                  "relative space-y-6 overflow-hidden border-border border-r border-b border-dashed p-10",
-                  feature.className,
-                ].join(" ")}
-                key={index}
-                style={{
-                  minHeight: "300px",
-                }}
-              >
+            const slug = featureSlugMap[feature.title];
+            const cardClass = [
+              "group relative space-y-6 overflow-hidden border-border border-r border-b border-dashed p-10 transition-colors hover:bg-muted/20",
+              feature.className,
+            ].join(" ");
+            const cardStyle = { minHeight: "300px" };
+
+            const inner = (
+              <>
                 <div className="flex items-center gap-2">
                   <Icon className="size-4 shrink-0 text-muted-foreground" />
                   <h3 className="font-medium text-base">{feature.title}</h3>
@@ -1291,6 +1309,25 @@ export default function FeaturesSection() {
                   </div>
                 )}
                 {feature.visual}
+              </>
+            );
+
+            if (slug) {
+              return (
+                <Link
+                  className={cardClass}
+                  href={`/services/${slug}`}
+                  key={index}
+                  style={cardStyle}
+                >
+                  {inner}
+                </Link>
+              );
+            }
+
+            return (
+              <div className={cardClass} key={index} style={cardStyle}>
+                {inner}
               </div>
             );
           })}

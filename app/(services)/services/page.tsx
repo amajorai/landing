@@ -3,6 +3,8 @@ import { ServiceLogo } from "@/components/services/service-logo";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata as genMeta } from "@/lib/metadata";
+import { offeringsConfig } from "@/lib/offerings-config";
+import type { ServiceConfig } from "@/lib/services-config";
 import {
   authServices,
   backendServices,
@@ -17,10 +19,17 @@ import {
 } from "@/lib/services-config";
 
 export const metadata = genMeta({
-  title: "Services",
+  title: "Services | Singapore Software Agency",
   description:
-    "Full-stack engineering across React, Vue, Svelte, .NET, Laravel, Python, Kotlin, Swift, Tauri, and more.",
+    "Full-stack software development services — web design, mobile apps, SaaS, enterprise systems, SEO, and 60+ technology stacks. Singapore-based agency serving clients worldwide.",
   url: "/services",
+  tags: [
+    "software development services",
+    "web design Singapore",
+    "mobile app development",
+    "SaaS development",
+    "software agency Singapore",
+  ],
 });
 
 const categoryGroups = [
@@ -43,8 +52,55 @@ export default function ServicesPage() {
         <div className="mb-12 pt-4">
           <PageHeader
             line1="Services"
-            line2="Whatever your stack, we've shipped it before."
+            line2="Whatever you need built, we've shipped it before."
           />
+          <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
+            From web design and mobile apps to enterprise systems and SaaS
+            products — we offer end-to-end software development services. Pick a
+            service to learn more, or browse our technology expertise below.
+          </p>
+        </div>
+      </FadeIn>
+
+      {/* Offering services grid */}
+      <FadeIn>
+        <section className="mb-16" id="our-services">
+          <h2 className="mb-4 font-mono text-muted-foreground text-xs uppercase tracking-wider">
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">
+            {offeringsConfig.map((offering) => (
+              <Link
+                className="group block border-border border-r border-b border-dashed p-5 transition-colors hover:bg-muted/30"
+                href={`/services/${offering.slug}` as any}
+                key={offering.slug}
+              >
+                <div className="mb-3 flex items-center gap-2.5">
+                  <ServiceLogo
+                    service={offering as unknown as ServiceConfig}
+                    size={20}
+                  />
+                  <h3 className="font-medium text-base">{offering.name}</h3>
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {offering.tagline}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </FadeIn>
+
+      {/* Technology stack grid */}
+      <FadeIn>
+        <div className="mb-6">
+          <h2 className="font-semibold text-xl" id="tech-stack">
+            Technology expertise
+          </h2>
+          <p className="mt-2 text-muted-foreground text-sm">
+            We work with 60+ technologies across the full stack. Each page below
+            explains what we build with that technology and how we can help.
+          </p>
         </div>
       </FadeIn>
 

@@ -276,7 +276,7 @@ export function S3Visualization() {
             to.y,
             color,
             progress,
-            step.thick,
+            step.thick ?? false,
             step.label,
             yOff
           );

@@ -97,7 +97,9 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
     applicationName: siteConfig.name,
     authors: siteConfig.authors,
     creator: siteConfig.creator,
-    keywords: siteConfig.keywords,
+    keywords: tags?.length
+      ? [...new Set([...tags, ...siteConfig.keywords])]
+      : siteConfig.keywords,
     openGraph: {
       title: pageTitle,
       description: pageDescription,
@@ -182,11 +184,21 @@ export function generateServiceMetadata(service: {
   name: string;
   description: string;
   slug: string;
+  pageType?: string;
+  category?: string;
 }): Metadata {
+  const suffix = service.pageType === "offering" ? "Services" : "Development";
   return generateMetadata({
-    title: `${service.name} Development`,
+    title: `${service.name} ${suffix} | Singapore Software Agency`,
     description: service.description,
     url: `/services/${service.slug}`,
+    tags: [
+      service.name,
+      `${service.name} Singapore`,
+      `${service.name} agency`,
+      "software development",
+      "A Major",
+    ],
   });
 }
 

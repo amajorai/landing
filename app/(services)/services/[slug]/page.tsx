@@ -35,10 +35,15 @@ export async function generateMetadata({
   const titleSuffix =
     service.pageType === "offering" ? "Services" : "Development";
   const locationTag = " | Singapore Software Agency";
+  const description =
+    service.description +
+    (service.overview
+      ? ` ${service.overview.split(".").slice(0, 2).join(".")}.`
+      : "");
 
   return genMeta({
     title: `${service.name} ${titleSuffix}${locationTag}`,
-    description: service.description,
+    description: description.slice(0, 320),
     url: `/services/${service.slug}`,
     tags: buildKeywords(service),
   });
@@ -46,15 +51,24 @@ export async function generateMetadata({
 
 function buildKeywords(service: AnyService): string[] {
   const base = [service.name, "Singapore", "agency", "A Major"];
+  const nameLower = service.name.toLowerCase();
 
   if (service.pageType === "tech") {
     return [
       ...base,
       `${service.name} developer`,
       `${service.name} development`,
+      `${service.name} development company`,
       `hire ${service.name} developer`,
+      `hire ${service.name} developer Singapore`,
       `${service.name} agency Singapore`,
       `${service.name} best practices`,
+      `${service.name} consulting`,
+      `${service.name} freelancer vs agency`,
+      `${nameLower} development cost`,
+      `build with ${service.name}`,
+      `${service.name} for startups`,
+      `${service.name} for enterprise`,
     ];
   }
   if (service.pageType === "cms") {
@@ -63,8 +77,16 @@ function buildKeywords(service: AnyService): string[] {
       `${service.name} agency`,
       `${service.name} redesign`,
       `${service.name} developer Singapore`,
+      `${service.name} development company`,
       `${service.name} migration`,
+      `${service.name} migration service`,
       `${service.name} maintenance`,
+      `${service.name} customization`,
+      `custom ${service.name} development`,
+      `${service.name} speed optimization`,
+      `${service.name} security`,
+      `${nameLower} website cost`,
+      `hire ${service.name} expert`,
     ];
   }
   return [
@@ -72,7 +94,15 @@ function buildKeywords(service: AnyService): string[] {
     `${service.name} company Singapore`,
     `${service.name} services`,
     `${service.name} agency`,
-    `hire ${service.name.toLowerCase()} experts`,
+    `${nameLower} services Singapore`,
+    `hire ${nameLower} experts`,
+    `${nameLower} company`,
+    `${nameLower} cost`,
+    `${nameLower} for small business`,
+    `${nameLower} for startups`,
+    `best ${nameLower} agency`,
+    `outsource ${nameLower}`,
+    `${nameLower} consulting`,
   ];
 }
 

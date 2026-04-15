@@ -22,12 +22,16 @@ import {
 } from "@/components/ui/accordion";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
+import { offeringsConfig } from "@/lib/offerings-config";
 import { type ServiceConfig, servicesConfig } from "@/lib/services-config";
 import { FeatureCards } from "./feature-cards";
 import { QuickstartBlock } from "./quickstart-block";
 import { ServiceCta } from "./service-cta";
 import { SubTechCard } from "./sub-tech-card";
+import { ApiDevelopmentVisualization } from "./visualizations/api-development-visualization";
 import { AstroVisualization } from "./visualizations/astro-visualization";
+import { AwsVisualization } from "./visualizations/aws-visualization";
+import { AzureVisualization } from "./visualizations/azure-visualization";
 import { BetterAuthVisualization } from "./visualizations/better-auth-visualization";
 import { BlazorVisualization } from "./visualizations/blazor-visualization";
 import { BootstrapVisualization } from "./visualizations/bootstrap-visualization";
@@ -37,37 +41,50 @@ import { CliVisualization } from "./visualizations/cli-visualization";
 import { CloudflareD1Visualization } from "./visualizations/cloudflare-d1-visualization";
 import { CloudflareWorkersVisualization } from "./visualizations/cloudflare-workers-visualization";
 import { ConsultancyVisualization } from "./visualizations/consultancy-visualization";
+import { ContentfulVisualization } from "./visualizations/contentful-visualization";
 import { ConvexVisualization } from "./visualizations/convex-visualization";
 import { DevopsVisualization } from "./visualizations/devops-visualization";
 import { DigitalTransformationVisualization } from "./visualizations/digital-transformation-visualization";
+import { DirectusVisualization } from "./visualizations/directus-visualization";
 import { DjangoVisualization } from "./visualizations/django-visualization";
 import { DockerVisualization } from "./visualizations/docker-visualization";
 import { DotnetMvcVisualization } from "./visualizations/dotnet-mvc-visualization";
 import { DotnetVisualization } from "./visualizations/dotnet-visualization";
 import { DrizzleVisualization } from "./visualizations/drizzle-visualization";
+import { EcommerceVisualization } from "./visualizations/ecommerce-visualization";
+import { EducationSoftwareVisualization } from "./visualizations/education-software-visualization";
 import { ElectronVisualization } from "./visualizations/electron-visualization";
 import { ElysiaVisualization } from "./visualizations/elysia-visualization";
 import { EnterpriseSystemsVisualization } from "./visualizations/enterprise-systems-visualization";
 import { ExpressVisualization } from "./visualizations/express-visualization";
 import { FastapiVisualization } from "./visualizations/fastapi-visualization";
 import { FastifyVisualization } from "./visualizations/fastify-visualization";
+import { FintechVisualization } from "./visualizations/fintech-visualization";
+import { FirebaseVisualization } from "./visualizations/firebase-visualization";
 import { FlutterVisualization } from "./visualizations/flutter-visualization";
 import { FullDeploymentVisualization } from "./visualizations/full-deployment-visualization";
 import { FumadocsVisualization } from "./visualizations/fumadocs-visualization";
+import { GcpVisualization } from "./visualizations/gcp-visualization";
+import { GhostVisualization } from "./visualizations/ghost-visualization";
+import { GraphqlVisualization } from "./visualizations/graphql-visualization";
+import { HealthcareSoftwareVisualization } from "./visualizations/healthcare-software-visualization";
 import { KotlinVisualization } from "./visualizations/kotlin-visualization";
 import { LaravelVisualization } from "./visualizations/laravel-visualization";
 import { LegacyModernisationVisualization } from "./visualizations/legacy-modernisation-visualization";
+import { LogisticsSoftwareVisualization } from "./visualizations/logistics-software-visualization";
 import { McpVisualization } from "./visualizations/mcp-visualization";
 import { MobileAppsVisualization } from "./visualizations/mobile-apps-visualization";
 import { MongodbVisualization } from "./visualizations/mongodb-visualization";
 import { MongooseVisualization } from "./visualizations/mongoose-visualization";
 import { MvpScopingVisualization } from "./visualizations/mvp-scoping-visualization";
 import { MysqlVisualization } from "./visualizations/mysql-visualization";
+import { NetlifyVisualization } from "./visualizations/netlify-visualization";
 import { NextjsVisualization } from "./visualizations/nextjs-visualization";
 import { NodejsVisualization } from "./visualizations/nodejs-visualization";
 import { NuxtVisualization } from "./visualizations/nuxt-visualization";
 import { NxVisualization } from "./visualizations/nx-visualization";
 import { OrpcVisualization } from "./visualizations/orpc-visualization";
+import { PayloadVisualization } from "./visualizations/payload-visualization";
 import { PerformanceOptimizationVisualization } from "./visualizations/performance-optimization-visualization";
 import { PhpVisualization } from "./visualizations/php-visualization";
 import { PlanetscaleVisualization } from "./visualizations/planetscale-visualization";
@@ -79,15 +96,20 @@ import { PythonVisualization } from "./visualizations/python-visualization";
 import { ReactNativeVisualization } from "./visualizations/react-native-visualization";
 import { ReactRouterVisualization } from "./visualizations/react-router-visualization";
 import { ReactVisualization } from "./visualizations/react-visualization";
+import { RedisVisualization } from "./visualizations/redis-visualization";
 import { RestApiVisualization } from "./visualizations/rest-api-visualization";
 import { RustVisualization } from "./visualizations/rust-visualization";
 import { S3Visualization } from "./visualizations/s3-visualization";
 import { SaasProductsVisualization } from "./visualizations/saas-products-visualization";
+import { SanityVisualization } from "./visualizations/sanity-visualization";
 import { SeoOptimizationVisualization } from "./visualizations/seo-optimization-visualization";
 import { ShadcnVisualization } from "./visualizations/shadcn-visualization";
+import { ShopifyVisualization } from "./visualizations/shopify-visualization";
 import { SolidJsVisualization } from "./visualizations/solidjs-visualization";
 import { SqliteVisualization } from "./visualizations/sqlite-visualization";
 import { StarlightVisualization } from "./visualizations/starlight-visualization";
+import { StartupDevelopmentVisualization } from "./visualizations/startup-development-visualization";
+import { StrapiVisualization } from "./visualizations/strapi-visualization";
 import { StripeVisualization } from "./visualizations/stripe-visualization";
 import { SupabaseVisualization } from "./visualizations/supabase-visualization";
 import { SvelteVisualization } from "./visualizations/svelte-visualization";
@@ -103,10 +125,13 @@ import { TuiVisualization } from "./visualizations/tui-visualization";
 import { TurborepoVisualization } from "./visualizations/turborepo-visualization";
 import { UiUxDesignVisualization } from "./visualizations/ui-ux-design-visualization";
 import { UnistylesVisualization } from "./visualizations/unistyles-visualization";
+import { VercelVisualization } from "./visualizations/vercel-visualization";
 import { VueVisualization } from "./visualizations/vue-visualization";
 import { WasmVisualization } from "./visualizations/wasm-visualization";
 import { WebAppsVisualization } from "./visualizations/web-apps-visualization";
 import { WebDesignVisualization } from "./visualizations/web-design-visualization";
+import { WebflowVisualization } from "./visualizations/webflow-visualization";
+import { WebsiteMigrationVisualization } from "./visualizations/website-migration-visualization";
 import { WhiteLabelVisualization } from "./visualizations/white-label-visualization";
 import { WoocommerceVisualization } from "./visualizations/woocommerce-visualization";
 import { WordpressVisualization } from "./visualizations/wordpress-visualization";
@@ -156,6 +181,12 @@ const vizMap: Record<string, React.ComponentType> = {
   fumadocs: FumadocsVisualization,
   polar: PolarVisualization,
   woocommerce: WoocommerceVisualization,
+  payload: PayloadVisualization,
+  ghost: GhostVisualization,
+  strapi: StrapiVisualization,
+  sanity: SanityVisualization,
+  contentful: ContentfulVisualization,
+  directus: DirectusVisualization,
   starlight: StarlightVisualization,
   electron: ElectronVisualization,
   stripe: StripeVisualization,
@@ -196,6 +227,24 @@ const vizMap: Record<string, React.ComponentType> = {
   "seo-optimization": SeoOptimizationVisualization,
   "full-deployment": FullDeploymentVisualization,
   consultancy: ConsultancyVisualization,
+  shopify: ShopifyVisualization,
+  webflow: WebflowVisualization,
+  firebase: FirebaseVisualization,
+  aws: AwsVisualization,
+  gcp: GcpVisualization,
+  azure: AzureVisualization,
+  vercel: VercelVisualization,
+  netlify: NetlifyVisualization,
+  redis: RedisVisualization,
+  graphql: GraphqlVisualization,
+  "healthcare-software": HealthcareSoftwareVisualization,
+  fintech: FintechVisualization,
+  ecommerce: EcommerceVisualization,
+  "education-software": EducationSoftwareVisualization,
+  "logistics-software": LogisticsSoftwareVisualization,
+  "website-migration": WebsiteMigrationVisualization,
+  "api-development": ApiDevelopmentVisualization,
+  "startup-development": StartupDevelopmentVisualization,
 };
 
 const categoryLabel: Record<string, string> = {
@@ -221,6 +270,39 @@ const linkTypeIcon: Record<
   community: Users,
   tool: Wrench,
 };
+
+function getRelatedOfferings(service: ServiceConfig) {
+  const categoryToOfferings: Record<string, string[]> = {
+    frontend: [
+      "web-design",
+      "web-apps",
+      "saas-products",
+      "performance-optimization",
+    ],
+    backend: [
+      "web-apps",
+      "saas-products",
+      "api-development",
+      "enterprise-systems",
+    ],
+    mobile: ["mobile-apps"],
+    desktop: ["enterprise-systems"],
+    design: ["ui-ux-design", "web-design"],
+    cms: ["web-design", "website-migration", "seo-optimization", "ecommerce"],
+    tooling: ["devops", "full-deployment", "performance-optimization"],
+    database: ["web-apps", "saas-products", "enterprise-systems"],
+    auth: ["saas-products", "enterprise-systems"],
+    payments: ["ecommerce", "saas-products", "fintech"],
+  };
+
+  const relevantSlugs = new Set(categoryToOfferings[service.category] ?? []);
+
+  if (service.targetAudience === "developers") {
+    relevantSlugs.add("consultancy");
+  }
+
+  return offeringsConfig.filter((o) => relevantSlugs.has(o.slug)).slice(0, 4);
+}
 
 interface TechPageLayoutProps {
   service: ServiceConfig;
@@ -255,6 +337,14 @@ function buildTocHeadings(service: ServiceConfig): TocHeading[] {
     headings.push({
       id: "related-technologies",
       text: "Related technologies",
+      level: 1,
+    });
+
+  const relatedOfferings = getRelatedOfferings(service);
+  if (relatedOfferings.length > 0)
+    headings.push({
+      id: "related-services",
+      text: "Related services",
       level: 1,
     });
 
@@ -492,6 +582,41 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
           </section>
         </FadeIn>
       )}
+
+      {/* Related business services */}
+      {(() => {
+        const relatedOfferings = getRelatedOfferings(service);
+        if (relatedOfferings.length === 0) return null;
+        return (
+          <FadeIn>
+            <section>
+              <h2 className="mb-2 font-semibold text-xl" id="related-services">
+                Related services
+              </h2>
+              <p className="mb-6 text-muted-foreground text-sm">
+                Looking for end-to-end delivery? These services complement{" "}
+                {service.name} projects.
+              </p>
+              <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
+                {relatedOfferings.map((offering) => (
+                  <Link
+                    className="group block border-border border-r border-b border-dashed p-5 transition-colors hover:bg-muted/30"
+                    href={`/services/${offering.slug}`}
+                    key={offering.slug}
+                  >
+                    <h3 className="mb-1 font-medium text-sm group-hover:text-foreground">
+                      {offering.name}
+                    </h3>
+                    <p className="text-muted-foreground text-xs leading-relaxed">
+                      {offering.tagline}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </FadeIn>
+        );
+      })()}
 
       {/* CTA — full bleed to edges and bottom */}
       <FadeIn>

@@ -1,7 +1,6 @@
 "use client";
 
 export default function StructuredData() {
-  // Organization schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -13,7 +12,6 @@ export default function StructuredData() {
       "A Major is a Singapore-based software agency specialising in web design, software development, and digital solutions for businesses.",
   };
 
-  // Website schema
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -21,7 +19,6 @@ export default function StructuredData() {
     url: "https://amajor.ai",
   };
 
-  // Service schema
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -38,7 +35,6 @@ export default function StructuredData() {
     },
   };
 
-  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -52,73 +48,18 @@ export default function StructuredData() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "About",
-        item: "https://amajor.ai/#about",
+        name: "Services",
+        item: "https://amajor.ai/services",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Services",
-        item: "https://amajor.ai/#services",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "Contact",
-        item: "https://amajor.ai/#contact",
+        name: "Blog",
+        item: "https://amajor.ai/blog",
       },
     ],
   };
 
-  // FAQ schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What does A Major do?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A Major is a Singapore-based software agency. We build websites, mobile and desktop apps, browser extensions, and enterprise systems for businesses. Clear process, direct communication, and the founder personally involved from first conversation to launch day.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What kind of software do you build?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Websites, mobile and desktop apps, browser extensions, and enterprise systems. If it runs on a screen, we can build it. We work with businesses that need high-performance software built properly, with a founder personally involved in every project.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What does founder-led mean in practice?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "It means Jia Wei, our founder, is directly involved in your project from discovery to launch. You get someone with 7+ years of engineering experience, a CS degree from the University of Glasgow, and a track record across web, mobile, and enterprise platforms.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How long does a project take?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Most projects move from discovery to launch in under 30 days. We scope everything upfront so there are no surprises.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do we get started?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Reach out through our contact form or book a call. We get back to everyone within 24 hours.",
-        },
-      },
-    ],
-  };
-
-  // Local Business schema
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -162,10 +103,6 @@ export default function StructuredData() {
       />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        type="application/ld+json"
-      />
-      <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         type="application/ld+json"
       />
       <script

@@ -13,6 +13,7 @@ import {
   designServices,
   desktopServices,
   frontendServices,
+  fullStackServices,
   mobileServices,
   paymentsServices,
   type ServiceConfig,
@@ -100,6 +101,7 @@ export default function FooterSection() {
           <div className="mb-12 columns-2 gap-x-8 sm:columns-3 md:columns-4 lg:columns-5">
             {[
               { title: "Frontend", services: frontendServices },
+              { title: "Full Stack", services: fullStackServices },
               { title: "Backend", services: backendServices },
               { title: "Database", services: databaseServices },
               { title: "Tooling & DevOps", services: toolingServices },

@@ -1,5 +1,6 @@
 export type ServiceCategory =
   | "frontend"
+  | "full-stack"
   | "backend"
   | "mobile"
   | "desktop"
@@ -4149,7 +4150,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "nextjs",
     name: "Next.js",
-    category: "frontend",
+    category: "full-stack",
     tagline: "The full-stack React framework for production",
     description:
       "Next.js is our primary framework for React applications — App Router, Server Components, streaming SSR, and edge-ready APIs in one cohesive package. It's how we ship fast, SEO-friendly React apps.",
@@ -4444,7 +4445,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "nuxt",
     name: "Nuxt",
-    category: "frontend",
+    category: "full-stack",
     tagline: "The intuitive full-stack Vue framework",
     description:
       "Nuxt 3 brings file-based routing, auto-imports, server API routes, and hybrid rendering to Vue — making full-stack Vue development feel as productive as any other modern framework.",
@@ -5438,6 +5439,885 @@ export const servicesConfig: ServiceConfig[] = [
           "Yes. We build custom WooCommerce plugins for specific business logic — custom shipping calculators, product configurators, B2B pricing engines, and more.",
       },
     ],
+  },
+  {
+    slug: "payload",
+    name: "Payload CMS",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "both",
+    tagline: "The TypeScript-first headless CMS",
+    description:
+      "Payload is an open-source headless CMS and app framework built entirely in TypeScript. We build Payload-powered projects — from content-heavy marketing sites to full SaaS backends with custom admin panels, access control, and API-first content delivery.",
+    accentColor: "blue",
+    visualizationKey: "payload",
+    logo: null,
+    lucideIcon: "Rocket",
+    features: [
+      {
+        icon: "Code2",
+        title: "TypeScript config-as-code",
+        description:
+          "Your entire CMS schema lives in TypeScript config files — version-controlled, type-safe, and refactor-friendly.",
+      },
+      {
+        icon: "Server",
+        title: "Next.js native",
+        description:
+          "Payload v3 runs inside Next.js as a plugin — one deployment, one codebase, zero separate CMS servers.",
+      },
+      {
+        icon: "Shield",
+        title: "Field-level access control",
+        description:
+          "Row, field, and collection-level access policies in code — RBAC, tenant isolation, and custom auth flows without plugins.",
+      },
+      {
+        icon: "Layout",
+        title: "Custom admin UI",
+        description:
+          "The admin panel is React — swap fields, add custom views, build dashboards without fighting a plugin system.",
+      },
+      {
+        icon: "Blocks",
+        title: "Block-based content",
+        description:
+          "Reusable layout blocks with typed fields that editors mix and match — structured content with visual flexibility.",
+      },
+      {
+        icon: "Globe",
+        title: "REST & GraphQL APIs",
+        description:
+          "Auto-generated REST and GraphQL endpoints for every collection — consume content from any frontend or service.",
+      },
+    ],
+    subTechs: [{ slug: "nextjs" }, { slug: "typescript" }, { slug: "react" }],
+    overview:
+      "Payload CMS is an open-source, TypeScript-first headless CMS that's rapidly becoming the go-to choice for developers who want full control. Unlike traditional CMS platforms, Payload's entire schema is defined in code — collections, fields, hooks, access control, and admin UI customizations are all TypeScript config. Version 3 runs natively inside Next.js, so your CMS and frontend deploy as a single app. It's self-hosted by default (no vendor lock-in), supports Postgres and MongoDB, and gives you REST + GraphQL APIs out of the box. We use Payload for projects that need a real developer experience without sacrificing editor-friendly admin panels.",
+    challenges: [
+      {
+        title: "Younger ecosystem",
+        description:
+          "Payload's plugin ecosystem is smaller than WordPress or Strapi. Custom functionality often means writing code rather than installing community plugins.",
+      },
+      {
+        title: "Self-hosted complexity",
+        description:
+          "Unlike hosted CMS platforms, Payload requires you to manage your own infrastructure — server, database, and deployment pipeline.",
+      },
+      {
+        title: "Migration from other CMS",
+        description:
+          "Moving content from WordPress, Contentful, or Strapi to Payload requires custom migration scripts since schema definitions are fundamentally different.",
+      },
+      {
+        title: "Learning curve for non-developers",
+        description:
+          "Payload's config-as-code approach is powerful for developers but means non-technical team members need developer support for schema changes.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Co-locate Payload config with your Next.js app",
+        detail:
+          "With Payload v3, keep your CMS config alongside your Next.js pages — single repo, single deploy, shared TypeScript types.",
+      },
+      {
+        tip: "Use hooks for business logic instead of external services",
+        detail:
+          "Payload's beforeChange/afterChange hooks are the right place for validation, transformation, and side effects — keep logic close to your data model.",
+      },
+      {
+        tip: "Define reusable field groups",
+        detail:
+          "Create shared field configs (SEO fields, media fields, link groups) and compose them across collections to keep your schema DRY.",
+      },
+      {
+        tip: "Set up access control early",
+        detail:
+          "Define RBAC policies from day one. Payload's access functions receive the authenticated user — build tenant isolation, role gates, and field-level permissions before content grows.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Payload Documentation",
+        url: "https://payloadcms.com/docs",
+        type: "docs",
+      },
+      {
+        title: "Payload GitHub",
+        url: "https://github.com/payloadcms/payload",
+        type: "community",
+      },
+      {
+        title: "Payload Templates",
+        url: "https://payloadcms.com/templates",
+        type: "tutorial",
+      },
+      {
+        title: "Payload Discord",
+        url: "https://discord.com/invite/payload",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does a Payload CMS project cost?",
+        answer:
+          "Payload is free and open-source. Project costs depend on complexity — a content site with custom collections typically ranges from $8,000 to $30,000. The CMS itself has zero licensing fees.",
+      },
+      {
+        question: "Payload vs Strapi — which should I choose?",
+        answer:
+          "Both are open-source headless CMS platforms. Payload is TypeScript-native with config-as-code, runs inside Next.js, and gives you more control. Strapi has a larger plugin ecosystem and a GUI-based schema builder. We recommend Payload for TypeScript teams that want code-first control.",
+      },
+      {
+        question: "Can Payload replace WordPress?",
+        answer:
+          "For most use cases, yes. Payload handles structured content, media, access control, and APIs better than WordPress. The trade-off is that Payload requires developer involvement for schema changes, whereas WordPress editors can install plugins themselves.",
+      },
+      {
+        question: "Does Payload support e-commerce?",
+        answer:
+          "Yes. Payload has an official e-commerce template with products, orders, and Stripe integration. For complex stores, we build custom commerce logic on top of Payload's collections and hooks.",
+      },
+    ],
+    quickstart:
+      "npx create-payload-app@latest my-project\n\n# Choose your template (blank, website, e-commerce)\n# Choose your database (Postgres or MongoDB)\n# cd my-project && npm run dev",
+    quickstartLang: "bash",
+    docsUrl: "https://payloadcms.com/docs",
+  },
+  {
+    slug: "ghost",
+    name: "Ghost",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "businesses",
+    tagline: "Professional publishing for creators and businesses",
+    description:
+      "Ghost is an open-source publishing platform built for content creators, bloggers, and media companies. We build custom Ghost themes, integrate memberships and newsletters, and set up headless Ghost with modern frontends.",
+    accentColor: "blue",
+    visualizationKey: "ghost",
+    logo: null,
+    lucideIcon: "Newspaper",
+    features: [
+      {
+        icon: "FileText",
+        title: "Beautiful editor",
+        description:
+          "A distraction-free writing experience with rich embeds, markdown shortcuts, and dynamic cards for images, galleries, and code blocks.",
+      },
+      {
+        icon: "Users",
+        title: "Built-in memberships",
+        description:
+          "Native member signups, paid subscriptions via Stripe, and tiered access — no plugins or third-party tools required.",
+      },
+      {
+        icon: "Mail",
+        title: "Newsletter delivery",
+        description:
+          "Send posts as emails directly from Ghost — segment by membership tier, track opens, and grow your audience in one place.",
+      },
+      {
+        icon: "Globe",
+        title: "Content API",
+        description:
+          "Ghost's Content and Admin APIs let you use it as a headless CMS — power Next.js, Astro, or any frontend with Ghost's content.",
+      },
+      {
+        icon: "BarChart2",
+        title: "Audience analytics",
+        description:
+          "Built-in analytics for signups, email engagement, and revenue — understand what content converts readers to paying members.",
+      },
+      {
+        icon: "Zap",
+        title: "Blazing fast",
+        description:
+          "Ghost is built on Node.js with server-side rendering — pages load in milliseconds with zero bloat.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "nextjs" }],
+    overview:
+      "Ghost is an open-source publishing platform purpose-built for professional content creators, bloggers, and media businesses. Unlike WordPress, Ghost was designed from the ground up for modern publishing — with a clean editor, built-in memberships, newsletter delivery, and a headless Content API. It handles the full creator workflow: write content, grow your audience, monetize with paid subscriptions, and send newsletters — all in one platform. We build custom Ghost themes, set up headless Ghost + Next.js frontends, and integrate Ghost with your existing tools and workflows.",
+    challenges: [
+      {
+        title: "Limited plugin ecosystem",
+        description:
+          "Ghost doesn't have a plugin system like WordPress. Custom functionality requires theme modifications or integrations via the API and webhooks.",
+      },
+      {
+        title: "Less flexible for non-blog content",
+        description:
+          "Ghost excels at blogs and publications but isn't designed for complex page layouts, product catalogs, or app-like content structures.",
+      },
+      {
+        title: "Theme customization requires Handlebars",
+        description:
+          "Ghost's default theme engine uses Handlebars templates. For teams used to React or Vue, going headless with the Content API is often a better path.",
+      },
+      {
+        title: "Self-hosting resource requirements",
+        description:
+          "Self-hosted Ghost requires a Node.js server, MySQL database, and proper mail configuration — more involved than static hosting.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Ghost as a headless CMS for custom frontends",
+        detail:
+          "Ghost's Content API is excellent — use it with Next.js or Astro for full design control while keeping Ghost's editor and membership features.",
+      },
+      {
+        tip: "Set up membership tiers early",
+        detail:
+          "Define free and paid tiers before launching. Ghost's Stripe integration handles subscriptions natively — no WooCommerce or MemberPress needed.",
+      },
+      {
+        tip: "Leverage Ghost's email newsletter",
+        detail:
+          "Use Ghost's built-in email delivery instead of a separate Mailchimp/ConvertKit setup — fewer tools, better integration, and member segments based on subscription tier.",
+      },
+      {
+        tip: "Optimize images with Ghost's built-in processing",
+        detail:
+          "Ghost automatically generates responsive image sizes. Use the srcset helpers in your theme for optimal loading across devices.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Ghost Documentation",
+        url: "https://ghost.org/docs/",
+        type: "docs",
+      },
+      {
+        title: "Ghost Content API",
+        url: "https://ghost.org/docs/content-api/",
+        type: "docs",
+      },
+      {
+        title: "Ghost Tutorials",
+        url: "https://ghost.org/tutorials/",
+        type: "tutorial",
+      },
+      {
+        title: "Ghost GitHub",
+        url: "https://github.com/TryGhost/Ghost",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does Ghost cost?",
+        answer:
+          "Ghost is free and open-source for self-hosting. Ghost(Pro) managed hosting starts at $9/month. Custom theme development and headless setups typically range from $5,000 to $20,000.",
+      },
+      {
+        question: "Ghost vs WordPress for blogging — which is better?",
+        answer:
+          "Ghost is purpose-built for publishing — faster out of the box, built-in memberships, and native newsletters. WordPress is more flexible for non-blog content but requires plugins for everything Ghost does natively. For pure publishing, Ghost wins.",
+      },
+      {
+        question: "Can Ghost handle e-commerce?",
+        answer:
+          "Ghost handles digital product sales and paid memberships natively via Stripe. For physical products, you'd integrate with Shopify or Snipcart. Ghost isn't a full e-commerce platform.",
+      },
+      {
+        question: "Can you migrate my WordPress blog to Ghost?",
+        answer:
+          "Yes. Ghost has a built-in WordPress importer. We handle the full migration — content, images, redirects, and custom theme development to match or improve your existing design.",
+      },
+    ],
+    quickstart:
+      "npm install ghost-cli@latest -g\nghost install local\n\n# Ghost is now running at http://localhost:2368\n# Admin panel at http://localhost:2368/ghost",
+    quickstartLang: "bash",
+    docsUrl: "https://ghost.org/docs/",
+  },
+  {
+    slug: "strapi",
+    name: "Strapi",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "both",
+    tagline: "The open-source headless CMS for modern apps",
+    description:
+      "Strapi is an open-source headless CMS that lets you build APIs in minutes. We use Strapi for content-driven apps — custom content types, role-based access, and REST or GraphQL APIs powering React, Next.js, and mobile frontends.",
+    accentColor: "indigo",
+    visualizationKey: "strapi",
+    logo: null,
+    lucideIcon: "Layers",
+    features: [
+      {
+        icon: "Layout",
+        title: "Visual content-type builder",
+        description:
+          "Define content schemas visually in the admin panel — fields, relations, components, and dynamic zones without writing code.",
+      },
+      {
+        icon: "Globe",
+        title: "REST & GraphQL out of the box",
+        description:
+          "Every content type gets auto-generated REST and GraphQL endpoints — no boilerplate, immediate API access.",
+      },
+      {
+        icon: "Shield",
+        title: "Role-based access control",
+        description:
+          "Granular permissions per role, per content type, per field — manage editors, authors, and API consumers with fine-grained policies.",
+      },
+      {
+        icon: "Puzzle",
+        title: "Plugin ecosystem",
+        description:
+          "SEO, i18n, email, upload, and dozens of community plugins — extend Strapi without building from scratch.",
+      },
+      {
+        icon: "Blocks",
+        title: "Dynamic zones",
+        description:
+          "Editors compose pages from reusable component blocks — flexible layouts without rigid templates.",
+      },
+      {
+        icon: "Database",
+        title: "Multi-database support",
+        description:
+          "Postgres, MySQL, MariaDB, or SQLite — choose your database and Strapi handles the query layer.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "react" }, { slug: "graphql" }],
+    overview:
+      "Strapi is the leading open-source headless CMS with over 60,000 GitHub stars. It gives content teams a user-friendly admin panel for managing content while developers get auto-generated REST and GraphQL APIs. Strapi v5 brings a refined content-type builder, better TypeScript support, and improved plugin APIs. Self-hosted by default, it runs on Node.js with your choice of SQL database. We use Strapi when projects need a visual admin experience for non-technical editors combined with a developer-friendly API layer for modern frontends.",
+    challenges: [
+      {
+        title: "Performance at scale",
+        description:
+          "Strapi's query layer can become slow with deeply nested relations and large datasets. Careful query optimization and caching are essential for high-traffic projects.",
+      },
+      {
+        title: "Upgrade path between major versions",
+        description:
+          "Strapi v4 to v5 migrations require schema adjustments and plugin updates. Major version upgrades need careful planning and testing.",
+      },
+      {
+        title: "Custom plugin development",
+        description:
+          "Building Strapi plugins requires understanding its internal APIs, lifecycle hooks, and admin panel extension system — steeper learning curve than simple REST endpoints.",
+      },
+      {
+        title: "Self-hosting ops burden",
+        description:
+          "Unlike Contentful or Sanity, Strapi requires you to manage hosting, backups, and scaling. Strapi Cloud is available but adds cost.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use components and dynamic zones for reusable content",
+        detail:
+          "Define shared content blocks (hero, CTA, feature grid) as Strapi components and let editors assemble pages from them via dynamic zones.",
+      },
+      {
+        tip: "Limit population depth in API queries",
+        detail:
+          "Strapi v5 uses a populate parameter. Avoid deep nested population — flatten your data model or use custom controllers for complex queries.",
+      },
+      {
+        tip: "Version your Strapi schema in Git",
+        detail:
+          "Content-type JSON schemas live in the filesystem. Commit them to Git so schema changes are tracked, reviewable, and deployable.",
+      },
+      {
+        tip: "Set up Strapi Cloud or proper CI/CD early",
+        detail:
+          "Automate deployments with GitHub Actions or Strapi Cloud. Never edit content types directly in production — use staging environments.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Strapi Documentation",
+        url: "https://docs.strapi.io",
+        type: "docs",
+      },
+      {
+        title: "Strapi GitHub",
+        url: "https://github.com/strapi/strapi",
+        type: "community",
+      },
+      {
+        title: "Strapi Tutorials",
+        url: "https://strapi.io/blog/categories/tutorials",
+        type: "tutorial",
+      },
+      {
+        title: "Strapi Marketplace",
+        url: "https://market.strapi.io",
+        type: "tool",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does a Strapi project cost?",
+        answer:
+          "Strapi is free and open-source. Strapi Cloud starts at $29/month. Custom Strapi development typically ranges from $6,000 to $25,000 depending on content model complexity, custom plugins, and frontend integration.",
+      },
+      {
+        question: "Strapi vs Payload — which should I choose?",
+        answer:
+          "Strapi has a visual schema builder and larger plugin ecosystem — great for teams with non-technical admins. Payload is TypeScript-native with config-as-code — ideal for developer-led teams. We recommend Strapi when editors need to modify content types themselves.",
+      },
+      {
+        question: "Can Strapi handle a large content site?",
+        answer:
+          "Yes, with proper optimization. We use Redis caching, CDN for media, paginated API queries, and database indexing to serve Strapi sites handling millions of monthly requests.",
+      },
+      {
+        question: "Does Strapi support multi-language content?",
+        answer:
+          "Yes. Strapi has built-in i18n (internationalization) support — define locales, translate content per field, and query by language. It's included in the core, not a plugin.",
+      },
+    ],
+    quickstart:
+      "npx create-strapi@latest my-project\n\n# Follow the prompts (TypeScript, database choice)\n# cd my-project && npm run develop\n# Admin panel at http://localhost:1337/admin",
+    quickstartLang: "bash",
+    docsUrl: "https://docs.strapi.io",
+  },
+  {
+    slug: "sanity",
+    name: "Sanity",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "both",
+    tagline: "Structured content for composable experiences",
+    description:
+      "Sanity is a composable content platform with a real-time editing studio and a powerful query language (GROQ). We build Sanity-powered projects — custom studio configurations, structured content models, and integrations with Next.js, Remix, and e-commerce platforms.",
+    accentColor: "red",
+    visualizationKey: "sanity",
+    logo: null,
+    lucideIcon: "Boxes",
+    features: [
+      {
+        icon: "Layout",
+        title: "Sanity Studio",
+        description:
+          "A fully customizable React-based editing environment — custom input components, live preview, and workspace plugins.",
+      },
+      {
+        icon: "Search",
+        title: "GROQ query language",
+        description:
+          "Sanity's own query language for filtering, joining, and projecting content — more expressive than REST parameters, easier than GraphQL.",
+      },
+      {
+        icon: "Zap",
+        title: "Real-time collaboration",
+        description:
+          "Multiple editors work on the same document simultaneously — changes sync in real-time like Google Docs.",
+      },
+      {
+        icon: "Eye",
+        title: "Live preview",
+        description:
+          "See content changes reflected on your frontend instantly — draft content previewed in context before publishing.",
+      },
+      {
+        icon: "GitBranch",
+        title: "Content versioning",
+        description:
+          "Full revision history with the ability to compare, restore, and schedule content changes across documents.",
+      },
+      {
+        icon: "Cloud",
+        title: "Hosted content lake",
+        description:
+          "Sanity hosts your content in a globally distributed content lake — no database management, instant API access.",
+      },
+    ],
+    subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "typescript" }],
+    overview:
+      "Sanity is a composable content platform trusted by companies like Figma, Shopify, and National Geographic. Unlike traditional CMS platforms, Sanity separates content from presentation completely — your content lives in Sanity's hosted content lake, and you query it with GROQ or GraphQL from any frontend. Sanity Studio is an open-source React app that you customize and deploy alongside your site. We use Sanity for projects that need structured content modeling, real-time collaboration, and the flexibility to power multiple frontends (web, mobile, kiosk) from a single content source.",
+    challenges: [
+      {
+        title: "GROQ learning curve",
+        description:
+          "Sanity's query language is powerful but unfamiliar to most developers. Complex projections and joins take time to master compared to SQL or REST filtering.",
+      },
+      {
+        title: "Pricing at scale",
+        description:
+          "Sanity's free tier is generous, but API usage charges can grow quickly for high-traffic sites with many real-time queries. CDN caching and static generation help control costs.",
+      },
+      {
+        title: "Studio customization complexity",
+        description:
+          "Building custom input components, validation rules, and workflow plugins for Sanity Studio requires deep React knowledge and understanding of Sanity's plugin API.",
+      },
+      {
+        title: "Vendor lock-in",
+        description:
+          "Content lives in Sanity's hosted content lake. Unlike self-hosted CMS options, migrating away requires exporting all content and media assets.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Sanity's Portable Text for rich content",
+        detail:
+          "Portable Text stores rich text as structured data, not HTML. This lets you render the same content differently across web, mobile, and email.",
+      },
+      {
+        tip: "Set up live preview with Next.js Draft Mode",
+        detail:
+          "Connect Sanity's real-time listener to Next.js Draft Mode so editors see changes instantly without deploying. Use Sanity's Visual Editing for in-context editing.",
+      },
+      {
+        tip: "Define a content model before building the Studio",
+        detail:
+          "Plan your document types, references, and content structure before writing schema code. Changing models after content is created requires migrations.",
+      },
+      {
+        tip: "Cache GROQ queries aggressively",
+        detail:
+          "Use ISR or static generation for public pages. Reserve real-time GROQ queries for preview mode and authenticated experiences to keep API costs low.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Sanity Documentation",
+        url: "https://www.sanity.io/docs",
+        type: "docs",
+      },
+      {
+        title: "Sanity GROQ Reference",
+        url: "https://www.sanity.io/docs/groq",
+        type: "docs",
+      },
+      {
+        title: "Sanity Exchange (Plugins)",
+        url: "https://www.sanity.io/exchange",
+        type: "tool",
+      },
+      {
+        title: "Sanity GitHub",
+        url: "https://github.com/sanity-io/sanity",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does Sanity cost?",
+        answer:
+          "Sanity has a generous free tier (3 users, 500K API requests/month). Growth plans start at $15/user/month. Custom development with Sanity typically ranges from $8,000 to $35,000 depending on Studio customization and frontend complexity.",
+      },
+      {
+        question: "Sanity vs Contentful — which is better?",
+        answer:
+          "Both are hosted headless CMS platforms. Sanity offers a fully customizable open-source Studio, GROQ queries, and real-time collaboration. Contentful has a more rigid but simpler admin UI and a larger enterprise track record. We recommend Sanity for teams that need custom editing experiences.",
+      },
+      {
+        question: "Can Sanity power an e-commerce site?",
+        answer:
+          "Yes. Sanity integrates with Shopify, Medusa, and custom commerce backends. Product content, editorial pages, and merchandising live in Sanity while commerce logic (cart, checkout, inventory) stays in the commerce platform.",
+      },
+      {
+        question: "Is Sanity good for large teams?",
+        answer:
+          "Yes. Real-time collaboration, granular roles, and custom workflows make Sanity well-suited for editorial teams of any size. The custom Studio means you can build exactly the editing experience your team needs.",
+      },
+    ],
+    quickstart:
+      "npm create sanity@latest -- --project-id <ID> --dataset production\n\n# Follow the prompts to set up your Studio\n# cd my-studio && npm run dev\n# Studio runs at http://localhost:3333",
+    quickstartLang: "bash",
+    docsUrl: "https://www.sanity.io/docs",
+  },
+  {
+    slug: "contentful",
+    name: "Contentful",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "businesses",
+    tagline: "Enterprise headless CMS for omnichannel content",
+    description:
+      "Contentful is a cloud-native headless CMS used by enterprises to manage content across websites, apps, and digital products. We integrate Contentful with modern frontends, build custom apps for the Contentful platform, and optimize content delivery pipelines.",
+    accentColor: "yellow",
+    visualizationKey: "contentful",
+    logo: null,
+    lucideIcon: "LayoutGrid",
+    features: [
+      {
+        icon: "Cloud",
+        title: "Fully managed cloud platform",
+        description:
+          "No servers to manage — Contentful handles hosting, scaling, CDN, and 99.95% uptime SLA for enterprise teams.",
+      },
+      {
+        icon: "Globe",
+        title: "Content Delivery & Preview APIs",
+        description:
+          "Separate APIs for published content (CDN-cached) and draft preview — fast delivery with editorial flexibility.",
+      },
+      {
+        icon: "Puzzle",
+        title: "App Framework",
+        description:
+          "Build custom apps that extend the Contentful UI — custom field editors, sidebar widgets, and workflow automations.",
+      },
+      {
+        icon: "Layout",
+        title: "Composable content models",
+        description:
+          "Content types with references, rich text, and embedded entries — structure content once, publish everywhere.",
+      },
+      {
+        icon: "Languages",
+        title: "Native localization",
+        description:
+          "Per-field localization across unlimited locales — manage translations within the same content entry.",
+      },
+      {
+        icon: "Workflow",
+        title: "Workflows and scheduling",
+        description:
+          "Editorial workflows with approval chains, scheduled publishing, and environment-based staging for content releases.",
+      },
+    ],
+    subTechs: [{ slug: "nextjs" }, { slug: "react" }, { slug: "graphql" }],
+    overview:
+      "Contentful is a composable content platform trusted by 30% of the Fortune 500, including Spotify, Vodafone, and Staples. It provides a cloud-hosted content infrastructure with a web-based editor, multiple APIs (REST, GraphQL, Images), and a platform for custom apps. Contentful excels at multi-channel content delivery — the same structured content powers your website, mobile app, in-store kiosk, and partner feeds. We integrate Contentful with Next.js, Gatsby, and custom frontends, build Contentful Apps for custom editorial workflows, and optimize content delivery for performance and cost.",
+    challenges: [
+      {
+        title: "Pricing for growing teams",
+        description:
+          "Contentful's pricing scales with users, content types, and API calls. Costs can escalate quickly for larger teams — careful content modeling helps control usage.",
+      },
+      {
+        title: "Rich text rendering complexity",
+        description:
+          "Contentful's Rich Text field stores content as a JSON AST. Rendering it in your frontend requires a custom renderer that handles embedded entries and assets.",
+      },
+      {
+        title: "Rate limiting on management API",
+        description:
+          "The Content Management API has strict rate limits. Bulk imports, migrations, and CI/CD pipelines need to handle throttling gracefully.",
+      },
+      {
+        title: "Content modeling rigidity",
+        description:
+          "Once content types are in use, changing field types or structure requires migrations. Planning your content model upfront prevents painful refactors.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Contentful Compose for page-level editing",
+        detail:
+          "Contentful Compose gives editors a page-builder experience on top of structured content types — visual composition without sacrificing content model integrity.",
+      },
+      {
+        tip: "Leverage environments for staging",
+        detail:
+          "Use Contentful environments (like Git branches for content) to test content model changes and content before merging to master.",
+      },
+      {
+        tip: "Cache Content Delivery API responses",
+        detail:
+          "Contentful's CDN is fast, but static generation (ISR) or edge caching reduces API calls and improves TTFB for high-traffic pages.",
+      },
+      {
+        tip: "Automate migrations with the CLI",
+        detail:
+          "Use Contentful's migration CLI to script content model changes — version-controlled, repeatable, and safe for production deployments.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Contentful Documentation",
+        url: "https://www.contentful.com/developers/docs/",
+        type: "docs",
+      },
+      {
+        title: "Contentful App Framework",
+        url: "https://www.contentful.com/developers/docs/extensibility/app-framework/",
+        type: "docs",
+      },
+      {
+        title: "Contentful Blog",
+        url: "https://www.contentful.com/blog/",
+        type: "tutorial",
+      },
+      {
+        title: "Contentful Community",
+        url: "https://www.contentful.com/developers/community/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does Contentful cost?",
+        answer:
+          "Contentful's free Community tier includes 5 users and 25K API calls/month. Team plans start at $300/month. Enterprise pricing is custom. Development costs for Contentful integrations typically range from $8,000 to $40,000.",
+      },
+      {
+        question: "Contentful vs Sanity — which should I choose?",
+        answer:
+          "Contentful is a mature enterprise platform with established workflows and a simpler editing experience. Sanity offers deeper customization with its open-source Studio and GROQ queries. We recommend Contentful for enterprise teams that value stability and support, Sanity for teams that need custom editing UX.",
+      },
+      {
+        question: "Can Contentful handle multiple websites?",
+        answer:
+          "Yes. Contentful's spaces and environments model supports multi-site architectures. A single content model can serve multiple frontends with different designs and locales.",
+      },
+      {
+        question: "Is Contentful good for large content teams?",
+        answer:
+          "Yes. Contentful's workflows, role-based access, and approval chains are built for large editorial teams. The structured approach scales better than page-builder CMS platforms.",
+      },
+    ],
+    docsUrl: "https://www.contentful.com/developers/docs/",
+  },
+  {
+    slug: "directus",
+    name: "Directus",
+    category: "cms",
+    pageType: "cms",
+    targetAudience: "both",
+    tagline: "Instant APIs on top of any SQL database",
+    description:
+      "Directus wraps any SQL database with REST and GraphQL APIs and a no-code admin app. We use Directus for projects that need a flexible data platform — content management, internal tools, and custom dashboards powered by your existing database.",
+    accentColor: "violet",
+    visualizationKey: "directus",
+    logo: null,
+    lucideIcon: "Database",
+    features: [
+      {
+        icon: "Database",
+        title: "Database-first approach",
+        description:
+          "Directus wraps your existing SQL database — Postgres, MySQL, SQLite, or others — with zero schema duplication.",
+      },
+      {
+        icon: "Globe",
+        title: "Auto-generated REST & GraphQL",
+        description:
+          "Every table gets instant REST and GraphQL APIs with filtering, sorting, pagination, and relational queries.",
+      },
+      {
+        icon: "Layout",
+        title: "No-code admin app",
+        description:
+          "A beautiful admin panel for managing data — custom layouts, file management, and user-friendly interfaces for non-technical teams.",
+      },
+      {
+        icon: "Workflow",
+        title: "Flows automation",
+        description:
+          "Visual workflow builder for automating tasks — trigger on data changes, schedule jobs, and chain operations without code.",
+      },
+      {
+        icon: "Shield",
+        title: "Granular permissions",
+        description:
+          "Role-based access with field-level, collection-level, and item-level permissions — control exactly who sees and edits what.",
+      },
+      {
+        icon: "Eye",
+        title: "Custom dashboards",
+        description:
+          "Build analytics dashboards directly in Directus — charts, metrics, and data visualizations without a separate BI tool.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "typescript" }, { slug: "vue" }],
+    overview:
+      "Directus is an open-source data platform that wraps any SQL database with instant REST and GraphQL APIs and a no-code admin app. Unlike traditional CMS platforms that force a content model, Directus adapts to your existing database schema — add it to a new or existing Postgres, MySQL, or SQLite database and get APIs and an admin UI immediately. With over 30,000 GitHub stars, Directus is used as a headless CMS, backend-as-a-service, and internal tool builder. We use Directus when teams need a flexible data platform that goes beyond content management.",
+    challenges: [
+      {
+        title: "Complex relational data UI",
+        description:
+          "While Directus handles relations well, deeply nested relational data can be hard for non-technical users to navigate in the admin panel without custom layout configuration.",
+      },
+      {
+        title: "Performance with large datasets",
+        description:
+          "Auto-generated queries on tables with millions of rows need careful indexing. Complex relational queries may require custom endpoints or database views.",
+      },
+      {
+        title: "Extension development",
+        description:
+          "Building custom Directus extensions (interfaces, displays, modules) requires understanding the Vue.js-based extension SDK and Directus's internal architecture.",
+      },
+      {
+        title: "Self-hosting ops",
+        description:
+          "Running Directus in production requires Docker or Node.js hosting, database management, file storage (S3/local), and proper backup strategies.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Design your database schema before adding Directus",
+        detail:
+          "Since Directus mirrors your SQL schema, a well-designed database means a better admin experience. Plan tables, relations, and indexes before connecting Directus.",
+      },
+      {
+        tip: "Use Directus Flows for automation",
+        detail:
+          "Replace cron jobs and custom scripts with Directus Flows — trigger on data changes, send emails, call webhooks, and chain operations visually.",
+      },
+      {
+        tip: "Leverage database views for complex queries",
+        detail:
+          "Create SQL views for complex aggregations or joins and expose them through Directus as read-only collections — better performance than deep API population.",
+      },
+      {
+        tip: "Set up Directus Cloud or Docker for production",
+        detail:
+          "Use Directus Cloud for managed hosting or deploy via Docker with environment variables for configuration. Never run development mode in production.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Directus Documentation",
+        url: "https://docs.directus.io",
+        type: "docs",
+      },
+      {
+        title: "Directus GitHub",
+        url: "https://github.com/directus/directus",
+        type: "community",
+      },
+      {
+        title: "Directus TV (Tutorials)",
+        url: "https://directus.io/tv",
+        type: "tutorial",
+      },
+      {
+        title: "Directus Marketplace",
+        url: "https://directus.io/extensions",
+        type: "tool",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does Directus cost?",
+        answer:
+          "Directus is free and open-source for self-hosting. Directus Cloud starts at $15/month. Custom Directus projects typically range from $5,000 to $25,000 depending on data model complexity and custom extensions.",
+      },
+      {
+        question: "Directus vs Strapi — which should I choose?",
+        answer:
+          "Strapi is a traditional headless CMS — great for content management. Directus is a data platform — it wraps any SQL database and works for content, internal tools, and data management. Choose Directus when you need to work with existing databases or build beyond just content.",
+      },
+      {
+        question: "Can Directus work with my existing database?",
+        answer:
+          "Yes — that's Directus's superpower. Point it at any existing Postgres, MySQL, MariaDB, SQLite, or MS SQL database and it instantly generates APIs and an admin panel from your schema.",
+      },
+      {
+        question: "Is Directus good for internal tools?",
+        answer:
+          "Absolutely. Directus's admin app, custom dashboards, Flows automation, and granular permissions make it an excellent low-code platform for internal tools — inventory management, CRM, project tracking, and more.",
+      },
+    ],
+    quickstart:
+      "npx create-directus-project@latest my-project\n\n# Choose your database (SQLite for local, Postgres for production)\n# cd my-project && npx directus start\n# Admin panel at http://localhost:8055",
+    quickstartLang: "bash",
+    docsUrl: "https://docs.directus.io",
   },
   {
     slug: "mongoose",
@@ -6680,7 +7560,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "blazor",
     name: "Blazor",
-    category: "frontend",
+    category: "full-stack",
     tagline: "Full-stack C# web apps without JavaScript",
     description:
       "Blazor lets .NET teams build interactive web UIs in C# — shared models, validation, and business logic between server and client. The right choice when your team is .NET-native and wants to avoid context-switching to JavaScript.",
@@ -6812,7 +7692,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "react-router",
     name: "React Router",
-    category: "frontend",
+    category: "full-stack",
     tagline: "The standard routing solution for React",
     description:
       "React Router v7 / Remix is a full-stack framework built on React Router's data APIs — loaders, actions, nested routes, and error boundaries. We use it for data-heavy apps where fine-grained control over loading states matters.",
@@ -7109,7 +7989,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "tanstack-start",
     name: "TanStack Start",
-    category: "frontend",
+    category: "full-stack",
     tagline: "Full-stack React with TanStack's type-safe stack",
     description:
       "TanStack Start is a full-stack React framework built on TanStack Router and Vinxi — SSR, streaming, server functions, and API routes with end-to-end type safety from day one.",
@@ -9446,7 +10326,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "sveltekit",
     name: "SvelteKit",
-    category: "frontend",
+    category: "full-stack",
     tagline: "Full-stack Svelte with adapters for every target",
     description:
       "SvelteKit is the official Svelte meta-framework — file-based routing, server-only load functions, progressive form actions, and adapters that deploy to Vercel, Cloudflare Workers, Node, or static hosting. Fast by default, flexible by design.",
@@ -9726,6 +10606,1489 @@ export const servicesConfig: ServiceConfig[] = [
     quickstartLang: "bash",
     docsUrl: "https://developers.cloudflare.com/r2/",
   },
+
+  // ─── SHOPIFY ────────────────────────────────────────────────────
+  {
+    slug: "shopify",
+    name: "Shopify",
+    category: "cms",
+    tagline: "The leading e-commerce platform for online stores of every size",
+    description:
+      "Shopify powers millions of online stores worldwide with its robust e-commerce platform. We build custom Shopify themes, apps, and headless storefronts with Hydrogen to help brands sell more effectively.",
+    accentColor: "green",
+    visualizationKey: "shopify",
+    logo: null,
+    lucideIcon: "ShoppingCart",
+    features: [
+      {
+        icon: "ShoppingCart",
+        title: "Custom theme development",
+        description:
+          "Pixel-perfect Shopify themes built with Liquid, Tailwind CSS, and Online Store 2.0 architecture for maximum merchant flexibility.",
+      },
+      {
+        icon: "Code",
+        title: "Shopify app development",
+        description:
+          "Custom Shopify apps using the Remix-based app framework, Admin API, and Storefront API for bespoke workflows and integrations.",
+      },
+      {
+        icon: "Zap",
+        title: "Headless with Hydrogen",
+        description:
+          "Blazing-fast headless storefronts using Shopify Hydrogen and Oxygen — React Server Components, streaming SSR, and full Storefront API access.",
+      },
+      {
+        icon: "Globe",
+        title: "Shopify Plus & multi-market",
+        description:
+          "Enterprise-grade Shopify Plus implementations with multi-currency, multi-language, and B2B wholesale channel configuration.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Migrations & re-platforming",
+        description:
+          "Seamless migration from WooCommerce, Magento, or BigCommerce to Shopify — product data, customers, orders, and SEO redirects preserved.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Conversion optimization",
+        description:
+          "Checkout customization, upsell flows, abandoned cart recovery, and performance tuning to maximize revenue per visitor.",
+      },
+    ],
+    subTechs: [{ slug: "woocommerce" }, { slug: "stripe" }],
+    pageType: "cms",
+    targetAudience: "businesses",
+    overview:
+      "Shopify is the world's most popular e-commerce platform, powering over four million online stores — from scrappy DTC startups to billion-dollar brands like Allbirds, Gymshark, and Heinz. It handles product management, inventory, payments, shipping, and taxes out of the box, letting merchants focus on selling rather than infrastructure. With Online Store 2.0, Shopify introduced a flexible section-based theme architecture that gives merchants granular control over every page without touching code.\n\nFor developers, Shopify offers two main build paths. The traditional route uses Liquid (Shopify's templating language) combined with JSON templates and metafields for theme development. The modern route is Hydrogen — Shopify's React-based headless framework built on Remix, deployed to Shopify's Oxygen hosting — which unlocks full creative control with React Server Components, streaming SSR, and the Storefront API.\n\nGetting Shopify right — especially at scale — is harder than it looks. Theme customization requires deep Liquid knowledge, headless builds demand full-stack React expertise, and performance optimization across checkout, cart, and collection pages requires e-commerce experience. A Major builds high-converting Shopify experiences, from custom themes and apps to headless Hydrogen storefronts, so your store loads fast and sells effectively.",
+    challenges: [
+      {
+        title: "Liquid templating complexity",
+        description:
+          "Shopify's Liquid language has unique conventions (sections, blocks, metafields, JSON templates) that differ from standard web frameworks. Building maintainable, performant themes requires deep Shopify-specific knowledge beyond generic HTML/CSS skills.",
+      },
+      {
+        title: "Headless architecture decisions",
+        description:
+          "Going headless with Hydrogen unlocks creative freedom but introduces complexity — managing the Storefront API, cart state, customer auth, checkout redirects, and preview environments requires careful full-stack planning.",
+      },
+      {
+        title: "Checkout customization limits",
+        description:
+          "Shopify controls the checkout experience. Customization is limited to Checkout UI Extensions (Plus only) and Shopify Functions. Highly custom checkout flows require Shopify Plus and deep knowledge of checkout extensibility points.",
+      },
+      {
+        title: "Migration without SEO loss",
+        description:
+          "Re-platforming from WooCommerce or Magento risks losing organic traffic if URL structures, redirects, structured data, and meta tags aren't carefully mapped and preserved during migration.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Online Store 2.0 architecture",
+        detail:
+          "Build with JSON templates, sections everywhere, and metafields — this gives merchants maximum customization control in the theme editor without developer involvement for every change.",
+      },
+      {
+        tip: "Optimize Liquid render performance",
+        detail:
+          "Minimize Liquid loops inside loops, use pagination on collection pages, lazy-load images, and defer non-critical JavaScript. Aim for sub-3-second fully loaded times.",
+      },
+      {
+        tip: "Leverage Shopify Functions for backend logic",
+        detail:
+          "Use Shopify Functions (written in Rust/Wasm) for discounts, shipping rates, and payment customizations instead of external API calls — they run at the edge with sub-5ms execution.",
+      },
+      {
+        tip: "Implement structured data for SEO",
+        detail:
+          "Add JSON-LD markup for Product, BreadcrumbList, Organization, and FAQ schemas — this powers rich snippets in Google and drives higher click-through rates from search results.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Shopify Developer Documentation",
+        url: "https://shopify.dev/docs",
+        type: "docs",
+      },
+      {
+        title: "Hydrogen Framework",
+        url: "https://shopify.dev/docs/custom-storefronts/hydrogen",
+        type: "docs",
+      },
+      {
+        title: "Liquid Reference",
+        url: "https://shopify.dev/docs/api/liquid",
+        type: "docs",
+      },
+      {
+        title: "Shopify Community Forums",
+        url: "https://community.shopify.com/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "Shopify vs WooCommerce — which is better?",
+        answer:
+          "Shopify is a fully hosted platform — it handles security, uptime, and updates. WooCommerce is a WordPress plugin that offers more customization but requires you to manage hosting, security patches, and PCI compliance. For most businesses, Shopify is faster to launch and cheaper to maintain; WooCommerce suits teams with in-house developers who need total control.",
+      },
+      {
+        question: "How much does Shopify cost?",
+        answer:
+          "Shopify plans range from $39/month (Basic) to $399/month (Advanced). Shopify Plus — the enterprise tier — starts at $2,300/month. Transaction fees are 2.9% + 30¢ on Basic (lower on higher plans) using Shopify Payments. Additional costs include premium themes ($180–$350 one-time), apps ($5–$100+/month each), and custom development.",
+      },
+      {
+        question: "Can I migrate from WooCommerce to Shopify?",
+        answer:
+          "Yes. Products, customers, orders, and blog content can be migrated using Shopify's built-in importer or tools like LitExtension. The critical part is mapping URL structures and setting up 301 redirects to preserve SEO rankings — this is where most DIY migrations go wrong. A Major handles end-to-end migrations with zero SEO loss.",
+      },
+      {
+        question: "What is Shopify Hydrogen?",
+        answer:
+          "Hydrogen is Shopify's React-based framework for building headless storefronts. Built on Remix with React Server Components, it connects to the Storefront API and deploys to Shopify's Oxygen hosting. It's ideal for brands that need complete design freedom beyond what Liquid themes offer.",
+      },
+    ],
+    quickstart:
+      "# Install the Shopify CLI\nnpm install -g @shopify/cli @shopify/theme\n\n# Create a new Hydrogen storefront\nnpm create @shopify/hydrogen@latest -- --template demo-store\n\n# Or start a new theme\nshopify theme init my-theme\n\n# Start local development\nshopify theme dev --store=your-store.myshopify.com",
+    quickstartLang: "bash",
+    docsUrl: "https://shopify.dev/docs",
+  },
+
+  // ─── WEBFLOW ────────────────────────────────────────────────────
+  {
+    slug: "webflow",
+    name: "Webflow",
+    category: "cms",
+    tagline: "Visual web development meets production-grade publishing",
+    description:
+      "Webflow lets designers build responsive, production-ready websites visually — no code required. We help businesses maximize Webflow's potential and migrate to custom code when they outgrow it.",
+    accentColor: "blue",
+    visualizationKey: "webflow",
+    logo: null,
+    lucideIcon: "Layout",
+    features: [
+      {
+        icon: "Layout",
+        title: "Visual site development",
+        description:
+          "Pixel-perfect responsive websites built in Webflow's visual editor — semantic HTML, clean CSS, and fast load times without writing code.",
+      },
+      {
+        icon: "Database",
+        title: "CMS & dynamic content",
+        description:
+          "Webflow CMS collections for blogs, portfolios, case studies, and product catalogs with filterable, paginated, template-driven pages.",
+      },
+      {
+        icon: "ShoppingCart",
+        title: "Webflow E-commerce",
+        description:
+          "Native Webflow E-commerce setup with custom product pages, cart flows, Stripe integration, and inventory management.",
+      },
+      {
+        icon: "Code",
+        title: "Custom code migration",
+        description:
+          "When you outgrow Webflow — migrating to Next.js, Astro, or a headless CMS while preserving your design, content, and SEO rankings.",
+      },
+      {
+        icon: "Zap",
+        title: "Integrations & automation",
+        description:
+          "Third-party integrations via Webflow APIs, webhooks, Zapier, and custom JavaScript embeds for forms, analytics, and marketing tools.",
+      },
+      {
+        icon: "Search",
+        title: "SEO optimization",
+        description:
+          "On-page SEO setup — meta tags, Open Graph, canonical URLs, XML sitemaps, alt text, and structured data for maximum organic visibility.",
+      },
+    ],
+    subTechs: [{ slug: "react" }, { slug: "nextjs" }],
+    pageType: "cms",
+    targetAudience: "businesses",
+    overview:
+      "Webflow bridges the gap between design and development by letting designers build responsive, production-ready websites in a visual editor that generates clean, semantic HTML and CSS. It combines the creative freedom of tools like Figma with the publishing power of a CMS — and it's become the go-to platform for marketing sites, portfolios, and content-driven businesses that want to move fast without depending on developers for every change.\n\nWebflow's CMS is surprisingly capable: collections, reference fields, conditional visibility, and dynamic pages let you build complex content architectures visually. Its hosting is fast (backed by Fastly CDN), and the visual editor empowers marketing teams to update content, duplicate pages, and launch campaigns without code changes. For many businesses, Webflow is the right choice — it's faster than custom code and more capable than Squarespace.\n\nBut Webflow has real limits. Complex application logic, user authentication, dynamic server-side functionality, multi-language sites (without expensive workarounds), and large-scale e-commerce all push Webflow past its sweet spot. When you hit those walls, A Major helps you migrate to a custom-built solution — Next.js, Astro, or a headless CMS — while preserving your design and SEO equity. We also build Webflow sites for businesses that fit the platform perfectly.",
+    challenges: [
+      {
+        title: "Knowing when to leave Webflow",
+        description:
+          "Webflow is great until it isn't. Businesses often realize too late that features like auth, complex filtering, multi-language, or dynamic pricing require custom code. Recognizing the tipping point early saves expensive rework.",
+      },
+      {
+        title: "CMS scalability constraints",
+        description:
+          "Webflow CMS has hard limits — 10,000 items per collection, 20 collection lists per page, and limited relational querying. Data-heavy sites hit these ceilings faster than expected.",
+      },
+      {
+        title: "SEO-safe migration to custom code",
+        description:
+          "Migrating from Webflow to a custom framework risks losing search rankings if URL structures, redirects, internal links, and structured data aren't carefully mapped during the transition.",
+      },
+      {
+        title: "Custom interactions at scale",
+        description:
+          "Webflow Interactions are powerful for animations but can become unwieldy with complex scroll-triggered sequences. Performance degrades with too many simultaneous animation triggers on content-heavy pages.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Client-First or Lumos naming conventions",
+        detail:
+          "Adopt a consistent class naming methodology like Client-First from Finsweet — it keeps Webflow projects maintainable, shareable between designers, and prevents CSS specificity nightmares.",
+      },
+      {
+        tip: "Structure CMS collections for flexibility",
+        detail:
+          "Plan your CMS architecture before building — use reference fields and multi-reference fields to create relationships between collections. Restructuring later is painful in Webflow.",
+      },
+      {
+        tip: "Optimize images and fonts",
+        detail:
+          "Use WebP format, set responsive image sizes, enable lazy loading, and self-host fonts (or use Webflow's font hosting) to keep page weight under 1MB for fast load times.",
+      },
+      {
+        tip: "Plan your breakpoints early",
+        detail:
+          "Design desktop-first in Webflow (that's how the cascade works), then adapt layouts at each breakpoint. Retrofitting responsive behavior after building desktop layouts creates fragile overrides.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Webflow University",
+        url: "https://university.webflow.com/",
+        type: "tutorial",
+      },
+      {
+        title: "Webflow Developer Documentation",
+        url: "https://developers.webflow.com/",
+        type: "docs",
+      },
+      {
+        title: "Finsweet Client-First",
+        url: "https://finsweet.com/client-first",
+        type: "tool",
+      },
+      {
+        title: "Webflow Community Forum",
+        url: "https://forum.webflow.com/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "What are Webflow's main limitations?",
+        answer:
+          "Webflow lacks server-side logic, user authentication, complex application state, and native multi-language support. CMS collections are capped at 10,000 items, and e-commerce is limited compared to Shopify. It's ideal for marketing sites and content-driven businesses, but not for web applications.",
+      },
+      {
+        question: "When should I move from Webflow to custom code?",
+        answer:
+          "Consider migrating when you need user auth, dynamic server-side features, complex filtering/search, internationalization, or when CMS limits constrain your content. If your marketing team spends more time working around Webflow limits than creating content, it's time. A Major specializes in these migrations.",
+      },
+      {
+        question: "How much does Webflow cost?",
+        answer:
+          "Webflow site plans range from free (staging only) to $49/month (Business). CMS plans start at $29/month. E-commerce plans range from $42–$212/month. Workspace plans for teams start at $28/seat/month. Total cost depends on team size, CMS needs, and whether you use e-commerce.",
+      },
+      {
+        question: "Can Webflow sites rank well on Google?",
+        answer:
+          "Yes — Webflow generates clean, semantic HTML with fast CDN hosting. It supports custom meta tags, Open Graph, sitemaps, canonical URLs, and 301 redirects. Webflow sites regularly rank well when properly optimized. The platform's page speed is competitive with hand-coded sites.",
+      },
+    ],
+    docsUrl: "https://developers.webflow.com/",
+  },
+
+  // ─── FIREBASE ───────────────────────────────────────────────────
+  {
+    slug: "firebase",
+    name: "Firebase",
+    category: "backend",
+    tagline: "Google's app development platform for web and mobile",
+    description:
+      "Firebase provides a complete backend-as-a-service — real-time databases, authentication, cloud functions, hosting, and analytics. We build scalable Firebase architectures that keep costs predictable as you grow.",
+    accentColor: "amber",
+    visualizationKey: "firebase",
+    logo: null,
+    lucideIcon: "Flame",
+    features: [
+      {
+        icon: "Database",
+        title: "Firestore & Realtime Database",
+        description:
+          "NoSQL document databases with real-time sync, offline support, and automatic scaling — Firestore for complex queries, Realtime Database for low-latency sync.",
+      },
+      {
+        icon: "Shield",
+        title: "Firebase Authentication",
+        description:
+          "Drop-in auth with email/password, phone, Google, Apple, GitHub, and custom providers — including multi-factor auth and anonymous sessions.",
+      },
+      {
+        icon: "Zap",
+        title: "Cloud Functions",
+        description:
+          "Serverless functions triggered by Firestore writes, Auth events, HTTP requests, or scheduled cron — auto-scaling, zero server management.",
+      },
+      {
+        icon: "Globe",
+        title: "Firebase Hosting",
+        description:
+          "Global CDN hosting with automatic SSL, preview channels, and one-command deploys — integrated with Cloud Functions for server-rendered pages.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Analytics & Crashlytics",
+        description:
+          "Free, unlimited analytics for web and mobile — user funnels, retention, crash reports, and performance monitoring out of the box.",
+      },
+      {
+        icon: "Bell",
+        title: "Cloud Messaging & Remote Config",
+        description:
+          "Push notifications via FCM and feature flags via Remote Config — A/B test features and target user segments without app updates.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "react" }],
+    pageType: "tech",
+    targetAudience: "developers",
+    overview:
+      "Firebase is Google's comprehensive app development platform that gives developers a fully managed backend without provisioning servers. At its core are two databases — Cloud Firestore (a flexible NoSQL document database with powerful querying and real-time listeners) and the Realtime Database (an ultra-low-latency JSON tree ideal for presence and live collaboration features). Combined with Firebase Authentication, Cloud Functions, Hosting, Cloud Storage, and Analytics, Firebase provides everything you need to build and scale web and mobile applications.\n\nFirebase excels at rapid prototyping and real-time features. Firestore's real-time listeners push data changes to connected clients instantly — perfect for chat apps, live dashboards, and collaborative tools. The security rules system (a declarative language for Firestore and Storage) lets you enforce authorization without a backend. Cloud Functions run server-side logic in response to database writes, auth events, or HTTP requests, giving you serverless compute when you need it.\n\nThe challenge with Firebase is cost management and architectural decisions at scale. Firestore charges per read, write, and delete — a poorly designed data model can result in massive bills. Denormalization, composite indexes, and query optimization require Firebase-specific expertise. A Major architects Firebase backends that scale predictably, with proper data modeling, security rules, and Cloud Functions patterns that keep your costs in check.",
+    challenges: [
+      {
+        title: "Cost unpredictability at scale",
+        description:
+          "Firestore charges per document read/write/delete. A single page load triggering 50 document reads across multiple listeners adds up fast. Without careful data modeling and query optimization, Firebase bills can spike unexpectedly.",
+      },
+      {
+        title: "Data modeling for NoSQL",
+        description:
+          "Firestore is not a relational database — joins don't exist. You must denormalize data, use subcollections strategically, and design your schema around your query patterns rather than your data relationships.",
+      },
+      {
+        title: "Security rules complexity",
+        description:
+          "Firestore security rules are powerful but have a steep learning curve. Rules must cover every collection and document path. A single misconfiguration can expose user data or block legitimate access — and testing rules locally requires the emulator suite.",
+      },
+      {
+        title: "Vendor lock-in",
+        description:
+          "Firebase's proprietary APIs, security rules, and data formats make migration to another platform non-trivial. Firestore data export to a relational database requires significant transformation work.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Design your data model around queries",
+        detail:
+          "In Firestore, you query documents — not tables. Structure your collections and subcollections around the exact queries your UI needs. Denormalize aggressively and use Cloud Functions to keep denormalized copies in sync.",
+      },
+      {
+        tip: "Use the Firebase Emulator Suite locally",
+        detail:
+          "Run Firestore, Auth, Functions, and Storage locally with the emulator suite. It enables fast iteration, security rules testing, and unit tests without touching production data or incurring costs.",
+      },
+      {
+        tip: "Implement security rules from day one",
+        detail:
+          "Never launch with open security rules. Write granular Firestore rules that validate authentication, field types, and ownership. Test rules in the emulator before deploying — production data breaches from open rules are common.",
+      },
+      {
+        tip: "Batch reads and use collection group queries",
+        detail:
+          "Minimize Firestore reads by batching, caching results client-side, and using collection group queries to query across subcollections. Each unnecessary read costs money — design your listeners carefully.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Firebase Documentation",
+        url: "https://firebase.google.com/docs",
+        type: "docs",
+      },
+      {
+        title: "Firestore Data Modeling",
+        url: "https://firebase.google.com/docs/firestore/manage-data/structure-data",
+        type: "tutorial",
+      },
+      {
+        title: "Firebase Emulator Suite",
+        url: "https://firebase.google.com/docs/emulator-suite",
+        type: "tool",
+      },
+      {
+        title: "Firebase Community on Reddit",
+        url: "https://www.reddit.com/r/Firebase/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "Firebase vs Supabase — which should I use?",
+        answer:
+          "Firebase offers mature real-time sync, excellent mobile SDKs, and deep Google Cloud integration. Supabase provides a Postgres database with SQL, row-level security, and an open-source stack. Choose Firebase for real-time-heavy mobile apps; choose Supabase for apps that benefit from relational data and SQL. A Major works with both.",
+      },
+      {
+        question: "Does Firebase scale for production apps?",
+        answer:
+          "Yes — Firebase powers apps with millions of users. Firestore auto-scales reads and writes, and Cloud Functions scale to thousands of concurrent invocations. The key is data modeling: a poorly designed Firestore schema costs 10x more at scale than a well-designed one.",
+      },
+      {
+        question: "How much does Firebase cost at scale?",
+        answer:
+          "Firebase's free Spark plan covers small apps. The Blaze (pay-as-you-go) plan charges $0.06 per 100K Firestore reads, $0.18 per 100K writes, and $0.40/GB Cloud Functions invocation time. A medium-traffic app (100K DAU) typically costs $50–$500/month depending on data model efficiency. Poorly optimized apps can cost 10x that.",
+      },
+      {
+        question: "Can I use Firebase with Next.js or React?",
+        answer:
+          "Absolutely. Firebase's JavaScript SDK works with any React framework. Use the client SDK for Firestore listeners and Auth, and the Admin SDK in Next.js API routes or server components for server-side data access. Firebase Hosting can also serve Next.js apps via Cloud Functions.",
+      },
+    ],
+    quickstart:
+      "# Install Firebase CLI and SDK\nnpm install -g firebase-tools\nnpm install firebase\n\n# Login and initialize a project\nfirebase login\nfirebase init\n\n# Initialize in your app\nimport { initializeApp } from 'firebase/app';\nimport { getFirestore, collection, getDocs } from 'firebase/firestore';\n\nconst app = initializeApp({ /* config */ });\nconst db = getFirestore(app);\nconst snapshot = await getDocs(collection(db, 'users'));",
+    quickstartLang: "bash",
+    docsUrl: "https://firebase.google.com/docs",
+  },
+
+  // ─── AWS ────────────────────────────────────────────────────────
+  {
+    slug: "aws",
+    name: "AWS",
+    category: "tooling",
+    tagline: "The world's most comprehensive cloud infrastructure platform",
+    description:
+      "Amazon Web Services offers 200+ services for compute, storage, databases, AI, and networking. We architect, deploy, and manage AWS infrastructure so your team can focus on building product instead of managing servers.",
+    accentColor: "amber",
+    visualizationKey: "aws",
+    logo: null,
+    lucideIcon: "Cloud",
+    features: [
+      {
+        icon: "Server",
+        title: "EC2 & compute",
+        description:
+          "Virtual servers, auto-scaling groups, spot instances, and Graviton ARM processors for flexible, cost-efficient compute at any scale.",
+      },
+      {
+        icon: "Zap",
+        title: "Lambda & serverless",
+        description:
+          "Event-driven serverless functions with per-millisecond billing, up to 10GB memory, and 15-minute execution — triggered by 200+ AWS event sources.",
+      },
+      {
+        icon: "HardDrive",
+        title: "S3 & storage",
+        description:
+          "Object storage with 99.999999999% durability, lifecycle policies, intelligent tiering, and CloudFront CDN integration for global delivery.",
+      },
+      {
+        icon: "Database",
+        title: "RDS, Aurora & DynamoDB",
+        description:
+          "Managed Postgres, MySQL, and Aurora databases with automatic backups, replicas, and failover — plus DynamoDB for single-digit-millisecond NoSQL.",
+      },
+      {
+        icon: "Container",
+        title: "ECS, EKS & Fargate",
+        description:
+          "Container orchestration with ECS (simpler) or EKS (Kubernetes), plus Fargate for serverless containers — no EC2 instance management.",
+      },
+      {
+        icon: "Globe",
+        title: "CloudFront & networking",
+        description:
+          "Global CDN with 400+ edge locations, Route 53 DNS, VPC networking, ALB/NLB load balancers, and AWS Global Accelerator for low-latency delivery.",
+      },
+    ],
+    subTechs: [{ slug: "docker" }, { slug: "nodejs" }, { slug: "s3" }],
+    pageType: "tech",
+    targetAudience: "both",
+    overview:
+      "Amazon Web Services is the world's leading cloud platform, commanding roughly a third of the global cloud infrastructure market. With 200+ services spanning compute (EC2, Lambda, Fargate), storage (S3, EBS, EFS), databases (RDS, Aurora, DynamoDB, ElastiCache), networking (VPC, CloudFront, Route 53), AI/ML (SageMaker, Bedrock), and developer tools (CodeBuild, CloudFormation, CDK), AWS can host practically anything — from a static website to a globally distributed microservices architecture.\n\nFor startups and growing companies, AWS offers a compelling mix of free-tier generosity and enterprise-grade reliability. Lambda provides serverless compute with per-millisecond billing. S3 stores data with eleven nines of durability. Aurora delivers MySQL/Postgres performance at a fraction of the cost of commercial databases. Infrastructure as Code with CDK or Terraform turns your cloud architecture into version-controlled, repeatable deployments.\n\nBut AWS's breadth is also its challenge. Choosing between ECS and EKS, RDS and Aurora, ALB and NLB, CloudFormation and CDK — every decision has cost and operational implications. IAM policies, VPC networking, and cost optimization require specialized knowledge. A Major architects AWS infrastructure that's secure, cost-optimized, and operationally maintainable — from initial setup through production scaling.",
+    challenges: [
+      {
+        title: "Service selection overwhelm",
+        description:
+          "AWS has multiple services for every need — at least three ways to run containers, four database engines, and dozens of storage options. Choosing the right service (and avoiding over-engineering) requires deep AWS experience.",
+      },
+      {
+        title: "Cost management and optimization",
+        description:
+          "AWS bills are notoriously complex. Without reserved instances, savings plans, right-sizing, and proper tagging, companies routinely overspend by 30–50%. Cost optimization is an ongoing discipline, not a one-time setup.",
+      },
+      {
+        title: "IAM and security configuration",
+        description:
+          "AWS's Identity and Access Management is powerful but complex. Overly permissive policies create security risks; overly restrictive ones break deployments. Principle of least privilege across services, roles, and cross-account access requires careful architecture.",
+      },
+      {
+        title: "Infrastructure as Code adoption",
+        description:
+          "Moving from console-clicked infrastructure to CDK or Terraform is essential but disruptive. Importing existing resources, managing state, and handling drift detection adds operational complexity.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Infrastructure as Code from day one",
+        detail:
+          "Define all AWS resources in CDK (TypeScript) or Terraform. Never create production resources via the console — manual changes drift, can't be reviewed, and aren't reproducible across environments.",
+      },
+      {
+        tip: "Implement a cost monitoring strategy",
+        detail:
+          "Enable AWS Cost Explorer, set billing alerts, tag every resource, and review spending weekly. Use Savings Plans for predictable workloads and Spot Instances for fault-tolerant batch jobs.",
+      },
+      {
+        tip: "Follow the principle of least privilege",
+        detail:
+          "Every Lambda, ECS task, and EC2 instance should have an IAM role scoped to exactly what it needs. Use AWS Access Analyzer to identify overly permissive policies and unused permissions.",
+      },
+      {
+        tip: "Design for multi-AZ resilience",
+        detail:
+          "Deploy across multiple Availability Zones from the start. RDS multi-AZ, ALB cross-zone load balancing, and S3's built-in durability protect against hardware failures without complexity.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "AWS Documentation",
+        url: "https://docs.aws.amazon.com/",
+        type: "docs",
+      },
+      {
+        title: "AWS Well-Architected Framework",
+        url: "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+        type: "docs",
+      },
+      {
+        title: "AWS CDK Developer Guide",
+        url: "https://docs.aws.amazon.com/cdk/v2/guide/home.html",
+        type: "tutorial",
+      },
+      {
+        title: "AWS re:Post Community",
+        url: "https://repost.aws/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "AWS vs GCP vs Azure — which should I choose?",
+        answer:
+          "AWS has the broadest service catalog and largest ecosystem. GCP excels at data analytics (BigQuery) and Kubernetes (GKE). Azure integrates deeply with Microsoft tools (Active Directory, .NET, Teams). For most startups, AWS offers the best combination of documentation, community support, and hiring pool. A Major helps you choose based on your specific stack and team.",
+      },
+      {
+        question: "How do I reduce my AWS bill?",
+        answer:
+          "Start with right-sizing — most EC2 instances are over-provisioned. Use Savings Plans (up to 72% off on-demand pricing) for predictable workloads, Spot Instances for batch jobs, and S3 Intelligent Tiering for storage. Review unused resources monthly — orphaned EBS volumes, idle load balancers, and forgotten RDS instances are common cost leaks.",
+      },
+      {
+        question: "Should I use managed services or self-host on EC2?",
+        answer:
+          "Use managed services (RDS, ElastiCache, ECS Fargate) unless you have a specific reason not to. Managed services handle patching, backups, failover, and scaling. Self-hosting on EC2 costs less per-hour but far more in engineer time. The operational overhead of running your own Postgres on EC2 rarely justifies the savings.",
+      },
+      {
+        question: "What's the best way to deploy a Node.js app on AWS?",
+        answer:
+          "For most teams: containerize with Docker, deploy to ECS Fargate with an ALB in front, and use RDS Postgres for the database. For serverless architectures: use Lambda with API Gateway. For full Kubernetes: use EKS with Fargate profiles. A Major sets up production-grade AWS deployments with CI/CD, monitoring, and auto-scaling.",
+      },
+    ],
+    quickstart:
+      '# Install AWS CLI\ncurl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"\nunzip awscliv2.zip && sudo ./aws/install\n\n# Configure credentials\naws configure\n\n# Install AWS CDK\nnpm install -g aws-cdk\n\n# Create a new CDK project (TypeScript)\nmkdir my-infra && cd my-infra\ncdk init app --language typescript\ncdk deploy',
+    quickstartLang: "bash",
+    docsUrl: "https://docs.aws.amazon.com/",
+  },
+
+  // ─── GCP ────────────────────────────────────────────────────────
+  {
+    slug: "gcp",
+    name: "Google Cloud Platform (GCP)",
+    category: "tooling",
+    tagline:
+      "Google-scale infrastructure for data, AI, and modern applications",
+    description:
+      "Google Cloud Platform combines world-class data analytics, AI/ML capabilities, and fully managed infrastructure. We build on GCP's strengths — Cloud Run, BigQuery, GKE, and Vertex AI — to deliver scalable, cost-efficient solutions.",
+    accentColor: "blue",
+    visualizationKey: "gcp",
+    logo: null,
+    lucideIcon: "Cloud",
+    features: [
+      {
+        icon: "Zap",
+        title: "Cloud Run",
+        description:
+          "Fully managed serverless containers — deploy any Docker image with HTTPS, auto-scaling to zero, and per-second billing. No Kubernetes knowledge required.",
+      },
+      {
+        icon: "BarChart3",
+        title: "BigQuery",
+        description:
+          "Serverless data warehouse that analyzes petabytes in seconds. Standard SQL, ML built-in (BigQuery ML), and automatic scaling with pay-per-query pricing.",
+      },
+      {
+        icon: "Container",
+        title: "Google Kubernetes Engine (GKE)",
+        description:
+          "The most mature managed Kubernetes — Autopilot mode manages nodes for you, built by the team that created Kubernetes.",
+      },
+      {
+        icon: "Cpu",
+        title: "Vertex AI",
+        description:
+          "Unified AI/ML platform — model training, fine-tuning, deployment, and access to Gemini models via API. MLOps pipelines and feature store included.",
+      },
+      {
+        icon: "Flame",
+        title: "Firebase integration",
+        description:
+          "Firebase runs on GCP — seamless integration with Cloud Functions (2nd gen), Firestore, Cloud Storage, and Identity Platform for web and mobile apps.",
+      },
+      {
+        icon: "Globe",
+        title: "Cloud CDN & networking",
+        description:
+          "Google's global network with 187+ edge locations, Cloud CDN, Cloud Load Balancing, and premium-tier networking for low-latency delivery worldwide.",
+      },
+    ],
+    subTechs: [{ slug: "docker" }, { slug: "firebase" }],
+    pageType: "tech",
+    targetAudience: "both",
+    overview:
+      "Google Cloud Platform brings Google's internal infrastructure — the same systems that power Search, YouTube, and Gmail — to developers and enterprises. While AWS leads in breadth, GCP leads in specific areas: BigQuery is the gold standard for serverless data analytics, GKE is the most mature managed Kubernetes (built by Kubernetes' creators), Cloud Run offers the smoothest serverless container experience, and Vertex AI provides state-of-the-art ML infrastructure including access to Google's Gemini models.\n\nGCP's developer experience is notably streamlined. Cloud Run deploys any Docker container to production with a single command — HTTPS, auto-scaling, custom domains, and per-second billing included. Cloud Build provides CI/CD. Cloud SQL offers managed Postgres and MySQL with automatic backups. And Firebase — which runs on GCP — provides real-time databases, authentication, and hosting for web and mobile apps, all within the same project and billing account.\n\nThe challenge with GCP is a smaller ecosystem compared to AWS — fewer third-party integrations, a smaller talent pool, and less community content. But for teams that prioritize data analytics, Kubernetes, AI/ML, or Firebase, GCP often delivers a better developer experience at a lower price point. A Major architects GCP solutions that leverage these strengths while maintaining portability for multi-cloud futures.",
+    challenges: [
+      {
+        title: "Smaller ecosystem than AWS",
+        description:
+          "GCP has fewer third-party integrations, less Stack Overflow content, and a smaller talent pool than AWS. Finding GCP-specific expertise — especially for enterprise services — can be harder in some markets.",
+      },
+      {
+        title: "IAM and organization structure",
+        description:
+          "GCP's IAM model (projects, folders, organizations, service accounts) differs from AWS. Teams accustomed to AWS IAM need to learn GCP's resource hierarchy and policy inheritance model.",
+      },
+      {
+        title: "Network configuration complexity",
+        description:
+          "GCP's VPC networking, firewall rules, and interconnect options require careful planning. The shared VPC model for multi-project organizations adds organizational complexity.",
+      },
+      {
+        title: "Service maturity gaps",
+        description:
+          "Some GCP services (especially newer ones) have fewer features than their AWS equivalents. Evaluating service maturity against your specific requirements is essential before committing.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Start with Cloud Run for most workloads",
+        detail:
+          "Cloud Run handles 80% of workloads with zero Kubernetes complexity. Deploy any Docker container with auto-scaling (including to zero), HTTPS, and per-second billing. Only move to GKE when you need advanced Kubernetes features.",
+      },
+      {
+        tip: "Use BigQuery for all analytics",
+        detail:
+          "Pipe logs, events, and business data into BigQuery early. Its serverless, pay-per-query model means you only pay when you analyze — and its performance on large datasets is unmatched.",
+      },
+      {
+        tip: "Leverage GKE Autopilot over Standard",
+        detail:
+          "GKE Autopilot manages nodes, scaling, and security patches for you. You pay per pod resource request, not per node — eliminating cluster right-sizing headaches and reducing costs.",
+      },
+      {
+        tip: "Set up billing alerts and budgets",
+        detail:
+          "GCP billing can surprise you — especially BigQuery on-demand pricing. Set project-level budgets, enable billing export to BigQuery, and review spending weekly with the Billing console.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Google Cloud Documentation",
+        url: "https://cloud.google.com/docs",
+        type: "docs",
+      },
+      {
+        title: "Cloud Run Quickstart",
+        url: "https://cloud.google.com/run/docs/quickstarts",
+        type: "tutorial",
+      },
+      {
+        title: "BigQuery Documentation",
+        url: "https://cloud.google.com/bigquery/docs",
+        type: "docs",
+      },
+      {
+        title: "Google Cloud Community",
+        url: "https://www.googlecloudcommunity.com/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "GCP vs AWS — which should I choose?",
+        answer:
+          "Choose GCP if your strengths are in data analytics (BigQuery), Kubernetes (GKE), AI/ML (Vertex AI), or Firebase. Choose AWS for the broadest service catalog, largest community, and deepest third-party integrations. For most startups building with Firebase or Kubernetes, GCP is the natural fit. A Major works with both and helps you choose based on your needs.",
+      },
+      {
+        question: "Is Cloud Run better than AWS Lambda?",
+        answer:
+          "Cloud Run and Lambda solve different problems. Cloud Run runs any Docker container (any language, any framework, any binary) with request-based auto-scaling. Lambda runs event-driven functions with tighter AWS integration. Cloud Run's cold starts are faster for larger apps, and it handles long-running requests (up to 60 min). For containerized web apps, Cloud Run is often simpler.",
+      },
+      {
+        question: "How does GCP pricing compare to AWS?",
+        answer:
+          "GCP is often 20–40% cheaper for equivalent compute (sustained-use and committed-use discounts apply automatically). BigQuery's on-demand pricing ($5/TB queried) can be cheaper than running a dedicated data warehouse. However, networking egress and some managed services have similar pricing to AWS.",
+      },
+    ],
+    quickstart:
+      "# Install Google Cloud CLI\ncurl https://sdk.cloud.google.com | bash\n\n# Login and set project\ngcloud auth login\ngcloud config set project my-project\n\n# Deploy a container to Cloud Run\ngcloud run deploy my-service \\\n  --source . \\\n  --region us-central1 \\\n  --allow-unauthenticated",
+    quickstartLang: "bash",
+    docsUrl: "https://cloud.google.com/docs",
+  },
+
+  // ─── AZURE ──────────────────────────────────────────────────────
+  {
+    slug: "azure",
+    name: "Azure",
+    category: "tooling",
+    tagline: "Microsoft's enterprise cloud for hybrid and modern workloads",
+    description:
+      "Microsoft Azure integrates deeply with the enterprise ecosystem — Active Directory, .NET, SQL Server, and Microsoft 365. We build Azure solutions for organizations that need enterprise-grade identity, compliance, and hybrid cloud capabilities.",
+    accentColor: "blue",
+    visualizationKey: "azure",
+    logo: null,
+    lucideIcon: "Cloud",
+    features: [
+      {
+        icon: "Globe",
+        title: "Azure App Service",
+        description:
+          "Fully managed PaaS for web apps — deploy .NET, Node.js, Python, or Java with auto-scaling, deployment slots, and built-in CI/CD from GitHub or Azure DevOps.",
+      },
+      {
+        icon: "Zap",
+        title: "Azure Functions",
+        description:
+          "Serverless compute with durable functions (stateful workflows), timer triggers, queue triggers, and deep integration with Azure services and Event Grid.",
+      },
+      {
+        icon: "GitBranch",
+        title: "Azure DevOps",
+        description:
+          "Complete CI/CD platform — repos, pipelines, boards, artifacts, and test plans in a single integrated suite for enterprise development teams.",
+      },
+      {
+        icon: "Database",
+        title: "Azure SQL & Cosmos DB",
+        description:
+          "Managed SQL Server, Postgres, and MySQL — plus Cosmos DB, a globally distributed multi-model database with single-digit millisecond latency and five consistency models.",
+      },
+      {
+        icon: "Shield",
+        title: "Entra ID (Azure AD)",
+        description:
+          "Enterprise identity and access management — SSO, MFA, conditional access policies, and B2B/B2C identity services for applications and APIs.",
+      },
+      {
+        icon: "Container",
+        title: "AKS & Container Apps",
+        description:
+          "Managed Kubernetes (AKS) for complex orchestration, or Azure Container Apps for serverless containers — both with integrated monitoring via Azure Monitor.",
+      },
+    ],
+    subTechs: [{ slug: "dotnet" }, { slug: "docker" }],
+    pageType: "tech",
+    targetAudience: "both",
+    overview:
+      "Microsoft Azure is the cloud platform of choice for enterprises already invested in the Microsoft ecosystem. With native integration with Active Directory (now Entra ID), Microsoft 365, SQL Server, .NET, and Visual Studio, Azure reduces friction for organizations running Windows workloads, hybrid deployments, and enterprise identity management. It's the second-largest cloud provider globally, and in many enterprise sectors — finance, healthcare, government — it's the default choice.\n\nAzure's strengths extend beyond Microsoft lock-in. Cosmos DB is a genuinely unique globally distributed database with five tunable consistency models and single-digit millisecond reads worldwide. Azure Functions with Durable Functions enable complex stateful serverless workflows. Azure DevOps provides a complete CI/CD suite. And Azure's hybrid story (Azure Arc, Azure Stack) is the strongest in the industry for organizations that need on-premises and cloud workloads under a single control plane.\n\nThe trade-off is developer experience. Azure's portal and CLI can feel heavier than GCP's streamlined tooling or AWS's mature CDK. Documentation quality varies across services. And Azure's naming conventions change frequently (Azure AD became Entra ID, App Insights merged into Azure Monitor). A Major navigates Azure's complexity to build production-grade solutions — from App Service deployments to Cosmos DB architectures to Entra ID authentication flows.",
+    challenges: [
+      {
+        title: "Complex naming and service organization",
+        description:
+          "Azure's rapid service evolution means frequent renames (Azure AD → Entra ID, Application Insights → Azure Monitor). Keeping up with current service names, SKUs, and feature locations in the portal requires constant learning.",
+      },
+      {
+        title: "Developer experience gaps",
+        description:
+          "Azure's portal is feature-rich but cluttered. The CLI (az) is verbose compared to gcloud. ARM templates are notoriously complex — Bicep improves this significantly but still has a learning curve compared to AWS CDK or Terraform.",
+      },
+      {
+        title: "Cost visibility and management",
+        description:
+          "Azure pricing is complex with multiple tiers, DTUs (for SQL), RUs (for Cosmos DB), and varied commitment options. The Azure Cost Management tool helps but requires setup and ongoing monitoring.",
+      },
+      {
+        title: "Hybrid architecture complexity",
+        description:
+          "Azure's hybrid capabilities (Azure Arc, Stack, ExpressRoute) are powerful but complex to configure correctly. Network security, identity federation, and data sovereignty requirements add layers of architectural decisions.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use Bicep instead of ARM templates",
+        detail:
+          "Bicep is Azure's domain-specific language for IaC — it compiles to ARM but is dramatically more readable. Alternatively, use Terraform for multi-cloud portability. Never rely on portal-created resources for production.",
+      },
+      {
+        tip: "Leverage Entra ID for all authentication",
+        detail:
+          "Use Azure Entra ID (formerly Azure AD) as the identity provider for your apps — SSO, MFA, conditional access, and B2C identity flows. Don't build custom auth when Entra ID handles it at enterprise scale.",
+      },
+      {
+        tip: "Choose Cosmos DB consistency models carefully",
+        detail:
+          "Cosmos DB offers five consistency levels from strong to eventual. Strong consistency costs 2x the RUs of eventual. Most web apps work well with session consistency — strong enough for user experience, efficient on cost.",
+      },
+      {
+        tip: "Use deployment slots for zero-downtime releases",
+        detail:
+          "Azure App Service deployment slots let you deploy to a staging slot, warm it up, and swap it to production instantly. Combined with auto-swap and traffic routing, this enables safe blue-green deployments.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Azure Documentation",
+        url: "https://learn.microsoft.com/en-us/azure/",
+        type: "docs",
+      },
+      {
+        title: "Azure Architecture Center",
+        url: "https://learn.microsoft.com/en-us/azure/architecture/",
+        type: "docs",
+      },
+      {
+        title: "Bicep Language Reference",
+        url: "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/",
+        type: "tutorial",
+      },
+      {
+        title: "Microsoft Q&A for Azure",
+        url: "https://learn.microsoft.com/en-us/answers/tags/133/azure",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "Azure vs AWS — which is better for my organization?",
+        answer:
+          "Azure is the natural choice for organizations using Microsoft 365, Active Directory, SQL Server, or .NET. Its hybrid capabilities (Azure Arc, Stack) are industry-leading. AWS offers a broader service catalog and larger developer community. For greenfield cloud-native projects, AWS often wins; for enterprises extending existing Microsoft investments, Azure is smoother.",
+      },
+      {
+        question: "What are Azure's enterprise advantages?",
+        answer:
+          "Azure offers unified billing with Microsoft enterprise agreements, native Entra ID (Azure AD) integration for SSO across all Microsoft and custom apps, best-in-class hybrid cloud with Azure Arc, industry-leading compliance certifications (FedRAMP, HIPAA, SOC), and Azure DevOps for end-to-end enterprise SDLC.",
+      },
+      {
+        question: "Is Cosmos DB worth the cost?",
+        answer:
+          "Cosmos DB is expensive compared to a single-region database — but it's globally distributed with five consistency models and single-digit millisecond latency. If you need multi-region writes, guaranteed low latency, or a multi-model database, Cosmos DB delivers what no other managed database can. For single-region apps, Azure SQL or Postgres is more cost-effective.",
+      },
+      {
+        question: "How does Azure pricing work?",
+        answer:
+          "Azure uses pay-as-you-go, reserved instances (1- or 3-year commitments for up to 72% savings), and spot pricing. Costs vary by service — VMs bill per second, Cosmos DB bills per RU/s, Azure SQL bills per DTU or vCore. Azure Hybrid Benefit lets you apply existing Windows Server and SQL Server licenses for additional savings.",
+      },
+    ],
+    quickstart:
+      '# Install Azure CLI\ncurl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash\n\n# Login\naz login\n\n# Create a resource group\naz group create --name myResourceGroup --location eastus\n\n# Deploy a web app\naz webapp up --runtime "NODE:20-lts" --name my-app\n\n# Or deploy a container\naz containerapp up --name my-app --source .',
+    quickstartLang: "bash",
+    docsUrl: "https://learn.microsoft.com/en-us/azure/",
+  },
+
+  // ─── VERCEL ─────────────────────────────────────────────────────
+  {
+    slug: "vercel",
+    name: "Vercel",
+    category: "tooling",
+    tagline: "The frontend cloud — ship fast, deploy globally",
+    description:
+      "Vercel is the platform built for frontend frameworks — instant deployments, edge functions, preview environments, and built-in analytics. We deploy and optimize Next.js and React applications on Vercel for maximum performance.",
+    accentColor: "neutral",
+    visualizationKey: "vercel",
+    logo: null,
+    lucideIcon: "Triangle",
+    features: [
+      {
+        icon: "Zap",
+        title: "Instant deployments",
+        description:
+          "Every git push triggers an automatic build and deploy — production and preview environments with unique URLs for every branch and pull request.",
+      },
+      {
+        icon: "Globe",
+        title: "Edge Functions & Middleware",
+        description:
+          "Run code at the edge (300+ locations) with Vercel Edge Functions and Middleware — geo-routing, A/B testing, auth checks, and rewrites with sub-millisecond cold starts.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "ISR & on-demand revalidation",
+        description:
+          "Incremental Static Regeneration serves cached pages instantly and rebuilds them in the background — on-demand revalidation via API for instant content updates.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Analytics & Speed Insights",
+        description:
+          "Real User Monitoring (RUM) built in — Core Web Vitals, page-level performance, and traffic analytics without third-party scripts slowing your site.",
+      },
+      {
+        icon: "Eye",
+        title: "Preview deployments",
+        description:
+          "Every pull request gets a live preview URL — shareable with stakeholders, automatically updated on push, with optional comment integration.",
+      },
+      {
+        icon: "Lock",
+        title: "DDoS protection & firewall",
+        description:
+          "Enterprise-grade DDoS mitigation, Web Application Firewall (WAF), and bot protection — included on Pro and Enterprise plans.",
+      },
+    ],
+    subTechs: [{ slug: "nextjs" }, { slug: "react" }],
+    pageType: "tech",
+    targetAudience: "developers",
+    overview:
+      "Vercel is the deployment platform purpose-built for frontend frameworks — and it's the company behind Next.js, the most popular React framework. Vercel's platform turns every git push into a production deployment: builds are automatic, preview URLs are generated for every branch, and production deploys roll out globally across Vercel's Edge Network in seconds. The developer experience is best-in-class — zero-config deployments, instant rollbacks, and environment variables managed per branch.\n\nVercel's Edge Network is the differentiator. Edge Functions run server-side code at 300+ locations worldwide with near-zero cold starts. Middleware executes before every request — enabling auth checks, geo-routing, A/B tests, and feature flags at the edge. ISR (Incremental Static Regeneration) serves cached pages instantly and rebuilds them in the background, combining the speed of static sites with the freshness of server-rendered content. For Next.js apps, Vercel supports every rendering mode: SSG, SSR, ISR, and the App Router with React Server Components.\n\nVercel's free tier is generous for personal projects, but production teams typically need Pro ($20/user/month) for commercial use, team features, and higher limits. The trade-off is vendor coupling — Next.js features like Middleware, ISR, and Server Actions work best on Vercel, and self-hosting requires more operational effort. A Major deploys and optimizes applications on Vercel, configuring edge caching, ISR strategies, and preview workflows for maximum performance and developer productivity.",
+    challenges: [
+      {
+        title: "Vendor coupling with Next.js",
+        description:
+          "While Next.js is open-source, advanced features (ISR, Middleware, Image Optimization) work most seamlessly on Vercel. Self-hosting Next.js requires configuring these features independently, which adds operational overhead.",
+      },
+      {
+        title: "Serverless function limits",
+        description:
+          "Vercel Serverless Functions have execution time limits (10s on Hobby, 60s on Pro, 900s on Enterprise), size limits (50MB), and concurrency caps. Long-running processes need different architectures.",
+      },
+      {
+        title: "Cost scaling for high-traffic sites",
+        description:
+          "Vercel's usage-based pricing (bandwidth, function invocations, edge middleware) can escalate quickly at high traffic. Understanding and optimizing caching strategies is essential to control costs.",
+      },
+      {
+        title: "Database and backend connectivity",
+        description:
+          "Vercel is a frontend-first platform. Connecting to databases requires managing connection pooling (serverless functions create many short-lived connections), and complex backend logic may be better suited to a separate service.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Maximize ISR and edge caching",
+        detail:
+          "Use ISR with on-demand revalidation for content pages — serve from cache instantly and update via webhook when content changes. Configure Cache-Control headers for API routes to leverage Vercel's edge cache.",
+      },
+      {
+        tip: "Use preview deployments for every PR",
+        detail:
+          "Share preview URLs with designers, PMs, and QA for every pull request. Enable commenting and integrate with Slack or Linear for seamless review workflows.",
+      },
+      {
+        tip: "Monitor with Speed Insights",
+        detail:
+          "Enable Vercel Speed Insights to track Core Web Vitals (LCP, CLS, INP) per page with real user data. Identify slow pages and optimize before performance degrades in production.",
+      },
+      {
+        tip: "Use Edge Middleware sparingly",
+        detail:
+          "Middleware runs on every request — keep it lightweight. Use it for auth checks, redirects, and geo-routing. Move heavy computation to Serverless or Edge Functions instead.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Vercel Documentation",
+        url: "https://vercel.com/docs",
+        type: "docs",
+      },
+      {
+        title: "Vercel Templates",
+        url: "https://vercel.com/templates",
+        type: "tutorial",
+      },
+      {
+        title: "Vercel Edge Functions",
+        url: "https://vercel.com/docs/functions/edge-functions",
+        type: "docs",
+      },
+      {
+        title: "Vercel Community",
+        url: "https://github.com/vercel/next.js/discussions",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "How much does Vercel cost?",
+        answer:
+          "Vercel Hobby is free for personal, non-commercial projects. Pro is $20/user/month with 1TB bandwidth, 1M function invocations, and higher limits. Enterprise adds SLAs, SSO, and custom limits. Bandwidth overages on Pro cost $40/100GB. For most small-to-medium teams, Pro costs $60–$200/month total.",
+      },
+      {
+        question: "Vercel vs Netlify — which should I use?",
+        answer:
+          "Vercel is the best platform for Next.js — it's built by the same team. Netlify is better for static sites, Astro, Hugo, and projects that benefit from Netlify Forms and Identity. Both offer preview deployments and edge functions. Choose Vercel for Next.js/React; Netlify for JAMstack and multi-framework flexibility.",
+      },
+      {
+        question: "Can I self-host Next.js instead of using Vercel?",
+        answer:
+          "Yes — Next.js runs on any Node.js server, Docker container, or serverless platform. However, features like ISR, Image Optimization, and Middleware require additional configuration when self-hosting. You'll need to set up your own CDN, build pipeline, and preview environments. Vercel handles all of this automatically.",
+      },
+      {
+        question: "Is Vercel suitable for production enterprise apps?",
+        answer:
+          "Yes — Vercel Enterprise includes SLAs (99.99% uptime), SOC 2 compliance, SSO/SAML, audit logs, spend management, and dedicated support. Companies like Washington Post, Under Armour, and HashiCorp run production sites on Vercel Enterprise.",
+      },
+    ],
+    quickstart:
+      "# Install Vercel CLI\nnpm install -g vercel\n\n# Deploy from any framework project\nvercel\n\n# Or create a new Next.js project and deploy\nnpx create-next-app@latest my-app\ncd my-app\nvercel\n\n# Deploy to production\nvercel --prod",
+    quickstartLang: "bash",
+    docsUrl: "https://vercel.com/docs",
+  },
+
+  // ─── NETLIFY ────────────────────────────────────────────────────
+  {
+    slug: "netlify",
+    name: "Netlify",
+    category: "tooling",
+    tagline: "The modern web platform for JAMstack and beyond",
+    description:
+      "Netlify pioneered the JAMstack movement — combining static sites, serverless functions, and edge computing into a seamless developer workflow. We build and deploy fast, scalable sites on Netlify for teams that value simplicity.",
+    accentColor: "teal",
+    visualizationKey: "netlify",
+    logo: null,
+    lucideIcon: "Globe",
+    features: [
+      {
+        icon: "Zap",
+        title: "Instant builds & deploys",
+        description:
+          "Git-triggered builds with atomic deploys, instant rollbacks, and deploy previews for every pull request — zero-downtime deployments every time.",
+      },
+      {
+        icon: "Code",
+        title: "Serverless Functions",
+        description:
+          "AWS Lambda-powered serverless functions with zero configuration — deploy alongside your site, automatic API routing, and background functions for long tasks.",
+      },
+      {
+        icon: "Globe",
+        title: "Edge Functions",
+        description:
+          "Deno-based edge functions running at 300+ locations — transform responses, personalize content, handle auth, and run A/B tests at the edge with TypeScript.",
+      },
+      {
+        icon: "FileText",
+        title: "Netlify Forms",
+        description:
+          "HTML-based form handling — add a netlify attribute to any form and submissions are captured, emailed, and accessible via API. No backend required.",
+      },
+      {
+        icon: "Shield",
+        title: "Netlify Identity",
+        description:
+          "Drop-in auth with email/password, magic links, and OAuth providers — JWT-based identity management with role-based access control for gated content.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Build hooks & webhooks",
+        description:
+          "Trigger rebuilds from any CMS, webhook, or cron job. Combine with ISR-like patterns for dynamic content that updates without full rebuilds.",
+      },
+    ],
+    subTechs: [{ slug: "astro" }, { slug: "react" }],
+    pageType: "tech",
+    targetAudience: "developers",
+    overview:
+      "Netlify helped define the modern JAMstack movement — the architectural approach of pre-rendering static pages, enhancing with JavaScript, and connecting to APIs and serverless functions for dynamic behavior. The platform turns any Git repository into a deployed website: push to main and Netlify builds, deploys, and serves your site on a global CDN with HTTPS, branch previews, and instant rollbacks. It supports virtually every static site generator and frontend framework — Astro, Next.js, Nuxt, SvelteKit, Hugo, Gatsby, and plain HTML.\n\nBeyond static hosting, Netlify provides a serverless backend layer. Serverless Functions (powered by AWS Lambda) deploy alongside your site with zero configuration. Edge Functions (powered by Deno) run at the edge for personalization, auth, and response transforms. Netlify Forms captures submissions from any HTML form without a backend. Netlify Identity provides JWT-based authentication. Together, these features let you build full-featured applications without managing any infrastructure.\n\nNetlify's sweet spot is marketing sites, documentation, blogs, and content-driven applications — projects where build-time rendering, CDN delivery, and simple serverless functions cover the majority of needs. For complex server-side applications, Netlify's serverless model has limits (function execution caps, cold starts, no persistent connections). A Major builds on Netlify when it's the right fit and helps teams evaluate when a more flexible platform is needed.",
+    challenges: [
+      {
+        title: "Build time limitations",
+        description:
+          "Netlify builds have time limits (15 minutes on free, 30 on Pro). Large sites with thousands of pages can hit these limits. Incremental builds and on-demand builders help, but very large sites may need architectural changes.",
+      },
+      {
+        title: "Serverless function constraints",
+        description:
+          "Netlify Functions have a 10-second timeout (26 seconds on Pro), 1024MB memory limit, and are synchronous by default. Background Functions extend to 15 minutes but have different invocation patterns. Complex backends may outgrow these limits.",
+      },
+      {
+        title: "Framework-specific feature gaps",
+        description:
+          "While Netlify supports many frameworks, some framework features (like Next.js ISR or SvelteKit streaming) work differently or have limitations compared to their native platforms (Vercel, Cloudflare).",
+      },
+      {
+        title: "Vendor lock-in with Netlify-specific features",
+        description:
+          "Netlify Forms, Identity, and Build Plugins are proprietary. Using them heavily makes migration harder. Evaluate whether the convenience justifies the coupling for your specific use case.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use branch deploys and deploy previews",
+        detail:
+          "Configure branch deploys for staging environments and deploy previews for every PR. Share preview URLs with stakeholders for visual review before merging. Enable Netlify's deploy notifications in Slack.",
+      },
+      {
+        tip: "Leverage edge functions for personalization",
+        detail:
+          "Use Netlify Edge Functions for geo-based redirects, A/B testing, authentication checks, and response transforms. They run at the edge with Deno — TypeScript, fast cold starts, and access to request geo data.",
+      },
+      {
+        tip: "Cache aggressively with proper headers",
+        detail:
+          "Netlify's CDN respects Cache-Control headers. Set long cache times for static assets with hashed filenames, and shorter TTLs for HTML pages. Use Netlify's cache purge API for instant invalidation when content changes.",
+      },
+      {
+        tip: "Use build plugins for optimization",
+        detail:
+          "Netlify Build Plugins automate tasks — lighthouse audits, image optimization, sitemap generation, and cache prewarming run as part of your build pipeline without custom CI scripts.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Netlify Documentation",
+        url: "https://docs.netlify.com/",
+        type: "docs",
+      },
+      {
+        title: "Netlify Functions",
+        url: "https://docs.netlify.com/functions/overview/",
+        type: "docs",
+      },
+      {
+        title: "JAMstack.org",
+        url: "https://jamstack.org/",
+        type: "community",
+      },
+      {
+        title: "Netlify Community Forums",
+        url: "https://answers.netlify.com/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "Netlify vs Vercel — which should I use?",
+        answer:
+          "Vercel is the best platform for Next.js specifically. Netlify is more framework-agnostic — it excels with Astro, Hugo, 11ty, and multi-framework setups. Netlify's built-in Forms and Identity are unique conveniences. Choose Vercel for Next.js-first teams; Netlify for JAMstack diversity and teams using multiple frameworks.",
+      },
+      {
+        question: "What are the benefits of JAMstack?",
+        answer:
+          "JAMstack (JavaScript, APIs, Markup) pre-renders pages at build time, serving them from a CDN — resulting in faster load times, better security (no server to attack), lower hosting costs, and easier scaling. Dynamic features are handled by APIs and serverless functions. It's ideal for content-driven sites, documentation, and marketing pages.",
+      },
+      {
+        question: "How much does Netlify cost?",
+        answer:
+          "Netlify's free tier includes 100GB bandwidth, 300 build minutes, and 125K serverless function invocations per month. Pro is $19/member/month with 1TB bandwidth, 25K build minutes, and background functions. Enterprise adds SSO, SLAs, and higher limits. Most small teams operate well within the free or Pro tiers.",
+      },
+      {
+        question: "Can Netlify handle high-traffic sites?",
+        answer:
+          "Yes — Netlify serves pre-rendered pages from a global CDN, which handles traffic spikes effortlessly. Static content scales infinitely. The bottleneck is serverless functions — high-traffic dynamic features may need careful optimization or a dedicated backend service alongside Netlify's static hosting.",
+      },
+    ],
+    quickstart:
+      "# Install Netlify CLI\nnpm install -g netlify-cli\n\n# Create and deploy an Astro site\nnpm create astro@latest my-site\ncd my-site\nnetlify init\nnetlify deploy --prod\n\n# Or link an existing repo\nnetlify link\nnetlify deploy --prod",
+    quickstartLang: "bash",
+    docsUrl: "https://docs.netlify.com/",
+  },
+
+  // ─── REDIS ──────────────────────────────────────────────────────
+  {
+    slug: "redis",
+    name: "Redis",
+    category: "database",
+    tagline: "In-memory data store for caching, queues, and real-time systems",
+    description:
+      "Redis is the world's fastest in-memory data store — used for caching, session management, rate limiting, queues, and real-time leaderboards. We architect Redis layers that slash response times and scale to millions of operations per second.",
+    accentColor: "red",
+    visualizationKey: "redis",
+    logo: null,
+    lucideIcon: "Database",
+    features: [
+      {
+        icon: "Zap",
+        title: "Sub-millisecond caching",
+        description:
+          "Cache database queries, API responses, and computed results in memory — reducing latency from hundreds of milliseconds to sub-millisecond for repeated requests.",
+      },
+      {
+        icon: "Shield",
+        title: "Session storage",
+        description:
+          "Store user sessions in Redis for fast, distributed session management — shared across multiple application servers with automatic TTL-based expiry.",
+      },
+      {
+        icon: "Bell",
+        title: "Pub/Sub & Streams",
+        description:
+          "Real-time messaging with Redis Pub/Sub for broadcast patterns and Redis Streams for durable, consumer-group-based event processing.",
+      },
+      {
+        icon: "Clock",
+        title: "Rate limiting",
+        description:
+          "Implement API rate limiting with Redis counters and sliding windows — atomic increment operations ensure accurate throttling under high concurrency.",
+      },
+      {
+        icon: "Layers",
+        title: "Queues & background jobs",
+        description:
+          "BullMQ and similar libraries use Redis as a job queue backend — reliable, priority-based task processing with retries, delays, and scheduled jobs.",
+      },
+      {
+        icon: "Search",
+        title: "Redis Stack",
+        description:
+          "Full-text search (RediSearch), JSON document storage (RedisJSON), graph queries (RedisGraph), and time-series data (RedisTimeSeries) — extending Redis beyond key-value.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "postgresql" }],
+    pageType: "tech",
+    targetAudience: "developers",
+    overview:
+      "Redis is an in-memory data structure store that operates at sub-millisecond latency — making it the de facto standard for caching, session management, rate limiting, and real-time data processing. Unlike simple key-value stores, Redis supports rich data structures: strings, hashes, lists, sets, sorted sets, streams, and HyperLogLog — each with atomic operations that make complex patterns possible without external locking or coordination.\n\nThe most common Redis use case is caching: placing a Redis layer between your application and database reduces query load and cuts response times dramatically. But Redis powers much more — session storage across distributed servers, rate limiting for API protection, job queues (via BullMQ or Sidekiq), real-time leaderboards (sorted sets), pub/sub messaging for WebSocket fan-out, and distributed locks for coordinating microservices. Redis Streams provide a Kafka-like log data structure for event-driven architectures at a fraction of the operational complexity.\n\nRedis Stack extends the core with modules: RediSearch adds full-text search with secondary indexing, RedisJSON stores and queries JSON documents natively, and RedisTimeSeries handles time-series data efficiently. Managed Redis is available via Redis Cloud, AWS ElastiCache, Upstash (serverless), and others. A Major architects Redis caching layers, queue systems, and real-time data pipelines that handle millions of operations per second while remaining operationally simple.",
+    challenges: [
+      {
+        title: "Memory management and cost",
+        description:
+          "Redis stores everything in RAM — which is expensive. A 100GB dataset requires 100GB+ of memory. Understanding memory efficiency (encoding, compression, TTL policies) is critical to keeping Redis costs manageable at scale.",
+      },
+      {
+        title: "Persistence and durability trade-offs",
+        description:
+          "Redis offers RDB snapshots and AOF logging for persistence, but both have trade-offs — RDB can lose recent data, AOF impacts performance. For critical data, understanding the persistence configuration and its failure modes is essential.",
+      },
+      {
+        title: "Cache invalidation strategies",
+        description:
+          "Cache invalidation is one of computing's hardest problems. Deciding when to invalidate (TTL-based, event-based, write-through), what to cache, and handling cache stampedes requires careful architectural planning.",
+      },
+      {
+        title: "Cluster topology and scaling",
+        description:
+          "Redis Cluster shards data across nodes, but cross-slot operations are limited (multi-key commands must target the same hash slot). Designing your key schema for cluster compatibility requires upfront planning.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use appropriate TTLs on every key",
+        detail:
+          "Never cache without a TTL — unbounded caches grow until memory runs out. Set TTLs based on data freshness requirements: 60s for API responses, 24h for user sessions, 7d for computed aggregations.",
+      },
+      {
+        tip: "Choose the right data structure",
+        detail:
+          "Use hashes for objects (memory-efficient for small hashes), sorted sets for leaderboards and ranked data, lists for queues, sets for unique collections, and streams for event logs. The right structure avoids expensive workarounds.",
+      },
+      {
+        tip: "Implement cache-aside with stampede protection",
+        detail:
+          "Use the cache-aside pattern: read from cache, on miss fetch from database and populate cache. Add lock-based or probabilistic early recomputation to prevent cache stampedes when popular keys expire simultaneously.",
+      },
+      {
+        tip: "Use connection pooling",
+        detail:
+          "Create a Redis connection pool (e.g., ioredis with lazyConnect) and reuse connections across requests. Each new TCP connection has overhead — pooling is essential for serverless environments and high-throughput apps.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Redis Documentation",
+        url: "https://redis.io/docs/",
+        type: "docs",
+      },
+      {
+        title: "Redis University (Free Courses)",
+        url: "https://university.redis.io/",
+        type: "tutorial",
+      },
+      {
+        title: "BullMQ — Redis Queue for Node.js",
+        url: "https://docs.bullmq.io/",
+        type: "tool",
+      },
+      {
+        title: "Redis Community on Discord",
+        url: "https://discord.com/invite/redis",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "Redis vs Memcached — which should I use?",
+        answer:
+          "Redis supports rich data structures (lists, sets, sorted sets, streams), persistence, pub/sub, and Lua scripting. Memcached is simpler — key-value only, multi-threaded, and slightly faster for pure string caching. For most applications, Redis's versatility makes it the better choice. Use Memcached only for simple, high-throughput string caching where Redis features aren't needed.",
+      },
+      {
+        question: "When should I use Redis?",
+        answer:
+          "Use Redis for: caching database queries and API responses, user session storage, rate limiting, real-time leaderboards, job queues (BullMQ), pub/sub messaging, distributed locks, and temporary data with TTLs. Don't use Redis as a primary database for critical data — its persistence model has durability trade-offs compared to Postgres or MySQL.",
+      },
+      {
+        question: "What are Redis persistence options?",
+        answer:
+          "Redis offers two persistence mechanisms: RDB (periodic snapshots — fast recovery, potential data loss between snapshots) and AOF (append-only log — better durability, larger files, slower recovery). You can use both simultaneously for the best of each. For pure caching, you can disable persistence entirely — faster performance, and data rebuilds from the source on restart.",
+      },
+      {
+        question: "How much memory does Redis need?",
+        answer:
+          "Redis uses slightly more memory than the raw data size due to internal overhead (pointers, metadata). A rough estimate: 1 million small key-value pairs (~100 bytes each) uses ~180MB. Use Redis's MEMORY USAGE command to measure actual consumption. For cost efficiency, consider Upstash (serverless, pay-per-command) for low-traffic use cases.",
+      },
+    ],
+    quickstart:
+      "# Install Redis (macOS)\nbrew install redis && brew services start redis\n\n# Or use Docker\ndocker run -d -p 6379:6379 redis:7-alpine\n\n# Connect with redis-cli\nredis-cli\n> SET mykey \"Hello Redis\"\n> GET mykey\n\n# Node.js with ioredis\nnpm install ioredis\n# import Redis from 'ioredis';\n# const redis = new Redis();\n# await redis.set('key', 'value', 'EX', 60);",
+    quickstartLang: "bash",
+    docsUrl: "https://redis.io/docs/",
+  },
+
+  // ─── GRAPHQL ────────────────────────────────────────────────────
+  {
+    slug: "graphql",
+    name: "GraphQL",
+    category: "backend",
+    tagline: "A query language for APIs — ask for exactly what you need",
+    description:
+      "GraphQL lets clients request exactly the data they need in a single query — no over-fetching, no under-fetching. We design GraphQL schemas, build performant resolvers, and implement federation for distributed teams.",
+    accentColor: "pink",
+    visualizationKey: "graphql",
+    logo: null,
+    lucideIcon: "GitBranch",
+    features: [
+      {
+        icon: "GitBranch",
+        title: "Schema-first API design",
+        description:
+          "Strongly typed schemas define your API contract — every query, mutation, and type is documented and validated at build time. No more guessing what an endpoint returns.",
+      },
+      {
+        icon: "Zap",
+        title: "Precise data fetching",
+        description:
+          "Clients request exactly the fields they need — one query replaces multiple REST calls. Mobile apps fetch minimal payloads, dashboards fetch rich data, from the same API.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Real-time subscriptions",
+        description:
+          "GraphQL Subscriptions push data to clients over WebSocket — live notifications, chat messages, and real-time dashboards powered by the same schema.",
+      },
+      {
+        icon: "Layers",
+        title: "Apollo Federation",
+        description:
+          "Compose multiple GraphQL services into a single unified schema — each team owns their subgraph, the gateway stitches them together transparently.",
+      },
+      {
+        icon: "Code",
+        title: "Code generation",
+        description:
+          "Generate TypeScript types, React hooks, and SDK clients directly from your schema — end-to-end type safety from backend schema to frontend component.",
+      },
+      {
+        icon: "Search",
+        title: "Introspection & tooling",
+        description:
+          "GraphQL is self-documenting — introspection queries expose the full schema. Tools like GraphiQL and Apollo Studio provide visual exploration, query building, and performance tracing.",
+      },
+    ],
+    subTechs: [{ slug: "nodejs" }, { slug: "react" }, { slug: "trpc" }],
+    pageType: "tech",
+    targetAudience: "developers",
+    overview:
+      "GraphQL is a query language and runtime for APIs that lets clients specify exactly what data they need. Instead of hitting multiple REST endpoints and filtering out unwanted fields, a GraphQL client sends a single query describing the shape of the response — and the server returns exactly that shape. This eliminates over-fetching (getting too much data) and under-fetching (needing multiple requests), which is particularly valuable for mobile apps on slow networks and complex UIs that aggregate data from multiple sources.\n\nAt its core, GraphQL is a type system. You define a schema — types, queries, mutations, and subscriptions — that serves as the contract between frontend and backend. This schema is introspectable (clients can discover what's available), validated at build time (invalid queries fail before they reach production), and enables powerful code generation. Tools like GraphQL Code Generator and Relay Compiler generate TypeScript types and React hooks directly from your schema, providing end-to-end type safety with zero manual type definitions.\n\nThe challenge with GraphQL is that it moves complexity from the client to the server. Resolvers must handle N+1 query problems (DataLoader is essential), authorization must be enforced at the resolver level, and query complexity limits prevent malicious deeply-nested queries. For large organizations, Apollo Federation composes multiple team-owned subgraphs into a unified API gateway. A Major designs GraphQL schemas, implements performant resolvers with proper batching, and sets up federation architectures for teams that need a flexible, strongly-typed API layer.",
+    challenges: [
+      {
+        title: "N+1 query problem",
+        description:
+          "Naive resolver implementations trigger a separate database query for each related item — fetching 50 users with posts can trigger 51 queries. DataLoader solves this by batching and caching, but it must be implemented for every relationship.",
+      },
+      {
+        title: "Query complexity and security",
+        description:
+          "GraphQL's flexibility is a double-edged sword — clients can construct deeply nested, expensive queries. Without query depth limits, complexity analysis, and rate limiting, a single malicious query can overwhelm your server.",
+      },
+      {
+        title: "Caching complexity",
+        description:
+          "REST APIs cache naturally with HTTP caching (URLs map to cache keys). GraphQL uses a single endpoint with POST requests, making HTTP caching impossible. Client-side caching (Apollo, Relay) uses normalized stores, but CDN-level caching requires persisted queries or GET requests.",
+      },
+      {
+        title: "Schema evolution and versioning",
+        description:
+          "GraphQL schemas don't version like REST APIs (v1, v2). Instead, fields are deprecated and new fields are added. Managing this evolution across clients — especially mobile apps that can't be force-updated — requires careful deprecation policies and field tracking.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use DataLoader for every relationship",
+        detail:
+          "Implement DataLoader for batching and caching at the resolver level. Without it, a list query fetching N items with M relations triggers N*M database queries. DataLoader collapses these into 2 queries — one for items, one for all related items.",
+      },
+      {
+        tip: "Implement query complexity limits",
+        detail:
+          "Assign cost values to fields and limit total query complexity. A deeply nested query requesting all users → posts → comments → likes could return millions of rows. Use graphql-query-complexity or Apollo's built-in cost analysis.",
+      },
+      {
+        tip: "Generate types from schema",
+        detail:
+          "Use GraphQL Code Generator to create TypeScript types, React hooks (useQuery, useMutation), and server-side resolver types from your schema. This ensures frontend and backend stay in sync without manual type maintenance.",
+      },
+      {
+        tip: "Design schemas for client needs, not database structure",
+        detail:
+          "GraphQL schemas should model the domain as clients need it — not mirror your database tables. Use connections for pagination, dedicated input types for mutations, and meaningful field names that read naturally in queries.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "GraphQL Official Documentation",
+        url: "https://graphql.org/learn/",
+        type: "docs",
+      },
+      {
+        title: "Apollo GraphQL",
+        url: "https://www.apollographql.com/docs/",
+        type: "docs",
+      },
+      {
+        title: "GraphQL Code Generator",
+        url: "https://the-guild.dev/graphql/codegen",
+        type: "tool",
+      },
+      {
+        title: "GraphQL Community on Discord",
+        url: "https://discord.graphql.org/",
+        type: "community",
+      },
+    ],
+    faq: [
+      {
+        question: "GraphQL vs REST — when should I use GraphQL?",
+        answer:
+          "Use GraphQL when: multiple clients (web, mobile, third-party) need different data shapes from the same API, your UI aggregates data from multiple resources in a single view, or you want end-to-end type safety via code generation. Stick with REST for simple CRUD APIs, public APIs that benefit from HTTP caching, or teams without GraphQL experience. A Major helps you evaluate the trade-offs for your specific project.",
+      },
+      {
+        question: "Is GraphQL slower than REST?",
+        answer:
+          "Not inherently — but poorly implemented GraphQL can be. The N+1 problem, deeply nested queries, and lack of CDN caching can make naive GraphQL slower than REST. With DataLoader batching, query complexity limits, persisted queries, and proper resolver optimization, GraphQL performance matches or exceeds REST for complex data fetching patterns.",
+      },
+      {
+        question: "Should I use Apollo or Relay on the client?",
+        answer:
+          "Apollo Client is more approachable — flexible, works with any GraphQL server, and has a gentler learning curve. Relay is Facebook's client — more opinionated, tighter schema conventions (connections, node IDs), but produces optimal queries and handles pagination elegantly. For most teams, Apollo Client is the practical choice. Relay shines in large-scale apps with strict schema conventions.",
+      },
+      {
+        question: "Can GraphQL replace REST entirely?",
+        answer:
+          "Technically yes, but pragmatically no for all use cases. GraphQL excels for read-heavy, relationship-rich queries. File uploads, webhooks, streaming responses, and simple CRUD operations are often simpler with REST. Many production architectures use GraphQL for the main API and REST for specific endpoints like file uploads and health checks.",
+      },
+    ],
+    quickstart:
+      "# Create a new Apollo Server project\nmkdir my-graphql-api && cd my-graphql-api\nnpm init -y\nnpm install @apollo/server graphql\n\n# Create index.ts with a simple schema\n# import { ApolloServer } from '@apollo/server';\n# import { startStandaloneServer } from '@apollo/server/standalone';\n#\n# const typeDefs = `type Query { hello: String }`;\n# const resolvers = { Query: { hello: () => 'Hello world!' } };\n# const server = new ApolloServer({ typeDefs, resolvers });\n# const { url } = await startStandaloneServer(server);\n# console.log(`Server ready at ${url}`);",
+    quickstartLang: "bash",
+    docsUrl: "https://graphql.org/learn/",
+  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceConfig | undefined {
@@ -9734,6 +12097,9 @@ export function getServiceBySlug(slug: string): ServiceConfig | undefined {
 
 export const frontendServices = servicesConfig.filter(
   (s) => s.category === "frontend"
+);
+export const fullStackServices = servicesConfig.filter(
+  (s) => s.category === "full-stack"
 );
 export const backendServices = servicesConfig.filter(
   (s) => s.category === "backend"

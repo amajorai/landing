@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogPosts, getProjects } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
@@ -16,9 +17,14 @@ type SitemapEntry = {
   priority: number;
 };
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://amajor.ai";
   const currentDate = new Date();
+
+  const [blogPosts, projects] = await Promise.all([
+    getBlogPosts().catch(() => []),
+    getProjects().catch(() => []),
+  ]);
 
   const routes: SitemapEntry[] = [
     {
@@ -40,32 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/consultancy`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/products`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
   ];
-
-  const sections = [
-    { path: "about", priority: 0.9, changeFreq: "monthly" as const },
-    { path: "contact", priority: 0.8, changeFreq: "monthly" as const },
-  ];
-
-  sections.forEach((section) => {
-    routes.push({
-      url: `${baseUrl}/#${section.path}`,
-      lastModified: currentDate,
-      changeFrequency: section.changeFreq,
-      priority: section.priority,
-    });
-  });
 
   offeringsConfig.forEach((offering) => {
     routes.push({
@@ -85,17 +71,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  const projects = [
-    { name: "decosmic", priority: 0.8 },
-    { name: "been-place", priority: 0.8 },
-  ];
+  blogPosts.forEach((post) => {
+    routes.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  });
 
   projects.forEach((project) => {
     routes.push({
-      url: `${baseUrl}/projects/${project.name}`,
+      url: `${baseUrl}/projects/${project.slug}`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: project.priority,
+      priority: 0.8,
     });
   });
 

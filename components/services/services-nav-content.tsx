@@ -10,6 +10,7 @@ import {
   designServices,
   desktopServices,
   frontendServices,
+  fullStackServices,
   mobileServices,
   paymentsServices,
   type ServiceConfig,
@@ -84,15 +85,44 @@ export function ServicesNavContent() {
   return (
     <div className="w-[620px]">
       <div className="max-h-[70vh] overflow-y-auto">
-        {/* Offerings */}
+        {/* Core services */}
         <div className="px-3 pt-3 pb-2">
           <p className="mb-1.5 px-2 font-medium text-[11px] text-muted-foreground/70">
             Our services
           </p>
           <div className="grid grid-cols-2 gap-x-1 gap-y-0.5">
-            {offeringsConfig.map((o) => (
-              <OfferingNavItem key={o.slug} offering={o} />
-            ))}
+            {offeringsConfig
+              .filter(
+                (o) =>
+                  ![
+                    "website-migration",
+                    "api-development",
+                    "startup-development",
+                  ].includes(o.slug)
+              )
+              .map((o) => (
+                <OfferingNavItem key={o.slug} offering={o} />
+              ))}
+          </div>
+        </div>
+
+        {/* Specialist services */}
+        <div className="border-border border-t px-3 pt-2 pb-2">
+          <p className="mb-1.5 px-2 font-medium text-[11px] text-muted-foreground/70">
+            Specialist
+          </p>
+          <div className="grid grid-cols-2 gap-x-1 gap-y-0.5">
+            {offeringsConfig
+              .filter((o) =>
+                [
+                  "website-migration",
+                  "api-development",
+                  "startup-development",
+                ].includes(o.slug)
+              )
+              .map((o) => (
+                <OfferingNavItem key={o.slug} offering={o} />
+              ))}
           </div>
         </div>
 
@@ -101,10 +131,10 @@ export function ServicesNavContent() {
           <div className="columns-3 gap-x-4">
             {[
               {
-                label: "Frontend Frameworks",
+                label: "Frontend",
                 services: frontendServices.slice(0, 8),
               },
-              { label: "CMS", services: cmsServices },
+              { label: "Full Stack", services: fullStackServices },
               { label: "Desktop", services: desktopServices },
               {
                 label: "Frontend Libraries",
@@ -116,6 +146,7 @@ export function ServicesNavContent() {
               { label: "APIs & Runtime", services: backendServices.slice(8) },
               { label: "Mobile", services: mobileServices },
               { label: "Database", services: databaseServices },
+              { label: "CMS", services: cmsServices },
               { label: "Design", services: designServices },
               { label: "Tooling & DevOps", services: toolingServices },
             ].map((group) => (

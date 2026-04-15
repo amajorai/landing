@@ -199,13 +199,13 @@ textarea,
 
 /* Text selection highlight color */
 ::selection {
-  background-color: oklch(0.6 0.2 250);
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .dark ::selection {
-  background-color: oklch(0.5 0.2 250);
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 /* Shimmer animation for skeleton loading */

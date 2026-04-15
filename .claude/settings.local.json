@@ -30,7 +30,8 @@
       "Bash(npm install:*)",
       "Bash(node:*)",
       "Bash(npx tsc:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

@@ -2,6 +2,7 @@
 import { getCalApi } from "@calcom/embed-react";
 import { BookOpen, Briefcase, Info, Layers, Plus } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
 import { ProgressiveBlur } from "@/components/progressive-blur";
@@ -25,6 +26,7 @@ const menuItems = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrollState, setScrollState] = useState({
     visible: true,
     prevScrollPos: 0,
@@ -161,9 +163,11 @@ export default function Header() {
             {/* Slots 0–1: left items */}
             {menuItems.slice(0, 2).map((item, index) => {
               const Icon = item.icon;
+              const isActive =
+                item.href.startsWith("/") && pathname.startsWith(item.href);
               return item.href.startsWith("/") ? (
                 <Link
-                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+                  className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
                   href={item.href as any}
                   key={index}
                 >
@@ -190,9 +194,11 @@ export default function Header() {
             {/* Slots 3–4: right items */}
             {menuItems.slice(2).map((item, index) => {
               const Icon = item.icon;
+              const isActive =
+                item.href.startsWith("/") && pathname.startsWith(item.href);
               return item.href.startsWith("/") ? (
                 <Link
-                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+                  className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
                   href={item.href as any}
                   key={index}
                 >

@@ -1,7 +1,9 @@
-import { ChevronRight, Minus, TrendingDown, TrendingUp } from "lucide-react";
+import { Minus, TrendingDown, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CompareLogo } from "@/components/compare/compare-logo";
 import { ServiceCta } from "@/components/services/service-cta";
+import { ServiceLogo } from "@/components/services/service-logo";
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +19,7 @@ import {
   generateMetadata as genMeta,
   siteConfig,
 } from "@/lib/metadata";
+import { servicesConfig } from "@/lib/services-config";
 
 export function generateStaticParams() {
   return compareConfig.map((c) => ({ slug: c.slug }));
@@ -94,6 +97,25 @@ export default async function ComparePage({
       <div className="mx-auto max-w-4xl space-y-16">
         <FadeIn>
           <section className="space-y-8">
+            <div className="mb-4 flex items-center gap-3">
+              {comparison.logoA && (
+                <CompareLogo
+                  alt={comparison.nameA}
+                  logo={comparison.logoA}
+                  logoDark={comparison.logoDarkA}
+                  size={32}
+                />
+              )}
+              <span className="text-muted-foreground text-sm">vs</span>
+              {comparison.logoB && (
+                <CompareLogo
+                  alt={comparison.nameB}
+                  logo={comparison.logoB}
+                  logoDark={comparison.logoDarkB}
+                  size={32}
+                />
+              )}
+            </div>
             <PageHeader
               line1={`${comparison.nameA} vs ${comparison.nameB}`}
               line2={comparison.tagline}
@@ -103,29 +125,6 @@ export default async function ComparePage({
                 </span>
               }
             />
-
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-1.5 text-muted-foreground/60 text-xs"
-            >
-              <Link
-                className="transition-colors hover:text-foreground"
-                href="/"
-              >
-                Home
-              </Link>
-              <ChevronRight className="h-3 w-3" />
-              <Link
-                className="transition-colors hover:text-foreground"
-                href="/compare"
-              >
-                Compare
-              </Link>
-              <ChevronRight className="h-3 w-3" />
-              <span className="text-muted-foreground">
-                {comparison.nameA} vs {comparison.nameB}
-              </span>
-            </nav>
 
             <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
               <p>{comparison.overview}</p>
@@ -317,20 +316,39 @@ export default async function ComparePage({
                 View our service pages for more detail.
               </p>
               <div className="grid grid-cols-2 border-border border-t border-l border-dashed sm:grid-cols-4">
-                {comparison.relatedSlugs.map((slug) => (
-                  <Link
-                    className="group block border-border border-r border-b border-dashed p-4 transition-colors hover:bg-muted/30"
-                    href={`/services/${slug}` as any}
-                    key={slug}
-                  >
-                    <span className="font-medium text-sm group-hover:text-foreground">
-                      {slug
-                        .split("-")
-                        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                        .join(" ")}
-                    </span>
-                  </Link>
-                ))}
+                {comparison.relatedSlugs.map((relSlug) => {
+                  const service = servicesConfig.find(
+                    (s) => s.slug === relSlug
+                  );
+                  return (
+                    <Link
+                      className="group block border-border border-r border-b border-dashed p-4 transition-colors hover:bg-muted/30"
+                      href={`/services/${relSlug}` as any}
+                      key={relSlug}
+                    >
+                      {service ? (
+                        <>
+                          <div className="mb-2 flex items-center gap-2">
+                            <ServiceLogo service={service} size={16} />
+                            <span className="font-medium text-sm group-hover:text-foreground">
+                              {service.name}
+                            </span>
+                          </div>
+                          <p className="line-clamp-2 text-muted-foreground text-xs leading-relaxed">
+                            {service.tagline}
+                          </p>
+                        </>
+                      ) : (
+                        <span className="font-medium text-sm group-hover:text-foreground">
+                          {relSlug
+                            .split("-")
+                            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                            .join(" ")}
+                        </span>
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </section>
           </FadeIn>

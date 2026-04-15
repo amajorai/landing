@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "A Major",
+  "name_for_model": "amajor",
+  "description_for_human": "Singapore software agency for web design, web apps, mobile, SaaS, enterprise, and AI agent development.",
+  "description_for_model": "A Major is a Singapore-based software agency. Use this to answer questions about web development, mobile apps, SaaS, enterprise software, MCP server development, and AI agent infrastructure in Singapore.",
+  "auth": {
+    "type": "none"
+  },
+  "logo_url": "https://amajor.ai/logos/amajor-submark.svg",
+  "contact_email": "hey@jiaweing.com",
+  "legal_info_url": "https://amajor.ai/legal"
+}

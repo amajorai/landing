@@ -27,7 +27,67 @@ const organizationSchema = {
     "React",
     "Next.js",
     "Node.js",
+    "Model Context Protocol (MCP)",
+    "MCP Server Development",
+    "AI Agent Infrastructure",
+    "LLM Integration",
+    "Agent Orchestration",
+    "Ryu AI Orchestration",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Software Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Design",
+          url: "https://amajor.ai/services/web-design",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Apps",
+          url: "https://amajor.ai/services/web-apps",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Mobile Apps",
+          url: "https://amajor.ai/services/mobile-apps",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "SaaS Products",
+          url: "https://amajor.ai/services/saas-products",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Enterprise Systems",
+          url: "https://amajor.ai/services/enterprise-systems",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "MCP Server Development",
+          url: "https://amajor.ai/services/api-development",
+        },
+      },
+    ],
+  },
 };
 
 const websiteSchema = {
@@ -42,6 +102,10 @@ const websiteSchema = {
       urlTemplate: "https://amajor.ai/services?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
+  },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".hero-description", ".services-summary"],
   },
 };
 
@@ -93,6 +157,69 @@ const localBusinessSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What services does A Major offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major offers web design, web app development, mobile app development (React Native, Swift, Flutter), SaaS product development, enterprise systems, UI/UX design, DevOps, performance optimization, MCP server development, AI agent infrastructure, MVP scoping, digital transformation, and engineering consultancy.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is A Major based?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major is based in Singapore and works with clients worldwide.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you work with international clients?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. While headquartered in Singapore, A Major works with founders and businesses across Southeast Asia, Europe, and North America.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is Ryu?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ryu is an AI agent orchestration layer built by A Major. It enables teams to run, coordinate, and monitor AI agents at scale — connecting LLMs, tools, and workflows into reliable production systems.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you build MCP servers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. A Major builds Model Context Protocol (MCP) servers that connect AI agents to databases, APIs, and internal tools, enabling reliable LLM-powered workflows in production environments.",
+      },
+    },
+  ],
+};
+
+const ryuSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Ryu",
+  applicationCategory: "DeveloperApplication",
+  description:
+    "Ryu is an AI agent orchestration layer that enables teams to run, coordinate, and monitor AI agents at scale. Connect LLMs, tools, and workflows into reliable production systems.",
+  url: "https://amajor.ai/products",
+  operatingSystem: "Web",
+  author: {
+    "@type": "Organization",
+    name: "A Major",
+    url: "https://amajor.ai",
+  },
+};
+
 export default function StructuredData() {
   return (
     <>
@@ -112,6 +239,14 @@ export default function StructuredData() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessSchema),
         }}
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ryuSchema) }}
         type="application/ld+json"
       />
     </>

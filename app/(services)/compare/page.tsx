@@ -1,5 +1,5 @@
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { CompareLogo } from "@/components/compare/compare-logo";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { compareConfig } from "@/lib/compare-config";
@@ -67,20 +67,6 @@ export default function ComparePage() {
               }
             />
 
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-1.5 text-muted-foreground/60 text-xs"
-            >
-              <Link
-                className="transition-colors hover:text-foreground"
-                href="/"
-              >
-                Home
-              </Link>
-              <ChevronRight className="h-3 w-3" />
-              <span className="text-muted-foreground">Compare</span>
-            </nav>
-
             <p className="max-w-2xl text-muted-foreground leading-relaxed">
               Choosing between frameworks and platforms is one of the most
               consequential decisions in any project. These comparisons are
@@ -99,11 +85,27 @@ export default function ComparePage() {
                   href={`/compare/${comparison.slug}` as any}
                   key={comparison.slug}
                 >
-                  <div className="mb-2 flex items-center gap-2">
+                  <div className="mb-3 flex items-center gap-2">
+                    {comparison.logoA && (
+                      <CompareLogo
+                        alt={comparison.nameA}
+                        logo={comparison.logoA}
+                        logoDark={comparison.logoDarkA}
+                        size={20}
+                      />
+                    )}
                     <span className="font-semibold text-sm">
                       {comparison.nameA}
                     </span>
                     <span className="text-muted-foreground text-xs">vs</span>
+                    {comparison.logoB && (
+                      <CompareLogo
+                        alt={comparison.nameB}
+                        logo={comparison.logoB}
+                        logoDark={comparison.logoDarkB}
+                        size={20}
+                      />
+                    )}
                     <span className="font-semibold text-sm">
                       {comparison.nameB}
                     </span>

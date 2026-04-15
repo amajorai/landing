@@ -2,9 +2,12 @@ import { type ChildProcess, spawn } from "child_process";
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
+import { compareConfig } from "@/lib/compare-config";
 import { fetchBlogPosts, fetchPages, fetchProjects } from "@/lib/notion";
+import { offeringsConfig } from "@/lib/offerings-config";
+import { servicesConfig } from "@/lib/services-config";
 
-const PORT = 3456;
+const PORT = 3459;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${PORT}`;
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -73,9 +76,19 @@ async function main() {
       "/",
       "/blog",
       "/projects",
+      "/services",
+      "/products",
+      "/consultancy",
+      "/compare",
       ...pages.map((p) => `/${p.slug}`),
       ...projects.map((p) => `/projects/${p.slug}`),
       ...blogPosts.map((p) => `/blog/${p.slug}`),
+      ...Array.from(
+        new Set(blogPosts.flatMap((p) => p.authors.map((a) => a.slug)))
+      ).map((slug) => `/blog/author/${slug}`),
+      ...servicesConfig.map((s) => `/services/${s.slug}`),
+      ...offeringsConfig.map((o) => `/services/${o.slug}`),
+      ...compareConfig.map((c) => `/compare/${c.slug}`),
     ];
 
     console.log(`Found ${routes.length} routes to screenshot.`);

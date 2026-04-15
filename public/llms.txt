@@ -1,0 +1,58 @@
+# A Major
+
+A Major is a Singapore-based software agency that designs, builds, and ships web applications, mobile apps, SaaS products, enterprise systems, and AI agent infrastructure. We work with founders, startups, and enterprises — from MVP scoping through full deployment.
+
+## Key Pages
+
+- [Home](https://amajor.ai): Agency overview, capabilities, and featured work
+- [Services](https://amajor.ai/services): Full catalog of development services
+- [Blog](https://amajor.ai/blog): Technical articles and industry insights
+- [Products](https://amajor.ai/products): Our own software products including Ryu AI orchestration
+- [Manifesto](https://amajor.ai/manifesto): How we think about building software
+- [Story](https://amajor.ai/story): Who we are and why we started A Major
+- [Consultancy](https://amajor.ai/consultancy): Engineering advisory and fractional CTO services
+
+## Service Offerings
+
+### Web & Design
+- [Web Design](https://amajor.ai/services/web-design): Custom websites, mobile-first, Core Web Vitals optimized
+- [UI/UX Design](https://amajor.ai/services/ui-ux-design): User research, wireframing, design systems, Figma-to-code
+- [SEO Optimization](https://amajor.ai/services/seo-optimization): Technical SEO, Core Web Vitals, structured data
+
+### Application Development
+- [Web Apps](https://amajor.ai/services/web-apps): Full-stack React/Next.js web applications
+- [Mobile Apps](https://amajor.ai/services/mobile-apps): React Native, Swift, Kotlin, Flutter
+- [Browser Extensions](https://amajor.ai/services/browser-extensions): Chrome and cross-browser extensions
+- [SaaS Products](https://amajor.ai/services/saas-products): Multi-tenant SaaS with billing and auth
+- [API Development](https://amajor.ai/services/api-development): REST, GraphQL, tRPC APIs
+
+### Enterprise & Infrastructure
+- [Enterprise Systems](https://amajor.ai/services/enterprise-systems): ERP, CRM, internal tooling at scale
+- [DevOps & Infrastructure](https://amajor.ai/services/devops): CI/CD, Docker, Kubernetes, cloud deployments
+- [Performance Optimization](https://amajor.ai/services/performance-optimization): Speed audits, database tuning, caching
+- [Full Deployment](https://amajor.ai/services/full-deployment): End-to-end deployment and hosting setup
+
+### Strategy & Transformation
+- [MVP Scoping](https://amajor.ai/services/mvp-scoping): Product discovery, technical architecture, roadmap
+- [Digital Transformation](https://amajor.ai/services/digital-transformation): Modernise operations with software
+- [Legacy Modernisation](https://amajor.ai/services/legacy-modernisation): Migrate and refactor legacy systems
+- [Website Migration](https://amajor.ai/services/website-migration): Platform migrations with zero data loss
+- [Startup Development](https://amajor.ai/services/startup-development): Full product builds for early-stage startups
+- [White Label](https://amajor.ai/services/white-label): Rebrandable software for agencies and resellers
+- [Education Software](https://amajor.ai/services/education-software): LMS, e-learning, and EdTech platforms
+- [Consultancy](https://amajor.ai/services/consultancy): Fractional CTO, architecture reviews, technical advisory
+
+## Products
+
+- [Ryu](https://amajor.ai/products): AI agent orchestration layer — run, coordinate, and monitor AI agents at scale
+
+## AI & MCP Capabilities
+
+A Major builds AI-native applications and Model Context Protocol (MCP) servers. We integrate LLMs (Claude, GPT-4, Gemini) into production systems, design agent workflows, and build the infrastructure AI agents need to operate reliably.
+
+## Contact
+
+- Email: hey@jiaweing.com
+- Location: Singapore (serving clients worldwide)
+- LinkedIn: https://www.linkedin.com/company/amajor
+- X/Twitter: https://x.com/amajorai

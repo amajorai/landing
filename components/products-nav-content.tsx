@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
+import type { NavProduct } from "@/lib/notion";
 
-const products = [
-  {
-    name: "Ryu App",
-    description: "Training log for martial artists",
-    href: "/projects/ryu-app",
-    emoji: "🥋",
-  },
-];
+interface ProductsNavContentProps {
+  products: NavProduct[];
+}
 
-export function ProductsNavContent() {
+export function ProductsNavContent({ products }: ProductsNavContentProps) {
+  if (!products.length) return null;
+
   return (
     <div className="w-[220px] p-3">
       <div className="space-y-0.5">
@@ -18,15 +16,17 @@ export function ProductsNavContent() {
           <NavigationMenuLink
             asChild
             className="flex-row items-center gap-2.5 p-0"
-            key={product.name}
+            key={product.id}
           >
             <Link
               className="flex items-start gap-3 rounded-sm px-2 py-2 transition-colors hover:bg-accent"
-              href={product.href as any}
+              href={(product.url || `/products/${product.slug}`) as any}
             >
-              <span className="mt-0.5 text-base leading-none">
-                {product.emoji}
-              </span>
+              {product.emoji && (
+                <span className="mt-0.5 text-base leading-none">
+                  {product.emoji}
+                </span>
+              )}
               <div>
                 <p className="font-medium text-sm leading-tight">
                   {product.name}
@@ -38,17 +38,6 @@ export function ProductsNavContent() {
             </Link>
           </NavigationMenuLink>
         ))}
-      </div>
-
-      <div className="mt-3 border-border border-t pt-2">
-        <NavigationMenuLink asChild className="flex-row items-center gap-0 p-0">
-          <Link
-            className="block rounded-sm px-2 py-1.5 text-muted-foreground text-xs transition-colors hover:bg-accent hover:text-accent-foreground"
-            href={"/products" as any}
-          >
-            View all products →
-          </Link>
-        </NavigationMenuLink>
       </div>
     </div>
   );

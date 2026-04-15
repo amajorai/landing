@@ -66,6 +66,7 @@ export interface ServiceConfig {
   usefulLinks?: ServiceLink[];
   faq?: ServiceFaq[];
   quickstart?: string;
+  quickstartLang?: string;
   docsUrl?: string;
 }
 
@@ -244,10 +245,14 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Component",
         title: "Single File Components",
+        description:
+          "Template, script, and styles in one .vue file — colocation that scales from prototypes to enterprise apps.",
       },
       {
         icon: "Zap",
         title: "Vite-powered dev server",
+        description:
+          "Instant HMR and native ES module dev server — sub-second feedback loops even in large projects.",
       },
       {
         icon: "RefreshCw",
@@ -354,6 +359,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm create vue@latest my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://vuejs.org",
     pageType: "tech",
     targetAudience: "developers",
@@ -372,26 +378,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Zap",
         title: "Compile-time reactivity",
+        description:
+          "Svelte shifts reactivity to the compiler — no virtual DOM diffing, just surgical DOM updates at build time.",
       },
       {
         icon: "Package",
         title: "Minimal bundle size",
+        description:
+          "No runtime framework shipped to the browser — your bundle contains only the code your components actually use.",
       },
       {
         icon: "Wand2",
         title: "Built-in transitions & animations",
+        description:
+          "First-class transition directives for enter/exit animations, crossfades, and spring physics without extra libraries.",
       },
       {
         icon: "Code2",
         title: "Svelte 5 runes",
+        description:
+          "$state, $derived, and $effect runes give you explicit, fine-grained reactivity with clear data flow.",
       },
       {
         icon: "Component",
         title: "Scoped styles by default",
+        description:
+          "CSS written in a Svelte component is automatically scoped — no class name collisions, no CSS-in-JS overhead.",
       },
       {
         icon: "Globe",
         title: "Framework-agnostic use",
+        description:
+          "Compile Svelte components as custom elements and use them in React, Vue, or vanilla HTML projects.",
       },
     ],
     subTechs: [
@@ -496,6 +514,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx sv create my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://svelte.dev/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -649,6 +668,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx create-fumadocs-app my-docs\ncd my-docs\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://fumadocs.vercel.app",
     pageType: "tech",
     targetAudience: "developers",
@@ -960,6 +980,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npm install tailwindcss @tailwindcss/vite",
+    quickstartLang: "bash",
     docsUrl: "https://tailwindcss.com/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -1116,6 +1137,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "dotnet new webapi -n MyApi\ncd MyApi\ndotnet run",
+    quickstartLang: "bash",
     docsUrl: "https://learn.microsoft.com/en-us/aspnet/core/",
     pageType: "tech",
     targetAudience: "developers",
@@ -1271,6 +1293,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "composer create-project laravel/laravel my-app\ncd my-app\nphp artisan serve",
+    quickstartLang: "bash",
     docsUrl: "https://laravel.com/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -1423,6 +1446,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "uv init my-project\ncd my-project\nuv add fastapi uvicorn\nuv run uvicorn main:app --reload",
+    quickstartLang: "bash",
     docsUrl: "https://docs.python.org/3/",
     pageType: "tech",
     targetAudience: "developers",
@@ -1581,6 +1605,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx create-fastify-app my-api\ncd my-api\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://nodejs.org/en/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -1719,6 +1744,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install Android Studio\n# https://developer.android.com/studio\n\n# Create a new Compose project\n# File > New > New Project > Empty Compose Activity\n\n# Or via command line\n# Use Android Studio's project templates for best results",
+    quickstartLang: "bash",
     docsUrl: "https://developer.android.com/guide",
   },
   {
@@ -1853,6 +1879,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install Xcode from the Mac App Store\n# Or via command line:\nxcode-select --install\n\n# Create a new SwiftUI project\n# Open Xcode > File > New > Project > App\n# Select SwiftUI for interface",
+    quickstartLang: "bash",
     docsUrl: "https://developer.apple.com/documentation/",
   },
 
@@ -2007,6 +2034,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npm create astro@latest my-site\ncd my-site\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://docs.astro.build",
     pageType: "tech",
     targetAudience: "developers",
@@ -2156,6 +2184,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx degit solidjs/templates/ts my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://www.solidjs.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -2309,6 +2338,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install @tanstack/react-query @tanstack/react-query-devtools",
+    quickstartLang: "bash",
     docsUrl: "https://tanstack.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -2454,6 +2484,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "bun create elysia my-app\ncd my-app\nbun dev",
+    quickstartLang: "bash",
     docsUrl: "https://elysiajs.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -2600,6 +2631,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx express-generator my-app\ncd my-app\nnpm install\nnpm start",
+    quickstartLang: "bash",
     docsUrl: "https://expressjs.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -2740,6 +2772,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npm init fastify my-api\ncd my-api\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://fastify.dev/docs/latest/",
     pageType: "tech",
     targetAudience: "developers",
@@ -2880,6 +2913,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx create-next-app my-app --example https://github.com/get-convex/convex-nextjs-app\ncd my-app\nnpx convex dev",
+    quickstartLang: "bash",
     docsUrl: "https://docs.convex.dev",
     pageType: "tech",
     targetAudience: "developers",
@@ -3017,6 +3051,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install drizzle-orm\nnpm install -D drizzle-kit\n\n# Create your schema in src/db/schema.ts\n# Then generate and run migrations\nnpx drizzle-kit generate\nnpx drizzle-kit migrate\n\n# Open Drizzle Studio\nnpx drizzle-kit studio",
+    quickstartLang: "bash",
     docsUrl: "https://orm.drizzle.team/docs/overview",
   },
   {
@@ -3147,6 +3182,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install better-auth\n\n# Create auth configuration in lib/auth.ts\n# Set up your database adapter (Prisma, Drizzle, etc.)\n# Add the auth handler to your API routes\n\n# Generate the client\nnpx @better-auth/cli generate",
+    quickstartLang: "bash",
     docsUrl: "https://www.better-auth.com/docs",
   },
 
@@ -3279,6 +3315,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new Turborepo\nnpx create-turbo@latest\n\n# Or add to an existing monorepo\nnpm install turbo --save-dev\n\n# Run all builds with caching\nnpx turbo build\n\n# Enable remote caching\nnpx turbo login\nnpx turbo link",
+    quickstartLang: "bash",
     docsUrl: "https://turbo.build/repo/docs",
   },
 
@@ -3426,6 +3463,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install PostgreSQL locally\nbrew install postgresql@16\nbrew services start postgresql@16\n\n# Create a database\ncreatedb myapp\n\n# Or use Neon serverless\nnpx neonctl projects create --name myapp",
+    quickstartLang: "bash",
     docsUrl: "https://www.postgresql.org/docs/current/",
   },
   {
@@ -3565,6 +3603,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       '# Install MongoDB locally\nbrew tap mongodb/brew\nbrew install mongodb-community\nbrew services start mongodb-community\n\n# Or use Atlas (free tier)\n# Visit https://cloud.mongodb.com to create a cluster\n\n# Connect with mongosh\nmongosh "mongodb://localhost:27017/myapp"',
+    quickstartLang: "bash",
     docsUrl: "https://www.mongodb.com/docs/manual/",
   },
   {
@@ -3701,6 +3740,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx prisma init\n\n# Define your schema in prisma/schema.prisma\n# Then generate the client and run migrations\nnpx prisma migrate dev --name init\nnpx prisma generate\n\n# Open the visual data browser\nnpx prisma studio",
+    quickstartLang: "bash",
     docsUrl: "https://www.prisma.io/docs",
   },
   {
@@ -3835,6 +3875,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install SQLite\nbrew install sqlite\n\n# Or use Turso\ncurl -sSfL https://get.tur.so/install.sh | bash\nturso db create myapp\nturso db show myapp --url\n\n# Or use Cloudflare D1\nnpx wrangler d1 create myapp",
+    quickstartLang: "bash",
     docsUrl: "https://www.sqlite.org/docs.html",
   },
 
@@ -3967,6 +4008,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install @clerk/nextjs\n\n# Add environment variables\n# NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_...\n# CLERK_SECRET_KEY=sk_...\n\n# Wrap your app with ClerkProvider\n# Add middleware.ts for route protection",
+    quickstartLang: "bash",
     docsUrl: "https://clerk.com/docs",
   },
 
@@ -4099,6 +4141,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install the Polar SDK\nnpm install @polar-sh/sdk\n\n# Create products and subscriptions in the Polar dashboard\n# Visit https://polar.sh to set up your organization\n\n# Integrate webhooks for access provisioning\n# See https://docs.polar.sh/webhooks",
+    quickstartLang: "bash",
     docsUrl: "https://docs.polar.sh/",
   },
 
@@ -4248,6 +4291,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx create-next-app@latest my-app\ncd my-app\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://nextjs.org/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -4392,6 +4436,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx create-expo-app@latest my-app\ncd my-app\nnpx expo start",
+    quickstartLang: "bash",
     docsUrl: "https://reactnative.dev",
     pageType: "tech",
     targetAudience: "developers",
@@ -4533,6 +4578,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx nuxi@latest init my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://nuxt.com/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -4679,6 +4725,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "composer create-project laravel/laravel my-app\ncd my-app\nphp artisan serve",
+    quickstartLang: "bash",
     docsUrl: "https://www.php.net/docs.php",
     pageType: "tech",
     targetAudience: "developers",
@@ -4697,26 +4744,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Layout",
         title: "Built-in admin panel",
+        description:
+          "Auto-generated CRUD admin interface from your models — content management out of the box, no extra code.",
       },
       {
         icon: "Database",
         title: "Django ORM",
+        description:
+          "Pythonic query API with lazy evaluation, prefetch/select related, and multi-database support for complex data access.",
       },
       {
         icon: "Globe",
         title: "Django REST Framework",
+        description:
+          "Serializers, viewsets, and browsable API for building RESTful endpoints with authentication and pagination baked in.",
       },
       {
         icon: "Shield",
         title: "Security by default",
+        description:
+          "CSRF protection, SQL injection prevention, clickjacking guards, and secure password hashing — enabled out of the box.",
       },
       {
         icon: "GitBranch",
         title: "Schema migrations",
+        description:
+          "Auto-detected model changes generate migration files — version-controlled schema evolution with zero manual SQL.",
       },
       {
         icon: "Radio",
         title: "Django Channels",
+        description:
+          "WebSocket support and async consumers for real-time features — chat, notifications, and live updates in Django.",
       },
     ],
     subTechs: [{ slug: "python" }, { slug: "postgresql" }],
@@ -4812,6 +4871,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "pip install django\ndjango-admin startproject mysite\ncd mysite\npython manage.py runserver",
+    quickstartLang: "bash",
     docsUrl: "https://docs.djangoproject.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -4830,26 +4890,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Zap",
         title: "Async I/O performance",
+        description:
+          "Native async/await with Starlette — handle thousands of concurrent connections without thread pool bottlenecks.",
       },
       {
         icon: "FileCode2",
         title: "Auto OpenAPI docs",
+        description:
+          "Swagger UI and ReDoc generated automatically from your type hints — interactive API docs with zero config.",
       },
       {
         icon: "Shield",
         title: "Pydantic validation",
+        description:
+          "Request and response validation via Pydantic models — type coercion, nested objects, and clear error messages.",
       },
       {
         icon: "Brain",
         title: "AI & ML endpoints",
+        description:
+          "Python-native framework ideal for serving ML models — integrate PyTorch, TensorFlow, or LangChain directly.",
       },
       {
         icon: "Layers",
         title: "Dependency injection",
+        description:
+          "Built-in DI system for database sessions, auth, and shared services — clean, testable endpoint signatures.",
       },
       {
         icon: "Globe",
         title: "ASGI ecosystem",
+        description:
+          "Full ASGI compatibility — deploy with Uvicorn, add middleware from Starlette, or mount sub-applications.",
       },
     ],
     subTechs: [{ slug: "python" }, { slug: "postgresql" }],
@@ -4939,6 +5011,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "pip install fastapi uvicorn\nuvicorn main:app --reload",
+    quickstartLang: "bash",
     docsUrl: "https://fastapi.tiangolo.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -4957,26 +5030,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Code2",
         title: "Zero schema duplication",
+        description:
+          "Define your API contract once — TypeScript infers input and output types on both client and server automatically.",
       },
       {
         icon: "Zap",
         title: "React Query integration",
+        description:
+          "First-class TanStack Query hooks — typed queries, mutations, and infinite scroll with automatic cache invalidation.",
       },
       {
         icon: "Shield",
         title: "Zod input validation",
+        description:
+          "Runtime validation and TypeScript types from the same Zod schema — one source of truth for your API inputs.",
       },
       {
         icon: "Layers",
         title: "Middleware & context",
+        description:
+          "Composable middleware chain for auth, logging, and rate limiting with typed context passed to every procedure.",
       },
       {
         icon: "Globe",
         title: "Any backend runtime",
+        description:
+          "Works with Next.js, Express, Fastify, or any Node-compatible server — bring your own HTTP layer.",
       },
       {
         icon: "Server",
         title: "Server-side calls",
+        description:
+          "Call tRPC procedures directly on the server without HTTP overhead — ideal for RSC and server actions.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "nextjs" }, { slug: "react" }],
@@ -5066,6 +5151,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx create-t3-app@latest my-app\ncd my-app\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://trpc.io/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -5085,26 +5171,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Shield",
         title: "Memory safety without GC",
+        description:
+          "Ownership and borrow checker eliminate data races and null pointer bugs at compile time — no garbage collector pauses.",
       },
       {
         icon: "Zap",
         title: "C-comparable performance",
+        description:
+          "Zero-cost abstractions compile to machine code as fast as C/C++ — ideal for latency-sensitive services.",
       },
       {
         icon: "Globe",
         title: "WebAssembly target",
+        description:
+          "Compile Rust to Wasm for near-native performance in the browser or on edge runtimes like Cloudflare Workers.",
       },
       {
         icon: "Terminal",
         title: "CLI tooling",
+        description:
+          "Build fast, cross-platform CLI tools with clap for argument parsing and tokio for async I/O.",
       },
       {
         icon: "Server",
         title: "Axum & Actix web",
+        description:
+          "Production-grade async web frameworks — type-safe extractors, middleware, and tower service integration.",
       },
       {
         icon: "Package",
         title: "Cargo ecosystem",
+        description:
+          "Cargo handles builds, deps, testing, and publishing — 150k+ crates on crates.io for every use case.",
       },
     ],
     subTechs: [
@@ -5204,6 +5302,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "cargo init my-project\ncd my-project\ncargo add axum tokio --features tokio/full\ncargo run",
+    quickstartLang: "bash",
     docsUrl: "https://doc.rust-lang.org/book/",
     pageType: "tech",
     targetAudience: "developers",
@@ -5224,26 +5323,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "ShoppingCart",
         title: "Custom checkout flows",
+        description:
+          "Multi-step checkout with upsells, discount logic, and guest checkout — tailored to your conversion funnel.",
       },
       {
         icon: "Globe",
         title: "Headless storefront",
+        description:
+          "WooCommerce REST API powering a React or Next.js frontend — editorial flexibility with modern performance.",
       },
       {
         icon: "Package",
         title: "Inventory management",
+        description:
+          "Stock tracking, backorder rules, and warehouse sync — manage thousands of SKUs with real-time availability.",
       },
       {
         icon: "Shield",
         title: "Payment gateways",
+        description:
+          "Stripe, PayPal, Apple Pay, and 100+ gateway integrations — secure checkout for every market.",
       },
       {
         icon: "Workflow",
         title: "Order automation",
+        description:
+          "Automated order status emails, fulfillment triggers, and CRM sync — reduce manual work per order to zero.",
       },
       {
         icon: "BarChart2",
         title: "Sales analytics",
+        description:
+          "Revenue dashboards, conversion funnels, and product performance reports — data-driven merchandising decisions.",
       },
     ],
     subTechs: [{ slug: "wordpress" }, { slug: "stripe" }],
@@ -5343,26 +5454,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "FileText",
         title: "Schema definitions",
+        description:
+          "Define document structure with types, defaults, validators, and indexes — your data contract in code.",
       },
       {
         icon: "Workflow",
         title: "Middleware hooks",
+        description:
+          "Pre/post hooks on save, validate, and remove — audit logs, hashing, and side effects without cluttering business logic.",
       },
       {
         icon: "Code2",
         title: "TypeScript support",
+        description:
+          "Typed document interfaces and query helpers — full IntelliSense from schema definition to query result.",
       },
       {
         icon: "Database",
         title: "Aggregation pipeline",
+        description:
+          "Build complex data transformations with MongoDB's aggregation framework — group, filter, join, and reshape documents.",
       },
       {
         icon: "Puzzle",
         title: "Population",
+        description:
+          "Reference documents across collections and auto-populate them in queries — relational-style joins in MongoDB.",
       },
       {
         icon: "Layers",
         title: "Discriminators",
+        description:
+          "Single-collection inheritance for polymorphic documents — share a base schema with type-specific fields.",
       },
     ],
     subTechs: [{ slug: "mongodb" }, { slug: "nodejs" }],
@@ -5445,6 +5568,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install mongoose\n\n# Connect in your app\n# import mongoose from 'mongoose'\n# await mongoose.connect('mongodb://localhost:27017/myapp')\n\n# Or with MongoDB Atlas\n# await mongoose.connect('mongodb+srv://user:pass@cluster.mongodb.net/myapp')",
+    quickstartLang: "javascript",
     docsUrl: "https://mongoosejs.com/docs/",
   },
   {
@@ -5462,26 +5586,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Component",
         title: "Owns the code",
+        description:
+          "Components are copied into your project — no node_modules dependency, full control to customise anything.",
       },
       {
         icon: "Accessibility",
         title: "Accessible by default",
+        description:
+          "Built on Radix UI primitives — keyboard navigation, screen reader support, and focus management included.",
       },
       {
         icon: "Paintbrush",
         title: "Tailwind themed",
+        description:
+          "CSS variables and Tailwind utility classes for consistent theming — change your palette in one place.",
       },
       {
         icon: "Moon",
         title: "Dark mode ready",
+        description:
+          "Light and dark themes via CSS variables — toggle with next-themes and every component adapts automatically.",
       },
       {
         icon: "Puzzle",
         title: "Composable",
+        description:
+          "Compound component patterns — combine primitives like Dialog, Popover, and Command to build complex UIs.",
       },
       {
         icon: "Layers",
         title: "Registry-based",
+        description:
+          "Add components via the CLI from the registry — one command to install, update, or extend any component.",
       },
     ],
     subTechs: [{ slug: "tailwind" }, { slug: "react" }, { slug: "nextjs" }],
@@ -5564,6 +5700,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Initialize shadcn/ui in your project\nnpx shadcn@latest init\n\n# Add components\nnpx shadcn@latest add button\nnpx shadcn@latest add card\nnpx shadcn@latest add dialog\n\n# Add multiple components at once\nnpx shadcn@latest add table form input label",
+    quickstartLang: "bash",
     docsUrl: "https://ui.shadcn.com/docs",
   },
   {
@@ -5581,26 +5718,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Search",
         title: "Full-text search",
+        description:
+          "Algolia or local search built in — instant results as users type, configurable relevance and facets.",
       },
       {
         icon: "Globe",
         title: "Internationalisation",
+        description:
+          "First-class i18n with locale-based routing, translated sidebars, and per-locale versioning out of the box.",
       },
       {
         icon: "Moon",
         title: "Dark mode & accessibility",
+        description:
+          "System-aware dark mode toggle and accessible markup — meets WCAG standards without extra configuration.",
       },
       {
         icon: "Layout",
         title: "Sidebar & TOC",
+        description:
+          "Auto-generated sidebar navigation from file structure and in-page table of contents from headings.",
       },
       {
         icon: "FileText",
         title: "MDX components",
+        description:
+          "Embed React components in Markdown — tabs, admonitions, code blocks, and interactive examples inline.",
       },
       {
         icon: "Gauge",
         title: "Perfect Lighthouse scores",
+        description:
+          "Static site generation with optimised assets — 100/100 Lighthouse scores for performance, accessibility, and SEO.",
       },
     ],
     subTechs: [{ slug: "astro" }, { slug: "fumadocs" }],
@@ -5683,6 +5832,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new Starlight site\nnpm create astro@latest -- --template starlight\n\n# Or add Starlight to an existing Astro project\nnpx astro add starlight\n\n# Start development\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://starlight.astro.build/",
   },
 
@@ -5701,26 +5851,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Zap",
         title: "Computation caching",
+        description:
+          "Local and remote caching of task outputs — never rebuild what hasn't changed, even across CI machines.",
       },
       {
         icon: "GitBranch",
         title: "Affected commands",
+        description:
+          "Only run tasks for projects affected by your changes — CI pipelines that scale with your monorepo.",
       },
       {
         icon: "Puzzle",
         title: "Plugin ecosystem",
+        description:
+          "First-party plugins for React, Next.js, Node, and more — generators, executors, and lint rules per framework.",
       },
       {
         icon: "Layers",
         title: "Project graph",
+        description:
+          "Visual dependency graph of every project and library — understand the impact of changes at a glance.",
       },
       {
         icon: "Workflow",
         title: "Generators",
+        description:
+          "Scaffold new apps, libraries, and components with code generators — enforce team conventions automatically.",
       },
       {
         icon: "Monitor",
         title: "Nx Cloud dashboard",
+        description:
+          "Distributed task execution, remote cache analytics, and CI insights — see what's slow and why.",
       },
     ],
     subTechs: [{ slug: "turborepo" }, { slug: "nodejs" }],
@@ -5803,6 +5965,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new Nx workspace\nnpx create-nx-workspace@latest myorg\n\n# Or add Nx to an existing monorepo\nnpx nx@latest init\n\n# Run affected tests\nnpx nx affected:test\n\n# Visualize the project graph\nnpx nx graph",
+    quickstartLang: "bash",
     docsUrl: "https://nx.dev/getting-started/intro",
   },
   {
@@ -5819,26 +5982,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Globe",
         title: "300+ edge locations",
+        description:
+          "Code runs within milliseconds of your users on Cloudflare's global network — latency measured in single digits.",
       },
       {
         icon: "Zap",
         title: "Zero cold starts",
+        description:
+          "V8 isolates spin up in under 5ms — no container boot time, every request is fast from the first byte.",
       },
       {
         icon: "Database",
         title: "KV, R2, D1 storage",
+        description:
+          "Key-value store, S3-compatible object storage, and SQLite at the edge — persistent data without external services.",
       },
       {
         icon: "Layers",
         title: "Durable Objects",
+        description:
+          "Stateful serverless with strong consistency — coordination, WebSockets, and counters at the edge.",
       },
       {
         icon: "Code2",
         title: "Hono & tRPC compatible",
+        description:
+          "Use Hono for routing and tRPC for type-safe APIs — modern frameworks that run natively on Workers.",
       },
       {
         icon: "Workflow",
         title: "Queues & Cron",
+        description:
+          "Message queues for async processing and cron triggers for scheduled tasks — background work without servers.",
       },
     ],
     subTechs: [
@@ -5938,6 +6113,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm create cloudflare@latest my-worker\ncd my-worker\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://developers.cloudflare.com/workers/",
     pageType: "tech",
     targetAudience: "developers",
@@ -5958,26 +6134,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Terminal",
         title: "Rust backend + typed IPC",
+        description:
+          "Rust commands exposed to the frontend via typed IPC — type-safe bridge between web UI and native code.",
       },
       {
         icon: "Package",
         title: "Under 10MB bundles",
+        description:
+          "Ship desktop apps under 10MB by leveraging the OS webview — no bundled Chromium, no bloat.",
       },
       {
         icon: "Cpu",
         title: "Full OS API access",
+        description:
+          "File system, shell commands, system tray, notifications, and clipboard — native capabilities from your web frontend.",
       },
       {
         icon: "RefreshCw",
         title: "Auto-updater",
+        description:
+          "Built-in update mechanism with delta updates and signature verification — seamless version rollouts.",
       },
       {
         icon: "Monitor",
         title: "Cross-platform targets",
+        description:
+          "Build for Windows, macOS, and Linux from a single codebase — platform-specific packaging handled by Tauri.",
       },
       {
         icon: "Globe",
         title: "OS webview rendering",
+        description:
+          "Uses the OS native webview (WebView2, WebKit) — no Chromium overhead, consistent with user's system.",
       },
     ],
     subTechs: [
@@ -6066,6 +6254,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install Tauri CLI\ncargo install tauri-cli\n\n# Create a new Tauri project\nnpm create tauri-app@latest\n\n# Or add Tauri to an existing web project\nnpm install @tauri-apps/cli @tauri-apps/api\nnpx tauri init\n\n# Run in development\nnpx tauri dev",
+    quickstartLang: "bash",
     docsUrl: "https://v2.tauri.app/",
   },
 
@@ -6084,26 +6273,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Monitor",
         title: "Chromium rendering",
+        description:
+          "Full Chromium engine ensures pixel-perfect rendering — the same behaviour as Chrome on every desktop platform.",
       },
       {
         icon: "Package",
         title: "Node.js main process",
+        description:
+          "Full Node.js runtime in the main process — access the file system, spawn processes, and use any npm package.",
       },
       {
         icon: "Shield",
         title: "Sandboxed renderer",
+        description:
+          "Renderer processes run in a sandboxed Chromium context — isolate untrusted content from system access.",
       },
       {
         icon: "RefreshCw",
         title: "Auto-updater",
+        description:
+          "electron-updater handles download, verification, and install — ship updates silently or with user confirmation.",
       },
       {
         icon: "Globe",
         title: "Web tech stack",
+        description:
+          "Build your UI with React, Vue, or Svelte — reuse your web skills and component libraries for desktop.",
       },
       {
         icon: "GitBranch",
         title: "electron-builder CI",
+        description:
+          "Package and sign for Windows, macOS, and Linux in CI — NSIS, DMG, AppImage, and Snap formats supported.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }],
@@ -6186,6 +6387,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new Electron app\nnpm init electron-app@latest my-app\ncd my-app\n\n# Or add Electron to an existing project\nnpm install electron --save-dev\nnpm install electron-builder --save-dev\n\n# Run in development\nnpm start",
+    quickstartLang: "bash",
     docsUrl: "https://www.electronjs.org/docs/latest/",
   },
 
@@ -6204,26 +6406,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "ShoppingCart",
         title: "Payment intents & Elements",
+        description:
+          "Pre-built UI components and the Payment Intents API for secure, SCA-compliant checkout flows.",
       },
       {
         icon: "RefreshCw",
         title: "Subscriptions & billing",
+        description:
+          "Recurring billing with trials, proration, usage-based pricing, and automated invoicing — Stripe handles the lifecycle.",
       },
       {
         icon: "Globe",
         title: "135+ currencies",
+        description:
+          "Accept payments in 135+ currencies with automatic conversion, local payment methods, and multi-currency payouts.",
       },
       {
         icon: "Workflow",
         title: "Webhooks & events",
+        description:
+          "Real-time event notifications for payment success, failures, disputes, and subscription changes — drive your backend logic.",
       },
       {
         icon: "Network",
         title: "Connect for marketplaces",
+        description:
+          "Split payments, onboard sellers, and handle payouts for marketplace and platform business models.",
       },
       {
         icon: "Shield",
         title: "Radar fraud protection",
+        description:
+          "ML-powered fraud detection with customisable rules — block suspicious transactions before they cost you.",
       },
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "polar" }],
@@ -6311,6 +6525,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install stripe @stripe/stripe-js\n\n# Install the Stripe CLI for local testing\nbrew install stripe/stripe-cli/stripe\nstripe login\n\n# Forward webhooks to your local server\nstripe listen --forward-to localhost:3000/api/webhooks/stripe",
+    quickstartLang: "bash",
     docsUrl: "https://docs.stripe.com/",
   },
 
@@ -6329,26 +6544,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Layers",
         title: "Utility + component",
+        description:
+          "Utility classes for rapid layout plus pre-built components like modals, navbars, and cards — best of both approaches.",
       },
       {
         icon: "Paintbrush",
         title: "Sass variables",
+        description:
+          "Customise colors, spacing, breakpoints, and typography via Sass variables — a consistent design system from one config file.",
       },
       {
         icon: "Accessibility",
         title: "Accessible components",
+        description:
+          "ARIA attributes, focus states, and keyboard navigation baked into every component — accessibility by default.",
       },
       {
         icon: "Globe",
         title: "No JS framework lock-in",
+        description:
+          "Works with vanilla HTML, React, Vue, Angular, or any framework — plain CSS classes with no runtime dependency.",
       },
       {
         icon: "Moon",
         title: "Dark mode ready",
+        description:
+          "Built-in color mode support with data attributes — toggle between light and dark with a single class.",
       },
       {
         icon: "Package",
         title: "Icon library",
+        description:
+          "2,000+ Bootstrap Icons as SVGs and web fonts — consistent iconography that matches the component design language.",
       },
     ],
     subTechs: [{ slug: "php" }, { slug: "laravel" }],
@@ -6443,6 +6670,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npm install bootstrap\nnpm install sass",
+    quickstartLang: "bash",
     docsUrl: "https://getbootstrap.com/docs",
     pageType: "tech",
     targetAudience: "developers",
@@ -6464,26 +6692,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Code2",
         title: "C# in the browser",
+        description:
+          "Write interactive UI logic in C# via WebAssembly — share models, validation, and business logic with your backend.",
       },
       {
         icon: "Server",
         title: "Blazor Server mode",
+        description:
+          "UI events sent over SignalR with server-side rendering — instant load times and thin client requirements.",
       },
       {
         icon: "Component",
         title: "Razor components",
+        description:
+          "Reusable .razor components with parameters, cascading values, and lifecycle methods — familiar to any ASP.NET developer.",
       },
       {
         icon: "Layers",
         title: "MudBlazor & Radzen",
+        description:
+          "Rich component libraries with data grids, charts, and form controls — enterprise UI without building from scratch.",
       },
       {
         icon: "Database",
         title: "EF Core integration",
+        description:
+          "Entity Framework Core for data access — LINQ queries, migrations, and change tracking from your Blazor app.",
       },
       {
         icon: "Shield",
         title: "ASP.NET auth",
+        description:
+          "ASP.NET Identity with cookie, JWT, and external provider auth — role-based access control built into the framework.",
       },
     ],
     subTechs: [{ slug: "dotnet" }, { slug: "dotnet-mvc" }],
@@ -6566,6 +6806,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install .NET SDK\n# https://dotnet.microsoft.com/download\n\n# Create a new Blazor app\ndotnet new blazor -o MyApp\ncd MyApp\n\n# Run in development\ndotnet watch run",
+    quickstartLang: "bash",
     docsUrl: "https://learn.microsoft.com/en-us/aspnet/core/blazor/",
   },
   {
@@ -6583,26 +6824,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Route",
         title: "Nested routing",
+        description:
+          "Nested route layouts with parallel data loading — each segment fetches independently for faster page transitions.",
       },
       {
         icon: "Database",
         title: "Loader & action pattern",
+        description:
+          "Loaders fetch data before render, actions handle mutations — clean separation of reads and writes per route.",
       },
       {
         icon: "Zap",
         title: "Progressive enhancement",
+        description:
+          "Forms work without JavaScript by default — then enhance with client-side transitions when JS loads.",
       },
       {
         icon: "Shield",
         title: "Error boundaries",
+        description:
+          "Per-route error boundaries catch and display errors without crashing the entire application.",
       },
       {
         icon: "Server",
         title: "SSR & framework mode",
+        description:
+          "Server-side rendering with streaming, plus framework mode for use inside Remix, Next.js, or standalone.",
       },
       {
         icon: "Globe",
         title: "Deploy anywhere",
+        description:
+          "Runs on Node.js, Cloudflare Workers, Deno, or any standard web server — no vendor lock-in.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "tailwind" }],
@@ -6698,6 +6951,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx create-react-router@latest my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://reactrouter.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -6716,26 +6970,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Code2",
         title: "100% type-safe routes",
+        description:
+          "Every route path, param, and search string is fully typed — broken links are compile-time errors.",
       },
       {
         icon: "Search",
         title: "Typed search params",
+        description:
+          "Search params validated and typed with Zod or Valibot — no more manual parsing or runtime surprises.",
       },
       {
         icon: "Layers",
         title: "Route code splitting",
+        description:
+          "Automatic code splitting per route with lazy loading — only ship the JavaScript each page actually needs.",
       },
       {
         icon: "Database",
         title: "Loaders & prefetch",
+        description:
+          "Route loaders fetch data before navigation and prefetch on hover — instant page transitions with fresh data.",
       },
       {
         icon: "Zap",
         title: "Devtools included",
+        description:
+          "Built-in devtools panel to inspect route tree, params, search state, and loader cache in real time.",
       },
       {
         icon: "Globe",
         title: "Framework agnostic",
+        description:
+          "Works with React, Solid, Vue, and more — the same type-safe routing API regardless of your UI framework.",
       },
     ],
     subTechs: [
@@ -6835,6 +7101,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm create @tanstack/router@latest my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://tanstack.com/router",
     pageType: "tech",
     targetAudience: "developers",
@@ -6853,26 +7120,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Server",
         title: "SSR & streaming",
+        description:
+          "Server-side rendering with streaming HTML responses — fast first paint while data loads progressively.",
       },
       {
         icon: "Code2",
         title: "Server functions",
+        description:
+          "RPC-style server functions called directly from components — type-safe backend access without manual API routes.",
       },
       {
         icon: "Database",
         title: "TanStack Query built-in",
+        description:
+          "First-class TanStack Query integration for caching, revalidation, and optimistic updates out of the box.",
       },
       {
         icon: "Route",
         title: "File-based routing",
+        description:
+          "Convention-based file system routing with layouts, catch-all routes, and route groups — zero config.",
       },
       {
         icon: "Globe",
         title: "Vinxi bundler",
+        description:
+          "Powered by Vinxi and Nitro — deploy to Node.js, Cloudflare, Vercel, or any Nitro-compatible runtime.",
       },
       {
         icon: "Zap",
         title: "Edge-ready",
+        description:
+          "SolidStart apps run on edge runtimes for sub-50ms response times — global performance without infrastructure work.",
       },
     ],
     subTechs: [
@@ -6972,6 +7251,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx create-tsrouter-app@latest my-app --template file-router --add-ons start tanstack-query\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://tanstack.com/start",
     pageType: "tech",
     targetAudience: "developers",
@@ -6991,26 +7271,38 @@ export const servicesConfig: ServiceConfig[] = [
       {
         icon: "Globe",
         title: "Offline-first service worker",
+        description:
+          "Service workers cache assets and API responses — your app works without a network connection.",
       },
       {
         icon: "Smartphone",
         title: "Install to home screen",
+        description:
+          "Web app manifest enables add-to-home-screen on mobile and desktop — no app store required.",
       },
       {
         icon: "Radio",
         title: "Push notifications",
+        description:
+          "Web Push API for re-engagement notifications — reach users even when the browser is closed.",
       },
       {
         icon: "Gauge",
         title: "App shell architecture",
+        description:
+          "Cache the app shell for instant load, then fetch dynamic content — native-app-like speed on the web.",
       },
       {
         icon: "Package",
         title: "Workbox integration",
+        description:
+          "Google's Workbox handles caching strategies, precaching, and background sync — production-grade service worker tooling.",
       },
       {
         icon: "Monitor",
         title: "Desktop installable",
+        description:
+          "PWAs install as standalone desktop apps on Chrome, Edge, and Safari — full window, taskbar icon, no browser chrome.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }],
@@ -7105,6 +7397,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npm install workbox-webpack-plugin\nnpx workbox wizard",
+    quickstartLang: "bash",
     docsUrl: "https://web.dev/progressive-web-apps",
     pageType: "tech",
     targetAudience: "developers",
@@ -7239,6 +7532,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install Flutter\nbrew install flutter\n\n# Create a new project\nflutter create myapp\ncd myapp\n\n# Run on a connected device or simulator\nflutter run\n\n# Run on web\nflutter run -d chrome",
+    quickstartLang: "bash",
     docsUrl: "https://docs.flutter.dev/",
   },
   {
@@ -7370,6 +7664,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm install react-native-unistyles\n\n# For Expo\nnpx expo install react-native-unistyles\n\n# Create your theme and breakpoints\n# See https://unistyl.es/start/setup/ for configuration",
+    quickstartLang: "bash",
     docsUrl: "https://unistyl.es/",
   },
 
@@ -7511,6 +7806,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npm init -y\nnpm install @orpc/server @orpc/client zod\nnpx tsx src/server.ts",
+    quickstartLang: "bash",
     docsUrl: "https://orpc.unnoq.com",
     pageType: "tech",
     targetAudience: "developers",
@@ -7657,6 +7953,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "npx create-fastify-app my-api\ncd my-api\nnpm install @fastify/swagger @fastify/swagger-ui\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://spec.openapis.org/oas/v3.1.0",
     pageType: "tech",
     targetAudience: "developers",
@@ -7803,6 +8100,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "cargo install wasm-pack\nwasm-pack new my-wasm-lib\ncd my-wasm-lib\nwasm-pack build --target web",
+    quickstartLang: "bash",
     docsUrl: "https://webassembly.org",
     pageType: "tech",
     targetAudience: "developers",
@@ -7935,6 +8233,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new MVC app\ndotnet new mvc -o MyApp\ncd MyApp\n\n# Add Entity Framework Core\ndotnet add package Microsoft.EntityFrameworkCore.SqlServer\ndotnet add package Microsoft.EntityFrameworkCore.Tools\n\n# Run in development\ndotnet watch run",
+    quickstartLang: "bash",
     docsUrl: "https://learn.microsoft.com/en-us/aspnet/core/mvc/overview",
   },
 
@@ -8067,6 +8366,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a new Supabase project\nnpx supabase init\nnpx supabase start\n\n# Or use the cloud dashboard\n# Visit https://supabase.com/dashboard to create a project\n\n# Install the client library\nnpm install @supabase/supabase-js",
+    quickstartLang: "bash",
     docsUrl: "https://supabase.com/docs",
   },
   {
@@ -8197,6 +8497,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install the PlanetScale CLI\nbrew install planetscale/tap/pscale\n\n# Authenticate\npscale auth login\n\n# Create a database\npscale database create myapp --region us-east\n\n# Create a branch for development\npscale branch create myapp development",
+    quickstartLang: "bash",
     docsUrl: "https://planetscale.com/docs",
   },
   {
@@ -8331,6 +8632,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a D1 database\nnpx wrangler d1 create myapp\n\n# Run a migration\nnpx wrangler d1 execute myapp --local --file=./schema.sql\n\n# Or use Drizzle Kit with D1\nnpm install drizzle-orm\nnpx drizzle-kit generate\nnpx wrangler d1 migrations apply myapp",
+    quickstartLang: "bash",
     docsUrl: "https://developers.cloudflare.com/d1/",
   },
   {
@@ -8470,6 +8772,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       '# Install MySQL locally\nbrew install mysql\nbrew services start mysql\n\n# Create a database\nmysql -u root -e "CREATE DATABASE myapp;"\n\n# Or use PlanetScale\npscale database create myapp --region us-east',
+    quickstartLang: "bash",
     docsUrl: "https://dev.mysql.com/doc/refman/8.0/en/",
   },
 
@@ -8607,12 +8910,13 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Initialize a Dockerfile\ndocker init\n\n# Build an image\ndocker build -t myapp .\n\n# Run with Docker Compose\ndocker compose up -d\n\n# Scan for vulnerabilities\ndocker scout quickview",
+    quickstartLang: "bash",
     docsUrl: "https://docs.docker.com/",
   },
   {
     slug: "s3",
     name: "S3",
-    category: "tooling",
+    category: "database",
     tagline: "Scalable file storage for any application",
     description:
       "Amazon S3 and S3-compatible services (Cloudflare R2, Supabase Storage, MinIO) power file uploads, media delivery, and backup for your application — with presigned URLs, lifecycle policies, and CDN distribution.",
@@ -8738,6 +9042,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Install AWS CLI\nbrew install awscli\naws configure\n\n# Create a bucket\naws s3 mb s3://my-bucket\n\n# Upload a file\naws s3 cp ./file.txt s3://my-bucket/\n\n# Or use the JavaScript SDK\nnpm install @aws-sdk/client-s3",
+    quickstartLang: "bash",
     docsUrl: "https://docs.aws.amazon.com/s3/",
   },
   {
@@ -8869,6 +9174,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create a TypeScript CLI\nmkdir my-cli && cd my-cli\nnpm init -y\nnpm install commander clack\n\n# Or create a Rust CLI\ncargo init my-cli\ncargo add clap --features derive\n\n# Run your CLI\nnpx tsx src/index.ts  # TypeScript\ncargo run              # Rust",
+    quickstartLang: "bash",
     docsUrl: "https://github.com/tj/commander.js",
   },
   {
@@ -9000,6 +9306,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Rust TUI with Ratatui\ncargo init my-tui\ncargo add ratatui crossterm\n\n# Go TUI with Bubble Tea\ngo mod init my-tui\ngo get github.com/charmbracelet/bubbletea\n\n# Python TUI with Textual\npip install textual\ntextual run my_app.py",
+    quickstartLang: "bash",
     docsUrl: "https://ratatui.rs/",
   },
   {
@@ -9131,6 +9438,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create an MCP server with TypeScript\nnpm init -y\nnpm install @modelcontextprotocol/sdk\n\n# Or use the official create template\nnpx @modelcontextprotocol/create-server my-mcp-server\ncd my-mcp-server\nnpm install\nnpm run build",
+    quickstartLang: "bash",
     docsUrl: "https://modelcontextprotocol.io/",
   },
 
@@ -9280,6 +9588,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     quickstart: "npx sv create my-app\ncd my-app\nnpm install\nnpm run dev",
+    quickstartLang: "bash",
     docsUrl: "https://svelte.dev/docs/kit",
     pageType: "tech",
     targetAudience: "developers",
@@ -9289,7 +9598,7 @@ export const servicesConfig: ServiceConfig[] = [
   {
     slug: "cloudflare-r2",
     name: "Cloudflare R2",
-    category: "tooling",
+    category: "database",
     tagline: "S3-compatible object storage with zero egress fees",
     description:
       "Cloudflare R2 is an S3-compatible object storage service with no egress charges — making it dramatically cheaper than AWS S3 for high-bandwidth workloads. We use R2 for media storage, backups, and large-scale asset delivery.",
@@ -9414,6 +9723,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     quickstart:
       "# Create an R2 bucket via Wrangler\nnpx wrangler r2 bucket create my-bucket\n\n# Upload a file\nnpx wrangler r2 object put my-bucket/file.txt --file=./file.txt\n\n# Or use the S3-compatible API\nnpm install @aws-sdk/client-s3\n# Configure with R2 endpoint and credentials",
+    quickstartLang: "bash",
     docsUrl: "https://developers.cloudflare.com/r2/",
   },
 ];

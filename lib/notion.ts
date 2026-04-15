@@ -63,6 +63,17 @@ export interface Project {
   blocks?: BlockObjectResponse[];
 }
 
+export interface NavProduct {
+  id: string;
+  name: string;
+  description: string;
+  tagline?: string;
+  slug: string;
+  emoji?: string;
+  url?: string;
+  status?: string;
+}
+
 // Helper: Extract tags with Notion colors
 export function getTagsWithColors(
   page: any
@@ -716,5 +727,59 @@ export const getProject = unstable_cache(
     }
   },
   ["project"],
+  { revalidate: 1800 }
+);
+
+// Uncached fetch function for products (nav items)
+export const fetchNavProducts = async (): Promise<NavProduct[]> => {
+  const notion = getNotionClient();
+  const databaseId = process.env.NOTION_PRODUCTS_DATABASE_ID;
+
+  if (!databaseId) return [];
+
+  try {
+    let response;
+    const filter = {
+      property: "Status",
+      status: { equals: "Published" },
+    };
+
+    if (notion.dataSources) {
+      response = await notion.dataSources.query({
+        data_source_id: databaseId,
+        filter,
+      });
+    } else {
+      response = await notion.databases.query({
+        database_id: databaseId,
+        filter,
+      });
+    }
+
+    return response.results
+      .map((page: any) => ({
+        id: page.id,
+        name:
+          getProperty(page, "Title", "title") ||
+          getProperty(page, "Name", "title") ||
+          "Untitled",
+        description: getProperty(page, "Description", "rich_text") || "",
+        tagline: getProperty(page, "Tagline", "rich_text") || "",
+        slug: getProperty(page, "Slug", "rich_text") || "",
+        emoji:
+          getProperty(page, "Emoji", "rich_text") || page.icon?.emoji || "",
+        url: getProperty(page, "Link", "url") || "",
+        status: getProperty(page, "Badge", "select") || "",
+      }))
+      .filter((p: NavProduct) => p.name && p.slug);
+  } catch (e) {
+    console.error("Failed to fetch products", e);
+    return [];
+  }
+};
+
+export const getNavProducts = unstable_cache(
+  fetchNavProducts,
+  ["nav-products"],
   { revalidate: 1800 }
 );

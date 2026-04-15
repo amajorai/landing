@@ -10,6 +10,9 @@ import {
   Wrench,
 } from "lucide-react";
 import Link from "next/link";
+import { MobileTocSheet } from "@/components/blog/MobileTocSheet";
+import type { TocHeading } from "@/components/notion/TableOfContents";
+import { TableOfContents } from "@/components/notion/TableOfContents";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {
   Accordion,
@@ -21,17 +24,22 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { type ServiceConfig, servicesConfig } from "@/lib/services-config";
 import { FeatureCards } from "./feature-cards";
+import { QuickstartBlock } from "./quickstart-block";
 import { ServiceCta } from "./service-cta";
 import { SubTechCard } from "./sub-tech-card";
 import { AstroVisualization } from "./visualizations/astro-visualization";
 import { BetterAuthVisualization } from "./visualizations/better-auth-visualization";
 import { BlazorVisualization } from "./visualizations/blazor-visualization";
 import { BootstrapVisualization } from "./visualizations/bootstrap-visualization";
+import { BrowserExtensionsVisualization } from "./visualizations/browser-extensions-visualization";
 import { ClerkVisualization } from "./visualizations/clerk-visualization";
 import { CliVisualization } from "./visualizations/cli-visualization";
 import { CloudflareD1Visualization } from "./visualizations/cloudflare-d1-visualization";
 import { CloudflareWorkersVisualization } from "./visualizations/cloudflare-workers-visualization";
+import { ConsultancyVisualization } from "./visualizations/consultancy-visualization";
 import { ConvexVisualization } from "./visualizations/convex-visualization";
+import { DevopsVisualization } from "./visualizations/devops-visualization";
+import { DigitalTransformationVisualization } from "./visualizations/digital-transformation-visualization";
 import { DjangoVisualization } from "./visualizations/django-visualization";
 import { DockerVisualization } from "./visualizations/docker-visualization";
 import { DotnetMvcVisualization } from "./visualizations/dotnet-mvc-visualization";
@@ -39,22 +47,28 @@ import { DotnetVisualization } from "./visualizations/dotnet-visualization";
 import { DrizzleVisualization } from "./visualizations/drizzle-visualization";
 import { ElectronVisualization } from "./visualizations/electron-visualization";
 import { ElysiaVisualization } from "./visualizations/elysia-visualization";
+import { EnterpriseSystemsVisualization } from "./visualizations/enterprise-systems-visualization";
 import { ExpressVisualization } from "./visualizations/express-visualization";
 import { FastapiVisualization } from "./visualizations/fastapi-visualization";
 import { FastifyVisualization } from "./visualizations/fastify-visualization";
 import { FlutterVisualization } from "./visualizations/flutter-visualization";
+import { FullDeploymentVisualization } from "./visualizations/full-deployment-visualization";
 import { FumadocsVisualization } from "./visualizations/fumadocs-visualization";
 import { KotlinVisualization } from "./visualizations/kotlin-visualization";
 import { LaravelVisualization } from "./visualizations/laravel-visualization";
+import { LegacyModernisationVisualization } from "./visualizations/legacy-modernisation-visualization";
 import { McpVisualization } from "./visualizations/mcp-visualization";
+import { MobileAppsVisualization } from "./visualizations/mobile-apps-visualization";
 import { MongodbVisualization } from "./visualizations/mongodb-visualization";
 import { MongooseVisualization } from "./visualizations/mongoose-visualization";
+import { MvpScopingVisualization } from "./visualizations/mvp-scoping-visualization";
 import { MysqlVisualization } from "./visualizations/mysql-visualization";
 import { NextjsVisualization } from "./visualizations/nextjs-visualization";
 import { NodejsVisualization } from "./visualizations/nodejs-visualization";
 import { NuxtVisualization } from "./visualizations/nuxt-visualization";
 import { NxVisualization } from "./visualizations/nx-visualization";
 import { OrpcVisualization } from "./visualizations/orpc-visualization";
+import { PerformanceOptimizationVisualization } from "./visualizations/performance-optimization-visualization";
 import { PhpVisualization } from "./visualizations/php-visualization";
 import { PlanetscaleVisualization } from "./visualizations/planetscale-visualization";
 import { PolarVisualization } from "./visualizations/polar-visualization";
@@ -68,6 +82,8 @@ import { ReactVisualization } from "./visualizations/react-visualization";
 import { RestApiVisualization } from "./visualizations/rest-api-visualization";
 import { RustVisualization } from "./visualizations/rust-visualization";
 import { S3Visualization } from "./visualizations/s3-visualization";
+import { SaasProductsVisualization } from "./visualizations/saas-products-visualization";
+import { SeoOptimizationVisualization } from "./visualizations/seo-optimization-visualization";
 import { ShadcnVisualization } from "./visualizations/shadcn-visualization";
 import { SolidJsVisualization } from "./visualizations/solidjs-visualization";
 import { SqliteVisualization } from "./visualizations/sqlite-visualization";
@@ -85,9 +101,13 @@ import { TauriVisualization } from "./visualizations/tauri-visualization";
 import { TrpcVisualization } from "./visualizations/trpc-visualization";
 import { TuiVisualization } from "./visualizations/tui-visualization";
 import { TurborepoVisualization } from "./visualizations/turborepo-visualization";
+import { UiUxDesignVisualization } from "./visualizations/ui-ux-design-visualization";
 import { UnistylesVisualization } from "./visualizations/unistyles-visualization";
 import { VueVisualization } from "./visualizations/vue-visualization";
 import { WasmVisualization } from "./visualizations/wasm-visualization";
+import { WebAppsVisualization } from "./visualizations/web-apps-visualization";
+import { WebDesignVisualization } from "./visualizations/web-design-visualization";
+import { WhiteLabelVisualization } from "./visualizations/white-label-visualization";
 import { WoocommerceVisualization } from "./visualizations/woocommerce-visualization";
 import { WordpressVisualization } from "./visualizations/wordpress-visualization";
 
@@ -160,6 +180,22 @@ const vizMap: Record<string, React.ComponentType> = {
   cli: CliVisualization,
   tui: TuiVisualization,
   mcp: McpVisualization,
+  "web-design": WebDesignVisualization,
+  "web-apps": WebAppsVisualization,
+  "mobile-apps": MobileAppsVisualization,
+  "browser-extensions": BrowserExtensionsVisualization,
+  "enterprise-systems": EnterpriseSystemsVisualization,
+  "saas-products": SaasProductsVisualization,
+  "ui-ux-design": UiUxDesignVisualization,
+  devops: DevopsVisualization,
+  "performance-optimization": PerformanceOptimizationVisualization,
+  "mvp-scoping": MvpScopingVisualization,
+  "legacy-modernisation": LegacyModernisationVisualization,
+  "digital-transformation": DigitalTransformationVisualization,
+  "white-label": WhiteLabelVisualization,
+  "seo-optimization": SeoOptimizationVisualization,
+  "full-deployment": FullDeploymentVisualization,
+  consultancy: ConsultancyVisualization,
 };
 
 const categoryLabel: Record<string, string> = {
@@ -190,11 +226,44 @@ interface TechPageLayoutProps {
   service: ServiceConfig;
 }
 
+function buildTocHeadings(service: ServiceConfig): TocHeading[] {
+  const isOffering = service.pageType === "offering";
+  const headings: TocHeading[] = [
+    { id: "overview", text: "Overview", level: 1 },
+  ];
+
+  if (service.challenges && service.challenges.length > 0) {
+    const label =
+      service.pageType === "cms"
+        ? "Common problems"
+        : isOffering
+          ? "Challenges we solve"
+          : "Why it's hard";
+    headings.push({ id: "challenges", text: label, level: 1 });
+  }
+  if (service.bestPractices && service.bestPractices.length > 0)
+    headings.push({ id: "best-practices", text: "Best practices", level: 1 });
+  if (service.usefulLinks && service.usefulLinks.length > 0)
+    headings.push({
+      id: "useful-resources",
+      text: "Useful resources",
+      level: 1,
+    });
+  if (service.faq && service.faq.length > 0)
+    headings.push({ id: "faq", text: "FAQ", level: 1 });
+  if (service.subTechs.length > 0)
+    headings.push({
+      id: "related-technologies",
+      text: "Related technologies",
+      level: 1,
+    });
+
+  return headings;
+}
+
 export function TechPageLayout({ service }: TechPageLayoutProps) {
   const isOffering = service.pageType === "offering";
-  const Visualization = isOffering
-    ? null
-    : (vizMap[service.visualizationKey] ?? null);
+  const Visualization = vizMap[service.visualizationKey] ?? null;
   const challengesHeading =
     service.pageType === "cms"
       ? "Common problems"
@@ -202,82 +271,67 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         ? "Challenges we solve"
         : "Why it's hard";
 
+  const tocHeadings = buildTocHeadings(service);
+
   return (
     <div className="mx-auto max-w-4xl space-y-16">
-      {/* Breadcrumb */}
-      <FadeIn>
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-1.5 pt-4 text-muted-foreground text-sm"
-        >
-          <Link className="transition-colors hover:text-foreground" href="/">
-            Home
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" />
-          <Link
-            className="transition-colors hover:text-foreground"
-            href="/services"
-          >
-            Services
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" />
-          <span className="text-foreground">{service.name}</span>
-        </nav>
-      </FadeIn>
+      {tocHeadings.length > 1 && (
+        <div className="fixed top-0 right-6 hidden h-screen w-64 items-center xl:flex">
+          <TableOfContents headings={tocHeadings} />
+        </div>
+      )}
+      {tocHeadings.length > 1 && <MobileTocSheet headings={tocHeadings} />}
 
       <FadeIn>
-        <section className="space-y-8">
+        <section className="space-y-8" id="overview">
           {Visualization && (
             <div className="mb-20 h-[200px] w-full lg:h-[260px]">
               <Visualization />
             </div>
           )}
 
-          <div className="flex items-center gap-3">
-            <ServiceLogo service={service} size={28} />
-            <span className="rounded-full border border-border px-3 py-1 font-mono text-muted-foreground text-xs uppercase tracking-wider">
-              {categoryLabel[service.category] ?? service.category}
-            </span>
+          <ServiceLogo service={service} size={40} />
+
+          <PageHeader
+            line1={service.name}
+            line2={service.tagline}
+            tag={
+              <span className="relative -top-px inline-block rounded-full border border-border px-2 py-0.5 align-middle font-normal text-muted-foreground text-xs">
+                {categoryLabel[service.category] ?? service.category}
+              </span>
+            }
+          />
+
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-1.5 text-muted-foreground/60 text-xs"
+          >
+            <Link className="transition-colors hover:text-foreground" href="/">
+              Home
+            </Link>
+            <ChevronRight className="h-3 w-3" />
+            <Link
+              className="transition-colors hover:text-foreground"
+              href="/services"
+            >
+              Services
+            </Link>
+            <ChevronRight className="h-3 w-3" />
+            <span className="text-muted-foreground">{service.name}</span>
+          </nav>
+
+          <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
+            <p>{service.description}</p>
+            {service.overview && <p>{service.overview}</p>}
           </div>
-
-          <PageHeader line1={service.name} line2={service.tagline} />
-
-          <p className="max-w-2xl text-muted-foreground leading-relaxed">
-            {service.description}
-          </p>
-
-          {/* Overview — longer SEO-rich paragraph */}
-          {service.overview && (
-            <div className="max-w-2xl space-y-2 border-border border-l-2 pl-4">
-              <p className="text-muted-foreground leading-relaxed">
-                {service.overview}
-              </p>
-            </div>
-          )}
 
           {/* Quickstart */}
           {service.quickstart && (
-            <div className="space-y-3">
-              <h2 className="font-semibold text-lg">Quick start</h2>
-              <div className="overflow-x-auto rounded-lg border border-border bg-muted/30 p-4">
-                <pre className="font-mono text-sm leading-relaxed">
-                  <code>{service.quickstart}</code>
-                </pre>
-              </div>
-              {service.docsUrl && (
-                <p className="text-muted-foreground text-sm">
-                  Read the full documentation at{" "}
-                  <a
-                    className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80"
-                    href={service.docsUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {service.docsUrl.replace(/^https?:\/\//, "")}
-                  </a>
-                </p>
-              )}
-            </div>
+            <QuickstartBlock
+              code={service.quickstart}
+              docsUrl={service.docsUrl}
+              language={service.quickstartLang}
+            />
           )}
 
           <FeatureCards features={service.features} />
@@ -288,7 +342,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.challenges && service.challenges.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl">
+            <h2 className="mb-6 px-6 font-semibold text-xl" id="challenges">
               {challengesHeading}
             </h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
@@ -315,7 +369,9 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.bestPractices && service.bestPractices.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl">Best practices</h2>
+            <h2 className="mb-6 px-6 font-semibold text-xl" id="best-practices">
+              Best practices
+            </h2>
             <div className="border-border border-t border-dashed">
               {service.bestPractices.map((bp) => (
                 <div
@@ -342,7 +398,10 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.usefulLinks && service.usefulLinks.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl">
+            <h2
+              className="mb-6 px-6 font-semibold text-xl"
+              id="useful-resources"
+            >
               Useful resources
             </h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
@@ -373,7 +432,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.faq && service.faq.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl">
+            <h2 className="mb-6 px-6 font-semibold text-xl" id="faq">
               Frequently asked questions
             </h2>
             <div className="border-border border-y border-dashed">
@@ -410,7 +469,12 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.subTechs.length > 0 && (
         <FadeIn>
           <section>
-            <h2 className="mb-6 font-semibold text-xl">Related technologies</h2>
+            <h2
+              className="mb-6 font-semibold text-xl"
+              id="related-technologies"
+            >
+              Related technologies
+            </h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">
               {service.subTechs.map((sub) => {
                 const relatedService = servicesConfig.find(
@@ -429,9 +493,11 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </FadeIn>
       )}
 
-      {/* CTA */}
+      {/* CTA — full bleed to edges and bottom */}
       <FadeIn>
-        <ServiceCta techName={service.name} />
+        <div className="-mx-6 -mb-16">
+          <ServiceCta techName={service.name} />
+        </div>
       </FadeIn>
     </div>
   );

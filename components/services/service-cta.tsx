@@ -1,49 +1,91 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { ArrowRight } from "lucide-react";
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { StarMark } from "@/components/ui/star-mark";
 
 interface ServiceCtaProps {
   techName: string;
 }
 
 export function ServiceCta({ techName }: ServiceCtaProps) {
-  useEffect(() => {
-    (async () => {
-      const cal = await getCalApi({ namespace: "amajor" });
-      cal("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
+  const currentDate = new Date();
+  const nextMonthDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1
+  );
+  const currentMonth = currentDate.toLocaleDateString("en-GB", {
+    month: "short",
+    year: "numeric",
+  });
+  const nextMonth = nextMonthDate.toLocaleDateString("en-GB", {
+    month: "short",
+    year: "numeric",
+  });
+  const spots = process.env.NEXT_PUBLIC_SPOTS_REMAINING ?? "1";
+
+  const handleBookCall = async () => {
+    const cal = await getCalApi({ namespace: "amajor" });
+    cal("modal", {
+      calLink: "jiaweing/amajor",
+      config: { layout: "month_view" },
+    });
+  };
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-border border-dashed p-8 text-center">
-      <h2 className="mb-2 font-semibold text-2xl tracking-tight">
-        Start a {techName} project
-      </h2>
-      <p className="mb-6 text-muted-foreground">
-        Book a free discovery call and let&apos;s scope your project together.
-      </p>
-      <Button
-        className="rounded-full px-6"
-        data-cal-config='{"layout":"month_view"}'
-        data-cal-link="jiaweing/amajor"
-        data-cal-namespace="amajor"
-        onClick={async () => {
-          const cal = await getCalApi({ namespace: "amajor" });
-          cal("modal", {
-            calLink: "jiaweing/amajor",
-            config: { layout: "month_view" },
-          });
-        }}
-        size="lg"
-      >
-        Book a call
-        <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
-    </div>
+    <section className="relative overflow-hidden py-20" id="contact">
+      <StarMark
+        style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+      />
+      <StarMark
+        style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+      />
+      <StarMark
+        style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-blue-600),var(--color-white)_100%)] dark:opacity-100"
+      />
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <div className="text-center">
+          <h2 className="font-medium text-2xl tracking-tighter">
+            Ready to start your {techName} project?
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Tell us what you&apos;re building with {techName}. We&apos;ll
+            respond within 24 hours.
+          </p>
+
+          <div className="mx-auto mt-6 max-w-sm">
+            <div className="flex justify-center">
+              <Button onClick={handleBookCall}>Book a Call</Button>
+            </div>
+            <div className="mt-8 flex flex-col items-center gap-2">
+              <span className="inline-flex items-center justify-center gap-2 text-sm">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+                </span>
+                <span className="font-medium text-foreground">
+                  {spots} spot available in {nextMonth}
+                </span>
+              </span>
+              <span className="inline-flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                <span className="font-medium text-muted-foreground/60 line-through">
+                  {currentMonth} fully booked
+                </span>
+              </span>
+              <p className="text-muted-foreground/70 text-xs">
+                We limit intake each month so every project gets the focus it
+                deserves.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

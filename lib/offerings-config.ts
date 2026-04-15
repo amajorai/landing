@@ -22,7 +22,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We design and build modern websites that balance aesthetics with performance. Every site we ship is mobile-first, accessibility-compliant, and optimized for Core Web Vitals — because a beautiful site that loads in 6 seconds is a site nobody sees.",
     accentColor: "violet",
-    visualizationKey: "react",
+    visualizationKey: "web-design",
     logo: null,
     lucideIcon: "Palette",
     features: [
@@ -172,7 +172,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build web applications that handle complexity — real-time collaboration, role-based access, complex data models, and third-party integrations. From internal tools to customer-facing SaaS platforms, we ship production-ready apps.",
     accentColor: "blue",
-    visualizationKey: "nextjs",
+    visualizationKey: "web-apps",
     logo: null,
     lucideIcon: "Globe",
     features: [
@@ -312,7 +312,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build native and cross-platform mobile apps using React Native, Swift, Kotlin, and Flutter. From consumer apps to enterprise tools, we deliver polished experiences that work offline, load instantly, and feel native on every device.",
     accentColor: "green",
-    visualizationKey: "react-native",
+    visualizationKey: "mobile-apps",
     logo: null,
     lucideIcon: "Smartphone",
     features: [
@@ -458,7 +458,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build browser extensions that enhance existing tools — content scripts, popup UIs, background workers, and cross-browser compatibility. From productivity tools to enterprise integrations.",
     accentColor: "orange",
-    visualizationKey: "react",
+    visualizationKey: "browser-extensions",
     logo: null,
     lucideIcon: "Puzzle",
     features: [
@@ -557,7 +557,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build enterprise-grade internal tools — admin dashboards, CRM integrations, inventory management systems, reporting platforms, and workflow automation. Software that handles the complexity your off-the-shelf tools can't.",
     accentColor: "slate",
-    visualizationKey: "dotnet",
+    visualizationKey: "enterprise-systems",
     logo: null,
     lucideIcon: "Building2",
     features: [
@@ -660,7 +660,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build SaaS products with multi-tenancy, subscription billing, user management, and the infrastructure to grow from 10 to 10,000 customers. From MVP to growth stage, we've shipped SaaS across every vertical.",
     accentColor: "indigo",
-    visualizationKey: "nextjs",
+    visualizationKey: "saas-products",
     logo: null,
     lucideIcon: "Rocket",
     features: [
@@ -779,7 +779,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We do standalone design work — user research, wireframes, prototypes, and pixel-perfect UI design. Whether you need a complete design system or just a refresh, we deliver Figma files your developers can actually implement.",
     accentColor: "pink",
-    visualizationKey: "tailwind",
+    visualizationKey: "ui-ux-design",
     logo: null,
     lucideIcon: "Figma",
     features: [
@@ -875,7 +875,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We set up and manage your deployment infrastructure — CI/CD pipelines, Docker containers, Kubernetes clusters, cloud architecture on AWS, GCP, or Azure, and monitoring that alerts you before your users notice problems.",
     accentColor: "cyan",
-    visualizationKey: "docker",
+    visualizationKey: "devops",
     logo: null,
     lucideIcon: "Server",
     features: [
@@ -979,7 +979,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "Slow software loses users, hurts SEO rankings, and frustrates employees. We profile, diagnose, and fix performance issues across your entire stack — frontend rendering, API response times, database queries, and infrastructure.",
     accentColor: "amber",
-    visualizationKey: "react",
+    visualizationKey: "performance-optimization",
     logo: null,
     lucideIcon: "Gauge",
     features: [
@@ -1077,7 +1077,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "Not sure what to build first? We help founders and product teams define the minimum viable product — the smallest version of your idea that can generate real user feedback. Then we build it fast.",
     accentColor: "yellow",
-    visualizationKey: "react",
+    visualizationKey: "mvp-scoping",
     logo: null,
     lucideIcon: "Lightbulb",
     features: [
@@ -1171,7 +1171,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "Legacy systems don't have to be replaced overnight. We incrementally modernize aging codebases — migrating from outdated frameworks, improving architecture, and rebuilding critical paths while keeping your business running.",
     accentColor: "stone",
-    visualizationKey: "dotnet",
+    visualizationKey: "legacy-modernisation",
     logo: null,
     lucideIcon: "RefreshCw",
     features: [
@@ -1264,7 +1264,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We digitize manual business processes — paper forms, spreadsheet workflows, phone-based ordering, and manual data entry. Built for industries like healthcare, logistics, manufacturing, and professional services.",
     accentColor: "teal",
-    visualizationKey: "dotnet",
+    visualizationKey: "digital-transformation",
     logo: null,
     lucideIcon: "ArrowRightLeft",
     features: [
@@ -1352,7 +1352,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We build white-label software products that you can brand, customize, and sell as your own. From SaaS platforms to mobile apps, we handle the engineering while you focus on sales and customer relationships.",
     accentColor: "gray",
-    visualizationKey: "react",
+    visualizationKey: "white-label",
     logo: null,
     lucideIcon: "FileBox",
     features: [
@@ -1430,7 +1430,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "We implement technical SEO at the code level — server-side rendering, structured data, semantic HTML, sitemap generation, Core Web Vitals optimization, and content architecture that search engines understand and reward.",
     accentColor: "emerald",
-    visualizationKey: "nextjs",
+    visualizationKey: "seo-optimization",
     logo: null,
     lucideIcon: "Search",
     features: [
@@ -1567,7 +1567,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "End-to-end deployment services from staging to production. We configure hosting, set up CI/CD, handle DNS, SSL, CDN, and monitoring — everything needed to go live and stay live.",
     accentColor: "sky",
-    visualizationKey: "docker",
+    visualizationKey: "full-deployment",
     logo: null,
     lucideIcon: "Upload",
     features: [
@@ -1653,7 +1653,7 @@ export const offeringsConfig: OfferingConfig[] = [
     description:
       "Technical consultancy for founders, CTOs, and product teams. We help you make technology decisions, evaluate architectures, review codebases, and plan roadmaps — before you commit to building.",
     accentColor: "rose",
-    visualizationKey: "react",
+    visualizationKey: "consultancy",
     logo: null,
     lucideIcon: "MessageCircle",
     features: [

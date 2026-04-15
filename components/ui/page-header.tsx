@@ -3,6 +3,7 @@ interface PageHeaderProps {
   line2: string;
   eyebrow?: string;
   className?: string;
+  tag?: React.ReactNode;
 }
 
 export function PageHeader({
@@ -10,6 +11,7 @@ export function PageHeader({
   line2,
   eyebrow,
   className,
+  tag,
 }: PageHeaderProps) {
   return (
     <div className={className}>
@@ -18,8 +20,9 @@ export function PageHeader({
           {eyebrow}
         </p>
       )}
-      <h1 className="font-semibold text-3xl tracking-tighter lg:text-4xl">
-        <span className="block text-foreground">{line1}</span>
+      <h1 className="font-semibold text-2xl tracking-tighter">
+        <span className="text-foreground">{line1}</span>
+        {tag && <> {tag}</>}
         <span className="block text-muted-foreground">{line2}</span>
       </h1>
     </div>

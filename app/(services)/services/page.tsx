@@ -54,18 +54,13 @@ export default function ServicesPage() {
             line1="Services"
             line2="Whatever you need built, we've shipped it before."
           />
-          <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-            From web design and mobile apps to enterprise systems and SaaS
-            products — we offer end-to-end software development services. Pick a
-            service to learn more, or browse our technology expertise below.
-          </p>
         </div>
       </FadeIn>
 
       {/* Offering services grid */}
       <FadeIn>
         <section className="mb-16" id="our-services">
-          <h2 className="mb-4 font-mono text-muted-foreground text-xs uppercase tracking-wider">
+          <h2 className="mb-4 font-medium text-muted-foreground/70 text-sm">
             Our Services
           </h2>
           <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">
@@ -107,7 +102,7 @@ export default function ServicesPage() {
       {categoryGroups.map((group) => (
         <FadeIn key={group.label}>
           <section className="mb-12">
-            <h2 className="mb-4 font-mono text-muted-foreground text-xs uppercase tracking-wider">
+            <h2 className="mb-4 font-medium text-muted-foreground/70 text-sm">
               {group.label}
             </h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">

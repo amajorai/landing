@@ -12,6 +12,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { StarMark } from "@/components/ui/star-mark";
 import { analyticsConfig } from "@/lib/analytics-config";
+import { getNavProducts } from "@/lib/notion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -64,11 +65,12 @@ export const viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const products = await getNavProducts();
   return (
     <PlausibleWrapper>
       <html lang="en">
@@ -84,7 +86,7 @@ export default function RootLayout({
             disableTransitionOnChange
             enableSystem
           >
-            <Header />
+            <Header products={products} />
             <FloatingBookingButton />
             <SeasonalEffects />
             <div className="relative mx-auto max-w-4xl">

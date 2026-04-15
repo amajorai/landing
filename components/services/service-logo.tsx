@@ -72,12 +72,12 @@ export function ServiceLogo({
     const invertDark = !hasDark && service.logoDarkInvert;
     return (
       <span
-        className={`relative shrink-0 ${className}`}
+        className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden ${className}`}
         style={{ width: size, height: size }}
       >
         <Image
           alt={service.name}
-          className={`object-contain${hasDark ? "dark:hidden" : ""}${invertDark ? "dark:invert" : ""}`}
+          className={`max-h-full max-w-full object-contain${hasDark ? "dark:hidden" : ""}${invertDark ? "dark:invert" : ""}`}
           height={size}
           src={service.logo}
           width={size}
@@ -85,7 +85,7 @@ export function ServiceLogo({
         {hasDark && (
           <Image
             alt={service.name}
-            className="hidden object-contain dark:block"
+            className="hidden max-h-full max-w-full object-contain dark:block"
             height={size}
             src={service.logoDark!}
             width={size}
@@ -99,12 +99,12 @@ export function ServiceLogo({
   if (service.logoDark) {
     return (
       <span
-        className={`relative shrink-0 ${className}`}
+        className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden ${className}`}
         style={{ width: size, height: size }}
       >
         <Image
           alt={service.name}
-          className="object-contain"
+          className="max-h-full max-w-full object-contain"
           height={size}
           src={service.logoDark}
           width={size}

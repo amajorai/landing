@@ -1,12 +1,13 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { BookOpen, Info, Layers, Package, Plus } from "lucide-react";
+import { BookOpen, Info, Layers, Package, Plus, Search } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { Logo } from "@/components/logo";
 import { ProductsNavContent } from "@/components/products-nav-content";
 import { ProgressiveBlur } from "@/components/progressive-blur";
+import { CommandPalette } from "@/components/search/command-palette";
 import { ServicesNavContent } from "@/components/services/services-nav-content";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import type { NavProduct } from "@/lib/notion";
 
 // Desktop nav items rendered before the Services dropdown
 const beforeServiceItems = [
@@ -28,22 +30,32 @@ const beforeServiceItems = [
 // Desktop nav items rendered after the Products dropdown
 const afterProductsItems: { name: string; href: string }[] = [];
 
-// Mobile bottom bar items (4 items + center booking button)
-const mobileNavItems = [
-  { name: "Blog", href: "/blog", icon: BookOpen },
-  { name: "Services", href: "/services", icon: Layers },
-  // slot 2 is center booking button (placeholder)
-  { name: "Products", href: "/products", icon: Package },
-  { name: "About", href: "/about", icon: Info },
-];
+interface HeaderProps {
+  products?: NavProduct[];
+}
 
-export default function Header() {
+export default function Header({ products = [] }: HeaderProps) {
+  const hasProducts = products.length > 0;
+
+  const mobileNavItems = useMemo(() => {
+    const items = [
+      { name: "Blog", href: "/blog", icon: BookOpen },
+      { name: "Services", href: "/services", icon: Layers },
+    ];
+    if (hasProducts) {
+      items.push({ name: "Products", href: "/products", icon: Package });
+    }
+    items.push({ name: "About", href: "/about", icon: Info });
+    return items;
+  }, [hasProducts]);
   const pathname = usePathname();
+  const router = useRouter();
   const [scrollState, setScrollState] = useState({
     visible: true,
     prevScrollPos: 0,
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,8 +75,20 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollState.prevScrollPos]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <>
+      <CommandPalette onOpenChange={setIsSearchOpen} open={isSearchOpen} />
       <header>
         <nav
           className={`fixed z-60 w-full transition-transform duration-300 ${
@@ -84,6 +108,16 @@ export default function Header() {
           />
           <div className="relative z-[60] m-auto px-6 py-2">
             <div className="relative flex items-center pt-6 pb-3 lg:py-4">
+              {/* Mobile left: search button */}
+              <button
+                aria-label="Search"
+                className="flex items-center text-muted-foreground duration-150 hover:text-foreground lg:hidden"
+                onClick={() => setIsSearchOpen(true)}
+                type="button"
+              >
+                <Search className="h-5 w-5" />
+              </button>
+
               {/* Mobile logo - centered, hidden on desktop */}
               <div className="absolute left-1/2 -translate-x-1/2 lg:hidden">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
@@ -127,22 +161,36 @@ export default function Header() {
                       ))}
 
                       <NavigationMenuItem>
-                        <NavigationMenuTrigger className="h-auto bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground">
+                        <NavigationMenuTrigger
+                          className="h-auto cursor-pointer bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            router.push("/services");
+                          }}
+                        >
                           Services
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent>
+                        <NavigationMenuContent className="!p-0">
                           <ServicesNavContent />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
 
-                      <NavigationMenuItem>
-                        <NavigationMenuTrigger className="h-auto bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground">
-                          Products
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ProductsNavContent />
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
+                      {hasProducts && (
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger
+                            className="h-auto cursor-pointer bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              router.push("/products");
+                            }}
+                          >
+                            Products
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ProductsNavContent products={products} />
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      )}
 
                       {afterProductsItems.map((item) => (
                         <NavigationMenuItem key={item.name}>
@@ -165,6 +213,16 @@ export default function Header() {
                           )}
                         </NavigationMenuItem>
                       ))}
+                      <NavigationMenuItem>
+                        <button
+                          aria-label="Search (⌘K)"
+                          className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground duration-150 hover:text-accent-foreground"
+                          onClick={() => setIsSearchOpen(true)}
+                          type="button"
+                        >
+                          <Search className="h-4 w-4" />
+                        </button>
+                      </NavigationMenuItem>
                     </NavigationMenuList>
                   </NavigationMenu>
                 </FadeIn>
@@ -203,41 +261,47 @@ export default function Header() {
           useThemeBackground={true}
         />
         <nav className="fixed bottom-0 z-60 w-full">
-          <div className="relative grid grid-cols-5 items-center px-6 pt-3 pb-6">
-            {/* Slots 0–1: left items */}
-            {mobileNavItems.slice(0, 2).map((item) => {
-              const Icon = item.icon;
-              const isActive = pathname.startsWith(item.href);
-              return (
-                <Link
-                  className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
-                  href={item.href as any}
-                  key={item.name}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-[10px]">{item.name}</span>
-                </Link>
-              );
-            })}
+          <div
+            className={`relative grid items-center px-6 pt-3 pb-6 ${hasProducts ? "grid-cols-5" : "grid-cols-4"}`}
+          >
+            {/* Left items */}
+            {mobileNavItems
+              .slice(0, Math.ceil(mobileNavItems.length / 2))
+              .map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname.startsWith(item.href);
+                return (
+                  <Link
+                    className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
+                    href={item.href as any}
+                    key={item.name}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-[10px]">{item.name}</span>
+                  </Link>
+                );
+              })}
 
-            {/* Slot 2: invisible placeholder - Plus button floats here */}
+            {/* Center placeholder for floating Plus button */}
             <div aria-hidden="true" />
 
-            {/* Slots 3–4: right items */}
-            {mobileNavItems.slice(2).map((item) => {
-              const Icon = item.icon;
-              const isActive = pathname.startsWith(item.href);
-              return (
-                <Link
-                  className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
-                  href={item.href as any}
-                  key={item.name}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-[10px]">{item.name}</span>
-                </Link>
-              );
-            })}
+            {/* Right items */}
+            {mobileNavItems
+              .slice(Math.ceil(mobileNavItems.length / 2))
+              .map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname.startsWith(item.href);
+                return (
+                  <Link
+                    className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
+                    href={item.href as any}
+                    key={item.name}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-[10px]">{item.name}</span>
+                  </Link>
+                );
+              })}
 
             {/* Floating center Book button - elevated above the bar */}
             <button

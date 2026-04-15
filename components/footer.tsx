@@ -3,7 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { Logo } from "@/components/logo";
+import { ServiceLogo } from "@/components/services/service-logo";
 import { FadeIn } from "@/components/ui/fade-in";
+import {
+  authServices,
+  backendServices,
+  cmsServices,
+  databaseServices,
+  designServices,
+  desktopServices,
+  frontendServices,
+  mobileServices,
+  paymentsServices,
+  type ServiceConfig,
+  toolingServices,
+} from "@/lib/services-config";
 
 const links = [
   { title: "Manifesto", href: "/manifesto" },
@@ -18,10 +32,41 @@ const links = [
   },
 ];
 
+function FooterServiceLink({ service }: { service: ServiceConfig }) {
+  return (
+    <Link
+      className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      href={`/services/${service.slug}` as any}
+    >
+      <ServiceLogo service={service} size={14} />
+      <span>{service.name}</span>
+    </Link>
+  );
+}
+
+function FooterColumn({
+  title,
+  services,
+}: {
+  title: string;
+  services: ServiceConfig[];
+}) {
+  return (
+    <div>
+      <h4 className="mb-4 font-semibold">{title}</h4>
+      <div className="space-y-2 text-sm">
+        {services.map((s) => (
+          <FooterServiceLink key={s.slug} service={s} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function FooterSection() {
   return (
     <footer className="relative overflow-hidden border-border border-t border-dashed bg-background pt-10 pb-28 md:pt-14 md:pb-48">
-      {/* Giant watermark text - half-visible from bottom */}
+      {/* Giant watermark text */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-0 bottom-0 left-0 flex select-none justify-center overflow-hidden"
@@ -41,17 +86,50 @@ export default function FooterSection() {
         </span>
       </div>
       <div className="relative mx-auto max-w-5xl px-6" style={{ zIndex: 1 }}>
-        <FadeIn duration={0.4}>
+        {/* Brand */}
+        <div className="mb-12 space-y-4">
+          <h3 className="font-semibold text-xl">A Major</h3>
+          <p className="max-w-md text-muted-foreground">
+            Singapore-based software agency specialising in web design, software
+            development, and digital solutions for businesses.
+          </p>
+        </div>
+
+        {/* Services columns with logos */}
+        <FadeIn delay={0.1} duration={0.4}>
+          <div className="mb-12 columns-2 gap-x-8 sm:columns-3 md:columns-4 lg:columns-5">
+            {[
+              { title: "Frontend", services: frontendServices },
+              { title: "Backend", services: backendServices },
+              { title: "Database", services: databaseServices },
+              { title: "Tooling & DevOps", services: toolingServices },
+              { title: "Mobile", services: mobileServices },
+              { title: "Auth", services: authServices },
+              { title: "Payments", services: paymentsServices },
+              { title: "Desktop", services: desktopServices },
+              { title: "Design", services: designServices },
+              { title: "CMS", services: cmsServices },
+            ].map((group) => (
+              <div className="mb-6 break-inside-avoid" key={group.title}>
+                <FooterColumn services={group.services} title={group.title} />
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* Centered logo */}
+        <FadeIn delay={0.12} duration={0.4}>
           <Link
             aria-label="go home"
-            className="mx-auto block size-fit"
+            className="mx-auto mb-4 block size-fit"
             href="/"
           >
             <Logo />
           </Link>
         </FadeIn>
 
-        <FadeIn delay={0.1} duration={0.4}>
+        {/* Horizontal links */}
+        <FadeIn delay={0.15} duration={0.4}>
           <div className="my-8 flex flex-col flex-wrap items-center justify-center gap-4 text-sm sm:flex-row md:gap-6">
             {links.map((link) => (
               <Fragment key={link.title}>
@@ -76,6 +154,8 @@ export default function FooterSection() {
             ))}
           </div>
         </FadeIn>
+
+        {/* Socials */}
         <FadeIn delay={0.2} duration={0.4}>
           <div className="my-8 flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
             <a
@@ -108,68 +188,9 @@ export default function FooterSection() {
                 width={16}
               />
             </a>
-            {/* <a
-              aria-label="Threads"
-              className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://www.threads.net/@j14.wei"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Image
-                alt="Threads - Follow A Major Updates"
-                className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
-                height={16}
-                src="/logos/threads.svg"
-                width={16}
-              />
-            </a>
-            <a
-              aria-label="Instagram"
-              className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://instagram.com/base7llp"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Image
-                alt="Instagram - Follow A Major"
-                className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
-                height={16}
-                src="/logos/instagram.svg"
-                width={16}
-              />
-            </a>
-            <a
-              aria-label="TikTok"
-              className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://www.tiktok.com/@j14.wei"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Image
-                alt="TikTok - Follow A Major"
-                className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
-                height={16}
-                src="/logos/tiktok.svg"
-                width={16}
-              />
-            </a>
-            <a
-              aria-label="YouTube"
-              className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://www.youtube.com/@j14wei"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Image
-                alt="YouTube - Watch A Major Videos"
-                className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
-                height={16}
-                src="/logos/youtube.svg"
-                width={16}
-              />
-            </a> */}
           </div>
         </FadeIn>
+
         <div className="mt-8 mb-4 px-4 text-center text-muted-foreground text-sm">
           <span itemScope itemType="http://schema.org/Organization">
             © {new Date().getFullYear()}{" "}

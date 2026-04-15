@@ -8,8 +8,20 @@ export const revalidate = 3600;
 
 export const metadata = generateMetadata({
   title: "Blog",
-  description: "Thoughts on software engineering, design, and technology.",
+  description:
+    "Insights on software engineering, web design, AI, and technology from the A Major team — a Singapore software agency.",
   url: "/blog",
+  tags: [
+    "software engineering blog",
+    "web development blog",
+    "Singapore tech",
+    "AI development",
+    "software design",
+    "Next.js",
+    "React",
+    "startup engineering",
+    "A Major blog",
+  ],
 });
 
 export default async function BlogPage() {

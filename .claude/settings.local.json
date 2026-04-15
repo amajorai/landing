@@ -43,7 +43,8 @@
       "Bash(awk '/slug: \"express\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
       "Bash(awk '/slug: \"fastify\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
       "Bash(awk '/slug: \"prisma\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
-      "Bash(grep -B1 '^--$\\\\|},\\\\s*$')"
+      "Bash(grep -B1 '^--$\\\\|},\\\\s*$')",
+      "Bash(grep -r \"Singapore\\\\|founder\\\\|team\" /c/Code/amajor-landing/components/*.tsx)"
     ]
   }
 }

@@ -69,6 +69,7 @@ export interface ServiceConfig {
   quickstart?: string;
   quickstartLang?: string;
   docsUrl?: string;
+  pricingNote?: string;
 }
 
 export const servicesConfig: ServiceConfig[] = [

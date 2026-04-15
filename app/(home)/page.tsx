@@ -11,7 +11,32 @@ import FeaturesSection from "@/components/services-section";
 import TeamSection from "@/components/team";
 import { FadeIn } from "@/components/ui/fade-in";
 import StatsSection from "@/components/why-us-section";
+import { generateMetadata } from "@/lib/metadata";
 import { getProjects } from "@/lib/notion";
+
+export const metadata = generateMetadata({
+  title: "Singapore Software Agency — Web Design & Development",
+  description:
+    "A Major is a founder-led Singapore software agency. We build web apps, mobile apps, SaaS products, and e-commerce platforms for startups and enterprises worldwide.",
+  url: "/",
+  tags: [
+    "software agency Singapore",
+    "web development Singapore",
+    "web design Singapore",
+    "mobile app development Singapore",
+    "SaaS development",
+    "MVP development",
+    "startup development",
+    "e-commerce development Singapore",
+    "full stack development",
+    "custom software Singapore",
+    "Next.js agency Singapore",
+    "React developer Singapore",
+    "founder-led agency",
+    "digital agency Singapore",
+    "enterprise software Singapore",
+  ],
+});
 
 // Revalidate every hour
 export const revalidate = 3600;

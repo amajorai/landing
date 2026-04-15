@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { compareConfig } from "@/lib/compare-config";
 import { getBlogPosts, getProjects } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
@@ -59,6 +60,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
+    });
+  });
+
+  routes.push({
+    url: `${baseUrl}/compare`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  });
+
+  compareConfig.forEach((comparison) => {
+    routes.push({
+      url: `${baseUrl}/compare/${comparison.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
     });
   });
 

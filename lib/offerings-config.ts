@@ -9,13 +9,13 @@ export interface OfferingConfig
   subTechs: ServiceConfig["subTechs"];
 }
 
-// Industry pages temporarily hidden — require compliance credentials to credibly sell
-const HIDDEN_OFFERINGS = new Set([
-  "healthcare-software",
-  "fintech",
-  "ecommerce",
-  "education-software",
-  "logistics-software",
+// Industry verticals hidden until compliance requirements are met.
+// Uncomment slugs below to re-enable when ready.
+const HIDDEN_OFFERINGS = new Set<string>([
+  "healthcare-software", // HIPAA, HL7 FHIR, PHI data handling
+  "fintech", // MAS regulations, PCI-DSS, AML/KYC
+  "ecommerce", // Payment compliance, consumer protection laws
+  "logistics-software", // Supply chain, customs, cross-border compliance
 ]);
 
 const _allOfferings: OfferingConfig[] = [
@@ -28,6 +28,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "Websites that load fast, look sharp, and convert visitors into customers",
+    pricingNote:
+      "Marketing sites from $3,000. Complex multi-page sites with custom animations and integrations from $10,000–20,000+. We provide fixed-price quotes after a free 30-min scoping call.",
     description:
       "We design and build modern websites that balance aesthetics with performance. Every site we ship is mobile-first, accessibility-compliant, and optimized for Core Web Vitals — because a beautiful site that loads in 6 seconds is a site nobody sees.",
     accentColor: "violet",
@@ -178,6 +180,8 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline: "Full-stack web applications built for real users and real scale",
+    pricingNote:
+      "Simple CRUD apps from $15,000. Complex SaaS platforms with real-time features, integrations, and multi-tenancy from $50,000–100,000+. Scoped per project after a free technical consultation.",
     description:
       "We build web applications that handle complexity — real-time collaboration, role-based access, complex data models, and third-party integrations. From internal tools to customer-facing SaaS platforms, we ship production-ready apps.",
     accentColor: "blue",
@@ -268,6 +272,11 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Ship behind feature flags to decouple deployment from release — test in production without risk.",
       },
+      {
+        tip: "Set up error tracking and observability before launch",
+        detail:
+          "Sentry, LogRocket, or Datadog configured in staging before you go live. You can't debug production issues you can't observe.",
+      },
     ],
     usefulLinks: [
       {
@@ -283,6 +292,11 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Vercel Deployment Platform",
         url: "https://vercel.com",
+        type: "tool",
+      },
+      {
+        title: "Supabase (Postgres + Auth)",
+        url: "https://supabase.com",
         type: "tool",
       },
     ],
@@ -318,6 +332,8 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline: "iOS and Android apps that users actually keep installed",
+    pricingNote:
+      "Cross-platform React Native apps from $20,000. Native iOS/Android apps with complex features from $50,000–100,000+. Includes App Store submission and post-launch support.",
     description:
       "We build native and cross-platform mobile apps using React Native, Swift, Kotlin, and Flutter. From consumer apps to enterprise tools, we deliver polished experiences that work offline, load instantly, and feel native on every device.",
     accentColor: "green",
@@ -408,6 +424,11 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Simulators don't reflect real-world performance. Test on low-end Android devices and older iPhones to catch memory and rendering issues.",
       },
+      {
+        tip: "Submit to TestFlight early and often",
+        detail:
+          "Get the app in front of real users on real devices weeks before launch — not the day before. Early feedback prevents expensive late-stage rewrites.",
+      },
     ],
     usefulLinks: [
       {
@@ -464,6 +485,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "Chrome, Firefox, and Edge extensions that integrate into user workflows",
+    pricingNote:
+      "Simple single-browser extensions from $5,000. Cross-browser extensions with backend APIs and content manipulation from $15,000–50,000.",
     description:
       "We build browser extensions that enhance existing tools — content scripts, popup UIs, background workers, and cross-browser compatibility. From productivity tools to enterprise integrations.",
     accentColor: "orange",
@@ -527,6 +550,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "For anything beyond a simple popup, React with a bundler like Vite makes extension UI development much faster.",
       },
+      {
+        tip: "Test across all target browsers before submitting",
+        detail:
+          "Chrome, Firefox, and Edge each have subtle API differences. Automated cross-browser tests catch compatibility issues before users do.",
+      },
+      {
+        tip: "Use declarative net request over web request API",
+        detail:
+          "Manifest V3 requires declarativeNetRequest for network interception. Design your rules upfront — the static rule model has hard limits.",
+      },
     ],
     usefulLinks: [
       {
@@ -538,6 +571,16 @@ const _allOfferings: OfferingConfig[] = [
         title: "Firefox Extension Workshop",
         url: "https://extensionworkshop.com/",
         type: "docs",
+      },
+      {
+        title: "WXT (Extension build framework)",
+        url: "https://wxt.dev",
+        type: "tool",
+      },
+      {
+        title: "Plasmo (Extension framework)",
+        url: "https://docs.plasmo.com",
+        type: "tool",
       },
     ],
     faq: [
@@ -551,6 +594,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Yes. We migrate existing Manifest V2 extensions to V3, updating service workers, network request handling, and content security policies.",
       },
+      {
+        question: "How long does Chrome Web Store review take?",
+        answer:
+          "Initial reviews typically take 1–3 business days. Updates can take a few hours to a day. We help optimize your listing and resolve rejection issues quickly.",
+      },
+      {
+        question: "Can the extension work with our existing web app?",
+        answer:
+          "Yes. Extensions can communicate with your web app via shared authentication, API calls, and content scripts — creating a seamless integrated experience.",
+      },
     ],
   },
 
@@ -563,6 +616,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Internal tools, dashboards, and integrations built for real business complexity",
+    pricingNote:
+      "Internal tools and dashboards from $30,000. Complex multi-system integrations and compliance-ready platforms from $80,000–200,000+. All projects start with a discovery phase.",
     description:
       "We build enterprise-grade internal tools — admin dashboards, CRM integrations, inventory management systems, reporting platforms, and workflow automation. Software that handles the complexity your off-the-shelf tools can't.",
     accentColor: "slate",
@@ -631,6 +686,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Enterprise systems need complete audit trails. Add them in the data layer — retrofitting is extremely expensive.",
       },
+      {
+        tip: "Plan for SSO from the start",
+        detail:
+          "Enterprise clients expect SAML or OIDC SSO with their existing identity provider. Building auth to support this upfront avoids expensive integration work later.",
+      },
+      {
+        tip: "Document integration contracts, not just code",
+        detail:
+          "When your system connects to SAP, Salesforce, or legacy databases, write explicit contracts for data formats, error handling, and retry logic. Undocumented integrations break silently.",
+      },
     ],
     usefulLinks: [
       {
@@ -642,6 +707,16 @@ const _allOfferings: OfferingConfig[] = [
         title: "Retool (Low-code alternative)",
         url: "https://retool.com",
         type: "tool",
+      },
+      {
+        title: "Permit.io (Authorization)",
+        url: "https://www.permit.io",
+        type: "tool",
+      },
+      {
+        title: "OpenTelemetry (Observability)",
+        url: "https://opentelemetry.io",
+        type: "docs",
       },
     ],
     faq: [
@@ -655,6 +730,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Yes. We regularly integrate with SAP, Salesforce, HubSpot, QuickBooks, custom APIs, and legacy databases. We'll audit your current systems and build the right connectors.",
       },
+      {
+        question: "How do you handle change management for internal tools?",
+        answer:
+          "We involve end users early in the design process, conduct usability testing with real staff, and provide training materials and documentation as part of every delivery.",
+      },
+      {
+        question: "Can you maintain the system after launch?",
+        answer:
+          "Yes. We offer ongoing maintenance retainers covering bug fixes, feature additions, dependency updates, and priority support — typically starting at $3,000/month.",
+      },
     ],
   },
 
@@ -666,6 +751,8 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline: "Subscription software built to scale from day one",
+    pricingNote:
+      "SaaS MVPs from $25,000. Full-featured products with billing, analytics, admin panels, and polished UX from $60,000–150,000+. Fixed-price engagements after a free scoping call.",
     description:
       "We build SaaS products with multi-tenancy, subscription billing, user management, and the infrastructure to grow from 10 to 10,000 customers. From MVP to growth stage, we've shipped SaaS across every vertical.",
     accentColor: "indigo",
@@ -739,6 +826,11 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Track every meaningful user action from launch. You can't make data-driven decisions without data.",
       },
+      {
+        tip: "Design your pricing model before building billing",
+        detail:
+          "Freemium, per-seat, usage-based, and tiered pricing all have different database and billing architecture implications. Changing pricing models mid-product is painful.",
+      },
     ],
     usefulLinks: [
       {
@@ -754,6 +846,11 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "PostHog (Product analytics)",
         url: "https://posthog.com",
+        type: "tool",
+      },
+      {
+        title: "Neon (Serverless Postgres for SaaS)",
+        url: "https://neon.tech",
         type: "tool",
       },
     ],
@@ -773,6 +870,11 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Yes. We help SaaS companies scale their engineering — adding features, improving performance, fixing technical debt, and preparing for growth milestones.",
       },
+      {
+        question: "Do you help with SaaS go-to-market and growth?",
+        answer:
+          "Our focus is engineering, but we partner with growth and marketing teams. We can build the technical infrastructure for product-led growth — referral programs, usage-based onboarding, in-app prompts, and self-serve trials.",
+      },
     ],
   },
 
@@ -785,6 +887,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "User flows, wireframes, and high-fidelity interfaces that drive results",
+    pricingNote:
+      "Quick UI audits and refreshes from $3,000. Full user research, wireframing, and high-fidelity design systems from $15,000–30,000. Delivered as Figma files with developer-ready specs.",
     description:
       "We do standalone design work — user research, wireframes, prototypes, and pixel-perfect UI design. Whether you need a complete design system or just a refresh, we deliver Figma files your developers can actually implement.",
     accentColor: "pink",
@@ -848,6 +952,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Components, tokens, and patterns that compose into new features without redesigning from scratch every time.",
       },
+      {
+        tip: "Use real content in mockups, not lorem ipsum",
+        detail:
+          "Real product names, actual user data, and genuine copy reveal layout problems that placeholder text hides. Designs that look great with fake content often break with real content.",
+      },
+      {
+        tip: "Design for accessibility from the start",
+        detail:
+          "WCAG 2.1 AA compliance is not a final checklist — it's a design discipline. Sufficient color contrast, keyboard navigation, and focus states must be designed in, not bolted on.",
+      },
     ],
     usefulLinks: [
       { title: "Figma", url: "https://figma.com", type: "tool" },
@@ -856,6 +970,11 @@ const _allOfferings: OfferingConfig[] = [
         title: "Nielsen Norman Group Articles",
         url: "https://www.nngroup.com/articles/",
         type: "tutorial",
+      },
+      {
+        title: "Radix UI Primitives",
+        url: "https://www.radix-ui.com",
+        type: "tool",
       },
     ],
     faq: [
@@ -869,6 +988,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Design projects range from $3,000 for a focused UI refresh to $15,000–30,000 for comprehensive user research, wireframing, and high-fidelity design systems.",
       },
+      {
+        question: "Do you design for both web and mobile?",
+        answer:
+          "Yes. We design responsive web interfaces and native mobile screens, following each platform's design language — Material Design for Android, Human Interface Guidelines for iOS.",
+      },
+      {
+        question: "How do you hand off designs to developers?",
+        answer:
+          "We deliver annotated Figma files with component specs, spacing tokens, interaction notes, and responsive breakpoints. We also offer developer Q&A sessions to walk through edge cases.",
+      },
     ],
   },
 
@@ -881,6 +1010,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "CI/CD, cloud infrastructure, and deployments that don't fall over",
+    pricingNote:
+      "CI/CD setup and infrastructure configuration from $5,000. Ongoing cloud management available as monthly retainers from $2,000/month. Cost audits often pay for themselves within 60 days.",
     description:
       "We set up and manage your deployment infrastructure — CI/CD pipelines, Docker containers, Kubernetes clusters, cloud architecture on AWS, GCP, or Azure, and monitoring that alerts you before your users notice problems.",
     accentColor: "cyan",
@@ -948,6 +1079,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Terraform, Pulumi, or CDK — your infrastructure should be version-controlled, reviewable, and reproducible.",
       },
+      {
+        tip: "Implement blue-green or canary deployments",
+        detail:
+          "Ship new versions to a small percentage of traffic first. Catch production issues before they affect all users, and roll back in minutes instead of hours.",
+      },
+      {
+        tip: "Set up on-call rotation before you need one",
+        detail:
+          "Define escalation paths, runbooks, and alerting thresholds before your first production incident — not during it.",
+      },
     ],
     usefulLinks: [
       {
@@ -961,6 +1102,11 @@ const _allOfferings: OfferingConfig[] = [
         type: "docs",
       },
       { title: "Vercel Platform", url: "https://vercel.com", type: "tool" },
+      {
+        title: "Grafana (Observability)",
+        url: "https://grafana.com",
+        type: "tool",
+      },
     ],
     faq: [
       {
@@ -972,6 +1118,16 @@ const _allOfferings: OfferingConfig[] = [
         question: "Can you reduce our cloud costs?",
         answer:
           "Yes. We regularly audit cloud spending and find 30–50% savings through right-sizing, reserved instances, caching, and architecture improvements.",
+      },
+      {
+        question: "Do you support Kubernetes for our deployments?",
+        answer:
+          "Yes. We set up and manage Kubernetes clusters on EKS, GKE, or self-hosted environments — including Helm charts, autoscaling, and network policies.",
+      },
+      {
+        question: "Can you help migrate our infrastructure to the cloud?",
+        answer:
+          "Yes. We plan and execute cloud migrations from on-premise or managed hosting to AWS, GCP, or Azure — minimizing downtime and optimizing for cost and performance.",
       },
     ],
   },
@@ -985,6 +1141,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "Find the bottlenecks and fix them — in code, queries, and infrastructure",
+    pricingNote:
+      "Comprehensive performance audit with prioritized recommendations from $3,000–8,000. Implementation of fixes scoped separately. Most audits deliver measurable improvements within 2 weeks.",
     description:
       "Slow software loses users, hurts SEO rankings, and frustrates employees. We profile, diagnose, and fix performance issues across your entire stack — frontend rendering, API response times, database queries, and infrastructure.",
     accentColor: "amber",
@@ -1043,6 +1201,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Automated checks that fail the build when bundle size or LCP exceeds thresholds prevent performance regressions.",
       },
+      {
+        tip: "Fix N+1 query problems before they scale",
+        detail:
+          "A query that runs once per list item causes catastrophic slowdowns at scale. Use query analyzers and DataLoader patterns to batch database calls.",
+      },
+      {
+        tip: "Use a CDN for all static assets",
+        detail:
+          "Images, fonts, and JS bundles should be served from a CDN closest to your users — not from your origin server. This alone can cut load times by 60%.",
+      },
     ],
     usefulLinks: [
       {
@@ -1060,6 +1228,11 @@ const _allOfferings: OfferingConfig[] = [
         url: "https://web.dev/performance",
         type: "docs",
       },
+      {
+        title: "Bundle Analyzer for Next.js",
+        url: "https://www.npmjs.com/package/@next/bundle-analyzer",
+        type: "tool",
+      },
     ],
     faq: [
       {
@@ -1072,6 +1245,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Results vary, but we typically achieve 40–70% improvements in load times and 2–3x improvements in Core Web Vitals scores.",
       },
+      {
+        question: "Our API is slow — can you help with backend performance?",
+        answer:
+          "Yes. Backend performance is often the hidden bottleneck. We profile API response times, identify slow queries, add caching layers, and optimize data access patterns.",
+      },
+      {
+        question: "Will performance improvements affect our SEO rankings?",
+        answer:
+          "Yes — Google uses Core Web Vitals (LCP, CLS, INP) as ranking factors. Improving these metrics directly impacts search visibility, especially on mobile.",
+      },
     ],
   },
 
@@ -1083,6 +1266,8 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline: "Define the smallest version that proves the idea — then build it",
+    pricingNote:
+      "Scoping engagement (discovery + specification) from $3,000–5,000. Full MVP build from $15,000–40,000. Most MVPs launch within 6–12 weeks. Fixed-price, no surprises.",
     description:
       "Not sure what to build first? We help founders and product teams define the minimum viable product — the smallest version of your idea that can generate real user feedback. Then we build it fast.",
     accentColor: "yellow",
@@ -1141,6 +1326,16 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Every week you're not in front of users is a week of assumptions. Ship the simplest thing that works and iterate.",
       },
+      {
+        tip: "Cut features ruthlessly, not quality",
+        detail:
+          "An MVP should have fewer features, not worse features. Every feature that ships should work well and feel polished — half-built features erode user trust.",
+      },
+      {
+        tip: "Build your feedback loop into the product",
+        detail:
+          "In-app surveys, session recordings, and usage analytics should be configured at launch. You need user insight to know what to build next.",
+      },
     ],
     usefulLinks: [
       {
@@ -1151,6 +1346,16 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Supabase (Rapid backend)",
         url: "https://supabase.com",
+        type: "tool",
+      },
+      {
+        title: "Vercel (Instant deployments)",
+        url: "https://vercel.com",
+        type: "tool",
+      },
+      {
+        title: "PostHog (Analytics + session replay)",
+        url: "https://posthog.com",
         type: "tool",
       },
     ],
@@ -1165,6 +1370,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "6–12 weeks from scoping to launch. We work in weekly sprints with demos so you see progress and can course-correct throughout.",
       },
+      {
+        question: "What's included in an MVP scoping engagement?",
+        answer:
+          "A scoping engagement includes product discovery workshops, user story mapping, technical architecture decisions, a prioritized feature backlog, and a fixed-price build estimate.",
+      },
+      {
+        question: "What happens after the MVP launches?",
+        answer:
+          "We help you interpret early user data, plan the next iteration, and continue building — either as a retainer or project-by-project, depending on your needs.",
+      },
     ],
   },
 
@@ -1177,6 +1392,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Old, brittle software rebuilt on a stack that supports your growth",
+    pricingNote:
+      "Codebase audit from $5,000–10,000. Full modernization projects from $20,000–100,000+ depending on system complexity. Incremental approach means you see ROI from the first sprint.",
     description:
       "Legacy systems don't have to be replaced overnight. We incrementally modernize aging codebases — migrating from outdated frameworks, improving architecture, and rebuilding critical paths while keeping your business running.",
     accentColor: "stone",
@@ -1240,12 +1457,37 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Build new features on modern technology and gradually route traffic away from legacy systems — no big bang cutover.",
       },
+      {
+        tip: "Write characterization tests before touching legacy code",
+        detail:
+          "Capture the existing system's behavior with tests before refactoring. These tests become your safety net when the original logic isn't documented.",
+      },
+      {
+        tip: "Prioritize security fixes in the first sprint",
+        detail:
+          "Legacy systems often have critical CVEs in outdated dependencies. Patch security vulnerabilities before addressing architecture — risk reduction is always highest priority.",
+      },
     ],
     usefulLinks: [
       {
         title: "Martin Fowler on Strangler Fig",
         url: "https://martinfowler.com/bliki/StranglerFigApplication.html",
         type: "tutorial",
+      },
+      {
+        title: "Working Effectively with Legacy Code (book)",
+        url: "https://www.oreilly.com/library/view/working-effectively-with/0131177052/",
+        type: "tutorial",
+      },
+      {
+        title: "SonarQube (Code quality analysis)",
+        url: "https://www.sonarsource.com/products/sonarqube/",
+        type: "tool",
+      },
+      {
+        title: "OWASP Dependency Check",
+        url: "https://owasp.org/www-project-dependency-check/",
+        type: "tool",
       },
     ],
     faq: [
@@ -1259,6 +1501,16 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Incremental modernization is ongoing, but you'll see improvements within the first 4–8 weeks. Full migrations typically take 3–12 months depending on system complexity.",
       },
+      {
+        question: "Can you modernize without disrupting our current users?",
+        answer:
+          "Yes. Our incremental approach means the existing system keeps running throughout the migration. We route traffic gradually to the new system and fall back if needed.",
+      },
+      {
+        question: "We're using PHP/ASP.NET/.NET Framework — can you help?",
+        answer:
+          "Yes. We regularly modernize PHP applications to Laravel or Node.js, and migrate .NET Framework apps to modern .NET — incrementally and safely.",
+      },
     ],
   },
 
@@ -1270,8 +1522,10 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline: "Moving offline and manual processes online — for real",
+    pricingNote:
+      "Single process digitization from $15,000–35,000. Multi-department transformation programs from $50,000–200,000+ delivered in phased engagements. Free assessment to identify highest-impact opportunities.",
     description:
-      "We digitize manual business processes — paper forms, spreadsheet workflows, phone-based ordering, and manual data entry. Built for industries like healthcare, logistics, manufacturing, and professional services.",
+      "We digitize manual business processes — paper forms, spreadsheet workflows, phone-based ordering, and manual data entry. Built for professional services, manufacturing, and operations-heavy businesses.",
     accentColor: "teal",
     visualizationKey: "digital-transformation",
     logo: null,
@@ -1304,7 +1558,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "postgresql" }],
     overview:
-      "Digital transformation isn't about technology — it's about making your business more efficient by replacing manual, error-prone processes with software that automates the repetitive parts and gives you data to make better decisions. We've done this for hospitals, logistics companies, professional services firms, and manufacturers — each with unique process requirements that off-the-shelf software can't handle.",
+      "Digital transformation isn't about technology — it's about making your business more efficient by replacing manual, error-prone processes with software that automates the repetitive parts and gives you data to make better decisions. We've done this for professional services firms, manufacturers, and operations-heavy businesses — each with unique process requirements that off-the-shelf software can't handle.",
     challenges: [
       {
         title: "Resistance to change",
@@ -1328,12 +1582,37 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "The people doing the work know the process best. Co-design with them to build software they'll actually use.",
       },
+      {
+        tip: "Measure process efficiency before and after",
+        detail:
+          "Establish baseline metrics (time per task, error rates, cost per transaction) before digitizing. These become the proof points that justify further transformation investment.",
+      },
+      {
+        tip: "Run parallel systems during transition",
+        detail:
+          "Keep the old paper/spreadsheet process running alongside the new digital system for 4–8 weeks. This safety net allows rollback and builds user confidence.",
+      },
     ],
     usefulLinks: [
       {
         title: "McKinsey on Digital Transformation",
         url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights",
         type: "tutorial",
+      },
+      {
+        title: "Make (Workflow automation)",
+        url: "https://www.make.com",
+        type: "tool",
+      },
+      {
+        title: "Retool (Internal tool builder)",
+        url: "https://retool.com",
+        type: "tool",
+      },
+      {
+        title: "Zapier (Integration automation)",
+        url: "https://zapier.com",
+        type: "tool",
       },
     ],
     faq: [
@@ -1347,6 +1626,17 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "Individual process digitization takes 4–12 weeks. Company-wide transformation is a multi-phase journey over 6–18 months, but you see ROI from the first phase.",
       },
+      {
+        question: "How much does digital transformation cost?",
+        answer:
+          "A single process digitization project starts at $15,000–35,000. Broader multi-department transformation programs range from $50,000–200,000+, typically delivered in phases.",
+      },
+      {
+        question:
+          "What industries do you work with for digital transformation?",
+        answer:
+          "We've digitized processes in professional services, manufacturing, and operations-heavy businesses. Each industry has unique workflows and process requirements we understand well.",
+      },
     ],
   },
 
@@ -1358,6 +1648,8 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline: "Software built for agencies and businesses to rebrand and resell",
+    pricingNote:
+      "White-label products from $30,000–80,000+ depending on complexity and feature set. You own the IP. The investment pays for itself when you resell to multiple clients.",
     description:
       "We build white-label software products that you can brand, customize, and sell as your own. From SaaS platforms to mobile apps, we handle the engineering while you focus on sales and customer relationships.",
     accentColor: "gray",
@@ -1404,6 +1696,16 @@ const _allOfferings: OfferingConfig[] = [
         description:
           "Updates, bug fixes, and new features need to roll out across all client instances without breaking custom configurations.",
       },
+      {
+        title: "Keeping client data isolated",
+        description:
+          "White-label products often serve regulated industries where one client's data must never be visible to another — even accidentally. Multi-tenancy architecture must be watertight.",
+      },
+      {
+        title: "Supporting diverse client technical environments",
+        description:
+          "Some clients want SaaS, others want self-hosted. Some need SSO with their identity provider. The product architecture must accommodate varied deployment models.",
+      },
     ],
     bestPractices: [
       {
@@ -1411,8 +1713,44 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Build features that can be configured (turned on/off, themed) rather than requiring custom code per client.",
       },
+      {
+        tip: "Build a client admin portal from day one",
+        detail:
+          "Give your clients self-service control over branding, users, and settings. Reducing your support overhead per client is critical to making the white-label model profitable.",
+      },
+      {
+        tip: "Use feature flags per tenant",
+        detail:
+          "Ship new features to individual client instances before rolling out broadly. This lets you beta test with selected clients and charge for premium features.",
+      },
+      {
+        tip: "Establish a clear versioning and update policy",
+        detail:
+          "Clients on older versions need a support window before forced upgrades. Define your versioning strategy before you have 10 clients on 3 different versions.",
+      },
     ],
-    usefulLinks: [],
+    usefulLinks: [
+      {
+        title: "Stripe Connect (Marketplace payments)",
+        url: "https://stripe.com/connect",
+        type: "docs",
+      },
+      {
+        title: "Auth0 Organizations (Multi-tenant auth)",
+        url: "https://auth0.com/docs/manage-users/organizations",
+        type: "docs",
+      },
+      {
+        title: "Unleash (Feature flags)",
+        url: "https://www.getunleash.io",
+        type: "tool",
+      },
+      {
+        title: "Neon (Tenant-per-database Postgres)",
+        url: "https://neon.tech",
+        type: "tool",
+      },
+    ],
     faq: [
       {
         question: "Do I own the code?",
@@ -1423,6 +1761,16 @@ const _allOfferings: OfferingConfig[] = [
         question: "How much does white-label development cost?",
         answer:
           "White-label products typically cost $30,000–80,000+ depending on complexity. The investment pays for itself when you can resell to multiple clients.",
+      },
+      {
+        question: "Can clients self-host the product?",
+        answer:
+          "Yes. We can build deployment packages for client self-hosting — Docker containers, Kubernetes manifests, or cloud-specific templates — alongside the SaaS version.",
+      },
+      {
+        question: "How do you handle updates across all client instances?",
+        answer:
+          "We architect for automated updates with configuration-driven customization. A single update deploys across all instances while preserving each client's branding and settings.",
       },
     ],
   },
@@ -1436,6 +1784,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Technical SEO baked in from the start — fast sites, clean markup, content that ranks",
+    pricingNote:
+      "Technical SEO audit from $3,000–10,000. Ongoing SEO optimization from $1,500/month. Most clients see measurable ranking improvements within 4–8 weeks of implementation.",
     description:
       "We implement technical SEO at the code level — server-side rendering, structured data, semantic HTML, sitemap generation, Core Web Vitals optimization, and content architecture that search engines understand and reward.",
     accentColor: "emerald",
@@ -1561,6 +1911,12 @@ const _allOfferings: OfferingConfig[] = [
         answer:
           "We focus on technical SEO — the engineering side. We partner with content agencies for keyword research and content creation, and we provide the technical infrastructure for content to rank.",
       },
+      {
+        question:
+          "What's the difference between technical SEO and on-page SEO?",
+        answer:
+          "Technical SEO is about how search engines crawl, index, and understand your site — speed, structured data, canonicals, sitemaps. On-page SEO is about content quality, keyword targeting, and metadata. We handle technical SEO; both work together for best results.",
+      },
     ],
   },
 
@@ -1573,6 +1929,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "We don't just hand over code — we ship it, host it, and keep it running",
+    pricingNote:
+      "One-time deployment setup from $2,000–8,000. Monthly hosting management from $500/month. Includes monitoring, security patches, backups, and priority support.",
     description:
       "End-to-end deployment services from staging to production. We configure hosting, set up CI/CD, handle DNS, SSL, CDN, and monitoring — everything needed to go live and stay live.",
     accentColor: "sky",
@@ -1619,6 +1977,16 @@ const _allOfferings: OfferingConfig[] = [
         description:
           "Deployment is not a one-time event. Ongoing monitoring, updates, security patches, and scaling decisions are continuous.",
       },
+      {
+        title: "Zero-downtime deployments are harder than they look",
+        description:
+          "Database migrations, session management, and cache invalidation all need careful coordination to deploy without user-visible interruptions.",
+      },
+      {
+        title: "Environment parity between staging and production",
+        description:
+          "Bugs that only appear in production often trace back to environment differences — different secrets, different third-party services, or different data volumes.",
+      },
     ],
     bestPractices: [
       {
@@ -1631,10 +1999,30 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Uptime monitoring, error tracking, and log aggregation should be configured before launch, not after the first outage.",
       },
+      {
+        tip: "Automate rollbacks",
+        detail:
+          "Every deployment should have a tested rollback procedure. Automated rollback on error spike detection means faster recovery with no manual intervention.",
+      },
+      {
+        tip: "Use preview deployments for every PR",
+        detail:
+          "Vercel, Netlify, and similar platforms deploy every pull request to a unique URL. This lets stakeholders review changes before they merge — not after.",
+      },
     ],
     usefulLinks: [
       { title: "Vercel", url: "https://vercel.com", type: "tool" },
       { title: "Cloudflare", url: "https://cloudflare.com", type: "tool" },
+      {
+        title: "Railway (Simple deployments)",
+        url: "https://railway.app",
+        type: "tool",
+      },
+      {
+        title: "BetterStack (Uptime monitoring)",
+        url: "https://betterstack.com",
+        type: "tool",
+      },
     ],
     faq: [
       {
@@ -1646,6 +2034,16 @@ const _allOfferings: OfferingConfig[] = [
         question: "Do you offer ongoing hosting management?",
         answer:
           "Yes. We offer monthly hosting management plans that include monitoring, updates, security patches, backups, and priority support.",
+      },
+      {
+        question: "Can you migrate our existing hosting to a new provider?",
+        answer:
+          "Yes. We handle full hosting migrations — replicating the environment, testing in parallel, and switching DNS with zero-downtime cutover.",
+      },
+      {
+        question: "How do you handle SSL certificates?",
+        answer:
+          "SSL is automatically provisioned and renewed via Let's Encrypt or your cloud provider's certificate manager. We configure HTTP-to-HTTPS redirects and HSTS headers at the same time.",
       },
     ],
   },
@@ -1659,6 +2057,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "both",
     tagline:
       "Not sure what you need? We'll help you figure it out before you spend a dollar",
+    pricingNote:
+      "Free 30-minute introductory call. Hourly advisory from $200/hour. Codebase audits and architecture reviews from $3,000–8,000. Discounted packages available for longer engagements.",
     description:
       "Technical consultancy for founders, CTOs, and product teams. We help you make technology decisions, evaluate architectures, review codebases, and plan roadmaps — before you commit to building.",
     accentColor: "rose",
@@ -1705,6 +2105,16 @@ const _allOfferings: OfferingConfig[] = [
         description:
           "Most companies inherit codebases they didn't build. Understanding what's worth keeping and what needs replacing requires experienced assessment.",
       },
+      {
+        title: "Vendor lock-in decisions",
+        description:
+          "Choosing a cloud provider, CMS, or database locks you in for years. These decisions need objective analysis of total cost of ownership, not just short-term convenience.",
+      },
+      {
+        title: "Building vs. buying",
+        description:
+          "Deciding when to build custom software vs. use off-the-shelf tools requires understanding both the technical options and your business growth trajectory.",
+      },
     ],
     bestPractices: [
       {
@@ -1712,8 +2122,44 @@ const _allOfferings: OfferingConfig[] = [
         detail:
           "Internal teams have blind spots. An external architecture review can save months of wrong-direction development.",
       },
+      {
+        tip: "Document architecture decisions with ADRs",
+        detail:
+          "Architecture Decision Records capture what was decided, why, and what alternatives were considered. Future engineers thank you for this context.",
+      },
+      {
+        tip: "Prototype before committing",
+        detail:
+          "A two-week technical spike costs far less than discovering three months in that the chosen approach doesn't scale. Validate architectural assumptions early.",
+      },
+      {
+        tip: "Choose boring technology for the core",
+        detail:
+          "Save experimentation for the edges. Postgres, Node.js, and React are boring for good reason — they have large talent pools, known failure modes, and years of community support.",
+      },
     ],
-    usefulLinks: [],
+    usefulLinks: [
+      {
+        title: "Architecture Decision Records (ADR)",
+        url: "https://adr.github.io",
+        type: "docs",
+      },
+      {
+        title: "ThoughtWorks Technology Radar",
+        url: "https://www.thoughtworks.com/radar",
+        type: "tutorial",
+      },
+      {
+        title: "System Design Primer",
+        url: "https://github.com/donnemartin/system-design-primer",
+        type: "tutorial",
+      },
+      {
+        title: "Martin Fowler's Architecture Guide",
+        url: "https://martinfowler.com/architecture/",
+        type: "tutorial",
+      },
+    ],
     faq: [
       {
         question: "How much does a consultancy session cost?",
@@ -1724,6 +2170,17 @@ const _allOfferings: OfferingConfig[] = [
         question: "Can you review our codebase?",
         answer:
           "Yes. We provide detailed codebase audits covering architecture, code quality, security, performance, and maintainability — with prioritized recommendations.",
+      },
+      {
+        question:
+          "We're evaluating vendors — can you help us make the decision?",
+        answer:
+          "Yes. We run structured vendor evaluations — building proof-of-concepts, scoring candidates against your specific requirements, and providing an objective recommendation with evidence.",
+      },
+      {
+        question: "Can you help us plan a technology roadmap?",
+        answer:
+          "Yes. We facilitate roadmap planning workshops that align business goals with technical priorities — producing a phased plan your team can execute against with confidence.",
       },
     ],
   },
@@ -1737,6 +2194,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "HIPAA-compliant software that improves patient outcomes and streamlines clinical workflows",
+    pricingNote:
+      "Patient portals and scheduling systems from $30,000. Full EHR-integrated platforms and telehealth applications from $80,000–200,000+. All projects include HIPAA-compliant architecture and BAA.",
     description:
       "We build secure, regulation-ready healthcare applications — from patient portals and telehealth platforms to EHR/EMR integrations and appointment scheduling systems. Every line of code is written with HIPAA compliance, data encryption, and audit logging as non-negotiable foundations.",
     accentColor: "emerald",
@@ -1884,6 +2343,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Secure, compliant financial software — from payment processing to banking platforms",
+    pricingNote:
+      "Payment integrations and financial dashboards from $25,000. Full neobanking or investment platforms from $80,000–300,000+. All projects include security architecture review and compliance documentation.",
     description:
       "We develop fintech applications that handle money with the reliability, security, and regulatory compliance the financial industry demands. From payment gateways and neobanking platforms to investment dashboards and crypto integrations, we build software that processes transactions accurately and passes audits confidently.",
     accentColor: "green",
@@ -2032,6 +2493,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Custom online stores built to sell — fast, conversion-optimized, and scalable",
+    pricingNote:
+      "Custom Shopify storefronts from $8,000. Headless e-commerce platforms with custom checkout and integrations from $25,000–80,000+. All builds include Core Web Vitals optimization.",
     description:
       "We build e-commerce experiences that go beyond templates. Whether you need a headless Shopify storefront, a custom WooCommerce build, or a fully bespoke shopping platform, we deliver stores that load fast, convert visitors into buyers, and scale with your inventory and traffic.",
     accentColor: "orange",
@@ -2178,6 +2641,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Learning platforms that engage students and simplify administration",
+    pricingNote:
+      "Course platforms and student portals from $20,000. Full LMS builds with video, assessments, and progress tracking from $50,000–150,000+. Accessibility-compliant by default.",
     description:
       "We build education technology — from learning management systems and e-learning platforms to student portals and assessment engines. Our EdTech solutions are designed for engagement, accessibility, and scale, whether you're a university, K-12 district, or corporate training provider.",
     accentColor: "indigo",
@@ -2325,6 +2790,8 @@ const _allOfferings: OfferingConfig[] = [
     targetAudience: "businesses",
     tagline:
       "Real-time visibility into your fleet, inventory, and supply chain — from warehouse to doorstep",
+    pricingNote:
+      "Fleet tracking and delivery management systems from $25,000. Full WMS/TMS platforms with ERP integrations from $60,000–200,000+. Built to handle real-time data at operational scale.",
     description:
       "We build logistics and supply chain software that gives you full operational visibility. Fleet management, route optimization, warehouse management, and real-time shipment tracking — engineered for reliability at scale and integration with your existing ERP and WMS systems.",
     accentColor: "slate",

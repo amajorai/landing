@@ -3,6 +3,7 @@ import {
   BookOpen,
   CheckCircle2,
   ChevronRight,
+  DollarSign,
   ExternalLink,
   GraduationCap,
   Lightbulb,
@@ -314,6 +315,9 @@ function buildTocHeadings(service: ServiceConfig): TocHeading[] {
     { id: "overview", text: "Overview", level: 1 },
   ];
 
+  if (isOffering && service.targetAudience)
+    headings.push({ id: "who-this-is-for", text: "Who this is for", level: 1 });
+
   if (service.challenges && service.challenges.length > 0) {
     const label =
       service.pageType === "cms"
@@ -331,6 +335,8 @@ function buildTocHeadings(service: ServiceConfig): TocHeading[] {
       text: "Useful resources",
       level: 1,
     });
+  if (service.pricingNote && isOffering)
+    headings.push({ id: "pricing", text: "Pricing guide", level: 1 });
   if (service.faq && service.faq.length > 0)
     headings.push({ id: "faq", text: "FAQ", level: 1 });
   if (service.subTechs.length > 0)
@@ -428,6 +434,67 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </section>
       </FadeIn>
 
+      {/* Who This Is For — offering pages only */}
+      {isOffering && service.targetAudience && (
+        <FadeIn>
+          <section className="-mx-6" id="who-this-is-for">
+            <h2 className="mb-6 px-6 font-semibold text-xl">Who this is for</h2>
+            <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
+              {(service.targetAudience === "businesses" ||
+                service.targetAudience === "both") && (
+                <div className="border-border border-r border-b border-dashed p-6">
+                  <h3 className="mb-3 font-medium text-sm">
+                    Business owners &amp; product teams
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    You need software delivered — not just advice. We handle the
+                    full build from scoping through to launch, communicating in
+                    plain language throughout. No jargon, no handoff gaps, no
+                    surprise scope creep.
+                  </p>
+                </div>
+              )}
+              {(service.targetAudience === "developers" ||
+                service.targetAudience === "both") && (
+                <div className="border-border border-r border-b border-dashed p-6">
+                  <h3 className="mb-3 font-medium text-sm">
+                    Engineering teams &amp; CTOs
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    You need extra capacity or specialist expertise for a
+                    specific project. We embed alongside your team, follow your
+                    conventions, and ship production-quality code with tests,
+                    CI/CD, and proper documentation.
+                  </p>
+                </div>
+              )}
+              {service.targetAudience === "both" && (
+                <div className="border-border border-r border-b border-dashed p-6">
+                  <h3 className="mb-3 font-medium text-sm">
+                    Startups &amp; scale-ups
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    You&apos;re moving fast and need a team that keeps up.
+                    We&apos;ve shipped MVPs in weeks and scaled systems to
+                    millions of users. Our founder is personally involved in
+                    every project — there&apos;s no junior-heavy team behind a
+                    senior face.
+                  </p>
+                </div>
+              )}
+              <div className="border-border border-r border-b border-dashed p-6">
+                <h3 className="mb-3 font-medium text-sm">Not the right fit?</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  We&apos;re a focused agency — we take on projects where we can
+                  genuinely add value. If your project isn&apos;t a match,
+                  we&apos;ll say so early and point you in the right direction.
+                </p>
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
       {/* Challenges — full bleed */}
       {service.challenges && service.challenges.length > 0 && (
         <FadeIn>
@@ -513,6 +580,30 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                   </a>
                 );
               })}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
+      {/* Pricing guide — offering pages only */}
+      {service.pricingNote && isOffering && (
+        <FadeIn>
+          <section className="-mx-6" id="pricing">
+            <h2 className="mb-6 px-6 font-semibold text-xl">Pricing guide</h2>
+            <div className="border-border border-y border-dashed">
+              <div className="flex items-start gap-4 px-6 py-6">
+                <DollarSign className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                <div className="space-y-2">
+                  <p className="text-sm leading-relaxed">
+                    {service.pricingNote}
+                  </p>
+                  <p className="text-muted-foreground text-xs">
+                    All projects start with a free 30-minute call to scope your
+                    requirements. We provide fixed-price quotes — no hourly
+                    billing surprises.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         </FadeIn>
@@ -621,7 +712,10 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {/* CTA — full bleed to edges and bottom */}
       <FadeIn>
         <div className="-mx-6 -mb-16">
-          <ServiceCta techName={service.name} />
+          <ServiceCta
+            targetAudience={service.targetAudience}
+            techName={service.name}
+          />
         </div>
       </FadeIn>
     </div>

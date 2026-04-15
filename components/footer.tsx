@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { Logo } from "@/components/logo";
 import { ServiceLogo } from "@/components/services/service-logo";
 import { FadeIn } from "@/components/ui/fade-in";
+import { offeringsConfig } from "@/lib/offerings-config";
 import {
   authServices,
   backendServices,
@@ -100,6 +101,10 @@ export default function FooterSection() {
         <FadeIn delay={0.1} duration={0.4}>
           <div className="mb-12 columns-2 gap-x-8 sm:columns-3 md:columns-4 lg:columns-5">
             {[
+              {
+                title: "Our Services",
+                services: offeringsConfig as ServiceConfig[],
+              },
               { title: "Frontend", services: frontendServices },
               { title: "Full Stack", services: fullStackServices },
               { title: "Backend", services: backendServices },

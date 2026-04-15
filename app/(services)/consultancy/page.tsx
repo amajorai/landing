@@ -5,10 +5,22 @@ import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 
 export const metadata = genMeta({
-  title: "Engineering Consultancy",
+  title: "Engineering Consultancy Singapore",
   description:
-    "Architecture reviews, tech stack audits, and team augmentation for growing software teams.",
+    "Architecture reviews, tech stack audits, and team augmentation for growing software teams in Singapore and globally. Expert engineering consultancy from A Major.",
   url: "/consultancy",
+  tags: [
+    "engineering consultancy Singapore",
+    "technical consultancy Singapore",
+    "architecture review",
+    "tech stack audit",
+    "team augmentation Singapore",
+    "software consulting Singapore",
+    "CTO advisory Singapore",
+    "system architecture review",
+    "software agency Singapore",
+    "A Major consultancy",
+  ],
 });
 
 const services = [

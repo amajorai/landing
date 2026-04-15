@@ -5,9 +5,10 @@ import { StarMark } from "@/components/ui/star-mark";
 
 interface ServiceCtaProps {
   techName: string;
+  targetAudience?: "developers" | "businesses" | "both";
 }
 
-export function ServiceCta({ techName }: ServiceCtaProps) {
+export function ServiceCta({ techName, targetAudience }: ServiceCtaProps) {
   const currentDate = new Date();
   const nextMonthDate = new Date(
     currentDate.getFullYear(),
@@ -52,11 +53,18 @@ export function ServiceCta({ techName }: ServiceCtaProps) {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="font-medium text-2xl tracking-tighter">
-            Ready to start your {techName} project?
+            {targetAudience === "developers"
+              ? `Want to build with ${techName}?`
+              : targetAudience === "businesses"
+                ? `Ready to get started with ${techName}?`
+                : `Ready to start your ${techName} project?`}
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Tell us what you&apos;re building with {techName}. We&apos;ll
-            respond within 24 hours.
+            {targetAudience === "developers"
+              ? `Talk to our engineering team about your ${techName} architecture. We'll respond within 24 hours.`
+              : targetAudience === "businesses"
+                ? `Tell us about your business goals. We'll scope your ${techName} project and provide a free quote within 24 hours.`
+                : `Tell us what you're building with ${techName}. We'll respond within 24 hours.`}
           </p>
 
           <div className="mx-auto mt-6 max-w-sm">

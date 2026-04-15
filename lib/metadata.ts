@@ -8,22 +8,37 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amajor.ai",
   ogImage: "https://amajor.ai/og/index.png",
   links: {
-    twitter: "https://twitter.com/j14wei",
+    twitter: "https://x.com/amajorai",
     github: "https://github.com/amajor",
   },
   authors: [{ name: "A Major Team" }],
   creator: "A Major",
   keywords: [
+    "amajor.ai",
+    "A Major",
+    "Singapore",
+    "founder-led",
+    "software agency Singapore",
+    "web development Singapore",
+    "web design Singapore",
+    "mobile app development Singapore",
+    "SaaS development Singapore",
+    "enterprise software Singapore",
+    "e-commerce development Singapore",
+    "technical consultancy Singapore",
+    "Next.js agency Singapore",
+    "React developer Singapore",
+    "web app development",
+    "custom software development",
+    "MVP development",
+    "startup development",
+    "full stack development",
+    "AI agents",
+    "AI runtime",
+    "agent orchestration",
     "web design",
     "software development",
     "digital solutions",
-    "Singapore",
-    "AI agents",
-    "AI runtime",
-
-    "agent orchestration",
-    "founder-led",
-    "amajor.ai",
   ],
 };
 
@@ -67,16 +82,16 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
   const pageDescription = description || siteConfig.description;
   const pageUrl = url ? new URL(url, siteConfig.url) : siteConfig.url;
 
-  // Construct static OG image path
-  let staticOgPath = "/og/index.png";
-  if (url && url !== "/") {
-    const cleanPath = url.replace(/^\//, "").replace(/\//g, "-");
-    staticOgPath = `/og/${cleanPath}.png`;
+  // Use dynamic OG image route for per-page images
+  let dynamicOgUrl = `${siteConfig.url}/api/og`;
+  if (title && title !== siteConfig.name) {
+    const params = new URLSearchParams({ title });
+    if (description) params.set("subtitle", description.slice(0, 100));
+    dynamicOgUrl = `${siteConfig.url}/api/og?${params.toString()}`;
   }
-  const staticOgImage = new URL(staticOgPath, siteConfig.url).toString();
 
-  // Use custom image if provided, otherwise use static OG image
-  const ogImageUrl = image || staticOgImage;
+  // Use custom image if provided, otherwise use dynamic OG image
+  const ogImageUrl = image || dynamicOgUrl;
 
   const openGraphImages = [
     {
@@ -119,7 +134,12 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
       title: pageTitle,
       description: pageDescription,
       images: [ogImageUrl],
-      creator: siteConfig.links.twitter.replace("https://twitter.com/", "@"),
+      creator:
+        "@" +
+        siteConfig.links.twitter.replace(
+          /https?:\/\/(www\.)?(twitter\.com|x\.com)\//,
+          ""
+        ),
     },
     robots: {
       index: noIndex !== true,

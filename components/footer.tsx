@@ -7,8 +7,15 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 const links = [
   { title: "Manifesto", href: "/manifesto" },
-  { title: "About", href: "/about" },
   { title: "Brand Story", href: "/story" },
+  {
+    title: "Careers",
+    href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
+  },
+  {
+    title: "Brand Kit",
+    href: "https://amajor.notion.site/7917e0bbe55683feb1bb019132b83c9d?v=5b97e0bbe55682e09fc308819305d413",
+  },
 ];
 
 export default function FooterSection() {

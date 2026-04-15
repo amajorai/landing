@@ -31,7 +31,19 @@
       "Bash(node:*)",
       "Bash(npx tsc:*)",
       "Bash(npx next:*)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:svgl.app)",
+      "Bash(python3 -m json.tool)",
+      "Bash(python3)",
+      "Bash(python3 -c ' *)",
+      "Bash(npx svgls *)",
+      "WebFetch(domain:www.better-t-stack.dev)",
+      "Bash(grep -v '//')",
+      "Bash(pnpm dlx *)",
+      "Bash(awk '/slug: \"express\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(awk '/slug: \"fastify\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(awk '/slug: \"prisma\"/{found=1} found && /logo:/{print NR\": \"$0; found=0}' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(grep -B1 '^--$\\\\|},\\\\s*$')"
     ]
   }
 }

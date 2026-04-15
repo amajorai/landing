@@ -2,6 +2,7 @@ import ContentSection from "@/components/about-section";
 import CallToAction from "@/components/call-to-action";
 import FAQsFour from "@/components/faq-section";
 import HeroSection from "@/components/hero-section";
+import { LandingToc } from "@/components/landing/LandingToc";
 import Partners from "@/components/partners";
 import ProcessSection from "@/components/process-section";
 import ProjectsShowcase from "@/components/projects-showcase";
@@ -20,6 +21,8 @@ export default async function Home() {
 
   return (
     <>
+      <LandingToc />
+
       <div>
         <FadeIn>
           <HeroSection />

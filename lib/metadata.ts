@@ -178,6 +178,18 @@ export function generateProjectMetadata(project: Project): Metadata {
   });
 }
 
+export function generateServiceMetadata(service: {
+  name: string;
+  description: string;
+  slug: string;
+}): Metadata {
+  return generateMetadata({
+    title: `${service.name} Development`,
+    description: service.description,
+    url: `/services/${service.slug}`,
+  });
+}
+
 function extractDescription(content: string, maxLength = 160): string {
   if (!content) return "";
   // Remove markdown syntax

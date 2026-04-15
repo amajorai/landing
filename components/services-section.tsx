@@ -1233,7 +1233,7 @@ const features: Feature[] = [
 
 export default function FeaturesSection() {
   return (
-    <section className="pt-10 md:pt-14">
+    <section className="pt-10 md:pt-14" id="what-we-do">
       <div className="mb-6 px-6">
         <FadeIn duration={0.4}>
           <h2 className="font-medium text-2xl tracking-tighter">What we do</h2>

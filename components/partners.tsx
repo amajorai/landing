@@ -6,7 +6,10 @@ import { StarMark } from "@/components/ui/star-mark";
 
 export default function PartnersSection() {
   return (
-    <section className="relative z-10 bg-background py-10 md:py-14">
+    <section
+      className="relative z-10 bg-background py-10 md:py-14"
+      id="partners"
+    >
       <StarMark
         style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
       />

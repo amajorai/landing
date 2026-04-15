@@ -1,28 +1,40 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { BookOpen, Briefcase, Info, Layers, Plus } from "lucide-react";
+import { BookOpen, Info, Layers, Package, Plus } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
+import { ProductsNavContent } from "@/components/products-nav-content";
 import { ProgressiveBlur } from "@/components/progressive-blur";
+import { ServicesNavContent } from "@/components/services/services-nav-content";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
-const menuItems = [
+// Desktop nav items rendered before the Services dropdown
+const beforeServiceItems = [
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+];
+
+// Desktop nav items rendered after the Products dropdown
+const afterProductsItems: { name: string; href: string }[] = [];
+
+// Mobile bottom bar items (4 items + center booking button)
+const mobileNavItems = [
   { name: "Blog", href: "/blog", icon: BookOpen },
+  { name: "Services", href: "/services", icon: Layers },
+  // slot 2 is center booking button (placeholder)
+  { name: "Products", href: "/products", icon: Package },
   { name: "About", href: "/about", icon: Info },
-  {
-    name: "Careers",
-    href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
-    icon: Briefcase,
-  },
-  {
-    name: "Brand Kit",
-    href: "https://amajor.notion.site/7917e0bbe55683feb1bb019132b83c9d?v=5b97e0bbe55682e09fc308819305d413",
-    icon: Layers,
-  },
 ];
 
 export default function Header() {
@@ -31,6 +43,7 @@ export default function Header() {
     visible: true,
     prevScrollPos: 0,
   });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +68,9 @@ export default function Header() {
       <header>
         <nav
           className={`fixed z-60 w-full transition-transform duration-300 ${
-            scrollState.visible ? "translate-y-0" : "-translate-y-full"
+            scrollState.visible || isMenuOpen
+              ? "translate-y-0"
+              : "-translate-y-full"
           }`}
         >
           <ProgressiveBlur
@@ -82,8 +97,8 @@ export default function Header() {
                 </FadeIn>
               </div>
 
-              {/* Logo + Nav links - centered */}
-              <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
+              {/* Desktop: logo + nav centered */}
+              <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <Link
                     aria-label="home"
@@ -94,39 +109,68 @@ export default function Header() {
                   </Link>
                 </FadeIn>
 
-                <ul className="flex items-center gap-8 text-sm">
-                  {menuItems.map((item, index) => (
-                    <FadeIn
-                      delay={0.1 * index}
-                      duration={0.4}
-                      key={index}
-                      viewOptions={{ margin: "0px" }}
-                    >
-                      <li>
-                        {item.href.startsWith("/") ? (
+                <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
+                  <NavigationMenu
+                    onValueChange={(value) => setIsMenuOpen(value !== "")}
+                    viewport={false}
+                  >
+                    <NavigationMenuList className="gap-3 text-sm">
+                      {beforeServiceItems.map((item) => (
+                        <NavigationMenuItem key={item.name}>
                           <Link
-                            className="text-muted-foreground duration-150 hover:text-accent-foreground"
+                            className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
                             href={item.href as any}
                           >
                             {item.name}
                           </Link>
-                        ) : (
-                          <a
-                            className="text-muted-foreground duration-150 hover:text-accent-foreground"
-                            href={item.href}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            {item.name}
-                          </a>
-                        )}
-                      </li>
-                    </FadeIn>
-                  ))}
-                </ul>
+                        </NavigationMenuItem>
+                      ))}
+
+                      <NavigationMenuItem>
+                        <NavigationMenuTrigger className="h-auto bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground">
+                          Services
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ServicesNavContent />
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+
+                      <NavigationMenuItem>
+                        <NavigationMenuTrigger className="h-auto bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground">
+                          Products
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ProductsNavContent />
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+
+                      {afterProductsItems.map((item) => (
+                        <NavigationMenuItem key={item.name}>
+                          {item.href.startsWith("/") ? (
+                            <Link
+                              className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                              href={item.href as any}
+                            >
+                              {item.name}
+                            </Link>
+                          ) : (
+                            <a
+                              className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                              href={item.href}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              {item.name}
+                            </a>
+                          )}
+                        </NavigationMenuItem>
+                      ))}
+                    </NavigationMenuList>
+                  </NavigationMenu>
+                </FadeIn>
               </div>
 
-              {/* New Project button + Theme toggle - right */}
+              {/* Desktop: New Project + theme toggle - right */}
               <div className="ml-auto hidden items-center gap-3 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <Button
@@ -161,30 +205,18 @@ export default function Header() {
         <nav className="fixed bottom-0 z-60 w-full">
           <div className="relative grid grid-cols-5 items-center px-6 pt-3 pb-6">
             {/* Slots 0–1: left items */}
-            {menuItems.slice(0, 2).map((item, index) => {
+            {mobileNavItems.slice(0, 2).map((item) => {
               const Icon = item.icon;
-              const isActive =
-                item.href.startsWith("/") && pathname.startsWith(item.href);
-              return item.href.startsWith("/") ? (
+              const isActive = pathname.startsWith(item.href);
+              return (
                 <Link
                   className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
                   href={item.href as any}
-                  key={index}
+                  key={item.name}
                 >
                   <Icon className="h-5 w-5" />
                   <span className="text-[10px]">{item.name}</span>
                 </Link>
-              ) : (
-                <a
-                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
-                  href={item.href}
-                  key={index}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-[10px]">{item.name}</span>
-                </a>
               );
             })}
 
@@ -192,30 +224,18 @@ export default function Header() {
             <div aria-hidden="true" />
 
             {/* Slots 3–4: right items */}
-            {menuItems.slice(2).map((item, index) => {
+            {mobileNavItems.slice(2).map((item) => {
               const Icon = item.icon;
-              const isActive =
-                item.href.startsWith("/") && pathname.startsWith(item.href);
-              return item.href.startsWith("/") ? (
+              const isActive = pathname.startsWith(item.href);
+              return (
                 <Link
                   className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
                   href={item.href as any}
-                  key={index}
+                  key={item.name}
                 >
                   <Icon className="h-5 w-5" />
                   <span className="text-[10px]">{item.name}</span>
                 </Link>
-              ) : (
-                <a
-                  className="flex flex-col items-center gap-1 text-muted-foreground duration-150 hover:text-accent-foreground"
-                  href={item.href}
-                  key={index}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-[10px]">{item.name}</span>
-                </a>
               );
             })}
 

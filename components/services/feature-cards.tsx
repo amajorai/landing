@@ -104,15 +104,24 @@ interface FeatureCardsProps {
 export function FeatureCards({ features }: FeatureCardsProps) {
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {features.map((feature) => {
+      {features.map((feature, index) => {
         const Icon = iconMap[feature.icon] ?? Star;
         return (
-          <div className="rounded-lg bg-muted/50 p-4" key={feature.title}>
-            <Icon className="mb-4 h-5 w-5 text-muted-foreground" />
-            <p className="mb-1.5 font-medium text-lg">{feature.title}</p>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {feature.description}
-            </p>
+          <div
+            className="relative flex h-48 flex-col justify-between rounded-xl bg-muted/50 p-4 backdrop-blur-sm transition-all duration-200 hover:bg-muted/70"
+            key={index}
+          >
+            <div>
+              <h3 className="mb-1 flex flex-row justify-between font-semibold text-foreground text-lg">
+                {feature.title}
+                <Icon className="inline-block h-4 text-muted-foreground" />
+              </h3>
+            </div>
+            <div>
+              <p className="text-muted-foreground text-sm">
+                {feature.description}
+              </p>
+            </div>
           </div>
         );
       })}

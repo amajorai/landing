@@ -71,45 +71,62 @@ function Column({
 
 export function ServicesNavContent() {
   return (
-    <div className="w-[640px] p-3">
-      {/* Offerings row */}
-      <div className="mb-3 border-border border-b pb-3">
-        <p className="mb-1 px-2 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-          Our services
-        </p>
-        <div className="grid grid-cols-4 gap-x-2">
-          {offeringsConfig.map((o) => (
-            <OfferingNavItem key={o.slug} offering={o} />
-          ))}
+    <div className="w-[540px]">
+      <div className="max-h-[70vh] overflow-y-auto p-3">
+        {/* Offerings */}
+        <div className="mb-3 border-border border-b pb-3">
+          <p className="mb-1 px-2 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+            Our services
+          </p>
+          <div className="grid grid-cols-2 gap-x-2">
+            {offeringsConfig.map((o) => (
+              <OfferingNavItem key={o.slug} offering={o} />
+            ))}
+          </div>
+        </div>
+
+        {/* Tech stack */}
+        <div className="grid grid-cols-3 gap-x-4 gap-y-4">
+          <div className="space-y-4">
+            <Column
+              label="Frontend Frameworks"
+              services={frontendServices.slice(0, 8)}
+            />
+            <Column label="CMS" services={cmsServices} />
+          </div>
+          <div className="space-y-4">
+            <Column
+              label="Frontend Libraries"
+              services={frontendServices.slice(8)}
+            />
+            <Column label="Mobile" services={mobileServices} />
+            <Column label="Desktop" services={desktopServices} />
+          </div>
+          <div className="space-y-4">
+            <Column label="Backend" services={backendServices.slice(0, 8)} />
+            <Column
+              label="APIs & Runtime"
+              services={backendServices.slice(8)}
+            />
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-3 gap-x-4 gap-y-4">
+          <div className="space-y-4">
+            <Column label="Database" services={databaseServices} />
+          </div>
+          <div className="space-y-4">
+            <Column label="Auth" services={authServices} />
+            <Column label="Payments" services={paymentsServices} />
+            <Column label="Design" services={designServices} />
+          </div>
+          <div className="space-y-4">
+            <Column label="Tooling & DevOps" services={toolingServices} />
+          </div>
         </div>
       </div>
 
-      {/* Tech stack grid */}
-      <p className="mb-1 px-2 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-        Technology expertise
-      </p>
-      <div className="grid grid-cols-4 gap-x-4 gap-y-4">
-        <div className="space-y-4">
-          <Column label="Frontend" services={frontendServices} />
-          <Column label="CMS" services={cmsServices} />
-        </div>
-        <div className="space-y-4">
-          <Column label="Backend" services={backendServices} />
-          <Column label="Mobile" services={mobileServices} />
-        </div>
-        <div className="space-y-4">
-          <Column label="Database" services={databaseServices} />
-          <Column label="Auth" services={authServices} />
-          <Column label="Payments" services={paymentsServices} />
-        </div>
-        <div className="space-y-4">
-          <Column label="Desktop" services={desktopServices} />
-          <Column label="Design" services={designServices} />
-          <Column label="Tooling" services={toolingServices} />
-        </div>
-      </div>
-
-      <div className="mt-3 border-border border-t pt-2">
+      <div className="border-border border-t px-3 py-2">
         <NavigationMenuLink asChild className="flex-row items-center gap-0 p-0">
           <Link
             className="block rounded-sm px-2 py-1.5 text-muted-foreground text-xs transition-colors hover:bg-accent hover:text-accent-foreground"

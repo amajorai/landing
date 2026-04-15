@@ -191,9 +191,16 @@ interface TechPageLayoutProps {
 }
 
 export function TechPageLayout({ service }: TechPageLayoutProps) {
-  const Visualization = vizMap[service.visualizationKey] ?? null;
+  const isOffering = service.pageType === "offering";
+  const Visualization = isOffering
+    ? null
+    : (vizMap[service.visualizationKey] ?? null);
   const challengesHeading =
-    service.pageType === "cms" ? "Common problems" : "Why it's hard";
+    service.pageType === "cms"
+      ? "Common problems"
+      : isOffering
+        ? "Challenges we solve"
+        : "Why it's hard";
 
   return (
     <div className="mx-auto max-w-4xl space-y-16">
@@ -277,18 +284,20 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </section>
       </FadeIn>
 
-      {/* Challenges */}
+      {/* Challenges — full bleed */}
       {service.challenges && service.challenges.length > 0 && (
         <FadeIn>
-          <section>
-            <h2 className="mb-6 font-semibold text-xl">{challengesHeading}</h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <section className="-mx-6">
+            <h2 className="mb-6 px-6 font-semibold text-xl">
+              {challengesHeading}
+            </h2>
+            <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
               {service.challenges.map((challenge) => (
                 <div
-                  className="rounded-lg border border-border border-dashed p-5"
+                  className="border-border border-r border-b border-dashed p-6"
                   key={challenge.title}
                 >
-                  <div className="mb-2 flex items-center gap-2">
+                  <div className="mb-2 flex items-center gap-4">
                     <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500" />
                     <h3 className="font-medium text-sm">{challenge.title}</h3>
                   </div>
@@ -302,23 +311,23 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </FadeIn>
       )}
 
-      {/* Best practices */}
+      {/* Best practices — full bleed */}
       {service.bestPractices && service.bestPractices.length > 0 && (
         <FadeIn>
-          <section>
-            <h2 className="mb-6 font-semibold text-xl">Best practices</h2>
-            <div className="space-y-4">
+          <section className="-mx-6">
+            <h2 className="mb-6 px-6 font-semibold text-xl">Best practices</h2>
+            <div className="border-border border-t border-dashed">
               {service.bestPractices.map((bp) => (
                 <div
-                  className="rounded-lg border border-border border-dashed p-5"
+                  className="border-border border-b border-dashed p-6"
                   key={bp.tip}
                 >
-                  <div className="mb-1 flex items-center gap-2">
+                  <div className="mb-1 flex items-center gap-4">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
                     <h3 className="font-medium text-sm">{bp.tip}</h3>
                   </div>
                   {bp.detail && (
-                    <p className="ml-6 text-muted-foreground text-sm leading-relaxed">
+                    <p className="ml-8 text-muted-foreground text-sm leading-relaxed">
                       {bp.detail}
                     </p>
                   )}
@@ -329,17 +338,19 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </FadeIn>
       )}
 
-      {/* Useful links */}
+      {/* Useful links — full bleed */}
       {service.usefulLinks && service.usefulLinks.length > 0 && (
         <FadeIn>
-          <section>
-            <h2 className="mb-6 font-semibold text-xl">Useful resources</h2>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <section className="-mx-6">
+            <h2 className="mb-6 px-6 font-semibold text-xl">
+              Useful resources
+            </h2>
+            <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
               {service.usefulLinks.map((link) => {
                 const Icon = linkTypeIcon[link.type] ?? Lightbulb;
                 return (
                   <a
-                    className="group flex items-center gap-3 rounded-lg border border-border border-dashed p-4 transition-colors hover:bg-muted/30"
+                    className="group flex items-center gap-4 border-border border-r border-b border-dashed p-5 transition-colors hover:bg-muted/30"
                     href={link.url}
                     key={link.url}
                     rel="noopener noreferrer"
@@ -358,14 +369,14 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         </FadeIn>
       )}
 
-      {/* FAQ */}
+      {/* FAQ — full bleed */}
       {service.faq && service.faq.length > 0 && (
         <FadeIn>
-          <section>
-            <h2 className="mb-6 font-semibold text-xl">
+          <section className="-mx-6">
+            <h2 className="mb-6 px-6 font-semibold text-xl">
               Frequently asked questions
             </h2>
-            <div className="rounded-lg border border-border border-dashed">
+            <div className="border-border border-y border-dashed">
               <div className="px-6 py-6">
                 <Accordion className="w-full" collapsible type="single">
                   {service.faq.map((item, i) => (
@@ -384,7 +395,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                         </AccordionContent>
                       </AccordionItem>
                       {i < service.faq!.length - 1 && (
-                        <hr className="border-dashed peer-data-[state=open]:opacity-0" />
+                        <hr className="border-dashed" />
                       )}
                     </div>
                   ))}

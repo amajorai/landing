@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import type { ServiceConfig } from "@/lib/services-config";
+import { cn } from "@/lib/utils";
 
 const lucideMap: Record<string, LucideIcon> = {
   ArrowRightLeft,
@@ -77,7 +78,11 @@ export function ServiceLogo({
       >
         <Image
           alt={service.name}
-          className={`max-h-full max-w-full object-contain${hasDark ? "dark:hidden" : ""}${invertDark ? "dark:invert" : ""}`}
+          className={cn(
+            "max-h-full max-w-full object-contain",
+            hasDark && "dark:hidden",
+            invertDark && "dark:invert"
+          )}
           height={size}
           src={service.logo}
           width={size}

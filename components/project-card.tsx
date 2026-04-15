@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GenerativeGradient } from "@/components/generative-gradient";
 import { FadeIn } from "@/components/ui/fade-in";
-import { GithubDark } from "@/components/ui/svgs/githubDark";
 import type { Project } from "@/lib/notion";
 
 interface ProjectCardProps {
@@ -108,7 +107,16 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                   </div>
                 ) : project.github ? (
                   <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-black/20 backdrop-blur-sm">
-                    <GithubDark className="h-6 w-6" />
+                    <div className="relative h-6 w-6">
+                      <Image
+                        alt=""
+                        aria-hidden
+                        className="object-contain"
+                        fill
+                        sizes="24px"
+                        src="/logos/ui/github_dark.svg"
+                      />
+                    </div>
                   </div>
                 ) : project.url && !faviconError ? (
                   <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-black/20 backdrop-blur-sm">

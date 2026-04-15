@@ -14,7 +14,6 @@ import {
   CredenzaTitle,
 } from "@/components/ui/credenza";
 import { FadeIn } from "@/components/ui/fade-in";
-import { GithubDark } from "@/components/ui/svgs/githubDark";
 
 interface Project {
   slug: string;
@@ -112,7 +111,24 @@ export default function ProjectModalClient({
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      <GithubDark className="h-4 w-4" />
+                      <span className="relative block h-4 w-4 shrink-0">
+                        <Image
+                          alt=""
+                          aria-hidden
+                          className="object-contain dark:hidden"
+                          fill
+                          sizes="16px"
+                          src="/logos/ui/github_light.svg"
+                        />
+                        <Image
+                          alt=""
+                          aria-hidden
+                          className="hidden object-contain dark:block"
+                          fill
+                          sizes="16px"
+                          src="/logos/ui/github_dark.svg"
+                        />
+                      </span>
                       GitHub
                     </a>
                   )}

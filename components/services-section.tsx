@@ -25,6 +25,7 @@ import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
+import { cn } from "@/lib/utils";
 
 const featureSlugMap: Record<string, string> = {
   "Web design": "web-design",
@@ -1299,7 +1300,10 @@ export default function FeaturesSection() {
                     {feature.logos.map((logo, logoIndex) => (
                       <Image
                         alt={logo.alt}
-                        className={`h-4 w-auto${logo.darkInvert ? "dark:invert" : ""}`}
+                        className={cn(
+                          "h-4 w-auto",
+                          logo.darkInvert && "dark:invert"
+                        )}
                         height={logo.height}
                         key={logoIndex}
                         src={logo.src}

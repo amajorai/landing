@@ -5451,8 +5451,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Payload is an open-source headless CMS and app framework built entirely in TypeScript. We build Payload-powered projects — from content-heavy marketing sites to full SaaS backends with custom admin panels, access control, and API-first content delivery.",
     accentColor: "blue",
     visualizationKey: "payload",
-    logo: null,
-    lucideIcon: "Rocket",
+    logo: "/logos/services/payload.svg",
+    logoDark: "/logos/services/payload_dark.svg",
     features: [
       {
         icon: "Code2",
@@ -5598,8 +5598,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Ghost is an open-source publishing platform built for content creators, bloggers, and media companies. We build custom Ghost themes, integrate memberships and newsletters, and set up headless Ghost with modern frontends.",
     accentColor: "blue",
     visualizationKey: "ghost",
-    logo: null,
-    lucideIcon: "Newspaper",
+    logo: "/logos/services/ghost.svg",
+    logoDarkInvert: true,
     features: [
       {
         icon: "FileText",
@@ -5745,8 +5745,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Strapi is an open-source headless CMS that lets you build APIs in minutes. We use Strapi for content-driven apps — custom content types, role-based access, and REST or GraphQL APIs powering React, Next.js, and mobile frontends.",
     accentColor: "indigo",
     visualizationKey: "strapi",
-    logo: null,
-    lucideIcon: "Layers",
+    logo: "/svg/strapi.svg",
     features: [
       {
         icon: "Layout",
@@ -5892,8 +5891,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Sanity is a composable content platform with a real-time editing studio and a powerful query language (GROQ). We build Sanity-powered projects — custom studio configurations, structured content models, and integrations with Next.js, Remix, and e-commerce platforms.",
     accentColor: "red",
     visualizationKey: "sanity",
-    logo: null,
-    lucideIcon: "Boxes",
+    logo: "/svg/sanity-light.svg",
+    logoDark: "/svg/sanity-dark.svg",
     features: [
       {
         icon: "Layout",
@@ -6039,8 +6038,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Contentful is a cloud-native headless CMS used by enterprises to manage content across websites, apps, and digital products. We integrate Contentful with modern frontends, build custom apps for the Contentful platform, and optimize content delivery pipelines.",
     accentColor: "yellow",
     visualizationKey: "contentful",
-    logo: null,
-    lucideIcon: "LayoutGrid",
+    logo: "/logos/services/contentful.svg",
+    logoDarkInvert: true,
     features: [
       {
         icon: "Cloud",
@@ -6183,8 +6182,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Directus wraps any SQL database with REST and GraphQL APIs and a no-code admin app. We use Directus for projects that need a flexible data platform — content management, internal tools, and custom dashboards powered by your existing database.",
     accentColor: "violet",
     visualizationKey: "directus",
-    logo: null,
-    lucideIcon: "Database",
+    logo: "/svg/directus.svg",
     features: [
       {
         icon: "Database",
@@ -6328,8 +6326,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Mongoose brings schema validation, middleware hooks, virtuals, and a clean query API to MongoDB in Node.js. We use it where a structured document model matters but a relational DB is the wrong fit.",
     accentColor: "green",
     visualizationKey: "mongoose",
-    logo: null,
-    lucideIcon: "Database",
+    logo: "/logos/services/mongoose.svg",
     features: [
       {
         icon: "FileText",
@@ -6592,8 +6589,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Starlight is Astro's official documentation framework — beautiful, accessible docs with full-text search, dark mode, i18n, and sidebar navigation out of the box. We build and customise Starlight for developer products.",
     accentColor: "amber",
     visualizationKey: "starlight",
-    logo: null,
-    lucideIcon: "Star",
+    logo: "/logos/services/astro-icon-light.svg",
+    logoDark: "/logos/services/astro-icon-dark.svg",
     features: [
       {
         icon: "Search",
@@ -7566,8 +7563,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Blazor lets .NET teams build interactive web UIs in C# — shared models, validation, and business logic between server and client. The right choice when your team is .NET-native and wants to avoid context-switching to JavaScript.",
     accentColor: "violet",
     visualizationKey: "blazor",
-    logo: null,
-    lucideIcon: "Component",
+    logo: "/logos/services/blazor.svg",
     features: [
       {
         icon: "Code2",
@@ -8847,8 +8843,7 @@ export const servicesConfig: ServiceConfig[] = [
       "WebAssembly runs at near-native speed in browsers, on servers via WASI, and at the edge via Cloudflare Workers — compiled from Rust, C, or AssemblyScript. We use WASM for compute-heavy tasks that JavaScript can't handle efficiently.",
     accentColor: "violet",
     visualizationKey: "wasm",
-    logo: null,
-    lucideIcon: "Cpu",
+    logo: "/logos/services/webassembly.svg",
     features: [
       {
         icon: "Zap",
@@ -9802,8 +9797,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Amazon S3 and S3-compatible services (Cloudflare R2, Supabase Storage, MinIO) power file uploads, media delivery, and backup for your application — with presigned URLs, lifecycle policies, and CDN distribution.",
     accentColor: "amber",
     visualizationKey: "s3",
-    logo: null,
-    lucideIcon: "CloudUpload",
+    logo: "/logos/services/amazon-s3.svg",
     features: [
       {
         icon: "CloudUpload",
@@ -10617,8 +10611,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Shopify powers millions of online stores worldwide with its robust e-commerce platform. We build custom Shopify themes, apps, and headless storefronts with Hydrogen to help brands sell more effectively.",
     accentColor: "green",
     visualizationKey: "shopify",
-    logo: null,
-    lucideIcon: "ShoppingCart",
+    logo: "/logos/services/shopify.svg",
     features: [
       {
         icon: "ShoppingCart",
@@ -10766,8 +10759,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Webflow lets designers build responsive, production-ready websites visually — no code required. We help businesses maximize Webflow's potential and migrate to custom code when they outgrow it.",
     accentColor: "blue",
     visualizationKey: "webflow",
-    logo: null,
-    lucideIcon: "Layout",
+    logo: "/logos/services/webflow.svg",
     features: [
       {
         icon: "Layout",
@@ -10912,8 +10904,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Firebase provides a complete backend-as-a-service — real-time databases, authentication, cloud functions, hosting, and analytics. We build scalable Firebase architectures that keep costs predictable as you grow.",
     accentColor: "amber",
     visualizationKey: "firebase",
-    logo: null,
-    lucideIcon: "Flame",
+    logo: "/logos/services/firebase.svg",
     features: [
       {
         icon: "Database",
@@ -11061,8 +11052,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Amazon Web Services offers 200+ services for compute, storage, databases, AI, and networking. We architect, deploy, and manage AWS infrastructure so your team can focus on building product instead of managing servers.",
     accentColor: "amber",
     visualizationKey: "aws",
-    logo: null,
-    lucideIcon: "Cloud",
+    logo: "/logos/services/aws_light.svg",
+    logoDark: "/logos/services/aws_dark.svg",
     features: [
       {
         icon: "Server",
@@ -11211,8 +11202,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Google Cloud Platform combines world-class data analytics, AI/ML capabilities, and fully managed infrastructure. We build on GCP's strengths — Cloud Run, BigQuery, GKE, and Vertex AI — to deliver scalable, cost-efficient solutions.",
     accentColor: "blue",
     visualizationKey: "gcp",
-    logo: null,
-    lucideIcon: "Cloud",
+    logo: "/logos/services/google-cloud.svg",
     features: [
       {
         icon: "Zap",
@@ -11355,8 +11345,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Microsoft Azure integrates deeply with the enterprise ecosystem — Active Directory, .NET, SQL Server, and Microsoft 365. We build Azure solutions for organizations that need enterprise-grade identity, compliance, and hybrid cloud capabilities.",
     accentColor: "blue",
     visualizationKey: "azure",
-    logo: null,
-    lucideIcon: "Cloud",
+    logo: "/logos/services/azure.svg",
     features: [
       {
         icon: "Globe",
@@ -11504,8 +11493,8 @@ export const servicesConfig: ServiceConfig[] = [
       "Vercel is the platform built for frontend frameworks — instant deployments, edge functions, preview environments, and built-in analytics. We deploy and optimize Next.js and React applications on Vercel for maximum performance.",
     accentColor: "neutral",
     visualizationKey: "vercel",
-    logo: null,
-    lucideIcon: "Triangle",
+    logo: "/logos/services/vercel.svg",
+    logoDark: "/logos/services/vercel_dark.svg",
     features: [
       {
         icon: "Zap",
@@ -11653,8 +11642,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Netlify pioneered the JAMstack movement — combining static sites, serverless functions, and edge computing into a seamless developer workflow. We build and deploy fast, scalable sites on Netlify for teams that value simplicity.",
     accentColor: "teal",
     visualizationKey: "netlify",
-    logo: null,
-    lucideIcon: "Globe",
+    logo: "/logos/services/netlify.svg",
     features: [
       {
         icon: "Zap",
@@ -11802,8 +11790,7 @@ export const servicesConfig: ServiceConfig[] = [
       "Redis is the world's fastest in-memory data store — used for caching, session management, rate limiting, queues, and real-time leaderboards. We architect Redis layers that slash response times and scale to millions of operations per second.",
     accentColor: "red",
     visualizationKey: "redis",
-    logo: null,
-    lucideIcon: "Database",
+    logo: "/logos/services/redis.svg",
     features: [
       {
         icon: "Zap",
@@ -11951,8 +11938,7 @@ export const servicesConfig: ServiceConfig[] = [
       "GraphQL lets clients request exactly the data they need in a single query — no over-fetching, no under-fetching. We design GraphQL schemas, build performant resolvers, and implement federation for distributed teams.",
     accentColor: "pink",
     visualizationKey: "graphql",
-    logo: null,
-    lucideIcon: "GitBranch",
+    logo: "/logos/services/graphql.svg",
     features: [
       {
         icon: "GitBranch",

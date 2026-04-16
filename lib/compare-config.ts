@@ -7,6 +7,7 @@ export interface ComparisonPoint {
 
 export interface ComparisonConfig {
   slug: string;
+  category?: "stack";
   nameA: string;
   nameB: string;
   tagline: string;

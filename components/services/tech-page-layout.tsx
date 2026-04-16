@@ -11,9 +11,7 @@ import {
   Wrench,
 } from "lucide-react";
 import Link from "next/link";
-import { MobileTocSheet } from "@/components/blog/MobileTocSheet";
 import type { TocHeading } from "@/components/notion/TableOfContents";
-import { TableOfContents } from "@/components/notion/TableOfContents";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {
   Accordion,
@@ -23,6 +21,7 @@ import {
 } from "@/components/ui/accordion";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
+import { PageToc } from "@/components/ui/page-toc";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { type ServiceConfig, servicesConfig } from "@/lib/services-config";
 import { FeatureCards } from "./feature-cards";
@@ -371,12 +370,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
 
   return (
     <div className="mx-auto max-w-4xl space-y-16">
-      {tocHeadings.length > 1 && (
-        <div className="fixed top-0 right-6 hidden h-screen w-64 items-center xl:flex">
-          <TableOfContents headings={tocHeadings} />
-        </div>
-      )}
-      {tocHeadings.length > 1 && <MobileTocSheet headings={tocHeadings} />}
+      {tocHeadings.length > 1 && <PageToc headings={tocHeadings} />}
 
       <FadeIn>
         <section className="space-y-8" id="overview">

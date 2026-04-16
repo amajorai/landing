@@ -46,7 +46,7 @@ export default async function Home() {
 
   return (
     <>
-      <LandingToc />
+      <LandingToc hasProjects={projects.length > 0} />
 
       <div>
         <FadeIn>

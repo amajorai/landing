@@ -1,6 +1,14 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
-import { BookOpen, Info, Layers, Package, Plus, Search } from "lucide-react";
+import {
+  BookOpen,
+  Info,
+  Layers,
+  Package,
+  Plus,
+  Scale,
+  Search,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -8,7 +16,6 @@ import { Logo } from "@/components/logo";
 import { ProductsNavContent } from "@/components/products-nav-content";
 import { ProgressiveBlur } from "@/components/progressive-blur";
 import { CommandPalette } from "@/components/search/command-palette";
-import { ServicesNavContent } from "@/components/services/services-nav-content";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -26,6 +33,9 @@ const beforeServiceItems = [
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
 ];
+
+// Desktop nav items rendered after Services
+const afterServiceItems = [{ name: "Compare", href: "/compare" }];
 
 // Desktop nav items rendered after the Products dropdown
 const afterProductsItems: { name: string; href: string }[] = [];
@@ -45,6 +55,7 @@ export default function Header({ products = [] }: HeaderProps) {
     if (hasProducts) {
       items.push({ name: "Products", href: "/products", icon: Package });
     }
+    items.push({ name: "Compare", href: "/compare", icon: Scale });
     items.push({ name: "About", href: "/about", icon: Info });
     return items;
   }, [hasProducts]);
@@ -161,19 +172,24 @@ export default function Header({ products = [] }: HeaderProps) {
                       ))}
 
                       <NavigationMenuItem>
-                        <NavigationMenuTrigger
-                          className="h-auto cursor-pointer bg-transparent px-2 py-1 text-muted-foreground text-sm hover:bg-transparent hover:text-accent-foreground data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            router.push("/services");
-                          }}
+                        <Link
+                          className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                          href={"/services" as any}
                         >
                           Services
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent className="!p-0">
-                          <ServicesNavContent />
-                        </NavigationMenuContent>
+                        </Link>
                       </NavigationMenuItem>
+
+                      {afterServiceItems.map((item) => (
+                        <NavigationMenuItem key={item.name}>
+                          <Link
+                            className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                            href={item.href as any}
+                          >
+                            {item.name}
+                          </Link>
+                        </NavigationMenuItem>
+                      ))}
 
                       {hasProducts && (
                         <NavigationMenuItem>
@@ -262,7 +278,10 @@ export default function Header({ products = [] }: HeaderProps) {
         />
         <nav className="fixed bottom-0 z-60 w-full">
           <div
-            className={`relative grid items-center px-6 pt-3 pb-6 ${hasProducts ? "grid-cols-5" : "grid-cols-4"}`}
+            className={"relative grid items-center px-6 pt-3 pb-6"}
+            style={{
+              gridTemplateColumns: `repeat(${mobileNavItems.length + 1}, minmax(0, 1fr))`,
+            }}
           >
             {/* Left items */}
             {mobileNavItems

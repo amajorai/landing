@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface CompareLogoProps {
   alt: string;
@@ -19,12 +20,18 @@ export function CompareLogo({
 
   return (
     <span
-      className={`relative inline-flex shrink-0 items-center justify-center ${className}`}
+      className={cn(
+        "relative inline-flex shrink-0 items-center justify-center",
+        className
+      )}
       style={{ width: size, height: size }}
     >
       <Image
         alt={alt}
-        className={`max-h-full max-w-full object-contain${hasDark ? "dark:hidden" : ""}`}
+        className={cn(
+          "max-h-full max-w-full object-contain",
+          hasDark && "dark:hidden"
+        )}
         height={size}
         src={logo}
         width={size}

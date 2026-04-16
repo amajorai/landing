@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MobileTocSheet } from "@/components/blog/MobileTocSheet";
 import { NotionRenderer } from "@/components/markdown-renderer";
-import { TableOfContents } from "@/components/notion/TableOfContents";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PageToc } from "@/components/ui/page-toc";
 import {
   extractDescriptionFromBlocks,
   extractHeadingsFromBlocks,
@@ -56,12 +55,7 @@ export default async function GenericPage({
 
   return (
     <>
-      {headings.length > 0 && (
-        <div className="fixed top-0 right-6 hidden h-screen w-64 items-center xl:flex">
-          <TableOfContents headings={headings} />
-        </div>
-      )}
-      {headings.length > 0 && <MobileTocSheet headings={headings} />}
+      <PageToc headings={headings} />
       <FadeIn>
         <h3 className="mb-4 font-semibold">{page.title}</h3>
       </FadeIn>

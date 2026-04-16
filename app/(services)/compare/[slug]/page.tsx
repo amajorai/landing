@@ -2,6 +2,8 @@ import { Minus, TrendingDown, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CompareLogo } from "@/components/compare/compare-logo";
+import { MultiComparisonPage } from "@/components/compare/multi-comparison-page";
+import type { TocHeading } from "@/components/notion/TableOfContents";
 import { ServiceCta } from "@/components/services/service-cta";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {
@@ -12,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
+import { PageToc } from "@/components/ui/page-toc";
 import { compareConfig, getComparisonBySlug } from "@/lib/compare-config";
 import {
   generateBreadcrumbJsonLd,
@@ -19,10 +22,17 @@ import {
   generateMetadata as genMeta,
   siteConfig,
 } from "@/lib/metadata";
+import {
+  getMultiComparisonBySlug,
+  multiCompareConfig,
+} from "@/lib/multi-compare-config";
 import { servicesConfig } from "@/lib/services-config";
 
 export function generateStaticParams() {
-  return compareConfig.map((c) => ({ slug: c.slug }));
+  return [
+    ...compareConfig.map((c) => ({ slug: c.slug })),
+    ...multiCompareConfig.map((c) => ({ slug: c.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -32,22 +42,40 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const comparison = getComparisonBySlug(slug);
-  if (!comparison) return {};
+  if (comparison) {
+    return genMeta({
+      title: `${comparison.nameA} vs ${comparison.nameB} | Singapore Software Agency`,
+      description: comparison.description,
+      url: `/compare/${comparison.slug}`,
+      tags: [
+        comparison.nameA,
+        comparison.nameB,
+        `${comparison.nameA} vs ${comparison.nameB}`,
+        `${comparison.nameA} or ${comparison.nameB}`,
+        "comparison",
+        "Singapore",
+        "A Major",
+      ],
+    });
+  }
 
-  return genMeta({
-    title: `${comparison.nameA} vs ${comparison.nameB} | Singapore Software Agency`,
-    description: comparison.description,
-    url: `/compare/${comparison.slug}`,
-    tags: [
-      comparison.nameA,
-      comparison.nameB,
-      `${comparison.nameA} vs ${comparison.nameB}`,
-      `${comparison.nameA} or ${comparison.nameB}`,
-      "comparison",
-      "Singapore",
-      "A Major",
-    ],
-  });
+  const multi = getMultiComparisonBySlug(slug);
+  if (multi) {
+    return genMeta({
+      title: `${multi.title} | A Major Singapore`,
+      description: multi.description,
+      url: `/compare/${multi.slug}`,
+      tags: [
+        multi.title,
+        multi.category === "llm" ? "LLM comparison" : "AI agent comparison",
+        "comparison",
+        "Singapore",
+        "A Major",
+      ],
+    });
+  }
+
+  return {};
 }
 
 export default async function ComparePage({
@@ -57,7 +85,16 @@ export default async function ComparePage({
 }) {
   const { slug } = await params;
   const comparison = getComparisonBySlug(slug);
-  if (!comparison) notFound();
+  const multiComparison = comparison ? null : getMultiComparisonBySlug(slug);
+
+  if (!(comparison || multiComparison)) notFound();
+
+  if (multiComparison) {
+    return <MultiComparisonPage config={multiComparison} />;
+  }
+
+  // TypeScript guard — logically unreachable (notFound() throws above)
+  if (!comparison) return null;
 
   const pageUrl = `${siteConfig.url}/compare/${comparison.slug}`;
 
@@ -83,6 +120,25 @@ export default async function ComparePage({
     if (p.winner) winnerCount[p.winner]++;
   }
 
+  const tocHeadings: TocHeading[] = [
+    { id: "summary", text: "Head-to-head", level: 1 },
+    { id: "comparison", text: "Detailed comparison", level: 1 },
+    { id: "verdict", text: "Our verdict", level: 1 },
+    { id: "when-to-choose", text: "When to choose", level: 1 },
+    ...(comparison.faq.length > 0
+      ? [{ id: "faq", text: "FAQ", level: 1 as const }]
+      : []),
+    ...(comparison.relatedSlugs.length > 0
+      ? [
+          {
+            id: "related-services",
+            text: "Related services",
+            level: 1 as const,
+          },
+        ]
+      : []),
+  ];
+
   return (
     <>
       <script
@@ -93,6 +149,7 @@ export default async function ComparePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         type="application/ld+json"
       />
+      <PageToc headings={tocHeadings} />
 
       <div className="mx-auto max-w-4xl space-y-16">
         <FadeIn>
@@ -134,7 +191,7 @@ export default async function ComparePage({
 
         {/* Score summary */}
         <FadeIn>
-          <section className="-mx-6">
+          <section className="-mx-6" id="summary">
             <h2 className="mb-6 px-6 font-semibold text-xl">
               Head-to-head summary
             </h2>
@@ -161,7 +218,7 @@ export default async function ComparePage({
 
         {/* Comparison table */}
         <FadeIn>
-          <section className="-mx-6">
+          <section className="-mx-6" id="comparison">
             <h2 className="mb-6 px-6 font-semibold text-xl">
               Detailed comparison
             </h2>
@@ -211,7 +268,7 @@ export default async function ComparePage({
 
         {/* Our verdict */}
         <FadeIn>
-          <section className="-mx-6">
+          <section className="-mx-6" id="verdict">
             <h2 className="mb-6 px-6 font-semibold text-xl">Our verdict</h2>
             <div className="border-border border-y border-dashed p-6">
               <div className="mb-2 font-semibold">
@@ -228,7 +285,7 @@ export default async function ComparePage({
 
         {/* When to choose each */}
         <FadeIn>
-          <section className="-mx-6">
+          <section className="-mx-6" id="when-to-choose">
             <h2 className="mb-6 px-6 font-semibold text-xl">
               When to choose each
             </h2>
@@ -272,7 +329,7 @@ export default async function ComparePage({
         {/* FAQ */}
         {comparison.faq.length > 0 && (
           <FadeIn>
-            <section className="-mx-6">
+            <section className="-mx-6" id="faq">
               <h2 className="mb-6 px-6 font-semibold text-xl">
                 Frequently asked questions
               </h2>
@@ -309,7 +366,7 @@ export default async function ComparePage({
         {/* Related services */}
         {comparison.relatedSlugs.length > 0 && (
           <FadeIn>
-            <section>
+            <section id="related-services">
               <h2 className="mb-2 font-semibold text-xl">Related services</h2>
               <p className="mb-6 text-muted-foreground text-sm">
                 We build with both {comparison.nameA} and {comparison.nameB}.

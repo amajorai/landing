@@ -2,26 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-import { CompareLogo } from "@/components/compare/compare-logo";
 import { Logo } from "@/components/logo";
-import { ServiceLogo } from "@/components/services/service-logo";
 import { FadeIn } from "@/components/ui/fade-in";
-import { compareConfig } from "@/lib/compare-config";
-import { offeringsConfig } from "@/lib/offerings-config";
-import {
-  authServices,
-  backendServices,
-  cmsServices,
-  databaseServices,
-  designServices,
-  desktopServices,
-  frontendServices,
-  fullStackServices,
-  mobileServices,
-  paymentsServices,
-  type ServiceConfig,
-  toolingServices,
-} from "@/lib/services-config";
 
 const links = [
   { title: "Manifesto", href: "/manifesto" },
@@ -35,37 +17,6 @@ const links = [
     href: "https://amajor.notion.site/7917e0bbe55683feb1bb019132b83c9d?v=5b97e0bbe55682e09fc308819305d413",
   },
 ];
-
-function FooterServiceLink({ service }: { service: ServiceConfig }) {
-  return (
-    <Link
-      className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-      href={`/services/${service.slug}` as any}
-    >
-      <ServiceLogo service={service} size={14} />
-      <span>{service.name}</span>
-    </Link>
-  );
-}
-
-function FooterColumn({
-  title,
-  services,
-}: {
-  title: string;
-  services: ServiceConfig[];
-}) {
-  return (
-    <div>
-      <h4 className="mb-4 font-semibold">{title}</h4>
-      <div className="space-y-2 text-sm">
-        {services.map((s) => (
-          <FooterServiceLink key={s.slug} service={s} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function FooterSection() {
   return (
@@ -89,17 +40,9 @@ export default function FooterSection() {
           amajor
         </span>
       </div>
-      <div className="relative mx-auto max-w-5xl px-6" style={{ zIndex: 1 }}>
-        {/* Brand */}
-        <div className="mb-12 space-y-4">
-          <h3 className="font-semibold text-xl">A Major</h3>
-          <p className="max-w-md text-muted-foreground">
-            Singapore-based software agency specialising in web design, software
-            development, and digital solutions for businesses.
-          </p>
-        </div>
 
-        {/* Centered logo */}
+      <div className="relative mx-auto max-w-5xl px-6" style={{ zIndex: 1 }}>
+        {/* Logo */}
         <FadeIn delay={0.12} duration={0.4}>
           <Link
             aria-label="go home"
@@ -173,6 +116,7 @@ export default function FooterSection() {
           </div>
         </FadeIn>
 
+        {/* Copyright */}
         <div className="mt-8 mb-12 px-4 text-center text-muted-foreground text-sm">
           <span itemScope itemType="http://schema.org/Organization">
             © {new Date().getFullYear()}{" "}
@@ -187,78 +131,6 @@ export default function FooterSection() {
             />
           </span>
         </div>
-
-        {/* Compare section */}
-        <FadeIn delay={0.08} duration={0.4}>
-          <div className="mb-12">
-            <h4 className="mb-4 font-semibold">Compare</h4>
-            <div className="columns-2 gap-x-8 text-sm sm:columns-3">
-              <div className="mb-2 break-inside-avoid">
-                <Link
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                  href={"/compare" as any}
-                >
-                  All Comparisons
-                </Link>
-              </div>
-              {compareConfig.map((c) => (
-                <div className="mb-2 break-inside-avoid" key={c.slug}>
-                  <Link
-                    className="flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
-                    href={`/compare/${c.slug}` as any}
-                  >
-                    {c.logoA && (
-                      <CompareLogo
-                        alt={c.nameA}
-                        logo={c.logoA}
-                        logoDark={c.logoDarkA}
-                        size={14}
-                      />
-                    )}
-                    <span>{c.nameA}</span>
-                    <span className="text-muted-foreground/50 text-xs">vs</span>
-                    {c.logoB && (
-                      <CompareLogo
-                        alt={c.nameB}
-                        logo={c.logoB}
-                        logoDark={c.logoDarkB}
-                        size={14}
-                      />
-                    )}
-                    <span>{c.nameB}</span>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* Services columns with logos */}
-        <FadeIn delay={0.1} duration={0.4}>
-          <div className="mb-12 columns-2 gap-x-8 sm:columns-3 md:columns-4 lg:columns-5">
-            {[
-              {
-                title: "Our Services",
-                services: offeringsConfig as ServiceConfig[],
-              },
-              { title: "Frontend", services: frontendServices },
-              { title: "Full Stack", services: fullStackServices },
-              { title: "Backend", services: backendServices },
-              { title: "Database", services: databaseServices },
-              { title: "Tooling & DevOps", services: toolingServices },
-              { title: "Mobile", services: mobileServices },
-              { title: "Auth", services: authServices },
-              { title: "Payments", services: paymentsServices },
-              { title: "Desktop", services: desktopServices },
-              { title: "Design", services: designServices },
-              { title: "CMS", services: cmsServices },
-            ].map((group) => (
-              <div className="mb-6 break-inside-avoid" key={group.title}>
-                <FooterColumn services={group.services} title={group.title} />
-              </div>
-            ))}
-          </div>
-        </FadeIn>
       </div>
     </footer>
   );

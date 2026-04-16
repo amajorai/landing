@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { compareConfig } from "@/lib/compare-config";
-import { getBlogPosts, getProjects } from "@/lib/notion";
+import { multiCompareConfig } from "@/lib/multi-compare-config";
+import { getBlogPosts, getPages, getProjects } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
@@ -22,9 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://amajor.ai";
   const currentDate = new Date();
 
-  const [blogPosts, projects] = await Promise.all([
+  const [blogPosts, projects, pages] = await Promise.all([
     getBlogPosts().catch(() => []),
     getProjects().catch(() => []),
+    getPages().catch(() => []),
   ]);
 
   const routes: SitemapEntry[] = [
@@ -52,6 +54,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/consultancy`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/compare`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 
   offeringsConfig.forEach((offering) => {
@@ -63,16 +83,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  routes.push({
-    url: `${baseUrl}/compare`,
-    lastModified: currentDate,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  });
-
   compareConfig.forEach((comparison) => {
     routes.push({
       url: `${baseUrl}/compare/${comparison.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    });
+  });
+
+  multiCompareConfig.forEach((c) => {
+    routes.push({
+      url: `${baseUrl}/compare/${c.slug}`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.75,
@@ -91,9 +113,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   blogPosts.forEach((post) => {
     routes.push({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: currentDate,
+      lastModified: new Date(post.date ?? currentDate),
       changeFrequency: "weekly",
       priority: 0.8,
+    });
+  });
+
+  // Blog author pages
+  const authorSlugs = Array.from(
+    new Set(blogPosts.flatMap((p) => p.authors?.map((a) => a.slug) ?? []))
+  );
+  authorSlugs.forEach((slug) => {
+    routes.push({
+      url: `${baseUrl}/blog/author/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.6,
     });
   });
 
@@ -103,6 +138,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
+    });
+  });
+
+  // Static CMS pages (about, manifesto, story, etc.)
+  pages.forEach((page) => {
+    routes.push({
+      url: `${baseUrl}/${page.slug}`,
+      lastModified: new Date(page.lastEdited),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   });
 

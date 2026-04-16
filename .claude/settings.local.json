@@ -46,7 +46,14 @@
       "Bash(grep -B1 '^--$\\\\|},\\\\s*$')",
       "Bash(grep -r \"Singapore\\\\|founder\\\\|team\" /c/Code/amajor-landing/components/*.tsx)",
       "Bash(sed 's/.*slug: \"//')",
-      "Bash(sed 's/\".*//')"
+      "Bash(sed 's/\".*//')",
+      "Bash(npx svgls@latest list)",
+      "Bash(npx svgls@latest search \"anthropic\")",
+      "Bash(npx svgls@latest --help)",
+      "Bash(npx svgls@latest add --help)",
+      "Bash(npx svgls@latest add \"Anthropic\" \"OpenAI\" \"Google Gemini\" \"DeepSeek\" \"Meta\" \"Mistral AI\" \"xAI\" \"Cursor\" \"GitHub Copilot\" -p public/logos/ai --theme dark)",
+      "Bash(npx svgls@latest add \"Anthropic\" \"OpenAI\" \"Mistral AI\" \"Cursor\" \"GitHub Copilot\" -p public/logos/ai --theme light)",
+      "Bash(npx svgls@latest add \"Gemini\" \"Google\" \"xAI\" \"Grok\" \"Claude\" -p public/logos/ai)"
     ]
   }
 }

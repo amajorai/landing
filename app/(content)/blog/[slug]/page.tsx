@@ -5,11 +5,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogAuthor } from "@/components/blog/BlogAuthor";
 import { BlogTextToSpeech } from "@/components/blog/BlogTextToSpeech";
-import { MobileTocSheet } from "@/components/blog/MobileTocSheet";
 import { NotionRenderer } from "@/components/markdown-renderer";
 import { ReadingTime } from "@/components/notion/ReadingTime";
-import { TableOfContents } from "@/components/notion/TableOfContents";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PageToc } from "@/components/ui/page-toc";
 import {
   extractDescriptionFromBlocks,
   extractHeadingsFromBlocks,
@@ -81,13 +80,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      {/* Fixed TOC sidebar - only shown on wide viewports */}
-      {headings.length > 0 && (
-        <div className="fixed top-0 right-6 hidden h-screen w-64 items-center xl:flex">
-          <TableOfContents headings={headings} />
-        </div>
-      )}
-      {headings.length > 0 && <MobileTocSheet headings={headings} />}
+      <PageToc headings={headings} />
 
       <FadeIn>
         <Link

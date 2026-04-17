@@ -14,9 +14,9 @@ import { multiCompareConfig } from "@/lib/multi-compare-config";
 
 export async function generateMetadata() {
   return genMeta({
-    title: "Technology Comparisons | Singapore Software Agency",
+    title: "Technology Comparisons",
     description:
-      "Honest comparisons of popular web technologies, frameworks, LLMs, and AI agents — React vs Vue, Next.js vs Nuxt, Claude vs GPT, Cursor vs OpenHands, and more.",
+      "Honest comparisons of popular web technologies, frameworks, LLMs, and AI agents: React vs Vue, Next.js vs Nuxt, Claude vs GPT, Cursor vs OpenHands, and more.",
     url: "/compare",
     tags: [
       "technology comparison",
@@ -71,13 +71,8 @@ export default function ComparePage() {
         <FadeIn>
           <section className="space-y-8">
             <PageHeader
-              line1="Technology Comparisons"
+              line1="Comparisons"
               line2="Honest breakdowns to help you choose the right stack, model, or agent"
-              tag={
-                <span className="relative -top-px inline-block rounded-full border border-border px-2 py-0.5 align-middle font-normal text-muted-foreground text-xs">
-                  Compare
-                </span>
-              }
             />
 
             <p className="max-w-2xl text-muted-foreground leading-relaxed">
@@ -148,8 +143,9 @@ export default function ComparePage() {
             <div>
               <h2 className="font-semibold text-xl">Large Language Models</h2>
               <p className="mt-1 text-muted-foreground text-sm">
-                Benchmark-backed comparisons of frontier LLMs — pricing, context
-                window, coding ability, and reasoning.
+                Proprietary models (Claude, GPT, Gemini, Grok) and open-weight
+                models (Llama 4, DeepSeek V3.2, Gemma 4, MiniMax M2.5, Mistral,
+                Qwen3.5) compared on benchmarks, pricing, and licensing.
               </p>
             </div>
             <div className="-mx-6">
@@ -171,10 +167,11 @@ export default function ComparePage() {
                       <p className="mb-3 text-muted-foreground text-xs leading-relaxed">
                         {c.tagline}
                       </p>
-                      <p className="text-muted-foreground/60 text-xs">
-                        Claude Opus 4.6, GPT-5.4, Gemini 2.5 Pro, DeepSeek V4,
-                        +3 more
-                      </p>
+                      {c.previewText && (
+                        <p className="text-muted-foreground/60 text-xs">
+                          {c.previewText}
+                        </p>
+                      )}
                     </Link>
                   ))}
               </div>
@@ -188,8 +185,9 @@ export default function ComparePage() {
             <div>
               <h2 className="font-semibold text-xl">AI Agents</h2>
               <p className="mt-1 text-muted-foreground text-sm">
-                Coding agents and self-hosted personal AI assistants compared on
-                benchmarks, pricing, and architecture.
+                Coding agents compared on SWE-bench Verified, and the full Claw
+                ecosystem of self-hosted personal AI assistants (OpenClaw,
+                ZeroClaw, IronClaw, Hermes Agent, NanoClaw, NullClaw + more).
               </p>
             </div>
             <div className="-mx-6">
@@ -211,10 +209,11 @@ export default function ComparePage() {
                       <p className="mb-3 text-muted-foreground text-xs leading-relaxed">
                         {c.tagline}
                       </p>
-                      <p className="text-muted-foreground/60 text-xs">
-                        Cursor, Copilot, OpenHands, Aider, Devin, Claude Code +
-                        Claw ecosystem
-                      </p>
+                      {c.previewText && (
+                        <p className="text-muted-foreground/60 text-xs">
+                          {c.previewText}
+                        </p>
+                      )}
                     </Link>
                   ))}
               </div>

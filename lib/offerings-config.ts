@@ -31,7 +31,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Marketing sites from $3,000. Complex multi-page sites with custom animations and integrations from $10,000–20,000+. We provide fixed-price quotes after a free 30-min scoping call.",
     description:
-      "We design and build modern websites that balance aesthetics with performance. Every site we ship is mobile-first, accessibility-compliant, and optimized for Core Web Vitals — because a beautiful site that loads in 6 seconds is a site nobody sees.",
+      "We design and build modern websites that balance aesthetics with performance. Every site we ship is mobile-first, accessibility-compliant, and optimized for Core Web Vitals, because a beautiful site that loads in 6 seconds is a site nobody sees.",
     accentColor: "violet",
     visualizationKey: "web-design",
     logo: null,
@@ -47,13 +47,13 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Smartphone",
         title: "Mobile-first responsive design",
         description:
-          "Layouts that adapt fluidly to every screen size — designed for mobile first, then scaled up.",
+          "Layouts that adapt fluidly to every screen size: designed for mobile first, then scaled up.",
       },
       {
         icon: "Gauge",
         title: "Core Web Vitals optimization",
         description:
-          "LCP under 2.5s, CLS near zero, INP under 200ms — performance baked into the design process.",
+          "LCP under 2.5s, CLS near zero, INP under 200ms: performance baked into the design process.",
       },
       {
         icon: "Accessibility",
@@ -71,7 +71,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Zap",
         title: "Fast iteration with Figma-to-code",
         description:
-          "We design in Figma and translate directly to production code — no handoff gaps or lost-in-translation issues.",
+          "We design in Figma and translate directly to production code: no handoff gaps or lost-in-translation issues.",
       },
     ],
     subTechs: [
@@ -81,7 +81,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "wordpress" },
     ],
     overview:
-      "Your website is often the first interaction someone has with your business. A well-designed website doesn't just look good — it builds trust, communicates your value proposition in seconds, and guides visitors toward taking action. We combine conversion-focused UX design with modern frontend engineering to create websites that perform as good as they look. From single-page marketing sites to complex multi-language corporate portals, every project gets the same attention to typography, spacing, color theory, and performance.",
+      "Your website is often the first interaction someone has with your business. A well-designed website doesn't just look good: it builds trust, communicates your value proposition in seconds, and guides visitors toward taking action. We combine conversion-focused UX design with modern frontend engineering to create websites that perform as good as they look. From single-page marketing sites to complex multi-language corporate portals, every project gets the same attention to typography, spacing, color theory, and performance.",
     challenges: [
       {
         title: "Design that looks good but doesn't convert",
@@ -162,12 +162,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you redesign existing websites?",
         answer:
-          "Absolutely. We frequently redesign existing sites — improving visual design, performance, accessibility, and SEO while preserving your existing content and search rankings.",
+          "Absolutely. We frequently redesign existing sites: improving visual design, performance, accessibility, and SEO while preserving your existing content and search rankings.",
       },
       {
         question: "Will my website be SEO-friendly?",
         answer:
-          "Yes. Every site we build includes semantic HTML, structured data, optimized meta tags, fast load times, and mobile responsiveness — all critical ranking factors.",
+          "Yes. Every site we build includes semantic HTML, structured data, optimized meta tags, fast load times, and mobile responsiveness: all critical ranking factors.",
       },
     ],
   },
@@ -183,7 +183,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Simple CRUD apps from $15,000. Complex SaaS platforms with real-time features, integrations, and multi-tenancy from $50,000–100,000+. Scoped per project after a free technical consultation.",
     description:
-      "We build web applications that handle complexity — real-time collaboration, role-based access, complex data models, and third-party integrations. From internal tools to customer-facing SaaS platforms, we ship production-ready apps.",
+      "We build web applications that handle complexity: real-time collaboration, role-based access, complex data models, and third-party integrations. From internal tools to customer-facing SaaS platforms, we ship production-ready apps.",
     accentColor: "blue",
     visualizationKey: "web-apps",
     logo: null,
@@ -193,7 +193,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Server",
         title: "Full-stack architecture",
         description:
-          "React/Next.js frontends with Node.js, Python, or .NET backends — chosen based on your requirements, not our preferences.",
+          "React/Next.js frontends with Node.js, Python, or .NET backends: chosen based on your requirements, not our preferences.",
       },
       {
         icon: "Shield",
@@ -233,12 +233,12 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "postgresql" },
     ],
     overview:
-      "A web application is fundamentally different from a website. Websites display information; web apps let users create, manage, and interact with data. Building a reliable web app means getting authentication, data modeling, API design, state management, and deployment right from day one. We specialize in complex web applications — the kind where you need real-time collaboration, complex permission models, payment processing, third-party API integrations, and the ability to scale from 10 users to 10,000 without re-architecting everything.",
+      "A web application is fundamentally different from a website. Websites display information; web apps let users create, manage, and interact with data. Building a reliable web app means getting authentication, data modeling, API design, state management, and deployment right from day one. We specialize in complex web applications: the kind where you need real-time collaboration, complex permission models, payment processing, third-party API integrations, and the ability to scale from 10 users to 10,000 without re-architecting everything.",
     challenges: [
       {
         title: "Choosing the right architecture upfront",
         description:
-          "Monolith vs. microservices, server-side vs. client-side rendering, SQL vs. NoSQL — these decisions are expensive to reverse later.",
+          "Monolith vs. microservices, server-side vs. client-side rendering, SQL vs. NoSQL: these decisions are expensive to reverse later.",
       },
       {
         title: "Handling complex state and real-time data",
@@ -270,7 +270,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Implement feature flags from day one",
         detail:
-          "Ship behind feature flags to decouple deployment from release — test in production without risk.",
+          "Ship behind feature flags to decouple deployment from release: test in production without risk.",
       },
       {
         tip: "Set up error tracking and observability before launch",
@@ -319,7 +319,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you build on top of our existing codebase?",
         answer:
-          "Yes. We regularly inherit and improve existing codebases — we'll audit the current state, create a migration plan, and incrementally ship improvements alongside new features.",
+          "Yes. We regularly inherit and improve existing codebases: we'll audit the current state, create a migration plan, and incrementally ship improvements alongside new features.",
       },
     ],
   },
@@ -345,13 +345,13 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Smartphone",
         title: "Cross-platform with React Native",
         description:
-          "One codebase for iOS and Android with native performance — ship to both app stores simultaneously.",
+          "One codebase for iOS and Android with native performance: ship to both app stores simultaneously.",
       },
       {
         icon: "Cpu",
         title: "Native iOS (Swift) and Android (Kotlin)",
         description:
-          "When you need platform-specific features, ARKit, custom camera, or hardware integrations — we go native.",
+          "When you need platform-specific features, ARKit, custom camera, or hardware integrations: we go native.",
       },
       {
         icon: "Wifi",
@@ -385,7 +385,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "flutter" },
     ],
     overview:
-      "Mobile apps are how people spend most of their digital time — over 4 hours per day on average. But building a mobile app that users love is harder than it looks. You need smooth animations, offline support, push notifications, app store compliance, and a UI that feels native on both iOS and Android. We build mobile apps using the right technology for each project: React Native for fast cross-platform development, Swift for iOS-specific features, Kotlin for Android-specific needs, and Flutter when Dart fits the team.",
+      "Mobile apps are how people spend most of their digital time: over 4 hours per day on average. But building a mobile app that users love is harder than it looks. You need smooth animations, offline support, push notifications, app store compliance, and a UI that feels native on both iOS and Android. We build mobile apps using the right technology for each project: React Native for fast cross-platform development, Swift for iOS-specific features, Kotlin for Android-specific needs, and Flutter when Dart fits the team.",
     challenges: [
       {
         title: "iOS and Android are fundamentally different",
@@ -417,7 +417,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Design for offline from the start",
         detail:
-          "Users expect apps to work without internet. Build offline persistence into your data layer early — retrofitting it is extremely expensive.",
+          "Users expect apps to work without internet. Build offline persistence into your data layer early: retrofitting it is extremely expensive.",
       },
       {
         tip: "Test on real devices, not just simulators",
@@ -427,7 +427,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Submit to TestFlight early and often",
         detail:
-          "Get the app in front of real users on real devices weeks before launch — not the day before. Early feedback prevents expensive late-stage rewrites.",
+          "Get the app in front of real users on real devices weeks before launch: not the day before. Early feedback prevents expensive late-stage rewrites.",
       },
     ],
     usefulLinks: [
@@ -459,7 +459,7 @@ const _allOfferings: OfferingConfig[] = [
           "Mobile app development ranges from $20,000 for a simple cross-platform app to $100,000+ for complex native apps with custom animations, offline sync, and backend infrastructure.",
       },
       {
-        question: "React Native vs. native development — which is better?",
+        question: "React Native vs. native development: which is better?",
         answer:
           "React Native is faster and cheaper for most apps, sharing 90%+ of code between iOS and Android. Native (Swift/Kotlin) is better when you need deep platform integration like ARKit, custom cameras, or hardware APIs.",
       },
@@ -488,7 +488,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Simple single-browser extensions from $5,000. Cross-browser extensions with backend APIs and content manipulation from $15,000–50,000.",
     description:
-      "We build browser extensions that enhance existing tools — content scripts, popup UIs, background workers, and cross-browser compatibility. From productivity tools to enterprise integrations.",
+      "We build browser extensions that enhance existing tools: content scripts, popup UIs, background workers, and cross-browser compatibility. From productivity tools to enterprise integrations.",
     accentColor: "orange",
     visualizationKey: "browser-extensions",
     logo: null,
@@ -521,7 +521,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }],
     overview:
-      "Browser extensions sit inside the tools your users already use every day. They can automate tasks, inject functionality into third-party websites, synchronize data between services, and provide at-a-glance information without context switching. We build extensions for Chrome, Firefox, Edge, and Safari — from simple popup tools to complex content-manipulating extensions with backend APIs.",
+      "Browser extensions sit inside the tools your users already use every day. They can automate tasks, inject functionality into third-party websites, synchronize data between services, and provide at-a-glance information without context switching. We build extensions for Chrome, Firefox, Edge, and Safari: from simple popup tools to complex content-manipulating extensions with backend APIs.",
     challenges: [
       {
         title: "Manifest V3 migration",
@@ -558,7 +558,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use declarative net request over web request API",
         detail:
-          "Manifest V3 requires declarativeNetRequest for network interception. Design your rules upfront — the static rule model has hard limits.",
+          "Manifest V3 requires declarativeNetRequest for network interception. Design your rules upfront: the static rule model has hard limits.",
       },
     ],
     usefulLinks: [
@@ -602,7 +602,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can the extension work with our existing web app?",
         answer:
-          "Yes. Extensions can communicate with your web app via shared authentication, API calls, and content scripts — creating a seamless integrated experience.",
+          "Yes. Extensions can communicate with your web app via shared authentication, API calls, and content scripts: creating a seamless integrated experience.",
       },
     ],
   },
@@ -619,7 +619,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Internal tools and dashboards from $30,000. Complex multi-system integrations and compliance-ready platforms from $80,000–200,000+. All projects start with a discovery phase.",
     description:
-      "We build enterprise-grade internal tools — admin dashboards, CRM integrations, inventory management systems, reporting platforms, and workflow automation. Software that handles the complexity your off-the-shelf tools can't.",
+      "We build enterprise-grade internal tools: admin dashboards, CRM integrations, inventory management systems, reporting platforms, and workflow automation. Software that handles the complexity your off-the-shelf tools can't.",
     accentColor: "slate",
     visualizationKey: "enterprise-systems",
     logo: null,
@@ -641,13 +641,13 @@ const _allOfferings: OfferingConfig[] = [
         icon: "BarChart2",
         title: "Custom reporting & analytics",
         description:
-          "Real-time dashboards with the exact metrics your team needs — not the ones a SaaS tool decided to show you.",
+          "Real-time dashboards with the exact metrics your team needs: not the ones a SaaS tool decided to show you.",
       },
       {
         icon: "Workflow",
         title: "Process automation",
         description:
-          "Automate repetitive tasks — approvals, data entry, notifications, and report generation.",
+          "Automate repetitive tasks: approvals, data entry, notifications, and report generation.",
       },
     ],
     subTechs: [
@@ -657,7 +657,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "docker" },
     ],
     overview:
-      "Enterprise software is the backbone of how businesses actually operate. When off-the-shelf tools don't fit your processes, you need custom software that does. We build internal tools that your team uses every day — from admin panels and CRM integrations to complex multi-department workflows. These systems need to be reliable, secure, auditable, and intuitive enough that non-technical staff can use them without training.",
+      "Enterprise software is the backbone of how businesses actually operate. When off-the-shelf tools don't fit your processes, you need custom software that does. We build internal tools that your team uses every day: from admin panels and CRM integrations to complex multi-department workflows. These systems need to be reliable, secure, auditable, and intuitive enough that non-technical staff can use them without training.",
     challenges: [
       {
         title: "Integrating with legacy systems",
@@ -667,7 +667,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Complex permission models",
         description:
-          "Enterprise apps need fine-grained access control — by role, department, region, and data classification. Getting this wrong creates security and compliance risks.",
+          "Enterprise apps need fine-grained access control: by role, department, region, and data classification. Getting this wrong creates security and compliance risks.",
       },
       {
         title: "User adoption",
@@ -684,7 +684,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Build audit logging from day one",
         detail:
-          "Enterprise systems need complete audit trails. Add them in the data layer — retrofitting is extremely expensive.",
+          "Enterprise systems need complete audit trails. Add them in the data layer: retrofitting is extremely expensive.",
       },
       {
         tip: "Plan for SSO from the start",
@@ -738,7 +738,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you maintain the system after launch?",
         answer:
-          "Yes. We offer ongoing maintenance retainers covering bug fixes, feature additions, dependency updates, and priority support — typically starting at $3,000/month.",
+          "Yes. We offer ongoing maintenance retainers covering bug fixes, feature additions, dependency updates, and priority support: typically starting at $3,000/month.",
       },
     ],
   },
@@ -764,7 +764,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Users",
         title: "Multi-tenancy",
         description:
-          "Isolated or shared tenant architectures — each customer gets their own data space with admin controls.",
+          "Isolated or shared tenant architectures: each customer gets their own data space with admin controls.",
       },
       {
         icon: "CreditCard",
@@ -792,7 +792,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "postgresql" },
     ],
     overview:
-      "Building a SaaS product is one of the most complex software engineering challenges. You need multi-tenancy, subscription billing, user roles, onboarding flows, usage analytics, and an architecture that scales with your customer base. Most SaaS MVPs fail not because the idea is bad, but because the engineering wasn't production-ready. We build SaaS products with the right foundations — so you can focus on growth instead of firefighting technical debt.",
+      "Building a SaaS product is one of the most complex software engineering challenges. You need multi-tenancy, subscription billing, user roles, onboarding flows, usage analytics, and an architecture that scales with your customer base. Most SaaS MVPs fail not because the idea is bad, but because the engineering wasn't production-ready. We build SaaS products with the right foundations, so you can focus on growth instead of firefighting technical debt.",
     challenges: [
       {
         title: "Multi-tenant data isolation",
@@ -814,12 +814,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use row-level security for multi-tenancy",
         detail:
-          "PostgreSQL RLS policies enforce tenant isolation at the database level — even if application code has bugs, data can't leak between tenants.",
+          "PostgreSQL RLS policies enforce tenant isolation at the database level, even if application code has bugs, data can't leak between tenants.",
       },
       {
         tip: "Build billing on Stripe from day one",
         detail:
-          "Don't build billing yourself. Stripe handles subscriptions, invoicing, tax, and compliance — use their primitives.",
+          "Don't build billing yourself. Stripe handles subscriptions, invoicing, tax, and compliance: use their primitives.",
       },
       {
         tip: "Instrument everything for product analytics",
@@ -868,12 +868,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you help with an existing SaaS product?",
         answer:
-          "Yes. We help SaaS companies scale their engineering — adding features, improving performance, fixing technical debt, and preparing for growth milestones.",
+          "Yes. We help SaaS companies scale their engineering: adding features, improving performance, fixing technical debt, and preparing for growth milestones.",
       },
       {
         question: "Do you help with SaaS go-to-market and growth?",
         answer:
-          "Our focus is engineering, but we partner with growth and marketing teams. We can build the technical infrastructure for product-led growth — referral programs, usage-based onboarding, in-app prompts, and self-serve trials.",
+          "Our focus is engineering, but we partner with growth and marketing teams. We can build the technical infrastructure for product-led growth: referral programs, usage-based onboarding, in-app prompts, and self-serve trials.",
       },
     ],
   },
@@ -890,7 +890,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Quick UI audits and refreshes from $3,000. Full user research, wireframing, and high-fidelity design systems from $15,000–30,000. Delivered as Figma files with developer-ready specs.",
     description:
-      "We do standalone design work — user research, wireframes, prototypes, and pixel-perfect UI design. Whether you need a complete design system or just a refresh, we deliver Figma files your developers can actually implement.",
+      "We do standalone design work: user research, wireframes, prototypes, and pixel-perfect UI design. Whether you need a complete design system or just a refresh, we deliver Figma files your developers can actually implement.",
     accentColor: "pink",
     visualizationKey: "ui-ux-design",
     logo: null,
@@ -923,7 +923,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "tailwind" }, { slug: "shadcn" }, { slug: "react" }],
     overview:
-      "Good UI/UX design is the difference between a product people tolerate and one they love. We combine user research with visual design expertise to create interfaces that are both beautiful and functional. Our design process starts with understanding your users, maps out their key workflows, and produces high-fidelity designs that are ready for development — complete with responsive layouts, interaction states, and developer handoff specs.",
+      "Good UI/UX design is the difference between a product people tolerate and one they love. We combine user research with visual design expertise to create interfaces that are both beautiful and functional. Our design process starts with understanding your users, maps out their key workflows, and produces high-fidelity designs that are ready for development: complete with responsive layouts, interaction states, and developer handoff specs.",
     challenges: [
       {
         title: "Designing without user research",
@@ -960,7 +960,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Design for accessibility from the start",
         detail:
-          "WCAG 2.1 AA compliance is not a final checklist — it's a design discipline. Sufficient color contrast, keyboard navigation, and focus states must be designed in, not bolted on.",
+          "WCAG 2.1 AA compliance is not a final checklist: it's a design discipline. Sufficient color contrast, keyboard navigation, and focus states must be designed in, not bolted on.",
       },
     ],
     usefulLinks: [
@@ -981,7 +981,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you do design-only projects?",
         answer:
-          "Yes. We offer standalone design services — from quick UI audits to full design system creation — delivered as Figma files with developer-ready specs.",
+          "Yes. We offer standalone design services , from quick UI audits to full design system creation , delivered as Figma files with developer-ready specs.",
       },
       {
         question: "How much does UI/UX design cost?",
@@ -991,7 +991,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you design for both web and mobile?",
         answer:
-          "Yes. We design responsive web interfaces and native mobile screens, following each platform's design language — Material Design for Android, Human Interface Guidelines for iOS.",
+          "Yes. We design responsive web interfaces and native mobile screens, following each platform's design language: Material Design for Android, Human Interface Guidelines for iOS.",
       },
       {
         question: "How do you hand off designs to developers?",
@@ -1013,7 +1013,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "CI/CD setup and infrastructure configuration from $5,000. Ongoing cloud management available as monthly retainers from $2,000/month. Cost audits often pay for themselves within 60 days.",
     description:
-      "We set up and manage your deployment infrastructure — CI/CD pipelines, Docker containers, Kubernetes clusters, cloud architecture on AWS, GCP, or Azure, and monitoring that alerts you before your users notice problems.",
+      "We set up and manage your deployment infrastructure: CI/CD pipelines, Docker containers, Kubernetes clusters, cloud architecture on AWS, GCP, or Azure, and monitoring that alerts you before your users notice problems.",
     accentColor: "cyan",
     visualizationKey: "devops",
     logo: null,
@@ -1041,7 +1041,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Activity",
         title: "Monitoring & alerting",
         description:
-          "Observability with logs, metrics, and traces — know when something breaks before your users do.",
+          "Observability with logs, metrics, and traces: know when something breaks before your users do.",
       },
     ],
     subTechs: [
@@ -1050,7 +1050,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "s3" },
     ],
     overview:
-      "DevOps bridges the gap between writing code and running it reliably in production. Without proper CI/CD, infrastructure, and monitoring, even great code becomes unreliable. We help teams ship faster and sleep better — automated pipelines, infrastructure-as-code, containerized deployments, and comprehensive monitoring that catches problems early.",
+      "DevOps bridges the gap between writing code and running it reliably in production. Without proper CI/CD, infrastructure, and monitoring, even great code becomes unreliable. We help teams ship faster and sleep better: automated pipelines, infrastructure-as-code, containerized deployments, and comprehensive monitoring that catches problems early.",
     challenges: [
       {
         title: "Manual deployments are error-prone",
@@ -1065,7 +1065,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Incident response without observability",
         description:
-          "When something breaks at 2 AM, you need logs, metrics, and traces to diagnose the issue — not guesswork.",
+          "When something breaks at 2 AM, you need logs, metrics, and traces to diagnose the issue: not guesswork.",
       },
     ],
     bestPractices: [
@@ -1077,7 +1077,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use infrastructure-as-code",
         detail:
-          "Terraform, Pulumi, or CDK — your infrastructure should be version-controlled, reviewable, and reproducible.",
+          "Terraform, Pulumi, or CDK: your infrastructure should be version-controlled, reviewable, and reproducible.",
       },
       {
         tip: "Implement blue-green or canary deployments",
@@ -1087,7 +1087,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Set up on-call rotation before you need one",
         detail:
-          "Define escalation paths, runbooks, and alerting thresholds before your first production incident — not during it.",
+          "Define escalation paths, runbooks, and alerting thresholds before your first production incident: not during it.",
       },
     ],
     usefulLinks: [
@@ -1122,12 +1122,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you support Kubernetes for our deployments?",
         answer:
-          "Yes. We set up and manage Kubernetes clusters on EKS, GKE, or self-hosted environments — including Helm charts, autoscaling, and network policies.",
+          "Yes. We set up and manage Kubernetes clusters on EKS, GKE, or self-hosted environments: including Helm charts, autoscaling, and network policies.",
       },
       {
         question: "Can you help migrate our infrastructure to the cloud?",
         answer:
-          "Yes. We plan and execute cloud migrations from on-premise or managed hosting to AWS, GCP, or Azure — minimizing downtime and optimizing for cost and performance.",
+          "Yes. We plan and execute cloud migrations from on-premise or managed hosting to AWS, GCP, or Azure: minimizing downtime and optimizing for cost and performance.",
       },
     ],
   },
@@ -1140,11 +1140,11 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline:
-      "Find the bottlenecks and fix them — in code, queries, and infrastructure",
+      "Find the bottlenecks and fix them: in code, queries, and infrastructure",
     pricingNote:
       "Comprehensive performance audit with prioritized recommendations from $3,000–8,000. Implementation of fixes scoped separately. Most audits deliver measurable improvements within 2 weeks.",
     description:
-      "Slow software loses users, hurts SEO rankings, and frustrates employees. We profile, diagnose, and fix performance issues across your entire stack — frontend rendering, API response times, database queries, and infrastructure.",
+      "Slow software loses users, hurts SEO rankings, and frustrates employees. We profile, diagnose, and fix performance issues across your entire stack: frontend rendering, API response times, database queries, and infrastructure.",
     accentColor: "amber",
     visualizationKey: "performance-optimization",
     logo: null,
@@ -1177,7 +1177,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "postgresql" }],
     overview:
-      "Performance is a feature. Google penalizes slow sites in search rankings, users abandon pages that take more than 3 seconds to load, and employees waste hours waiting for sluggish internal tools. We specialize in identifying and fixing performance bottlenecks — whether it's a React app with unnecessary re-renders, an API with N+1 query problems, or infrastructure that can't handle peak traffic.",
+      "Performance is a feature. Google penalizes slow sites in search rankings, users abandon pages that take more than 3 seconds to load, and employees waste hours waiting for sluggish internal tools. We specialize in identifying and fixing performance bottlenecks, whether it's a React app with unnecessary re-renders, an API with N+1 query problems, or infrastructure that can't handle peak traffic.",
     challenges: [
       {
         title: "Diagnosing the actual bottleneck",
@@ -1209,7 +1209,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use a CDN for all static assets",
         detail:
-          "Images, fonts, and JS bundles should be served from a CDN closest to your users — not from your origin server. This alone can cut load times by 60%.",
+          "Images, fonts, and JS bundles should be served from a CDN closest to your users: not from your origin server. This alone can cut load times by 60%.",
       },
     ],
     usefulLinks: [
@@ -1246,14 +1246,14 @@ const _allOfferings: OfferingConfig[] = [
           "Results vary, but we typically achieve 40–70% improvements in load times and 2–3x improvements in Core Web Vitals scores.",
       },
       {
-        question: "Our API is slow — can you help with backend performance?",
+        question: "Our API is slow: can you help with backend performance?",
         answer:
           "Yes. Backend performance is often the hidden bottleneck. We profile API response times, identify slow queries, add caching layers, and optimize data access patterns.",
       },
       {
         question: "Will performance improvements affect our SEO rankings?",
         answer:
-          "Yes — Google uses Core Web Vitals (LCP, CLS, INP) as ranking factors. Improving these metrics directly impacts search visibility, especially on mobile.",
+          "Yes. Google uses Core Web Vitals (LCP, CLS, INP) as ranking factors. Improving these metrics directly impacts search visibility, especially on mobile.",
       },
     ],
   },
@@ -1265,11 +1265,11 @@ const _allOfferings: OfferingConfig[] = [
     category: "offering",
     pageType: "offering",
     targetAudience: "both",
-    tagline: "Define the smallest version that proves the idea — then build it",
+    tagline: "Define the smallest version that proves the idea: then build it",
     pricingNote:
       "Scoping engagement (discovery + specification) from $3,000–5,000. Full MVP build from $15,000–40,000. Most MVPs launch within 6–12 weeks. Fixed-price, no surprises.",
     description:
-      "Not sure what to build first? We help founders and product teams define the minimum viable product — the smallest version of your idea that can generate real user feedback. Then we build it fast.",
+      "Not sure what to build first? We help founders and product teams define the minimum viable product: the smallest version of your idea that can generate real user feedback. Then we build it fast.",
     accentColor: "yellow",
     visualizationKey: "mvp-scoping",
     logo: null,
@@ -1285,7 +1285,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "FileText",
         title: "Technical specification",
         description:
-          "Detailed specs covering data model, API design, user flows, and technology choices — before any code is written.",
+          "Detailed specs covering data model, API design, user flows, and technology choices: before any code is written.",
       },
       {
         icon: "Zap",
@@ -1302,7 +1302,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "supabase" }],
     overview:
-      "Most startups fail because they build too much before validating demand. An MVP isn't a bad version of your product — it's the smallest version that tests your core hypothesis. We help you figure out what to build first, scope it tightly, and ship it fast so you can start learning from real users instead of guessing.",
+      "Most startups fail because they build too much before validating demand. An MVP isn't a bad version of your product: it's the smallest version that tests your core hypothesis. We help you figure out what to build first, scope it tightly, and ship it fast so you can start learning from real users instead of guessing.",
     challenges: [
       {
         title: "Building too much too early",
@@ -1329,7 +1329,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Cut features ruthlessly, not quality",
         detail:
-          "An MVP should have fewer features, not worse features. Every feature that ships should work well and feel polished — half-built features erode user trust.",
+          "An MVP should have fewer features, not worse features. Every feature that ships should work well and feel polished: half-built features erode user trust.",
       },
       {
         tip: "Build your feedback loop into the product",
@@ -1378,7 +1378,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "What happens after the MVP launches?",
         answer:
-          "We help you interpret early user data, plan the next iteration, and continue building — either as a retainer or project-by-project, depending on your needs.",
+          "We help you interpret early user data, plan the next iteration, and continue building: either as a retainer or project-by-project, depending on your needs.",
       },
     ],
   },
@@ -1395,7 +1395,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Codebase audit from $5,000–10,000. Full modernization projects from $20,000–100,000+ depending on system complexity. Incremental approach means you see ROI from the first sprint.",
     description:
-      "Legacy systems don't have to be replaced overnight. We incrementally modernize aging codebases — migrating from outdated frameworks, improving architecture, and rebuilding critical paths while keeping your business running.",
+      "Legacy systems don't have to be replaced overnight. We incrementally modernize aging codebases: migrating from outdated frameworks, improving architecture, and rebuilding critical paths while keeping your business running.",
     accentColor: "stone",
     visualizationKey: "legacy-modernisation",
     logo: null,
@@ -1411,7 +1411,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "GitBranch",
         title: "Incremental migration",
         description:
-          "Strangler fig pattern — new features in modern code while legacy systems continue running.",
+          "Strangler fig pattern: new features in modern code while legacy systems continue running.",
       },
       {
         icon: "Database",
@@ -1433,7 +1433,7 @@ const _allOfferings: OfferingConfig[] = [
       { slug: "postgresql" },
     ],
     overview:
-      "Legacy software is expensive to maintain, difficult to hire for, and increasingly risky from a security perspective. But rip-and-replace projects are expensive and dangerous. We take an incremental approach — modernizing the most painful parts first while keeping your business running. The goal is to reach a modern, maintainable codebase without a 12-month rewrite project.",
+      "Legacy software is expensive to maintain, difficult to hire for, and increasingly risky from a security perspective. But rip-and-replace projects are expensive and dangerous. We take an incremental approach: modernizing the most painful parts first while keeping your business running. The goal is to reach a modern, maintainable codebase without a 12-month rewrite project.",
     challenges: [
       {
         title: "Nobody understands the existing code",
@@ -1455,7 +1455,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use the strangler fig pattern",
         detail:
-          "Build new features on modern technology and gradually route traffic away from legacy systems — no big bang cutover.",
+          "Build new features on modern technology and gradually route traffic away from legacy systems: no big bang cutover.",
       },
       {
         tip: "Write characterization tests before touching legacy code",
@@ -1465,7 +1465,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Prioritize security fixes in the first sprint",
         detail:
-          "Legacy systems often have critical CVEs in outdated dependencies. Patch security vulnerabilities before addressing architecture — risk reduction is always highest priority.",
+          "Legacy systems often have critical CVEs in outdated dependencies. Patch security vulnerabilities before addressing architecture: risk reduction is always highest priority.",
       },
     ],
     usefulLinks: [
@@ -1507,9 +1507,9 @@ const _allOfferings: OfferingConfig[] = [
           "Yes. Our incremental approach means the existing system keeps running throughout the migration. We route traffic gradually to the new system and fall back if needed.",
       },
       {
-        question: "We're using PHP/ASP.NET/.NET Framework — can you help?",
+        question: "We're using PHP/ASP.NET/.NET Framework: can you help?",
         answer:
-          "Yes. We regularly modernize PHP applications to Laravel or Node.js, and migrate .NET Framework apps to modern .NET — incrementally and safely.",
+          "Yes. We regularly modernize PHP applications to Laravel or Node.js, and migrate .NET Framework apps to modern .NET: incrementally and safely.",
       },
     ],
   },
@@ -1521,11 +1521,11 @@ const _allOfferings: OfferingConfig[] = [
     category: "offering",
     pageType: "offering",
     targetAudience: "businesses",
-    tagline: "Moving offline and manual processes online — for real",
+    tagline: "Moving offline and manual processes online: for real",
     pricingNote:
       "Single process digitization from $15,000–35,000. Multi-department transformation programs from $50,000–200,000+ delivered in phased engagements. Free assessment to identify highest-impact opportunities.",
     description:
-      "We digitize manual business processes — paper forms, spreadsheet workflows, phone-based ordering, and manual data entry. Built for professional services, manufacturing, and operations-heavy businesses.",
+      "We digitize manual business processes: paper forms, spreadsheet workflows, phone-based ordering, and manual data entry. Built for professional services, manufacturing, and operations-heavy businesses.",
     accentColor: "teal",
     visualizationKey: "digital-transformation",
     logo: null,
@@ -1547,18 +1547,18 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Users",
         title: "User training & change management",
         description:
-          "We don't just build software — we help your team adopt it with documentation, training, and gradual rollout.",
+          "We don't just build software: we help your team adopt it with documentation, training, and gradual rollout.",
       },
       {
         icon: "BarChart2",
         title: "Data-driven insights",
         description:
-          "Once processes are digital, you can measure them — identify bottlenecks, track KPIs, and make data-driven decisions.",
+          "Once processes are digital, you can measure them: identify bottlenecks, track KPIs, and make data-driven decisions.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "postgresql" }],
     overview:
-      "Digital transformation isn't about technology — it's about making your business more efficient by replacing manual, error-prone processes with software that automates the repetitive parts and gives you data to make better decisions. We've done this for professional services firms, manufacturers, and operations-heavy businesses — each with unique process requirements that off-the-shelf software can't handle.",
+      "Digital transformation isn't about technology , it's about making your business more efficient by replacing manual, error-prone processes with software that automates the repetitive parts and gives you data to make better decisions. We've done this for professional services firms, manufacturers, and operations-heavy businesses , each with unique process requirements that off-the-shelf software can't handle.",
     challenges: [
       {
         title: "Resistance to change",
@@ -1619,7 +1619,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "How do I know if my business needs digital transformation?",
         answer:
-          "If your team regularly copies data between spreadsheets, uses paper forms, or relies on email chains for approvals — there are efficiency gains waiting. We offer free assessments to identify the highest-impact opportunities.",
+          "If your team regularly copies data between spreadsheets, uses paper forms, or relies on email chains for approvals: there are efficiency gains waiting. We offer free assessments to identify the highest-impact opportunities.",
       },
       {
         question: "How long does digital transformation take?",
@@ -1684,7 +1684,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "stripe" }],
     overview:
-      "White-label development lets agencies and businesses offer software products under their own brand without building from scratch. We engineer the product, you sell it. This model works for marketing agencies offering client dashboards, consultancies offering reporting tools, and service businesses automating their delivery — all branded as your own product.",
+      "White-label development lets agencies and businesses offer software products under their own brand without building from scratch. We engineer the product, you sell it. This model works for marketing agencies offering client dashboards, consultancies offering reporting tools, and service businesses automating their delivery: all branded as your own product.",
     challenges: [
       {
         title: "Making it truly customizable per client",
@@ -1699,7 +1699,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Keeping client data isolated",
         description:
-          "White-label products often serve regulated industries where one client's data must never be visible to another — even accidentally. Multi-tenancy architecture must be watertight.",
+          "White-label products often serve regulated industries where one client's data must never be visible to another, even accidentally. Multi-tenancy architecture must be watertight.",
       },
       {
         title: "Supporting diverse client technical environments",
@@ -1765,7 +1765,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can clients self-host the product?",
         answer:
-          "Yes. We can build deployment packages for client self-hosting — Docker containers, Kubernetes manifests, or cloud-specific templates — alongside the SaaS version.",
+          "Yes. We can build deployment packages for client self-hosting , Docker containers, Kubernetes manifests, or cloud-specific templates , alongside the SaaS version.",
       },
       {
         question: "How do you handle updates across all client instances?",
@@ -1783,11 +1783,11 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "Technical SEO baked in from the start — fast sites, clean markup, content that ranks",
+      "Technical SEO baked in from the start: fast sites, clean markup, content that ranks",
     pricingNote:
       "Technical SEO audit from $3,000–10,000. Ongoing SEO optimization from $1,500/month. Most clients see measurable ranking improvements within 4–8 weeks of implementation.",
     description:
-      "We implement technical SEO at the code level — server-side rendering, structured data, semantic HTML, sitemap generation, Core Web Vitals optimization, and content architecture that search engines understand and reward.",
+      "We implement technical SEO at the code level: server-side rendering, structured data, semantic HTML, sitemap generation, Core Web Vitals optimization, and content architecture that search engines understand and reward.",
     accentColor: "emerald",
     visualizationKey: "seo-optimization",
     logo: null,
@@ -1803,7 +1803,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "FileCode2",
         title: "Structured data implementation",
         description:
-          "JSON-LD schema markup for rich snippets — FAQ, breadcrumbs, products, articles, and local business.",
+          "JSON-LD schema markup for rich snippets: FAQ, breadcrumbs, products, articles, and local business.",
       },
       {
         icon: "Gauge",
@@ -1832,7 +1832,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "react" }, { slug: "wordpress" }],
     overview:
-      "SEO is not just about keywords — it's a technical discipline. Search engines reward websites that load fast, have clean HTML structure, provide structured data, and offer genuine value to visitors. We implement technical SEO at the engineering level: server-side rendering for crawlability, JSON-LD schema for rich snippets, programmatic sitemap generation, canonical URL management, and Core Web Vitals optimization. The result is a website that search engines understand and rank higher.",
+      "SEO is not just about keywords: it's a technical discipline. Search engines reward websites that load fast, have clean HTML structure, provide structured data, and offer genuine value to visitors. We implement technical SEO at the engineering level: server-side rendering for crawlability, JSON-LD schema for rich snippets, programmatic sitemap generation, canonical URL management, and Core Web Vitals optimization. The result is a website that search engines understand and rank higher.",
     challenges: [
       {
         title: "Client-side rendering kills SEO",
@@ -1852,14 +1852,14 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Missing structured data",
         description:
-          "Without JSON-LD schema markup, you miss out on rich snippets — FAQ dropdowns, star ratings, breadcrumbs, and product cards in search results.",
+          "Without JSON-LD schema markup, you miss out on rich snippets: FAQ dropdowns, star ratings, breadcrumbs, and product cards in search results.",
       },
     ],
     bestPractices: [
       {
         tip: "Use server-side rendering or static generation",
         detail:
-          "Next.js with SSR/SSG ensures every page is fully rendered HTML when search engines crawl it — no JavaScript execution required.",
+          "Next.js with SSR/SSG ensures every page is fully rendered HTML when search engines crawl it: no JavaScript execution required.",
       },
       {
         tip: "Implement structured data for every content type",
@@ -1869,12 +1869,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Optimize Core Web Vitals continuously",
         detail:
-          "Set performance budgets in CI and monitor real user metrics. Performance is not a one-time fix — it requires ongoing attention.",
+          "Set performance budgets in CI and monitor real user metrics. Performance is not a one-time fix: it requires ongoing attention.",
       },
       {
         tip: "Build topical authority with content clusters",
         detail:
-          "Create hub pages for key topics with detailed sub-pages that interlink — search engines reward depth and expertise.",
+          "Create hub pages for key topics with detailed sub-pages that interlink: search engines reward depth and expertise.",
       },
     ],
     usefulLinks: [
@@ -1909,13 +1909,13 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you do content writing and keyword research?",
         answer:
-          "We focus on technical SEO — the engineering side. We partner with content agencies for keyword research and content creation, and we provide the technical infrastructure for content to rank.",
+          "We focus on technical SEO: the engineering side. We partner with content agencies for keyword research and content creation, and we provide the technical infrastructure for content to rank.",
       },
       {
         question:
           "What's the difference between technical SEO and on-page SEO?",
         answer:
-          "Technical SEO is about how search engines crawl, index, and understand your site — speed, structured data, canonicals, sitemaps. On-page SEO is about content quality, keyword targeting, and metadata. We handle technical SEO; both work together for best results.",
+          "Technical SEO is about how search engines crawl, index, and understand your site: speed, structured data, canonicals, sitemaps. On-page SEO is about content quality, keyword targeting, and metadata. We handle technical SEO; both work together for best results.",
       },
     ],
   },
@@ -1928,11 +1928,11 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "both",
     tagline:
-      "We don't just hand over code — we ship it, host it, and keep it running",
+      "We don't just hand over code: we ship it, host it, and keep it running",
     pricingNote:
       "One-time deployment setup from $2,000–8,000. Monthly hosting management from $500/month. Includes monitoring, security patches, backups, and priority support.",
     description:
-      "End-to-end deployment services from staging to production. We configure hosting, set up CI/CD, handle DNS, SSL, CDN, and monitoring — everything needed to go live and stay live.",
+      "End-to-end deployment services from staging to production. We configure hosting, set up CI/CD, handle DNS, SSL, CDN, and monitoring: everything needed to go live and stay live.",
     accentColor: "sky",
     visualizationKey: "full-deployment",
     logo: null,
@@ -1942,7 +1942,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Cloud",
         title: "Cloud hosting setup",
         description:
-          "Vercel, AWS, GCP, or self-hosted — configured for your performance, compliance, and budget requirements.",
+          "Vercel, AWS, GCP, or self-hosted: configured for your performance, compliance, and budget requirements.",
       },
       {
         icon: "Shield",
@@ -1965,7 +1965,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "docker" }, { slug: "cloudflare-workers" }],
     overview:
-      "Building software is only half the job. Getting it deployed, configured, monitored, and kept running reliably is the other half — and it's the half that most teams underestimate. We handle the entire deployment lifecycle: infrastructure provisioning, CI/CD pipeline setup, domain configuration, SSL, CDN, monitoring, and ongoing maintenance.",
+      "Building software is only half the job. Getting it deployed, configured, monitored, and kept running reliably is the other half, and it's the half that most teams underestimate. We handle the entire deployment lifecycle: infrastructure provisioning, CI/CD pipeline setup, domain configuration, SSL, CDN, monitoring, and ongoing maintenance.",
     challenges: [
       {
         title: "First deployment is always the hardest",
@@ -1985,7 +1985,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Environment parity between staging and production",
         description:
-          "Bugs that only appear in production often trace back to environment differences — different secrets, different third-party services, or different data volumes.",
+          "Bugs that only appear in production often trace back to environment differences: different secrets, different third-party services, or different data volumes.",
       },
     ],
     bestPractices: [
@@ -2007,7 +2007,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Use preview deployments for every PR",
         detail:
-          "Vercel, Netlify, and similar platforms deploy every pull request to a unique URL. This lets stakeholders review changes before they merge — not after.",
+          "Vercel, Netlify, and similar platforms deploy every pull request to a unique URL. This lets stakeholders review changes before they merge: not after.",
       },
     ],
     usefulLinks: [
@@ -2038,7 +2038,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you migrate our existing hosting to a new provider?",
         answer:
-          "Yes. We handle full hosting migrations — replicating the environment, testing in parallel, and switching DNS with zero-downtime cutover.",
+          "Yes. We handle full hosting migrations: replicating the environment, testing in parallel, and switching DNS with zero-downtime cutover.",
       },
       {
         question: "How do you handle SSL certificates?",
@@ -2060,7 +2060,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Free 30-minute introductory call. Hourly advisory from $200/hour. Codebase audits and architecture reviews from $3,000–8,000. Discounted packages available for longer engagements.",
     description:
-      "Technical consultancy for founders, CTOs, and product teams. We help you make technology decisions, evaluate architectures, review codebases, and plan roadmaps — before you commit to building.",
+      "Technical consultancy for founders, CTOs, and product teams. We help you make technology decisions, evaluate architectures, review codebases, and plan roadmaps: before you commit to building.",
     accentColor: "rose",
     visualizationKey: "consultancy",
     logo: null,
@@ -2070,7 +2070,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Search",
         title: "Architecture review",
         description:
-          "Expert assessment of your current or proposed architecture — scalability, security, cost, and maintainability.",
+          "Expert assessment of your current or proposed architecture: scalability, security, cost, and maintainability.",
       },
       {
         icon: "FileText",
@@ -2088,12 +2088,12 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Lightbulb",
         title: "Technology selection",
         description:
-          "Framework, language, and platform recommendations based on your specific requirements — not trends.",
+          "Framework, language, and platform recommendations based on your specific requirements: not trends.",
       },
     ],
     subTechs: [],
     overview:
-      "Sometimes you don't need a developer — you need someone who can tell you what to build, what stack to use, and whether your current architecture will survive the next growth phase. Our consultancy services help founders, CTOs, and product teams make informed technology decisions backed by real-world experience shipping software across every major stack.",
+      "Sometimes you don't need a developer: you need someone who can tell you what to build, what stack to use, and whether your current architecture will survive the next growth phase. Our consultancy services help founders, CTOs, and product teams make informed technology decisions backed by real-world experience shipping software across every major stack.",
     challenges: [
       {
         title: "Too many technology options",
@@ -2135,7 +2135,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Choose boring technology for the core",
         detail:
-          "Save experimentation for the edges. Postgres, Node.js, and React are boring for good reason — they have large talent pools, known failure modes, and years of community support.",
+          "Save experimentation for the edges. Postgres, Node.js, and React are boring for good reason: they have large talent pools, known failure modes, and years of community support.",
       },
     ],
     usefulLinks: [
@@ -2169,18 +2169,18 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you review our codebase?",
         answer:
-          "Yes. We provide detailed codebase audits covering architecture, code quality, security, performance, and maintainability — with prioritized recommendations.",
+          "Yes. We provide detailed codebase audits covering architecture, code quality, security, performance, and maintainability: with prioritized recommendations.",
       },
       {
         question:
-          "We're evaluating vendors — can you help us make the decision?",
+          "We're evaluating vendors: can you help us make the decision?",
         answer:
-          "Yes. We run structured vendor evaluations — building proof-of-concepts, scoring candidates against your specific requirements, and providing an objective recommendation with evidence.",
+          "Yes. We run structured vendor evaluations: building proof-of-concepts, scoring candidates against your specific requirements, and providing an objective recommendation with evidence.",
       },
       {
         question: "Can you help us plan a technology roadmap?",
         answer:
-          "Yes. We facilitate roadmap planning workshops that align business goals with technical priorities — producing a phased plan your team can execute against with confidence.",
+          "Yes. We facilitate roadmap planning workshops that align business goals with technical priorities: producing a phased plan your team can execute against with confidence.",
       },
     ],
   },
@@ -2197,7 +2197,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Patient portals and scheduling systems from $30,000. Full EHR-integrated platforms and telehealth applications from $80,000–200,000+. All projects include HIPAA-compliant architecture and BAA.",
     description:
-      "We build secure, regulation-ready healthcare applications — from patient portals and telehealth platforms to EHR/EMR integrations and appointment scheduling systems. Every line of code is written with HIPAA compliance, data encryption, and audit logging as non-negotiable foundations.",
+      "We build secure, regulation-ready healthcare applications: from patient portals and telehealth platforms to EHR/EMR integrations and appointment scheduling systems. Every line of code is written with HIPAA compliance, data encryption, and audit logging as non-negotiable foundations.",
     accentColor: "emerald",
     visualizationKey: "healthcare-software",
     logo: null,
@@ -2242,12 +2242,12 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "postgresql" }],
     overview:
-      "Healthcare organizations face a unique intersection of technical complexity and regulatory pressure. Off-the-shelf software rarely fits the specific workflows of clinics, hospitals, and health-tech startups — and when it does, customization is locked behind expensive vendor contracts. Custom healthcare software solves this by mapping directly to your clinical processes, integrating with the systems your staff already use, and scaling as your patient base grows.\n\nAt A Major, we specialize in building healthcare applications that meet HIPAA requirements without sacrificing user experience. Our team understands HL7 FHIR standards, PHI data handling, role-based access patterns, and the audit trail requirements that regulators expect. Whether you're building a patient-facing portal, a telehealth platform, or an internal clinical tool, we deliver software that clinicians actually want to use.\n\nFrom initial compliance architecture through deployment on HIPAA-eligible cloud infrastructure, we handle the full lifecycle — so your team can focus on patient care, not debugging integrations.",
+      "Healthcare organizations face a unique intersection of technical complexity and regulatory pressure. Off-the-shelf software rarely fits the specific workflows of clinics, hospitals, and health-tech startups, and when it does, customization is locked behind expensive vendor contracts. Custom healthcare software solves this by mapping directly to your clinical processes, integrating with the systems your staff already use, and scaling as your patient base grows.\n\nAt A Major, we specialize in building healthcare applications that meet HIPAA requirements without sacrificing user experience. Our team understands HL7 FHIR standards, PHI data handling, role-based access patterns, and the audit trail requirements that regulators expect. Whether you're building a patient-facing portal, a telehealth platform, or an internal clinical tool, we deliver software that clinicians actually want to use.\n\nFrom initial compliance architecture through deployment on HIPAA-eligible cloud infrastructure, we handle the full lifecycle, so your team can focus on patient care, not debugging integrations.",
     challenges: [
       {
         title: "HIPAA compliance is complex and non-negotiable",
         description:
-          "A single data breach can cost millions in fines and destroy patient trust. Every component — database, API, frontend, hosting — must meet strict privacy and security requirements.",
+          "A single data breach can cost millions in fines and destroy patient trust. Every component , database, API, frontend, hosting , must meet strict privacy and security requirements.",
       },
       {
         title: "EHR integration is fragmented",
@@ -2342,7 +2342,7 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "Secure, compliant financial software — from payment processing to banking platforms",
+      "Secure, compliant financial software: from payment processing to banking platforms",
     pricingNote:
       "Payment integrations and financial dashboards from $25,000. Full neobanking or investment platforms from $80,000–300,000+. All projects include security architecture review and compliance documentation.",
     description:
@@ -2391,12 +2391,12 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "stripe" }],
     overview:
-      "Financial software operates under constraints that most applications never encounter: every transaction must be accurate to the cent, every piece of user data must be encrypted and auditable, and every feature must comply with regulations that vary by jurisdiction. Fintech companies — whether building payment platforms, lending tools, or investment apps — need development partners who understand these constraints deeply.\n\nAt A Major, we build fintech software that treats security and compliance as first-class engineering concerns, not afterthoughts. Our team has experience with PCI DSS cardholder data environments, KYC/AML verification flows, Plaid and Stripe integrations, and the double-entry accounting patterns that financial accuracy demands. We architect for auditability, because in fintech, if you can't prove it happened correctly, it didn't.\n\nWhether you're a startup building your first payment product or an established firm modernizing legacy banking infrastructure, we deliver software that regulators approve and users trust.",
+      "Financial software operates under constraints that most applications never encounter: every transaction must be accurate to the cent, every piece of user data must be encrypted and auditable, and every feature must comply with regulations that vary by jurisdiction. Fintech companies, whether building payment platforms, lending tools, or investment apps: need development partners who understand these constraints deeply.\n\nAt A Major, we build fintech software that treats security and compliance as first-class engineering concerns, not afterthoughts. Our team has experience with PCI DSS cardholder data environments, KYC/AML verification flows, Plaid and Stripe integrations, and the double-entry accounting patterns that financial accuracy demands. We architect for auditability, because in fintech, if you can't prove it happened correctly, it didn't.\n\nWhether you're a startup building your first payment product or an established firm modernizing legacy banking infrastructure, we deliver software that regulators approve and users trust.",
     challenges: [
       {
         title: "Regulatory compliance across jurisdictions",
         description:
-          "PCI DSS, SOC 2, PSD2, MiFID II — financial regulations vary by country and product type. Non-compliance means fines, license revocation, or worse.",
+          "PCI DSS, SOC 2, PSD2, MiFID II: financial regulations vary by country and product type. Non-compliance means fines, license revocation, or worse.",
       },
       {
         title: "Transaction accuracy at scale",
@@ -2423,12 +2423,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Design every transaction as idempotent",
         detail:
-          "Network failures happen. Idempotency keys ensure that retried payments aren't processed twice — critical for user trust and reconciliation.",
+          "Network failures happen. Idempotency keys ensure that retried payments aren't processed twice: critical for user trust and reconciliation.",
       },
       {
         tip: "Implement audit logging from the start",
         detail:
-          "Every financial action should produce an immutable log entry. Auditors and regulators will ask for this — it's far easier to build it in than bolt it on.",
+          "Every financial action should produce an immutable log entry. Auditors and regulators will ask for this: it's far easier to build it in than bolt it on.",
       },
       {
         tip: "Separate sensitive data into isolated environments",
@@ -2492,7 +2492,7 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "Custom online stores built to sell — fast, conversion-optimized, and scalable",
+      "Custom online stores built to sell: fast, conversion-optimized, and scalable",
     pricingNote:
       "Custom Shopify storefronts from $8,000. Headless e-commerce platforms with custom checkout and integrations from $25,000–80,000+. All builds include Core Web Vitals optimization.",
     description:
@@ -2506,7 +2506,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "ShoppingCart",
         title: "Custom storefront development",
         description:
-          "Unique, brand-aligned shopping experiences — not cookie-cutter templates that look like every other store in your niche.",
+          "Unique, brand-aligned shopping experiences: not cookie-cutter templates that look like every other store in your niche.",
       },
       {
         icon: "Layers",
@@ -2541,7 +2541,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "woocommerce" }, { slug: "stripe" }, { slug: "nextjs" }],
     overview:
-      "E-commerce is one of the most competitive spaces on the internet. Shoppers expect sub-second load times, seamless mobile checkout, and personalized product discovery — and they'll abandon their cart at the first sign of friction. Template-based stores can get you started, but they hit a ceiling fast: limited customization, sluggish performance under load, and rigid checkout flows that tank conversion rates.\n\nA Major builds custom e-commerce solutions that prioritize the metrics that actually drive revenue: page speed, conversion rate, and average order value. We work with headless architectures — decoupling the frontend experience from the commerce backend — so your store can be blazing fast on Next.js while still powered by Shopify, WooCommerce, or a custom product catalog behind the scenes.\n\nFrom inventory management and multi-currency support to subscription billing and wholesale portals, we build the commerce infrastructure that grows with your business instead of constraining it.",
+      "E-commerce is one of the most competitive spaces on the internet. Shoppers expect sub-second load times, seamless mobile checkout, and personalized product discovery, and they'll abandon their cart at the first sign of friction. Template-based stores can get you started, but they hit a ceiling fast: limited customization, sluggish performance under load, and rigid checkout flows that tank conversion rates.\n\nA Major builds custom e-commerce solutions that prioritize the metrics that actually drive revenue: page speed, conversion rate, and average order value. We work with headless architectures: decoupling the frontend experience from the commerce backend, so your store can be blazing fast on Next.js while still powered by Shopify, WooCommerce, or a custom product catalog behind the scenes.\n\nFrom inventory management and multi-currency support to subscription billing and wholesale portals, we build the commerce infrastructure that grows with your business instead of constraining it.",
     challenges: [
       {
         title: "Cart abandonment rates average 70%",
@@ -2583,7 +2583,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Implement structured data for Google Shopping",
         detail:
-          "Product schema markup gets your items into Google Shopping results and rich snippets — free, high-intent traffic.",
+          "Product schema markup gets your items into Google Shopping results and rich snippets: free, high-intent traffic.",
       },
     ],
     usefulLinks: [
@@ -2612,7 +2612,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Should I build a custom store or use Shopify/WooCommerce?",
         answer:
-          "For most businesses starting out, Shopify or WooCommerce with a custom theme is the best path. You get proven commerce infrastructure with room to customize. We recommend going fully custom only when you've outgrown template limitations — typically at $1M+ annual revenue or when you need features platforms can't support.",
+          "For most businesses starting out, Shopify or WooCommerce with a custom theme is the best path. You get proven commerce infrastructure with room to customize. We recommend going fully custom only when you've outgrown template limitations: typically at $1M+ annual revenue or when you need features platforms can't support.",
       },
       {
         question: "What is headless e-commerce and do I need it?",
@@ -2627,12 +2627,13 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Can you migrate my existing store to a new platform?",
         answer:
-          "Yes. We handle full e-commerce migrations — products, customers, order history, SEO redirects, and payment configurations. We've migrated stores from Magento, BigCommerce, Squarespace, and custom platforms to Shopify and WooCommerce without losing search rankings.",
+          "Yes. We handle full e-commerce migrations: products, customers, order history, SEO redirects, and payment configurations. We've migrated stores from Magento, BigCommerce, Squarespace, and custom platforms to Shopify and WooCommerce without losing search rankings.",
       },
     ],
   },
 
   // ─── EDUCATION & EDTECH ──────────────────────────────────────────
+  /* HIDDEN
   {
     slug: "education-software",
     name: "Education & EdTech",
@@ -2644,7 +2645,7 @@ const _allOfferings: OfferingConfig[] = [
     pricingNote:
       "Course platforms and student portals from $20,000. Full LMS builds with video, assessments, and progress tracking from $50,000–150,000+. Accessibility-compliant by default.",
     description:
-      "We build education technology — from learning management systems and e-learning platforms to student portals and assessment engines. Our EdTech solutions are designed for engagement, accessibility, and scale, whether you're a university, K-12 district, or corporate training provider.",
+      "We build education technology: from learning management systems and e-learning platforms to student portals and assessment engines. Our EdTech solutions are designed for engagement, accessibility, and scale, whether you're a university, K-12 district, or corporate training provider.",
     accentColor: "indigo",
     visualizationKey: "education-software",
     logo: null,
@@ -2654,7 +2655,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "GraduationCap",
         title: "Learning management systems",
         description:
-          "Custom LMS platforms with course creation, enrollment, progress tracking, and certification — tailored to your pedagogy.",
+          "Custom LMS platforms with course creation, enrollment, progress tracking, and certification: tailored to your pedagogy.",
       },
       {
         icon: "Video",
@@ -2666,7 +2667,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "ClipboardCheck",
         title: "Assessment & grading systems",
         description:
-          "Quizzes, exams, rubrics, auto-grading, and plagiarism detection — with detailed analytics on student performance.",
+          "Quizzes, exams, rubrics, auto-grading, and plagiarism detection: with detailed analytics on student performance.",
       },
       {
         icon: "Users",
@@ -2689,7 +2690,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "postgresql" }],
     overview:
-      "Education is undergoing a permanent digital transformation. Students expect on-demand access to courses, interactive content, and progress tracking from any device. Educators need tools that reduce administrative burden while providing actionable insights into student engagement and outcomes. And institutions need platforms that scale from dozens to thousands of learners without compromising performance or accessibility.\n\nOff-the-shelf LMS platforms like Moodle or Canvas cover basic needs, but they struggle with customization, branding, and integration with existing institutional systems. When your pedagogy doesn't fit into a template, you need custom EdTech — purpose-built for how your organization actually teaches and learns.\n\nA Major builds education software that treats learner engagement as the primary design metric. We create platforms with intuitive course navigation, accessible content delivery, real-time progress tracking, and assessment systems that provide meaningful feedback — not just scores. From K-12 districts to corporate training departments, our EdTech solutions are built to make learning effective and administration effortless.",
+      "Education is undergoing a permanent digital transformation. Students expect on-demand access to courses, interactive content, and progress tracking from any device. Educators need tools that reduce administrative burden while providing actionable insights into student engagement and outcomes. And institutions need platforms that scale from dozens to thousands of learners without compromising performance or accessibility.\n\nOff-the-shelf LMS platforms like Moodle or Canvas cover basic needs, but they struggle with customization, branding, and integration with existing institutional systems. When your pedagogy doesn't fit into a template, you need custom EdTech , purpose-built for how your organization actually teaches and learns.\n\nA Major builds education software that treats learner engagement as the primary design metric. We create platforms with intuitive course navigation, accessible content delivery, real-time progress tracking, and assessment systems that provide meaningful feedback , not just scores. From K-12 districts to corporate training departments, our EdTech solutions are built to make learning effective and administration effortless.",
     challenges: [
       {
         title: "Student engagement drops after initial enrollment",
@@ -2721,7 +2722,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Build in gamification and progress signals",
         detail:
-          "Badges, streaks, progress bars, and leaderboards significantly improve course completion rates — especially for self-paced learning.",
+          "Badges, streaks, progress bars, and leaderboards significantly improve course completion rates, especially for self-paced learning.",
       },
       {
         tip: "Support SCORM and xAPI from the start",
@@ -2780,6 +2781,7 @@ const _allOfferings: OfferingConfig[] = [
       },
     ],
   },
+  HIDDEN */
 
   // ─── LOGISTICS & SUPPLY CHAIN ────────────────────────────────────
   {
@@ -2789,11 +2791,11 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "Real-time visibility into your fleet, inventory, and supply chain — from warehouse to doorstep",
+      "Real-time visibility into your fleet, inventory, and supply chain: from warehouse to doorstep",
     pricingNote:
       "Fleet tracking and delivery management systems from $25,000. Full WMS/TMS platforms with ERP integrations from $60,000–200,000+. Built to handle real-time data at operational scale.",
     description:
-      "We build logistics and supply chain software that gives you full operational visibility. Fleet management, route optimization, warehouse management, and real-time shipment tracking — engineered for reliability at scale and integration with your existing ERP and WMS systems.",
+      "We build logistics and supply chain software that gives you full operational visibility. Fleet management, route optimization, warehouse management, and real-time shipment tracking: engineered for reliability at scale and integration with your existing ERP and WMS systems.",
     accentColor: "slate",
     visualizationKey: "logistics-software",
     logo: null,
@@ -2838,7 +2840,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "postgresql" }],
     overview:
-      "Supply chain complexity is increasing every year. More SKUs, faster delivery expectations, global sourcing, and volatile demand patterns mean that spreadsheets and manual processes no longer cut it. Companies that lack real-time visibility into their logistics operations lose money to inefficient routes, stockouts, overstocking, and missed delivery windows.\n\nCustom logistics software bridges the gap between off-the-shelf tools that can't handle your specific workflows and enterprise platforms that cost millions and take years to implement. At A Major, we build logistics applications that connect your warehouses, fleet, carriers, and customers into a single operational view — with the real-time data and automation that keeps goods moving efficiently.\n\nWhether you're managing a last-mile delivery fleet, operating a 3PL warehouse, or coordinating a multi-supplier supply chain, our solutions are built for the throughput and reliability your operations demand. We integrate with your existing ERP, WMS, and carrier systems so you don't have to rip and replace your entire tech stack.",
+      "Supply chain complexity is increasing every year. More SKUs, faster delivery expectations, global sourcing, and volatile demand patterns mean that spreadsheets and manual processes no longer cut it. Companies that lack real-time visibility into their logistics operations lose money to inefficient routes, stockouts, overstocking, and missed delivery windows.\n\nCustom logistics software bridges the gap between off-the-shelf tools that can't handle your specific workflows and enterprise platforms that cost millions and take years to implement. At A Major, we build logistics applications that connect your warehouses, fleet, carriers, and customers into a single operational view: with the real-time data and automation that keeps goods moving efficiently.\n\nWhether you're managing a last-mile delivery fleet, operating a 3PL warehouse, or coordinating a multi-supplier supply chain, our solutions are built for the throughput and reliability your operations demand. We integrate with your existing ERP, WMS, and carrier systems so you don't have to rip and replace your entire tech stack.",
     challenges: [
       {
         title: "Real-time tracking across fragmented systems",
@@ -2924,7 +2926,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you support mobile apps for drivers and warehouse staff?",
         answer:
-          "Yes. We build cross-platform mobile apps (React Native) for drivers, warehouse pickers, and field staff — with barcode scanning, GPS tracking, offline mode, and push notifications.",
+          "Yes. We build cross-platform mobile apps (React Native) for drivers, warehouse pickers, and field staff: with barcode scanning, GPS tracking, offline mode, and push notifications.",
       },
     ],
   },
@@ -2937,9 +2939,9 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "Move your website to a better platform — without losing rankings, traffic, or data",
+      "Move your website to a better platform: without losing rankings, traffic, or data",
     description:
-      "We handle complete website migrations — from Wix, Squarespace, Shopify, or legacy platforms to WordPress, Next.js, or custom solutions. Every migration preserves your SEO equity, content, functionality, and user experience while upgrading your technology foundation.",
+      "We handle complete website migrations: from Wix, Squarespace, Shopify, or legacy platforms to WordPress, Next.js, or custom solutions. Every migration preserves your SEO equity, content, functionality, and user experience while upgrading your technology foundation.",
     accentColor: "blue",
     visualizationKey: "website-migration",
     logo: null,
@@ -2961,7 +2963,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Database",
         title: "Content & data migration",
         description:
-          "Automated extraction and transformation of pages, blog posts, products, images, users, and custom fields — nothing left behind.",
+          "Automated extraction and transformation of pages, blog posts, products, images, users, and custom fields: nothing left behind.",
       },
       {
         icon: "ShieldCheck",
@@ -2973,17 +2975,17 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Gauge",
         title: "Performance upgrade",
         description:
-          "Migrations are an opportunity to fix performance debt — faster hosting, optimized images, cleaner code, and better Core Web Vitals.",
+          "Migrations are an opportunity to fix performance debt: faster hosting, optimized images, cleaner code, and better Core Web Vitals.",
       },
     ],
     subTechs: [{ slug: "wordpress" }, { slug: "nextjs" }, { slug: "react" }],
     overview:
-      "Website migrations are one of the highest-risk, highest-reward projects a business can undertake. When done right, a migration upgrades your performance, unlocks new features, and positions your site for long-term growth. When done wrong, you lose search rankings that took years to build, break links that drive traffic, and frustrate existing users with a degraded experience.\n\nThe reason most migrations go badly is that they're treated as simple copy-paste jobs. Real migrations require careful URL mapping, redirect strategy, content transformation, metadata preservation, and thorough post-launch monitoring. At A Major, we've migrated hundreds of sites across every major platform combination — from Wix to WordPress, Squarespace to Next.js, and Shopify to headless commerce. We follow a proven methodology that protects your SEO equity at every step.\n\nOur migration process includes pre-migration audits, URL inventory, 301 redirect mapping, content extraction and transformation, staging site validation, and 90 days of post-launch monitoring to catch and fix any ranking fluctuations.",
+      "Website migrations are one of the highest-risk, highest-reward projects a business can undertake. When done right, a migration upgrades your performance, unlocks new features, and positions your site for long-term growth. When done wrong, you lose search rankings that took years to build, break links that drive traffic, and frustrate existing users with a degraded experience.\n\nThe reason most migrations go badly is that they're treated as simple copy-paste jobs. Real migrations require careful URL mapping, redirect strategy, content transformation, metadata preservation, and thorough post-launch monitoring. At A Major, we've migrated hundreds of sites across every major platform combination: from Wix to WordPress, Squarespace to Next.js, and Shopify to headless commerce. We follow a proven methodology that protects your SEO equity at every step.\n\nOur migration process includes pre-migration audits, URL inventory, 301 redirect mapping, content extraction and transformation, staging site validation, and 90 days of post-launch monitoring to catch and fix any ranking fluctuations.",
     challenges: [
       {
         title: "SEO rankings drop after migration",
         description:
-          "Without comprehensive redirect maps and metadata preservation, search engines treat the new site as brand new — wiping out years of domain authority and keyword rankings.",
+          "Without comprehensive redirect maps and metadata preservation, search engines treat the new site as brand new: wiping out years of domain authority and keyword rankings.",
       },
       {
         title: "Content structure differs between platforms",
@@ -3101,7 +3103,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Link",
         title: "Third-party integrations",
         description:
-          "Stripe, Twilio, SendGrid, HubSpot, Salesforce, and hundreds of other service integrations — built reliably with error handling and retry logic.",
+          "Stripe, Twilio, SendGrid, HubSpot, Salesforce, and hundreds of other service integrations: built reliably with error handling and retry logic.",
       },
       {
         icon: "Bell",
@@ -3124,7 +3126,7 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "rest-api" }, { slug: "trpc" }],
     overview:
-      "APIs are the backbone of modern software. Every mobile app, SaaS product, and microservice architecture depends on well-designed APIs to function. But the difference between a good API and a bad one isn't just technical — it's business-critical. A poorly designed API creates integration friction, increases support burden, and slows down every team that depends on it. A well-designed API accelerates development, enables partnerships, and can become a product in its own right.\n\nAt A Major, we build APIs with the same care we put into user-facing interfaces. That means consistent naming conventions, predictable error responses, comprehensive documentation, versioning strategies that don't break consumers, and performance that holds under load. Whether you're building an internal API for your microservices, a public API for third-party developers, or integrating with external services like Stripe and Twilio, we deliver APIs that are reliable, well-documented, and a pleasure to work with.\n\nWe work across REST, GraphQL, and tRPC — choosing the right protocol for your use case rather than defaulting to whatever's trendy.",
+      "APIs are the backbone of modern software. Every mobile app, SaaS product, and microservice architecture depends on well-designed APIs to function. But the difference between a good API and a bad one isn't just technical , it's business-critical. A poorly designed API creates integration friction, increases support burden, and slows down every team that depends on it. A well-designed API accelerates development, enables partnerships, and can become a product in its own right.\n\nAt A Major, we build APIs with the same care we put into user-facing interfaces. That means consistent naming conventions, predictable error responses, comprehensive documentation, versioning strategies that don't break consumers, and performance that holds under load. Whether you're building an internal API for your microservices, a public API for third-party developers, or integrating with external services like Stripe and Twilio, we deliver APIs that are reliable, well-documented, and a pleasure to work with.\n\nWe work across REST, GraphQL, and tRPC , choosing the right protocol for your use case rather than defaulting to whatever's trendy.",
     challenges: [
       {
         title: "API design mistakes are expensive to fix",
@@ -3144,7 +3146,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         title: "Authentication and authorization are complex",
         description:
-          "OAuth flows, API key management, scope-based permissions, and token refresh — getting auth right requires understanding both security standards and developer experience.",
+          "OAuth flows, API key management, scope-based permissions, and token refresh: getting auth right requires understanding both security standards and developer experience.",
       },
     ],
     bestPractices: [
@@ -3156,12 +3158,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Version your API from day one",
         detail:
-          "URL-based versioning (/v1/, /v2/) or header-based versioning — pick one and implement it before your first consumer integrates. Adding versioning later is far more painful.",
+          "URL-based versioning (/v1/, /v2/) or header-based versioning: pick one and implement it before your first consumer integrates. Adding versioning later is far more painful.",
       },
       {
         tip: "Use idempotency keys for mutating operations",
         detail:
-          "Network failures cause retries. Idempotency keys ensure that retried POST/PUT requests don't create duplicate resources — critical for payments and order processing.",
+          "Network failures cause retries. Idempotency keys ensure that retried POST/PUT requests don't create duplicate resources: critical for payments and order processing.",
       },
       {
         tip: "Generate documentation from your code, not separately",
@@ -3223,7 +3225,7 @@ const _allOfferings: OfferingConfig[] = [
     pageType: "offering",
     targetAudience: "businesses",
     tagline:
-      "From idea to MVP to scale — engineering that moves at startup speed",
+      "From idea to MVP to scale: engineering that moves at startup speed",
     description:
       "We help startups go from zero to one. Whether you need an MVP to validate product-market fit, a prototype for investor demos, or a production-ready platform that scales with your first thousand users, we build fast without cutting corners that come back to bite you at Series A.",
     accentColor: "pink",
@@ -3235,7 +3237,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "Rocket",
         title: "MVP development",
         description:
-          "Focused minimum viable products that validate your core hypothesis in 6–12 weeks — not bloated v1s that take 6 months and miss the market window.",
+          "Focused minimum viable products that validate your core hypothesis in 6–12 weeks: not bloated v1s that take 6 months and miss the market window.",
       },
       {
         icon: "Lightbulb",
@@ -3247,7 +3249,7 @@ const _allOfferings: OfferingConfig[] = [
         icon: "TrendingUp",
         title: "Scalable architecture from the start",
         description:
-          "We build MVPs on production-grade foundations — so scaling from 100 to 10,000 users doesn't require a rewrite.",
+          "We build MVPs on production-grade foundations, so scaling from 100 to 10,000 users doesn't require a rewrite.",
       },
       {
         icon: "Users",
@@ -3270,12 +3272,12 @@ const _allOfferings: OfferingConfig[] = [
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "nodejs" }],
     overview:
-      "Building a startup is a race against time and runway. Every week spent on the wrong feature, the wrong architecture, or the wrong technology stack is a week closer to running out of money before finding product-market fit. Startups need development partners who understand that speed matters — but that reckless speed creates technical debt that kills companies at the scaling stage.\n\nAt A Major, we've worked with dozens of early-stage startups, and we know the pattern: build the smallest thing that tests your riskiest assumption, put it in front of real users, measure what happens, and iterate. Our MVP development process strips away nice-to-haves to focus on the core value proposition. We ship in weeks, not months — and we build on foundations (Next.js, Node.js, PostgreSQL) that won't need to be thrown away when you raise your Series A.\n\nWe also support non-technical founders with architecture decisions, technology selection, and the kind of technical due diligence that investors ask about. Whether you need a development team for three months or three years, we structure engagements that make sense for startup economics.",
+      "Building a startup is a race against time and runway. Every week spent on the wrong feature, the wrong architecture, or the wrong technology stack is a week closer to running out of money before finding product-market fit. Startups need development partners who understand that speed matters, but that reckless speed creates technical debt that kills companies at the scaling stage.\n\nAt A Major, we've worked with dozens of early-stage startups, and we know the pattern: build the smallest thing that tests your riskiest assumption, put it in front of real users, measure what happens, and iterate. Our MVP development process strips away nice-to-haves to focus on the core value proposition. We ship in weeks, not months, and we build on foundations (Next.js, Node.js, PostgreSQL) that won't need to be thrown away when you raise your Series A.\n\nWe also support non-technical founders with architecture decisions, technology selection, and the kind of technical due diligence that investors ask about. Whether you need a development team for three months or three years, we structure engagements that make sense for startup economics.",
     challenges: [
       {
         title: "Building too much before validating the idea",
         description:
-          "Most failed startups built a product nobody wanted. The key risk isn't technical — it's building the wrong thing. MVPs must be scoped ruthlessly around the riskiest assumption.",
+          "Most failed startups built a product nobody wanted. The key risk isn't technical: it's building the wrong thing. MVPs must be scoped ruthlessly around the riskiest assumption.",
       },
       {
         title: "Technical debt from moving too fast",
@@ -3307,12 +3309,12 @@ const _allOfferings: OfferingConfig[] = [
       {
         tip: "Ship in weeks, iterate based on data",
         detail:
-          "Your first version will be wrong. The goal is to be wrong quickly and cheaply, then iterate based on real user behavior — not stakeholder opinions.",
+          "Your first version will be wrong. The goal is to be wrong quickly and cheaply, then iterate based on real user behavior: not stakeholder opinions.",
       },
       {
         tip: "Write tests for your core business logic",
         detail:
-          "You don't need 100% test coverage at the MVP stage. But your payment flow, auth system, and core value proposition should be tested — these are the things that break trust.",
+          "You don't need 100% test coverage at the MVP stage. But your payment flow, auth system, and core value proposition should be tested: these are the things that break trust.",
       },
     ],
     usefulLinks: [
@@ -3351,7 +3353,7 @@ const _allOfferings: OfferingConfig[] = [
       {
         question: "Do you work for equity instead of cash?",
         answer:
-          "We primarily work on cash engagements, but we occasionally take equity positions in startups we're especially excited about — usually as a hybrid (reduced rate + equity). We're transparent about when equity makes sense for both sides.",
+          "We primarily work on cash engagements, but we occasionally take equity positions in startups we're especially excited about: usually as a hybrid (reduced rate + equity). We're transparent about when equity makes sense for both sides.",
       },
       {
         question: "Will the code be maintainable when we hire our own team?",
@@ -3360,6 +3362,976 @@ const _allOfferings: OfferingConfig[] = [
       },
     ],
   },
+
+  // ─── COPYWRITING ───────────────────────────────────────────────
+  {
+    slug: "copywriting",
+    name: "Copywriting",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "both",
+    tagline:
+      "Words that convert: landing pages, ads, and website copy that drive action",
+    pricingNote:
+      "Landing page copy from $800. Full website copy (5–8 pages) from $2,500. Ad copy packages (3 variants × 5 formats) from $600. Fixed-price quotes after a 20-min brief.",
+    description:
+      "We write high-converting copy for websites, landing pages, and ads: combining AI-assisted drafting with human editorial judgment. Every deliverable is brief-driven, on-brand, and optimized for your specific audience and goal.",
+    accentColor: "amber",
+    visualizationKey: "web-design",
+    logo: null,
+    lucideIcon: "PenLine",
+    features: [
+      {
+        icon: "PenLine",
+        title: "Landing page copy",
+        description:
+          "Hero headlines, subheads, benefit bullets, social proof sections, and CTAs structured around conversion best practices.",
+      },
+      {
+        icon: "Globe",
+        title: "Full website copy",
+        description:
+          "Home, About, Services, and Contact pages written with consistent voice, clear hierarchy, and SEO-friendly structure.",
+      },
+      {
+        icon: "Megaphone",
+        title: "Ad copy",
+        description:
+          "Google Search ads, Meta ad copy, and LinkedIn sponsored content: multiple variants per format for A/B testing.",
+      },
+      {
+        icon: "Target",
+        title: "Conversion-focused structure",
+        description:
+          "Every page is structured around a single goal: getting the reader to take the next step. We use proven frameworks (AIDA, PAS, jobs-to-be-done) adapted to your context.",
+      },
+      {
+        icon: "Sparkles",
+        title: "Brand voice alignment",
+        description:
+          "We build or follow your brand voice guide so every word sounds like you: not generic AI output.",
+      },
+      {
+        icon: "Search",
+        title: "SEO keyword integration",
+        description:
+          "Target keywords woven naturally into copy without sacrificing readability or tone.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Great copy is the difference between a visitor who leaves in 3 seconds and one who books a call. We apply AI-assisted drafting to produce high-quality first drafts fast, then layer on human editorial judgment to ensure every word earns its place. Our copywriters understand both marketing psychology and SEO, so your pages rank and convert.",
+    challenges: [
+      {
+        title: "Generic AI output",
+        description:
+          "AI-generated copy often sounds flat and interchangeable. We fix this by combining AI speed with editorial review, brand voice guidelines, and real customer language from interviews and reviews.",
+      },
+      {
+        title: "Missing the brief",
+        description:
+          "Copy that doesn't reflect the actual customer pain points or unique positioning fails to convert. We start every project with a structured brief to capture audience, objections, and differentiators.",
+      },
+      {
+        title: "Copy-design mismatch",
+        description:
+          "Copy written in isolation rarely fits the actual layout. We write with layout in mind: specifying word counts, headline hierarchies, and CTA placement from the start.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Start with the brief",
+        detail:
+          "Before writing a word, we document target audience, key pain points, unique differentiators, tone of voice, and the one thing we want readers to do. Everything else flows from this.",
+      },
+      {
+        tip: "Write for one reader",
+        detail:
+          "The best copy speaks directly to a single person, not a demographic. We keep a specific customer persona in mind throughout every draft.",
+      },
+      {
+        tip: "Test headlines first",
+        detail:
+          "80% of readers never get past the headline. We spend disproportionate time on headline options and recommend testing at least 3 variants.",
+      },
+      {
+        tip: "Edit ruthlessly",
+        detail:
+          "We cut every word that doesn't carry its weight. Shorter, tighter copy consistently outperforms longer copy for most digital contexts.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Do you write copy in languages other than English?",
+        answer:
+          "Currently we write primarily in English. We can produce Mandarin and Malay copy for Singapore-market clients on request: contact us to discuss.",
+      },
+      {
+        question: "How do you handle brand voice for a new company?",
+        answer:
+          "We run a short brand voice workshop as part of the brief: covering tone, vocabulary dos and don'ts, and example comparators. We then produce a one-page voice guide and apply it consistently across all deliverables.",
+      },
+      {
+        question: "How many revision rounds are included?",
+        answer:
+          "Two rounds of revisions are included in every package. Additional rounds are billed at our hourly rate. In practice, most projects complete in one or two rounds when the brief is thorough.",
+      },
+      {
+        question: "Can you write copy for technical products?",
+        answer:
+          "Yes. This is a core strength. Our team has engineering backgrounds, so we translate complex technical products into clear, benefit-driven language without dumbing things down.",
+      },
+    ],
+  },
+
+  // ─── CONTENT WRITING ───────────────────────────────────────────
+  {
+    slug: "content-writing",
+    name: "Content Writing",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "both",
+    tagline:
+      "SEO articles, blog posts, and thought leadership that build organic traffic",
+    pricingNote:
+      "Individual articles from $300 (1,500 words). Monthly content retainers (4–8 articles/month) from $1,200/month. Topic research and content strategy included.",
+    description:
+      "We produce long-form content that ranks: blog posts, SEO articles, and thought leadership pieces researched, written, and optimised for search. AI handles first drafts and keyword integration; human editors ensure accuracy, depth, and genuine insight.",
+    accentColor: "green",
+    visualizationKey: "content-writing",
+    logo: null,
+    lucideIcon: "FileText",
+    features: [
+      {
+        icon: "FileText",
+        title: "Long-form SEO articles",
+        description:
+          "1,000–3,000 word articles built around target keywords, search intent, and topical authority: optimised for Google's helpful content standards.",
+      },
+      {
+        icon: "TrendingUp",
+        title: "Keyword and topic research",
+        description:
+          "We identify low-competition, high-intent keywords your audience is actually searching for, then build a content calendar around them.",
+      },
+      {
+        icon: "BookOpen",
+        title: "Thought leadership",
+        description:
+          "Bylined articles, LinkedIn posts, and industry commentary that position your founders and team as credible voices in your space.",
+      },
+      {
+        icon: "Link",
+        title: "Internal linking strategy",
+        description:
+          "Every article is linked into your existing content structure to pass authority and reduce orphan pages.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Content refresh and optimisation",
+        description:
+          "We audit and update existing articles that have dropped in rankings: often faster ROI than writing new content from scratch.",
+      },
+      {
+        icon: "BarChart",
+        title: "Performance tracking",
+        description:
+          "Monthly reports on organic impressions, clicks, and ranking movements for all published content.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Content is the compounding asset of digital marketing: every article you publish continues driving traffic for years. We combine AI-assisted research and drafting with human editorial oversight to produce content that genuinely helps readers and ranks well. Our process starts with keyword research, flows through structured briefs, and ends with publish-ready copy that aligns with Google's quality guidelines.",
+    challenges: [
+      {
+        title: "Thin content that doesn't rank",
+        description:
+          "Short, generic articles rarely rank in competitive niches. We write comprehensive, well-researched pieces that cover topics more thoroughly than the current top results.",
+      },
+      {
+        title: "Content that doesn't convert",
+        description:
+          "Traffic without conversion is vanity. We include contextual CTAs, lead magnets, and related content links to move readers further down the funnel.",
+      },
+      {
+        title: "Inconsistent publishing cadence",
+        description:
+          "One-off articles rarely build authority. Consistent monthly publishing is what compounds into measurable organic growth: our retainer model makes this sustainable.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Match search intent first",
+        detail:
+          "Every article starts with understanding what the searcher actually wants: informational, navigational, or transactional, and matching the content format accordingly.",
+      },
+      {
+        tip: "Cover the topic comprehensively",
+        detail:
+          "We aim to be the last article a reader needs to read on a topic: covering sub-questions, edge cases, and related concepts that competitors miss.",
+      },
+      {
+        tip: "Use real examples and data",
+        detail:
+          "Generic advice ranks poorly and converts poorly. We anchor every article in concrete examples, case studies, and up-to-date statistics.",
+      },
+      {
+        tip: "Optimise the title and meta description",
+        detail:
+          "Click-through rate from search results is a ranking factor. We write titles and meta descriptions that earn the click as well as the ranking.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Do you handle publishing, or just writing?",
+        answer:
+          "We handle both. For clients on CMS platforms like WordPress, Webflow, or Notion, we can publish directly and handle all formatting, image alt text, and meta tags.",
+      },
+      {
+        question: "How long before we see organic traffic results?",
+        answer:
+          "SEO content typically takes 3–6 months to rank meaningfully in competitive niches. Lower-competition topics and featured snippets can appear in 4–8 weeks. We set realistic expectations during onboarding and track progress monthly.",
+      },
+      {
+        question: "Can you write about highly technical topics?",
+        answer:
+          "Yes. Our team includes engineers who can write accurately about software, infrastructure, APIs, and developer tooling without needing extensive hand-holding.",
+      },
+      {
+        question: "What if we already have content that isn't performing?",
+        answer:
+          "We offer content audits as a standalone service. We review your existing articles, identify which ones have ranking potential, and produce an update plan: often this outperforms creating new content from scratch.",
+      },
+    ],
+  },
+
+  // ─── EMAIL MARKETING ───────────────────────────────────────────
+  {
+    slug: "email-marketing",
+    name: "Email Marketing",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "both",
+    tagline:
+      "Drip sequences, newsletters, and onboarding flows that retain and convert",
+    pricingNote:
+      "Welcome/onboarding sequence (5–7 emails) from $1,200. Monthly newsletter production from $600/month. Full lifecycle email strategy and build from $3,500.",
+    description:
+      "We design and write email sequences that nurture leads, onboard users, and retain customers: from single welcome emails to multi-stage drip campaigns. AI accelerates copy production; human strategy ensures the right message reaches the right person at the right time.",
+    accentColor: "blue",
+    visualizationKey: "email-marketing",
+    logo: null,
+    lucideIcon: "Mail",
+    features: [
+      {
+        icon: "Mail",
+        title: "Welcome and onboarding sequences",
+        description:
+          "First-impression email flows that introduce your product, guide new users to their first win, and reduce early churn.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Drip nurture campaigns",
+        description:
+          "Multi-email sequences that educate leads over days or weeks, building trust before asking for the sale.",
+      },
+      {
+        icon: "BookOpen",
+        title: "Newsletters",
+        description:
+          "Regular newsletters that keep your audience engaged: curated content, company updates, or thought leadership, produced and scheduled monthly.",
+      },
+      {
+        icon: "Bell",
+        title: "Re-engagement campaigns",
+        description:
+          "Win-back sequences for inactive subscribers, with subject line testing and sunset flows for unresponsive contacts.",
+      },
+      {
+        icon: "BarChart",
+        title: "Performance analytics",
+        description:
+          "Open rate, click rate, and conversion tracking for every campaign, with monthly reporting and optimisation recommendations.",
+      },
+      {
+        icon: "Target",
+        title: "Segmentation strategy",
+        description:
+          "Audience segmentation by behaviour, signup source, or engagement level so each subscriber gets relevant content.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Email remains the highest-ROI digital marketing channel: averaging $36 return per $1 spent. But most email programs underperform because they treat all subscribers the same, send too infrequently or too often, and write copy that reads like bulk mail. We build email programs around your specific customer journey, with sequences timed and personalised to drive measurable action.",
+    challenges: [
+      {
+        title: "Low open rates",
+        description:
+          "Most emails compete in crowded inboxes. We improve open rates through subject line testing, sender name optimisation, and send-time experimentation.",
+      },
+      {
+        title: "One-size-fits-all messaging",
+        description:
+          "Blasting the same email to your entire list suppresses engagement and drives unsubscribes. Segmentation and conditional logic personalise the experience at scale.",
+      },
+      {
+        title: "No lifecycle strategy",
+        description:
+          "Sending ad-hoc newsletters without a connected nurture sequence means leaving conversion opportunities on the table. We map the full customer journey before writing a single email.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Write one email, one goal",
+        detail:
+          "Each email in a sequence has exactly one job. Multiple CTAs and mixed messages dilute action. We enforce this discipline across every campaign we write.",
+      },
+      {
+        tip: "Optimise for mobile first",
+        detail:
+          "Over 60% of emails are opened on mobile. Short subject lines, single-column layouts, and large tap targets are non-negotiable.",
+      },
+      {
+        tip: "Test subject lines systematically",
+        detail:
+          "Subject lines determine open rates. We A/B test at least 2 subject line variants for every campaign and document learnings for future sends.",
+      },
+      {
+        tip: "Honour unsubscribes immediately",
+        detail:
+          "Every sequence we build includes proper unsubscribe handling and list hygiene: protecting your sender reputation and staying compliant with CAN-SPAM and GDPR.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Which email platforms do you work with?",
+        answer:
+          "We work with Mailchimp, Klaviyo, ConvertKit (Kit), ActiveCampaign, Loops, and Resend. If you have a platform preference, we'll work within it. If you're starting fresh, we'll recommend the right tool for your scale and needs.",
+      },
+      {
+        question: "Do you handle list building as well?",
+        answer:
+          "We can design lead magnet landing pages and signup forms, but we don't run paid acquisition campaigns. We focus on converting and retaining the subscribers you already have or acquire organically.",
+      },
+      {
+        question: "How do you handle GDPR and CAN-SPAM compliance?",
+        answer:
+          "Every sequence we build includes proper consent collection, unsubscribe links, physical address footers, and list management practices that comply with GDPR, CAN-SPAM, and Singapore's PDPA.",
+      },
+      {
+        question: "Can you take over an existing email program?",
+        answer:
+          "Yes. We start with an audit of your current sequences, open rates, and list health, then produce a prioritised improvement plan before writing new content.",
+      },
+    ],
+  },
+
+  // ─── TECHNICAL DOCUMENTATION ───────────────────────────────────
+  {
+    slug: "technical-documentation",
+    name: "Technical Documentation",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "API docs, developer guides, and user documentation written by engineers",
+    pricingNote:
+      "API reference documentation from $1,500. Full developer docs site (setup, guides, API reference) from $4,000. Ongoing docs maintenance retainers from $800/month.",
+    description:
+      "We write technical documentation that developers actually use: API references, integration guides, README files, and user manuals. Our writers have engineering backgrounds, so we understand the code and write docs that are accurate, complete, and scannable.",
+    accentColor: "slate",
+    visualizationKey: "technical-documentation",
+    logo: null,
+    lucideIcon: "BookOpen",
+    features: [
+      {
+        icon: "Code",
+        title: "API reference documentation",
+        description:
+          "Endpoint references with request/response examples, authentication guides, error code tables, and SDK quickstarts.",
+      },
+      {
+        icon: "BookOpen",
+        title: "Developer guides and tutorials",
+        description:
+          "Step-by-step integration guides, getting-started tutorials, and conceptual explainers that reduce time-to-first-success.",
+      },
+      {
+        icon: "FileText",
+        title: "README and repository docs",
+        description:
+          "Project READMEs, CONTRIBUTING guides, architecture decision records (ADRs), and inline code documentation.",
+      },
+      {
+        icon: "Users",
+        title: "End-user documentation",
+        description:
+          "User manuals, help centre articles, and onboarding guides written for non-technical audiences.",
+      },
+      {
+        icon: "Search",
+        title: "Docs site setup",
+        description:
+          "We set up and configure documentation sites using Mintlify, Docusaurus, or GitBook: with search, versioning, and custom styling.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Docs maintenance retainers",
+        description:
+          "Ongoing monthly retainers to keep docs in sync with product changes, so your documentation doesn't become a liability.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Bad documentation is a silent revenue killer: it increases support volume, slows integrations, and erodes developer trust. Good documentation is a product in itself. We treat docs as first-class deliverables: structured around what developers actually need to know, written with precision, and maintained as the product evolves. AI accelerates first-draft production; our engineering background ensures accuracy.",
+    challenges: [
+      {
+        title: "Documentation drift",
+        description:
+          "Docs written at launch quickly fall out of sync with the actual product. We build documentation alongside development and offer maintenance retainers to prevent drift.",
+      },
+      {
+        title: "Missing the developer mental model",
+        description:
+          "Docs written by non-technical writers often miss what developers actually need to know first. Our engineering background means we structure docs around real developer workflows.",
+      },
+      {
+        title: "No discoverability",
+        description:
+          "Even great docs fail if developers can't find what they need. We design information architecture and search indexing so the right answer surfaces in under 30 seconds.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Separate reference from guide",
+        detail:
+          "API reference and conceptual guides serve different needs. We structure documentation into four types: tutorials, how-to guides, reference, and explanation: following the Diátaxis framework.",
+      },
+      {
+        tip: "Show, don't just tell",
+        detail:
+          "Every guide includes working code examples, not just descriptions. Examples are tested and copy-pasteable.",
+      },
+      {
+        tip: "Write for the first five minutes",
+        detail:
+          "The getting-started experience determines whether a developer persists. We obsess over the first five minutes: from signup to first successful API call.",
+      },
+      {
+        tip: "Version and changelog everything",
+        detail:
+          "Developers need to know what changed between versions. We maintain changelogs and version docs so migration paths are always clear.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Do you need access to our codebase to write docs?",
+        answer:
+          "For API reference docs, yes: we review the actual code or OpenAPI spec to ensure accuracy. For user-facing docs, we work from product walkthroughs, existing materials, and interviews with your team.",
+      },
+      {
+        question: "What documentation platforms do you use?",
+        answer:
+          "We work with Mintlify, Docusaurus, GitBook, Notion, and Confluence. We can also write docs in plain Markdown for any platform. We'll recommend the right tool based on your audience and existing stack.",
+      },
+      {
+        question: "Can you document a legacy system with poor existing docs?",
+        answer:
+          "Yes. This is common. We start with a discovery phase: reading existing code, interviewing your engineers, and auditing what exists. From there we produce a docs inventory and a prioritised writing plan.",
+      },
+      {
+        question: "Do you offer docs translation?",
+        answer:
+          "We currently write in English. For Singapore-market clients, we can produce key sections in Mandarin on request. Full multi-language docs are outside our current scope.",
+      },
+    ],
+  },
+
+  // ─── WORKFLOW AUTOMATION ───────────────────────────────────────
+  {
+    slug: "workflow-automation",
+    name: "Workflow Automation",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "Automate repetitive operations with n8n, Make, and custom integrations",
+    pricingNote:
+      "Single automation workflow from $500. Multi-step automation suite from $2,000. Monthly automation retainer (build + maintain) from $1,500/month.",
+    description:
+      "We design and build workflow automations that eliminate manual, repetitive work: connecting your tools, triggering actions on events, and routing data without human intervention. From simple Zapier-style triggers to complex multi-step pipelines with conditional logic and error handling.",
+    accentColor: "orange",
+    visualizationKey: "workflow-automation",
+    logo: null,
+    lucideIcon: "Workflow",
+    features: [
+      {
+        icon: "Workflow",
+        title: "Multi-step workflow design",
+        description:
+          "End-to-end automation blueprints that map triggers, conditions, actions, and error paths before a single node is built.",
+      },
+      {
+        icon: "Zap",
+        title: "n8n and Make build",
+        description:
+          "We build and host automation workflows in n8n (self-hosted or cloud) and Make: covering API calls, webhooks, data transforms, and conditional branching.",
+      },
+      {
+        icon: "Link",
+        title: "SaaS integrations",
+        description:
+          "Connect CRMs, project management tools, communication platforms, databases, and custom APIs: HubSpot, Notion, Slack, Airtable, Google Workspace, and more.",
+      },
+      {
+        icon: "Code",
+        title: "Custom API connectors",
+        description:
+          "For tools without native integrations, we write custom HTTP nodes and scripts that connect any REST or GraphQL API.",
+      },
+      {
+        icon: "Shield",
+        title: "Error handling and alerting",
+        description:
+          "Production automations include retry logic, error branches, and Slack/email alerts so you know immediately when something breaks.",
+      },
+      {
+        icon: "BarChart",
+        title: "Monitoring and maintenance",
+        description:
+          "Monthly review of automation performance, failure rates, and volume: plus proactive updates when connected APIs change.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Most growing businesses have the same problem: their tools don't talk to each other, so people fill the gaps manually: copying data between spreadsheets, sending handoff messages, triggering reports by hand. We eliminate that overhead by building reliable, documented automations that run in the background. Our approach starts with process mapping before touching any tool, so we build the right automation, not just a fast one.",
+    challenges: [
+      {
+        title: "Brittle point-to-point integrations",
+        description:
+          "Automations built without error handling break silently and cause data loss. We build every workflow with explicit error paths, retries, and failure alerts.",
+      },
+      {
+        title: "Automating the wrong process",
+        description:
+          "Automating a broken process makes it break faster. We audit the underlying process before automating: sometimes the best ROI is simplifying first, then automating.",
+      },
+      {
+        title: "Vendor lock-in",
+        description:
+          "Zapier and Make can become expensive at scale. We evaluate build vs. buy for each workflow and default to self-hosted n8n where volume makes it cost-effective.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Map the process before the tool",
+        detail:
+          "Every automation starts with a process flowchart documenting every trigger, decision point, action, and exception: before opening n8n or Make.",
+      },
+      {
+        tip: "Build idempotent workflows",
+        detail:
+          "Workflows should produce the same result whether they run once or ten times for the same event. We design for idempotency to prevent duplicate data and ghost actions.",
+      },
+      {
+        tip: "Log everything",
+        detail:
+          "Every workflow writes execution logs to a central store. When something goes wrong, we need a complete audit trail: not just the last error message.",
+      },
+      {
+        tip: "Document for handover",
+        detail:
+          "Every automation we build includes a one-page runbook: what it does, what it connects, how to pause it, and how to debug common failures.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Which tools can you connect?",
+        answer:
+          "Any tool with an API or webhook. Common integrations include HubSpot, Salesforce, Notion, Airtable, Google Workspace, Slack, Stripe, Xero, and custom internal systems. If it has an API, we can connect it.",
+      },
+      {
+        question: "Do you self-host n8n or use cloud?",
+        answer:
+          "We recommend self-hosted n8n on a $10/month VPS for clients who need cost control at volume. For simpler needs or quick starts, n8n Cloud or Make work well. We advise based on your expected automation volume and IT preferences.",
+      },
+      {
+        question: "What happens when a connected API changes?",
+        answer:
+          "API changes break automations silently if you're not monitoring. Our maintenance retainer includes proactive monitoring, API version tracking, and same-week fixes for breaking changes.",
+      },
+      {
+        question: "Can you automate processes that involve PDFs or documents?",
+        answer:
+          "Yes. We can extract data from PDFs, generate documents from templates, and route them through approval workflows: combining automation platforms with AI document processing where needed.",
+      },
+    ],
+  },
+
+  // ─── AI CHATBOT ────────────────────────────────────────────────
+  {
+    slug: "ai-chatbot",
+    name: "AI Chatbot",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "both",
+    tagline:
+      "Custom AI assistants for customer support, lead qualification, and knowledge retrieval",
+    pricingNote:
+      "Basic FAQ chatbot from $1,500. Full RAG-powered knowledge assistant from $4,000. Ongoing hosting and improvement retainers from $500/month.",
+    description:
+      "We build custom AI chatbots trained on your own content , product docs, FAQs, policies, and knowledge bases , that answer customer questions accurately, qualify leads, and reduce support volume. Built on proven RAG (Retrieval-Augmented Generation) architecture using Claude or GPT.",
+    accentColor: "purple",
+    visualizationKey: "ai-chatbot",
+    logo: null,
+    lucideIcon: "Bot",
+    features: [
+      {
+        icon: "Bot",
+        title: "RAG knowledge assistants",
+        description:
+          "Chatbots that retrieve answers from your own documents, FAQs, and knowledge base: not hallucinated from general training data.",
+      },
+      {
+        icon: "MessageSquare",
+        title: "Website chat widget",
+        description:
+          "Embeddable chat widget for your website: branded to match your design, with escalation to human support when needed.",
+      },
+      {
+        icon: "Target",
+        title: "Lead qualification bots",
+        description:
+          "Conversational flows that qualify inbound leads, collect contact details, and route hot prospects to your sales team.",
+      },
+      {
+        icon: "Database",
+        title: "Knowledge base ingestion",
+        description:
+          "We ingest your existing documentation , PDFs, Notion pages, Confluence docs, web pages , into a vector database for retrieval.",
+      },
+      {
+        icon: "Shield",
+        title: "Guardrails and tone control",
+        description:
+          "System prompts, topic boundaries, and escalation logic that keep the bot on-brand and prevent off-topic or harmful responses.",
+      },
+      {
+        icon: "BarChart",
+        title: "Analytics and improvement",
+        description:
+          "Every conversation is logged. We review low-confidence answers monthly and expand the knowledge base to close gaps.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "AI chatbots built on your own content are a force multiplier for lean teams: they handle repetitive questions instantly, 24/7, at negligible marginal cost. Unlike generic chatbots that frustrate users with irrelevant answers, RAG-powered assistants retrieve answers directly from your documentation, ensuring accuracy and on-brand tone. We build, deploy, and maintain these systems so your team focuses on higher-value work.",
+    challenges: [
+      {
+        title: "Hallucination and inaccuracy",
+        description:
+          "General-purpose LLMs make things up. RAG architecture grounds every response in your actual content, if the answer isn't in your knowledge base, the bot says so rather than fabricating.",
+      },
+      {
+        title: "Off-brand responses",
+        description:
+          "Chatbots without guardrails wander into off-topic territory. We build explicit topic boundaries, persona prompts, and fallback responses that keep the bot on-mission.",
+      },
+      {
+        title: "Knowledge base going stale",
+        description:
+          "A chatbot is only as good as its knowledge base. We build ingestion pipelines that automatically re-sync with your documentation when it changes.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Ground responses in your content",
+        detail:
+          "Every answer should cite a source from your knowledge base. This prevents hallucination and builds user trust: they can verify the answer themselves.",
+      },
+      {
+        tip: "Design graceful escalation",
+        detail:
+          "When the bot can't answer confidently, it should hand off to a human immediately: not loop, apologise repeatedly, or give a low-confidence answer. We build explicit escalation paths.",
+      },
+      {
+        tip: "Start narrow, expand deliberately",
+        detail:
+          "The best chatbots do one thing extremely well before expanding scope. We recommend starting with your top 20 most common support questions and proving value before broadening.",
+      },
+      {
+        tip: "Review conversations regularly",
+        detail:
+          "Conversation logs are the most valuable feedback loop. We review low-confidence and escalated conversations monthly to identify knowledge gaps and improve the system.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Which AI models do you use?",
+        answer:
+          "We build on Claude (Anthropic) and GPT-4 (OpenAI) depending on use case and budget. For most customer-facing chatbots, Claude Haiku or GPT-4o-mini provide excellent quality at low cost. We recommend the right model after scoping.",
+      },
+      {
+        question: "Can the chatbot integrate with our CRM or helpdesk?",
+        answer:
+          "Yes. We connect chatbot conversations to HubSpot, Intercom, Zendesk, and other CRMs: creating contacts, logging conversations, and triggering support tickets automatically.",
+      },
+      {
+        question: "How do you keep the knowledge base up to date?",
+        answer:
+          "We build automated ingestion pipelines that re-sync with your source documents on a schedule or on push. For Notion and Confluence, we connect directly to their APIs. For static files, we set up a simple upload workflow.",
+      },
+      {
+        question: "Is the chatbot data private?",
+        answer:
+          "Yes. We architect chatbots so your knowledge base and conversation logs stay within your own infrastructure or a private cloud account: not shared with third-party AI training datasets. We use Anthropic and OpenAI APIs with data processing agreements in place.",
+      },
+    ],
+  },
+
+  // ─── BRAND MESSAGING ───────────────────────────────────────────
+  /* HIDDEN
+  {
+    slug: "brand-messaging",
+    name: "Brand Messaging",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "both",
+    tagline: "Positioning, messaging frameworks, and brand voice that make you distinct",
+    pricingNote:
+      "Brand messaging sprint (positioning + voice guide + messaging framework) from $2,500. Includes 2 rounds of refinement and a final brand messaging document.",
+    description:
+      "We help early-stage companies and growing teams define what they stand for, who they're for, and how to talk about it. The output is a practical brand messaging framework , positioning statement, value proposition, tone of voice guide, and key message pillars , that keeps all your copy consistent.",
+    accentColor: "rose",
+    visualizationKey: "web-design",
+    logo: null,
+    lucideIcon: "Sparkles",
+    features: [
+      {
+        icon: "Target",
+        title: "Positioning statement",
+        description:
+          "A single, clear statement of who you serve, what you do, and why you're different: the foundation everything else is built on.",
+      },
+      {
+        icon: "Sparkles",
+        title: "Brand voice guide",
+        description:
+          "Tone, vocabulary, sentence style, and dos/don'ts: a practical guide any writer can apply consistently.",
+      },
+      {
+        icon: "Layers",
+        title: "Message pillar framework",
+        description:
+          "Three to five core message pillars with supporting proof points: the building blocks of all your marketing and sales content.",
+      },
+      {
+        icon: "Users",
+        title: "Audience and persona definition",
+        description:
+          "Primary and secondary audience profiles with jobs-to-be-done, pain points, objections, and language patterns.",
+      },
+      {
+        icon: "FileText",
+        title: "Tagline and boilerplate variants",
+        description:
+          "Short, medium, and long company descriptions for different contexts: website about, LinkedIn summary, pitch deck, press release.",
+      },
+      {
+        icon: "PenLine",
+        title: "Applied copy examples",
+        description:
+          "We apply the framework to real copy: homepage headline, email subject line, LinkedIn post, so you see exactly how it works in practice.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "Most early-stage companies describe what they do, not why it matters to a specific person. The result is generic copy that could belong to any competitor. Brand messaging work fixes this at the source: by articulating a clear, differentiated position before a word of copy is written. The output is a reusable framework that makes every future piece of content faster to write and more effective.",
+    challenges: [
+      {
+        title: "Sounding like everyone else",
+        description:
+          "Generic B2B SaaS language ('streamline your workflow', 'all-in-one platform') is invisible to buyers. We build positioning that highlights genuine differentiation, not category-speak.",
+      },
+      {
+        title: "Inconsistent voice across channels",
+        description:
+          "When different team members write copy without a shared voice guide, the brand sounds fragmented. A single reference document solves this: without requiring a style police.",
+      },
+      {
+        title: "Messaging that doesn't match buyer language",
+        description:
+          "Internal company language rarely matches how customers describe their problems. We anchor messaging in actual customer language, gathered through interviews or review mining.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Position against a category, not a competitor",
+        detail:           "The best positioning defines a category you can own: not a feature comparison against an incumbent. We help you find the frame where you win.",
+      },
+      {
+        tip: "Write for the sceptic",
+        detail:           "Assume every reader is scanning for reasons to dismiss you. Every claim needs a proof point; every benefit needs a specificity that prevents eye-rolling.",
+      },
+      {
+        tip: "Test messaging with real customers",
+        detail:           "The best messaging is discovered, not invented. We recommend at least 3 customer interviews before finalising your positioning, even short 20-minute calls reveal language gold.",
+      },
+      {
+        tip: "Keep the voice guide short",
+        detail:           "A 50-page brand bible is never used. We produce a one-page voice guide and a two-page messaging framework: short enough to actually read, specific enough to actually help.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Do we need to have an existing brand to work with you?",
+        answer:
+          "No. We work with pre-launch companies defining their message for the first time, as well as established companies repositioning after a pivot or product expansion.",
+      },
+      {
+        question: "How does this differ from a full brand identity project?",
+        answer:
+          "Brand messaging focuses on words: positioning, voice, and message architecture. It doesn't include visual identity (logo, colours, typography). We recommend completing messaging before visual identity so design reflects strategy, not the other way around.",
+      },
+      {
+        question: "Will this replace our marketing agency or copywriter?",
+        answer:
+          "No. It makes them more effective. The messaging framework becomes the brief for every copywriter, designer, and agency you work with. It reduces revision cycles and ensures everyone is working from the same foundation.",
+      },
+      {
+        question: "How long does the brand messaging sprint take?",
+        answer:
+          "Typically 2–3 weeks from kickoff to final deliverable. We run a 90-minute discovery workshop, produce a draft framework, and iterate through two rounds of feedback before finalising.",
+      },
+    ],
+  },
+  HIDDEN */
+
+  // ─── PITCH DECKS ───────────────────────────────────────────────
+  /* HIDDEN
+  {
+    slug: "pitch-decks",
+    name: "Pitch Decks",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline: "Investor decks and sales presentations that communicate clearly and convert",
+    pricingNote:
+      "Investor pitch deck (10–15 slides, copy + design) from $2,500. Sales presentation deck from $1,800. Narrative and copy only (no design) from $1,200.",
+    description:
+      "We produce investor-ready pitch decks and sales presentations: handling both narrative structure and visual design. Our decks are built on clear investment thesis or sales logic first, then translated into slides that communicate the essentials without clutter.",
+    accentColor: "indigo",
+    visualizationKey: "consultancy",
+    logo: null,
+    lucideIcon: "Presentation",
+    features: [
+      {
+        icon: "Presentation",
+        title: "Investor pitch decks",
+        description:
+          "Seed, Series A, and growth-stage decks covering problem, solution, market, traction, team, and ask: structured for how investors actually evaluate deals.",
+      },
+      {
+        icon: "Target",
+        title: "Sales and partnership decks",
+        description:
+          "Sales presentations and partner decks that focus on ROI, proof points, and next steps: built for B2B sales cycles.",
+      },
+      {
+        icon: "FileText",
+        title: "Narrative development",
+        description:
+          "We structure the story before touching slides: defining the core thesis, the arc of the narrative, and the proof points at each stage.",
+      },
+      {
+        icon: "Palette",
+        title: "Slide design",
+        description:
+          "Clean, professional slide design in Figma or PowerPoint: on-brand, data-visualised, and free of the 'consultant deck' aesthetic.",
+      },
+      {
+        icon: "BarChart",
+        title: "Data visualisation",
+        description:
+          "Charts, graphs, and infographics that communicate traction, market size, and metrics clearly: without chartjunk.",
+      },
+      {
+        icon: "RefreshCw",
+        title: "Revision and iteration support",
+        description:
+          "We support you through investor feedback loops: quickly iterating the deck as you learn what questions arise in meetings.",
+      },
+    ],
+    subTechs: [],
+    overview:
+      "A pitch deck has one job: get you to the next meeting. Most decks fail because they lead with features instead of the investment thesis, cram too much onto each slide, or bury the traction that investors care about most. We structure decks around what a specific audience needs to believe to say yes: then design slides that communicate that belief as efficiently as possible.",
+    challenges: [
+      {
+        title: "Too much information per slide",
+        description:
+          "Slides are not documents. Each slide should communicate one idea. We enforce this discipline ruthlessly: cutting slides down to their essential message and moving supporting detail to an appendix.",
+      },
+      {
+        title: "Narrative that starts in the wrong place",
+        description:
+          "Most founders open with the solution before establishing the problem is real and large. We structure the narrative to build the case before presenting the answer.",
+      },
+      {
+        title: "Traction buried at the back",
+        description:
+          "Investors want to see traction early. We surface the most compelling evidence of momentum in the first third of the deck: not slide 12.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "One idea per slide",
+        detail:           "If you can't summarise a slide in one sentence, it contains too many ideas. We write a one-sentence title for every slide that stands alone as the key takeaway.",
+      },
+      {
+        tip: "Lead with the ask",
+        detail:           "Investors who know upfront what you're raising and at what stage pay closer attention. We put the ask on slide 2 , after the hook , not at the end.",
+      },
+      {
+        tip: "Show don't tell on traction",
+        detail:           "Numbers beat adjectives. 'Strong growth' means nothing; '$180k ARR, 23% MoM for 6 months' is a signal. We replace all qualitative traction language with specific metrics.",
+      },
+      {
+        tip: "Build a separate appendix",
+        detail:           "Every slide cut from the main deck lives in an appendix. Investors who ask deeper questions get detailed answers: without cluttering the main narrative.",
+      },
+    ],
+    usefulLinks: [],
+    faq: [
+      {
+        question: "Do you work with pre-revenue startups?",
+        answer:
+          "Yes. Pre-revenue decks lean heavier on problem validation, market size, team credibility, and vision. We know how to tell a compelling story at each stage of the fundraising journey.",
+      },
+      {
+        question: "What format do you deliver in?",
+        answer:
+          "We deliver in your preferred format: PowerPoint, Google Slides, or Figma. For investor decks, we also produce a PDF version optimised for email attachment.",
+      },
+      {
+        question: "Can you update an existing deck rather than starting from scratch?",
+        answer:
+          "Yes. We offer a deck audit (reviewing narrative structure and design) and a deck refresh (updating content and visual design). Starting from scratch is only recommended when the narrative needs significant restructuring.",
+      },
+      {
+        question: "Do you have experience with Singapore and Southeast Asia investors?",
+        answer:
+          "Yes. We have context on the local VC landscape: including what SGInnovate, Antler, and regional seed funds look for, and adapt decks accordingly for Singapore-market raises.",
+      },
+    ],
+  },
+  HIDDEN */
 ];
 
 export const offeringsConfig = _allOfferings.filter(

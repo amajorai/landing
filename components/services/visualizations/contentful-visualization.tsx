@@ -164,7 +164,7 @@ export function ContentfulVisualization() {
 
       const deliverBlink = Math.sin(frame * 0.08) > 0;
       ctx.globalAlpha = deliverBlink ? 1 : 0.5;
-      ctx.fillText("CDN — 99.95% uptime", hubCx, cdnY);
+      ctx.fillText("CDN: 99.95% uptime", hubCx, cdnY);
       ctx.globalAlpha = 1;
 
       frameRef.current = frame + 1;

@@ -190,7 +190,7 @@ const faqSchema = {
       name: "What is Ryu?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ryu is an AI agent orchestration layer built by A Major. It enables teams to run, coordinate, and monitor AI agents at scale — connecting LLMs, tools, and workflows into reliable production systems.",
+        text: "Ryu is an AI agent orchestration layer built by A Major. It enables teams to run, coordinate, and monitor AI agents at scale, connecting LLMs, tools, and workflows into reliable production systems.",
       },
     },
     {

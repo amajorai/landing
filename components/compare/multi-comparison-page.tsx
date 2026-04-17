@@ -16,6 +16,7 @@ import type {
   MultiComparisonConfig,
   MultiComparisonGroup,
 } from "@/lib/multi-compare-config";
+import { cn } from "@/lib/utils";
 
 function toId(text: string) {
   return text
@@ -55,7 +56,10 @@ function ContestantAvatar({
       >
         <Image
           alt={name}
-          className={`max-h-full max-w-full object-contain${hasDark ? "dark:hidden" : ""}`}
+          className={cn(
+            "max-h-full max-w-full object-contain",
+            hasDark && "dark:hidden"
+          )}
           height={size}
           src={logo}
           width={size}

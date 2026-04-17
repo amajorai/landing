@@ -28,6 +28,7 @@ import { FeatureCards } from "./feature-cards";
 import { QuickstartBlock } from "./quickstart-block";
 import { ServiceCta } from "./service-cta";
 import { SubTechCard } from "./sub-tech-card";
+import { AiChatbotVisualization } from "./visualizations/ai-chatbot-visualization";
 import { ApiDevelopmentVisualization } from "./visualizations/api-development-visualization";
 import { AstroVisualization } from "./visualizations/astro-visualization";
 import { AwsVisualization } from "./visualizations/aws-visualization";
@@ -41,6 +42,7 @@ import { CliVisualization } from "./visualizations/cli-visualization";
 import { CloudflareD1Visualization } from "./visualizations/cloudflare-d1-visualization";
 import { CloudflareWorkersVisualization } from "./visualizations/cloudflare-workers-visualization";
 import { ConsultancyVisualization } from "./visualizations/consultancy-visualization";
+import { ContentWritingVisualization } from "./visualizations/content-writing-visualization";
 import { ContentfulVisualization } from "./visualizations/contentful-visualization";
 import { ConvexVisualization } from "./visualizations/convex-visualization";
 import { DevopsVisualization } from "./visualizations/devops-visualization";
@@ -55,6 +57,7 @@ import { EcommerceVisualization } from "./visualizations/ecommerce-visualization
 import { EducationSoftwareVisualization } from "./visualizations/education-software-visualization";
 import { ElectronVisualization } from "./visualizations/electron-visualization";
 import { ElysiaVisualization } from "./visualizations/elysia-visualization";
+import { EmailMarketingVisualization } from "./visualizations/email-marketing-visualization";
 import { EnterpriseSystemsVisualization } from "./visualizations/enterprise-systems-visualization";
 import { ExpressVisualization } from "./visualizations/express-visualization";
 import { FastapiVisualization } from "./visualizations/fastapi-visualization";
@@ -120,6 +123,7 @@ import { TanstackRouterVisualization } from "./visualizations/tanstack-router-vi
 import { TanstackStartVisualization } from "./visualizations/tanstack-start-visualization";
 import { TanstackVisualization } from "./visualizations/tanstack-visualization";
 import { TauriVisualization } from "./visualizations/tauri-visualization";
+import { TechnicalDocumentationVisualization } from "./visualizations/technical-documentation-visualization";
 import { TrpcVisualization } from "./visualizations/trpc-visualization";
 import { TuiVisualization } from "./visualizations/tui-visualization";
 import { TurborepoVisualization } from "./visualizations/turborepo-visualization";
@@ -135,6 +139,7 @@ import { WebsiteMigrationVisualization } from "./visualizations/website-migratio
 import { WhiteLabelVisualization } from "./visualizations/white-label-visualization";
 import { WoocommerceVisualization } from "./visualizations/woocommerce-visualization";
 import { WordpressVisualization } from "./visualizations/wordpress-visualization";
+import { WorkflowAutomationVisualization } from "./visualizations/workflow-automation-visualization";
 
 const vizMap: Record<string, React.ComponentType> = {
   react: ReactVisualization,
@@ -245,6 +250,11 @@ const vizMap: Record<string, React.ComponentType> = {
   "website-migration": WebsiteMigrationVisualization,
   "api-development": ApiDevelopmentVisualization,
   "startup-development": StartupDevelopmentVisualization,
+  "content-writing": ContentWritingVisualization,
+  "email-marketing": EmailMarketingVisualization,
+  "technical-documentation": TechnicalDocumentationVisualization,
+  "workflow-automation": WorkflowAutomationVisualization,
+  "ai-chatbot": AiChatbotVisualization,
 };
 
 const categoryLabel: Record<string, string> = {
@@ -441,7 +451,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                     Business owners &amp; product teams
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    You need software delivered — not just advice. We handle the
+                    You need software delivered, not just advice. We handle the
                     full build from scoping through to launch, communicating in
                     plain language throughout. No jargon, no handoff gaps, no
                     surprise scope creep.
@@ -471,7 +481,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                     You&apos;re moving fast and need a team that keeps up.
                     We&apos;ve shipped MVPs in weeks and scaled systems to
                     millions of users. Our founder is personally involved in
-                    every project — there&apos;s no junior-heavy team behind a
+                    every project. There&apos;s no junior-heavy team behind a
                     senior face.
                   </p>
                 </div>
@@ -479,7 +489,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
               <div className="border-border border-r border-b border-dashed p-6">
                 <h3 className="mb-3 font-medium text-sm">Not the right fit?</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  We&apos;re a focused agency — we take on projects where we can
+                  We&apos;re a focused agency. We take on projects where we can
                   genuinely add value. If your project isn&apos;t a match,
                   we&apos;ll say so early and point you in the right direction.
                 </p>
@@ -593,7 +603,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                   </p>
                   <p className="text-muted-foreground text-xs">
                     All projects start with a free 30-minute call to scope your
-                    requirements. We provide fixed-price quotes — no hourly
+                    requirements. We provide fixed-price quotes with no hourly
                     billing surprises.
                   </p>
                 </div>

@@ -15,7 +15,7 @@ import { generateMetadata } from "@/lib/metadata";
 import { getProjects } from "@/lib/notion";
 
 export const metadata = generateMetadata({
-  title: "Singapore Software Agency — Web Design & Development",
+  title: "Software that just works. Experts you can talk to.",
   description:
     "A Major is a founder-led Singapore software agency. We build web apps, mobile apps, SaaS products, and e-commerce platforms for startups and enterprises worldwide.",
   url: "/",

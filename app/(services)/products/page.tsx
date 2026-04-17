@@ -11,7 +11,7 @@ export const revalidate = 1800;
 export const metadata = genMeta({
   title: "Products",
   description:
-    "Software products built by A Major — including Ryu App and more coming soon.",
+    "Software products built by A Major, including Ryu App and more coming soon.",
   url: "/products",
 });
 

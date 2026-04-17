@@ -34,7 +34,7 @@ const services = [
     icon: BarChart3,
     title: "Architecture Review",
     description:
-      "From monolith-to-microservices migrations to database design and API contracts — we review your system architecture and recommend the right structure for your scale and team size.",
+      "From monolith-to-microservices migrations to database design and API contracts, we review your system architecture and recommend the right structure for your scale and team size.",
   },
   {
     icon: Users,

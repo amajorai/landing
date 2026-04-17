@@ -276,7 +276,7 @@ export function CliVisualization() {
           <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
           <span className="ml-2 font-mono text-[10px] text-zinc-500">
-            bash — create-my-app
+            bash: create-my-app
           </span>
         </div>
         <div

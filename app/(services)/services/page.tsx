@@ -24,9 +24,9 @@ import {
 } from "@/lib/services-config";
 
 export const metadata = genMeta({
-  title: "Software Development Services | Singapore Agency | A Major",
+  title: "Software Development Services",
   description:
-    "Full-stack software development services from a Singapore-based agency. Web design, mobile apps, SaaS platforms, e-commerce, enterprise systems, and 70+ technology stacks. From startups to enterprise — we build software that works.",
+    "Full-stack software development services from a Singapore-based agency. Web design, mobile apps, SaaS platforms, e-commerce, enterprise systems, and 70+ technology stacks. From startups to enterprise, we build software that works.",
   url: "/services",
   tags: [
     "software development services",
@@ -118,7 +118,7 @@ export default function ServicesPage() {
             <p>
               A Major is a Singapore-based software agency that designs, builds,
               and deploys production-grade software for businesses worldwide. We
-              work across the full stack — from pixel-perfect UI design to
+              work across the full stack, from pixel-perfect UI design to
               scalable backend architecture, from mobile apps on iOS and Android
               to complex enterprise systems that handle millions of
               transactions.
@@ -126,10 +126,10 @@ export default function ServicesPage() {
             <p>
               Whether you&apos;re a startup building your first MVP, an
               enterprise modernising legacy systems, or an established business
-              looking for a WordPress redesign or custom e-commerce solution —
-              we bring the same rigour to every project. Our founder is
-              personally involved from first conversation to launch day, which
-              means no handoff gaps between sales and engineering.
+              looking for a WordPress redesign or custom e-commerce solution, we
+              bring the same rigour to every project. Our founder is personally
+              involved from first conversation to launch day, which means no
+              handoff gaps between sales and engineering.
             </p>
             <p>
               We specialise in React, Next.js, Node.js, and the modern
@@ -154,7 +154,7 @@ export default function ServicesPage() {
           <section className="mb-16" id="our-services">
             <h2 className="mb-2 font-semibold text-xl">What we build</h2>
             <p className="mb-4 text-muted-foreground text-sm">
-              End-to-end software development services — from web design to
+              End-to-end software development services, from web design to
               enterprise platforms.
             </p>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">
@@ -194,7 +194,7 @@ export default function ServicesPage() {
           <section className="mb-16" id="specialist-services">
             <h2 className="mb-2 font-semibold text-xl">Specialist services</h2>
             <p className="mb-4 text-muted-foreground text-sm">
-              Targeted services for specific business needs — from platform
+              Targeted services for specific business needs, from platform
               migrations to API integrations to startup-speed development.
             </p>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2 lg:grid-cols-3">
@@ -284,14 +284,14 @@ export default function ServicesPage() {
               Our clients range from pre-seed startups shipping their first MVP
               to established enterprises modernising decade-old platforms. We
               work across healthcare, fintech, e-commerce, education, logistics,
-              and SaaS — bringing cross-industry perspective to every project we
+              and SaaS, bringing cross-industry perspective to every project we
               take on.
             </p>
             <p>
               Based in Singapore and serving clients worldwide, we combine
               Southeast Asian pragmatism with global engineering standards.
               Every project ships with clean code, proper documentation, CI/CD
-              pipelines, and monitoring — because software that works on launch
+              pipelines, and monitoring, because software that works on launch
               day needs to keep working on day 365.
             </p>
           </section>

@@ -82,7 +82,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "developers",
     tagline: "Fast, interactive UIs that users love",
     description:
-      "We build production-grade React applications — from marketing sites to complex SaaS dashboards. Our team works with the full React ecosystem including Next.js for server-side rendering and React Native for mobile.",
+      "We build production-grade React applications: from marketing sites to complex SaaS dashboards. Our team works with the full React ecosystem including Next.js for server-side rendering and React Native for mobile.",
     accentColor: "sky",
     visualizationKey: "react",
     logo: "/logos/services/react_dark.svg",
@@ -97,7 +97,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "TypeScript-first",
         description:
-          "Strict typing across your entire codebase — no implicit any, no surprises in production.",
+          "Strict typing across your entire codebase: no implicit any, no surprises in production.",
       },
       {
         icon: "Zap",
@@ -109,13 +109,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Accessibility",
         title: "Accessible by default",
         description:
-          "Component systems built to WCAG 2.1 AA — keyboard navigation, screen reader semantics, focus management.",
+          "Component systems built to WCAG 2.1 AA: keyboard navigation, screen reader semantics, focus management.",
       },
       {
         icon: "Gauge",
         title: "Core Web Vitals in green",
         description:
-          "Performance budgets enforced in CI — LCP, CLS, and INP measured and kept within targets.",
+          "Performance budgets enforced in CI: LCP, CLS, and INP measured and kept within targets.",
       },
       {
         icon: "GitBranch",
@@ -139,7 +139,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "React is a JavaScript library for building user interfaces, maintained by Meta and a massive open-source community. It introduced the component model that most modern UI frameworks now follow — composable, declarative views driven by state. React dominates the frontend landscape powering everything from startups to Fortune 500 dashboards. But building production-grade React apps requires deep knowledge of rendering strategies, state management, performance tuning, and the ever-evolving ecosystem.",
+      "React is a JavaScript library for building user interfaces, maintained by Meta and a massive open-source community. It introduced the component model that most modern UI frameworks now follow: composable, declarative views driven by state. React dominates the frontend landscape powering everything from startups to Fortune 500 dashboards. But building production-grade React apps requires deep knowledge of rendering strategies, state management, performance tuning, and the ever-evolving ecosystem.",
     challenges: [
       {
         title: "State management complexity",
@@ -154,7 +154,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Performance at scale",
         description:
-          "Re-renders, bundle size, hydration costs, and Core Web Vitals all demand careful attention — what works in a demo breaks in production with real data.",
+          "Re-renders, bundle size, hydration costs, and Core Web Vitals all demand careful attention: what works in a demo breaks in production with real data.",
       },
       {
         title: "Ecosystem churn",
@@ -207,7 +207,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Do I need Next.js to use React?",
         answer:
-          "No — React works standalone with Vite or other bundlers. But Next.js adds server-side rendering, file-based routing, and API routes that most production apps need. We recommend Next.js for any project that values SEO or fast initial loads.",
+          "No. React works standalone with Vite or other bundlers. But Next.js adds server-side rendering, file-based routing, and API routes that most production apps need. We recommend Next.js for any project that values SEO or fast initial loads.",
       },
       {
         question: "How much does it cost to build a React application?",
@@ -227,7 +227,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Progressive framework, delightful developer experience",
     description:
-      "Vue 3 is the progressive JavaScript framework — adopt it incrementally into an existing project or build greenfield SPAs with the Composition API, Pinia, and Vite. Pair with Nuxt for full-stack capability.",
+      "Vue 3 is the progressive JavaScript framework: adopt it incrementally into an existing project or build greenfield SPAs with the Composition API, Pinia, and Vite. Pair with Nuxt for full-stack capability.",
     accentColor: "emerald",
     visualizationKey: "vue",
     logo: "/logos/services/vue.svg",
@@ -242,19 +242,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "Pinia state management",
         description:
-          "Type-safe, modular stores with Pinia — no more Vuex boilerplate, full DevTools support.",
+          "Type-safe, modular stores with Pinia: no more Vuex boilerplate, full DevTools support.",
       },
       {
         icon: "Component",
         title: "Single File Components",
         description:
-          "Template, script, and styles in one .vue file — colocation that scales from prototypes to enterprise apps.",
+          "Template, script, and styles in one .vue file: colocation that scales from prototypes to enterprise apps.",
       },
       {
         icon: "Zap",
         title: "Vite-powered dev server",
         description:
-          "Instant HMR and native ES module dev server — sub-second feedback loops even in large projects.",
+          "Instant HMR and native ES module dev server: sub-second feedback loops even in large projects.",
       },
       {
         icon: "RefreshCw",
@@ -278,7 +278,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Vue.js is a progressive JavaScript framework for building user interfaces — approachable enough for a weekend prototype yet powerful enough for enterprise SPAs. Vue 3's Composition API and TypeScript-first design make it a serious contender alongside React for complex applications. Its gentle learning curve and excellent documentation have earned it a passionate community and widespread adoption in Asia-Pacific markets, enterprise tooling, and content-heavy platforms. At A Major, we leverage Vue's reactivity system and the Nuxt ecosystem to deliver fast, maintainable frontends.",
+      "Vue.js is a progressive JavaScript framework for building user interfaces: approachable enough for a weekend prototype yet powerful enough for enterprise SPAs. Vue 3's Composition API and TypeScript-first design make it a serious contender alongside React for complex applications. Its gentle learning curve and excellent documentation have earned it a passionate community and widespread adoption in Asia-Pacific markets, enterprise tooling, and content-heavy platforms. At A Major, we leverage Vue's reactivity system and the Nuxt ecosystem to deliver fast, maintainable frontends.",
     challenges: [
       {
         title: "Options API vs. Composition API migration",
@@ -305,7 +305,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use composables for reusable logic",
         detail:
-          "Extract shared reactive logic into composable functions (useAuth, useFetch) — they're testable, tree-shakeable, and avoid the pitfalls of mixins.",
+          "Extract shared reactive logic into composable functions (useAuth, useFetch): they're testable, tree-shakeable, and avoid the pitfalls of mixins.",
       },
       {
         tip: "Adopt Pinia from day one",
@@ -315,7 +315,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable strict template type checking",
         detail:
-          "Configure vue-tsc in CI to catch template errors at build time — this catches typos in props, events, and slot bindings before they reach production.",
+          "Configure vue-tsc in CI to catch template errors at build time: this catches typos in props, events, and slot bindings before they reach production.",
       },
       {
         tip: "Prefer script setup syntax",
@@ -354,7 +354,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Absolutely. Vue 3 is mature, actively maintained, and used by companies like Alibaba, GitLab, and Nintendo. The ecosystem is thriving with Nuxt 3, Pinia, and VueUse.",
       },
       {
-        question: "Vue 2 vs. Vue 3 — should I migrate?",
+        question: "Vue 2 vs. Vue 3: should I migrate?",
         answer:
           "Yes. Vue 2 reached end of life in December 2023. Vue 3 offers better TypeScript support, the Composition API, Pinia, and significantly improved performance. We help teams plan and execute migrations incrementally.",
       },
@@ -372,7 +372,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Write less code. No virtual DOM. Truly reactive.",
     description:
-      "Svelte is a compiler, not a framework — it transforms your components into tight, efficient vanilla JavaScript at build time. No runtime overhead, no virtual DOM, just the smallest possible output that does exactly what you wrote.",
+      "Svelte is a compiler, not a framework: it transforms your components into tight, efficient vanilla JavaScript at build time. No runtime overhead, no virtual DOM, just the smallest possible output that does exactly what you wrote.",
     accentColor: "orange",
     visualizationKey: "svelte",
     logo: "/logos/services/svelte.svg",
@@ -381,13 +381,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Compile-time reactivity",
         description:
-          "Svelte shifts reactivity to the compiler — no virtual DOM diffing, just surgical DOM updates at build time.",
+          "Svelte shifts reactivity to the compiler: no virtual DOM diffing, just surgical DOM updates at build time.",
       },
       {
         icon: "Package",
         title: "Minimal bundle size",
         description:
-          "No runtime framework shipped to the browser — your bundle contains only the code your components actually use.",
+          "No runtime framework shipped to the browser: your bundle contains only the code your components actually use.",
       },
       {
         icon: "Wand2",
@@ -405,7 +405,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Component",
         title: "Scoped styles by default",
         description:
-          "CSS written in a Svelte component is automatically scoped — no class name collisions, no CSS-in-JS overhead.",
+          "CSS written in a Svelte component is automatically scoped: no class name collisions, no CSS-in-JS overhead.",
       },
       {
         icon: "Globe",
@@ -426,7 +426,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Svelte takes a radically different approach to building UIs — it's a compiler that transforms your declarative components into highly efficient, imperative vanilla JavaScript at build time. There's no virtual DOM diffing at runtime, no framework overhead shipped to the browser. The result is tiny bundles and blazing-fast updates. Svelte 5 introduces runes, a signals-based reactivity system that's both more explicit and more powerful than Svelte 4's implicit reactivity. With SvelteKit for full-stack apps, Svelte is a compelling choice for teams that prioritize performance and developer experience.",
+      "Svelte takes a radically different approach to building UIs: it's a compiler that transforms your declarative components into highly efficient, imperative vanilla JavaScript at build time. There's no virtual DOM diffing at runtime, no framework overhead shipped to the browser. The result is tiny bundles and blazing-fast updates. Svelte 5 introduces runes, a signals-based reactivity system that's both more explicit and more powerful than Svelte 4's implicit reactivity. With SvelteKit for full-stack apps, Svelte is a compelling choice for teams that prioritize performance and developer experience.",
     challenges: [
       {
         title: "Smaller ecosystem than React/Vue",
@@ -441,7 +441,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Limited TypeScript template checking",
         description:
-          "Svelte's template language has improving but still imperfect TypeScript support — complex generics and event typing can be frustrating compared to TSX.",
+          "Svelte's template language has improving but still imperfect TypeScript support: complex generics and event typing can be frustrating compared to TSX.",
       },
       {
         title: "SSR edge cases in SvelteKit",
@@ -468,7 +468,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage server-only load functions",
         detail:
-          "SvelteKit's +page.server.ts keeps secrets, database calls, and heavy logic off the client — use it by default and move to universal load only when needed.",
+          "SvelteKit's +page.server.ts keeps secrets, database calls, and heavy logic off the client: use it by default and move to universal load only when needed.",
       },
     ],
     usefulLinks: [
@@ -495,7 +495,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Svelte vs. React — which should I choose?",
+        question: "Svelte vs. React: which should I choose?",
         answer:
           "Choose Svelte for smaller bundles, faster runtime performance, and a simpler mental model. Choose React when you need the largest ecosystem, more hiring options, and enterprise library support. For content-heavy sites and performance-critical apps, Svelte often wins.",
       },
@@ -527,7 +527,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Beautiful developer documentation, fast",
     description:
-      "Fumadocs is our framework of choice for building modern documentation sites — full-text search, MDX authoring, versioning, and API reference pages that developers actually enjoy reading.",
+      "Fumadocs is our framework of choice for building modern documentation sites: full-text search, MDX authoring, versioning, and API reference pages that developers actually enjoy reading.",
     accentColor: "purple",
     visualizationKey: "fumadocs",
     logo: null,
@@ -537,13 +537,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "FileText",
         title: "MDX-powered content",
         description:
-          "Write docs in Markdown with custom React components — callouts, tabs, code groups, and more.",
+          "Write docs in Markdown with custom React components: callouts, tabs, code groups, and more.",
       },
       {
         icon: "Search",
         title: "Full-text search",
         description:
-          "Built-in search with Orama or Algolia — instant results as users type, no extra backend.",
+          "Built-in search with Orama or Algolia: instant results as users type, no extra backend.",
       },
       {
         icon: "FileCode2",
@@ -555,19 +555,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "History",
         title: "Versioned docs",
         description:
-          "Manage multiple release versions side by side — users always see the docs for their version.",
+          "Manage multiple release versions side by side: users always see the docs for their version.",
       },
       {
         icon: "Server",
         title: "Static generation",
         description:
-          "Built on Next.js App Router — every page is statically generated for instant first loads.",
+          "Built on Next.js App Router: every page is statically generated for instant first loads.",
       },
       {
         icon: "Terminal",
         title: "Shiki syntax highlighting",
         description:
-          "Server-side code highlighting with Shiki — accurate grammar, zero client-side JS cost.",
+          "Server-side code highlighting with Shiki: accurate grammar, zero client-side JS cost.",
       },
     ],
     subTechs: [
@@ -579,12 +579,12 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Fumadocs is a modern documentation framework built on Next.js App Router — purpose-built for developer documentation sites that need full-text search, MDX content authoring, API reference generation, and versioning out of the box. Unlike generic static site generators, Fumadocs gives you a polished reading experience with syntax highlighting, content collections, and interactive components while keeping everything statically generated for instant loads. It's our go-to when clients need documentation that developers actually enjoy using.",
+      "Fumadocs is a modern documentation framework built on Next.js App Router: purpose-built for developer documentation sites that need full-text search, MDX content authoring, API reference generation, and versioning out of the box. Unlike generic static site generators, Fumadocs gives you a polished reading experience with syntax highlighting, content collections, and interactive components while keeping everything statically generated for instant loads. It's our go-to when clients need documentation that developers actually enjoy using.",
     challenges: [
       {
         title: "Next.js App Router knowledge required",
         description:
-          "Fumadocs is tightly coupled to Next.js App Router conventions — teams unfamiliar with RSC, layouts, and the app directory will face a learning curve before customizing effectively.",
+          "Fumadocs is tightly coupled to Next.js App Router conventions: teams unfamiliar with RSC, layouts, and the app directory will face a learning curve before customizing effectively.",
       },
       {
         title: "Custom component integration",
@@ -594,7 +594,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Search configuration complexity",
         description:
-          "Choosing between built-in Orama search, Algolia, or a custom search backend — and configuring indexing, relevance tuning, and facets — requires careful planning for large doc sites.",
+          "Choosing between built-in Orama search, Algolia, or a custom search backend, and configuring indexing, relevance tuning, and facets: requires careful planning for large doc sites.",
       },
       {
         title: "Multi-version documentation management",
@@ -606,7 +606,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use content collections with Zod schemas",
         detail:
-          "Define strict schemas for your frontmatter — title, description, category, version. This catches errors at build time and enables type-safe content queries.",
+          "Define strict schemas for your frontmatter: title, description, category, version. This catches errors at build time and enables type-safe content queries.",
       },
       {
         tip: "Organize docs by user journey, not API structure",
@@ -616,12 +616,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable OpenAPI integration for API docs",
         detail:
-          "Point Fumadocs at your OpenAPI spec to auto-generate interactive API reference pages — keeps docs in sync with your actual API without manual maintenance.",
+          "Point Fumadocs at your OpenAPI spec to auto-generate interactive API reference pages: keeps docs in sync with your actual API without manual maintenance.",
       },
       {
         tip: "Pre-render everything with static generation",
         detail:
-          "Fumadocs on Next.js App Router can statically generate every page — use generateStaticParams for instant loads and zero server cost.",
+          "Fumadocs on Next.js App Router can statically generate every page: use generateStaticParams for instant loads and zero server cost.",
       },
     ],
     usefulLinks: [
@@ -649,14 +649,14 @@ export const servicesConfig: ServiceConfig[] = [
     faq: [
       {
         question:
-          "Fumadocs vs. Docusaurus vs. Nextra — which documentation framework should I use?",
+          "Fumadocs vs. Docusaurus vs. Nextra, which documentation framework should I use?",
         answer:
           "Fumadocs is the best choice if you're already in the Next.js ecosystem and want App Router support, static generation, and modern React features. Docusaurus is more mature with a larger plugin ecosystem. Nextra is simpler but less feature-rich. We recommend Fumadocs for new projects.",
       },
       {
         question: "How much does it cost to build a documentation site?",
         answer:
-          "A Fumadocs documentation site typically costs $5K–20K depending on complexity — number of pages, custom components, search configuration, and API reference integration. We offer free consultations to scope your project.",
+          "A Fumadocs documentation site typically costs $5K–20K depending on complexity: number of pages, custom components, search configuration, and API reference integration. We offer free consultations to scope your project.",
       },
       {
         question: "Can Fumadocs handle large documentation sites?",
@@ -685,7 +685,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "businesses",
     tagline: "Content-driven sites your team can actually manage",
     description:
-      "We build custom WordPress sites that go far beyond themes — bespoke Gutenberg block libraries, headless WP with Next.js frontends, and WooCommerce stores optimized for conversion.",
+      "We build custom WordPress sites that go far beyond themes: bespoke Gutenberg block libraries, headless WP with Next.js frontends, and WooCommerce stores optimized for conversion.",
     accentColor: "blue",
     visualizationKey: "wordpress",
     logo: "/logos/services/wordpress.svg",
@@ -694,13 +694,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Blocks",
         title: "Custom Gutenberg blocks",
         description:
-          "Bespoke React-powered blocks that editors love — your brand, your layout options, no theme limitations.",
+          "Bespoke React-powered blocks that editors love: your brand, your layout options, no theme limitations.",
       },
       {
         icon: "Link",
         title: "Headless WordPress",
         description:
-          "WP as a content API with a Next.js or Astro frontend — best-of-both for editorial flexibility and frontend performance.",
+          "WP as a content API with a Next.js or Astro frontend: best-of-both for editorial flexibility and frontend performance.",
       },
       {
         icon: "ShoppingCart",
@@ -712,7 +712,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "ACF Pro field groups",
         description:
-          "Structured content editing with Advanced Custom Fields — editors fill in forms, not raw HTML.",
+          "Structured content editing with Advanced Custom Fields: editors fill in forms, not raw HTML.",
       },
       {
         icon: "Network",
@@ -724,7 +724,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Gauge",
         title: "Sub-200ms TTFB",
         description:
-          "Full-page caching with object cache, CDN, and image optimisation — fast for every visitor.",
+          "Full-page caching with object cache, CDN, and image optimisation: fast for every visitor.",
       },
     ],
     subTechs: [
@@ -739,7 +739,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "WordPress powers over 40% of all websites on the internet — from small business sites to major publishers. But most WordPress sites are slow, insecure, and hard to maintain because they were built with off-the-shelf themes and too many plugins. We build WordPress differently: custom block editors your team can actually use, headless architectures for blazing-fast frontends, and WooCommerce stores that convert. Whether you need a redesign, migration, or ground-up build, we deliver WordPress that performs.",
+      "WordPress powers over 40% of all websites on the internet: from small business sites to major publishers. But most WordPress sites are slow, insecure, and hard to maintain because they were built with off-the-shelf themes and too many plugins. We build WordPress differently: custom block editors your team can actually use, headless architectures for blazing-fast frontends, and WooCommerce stores that convert. Whether you need a redesign, migration, or ground-up build, we deliver WordPress that performs.",
     challenges: [
       {
         title: "Plugin bloat and security risks",
@@ -754,7 +754,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Difficult content management",
         description:
-          "Without custom block editors, your team is stuck fighting page builders or editing raw HTML — neither is productive.",
+          "Without custom block editors, your team is stuck fighting page builders or editing raw HTML: neither is productive.",
       },
       {
         title: "Migration complexity",
@@ -771,7 +771,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Implement full-page caching and a CDN",
         detail:
-          "WordPress should serve cached HTML from edge servers — typical TTFB drops from 2s to under 200ms.",
+          "WordPress should serve cached HTML from edge servers: typical TTFB drops from 2s to under 200ms.",
       },
       {
         tip: "Minimize plugins, maximize custom code",
@@ -813,7 +813,7 @@ export const servicesConfig: ServiceConfig[] = [
           "A custom WordPress redesign typically ranges from $5,000 to $25,000 depending on the number of page templates, custom functionality, and content migration needs. We provide detailed quotes after a free consultation.",
       },
       {
-        question: "WordPress vs Webflow — which should I choose?",
+        question: "WordPress vs Webflow: which should I choose?",
         answer:
           "Webflow is great for simple marketing sites with visual editing. WordPress wins when you need e-commerce (WooCommerce), complex content workflows, multilingual support, or deep integrations. We help you make the right call.",
       },
@@ -837,7 +837,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "design",
     tagline: "Design systems that scale with your product",
     description:
-      "We build design systems and component libraries using Tailwind CSS — from token foundations to fully documented UI kits that your team can extend without asking a designer for every change.",
+      "We build design systems and component libraries using Tailwind CSS: from token foundations to fully documented UI kits that your team can extend without asking a designer for every change.",
     accentColor: "cyan",
     visualizationKey: "tailwind",
     logo: "/logos/services/tailwindcss.svg",
@@ -846,13 +846,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Paintbrush",
         title: "Design token architecture",
         description:
-          "Color, spacing, typography, and shadow tokens defined once, used everywhere — in code and Figma.",
+          "Color, spacing, typography, and shadow tokens defined once, used everywhere: in code and Figma.",
       },
       {
         icon: "Code2",
         title: "Tailwind v4 with CSS vars",
         description:
-          "CSS-native custom properties via Tailwind v4 — theming with zero JavaScript overhead.",
+          "CSS-native custom properties via Tailwind v4: theming with zero JavaScript overhead.",
       },
       {
         icon: "Component",
@@ -876,7 +876,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "PenTool",
         title: "Figma ↔ code handoff",
         description:
-          "Token sync between Figma and your codebase — design changes propagate to code, not just mockups.",
+          "Token sync between Figma and your codebase: design changes propagate to code, not just mockups.",
       },
     ],
     subTechs: [
@@ -891,7 +891,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Tailwind CSS is a utility-first CSS framework that lets you build custom designs directly in your markup without writing custom CSS. Instead of pre-built components, Tailwind provides low-level utility classes (flex, pt-4, text-center) that compose into any design. Tailwind v4 introduces a CSS-native engine with lightning-fast builds, native CSS custom properties for theming, and zero-config content detection. Combined with component libraries like shadcn/ui, Tailwind is how modern teams build design systems that scale — consistent, maintainable, and fully customizable without fighting framework defaults.",
+      "Tailwind CSS is a utility-first CSS framework that lets you build custom designs directly in your markup without writing custom CSS. Instead of pre-built components, Tailwind provides low-level utility classes (flex, pt-4, text-center) that compose into any design. Tailwind v4 introduces a CSS-native engine with lightning-fast builds, native CSS custom properties for theming, and zero-config content detection. Combined with component libraries like shadcn/ui, Tailwind is how modern teams build design systems that scale: consistent, maintainable, and fully customizable without fighting framework defaults.",
     challenges: [
       {
         title: "Verbose class strings in markup",
@@ -911,7 +911,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Dynamic styling limitations",
         description:
-          "Tailwind classes must exist in source code at build time — dynamic class construction (e.g., `bg-${color}-500`) doesn't work. Teams need to learn safe patterns for dynamic theming.",
+          "Tailwind classes must exist in source code at build time: dynamic class construction (e.g., `bg-${color}-500`) doesn't work. Teams need to learn safe patterns for dynamic theming.",
       },
     ],
     bestPractices: [
@@ -928,7 +928,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use cn() or clsx() for conditional classes",
         detail:
-          "A utility function like cn() (from shadcn/ui) cleanly merges conditional Tailwind classes and resolves conflicts — essential for component library development.",
+          "A utility function like cn() (from shadcn/ui) cleanly merges conditional Tailwind classes and resolves conflicts: essential for component library development.",
       },
       {
         tip: "Adopt Tailwind v4 CSS-native configuration",
@@ -960,7 +960,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Tailwind CSS vs. regular CSS or Sass — which should I use?",
+        question: "Tailwind CSS vs. regular CSS or Sass: which should I use?",
         answer:
           "Tailwind is the best choice for teams building component-based UIs (React, Vue, Svelte) where design consistency matters. Traditional CSS/Sass is better for content-heavy sites with minimal interactivity. Tailwind's utility-first approach eliminates naming debates and reduces CSS file sizes via tree-shaking.",
       },
@@ -971,14 +971,14 @@ export const servicesConfig: ServiceConfig[] = [
           "A Tailwind-based design system with component library typically costs $10K–30K. This includes token architecture, core components, documentation, and Figma sync. Ongoing maintenance is minimal since components are just utility classes.",
       },
       {
-        question: "Tailwind vs. Bootstrap — when should I use each?",
+        question: "Tailwind vs. Bootstrap: when should I use each?",
         answer:
           "Use Tailwind when you want full design control and are building custom UIs. Use Bootstrap when you need pre-built components fast (admin dashboards, prototypes) and don't need a unique design. Tailwind produces smaller bundles and avoids the 'Bootstrap look.'",
       },
       {
         question: "Does Tailwind CSS affect performance?",
         answer:
-          "No — Tailwind's build step removes all unused classes, producing CSS files typically under 10KB gzipped. This is significantly smaller than most CSS frameworks. Tailwind v4's engine is even faster with native CSS layers.",
+          "No. Tailwind's build step removes all unused classes, producing CSS files typically under 10KB gzipped. This is significantly smaller than most CSS frameworks. Tailwind v4's engine is even faster with native CSS layers.",
       },
     ],
     quickstart: "npm install tailwindcss @tailwindcss/vite",
@@ -995,7 +995,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Enterprise-grade backends built to last",
     description:
-      "We design and build .NET APIs, microservices, and background workers — architected for correctness, performance, and long-term maintainability. From greenfield systems to legacy modernisation.",
+      "We design and build .NET APIs, microservices, and background workers: architected for correctness, performance, and long-term maintainability. From greenfield systems to legacy modernisation.",
     accentColor: "violet",
     visualizationKey: "dotnet",
     logo: "/logos/services/csharp.svg",
@@ -1010,13 +1010,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "Clean Architecture & DDD",
         description:
-          "Domain-Driven Design with clear boundaries — your business logic stays independent of frameworks.",
+          "Domain-Driven Design with clear boundaries: your business logic stays independent of frameworks.",
       },
       {
         icon: "Database",
         title: "Entity Framework Core",
         description:
-          "Typed queries, migrations, and optimised loading patterns — no N+1 queries reaching your database.",
+          "Typed queries, migrations, and optimised loading patterns: no N+1 queries reaching your database.",
       },
       {
         icon: "MessageSquare",
@@ -1034,7 +1034,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "CloudUpload",
         title: "Azure-native deployment",
         description:
-          "Containerised workloads on Azure App Service, Container Apps, or AKS — with managed identity and Key Vault.",
+          "Containerised workloads on Azure App Service, Container Apps, or AKS: with managed identity and Key Vault.",
       },
     ],
     subTechs: [
@@ -1049,7 +1049,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      ".NET is Microsoft's open-source, cross-platform framework for building cloud-native applications, APIs, and microservices. With ASP.NET Core, Entity Framework Core, and a mature ecosystem of libraries, .NET delivers enterprise-grade reliability with modern developer ergonomics. At A Major, we architect .NET solutions that balance long-term maintainability with rapid feature delivery — from greenfield APIs to complex distributed systems.\n\nWhether you need high-throughput REST APIs, real-time SignalR hubs, or background processing pipelines, .NET's strong typing and rich tooling make it ideal for teams that value correctness. We bring deep experience with Clean Architecture, Domain-Driven Design, and Azure-native deployment patterns.",
+      ".NET is Microsoft's open-source, cross-platform framework for building cloud-native applications, APIs, and microservices. With ASP.NET Core, Entity Framework Core, and a mature ecosystem of libraries, .NET delivers enterprise-grade reliability with modern developer ergonomics. At A Major, we architect .NET solutions that balance long-term maintainability with rapid feature delivery: from greenfield APIs to complex distributed systems.\n\nWhether you need high-throughput REST APIs, real-time SignalR hubs, or background processing pipelines, .NET's strong typing and rich tooling make it ideal for teams that value correctness. We bring deep experience with Clean Architecture, Domain-Driven Design, and Azure-native deployment patterns.",
     challenges: [
       {
         title: "Microservice boundaries",
@@ -1059,7 +1059,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "EF Core performance tuning",
         description:
-          "Entity Framework Core makes data access easy but hides N+1 queries and cartesian explosions — production workloads need explicit query optimization.",
+          "Entity Framework Core makes data access easy but hides N+1 queries and cartesian explosions: production workloads need explicit query optimization.",
       },
       {
         title: "Dependency injection complexity",
@@ -1076,7 +1076,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Minimal APIs for simple endpoints",
         detail:
-          "Minimal APIs reduce boilerplate for CRUD services — reserve full controllers for complex request pipelines.",
+          "Minimal APIs reduce boilerplate for CRUD services: reserve full controllers for complex request pipelines.",
       },
       {
         tip: "Prefer IAsyncEnumerable for streaming",
@@ -1125,10 +1125,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does .NET development cost?",
         answer:
-          "The framework itself is free and open-source. Development costs depend on project complexity — a typical API project ranges from $15K–$80K. Azure hosting starts at ~$15/month for App Service.",
+          "The framework itself is free and open-source. Development costs depend on project complexity: a typical API project ranges from $15K–$80K. Azure hosting starts at ~$15/month for App Service.",
       },
       {
-        question: ".NET vs Node.js — which should I choose?",
+        question: ".NET vs Node.js: which should I choose?",
         answer:
           ".NET excels for enterprise applications requiring strong typing, complex business logic, and mature tooling. Node.js is better when your team is JavaScript-first or you need a lighter runtime for simple APIs.",
       },
@@ -1150,7 +1150,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Elegant PHP backends shipped fast",
     description:
-      "Laravel lets us move quickly without compromising on quality. We build REST APIs, admin panels, and full-stack applications using Laravel's rich ecosystem — queues, events, broadcasting, and more.",
+      "Laravel lets us move quickly without compromising on quality. We build REST APIs, admin panels, and full-stack applications using Laravel's rich ecosystem: queues, events, broadcasting, and more.",
     accentColor: "red",
     visualizationKey: "laravel",
     logo: "/logos/services/laravel.svg",
@@ -1159,13 +1159,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "RESTful APIs with auth",
         description:
-          "Sanctum or Passport for token and session-based auth — SPA, mobile, and third-party API access covered.",
+          "Sanctum or Passport for token and session-based auth: SPA, mobile, and third-party API access covered.",
       },
       {
         icon: "Database",
         title: "Eloquent ORM",
         description:
-          "Expressive relationships, eager loading, and query scopes — readable code that maps cleanly to your schema.",
+          "Expressive relationships, eager loading, and query scopes: readable code that maps cleanly to your schema.",
       },
       {
         icon: "Workflow",
@@ -1177,19 +1177,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Livewire reactive UIs",
         description:
-          "Full-page and component-level reactivity without leaving PHP — great for admin tools and internal apps.",
+          "Full-page and component-level reactivity without leaving PHP: great for admin tools and internal apps.",
       },
       {
         icon: "Layout",
         title: "Filament admin panels",
         description:
-          "Beautiful, fully-featured admin panels built with Filament in days — tables, forms, charts, actions.",
+          "Beautiful, fully-featured admin panels built with Filament in days: tables, forms, charts, actions.",
       },
       {
         icon: "FlaskConical",
         title: "Pest PHP test suites",
         description:
-          "Expressive, readable tests with Pest — unit, feature, and browser tests in CI on every push.",
+          "Expressive, readable tests with Pest: unit, feature, and browser tests in CI on every push.",
       },
     ],
     subTechs: [
@@ -1204,17 +1204,17 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Laravel is the most popular PHP framework, known for its elegant syntax and developer-first philosophy. It provides a complete toolkit out of the box — routing, ORM, queues, events, broadcasting, and authentication — so you can ship production-ready applications fast. At A Major, we leverage Laravel's rich ecosystem to build REST APIs, admin panels, SaaS products, and full-stack applications with Livewire and Inertia.\n\nLaravel's ecosystem includes first-party packages like Horizon (queue monitoring), Telescope (debugging), Cashier (subscriptions), and Filament (admin panels). Combined with Pest PHP for testing and Laravel Forge or Vapor for deployment, it's a complete platform for rapid backend development.",
+      "Laravel is the most popular PHP framework, known for its elegant syntax and developer-first philosophy. It provides a complete toolkit out of the box: routing, ORM, queues, events, broadcasting, and authentication, so you can ship production-ready applications fast. At A Major, we leverage Laravel's rich ecosystem to build REST APIs, admin panels, SaaS products, and full-stack applications with Livewire and Inertia.\n\nLaravel's ecosystem includes first-party packages like Horizon (queue monitoring), Telescope (debugging), Cashier (subscriptions), and Filament (admin panels). Combined with Pest PHP for testing and Laravel Forge or Vapor for deployment, it's a complete platform for rapid backend development.",
     challenges: [
       {
         title: "Eloquent N+1 queries",
         description:
-          "Eloquent's convenience hides lazy-loading pitfalls — without eager loading, a list page can fire hundreds of queries behind the scenes.",
+          "Eloquent's convenience hides lazy-loading pitfalls: without eager loading, a list page can fire hundreds of queries behind the scenes.",
       },
       {
         title: "Queue reliability at scale",
         description:
-          "Redis-backed queues need monitoring, retry strategies, and dead-letter handling — unhandled failures silently drop jobs.",
+          "Redis-backed queues need monitoring, retry strategies, and dead-letter handling: unhandled failures silently drop jobs.",
       },
       {
         title: "Upgrading between major versions",
@@ -1231,7 +1231,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Laravel Pint for consistent code style",
         detail:
-          "Run Pint in CI to enforce PSR-12 formatting — zero configuration, zero arguments about code style.",
+          "Run Pint in CI to enforce PSR-12 formatting: zero configuration, zero arguments about code style.",
       },
       {
         tip: "Leverage form requests for validation",
@@ -1280,10 +1280,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Laravel development cost?",
         answer:
-          "Laravel is free and open-source. Development costs depend on scope — typical projects range from $10K–$60K. Hosting on Forge starts at $12/month, and Vapor scales serverlessly on AWS.",
+          "Laravel is free and open-source. Development costs depend on scope: typical projects range from $10K–$60K. Hosting on Forge starts at $12/month, and Vapor scales serverlessly on AWS.",
       },
       {
-        question: "Laravel vs Django — which is better?",
+        question: "Laravel vs Django: which is better?",
         answer:
           "Laravel excels for rapid web application development with a rich PHP ecosystem. Django is stronger for data-heavy applications and ML integrations. Choose based on your team's language expertise and project domain.",
       },
@@ -1315,7 +1315,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "FastAPI async services",
         description:
-          "Async I/O, automatic OpenAPI docs, and Pydantic validation — high-throughput APIs with minimal code.",
+          "Async I/O, automatic OpenAPI docs, and Pydantic validation: high-throughput APIs with minimal code.",
       },
       {
         icon: "Server",
@@ -1327,13 +1327,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "BarChart2",
         title: "Data pipelines",
         description:
-          "ETL and ELT workflows with Pandas, Polars, or dbt — from raw sources to clean analytical models.",
+          "ETL and ELT workflows with Pandas, Polars, or dbt: from raw sources to clean analytical models.",
       },
       {
         icon: "Brain",
         title: "LLM integrations",
         description:
-          "Anthropic, OpenAI, and LangChain integrations — RAG pipelines, agents, and structured output.",
+          "Anthropic, OpenAI, and LangChain integrations: RAG pipelines, agents, and structured output.",
       },
       {
         icon: "Cpu",
@@ -1345,7 +1345,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "Celery task queues",
         description:
-          "Distributed async task processing with Celery and Redis or RabbitMQ — retries, priorities, scheduling.",
+          "Distributed async task processing with Celery and Redis or RabbitMQ: retries, priorities, scheduling.",
       },
     ],
     subTechs: [
@@ -1357,7 +1357,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Python is the world's most popular programming language — powering everything from web APIs and data pipelines to machine learning models and automation scripts. Its readability, vast ecosystem (PyPI has 500K+ packages), and first-class support for AI/ML make it indispensable for modern backend development. At A Major, we use Python for FastAPI microservices, Django applications, data engineering workflows, and LLM integrations.\n\nPython's strength is versatility. The same language that serves your REST API can train your ML model, process your data pipeline, and automate your infrastructure. We bring production engineering discipline to Python projects — type hints, async I/O, containerised deployments, and comprehensive test suites.",
+      "Python is the world's most popular programming language , powering everything from web APIs and data pipelines to machine learning models and automation scripts. Its readability, vast ecosystem (PyPI has 500K+ packages), and first-class support for AI/ML make it indispensable for modern backend development. At A Major, we use Python for FastAPI microservices, Django applications, data engineering workflows, and LLM integrations.\n\nPython's strength is versatility. The same language that serves your REST API can train your ML model, process your data pipeline, and automate your infrastructure. We bring production engineering discipline to Python projects , type hints, async I/O, containerised deployments, and comprehensive test suites.",
     challenges: [
       {
         title: "GIL and concurrency limitations",
@@ -1394,7 +1394,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Pydantic for data validation",
         detail:
-          "Pydantic models validate input data, serialize output, and generate JSON Schema — one library for validation everywhere.",
+          "Pydantic models validate input data, serialize output, and generate JSON Schema: one library for validation everywhere.",
       },
       {
         tip: "Structure projects with src layout",
@@ -1436,7 +1436,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Python is free and open-source. Development costs range from $10K–$70K depending on complexity. Hosting a FastAPI service on a small VPS or container starts at ~$5/month.",
       },
       {
-        question: "Python vs Node.js — which is better for backends?",
+        question: "Python vs Node.js: which is better for backends?",
         answer:
           "Python excels for data-heavy applications, ML/AI workloads, and scientific computing. Node.js is better for real-time applications and teams that want a single language across the stack.",
       },
@@ -1459,7 +1459,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "JavaScript all the way down",
     description:
-      "When your team lives in JavaScript, Node.js on the backend makes sense. We build performant APIs and real-time services with Express, Fastify, Hono, and tRPC — sharing types with your frontend.",
+      "When your team lives in JavaScript, Node.js on the backend makes sense. We build performant APIs and real-time services with Express, Fastify, Hono, and tRPC: sharing types with your frontend.",
     accentColor: "green",
     visualizationKey: "nodejs",
     logo: "/logos/services/nodejs.svg",
@@ -1468,7 +1468,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Link",
         title: "tRPC end-to-end types",
         description:
-          "Full TypeScript type safety from server to client — no code generation, no schema duplication.",
+          "Full TypeScript type safety from server to client: no code generation, no schema duplication.",
       },
       {
         icon: "Zap",
@@ -1480,7 +1480,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "Prisma ORM",
         description:
-          "Type-safe database queries with Prisma — schema-as-source-of-truth with auto-generated migrations.",
+          "Type-safe database queries with Prisma: schema-as-source-of-truth with auto-generated migrations.",
       },
       {
         icon: "Radio",
@@ -1492,13 +1492,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Workflow",
         title: "BullMQ job queues",
         description:
-          "Redis-backed job processing with BullMQ — delayed jobs, priorities, rate limiting, and retry strategies.",
+          "Redis-backed job processing with BullMQ: delayed jobs, priorities, rate limiting, and retry strategies.",
       },
       {
         icon: "Cpu",
         title: "Bun runtime",
         description:
-          "Faster startup, faster tests, and a built-in toolkit — npm-compatible with measurably better performance.",
+          "Faster startup, faster tests, and a built-in toolkit: npm-compatible with measurably better performance.",
       },
     ],
     subTechs: [
@@ -1516,7 +1516,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Node.js is the most widely adopted server-side JavaScript runtime, enabling full-stack TypeScript development with a single language across frontend and backend. Its non-blocking event loop excels at I/O-heavy workloads — APIs, real-time services, and streaming applications. At A Major, we build Node.js backends with Express, Fastify, Hono, and tRPC, always with end-to-end type safety.\n\nThe Node.js ecosystem is massive: npm hosts 2M+ packages. Combined with TypeScript, modern ORMs like Prisma and Drizzle, and deployment options from serverless to containers, Node.js is the pragmatic choice for teams that want to move fast without maintaining separate frontend and backend language expertise.",
+      "Node.js is the most widely adopted server-side JavaScript runtime, enabling full-stack TypeScript development with a single language across frontend and backend. Its non-blocking event loop excels at I/O-heavy workloads: APIs, real-time services, and streaming applications. At A Major, we build Node.js backends with Express, Fastify, Hono, and tRPC, always with end-to-end type safety.\n\nThe Node.js ecosystem is massive: npm hosts 2M+ packages. Combined with TypeScript, modern ORMs like Prisma and Drizzle, and deployment options from serverless to containers, Node.js is the pragmatic choice for teams that want to move fast without maintaining separate frontend and backend language expertise.",
     challenges: [
       {
         title: "Callback and async complexity",
@@ -1526,7 +1526,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Single-threaded CPU limitations",
         description:
-          "Node.js runs JavaScript on a single thread. CPU-intensive operations block the event loop — offload to worker threads, child processes, or native addons.",
+          "Node.js runs JavaScript on a single thread. CPU-intensive operations block the event loop: offload to worker threads, child processes, or native addons.",
       },
       {
         title: "Dependency security risks",
@@ -1536,7 +1536,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Runtime fragmentation",
         description:
-          "Choosing between Node.js, Bun, and Deno — and between CommonJS and ESM — adds decision overhead. Standardizing early prevents ecosystem compatibility issues.",
+          "Choosing between Node.js, Bun, and Deno, and between CommonJS and ESM: adds decision overhead. Standardizing early prevents ecosystem compatibility issues.",
       },
     ],
     bestPractices: [
@@ -1595,14 +1595,14 @@ export const servicesConfig: ServiceConfig[] = [
           "Node.js is free and open-source. Development costs range from $10K–$60K depending on complexity. The large JavaScript developer pool means competitive rates compared to specialized languages.",
       },
       {
-        question: "Node.js vs Bun — should I switch?",
+        question: "Node.js vs Bun: should I switch?",
         answer:
           "Bun offers faster startup and built-in tooling but has a smaller ecosystem. Node.js is more battle-tested for production. Bun is great for new projects; Node.js is safer for existing systems.",
       },
       {
         question: "Can Node.js handle real-time applications?",
         answer:
-          "Node.js excels at real-time — its event-driven architecture is ideal for WebSocket connections, server-sent events, and live streaming with libraries like Socket.io and ws.",
+          "Node.js excels at real-time: its event-driven architecture is ideal for WebSocket connections, server-sent events, and live streaming with libraries like Socket.io and ws.",
       },
     ],
     quickstart:
@@ -1629,25 +1629,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "Jetpack Compose UI",
         description:
-          "Declarative, animated UIs with Compose — reactive state, custom layouts, and fluid Material 3 transitions.",
+          "Declarative, animated UIs with Compose: reactive state, custom layouts, and fluid Material 3 transitions.",
       },
       {
         icon: "Workflow",
         title: "Coroutines + Flow",
         description:
-          "Structured concurrency and reactive streams — async code that's readable, cancellable, and testable.",
+          "Structured concurrency and reactive streams: async code that's readable, cancellable, and testable.",
       },
       {
         icon: "Database",
         title: "Room database",
         description:
-          "Type-safe SQLite with Room — compile-time query verification and Flow-based reactive queries.",
+          "Type-safe SQLite with Room: compile-time query verification and Flow-based reactive queries.",
       },
       {
         icon: "Puzzle",
         title: "Hilt dependency injection",
         description:
-          "Hilt makes your architecture testable by design — ViewModels, repositories, and use cases all injectable.",
+          "Hilt makes your architecture testable by design: ViewModels, repositories, and use cases all injectable.",
       },
       {
         icon: "Timer",
@@ -1670,7 +1670,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Kotlin is the preferred language for Android development, endorsed by Google as the official Android language since 2019. With Jetpack Compose for declarative UI, coroutines for async programming, and the full Jetpack suite for navigation, persistence, and lifecycle management, Kotlin delivers a modern Android development experience.\n\nKotlin's null-safety, extension functions, and concise syntax eliminate entire classes of bugs compared to Java. Kotlin Multiplatform (KMP) also enables sharing business logic across Android, iOS, and desktop — making it a strategic choice for teams targeting multiple platforms.",
+      "Kotlin is the preferred language for Android development, endorsed by Google as the official Android language since 2019. With Jetpack Compose for declarative UI, coroutines for async programming, and the full Jetpack suite for navigation, persistence, and lifecycle management, Kotlin delivers a modern Android development experience.\n\nKotlin's null-safety, extension functions, and concise syntax eliminate entire classes of bugs compared to Java. Kotlin Multiplatform (KMP) also enables sharing business logic across Android, iOS, and desktop: making it a strategic choice for teams targeting multiple platforms.",
     challenges: [
       {
         title: "Jetpack Compose adoption curve",
@@ -1692,17 +1692,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Jetpack Compose for new UI",
         detail:
-          "Compose is the future of Android UI — start new screens in Compose and incrementally migrate existing Views.",
+          "Compose is the future of Android UI: start new screens in Compose and incrementally migrate existing Views.",
       },
       {
         tip: "Structure with MVVM + Repository pattern",
         detail:
-          "ViewModels expose StateFlow to Compose, repositories abstract data sources — this separation makes your code testable and maintainable.",
+          "ViewModels expose StateFlow to Compose, repositories abstract data sources: this separation makes your code testable and maintainable.",
       },
       {
         tip: "Use Hilt for dependency injection",
         detail:
-          "Hilt provides compile-time verified dependency injection — ViewModels, repositories, and use cases all injectable with minimal boilerplate.",
+          "Hilt provides compile-time verified dependency injection: ViewModels, repositories, and use cases all injectable with minimal boilerplate.",
       },
     ],
     usefulLinks: [
@@ -1731,10 +1731,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Kotlin Android development cost?",
         answer:
-          "Android development tools are free (Android Studio, Kotlin, Jetpack). Google Play charges a one-time $25 registration fee. Development costs depend on app complexity — a simple app takes 4-8 weeks, a full-featured app with backend integration takes 12-24 weeks.",
+          "Android development tools are free (Android Studio, Kotlin, Jetpack). Google Play charges a one-time $25 registration fee. Development costs depend on app complexity: a simple app takes 4-8 weeks, a full-featured app with backend integration takes 12-24 weeks.",
       },
       {
-        question: "Kotlin vs Flutter for Android — which is better?",
+        question: "Kotlin vs Flutter for Android: which is better?",
         answer:
           "Kotlin gives you full access to native Android APIs, the latest platform features, and the best performance. Flutter provides cross-platform from a single codebase but adds an abstraction layer. Choose Kotlin for Android-only apps or when you need deep platform integration.",
       },
@@ -1755,7 +1755,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "mobile",
     tagline: "Native iOS and macOS experiences",
     description:
-      "We develop iOS and macOS applications using Swift and SwiftUI — fully native apps that feel at home on Apple platforms, with deep system integration and App Store ready builds.",
+      "We develop iOS and macOS applications using Swift and SwiftUI: fully native apps that feel at home on Apple platforms, with deep system integration and App Store ready builds.",
     accentColor: "orange",
     visualizationKey: "swift",
     logo: "/logos/services/swift.svg",
@@ -1764,19 +1764,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "SwiftUI with async/await",
         description:
-          "Declarative UI with structured concurrency — reactive state, custom view modifiers, and smooth animations.",
+          "Declarative UI with structured concurrency: reactive state, custom view modifiers, and smooth animations.",
       },
       {
         icon: "Workflow",
         title: "Combine framework",
         description:
-          "Reactive data binding with Combine publishers — async pipelines that transform and deliver data to views.",
+          "Reactive data binding with Combine publishers: async pipelines that transform and deliver data to views.",
       },
       {
         icon: "Database",
         title: "Core Data + CloudKit",
         description:
-          "Local persistence with CloudKit sync — your users' data available across all their Apple devices.",
+          "Local persistence with CloudKit sync: your users' data available across all their Apple devices.",
       },
       {
         icon: "SquareDashedBottom",
@@ -1788,13 +1788,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Smartphone",
         title: "App Clips",
         description:
-          "Lightweight instant-launch experiences — users access core functionality without installing the full app.",
+          "Lightweight instant-launch experiences: users access core functionality without installing the full app.",
       },
       {
         icon: "Play",
         title: "TestFlight distribution",
         description:
-          "Beta testing with TestFlight and App Store submission — code signing, provisioning, and release management handled.",
+          "Beta testing with TestFlight and App Store submission: code signing, provisioning, and release management handled.",
       },
     ],
     subTechs: [
@@ -1805,7 +1805,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Swift is Apple's modern programming language for iOS, macOS, watchOS, and tvOS development. Combined with SwiftUI's declarative UI framework, it provides a powerful, type-safe development experience with deep integration into Apple's ecosystem — from WidgetKit and App Clips to CloudKit sync and StoreKit purchases.\n\nSwift's async/await concurrency model, Combine framework for reactive data binding, and the Xcode toolchain provide everything needed to build polished Apple platform apps. TestFlight distribution and App Store submission are built into the development workflow.",
+      "Swift is Apple's modern programming language for iOS, macOS, watchOS, and tvOS development. Combined with SwiftUI's declarative UI framework, it provides a powerful, type-safe development experience with deep integration into Apple's ecosystem: from WidgetKit and App Clips to CloudKit sync and StoreKit purchases.\n\nSwift's async/await concurrency model, Combine framework for reactive data binding, and the Xcode toolchain provide everything needed to build polished Apple platform apps. TestFlight distribution and App Store submission are built into the development workflow.",
     challenges: [
       {
         title: "SwiftUI version fragmentation",
@@ -1832,12 +1832,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Adopt async/await for concurrency",
         detail:
-          "Swift's structured concurrency with async/await is safer and more readable than GCD or completion handlers — use it for all new async code.",
+          "Swift's structured concurrency with async/await is safer and more readable than GCD or completion handlers: use it for all new async code.",
       },
       {
         tip: "Test with TestFlight early",
         detail:
-          "Set up TestFlight distribution from day one — get beta feedback early and ensure your release pipeline works before launch.",
+          "Set up TestFlight distribution from day one: get beta feedback early and ensure your release pipeline works before launch.",
       },
     ],
     usefulLinks: [
@@ -1866,17 +1866,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does iOS development cost?",
         answer:
-          "Apple Developer Program costs $99/year. Xcode is free. Development costs depend on complexity — a simple app takes 4-8 weeks, a feature-rich app with backend integration takes 12-24 weeks. Universal apps (iOS + macOS) add 20-40% to the timeline.",
+          "Apple Developer Program costs $99/year. Xcode is free. Development costs depend on complexity: a simple app takes 4-8 weeks, a feature-rich app with backend integration takes 12-24 weeks. Universal apps (iOS + macOS) add 20-40% to the timeline.",
       },
       {
-        question: "Swift vs Flutter for iOS — which should I choose?",
+        question: "Swift vs Flutter for iOS: which should I choose?",
         answer:
           "Swift gives you native performance, the latest Apple APIs (WidgetKit, App Clips, SharePlay), and the best possible iOS user experience. Flutter provides cross-platform from one codebase but may lag behind on platform-specific features. Choose Swift for iOS-focused apps.",
       },
       {
         question: "Do I need a Mac for iOS development?",
         answer:
-          "Yes. Xcode — Apple's IDE and the only way to compile, sign, and submit iOS apps — runs exclusively on macOS. A Mac is required for development, testing, and App Store submission.",
+          "Yes. Xcode , Apple's IDE and the only way to compile, sign, and submit iOS apps , runs exclusively on macOS. A Mac is required for development, testing, and App Store submission.",
       },
     ],
     quickstart:
@@ -1892,7 +1892,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Content sites that ship zero JS by default",
     description:
-      "Astro's islands architecture lets us build blazing-fast content sites — blogs, docs, marketing pages — where JavaScript only loads for the interactive parts. Perfect for SEO-critical properties.",
+      "Astro's islands architecture lets us build blazing-fast content sites: blogs, docs, marketing pages, where JavaScript only loads for the interactive parts. Perfect for SEO-critical properties.",
     accentColor: "orange",
     visualizationKey: "astro",
     logo: "/logos/services/astro-icon-dark.svg",
@@ -1901,37 +1901,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Zero JS by default",
         description:
-          "Astro ships HTML and CSS only — JavaScript is opt-in per component via the island pattern.",
+          "Astro ships HTML and CSS only: JavaScript is opt-in per component via the island pattern.",
       },
       {
         icon: "Globe",
         title: "Content collections",
         description:
-          "Type-safe content APIs for Markdown, MDX, and JSON — schema validation with Zod included.",
+          "Type-safe content APIs for Markdown, MDX, and JSON: schema validation with Zod included.",
       },
       {
         icon: "Layers",
         title: "Framework agnostic islands",
         description:
-          "Mix React, Vue, Svelte, and Solid components on the same page — each hydrates independently.",
+          "Mix React, Vue, Svelte, and Solid components on the same page: each hydrates independently.",
       },
       {
         icon: "Server",
         title: "SSR & hybrid rendering",
         description:
-          "Per-route rendering modes — static, server-rendered, and edge-compatible via adapters.",
+          "Per-route rendering modes: static, server-rendered, and edge-compatible via adapters.",
       },
       {
         icon: "Search",
         title: "Built for SEO",
         description:
-          "Perfect Lighthouse scores out of the box — structured data, canonical URLs, and sitemaps via integrations.",
+          "Perfect Lighthouse scores out of the box: structured data, canonical URLs, and sitemaps via integrations.",
       },
       {
         icon: "BookOpen",
         title: "Starlight docs",
         description:
-          "Astro's official docs theme — full-text search, versioning, i18n, and a clean reading experience.",
+          "Astro's official docs theme: full-text search, versioning, i18n, and a clean reading experience.",
       },
     ],
     subTechs: [
@@ -1946,7 +1946,7 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "Astro is a web framework designed for content-driven websites — blogs, marketing sites, documentation, and e-commerce storefronts where performance directly impacts SEO and conversion. Its islands architecture ships zero JavaScript by default, only hydrating interactive components on demand. You can use React, Vue, Svelte, or Solid components on the same page, each loading independently. Astro's content collections provide type-safe Markdown/MDX authoring, and its adapter system deploys to any platform. If your site is primarily content with islands of interactivity, Astro delivers the best performance possible.",
+      "Astro is a web framework designed for content-driven websites: blogs, marketing sites, documentation, and e-commerce storefronts where performance directly impacts SEO and conversion. Its islands architecture ships zero JavaScript by default, only hydrating interactive components on demand. You can use React, Vue, Svelte, or Solid components on the same page, each loading independently. Astro's content collections provide type-safe Markdown/MDX authoring, and its adapter system deploys to any platform. If your site is primarily content with islands of interactivity, Astro delivers the best performance possible.",
     challenges: [
       {
         title: "Islands architecture mental model",
@@ -1956,7 +1956,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Limited client-side state sharing",
         description:
-          "Because each island hydrates independently, sharing state between interactive components requires nanostores or similar solutions — there's no global app-level state by default.",
+          "Because each island hydrates independently, sharing state between interactive components requires nanostores or similar solutions: there's no global app-level state by default.",
       },
       {
         title: "Dynamic functionality constraints",
@@ -1966,7 +1966,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "SSR adapter differences",
         description:
-          "Behavior differences between Vercel, Cloudflare, Node, and Netlify adapters — especially around streaming, edge functions, and environment variables — require careful testing per target.",
+          "Behavior differences between Vercel, Cloudflare, Node, and Netlify adapters, especially around streaming, edge functions, and environment variables: require careful testing per target.",
       },
     ],
     bestPractices: [
@@ -1978,7 +1978,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use content collections for all structured content",
         detail:
-          "Define Zod schemas for your content — blog posts, docs, product pages. This gives you type-safe queries, frontmatter validation, and automatic TypeScript types.",
+          "Define Zod schemas for your content: blog posts, docs, product pages. This gives you type-safe queries, frontmatter validation, and automatic TypeScript types.",
       },
       {
         tip: "Choose the right hydration directive",
@@ -1988,7 +1988,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage View Transitions for navigation",
         detail:
-          "Astro's built-in View Transitions API provides smooth page transitions without client-side routing — your MPA feels like an SPA with native browser animation support.",
+          "Astro's built-in View Transitions API provides smooth page transitions without client-side routing: your MPA feels like an SPA with native browser animation support.",
       },
     ],
     usefulLinks: [
@@ -2015,7 +2015,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Astro vs. Next.js — which should I use?",
+        question: "Astro vs. Next.js: which should I use?",
         answer:
           "Use Astro for content-heavy sites (blogs, docs, marketing) where performance and SEO are paramount. Use Next.js for interactive web applications with complex state, auth, and real-time features. Astro ships less JavaScript; Next.js offers more app-like capabilities.",
       },
@@ -2027,7 +2027,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can I use React components in Astro?",
         answer:
-          "Yes — Astro supports React, Vue, Svelte, Solid, and Preact components out of the box. You can even mix frameworks on the same page. Each component island hydrates independently.",
+          "Yes. Astro supports React, Vue, Svelte, Solid, and Preact components out of the box. You can even mix frameworks on the same page. Each component island hydrates independently.",
       },
       {
         question: "Is Astro good for SEO?",
@@ -2047,7 +2047,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Fine-grained reactivity, truly no virtual DOM",
     description:
-      "SolidJS delivers React-like developer ergonomics with genuinely better performance — no VDOM, fine-grained reactive primitives, and SolidStart for full-stack apps with SSR and file-based routing.",
+      "SolidJS delivers React-like developer ergonomics with genuinely better performance: no VDOM, fine-grained reactive primitives, and SolidStart for full-stack apps with SSR and file-based routing.",
     accentColor: "blue",
     visualizationKey: "solidjs",
     logo: "/logos/services/solidjs.svg",
@@ -2056,37 +2056,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Fine-grained reactivity",
         description:
-          "Solid's signals update only the exact DOM nodes that changed — no component re-renders, ever.",
+          "Solid's signals update only the exact DOM nodes that changed: no component re-renders, ever.",
       },
       {
         icon: "Server",
         title: "SolidStart SSR",
         description:
-          "File-based routing, server functions, and streaming SSR — the full-stack Solid experience.",
+          "File-based routing, server functions, and streaming SSR: the full-stack Solid experience.",
       },
       {
         icon: "Code2",
         title: "JSX without React",
         description:
-          "Familiar JSX syntax that compiles to direct DOM operations — zero runtime overhead.",
+          "Familiar JSX syntax that compiles to direct DOM operations: zero runtime overhead.",
       },
       {
         icon: "Gauge",
         title: "Top benchmark performance",
         description:
-          "Consistently among the fastest JS frameworks in independent benchmarks — real-world and synthetic.",
+          "Consistently among the fastest JS frameworks in independent benchmarks: real-world and synthetic.",
       },
       {
         icon: "Component",
         title: "Primitives over abstractions",
         description:
-          "Signals, effects, and memos compose naturally — build your own abstractions on solid foundations.",
+          "Signals, effects, and memos compose naturally: build your own abstractions on solid foundations.",
       },
       {
         icon: "Package",
         title: "Tiny bundle size",
         description:
-          "The Solid runtime is under 7KB gzipped — your code dominates the bundle, not the framework.",
+          "The Solid runtime is under 7KB gzipped: your code dominates the bundle, not the framework.",
       },
     ],
     subTechs: [
@@ -2095,12 +2095,12 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "SolidJS is a reactive JavaScript framework that compiles your components into fine-grained DOM updates — no virtual DOM, no component re-renders, just surgical updates to exactly the DOM nodes that changed. It offers a React-like JSX developer experience but with fundamentally better performance characteristics. SolidStart provides the full-stack story with SSR, file-based routing, and server functions. SolidJS consistently tops JS framework benchmarks, making it ideal for performance-critical applications where every millisecond matters.",
+      "SolidJS is a reactive JavaScript framework that compiles your components into fine-grained DOM updates: no virtual DOM, no component re-renders, just surgical updates to exactly the DOM nodes that changed. It offers a React-like JSX developer experience but with fundamentally better performance characteristics. SolidStart provides the full-stack story with SSR, file-based routing, and server functions. SolidJS consistently tops JS framework benchmarks, making it ideal for performance-critical applications where every millisecond matters.",
     challenges: [
       {
         title: "Reactive primitives differ from React patterns",
         description:
-          "Solid's signals and effects look similar to React hooks but behave differently — destructuring props breaks reactivity, and components run once (not on every render). This trips up React developers.",
+          "Solid's signals and effects look similar to React hooks but behave differently: destructuring props breaks reactivity, and components run once (not on every render). This trips up React developers.",
       },
       {
         title: "Smaller ecosystem and community",
@@ -2127,12 +2127,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use createResource for async data",
         detail:
-          "Solid's createResource primitive handles async data fetching with built-in Suspense integration — loading states, error boundaries, and caching in one API.",
+          "Solid's createResource primitive handles async data fetching with built-in Suspense integration: loading states, error boundaries, and caching in one API.",
       },
       {
         tip: "Prefer control-flow components over ternaries",
         detail:
-          "<Show>, <For>, and <Switch> components enable Solid to optimize DOM updates at compile time. They're not just conventions — they're performance optimizations.",
+          "<Show>, <For>, and <Switch> components enable Solid to optimize DOM updates at compile time. They're not just conventions: they're performance optimizations.",
       },
       {
         tip: "Start with SolidStart for full-stack apps",
@@ -2164,14 +2164,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "SolidJS vs. React — which is better?",
+        question: "SolidJS vs. React: which is better?",
         answer:
           "SolidJS is faster and produces smaller bundles thanks to fine-grained reactivity without a virtual DOM. React has a vastly larger ecosystem, more hiring options, and more mature tooling. Choose Solid for performance-critical apps; choose React for ecosystem breadth and team availability.",
       },
       {
         question: "How much does it cost to build a SolidJS application?",
         answer:
-          "SolidJS project costs are similar to other modern frameworks — $10K–40K for a typical web application. The smaller ecosystem may require more custom development, but the performance benefits reduce infrastructure costs long-term.",
+          "SolidJS project costs are similar to other modern frameworks: $10K–40K for a typical web application. The smaller ecosystem may require more custom development, but the performance benefits reduce infrastructure costs long-term.",
       },
       {
         question: "Is SolidJS production-ready?",
@@ -2197,7 +2197,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Type-safe routing, data, and tables for any framework",
     description:
-      "TanStack's suite of headless, framework-agnostic libraries — Router, Start, Query, Table, and Form — gives us fully type-safe, production-proven primitives we use across React, Vue, and Solid projects.",
+      "TanStack's suite of headless, framework-agnostic libraries , Router, Start, Query, Table, and Form , gives us fully type-safe, production-proven primitives we use across React, Vue, and Solid projects.",
     accentColor: "red",
     visualizationKey: "tanstack",
     logo: "/logos/services/tanstack.svg",
@@ -2206,7 +2206,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Route",
         title: "TanStack Router",
         description:
-          "100% type-safe routing with search params, loaders, and nested layouts — no route string guessing.",
+          "100% type-safe routing with search params, loaders, and nested layouts: no route string guessing.",
       },
       {
         icon: "Server",
@@ -2224,7 +2224,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "TanStack Table",
         description:
-          "Headless table logic — sorting, filtering, pagination, virtualisation — fully controlled.",
+          "Headless table logic , sorting, filtering, pagination, virtualisation , fully controlled.",
       },
       {
         icon: "FileText",
@@ -2248,12 +2248,12 @@ export const servicesConfig: ServiceConfig[] = [
       },
     ],
     overview:
-      "TanStack is a collection of headless, framework-agnostic libraries for routing, data fetching, tables, forms, and virtual scrolling — all with first-class TypeScript support. TanStack Query (formerly React Query) revolutionized async state management with its caching, background refetching, and optimistic update patterns. TanStack Router brings 100% type-safe routing to React with typed search params, loaders, and code splitting. TanStack Table powers complex data grids without imposing any UI. Together, they form a cohesive, production-tested toolkit we use across React, Vue, and Solid projects.",
+      "TanStack is a collection of headless, framework-agnostic libraries for routing, data fetching, tables, forms, and virtual scrolling: all with first-class TypeScript support. TanStack Query (formerly React Query) revolutionized async state management with its caching, background refetching, and optimistic update patterns. TanStack Router brings 100% type-safe routing to React with typed search params, loaders, and code splitting. TanStack Table powers complex data grids without imposing any UI. Together, they form a cohesive, production-tested toolkit we use across React, Vue, and Solid projects.",
     challenges: [
       {
         title: "Learning the full TanStack ecosystem",
         description:
-          "Each TanStack library (Query, Router, Table, Form, Virtual) has its own concepts and APIs. Understanding how they compose together — especially Router + Query + Start — takes time.",
+          "Each TanStack library (Query, Router, Table, Form, Virtual) has its own concepts and APIs. Understanding how they compose together, especially Router + Query + Start: takes time.",
       },
       {
         title: "Query cache invalidation strategies",
@@ -2263,7 +2263,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Type-safe search params complexity",
         description:
-          "TanStack Router's fully typed search params are powerful but add complexity — defining, validating, and serializing complex search state requires Zod schemas and careful API design.",
+          "TanStack Router's fully typed search params are powerful but add complexity: defining, validating, and serializing complex search state requires Zod schemas and careful API design.",
       },
       {
         title: "Headless table implementation effort",
@@ -2285,7 +2285,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use TanStack Router's search param validation",
         detail:
-          "Define Zod schemas for search params at the route level. This gives you type-safe URL state, automatic validation, and serialization — no more manual parsing.",
+          "Define Zod schemas for search params at the route level. This gives you type-safe URL state, automatic validation, and serialization: no more manual parsing.",
       },
       {
         tip: "Combine Query + Router for data loading",
@@ -2318,14 +2318,14 @@ export const servicesConfig: ServiceConfig[] = [
     faq: [
       {
         question:
-          "TanStack Query vs. SWR — which data fetching library should I use?",
+          "TanStack Query vs. SWR, which data fetching library should I use?",
         answer:
           "TanStack Query is more feature-rich with devtools, optimistic updates, infinite queries, and mutation lifecycle hooks. SWR is simpler and lighter. For complex apps with mutations and cache management, TanStack Query wins. For simple read-heavy apps, SWR may suffice.",
       },
       {
         question: "How much does it cost to implement TanStack in a project?",
         answer:
-          "TanStack libraries are free and open source. Implementation costs depend on your project — adding TanStack Query to an existing app is $2K–5K, while building a full app on TanStack Router + Start + Query is $15K–50K+ depending on complexity.",
+          "TanStack libraries are free and open source. Implementation costs depend on your project: adding TanStack Query to an existing app is $2K–5K, while building a full app on TanStack Router + Start + Query is $15K–50K+ depending on complexity.",
       },
       {
         question: "Can I use TanStack libraries with Vue or Svelte?",
@@ -2333,9 +2333,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Yes. TanStack Query, Table, Virtual, and Form all have official Vue adapters. TanStack Router and Start are currently React-only, though community adapters exist for other frameworks.",
       },
       {
-        question: "TanStack Router vs. React Router — which should I choose?",
+        question: "TanStack Router vs. React Router: which should I choose?",
         answer:
-          "TanStack Router offers 100% type-safe routing with typed search params and loaders — something React Router doesn't provide. React Router (v7/Remix) has a larger community and more deployment options. Choose TanStack Router for type safety; React Router for ecosystem maturity.",
+          "TanStack Router offers 100% type-safe routing with typed search params and loaders: something React Router doesn't provide. React Router (v7/Remix) has a larger community and more deployment options. Choose TanStack Router for type safety; React Router for ecosystem maturity.",
       },
     ],
     quickstart:
@@ -2353,7 +2353,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Ergonomic Bun-native web framework",
     description:
-      "Elysia is built specifically for Bun — an end-to-end type-safe web framework with outstanding performance, a plugin ecosystem, and a declarative API that makes building APIs genuinely enjoyable.",
+      "Elysia is built specifically for Bun: an end-to-end type-safe web framework with outstanding performance, a plugin ecosystem, and a declarative API that makes building APIs genuinely enjoyable.",
     accentColor: "pink",
     visualizationKey: "elysia",
     logo: "/logos/services/elysiajs.svg",
@@ -2362,25 +2362,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Bun-native performance",
         description:
-          "Elysia on Bun consistently tops Node.js framework benchmarks — 2–3× faster than Express equivalents.",
+          "Elysia on Bun consistently tops Node.js framework benchmarks: 2–3× faster than Express equivalents.",
       },
       {
         icon: "Shield",
         title: "End-to-end type safety",
         description:
-          "Typed request/response schemas via TypeBox — validation, serialisation, and OpenAPI generation from the same definition.",
+          "Typed request/response schemas via TypeBox: validation, serialisation, and OpenAPI generation from the same definition.",
       },
       {
         icon: "Puzzle",
         title: "Plugin architecture",
         description:
-          "Compose functionality with plugins — JWT, Swagger, CORS, rate limiting, and custom plugins all follow the same pattern.",
+          "Compose functionality with plugins: JWT, Swagger, CORS, rate limiting, and custom plugins all follow the same pattern.",
       },
       {
         icon: "Code2",
         title: "Eden Treaty client",
         description:
-          "Type-safe API client generated from your Elysia server — share types between backend and frontend without code gen.",
+          "Type-safe API client generated from your Elysia server: share types between backend and frontend without code gen.",
       },
       {
         icon: "Layers",
@@ -2392,7 +2392,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "FileCode2",
         title: "OpenAPI out of the box",
         description:
-          "Automatic Swagger UI and OpenAPI spec from your route definitions — no extra decorators.",
+          "Automatic Swagger UI and OpenAPI spec from your route definitions: no extra decorators.",
       },
     ],
     subTechs: [
@@ -2401,7 +2401,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "better-auth" },
     ],
     overview:
-      "Elysia is a Bun-native web framework built from the ground up for the Bun runtime. It delivers exceptional performance (consistently topping framework benchmarks), end-to-end type safety via TypeBox, and a plugin-based architecture that keeps code modular. At A Major, we use Elysia for high-performance API services where type safety and developer experience are equally important.\n\nElysia's Eden Treaty client generates a fully typed API client from your server definition — no code generation step, no schema duplication. Combined with Bun's fast startup, built-in test runner, and npm compatibility, Elysia is our top pick for greenfield TypeScript APIs that need to be fast.",
+      "Elysia is a Bun-native web framework built from the ground up for the Bun runtime. It delivers exceptional performance (consistently topping framework benchmarks), end-to-end type safety via TypeBox, and a plugin-based architecture that keeps code modular. At A Major, we use Elysia for high-performance API services where type safety and developer experience are equally important.\n\nElysia's Eden Treaty client generates a fully typed API client from your server definition: no code generation step, no schema duplication. Combined with Bun's fast startup, built-in test runner, and npm compatibility, Elysia is our top pick for greenfield TypeScript APIs that need to be fast.",
     challenges: [
       {
         title: "Bun runtime maturity",
@@ -2416,14 +2416,14 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Limited production case studies",
         description:
-          "Elysia is relatively new — fewer production war stories mean less community guidance for edge cases and scaling patterns.",
+          "Elysia is relatively new: fewer production war stories mean less community guidance for edge cases and scaling patterns.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Eden Treaty for type-safe API clients",
         detail:
-          "Eden Treaty generates a typed client from your Elysia server — share types across frontend and backend without code generation.",
+          "Eden Treaty generates a typed client from your Elysia server: share types across frontend and backend without code generation.",
       },
       {
         tip: "Leverage Elysia plugins for common concerns",
@@ -2433,12 +2433,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Structure routes with Elysia groups",
         detail:
-          "Group related routes with shared middleware — auth, validation, and error handling scoped per group.",
+          "Group related routes with shared middleware: auth, validation, and error handling scoped per group.",
       },
       {
         tip: "Use TypeBox for schema validation",
         detail:
-          "TypeBox schemas validate requests at runtime while providing TypeScript types at compile time — single source of truth.",
+          "TypeBox schemas validate requests at runtime while providing TypeScript types at compile time: single source of truth.",
       },
     ],
     usefulLinks: [
@@ -2480,7 +2480,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Yes. Bun is npm-compatible and most packages work out of the box. Packages with native Node.js bindings may need Bun-specific alternatives.",
       },
       {
-        question: "Elysia vs Hono — which should I choose?",
+        question: "Elysia vs Hono: which should I choose?",
         answer:
           "Elysia is Bun-specific with deeper runtime integration and Eden Treaty. Hono is runtime-agnostic (Cloudflare, Deno, Bun, Node). Choose Elysia for Bun-committed projects, Hono for multi-runtime portability.",
       },
@@ -2497,7 +2497,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "The battle-tested Node.js web framework",
     description:
-      "Express is the foundation of the Node.js ecosystem — minimal, flexible, and with middleware for every need. We use it for rapid APIs, legacy system integrations, and projects where the ecosystem breadth matters.",
+      "Express is the foundation of the Node.js ecosystem: minimal, flexible, and with middleware for every need. We use it for rapid APIs, legacy system integrations, and projects where the ecosystem breadth matters.",
     accentColor: "green",
     visualizationKey: "express",
     logo: "/logos/services/expressjs.svg",
@@ -2507,7 +2507,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Minimal and flexible",
         description:
-          "Express adds routing and middleware on top of Node's http module — no opinions, full control.",
+          "Express adds routing and middleware on top of Node's http module: no opinions, full control.",
       },
       {
         icon: "Puzzle",
@@ -2519,19 +2519,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Auth patterns",
         description:
-          "Passport.js, JWT, and session-based auth — we implement the right strategy for your security requirements.",
+          "Passport.js, JWT, and session-based auth: we implement the right strategy for your security requirements.",
       },
       {
         icon: "Database",
         title: "Any ORM or driver",
         description:
-          "Prisma, Drizzle, Mongoose, or raw SQL — Express doesn't dictate your data layer.",
+          "Prisma, Drizzle, Mongoose, or raw SQL: Express doesn't dictate your data layer.",
       },
       {
         icon: "Layers",
         title: "Middleware composition",
         description:
-          "Request pipelines built from composable middleware — logging, validation, auth, and error handling in sequence.",
+          "Request pipelines built from composable middleware: logging, validation, auth, and error handling in sequence.",
       },
       {
         icon: "RefreshCw",
@@ -2542,12 +2542,12 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "prisma" }, { slug: "postgresql" }],
     overview:
-      "Express is the most widely used Node.js web framework, with over 30 billion npm downloads. Its minimal, unopinionated design gives developers full control over architecture, while its vast middleware ecosystem handles everything from authentication to rate limiting. At A Major, we use Express for rapid API development, legacy system integrations, and projects where the breadth of community packages matters most.\n\nExpress's simplicity is its strength — a few lines of code get you a working API. For teams maintaining existing Node.js systems, Express provides a stable, well-documented foundation that virtually every JavaScript developer already knows.",
+      "Express is the most widely used Node.js web framework, with over 30 billion npm downloads. Its minimal, unopinionated design gives developers full control over architecture, while its vast middleware ecosystem handles everything from authentication to rate limiting. At A Major, we use Express for rapid API development, legacy system integrations, and projects where the breadth of community packages matters most.\n\nExpress's simplicity is its strength: a few lines of code get you a working API. For teams maintaining existing Node.js systems, Express provides a stable, well-documented foundation that virtually every JavaScript developer already knows.",
     challenges: [
       {
         title: "No built-in structure for large apps",
         description:
-          "Express is unopinionated by design — without disciplined architecture, large codebases become difficult to navigate and maintain.",
+          "Express is unopinionated by design: without disciplined architecture, large codebases become difficult to navigate and maintain.",
       },
       {
         title: "Error handling middleware quirks",
@@ -2569,7 +2569,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use express-async-errors for clean error handling",
         detail:
-          "This tiny package lets async route handlers throw errors that Express catches automatically — no try/catch boilerplate.",
+          "This tiny package lets async route handlers throw errors that Express catches automatically: no try/catch boilerplate.",
       },
       {
         tip: "Apply Helmet for security headers",
@@ -2579,7 +2579,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Organize routes in a dedicated router directory",
         detail:
-          "Use express.Router() to split routes into feature-based files — keeps the main app file clean.",
+          "Use express.Router() to split routes into feature-based files: keeps the main app file clean.",
       },
       {
         tip: "Validate input with Zod or Joi",
@@ -2618,10 +2618,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Express development cost?",
         answer:
-          "Express is free and open-source. Its simplicity means faster initial development — typical API projects range from $8K–$50K depending on complexity.",
+          "Express is free and open-source. Its simplicity means faster initial development: typical API projects range from $8K–$50K depending on complexity.",
       },
       {
-        question: "Express vs Fastify — which should I use?",
+        question: "Express vs Fastify: which should I use?",
         answer:
           "Use Express when you need the broadest middleware ecosystem or are maintaining existing Express apps. Choose Fastify for new high-performance APIs with built-in validation.",
       },
@@ -2654,42 +2654,42 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "High-throughput JSON APIs",
         description:
-          "Fastify's JSON serialiser is 2× faster than JSON.stringify — measurable difference at scale.",
+          "Fastify's JSON serialiser is 2× faster than JSON.stringify: measurable difference at scale.",
       },
       {
         icon: "Shield",
         title: "Schema validation",
         description:
-          "JSON Schema validation on every request and response — errors caught at the boundary, not deep in your code.",
+          "JSON Schema validation on every request and response: errors caught at the boundary, not deep in your code.",
       },
       {
         icon: "Puzzle",
         title: "Plugin encapsulation",
         description:
-          "Fastify's plugin system enforces encapsulation — no accidental global state between routes.",
+          "Fastify's plugin system enforces encapsulation: no accidental global state between routes.",
       },
       {
         icon: "FileCode2",
         title: "Auto OpenAPI docs",
         description:
-          "Swagger UI generated from your JSON Schema definitions — documentation that never goes stale.",
+          "Swagger UI generated from your JSON Schema definitions: documentation that never goes stale.",
       },
       {
         icon: "Layers",
         title: "Lifecycle hooks",
         description:
-          "Fine-grained hooks at every stage of the request lifecycle — preValidation, preHandler, onSend.",
+          "Fine-grained hooks at every stage of the request lifecycle: preValidation, preHandler, onSend.",
       },
       {
         icon: "Cpu",
         title: "Low overhead",
         description:
-          "Minimal abstraction over Node's http module — Fastify's overhead is measured in nanoseconds.",
+          "Minimal abstraction over Node's http module: Fastify's overhead is measured in nanoseconds.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "drizzle" }, { slug: "postgresql" }],
     overview:
-      "Fastify is a high-performance Node.js framework focused on speed, developer experience, and plugin encapsulation. Its JSON serialisation is 2× faster than JSON.stringify, and its schema-based validation catches errors at the request boundary. At A Major, we choose Fastify for high-throughput API services where Node.js performance matters.\n\nFastify's plugin system enforces encapsulation — plugins can't accidentally pollute global state. Combined with lifecycle hooks at every request stage, automatic OpenAPI generation from JSON Schema, and first-class TypeScript support, Fastify is our recommended Node.js framework for new performance-critical backends.",
+      "Fastify is a high-performance Node.js framework focused on speed, developer experience, and plugin encapsulation. Its JSON serialisation is 2× faster than JSON.stringify, and its schema-based validation catches errors at the request boundary. At A Major, we choose Fastify for high-throughput API services where Node.js performance matters.\n\nFastify's plugin system enforces encapsulation: plugins can't accidentally pollute global state. Combined with lifecycle hooks at every request stage, automatic OpenAPI generation from JSON Schema, and first-class TypeScript support, Fastify is our recommended Node.js framework for new performance-critical backends.",
     challenges: [
       {
         title: "Plugin encapsulation learning curve",
@@ -2711,12 +2711,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use @fastify/autoload for route discovery",
         detail:
-          "Auto-load routes from a directory structure — convention-based routing without manual registration.",
+          "Auto-load routes from a directory structure: convention-based routing without manual registration.",
       },
       {
         tip: "Define schemas with TypeBox",
         detail:
-          "TypeBox generates JSON Schema from TypeScript types — write once, get validation and type inference together.",
+          "TypeBox generates JSON Schema from TypeScript types: write once, get validation and type inference together.",
       },
       {
         tip: "Use fastify-plugin for shared decorators",
@@ -2726,7 +2726,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable ajv strict mode",
         detail:
-          "Strict JSON Schema validation catches schema definition errors early — preventing silent validation bypasses.",
+          "Strict JSON Schema validation catches schema definition errors early: preventing silent validation bypasses.",
       },
     ],
     usefulLinks: [
@@ -2765,7 +2765,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Fastify development cost?",
         answer:
-          "Fastify is free and open-source. Development costs are comparable to Express — $10K–$50K for typical API projects. The framework itself adds no licensing cost.",
+          "Fastify is free and open-source. Development costs are comparable to Express: $10K–$50K for typical API projects. The framework itself adds no licensing cost.",
       },
       {
         question: "Does Fastify work with TypeScript?",
@@ -2785,7 +2785,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Reactive backend-as-a-service for real-time apps",
     description:
-      "Convex is a fully reactive backend — functions, database, file storage, and scheduling in one platform. Queries automatically re-run when data changes, pushing live updates to every connected client.",
+      "Convex is a fully reactive backend: functions, database, file storage, and scheduling in one platform. Queries automatically re-run when data changes, pushing live updates to every connected client.",
     accentColor: "amber",
     visualizationKey: "convex",
     logo: "/logos/services/convex.svg",
@@ -2794,52 +2794,52 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Reactive queries",
         description:
-          "Convex queries re-run automatically when their data changes — every client stays in sync without polling.",
+          "Convex queries re-run automatically when their data changes: every client stays in sync without polling.",
       },
       {
         icon: "Database",
         title: "Document database",
         description:
-          "Transactional document store with a TypeScript query API — no SQL, no schema migrations.",
+          "Transactional document store with a TypeScript query API: no SQL, no schema migrations.",
       },
       {
         icon: "Shield",
         title: "ACID transactions",
         description:
-          "All mutations run in ACID transactions — consistent state even with concurrent users.",
+          "All mutations run in ACID transactions: consistent state even with concurrent users.",
       },
       {
         icon: "Timer",
         title: "Scheduled functions",
         description:
-          "Cron jobs and delayed function execution built into the platform — no external queue needed.",
+          "Cron jobs and delayed function execution built into the platform: no external queue needed.",
       },
       {
         icon: "Code2",
         title: "End-to-end TypeScript",
         description:
-          "Types flow from database schema to frontend query hooks — no manual type definitions.",
+          "Types flow from database schema to frontend query hooks: no manual type definitions.",
       },
       {
         icon: "Globe",
         title: "Global edge deployment",
         description:
-          "Functions run close to your users on Convex's edge infrastructure — low latency worldwide.",
+          "Functions run close to your users on Convex's edge infrastructure: low latency worldwide.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }],
     overview:
-      "Convex is a reactive backend-as-a-service that eliminates the gap between your database and your UI. Queries automatically re-execute when their underlying data changes, pushing live updates to every connected client without polling or WebSocket plumbing. At A Major, we use Convex for real-time applications where live data is a core requirement — collaborative tools, dashboards, and chat-based products.\n\nConvex provides a fully managed stack: a transactional document database, serverless functions, file storage, and cron scheduling — all accessible via a TypeScript API with end-to-end type safety. No infrastructure to manage, no connection pools to tune, and no cache invalidation logic to write.",
+      "Convex is a reactive backend-as-a-service that eliminates the gap between your database and your UI. Queries automatically re-execute when their underlying data changes, pushing live updates to every connected client without polling or WebSocket plumbing. At A Major, we use Convex for real-time applications where live data is a core requirement , collaborative tools, dashboards, and chat-based products.\n\nConvex provides a fully managed stack: a transactional document database, serverless functions, file storage, and cron scheduling , all accessible via a TypeScript API with end-to-end type safety. No infrastructure to manage, no connection pools to tune, and no cache invalidation logic to write.",
     challenges: [
       {
         title: "Vendor lock-in considerations",
         description:
-          "Convex is a proprietary platform. Data and function logic are tightly coupled to Convex's runtime — migration to self-hosted infrastructure requires significant rearchitecture.",
+          "Convex is a proprietary platform. Data and function logic are tightly coupled to Convex's runtime: migration to self-hosted infrastructure requires significant rearchitecture.",
       },
       {
         title: "Query function limitations",
         description:
-          "Convex query and mutation functions have execution time limits and can't make external HTTP calls — side effects must be handled through actions.",
+          "Convex query and mutation functions have execution time limits and can't make external HTTP calls: side effects must be handled through actions.",
       },
       {
         title: "Schema migration patterns",
@@ -2856,7 +2856,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Define schemas with strict validation",
         detail:
-          "Convex schemas validate data at write time — define them early to catch data issues before they reach production.",
+          "Convex schemas validate data at write time: define them early to catch data issues before they reach production.",
       },
       {
         tip: "Leverage Convex's built-in search indexes",
@@ -2898,7 +2898,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Convex has a generous free tier including database storage, function calls, and bandwidth. Paid plans start for production workloads that exceed free tier limits.",
       },
       {
-        question: "Convex vs Supabase — which should I choose?",
+        question: "Convex vs Supabase: which should I choose?",
         answer:
           "Convex excels at real-time reactivity with automatic query subscriptions. Supabase is a Postgres-backed platform with more traditional SQL access. Choose Convex for live-updating UIs, Supabase for SQL-centric workflows.",
       },
@@ -2926,58 +2926,59 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "TypeScript ORM that stays out of your way",
     description:
-      "Drizzle is our preferred ORM for TypeScript backends — it's SQL-first, generates correct queries, has zero runtime overhead, and never surprises you. Pairs perfectly with Postgres, MySQL, and SQLite.",
+      "Drizzle is our preferred ORM for TypeScript backends: it's SQL-first, generates correct queries, has zero runtime overhead, and never surprises you. Pairs perfectly with Postgres, MySQL, and SQLite.",
     accentColor: "green",
     visualizationKey: "drizzle",
-    logo: "/logos/services/drizzle-orm_dark.svg",
+    logo: "/logos/services/drizzle-orm_light.svg",
+    logoDark: "/logos/services/drizzle-orm_dark.svg",
     features: [
       {
         icon: "Database",
         title: "SQL-first schema",
         description:
-          "Define your schema in TypeScript — Drizzle generates the SQL you'd write yourself, no magic.",
+          "Define your schema in TypeScript: Drizzle generates the SQL you'd write yourself, no magic.",
       },
       {
         icon: "Code2",
         title: "Full type inference",
         description:
-          "Select, insert, update, and join types inferred automatically — no manual type annotations.",
+          "Select, insert, update, and join types inferred automatically: no manual type annotations.",
       },
       {
         icon: "Zap",
         title: "Zero overhead queries",
         description:
-          "Drizzle compiles to raw SQL with no N+1 risk — what you write is exactly what hits the database.",
+          "Drizzle compiles to raw SQL with no N+1 risk: what you write is exactly what hits the database.",
       },
       {
         icon: "GitBranch",
         title: "Migration tooling",
         description:
-          "Drizzle Kit generates SQL migrations from your schema diff — review before applying, no surprises.",
+          "Drizzle Kit generates SQL migrations from your schema diff: review before applying, no surprises.",
       },
       {
         icon: "Globe",
         title: "Edge-compatible",
         description:
-          "Works with Neon, Turso, Cloudflare D1, and PlanetScale — edge runtimes included.",
+          "Works with Neon, Turso, Cloudflare D1, and PlanetScale: edge runtimes included.",
       },
       {
         icon: "Layers",
         title: "Multi-database support",
         description:
-          "PostgreSQL, MySQL, SQLite, and their serverless variants — switch drivers without rewriting queries.",
+          "PostgreSQL, MySQL, SQLite, and their serverless variants: switch drivers without rewriting queries.",
       },
     ],
     subTechs: [{ slug: "postgresql" }, { slug: "sqlite" }, { slug: "mysql" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Drizzle ORM is an SQL-first TypeScript ORM that compiles to exactly the SQL you'd write yourself — no magic, no hidden queries, no N+1 surprises. It provides full type inference from your schema definition, including selects, inserts, joins, and aggregations.\n\nDrizzle supports PostgreSQL, MySQL, and SQLite (including serverless variants like Neon, PlanetScale, Turso, and Cloudflare D1). Drizzle Kit handles schema migrations by generating SQL diffs you review before applying. It's the ideal ORM for developers who think in SQL and want type safety without abstraction overhead.",
+      "Drizzle ORM is an SQL-first TypeScript ORM that compiles to exactly the SQL you'd write yourself: no magic, no hidden queries, no N+1 surprises. It provides full type inference from your schema definition, including selects, inserts, joins, and aggregations.\n\nDrizzle supports PostgreSQL, MySQL, and SQLite (including serverless variants like Neon, PlanetScale, Turso, and Cloudflare D1). Drizzle Kit handles schema migrations by generating SQL diffs you review before applying. It's the ideal ORM for developers who think in SQL and want type safety without abstraction overhead.",
     challenges: [
       {
         title: "Learning curve for SQL-first approach",
         description:
-          "Developers used to Prisma's schema-first model may find Drizzle's SQL-like API unfamiliar initially. The benefit is predictable query generation — what you write is what executes.",
+          "Developers used to Prisma's schema-first model may find Drizzle's SQL-like API unfamiliar initially. The benefit is predictable query generation: what you write is what executes.",
       },
       {
         title: "Ecosystem maturity",
@@ -2994,12 +2995,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Define schemas in TypeScript files",
         detail:
-          "Keep your Drizzle schemas in src/db/schema/ with one file per table — clear separation makes Drizzle Kit migrations predictable.",
+          "Keep your Drizzle schemas in src/db/schema/ with one file per table: clear separation makes Drizzle Kit migrations predictable.",
       },
       {
         tip: "Use Drizzle Kit for migrations",
         detail:
-          "drizzle-kit generate creates SQL migration files from your schema diff — always review the generated SQL before applying.",
+          "drizzle-kit generate creates SQL migration files from your schema diff: always review the generated SQL before applying.",
       },
       {
         tip: "Prefer the SQL-like API for complex queries",
@@ -3009,7 +3010,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use $inferSelect and $inferInsert",
         detail:
-          "Drizzle's inference utilities generate TypeScript types from your schema — no need to manually define types for your models.",
+          "Drizzle's inference utilities generate TypeScript types from your schema: no need to manually define types for your models.",
       },
     ],
     usefulLinks: [
@@ -3041,9 +3042,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Drizzle ORM is completely free and open-source (Apache 2.0 license). Drizzle Studio (the visual data browser) is also free. There are no paid tiers or premium features.",
       },
       {
-        question: "Drizzle vs Prisma — which should I pick?",
+        question: "Drizzle vs Prisma: which should I pick?",
         answer:
-          "Drizzle is SQL-first with zero runtime overhead — ideal for developers who think in SQL and want predictable queries. Prisma is schema-first with a richer ecosystem and better DX for teams new to ORMs. We use Drizzle for performance-critical projects and Prisma for rapid development.",
+          "Drizzle is SQL-first with zero runtime overhead: ideal for developers who think in SQL and want predictable queries. Prisma is schema-first with a richer ecosystem and better DX for teams new to ORMs. We use Drizzle for performance-critical projects and Prisma for rapid development.",
       },
       {
         question: "Does Drizzle work with serverless and edge?",
@@ -3062,7 +3063,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "auth",
     tagline: "The most comprehensive auth library for TypeScript",
     description:
-      "Better Auth handles authentication end-to-end for TypeScript apps — sessions, OAuth, two-factor, magic links, passkeys, and more. Framework-agnostic with adapters for every major ORM and database.",
+      "Better Auth handles authentication end-to-end for TypeScript apps: sessions, OAuth, two-factor, magic links, passkeys, and more. Framework-agnostic with adapters for every major ORM and database.",
     accentColor: "violet",
     visualizationKey: "better-auth",
     logo: "/logos/services/better-auth_dark.svg",
@@ -3071,31 +3072,31 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Complete auth flows",
         description:
-          "Email/password, OAuth (GitHub, Google, etc.), magic links, and passkeys — all production-ready.",
+          "Email/password, OAuth (GitHub, Google, etc.), magic links, and passkeys: all production-ready.",
       },
       {
         icon: "Smartphone",
         title: "Two-factor auth",
         description:
-          "TOTP, SMS, and backup codes with a simple plugin — 2FA added in minutes, not days.",
+          "TOTP, SMS, and backup codes with a simple plugin: 2FA added in minutes, not days.",
       },
       {
         icon: "Database",
         title: "ORM-agnostic adapters",
         description:
-          "Works with Prisma, Drizzle, Mongoose, and raw SQL — bring your existing database setup.",
+          "Works with Prisma, Drizzle, Mongoose, and raw SQL: bring your existing database setup.",
       },
       {
         icon: "Globe",
         title: "Framework agnostic",
         description:
-          "Next.js, SvelteKit, Nuxt, Express, Hono, Elysia — Better Auth adapts to your stack.",
+          "Next.js, SvelteKit, Nuxt, Express, Hono, Elysia: Better Auth adapts to your stack.",
       },
       {
         icon: "Code2",
         title: "Type-safe client",
         description:
-          "Generated client with full TypeScript types — autocomplete for every auth action and session field.",
+          "Generated client with full TypeScript types: autocomplete for every auth action and session field.",
       },
       {
         icon: "Puzzle",
@@ -3108,7 +3109,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Better Auth is the most comprehensive authentication library for TypeScript — handling sessions, OAuth providers, two-factor authentication, magic links, passkeys, and organization management out of the box. It's framework-agnostic, working with Next.js, SvelteKit, Nuxt, Hono, Express, and more.\n\nUnlike hosted auth services, Better Auth runs in your own infrastructure with your own database. It supports Prisma, Drizzle, Mongoose, and raw SQL adapters, giving you full control over your auth data while providing a type-safe client with autocomplete for every auth action.",
+      "Better Auth is the most comprehensive authentication library for TypeScript: handling sessions, OAuth providers, two-factor authentication, magic links, passkeys, and organization management out of the box. It's framework-agnostic, working with Next.js, SvelteKit, Nuxt, Hono, Express, and more.\n\nUnlike hosted auth services, Better Auth runs in your own infrastructure with your own database. It supports Prisma, Drizzle, Mongoose, and raw SQL adapters, giving you full control over your auth data while providing a type-safe client with autocomplete for every auth action.",
     challenges: [
       {
         title: "Initial configuration complexity",
@@ -3135,12 +3136,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use the type-safe client",
         detail:
-          "Better Auth's generated client provides autocomplete for every auth action, session field, and user property — catching auth bugs at compile time.",
+          "Better Auth's generated client provides autocomplete for every auth action, session field, and user property: catching auth bugs at compile time.",
       },
       {
         tip: "Configure rate limiting from day one",
         detail:
-          "The rate limiting plugin protects login and signup endpoints from brute-force attacks — essential for any self-hosted auth system.",
+          "The rate limiting plugin protects login and signup endpoints from brute-force attacks: essential for any self-hosted auth system.",
       },
     ],
     usefulLinks: [
@@ -3172,9 +3173,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Better Auth is completely free and open-source (MIT license). You only pay for your own hosting and database. There are no per-user fees, no seat limits, and no premium tiers.",
       },
       {
-        question: "Better Auth vs Clerk — which should I use?",
+        question: "Better Auth vs Clerk: which should I use?",
         answer:
-          "Clerk provides a hosted, zero-config auth solution with prebuilt UI components — great for getting started fast. Better Auth gives you full control, no vendor lock-in, and no per-user pricing — better for projects where you want to own your auth infrastructure.",
+          "Clerk provides a hosted, zero-config auth solution with prebuilt UI components , great for getting started fast. Better Auth gives you full control, no vendor lock-in, and no per-user pricing , better for projects where you want to own your auth infrastructure.",
       },
       {
         question: "Does Better Auth support social login?",
@@ -3195,7 +3196,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Monorepos that scale without slowing down",
     description:
-      "Turborepo makes monorepos fast through intelligent caching — tasks only re-run when their inputs change. We set up Turborepo workspaces for teams sharing code between web, mobile, and backend packages.",
+      "Turborepo makes monorepos fast through intelligent caching: tasks only re-run when their inputs change. We set up Turborepo workspaces for teams sharing code between web, mobile, and backend packages.",
     accentColor: "red",
     visualizationKey: "turborepo",
     logo: "/logos/services/turborepo-icon-dark.svg",
@@ -3204,13 +3205,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Remote caching",
         description:
-          "Share build and test caches across your team — CI runs complete in seconds, not minutes.",
+          "Share build and test caches across your team: CI runs complete in seconds, not minutes.",
       },
       {
         icon: "Workflow",
         title: "Task pipelines",
         description:
-          "Declare task dependencies once — Turborepo runs them in the right order, in parallel where possible.",
+          "Declare task dependencies once: Turborepo runs them in the right order, in parallel where possible.",
       },
       {
         icon: "Package",
@@ -3222,13 +3223,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "GitBranch",
         title: "Incremental builds",
         description:
-          "Only rebuild packages that changed — consistent with git history for precise cache invalidation.",
+          "Only rebuild packages that changed: consistent with git history for precise cache invalidation.",
       },
       {
         icon: "Layers",
         title: "Workspace management",
         description:
-          "Works with npm, yarn, and pnpm workspaces — we migrate your existing monorepo or set one up from scratch.",
+          "Works with npm, yarn, and pnpm workspaces: we migrate your existing monorepo or set one up from scratch.",
       },
       {
         icon: "Monitor",
@@ -3241,7 +3242,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Turborepo is a high-performance build system for JavaScript and TypeScript monorepos. It makes monorepos fast through intelligent task caching — tasks only re-run when their inputs change, and remote caching shares build results across your entire team and CI.\n\nTurborepo works with npm, yarn, and pnpm workspaces. It orchestrates task dependencies (build before test, test before deploy), runs independent tasks in parallel, and provides a dashboard for monitoring cache hit rates and build times across your development workflow.",
+      "Turborepo is a high-performance build system for JavaScript and TypeScript monorepos. It makes monorepos fast through intelligent task caching: tasks only re-run when their inputs change, and remote caching shares build results across your entire team and CI.\n\nTurborepo works with npm, yarn, and pnpm workspaces. It orchestrates task dependencies (build before test, test before deploy), runs independent tasks in parallel, and provides a dashboard for monitoring cache hit rates and build times across your development workflow.",
     challenges: [
       {
         title: "Monorepo architecture decisions",
@@ -3263,7 +3264,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable remote caching from the start",
         detail:
-          "Turbo Cloud or self-hosted remote caching ensures CI builds reuse work from local development and previous runs — dramatic CI speedups.",
+          "Turbo Cloud or self-hosted remote caching ensures CI builds reuse work from local development and previous runs: dramatic CI speedups.",
       },
       {
         tip: "Define clear task pipelines",
@@ -3273,7 +3274,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use shared packages for common code",
         detail:
-          "Extract UI components, utility functions, and configurations into shared workspace packages — consumed by multiple apps without publishing to npm.",
+          "Extract UI components, utility functions, and configurations into shared workspace packages: consumed by multiple apps without publishing to npm.",
       },
     ],
     usefulLinks: [
@@ -3305,14 +3306,14 @@ export const servicesConfig: ServiceConfig[] = [
           "Turborepo is free and open-source. Turbo Cloud (remote caching hosted by Vercel) has a free tier for personal use. Team plans are included in Vercel Pro ($20/month per member). Self-hosted remote caching is free.",
       },
       {
-        question: "Turborepo vs Nx — which monorepo tool?",
+        question: "Turborepo vs Nx: which monorepo tool?",
         answer:
-          "Turborepo is simpler and focused on task caching and orchestration — ideal for teams that want fast monorepos without a steep learning curve. Nx offers more features (generators, executors, plugins) but is more complex. Choose Turborepo for simplicity; Nx for large teams needing deep tooling.",
+          "Turborepo is simpler and focused on task caching and orchestration: ideal for teams that want fast monorepos without a steep learning curve. Nx offers more features (generators, executors, plugins) but is more complex. Choose Turborepo for simplicity; Nx for large teams needing deep tooling.",
       },
       {
         question: "Can I add Turborepo to an existing project?",
         answer:
-          "Yes. Turborepo works with any npm/yarn/pnpm workspace. Add a turbo.json to your existing monorepo and configure task pipelines — you can adopt it incrementally.",
+          "Yes. Turborepo works with any npm/yarn/pnpm workspace. Add a turbo.json to your existing monorepo and configure task pipelines: you can adopt it incrementally.",
       },
     ],
     quickstart:
@@ -3328,7 +3329,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "The world's most advanced open source database",
     description:
-      "PostgreSQL is our default relational database — battle-tested, feature-rich, and capable of handling everything from simple CRUD to complex analytical queries with JSON support, full-text search, and extensions.",
+      "PostgreSQL is our default relational database: battle-tested, feature-rich, and capable of handling everything from simple CRUD to complex analytical queries with JSON support, full-text search, and extensions.",
     accentColor: "blue",
     visualizationKey: "postgresql",
     logo: "/logos/services/postgresql.svg",
@@ -3343,38 +3344,38 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "JSON & JSONB",
         description:
-          "Store and query semi-structured data natively alongside relational data — no separate document store needed.",
+          "Store and query semi-structured data natively alongside relational data: no separate document store needed.",
       },
       {
         icon: "Search",
         title: "Full-text search",
         description:
-          "Built-in FTS with tsvector and GIN indexes — fast, ranked search without Elasticsearch.",
+          "Built-in FTS with tsvector and GIN indexes: fast, ranked search without Elasticsearch.",
       },
       {
         icon: "Layers",
         title: "Advanced indexing",
         description:
-          "B-tree, Hash, GiST, GIN, and BRIN indexes — the right index for every query pattern.",
+          "B-tree, Hash, GiST, GIN, and BRIN indexes: the right index for every query pattern.",
       },
       {
         icon: "Globe",
         title: "Serverless with Neon",
         description:
-          "Neon brings autoscaling, branching, and instant scale-to-zero to Postgres — perfect for modern apps.",
+          "Neon brings autoscaling, branching, and instant scale-to-zero to Postgres: perfect for modern apps.",
       },
       {
         icon: "Shield",
         title: "Row-level security",
         description:
-          "Fine-grained access control at the database level — multi-tenant data isolation built in.",
+          "Fine-grained access control at the database level: multi-tenant data isolation built in.",
       },
     ],
     subTechs: [{ slug: "prisma" }, { slug: "drizzle" }, { slug: "supabase" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "PostgreSQL is the most advanced open-source relational database, trusted by companies like Apple, Instagram, and Spotify for mission-critical workloads. It supports ACID transactions, advanced indexing (B-tree, GIN, GiST, BRIN), JSONB for semi-structured data, full-text search, and a rich extension ecosystem including PostGIS and pgvector.\n\nWhether you're building a SaaS platform, an analytics pipeline, or a real-time application with Supabase, PostgreSQL provides the reliability and feature depth to handle it all — from a single-node dev database to globally replicated clusters with Neon or Citus.",
+      "PostgreSQL is the most advanced open-source relational database, trusted by companies like Apple, Instagram, and Spotify for mission-critical workloads. It supports ACID transactions, advanced indexing (B-tree, GIN, GiST, BRIN), JSONB for semi-structured data, full-text search, and a rich extension ecosystem including PostGIS and pgvector.\n\nWhether you're building a SaaS platform, an analytics pipeline, or a real-time application with Supabase, PostgreSQL provides the reliability and feature depth to handle it all: from a single-node dev database to globally replicated clusters with Neon or Citus.",
     challenges: [
       {
         title: "Connection management at scale",
@@ -3384,7 +3385,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Schema migrations in production",
         description:
-          "ALTER TABLE on large tables can lock reads and writes. Safe migration strategies — like creating indexes concurrently and using expand-contract patterns — prevent downtime.",
+          "ALTER TABLE on large tables can lock reads and writes. Safe migration strategies , like creating indexes concurrently and using expand-contract patterns , prevent downtime.",
       },
       {
         title: "Query performance tuning",
@@ -3411,7 +3412,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable pg_stat_statements",
         detail:
-          "Track slow queries, execution counts, and mean time per query — essential for ongoing performance tuning.",
+          "Track slow queries, execution counts, and mean time per query: essential for ongoing performance tuning.",
       },
       {
         tip: "Use row-level security for multi-tenancy",
@@ -3445,10 +3446,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does PostgreSQL development cost?",
         answer:
-          "PostgreSQL itself is free and open-source. Development costs depend on project scope — a simple CRUD backend with Postgres might take 2-4 weeks, while a complex multi-tenant SaaS with RLS, full-text search, and replication takes 8-16 weeks. Managed hosting (Neon, Supabase, RDS) starts from free tiers up to hundreds per month for production workloads.",
+          "PostgreSQL itself is free and open-source. Development costs depend on project scope: a simple CRUD backend with Postgres might take 2-4 weeks, while a complex multi-tenant SaaS with RLS, full-text search, and replication takes 8-16 weeks. Managed hosting (Neon, Supabase, RDS) starts from free tiers up to hundreds per month for production workloads.",
       },
       {
-        question: "PostgreSQL vs MySQL — which should I choose?",
+        question: "PostgreSQL vs MySQL: which should I choose?",
         answer:
           "PostgreSQL excels at complex queries, JSONB, full-text search, and extensibility. MySQL is simpler to operate and dominates in PHP/WordPress ecosystems. For new TypeScript projects, we recommend PostgreSQL for its richer feature set and better ORM support (Prisma, Drizzle).",
       },
@@ -3474,7 +3475,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Flexible document storage at any scale",
     description:
-      "MongoDB's document model maps naturally to application objects — no ORM gymnastics needed. We use it for content management, real-time analytics, and applications where schema flexibility matters.",
+      "MongoDB's document model maps naturally to application objects: no ORM gymnastics needed. We use it for content management, real-time analytics, and applications where schema flexibility matters.",
     accentColor: "green",
     visualizationKey: "mongodb",
     logo: "/logos/services/mongodb-icon-dark.svg",
@@ -3483,13 +3484,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "FileText",
         title: "Document model",
         description:
-          "Store data as JSON-like documents — nested objects, arrays, and mixed types in a single collection.",
+          "Store data as JSON-like documents: nested objects, arrays, and mixed types in a single collection.",
       },
       {
         icon: "Zap",
         title: "Aggregation pipeline",
         description:
-          "Powerful multi-stage data transformation and analytics — no separate data warehouse for moderate workloads.",
+          "Powerful multi-stage data transformation and analytics: no separate data warehouse for moderate workloads.",
       },
       {
         icon: "Globe",
@@ -3501,13 +3502,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "RefreshCw",
         title: "Change streams",
         description:
-          "Real-time change notifications via change streams — build reactive apps without polling.",
+          "Real-time change notifications via change streams: build reactive apps without polling.",
       },
       {
         icon: "Layers",
         title: "Mongoose ORM",
         description:
-          "Schema validation, middleware, and type-safe queries via Mongoose — structure without sacrificing flexibility.",
+          "Schema validation, middleware, and type-safe queries via Mongoose: structure without sacrificing flexibility.",
       },
       {
         icon: "Shield",
@@ -3529,7 +3530,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Schema design without relations",
         description:
-          "MongoDB's flexible schema is powerful but requires deliberate design decisions — embedding vs referencing, denormalisation trade-offs, and avoiding unbounded array growth.",
+          "MongoDB's flexible schema is powerful but requires deliberate design decisions: embedding vs referencing, denormalisation trade-offs, and avoiding unbounded array growth.",
       },
       {
         title: "Aggregation pipeline complexity",
@@ -3551,7 +3552,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Mongoose for schema validation",
         detail:
-          "Mongoose schemas enforce structure, run middleware hooks, and provide TypeScript types — adding guardrails without sacrificing MongoDB's flexibility.",
+          "Mongoose schemas enforce structure, run middleware hooks, and provide TypeScript types: adding guardrails without sacrificing MongoDB's flexibility.",
       },
       {
         tip: "Enable Atlas Search for full-text queries",
@@ -3590,10 +3591,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does MongoDB development cost?",
         answer:
-          "MongoDB Community Edition is free. Atlas has a free tier (512MB), with paid plans starting around $57/month for production clusters. Development costs vary — a straightforward API with MongoDB might be 2-4 weeks, while complex real-time analytics or multi-region setups take 8-12 weeks.",
+          "MongoDB Community Edition is free. Atlas has a free tier (512MB), with paid plans starting around $57/month for production clusters. Development costs vary: a straightforward API with MongoDB might be 2-4 weeks, while complex real-time analytics or multi-region setups take 8-12 weeks.",
       },
       {
-        question: "MongoDB vs PostgreSQL — which is better?",
+        question: "MongoDB vs PostgreSQL: which is better?",
         answer:
           "PostgreSQL is better for complex relational queries, strict data integrity, and transactional workloads. MongoDB excels at flexible schemas, document-oriented data, horizontal scaling, and rapid prototyping. Choose MongoDB when your data is naturally hierarchical or schema requirements change frequently.",
       },
@@ -3614,7 +3615,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Next-generation ORM for Node.js and TypeScript",
     description:
-      "Prisma's schema-first approach gives us a single source of truth for your database — auto-generated types, a visual data browser, and migrations that are safe to review before applying.",
+      "Prisma's schema-first approach gives us a single source of truth for your database: auto-generated types, a visual data browser, and migrations that are safe to review before applying.",
     accentColor: "violet",
     visualizationKey: "prisma",
     logo: "/logos/services/prisma.svg",
@@ -3624,44 +3625,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Schema as source of truth",
         description:
-          "Define your entire data model in Prisma schema — types, relations, and constraints in one place.",
+          "Define your entire data model in Prisma schema: types, relations, and constraints in one place.",
       },
       {
         icon: "Database",
         title: "Auto-generated client",
         description:
-          "Fully typed query client generated from your schema — autocomplete for every model, field, and relation.",
+          "Fully typed query client generated from your schema: autocomplete for every model, field, and relation.",
       },
       {
         icon: "GitBranch",
         title: "Safe migrations",
         description:
-          "Prisma Migrate generates SQL diffs you review before applying — no surprise schema changes.",
+          "Prisma Migrate generates SQL diffs you review before applying: no surprise schema changes.",
       },
       {
         icon: "Monitor",
         title: "Prisma Studio",
         description:
-          "Visual database browser built in — explore and edit your data without leaving the project.",
+          "Visual database browser built in: explore and edit your data without leaving the project.",
       },
       {
         icon: "Globe",
         title: "Multi-database",
         description:
-          "PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and CockroachDB — one API for all.",
+          "PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and CockroachDB: one API for all.",
       },
       {
         icon: "Zap",
         title: "Prisma Accelerate",
         description:
-          "Global database cache and connection pooling — fast queries even from serverless and edge functions.",
+          "Global database cache and connection pooling: fast queries even from serverless and edge functions.",
       },
     ],
     subTechs: [{ slug: "postgresql" }, { slug: "mysql" }, { slug: "sqlite" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Prisma is the most popular TypeScript ORM, providing a schema-first workflow where your data model is the single source of truth. From your Prisma schema, the toolchain generates a fully typed query client, SQL migrations, and a visual data browser (Prisma Studio).\n\nPrisma supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and CockroachDB — letting you switch databases without rewriting queries. Prisma Accelerate adds a global edge cache and connection pooling for serverless and edge deployments.",
+      "Prisma is the most popular TypeScript ORM, providing a schema-first workflow where your data model is the single source of truth. From your Prisma schema, the toolchain generates a fully typed query client, SQL migrations, and a visual data browser (Prisma Studio).\n\nPrisma supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and CockroachDB: letting you switch databases without rewriting queries. Prisma Accelerate adds a global edge cache and connection pooling for serverless and edge deployments.",
     challenges: [
       {
         title: "Complex queries and raw SQL escape hatch",
@@ -3683,12 +3684,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Prisma Accelerate for serverless",
         detail:
-          "Accelerate provides a global connection pool and edge cache — solving the cold start and connection limit issues of serverless Prisma deployments.",
+          "Accelerate provides a global connection pool and edge cache: solving the cold start and connection limit issues of serverless Prisma deployments.",
       },
       {
         tip: "Review generated SQL with query logging",
         detail:
-          "Enable Prisma's query event logging in development to understand exactly what SQL is generated — essential for performance tuning.",
+          "Enable Prisma's query event logging in development to understand exactly what SQL is generated: essential for performance tuning.",
       },
       {
         tip: "Use select and include strategically",
@@ -3730,9 +3731,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Prisma ORM is free and open-source. Prisma Accelerate (edge cache and connection pooling) has a free tier with paid plans starting at $49/month. Prisma Pulse (real-time change streams) is also available as a paid add-on.",
       },
       {
-        question: "Prisma vs Drizzle — which ORM should I use?",
+        question: "Prisma vs Drizzle: which ORM should I use?",
         answer:
-          "Prisma offers a better developer experience with its schema-first approach, Studio, and migration tooling — ideal for teams and rapid development. Drizzle is SQL-first with zero overhead and is better for performance-critical apps or developers who prefer writing SQL-like code. We use both depending on the project.",
+          "Prisma offers a better developer experience with its schema-first approach, Studio, and migration tooling: ideal for teams and rapid development. Drizzle is SQL-first with zero overhead and is better for performance-critical apps or developers who prefer writing SQL-like code. We use both depending on the project.",
       },
       {
         question: "Can Prisma handle large-scale applications?",
@@ -3751,7 +3752,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Embedded SQL database for lean, fast apps",
     description:
-      "SQLite is the right choice for local-first apps, edge deployments, and development environments. With libSQL (Turso), it scales to global replication — serverless SQLite with zero cold starts.",
+      "SQLite is the right choice for local-first apps, edge deployments, and development environments. With libSQL (Turso), it scales to global replication: serverless SQLite with zero cold starts.",
     accentColor: "blue",
     visualizationKey: "sqlite",
     logo: "/logos/services/sqlite.svg",
@@ -3760,19 +3761,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Package",
         title: "Zero dependencies",
         description:
-          "SQLite is a single file — no server process, no network, no configuration.",
+          "SQLite is a single file: no server process, no network, no configuration.",
       },
       {
         icon: "Zap",
         title: "Turso edge deployment",
         description:
-          "libSQL and Turso replicate SQLite globally — read latency under 10ms from any region.",
+          "libSQL and Turso replicate SQLite globally: read latency under 10ms from any region.",
       },
       {
         icon: "Monitor",
         title: "Local-first apps",
         description:
-          "Embed a full SQL database in Tauri desktop apps, mobile apps, or Electron — works offline by default.",
+          "Embed a full SQL database in Tauri desktop apps, mobile apps, or Electron: works offline by default.",
       },
       {
         icon: "GitBranch",
@@ -3784,13 +3785,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Works with Drizzle & Prisma",
         description:
-          "First-class support in both Drizzle ORM and Prisma — your existing query code works unchanged.",
+          "First-class support in both Drizzle ORM and Prisma: your existing query code works unchanged.",
       },
       {
         icon: "Globe",
         title: "Cloudflare D1",
         description:
-          "Deploy SQLite at the edge with Cloudflare D1 — co-located with your Workers for minimal latency.",
+          "Deploy SQLite at the edge with Cloudflare D1: co-located with your Workers for minimal latency.",
       },
     ],
     subTechs: [
@@ -3801,12 +3802,12 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "SQLite is the most widely deployed database engine in the world — embedded in every smartphone, browser, and operating system. It's a zero-configuration, serverless, single-file SQL database that's perfect for local-first apps, edge deployments, and development environments.\n\nWith libSQL (Turso) and Cloudflare D1, SQLite now scales to global replication with edge-local reads, branching, and zero cold starts. It's no longer just for prototyping — modern SQLite powers production workloads at the edge with sub-millisecond query latency.",
+      "SQLite is the most widely deployed database engine in the world , embedded in every smartphone, browser, and operating system. It's a zero-configuration, serverless, single-file SQL database that's perfect for local-first apps, edge deployments, and development environments.\n\nWith libSQL (Turso) and Cloudflare D1, SQLite now scales to global replication with edge-local reads, branching, and zero cold starts. It's no longer just for prototyping , modern SQLite powers production workloads at the edge with sub-millisecond query latency.",
     challenges: [
       {
         title: "Write concurrency limitations",
         description:
-          "SQLite uses a single-writer model — concurrent writes are serialized. For write-heavy workloads, WAL mode and connection pooling help, but high write throughput may require a client-server database.",
+          "SQLite uses a single-writer model: concurrent writes are serialized. For write-heavy workloads, WAL mode and connection pooling help, but high write throughput may require a client-server database.",
       },
       {
         title: "No built-in replication",
@@ -3816,24 +3817,24 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Migration tooling choices",
         description:
-          "SQLite migration workflows differ between Drizzle Kit, Prisma Migrate, and Wrangler (for D1). Pick one and standardise — mixing migration tools leads to schema drift.",
+          "SQLite migration workflows differ between Drizzle Kit, Prisma Migrate, and Wrangler (for D1). Pick one and standardise: mixing migration tools leads to schema drift.",
       },
     ],
     bestPractices: [
       {
         tip: "Enable WAL mode for concurrency",
         detail:
-          "Write-Ahead Logging (PRAGMA journal_mode=WAL) allows concurrent reads during writes — essential for any multi-user application.",
+          "Write-Ahead Logging (PRAGMA journal_mode=WAL) allows concurrent reads during writes: essential for any multi-user application.",
       },
       {
         tip: "Use Turso for production edge deployment",
         detail:
-          "Turso replicates SQLite globally with embedded replicas — each app instance gets a local copy with automatic sync.",
+          "Turso replicates SQLite globally with embedded replicas: each app instance gets a local copy with automatic sync.",
       },
       {
         tip: "Pair with Drizzle ORM for type safety",
         detail:
-          "Drizzle's SQLite driver provides full TypeScript inference with zero overhead — your types match your schema exactly.",
+          "Drizzle's SQLite driver provides full TypeScript inference with zero overhead: your types match your schema exactly.",
       },
     ],
     usefulLinks: [
@@ -3865,7 +3866,7 @@ export const servicesConfig: ServiceConfig[] = [
           "SQLite itself is public domain and completely free. Turso offers a free tier (500 databases, 9GB storage) with paid plans from $29/month. Cloudflare D1 has a free tier (5GB) with pay-as-you-go pricing after that.",
       },
       {
-        question: "SQLite vs PostgreSQL — when to use which?",
+        question: "SQLite vs PostgreSQL: when to use which?",
         answer:
           "Use SQLite for local-first apps, embedded databases, edge deployments, and development. Use PostgreSQL for complex relational queries, heavy write workloads, and applications requiring advanced features like RLS, full-text search, or pgvector.",
       },
@@ -3888,7 +3889,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "auth",
     tagline: "Complete user management out of the box",
     description:
-      "Clerk handles the entire authentication and user management surface — hosted UI components, social login, MFA, organisations, and a management dashboard — so you can focus on your product.",
+      "Clerk handles the entire authentication and user management surface: hosted UI components, social login, MFA, organisations, and a management dashboard, so you can focus on your product.",
     accentColor: "violet",
     visualizationKey: "clerk",
     logo: "/logos/services/clerk-icon-dark.svg",
@@ -3897,7 +3898,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Drop-in auth components",
         description:
-          "Prebuilt Sign In, Sign Up, and User Profile components — fully styled, accessible, and customisable.",
+          "Prebuilt Sign In, Sign Up, and User Profile components: fully styled, accessible, and customisable.",
       },
       {
         icon: "Globe",
@@ -3909,7 +3910,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Smartphone",
         title: "MFA & passkeys",
         description:
-          "TOTP, SMS codes, and WebAuthn passkeys — modern authentication flows without building them.",
+          "TOTP, SMS codes, and WebAuthn passkeys: modern authentication flows without building them.",
       },
       {
         icon: "Network",
@@ -3921,13 +3922,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Framework integrations",
         description:
-          "Next.js, Remix, Expo, and more — middleware and hooks for every popular framework.",
+          "Next.js, Remix, Expo, and more: middleware and hooks for every popular framework.",
       },
       {
         icon: "Monitor",
         title: "Management dashboard",
         description:
-          "User browsing, impersonation, and audit logs in Clerk's dashboard — no custom admin needed.",
+          "User browsing, impersonation, and audit logs in Clerk's dashboard: no custom admin needed.",
       },
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "react" }],
@@ -3956,17 +3957,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Clerk middleware for route protection",
         detail:
-          "Clerk's Next.js middleware protects routes at the edge — unauthenticated users are redirected before your page even loads.",
+          "Clerk's Next.js middleware protects routes at the edge: unauthenticated users are redirected before your page even loads.",
       },
       {
         tip: "Sync user data with webhooks",
         detail:
-          "Use Clerk webhooks (via Svix) to sync user creation, updates, and deletion to your own database — keep your app's user table in sync.",
+          "Use Clerk webhooks (via Svix) to sync user creation, updates, and deletion to your own database: keep your app's user table in sync.",
       },
       {
         tip: "Configure organizations for B2B",
         detail:
-          "Clerk's organization feature provides multi-tenant user management, roles, and invitations — essential for B2B SaaS without building it yourself.",
+          "Clerk's organization feature provides multi-tenant user management, roles, and invitations: essential for B2B SaaS without building it yourself.",
       },
     ],
     usefulLinks: [
@@ -3998,9 +3999,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Clerk's free plan includes 10,000 MAU with unlimited auth features. The Pro plan starts at $25/month + $0.02 per MAU beyond 10k. Enterprise plans include custom pricing, SLA, and dedicated support.",
       },
       {
-        question: "Clerk vs Better Auth — which should I choose?",
+        question: "Clerk vs Better Auth: which should I choose?",
         answer:
-          "Clerk is a hosted solution with prebuilt UI, a dashboard, and zero auth code to write — ideal for shipping fast. Better Auth is self-hosted with no per-user pricing — better when you want full control and lower costs at scale.",
+          "Clerk is a hosted solution with prebuilt UI, a dashboard, and zero auth code to write , ideal for shipping fast. Better Auth is self-hosted with no per-user pricing , better when you want full control and lower costs at scale.",
       },
       {
         question: "Can I use Clerk with React Native / Expo?",
@@ -4021,7 +4022,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "payments",
     tagline: "Monetisation for open source and indie developers",
     description:
-      "Polar is a merchant of record platform built for developers — one-time payments, subscriptions, usage-based billing, and open source funding. We integrate Polar into SaaS products and developer tools.",
+      "Polar is a merchant of record platform built for developers: one-time payments, subscriptions, usage-based billing, and open source funding. We integrate Polar into SaaS products and developer tools.",
     accentColor: "blue",
     visualizationKey: "polar",
     logo: "/logos/services/polar-sh_dark.svg",
@@ -4036,7 +4037,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Merchant of record",
         description:
-          "Polar handles VAT, sales tax, and international payments — you get paid, they handle compliance.",
+          "Polar handles VAT, sales tax, and international payments: you get paid, they handle compliance.",
       },
       {
         icon: "Code2",
@@ -4048,7 +4049,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Usage-based billing",
         description:
-          "Meter API calls, seats, or any custom metric — charge what your customers actually use.",
+          "Meter API calls, seats, or any custom metric: charge what your customers actually use.",
       },
       {
         icon: "FileText",
@@ -4067,12 +4068,12 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Polar is a merchant of record platform built specifically for developers — handling payments, subscriptions, usage-based billing, VAT/sales tax, and international compliance so you don't have to. It's designed for SaaS products, developer tools, and open-source monetization.\n\nAs a merchant of record, Polar handles the legal and tax complexity of selling globally — you receive payouts, they handle invoicing, refunds, chargebacks, and tax remittance in 100+ countries. Their API and webhook system integrates cleanly into any TypeScript backend.",
+      "Polar is a merchant of record platform built specifically for developers , handling payments, subscriptions, usage-based billing, VAT/sales tax, and international compliance so you don't have to. It's designed for SaaS products, developer tools, and open-source monetization.\n\nAs a merchant of record, Polar handles the legal and tax complexity of selling globally , you receive payouts, they handle invoicing, refunds, chargebacks, and tax remittance in 100+ countries. Their API and webhook system integrates cleanly into any TypeScript backend.",
     challenges: [
       {
         title: "Merchant of record trade-offs",
         description:
-          "Polar as MoR means they're the legal seller — you get simplicity but less control over invoicing, payment methods, and customer disputes compared to being your own merchant.",
+          "Polar as MoR means they're the legal seller: you get simplicity but less control over invoicing, payment methods, and customer disputes compared to being your own merchant.",
       },
       {
         title: "Feature maturity vs Stripe",
@@ -4094,12 +4095,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Implement usage metering early",
         detail:
-          "If you plan usage-based billing, instrument your API with metering from the start — retrofitting usage tracking is significantly harder.",
+          "If you plan usage-based billing, instrument your API with metering from the start: retrofitting usage tracking is significantly harder.",
       },
       {
         tip: "Use Polar's customer portal",
         detail:
-          "Polar provides a hosted customer portal for subscription management, invoice history, and payment updates — no need to build billing UI.",
+          "Polar provides a hosted customer portal for subscription management, invoice history, and payment updates: no need to build billing UI.",
       },
     ],
     usefulLinks: [
@@ -4128,17 +4129,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Polar cost?",
         answer:
-          "Polar charges a percentage of revenue (typically 5%) as the merchant of record fee — this covers payment processing, tax handling, invoicing, and compliance. There are no monthly minimums or setup fees.",
+          "Polar charges a percentage of revenue (typically 5%) as the merchant of record fee: this covers payment processing, tax handling, invoicing, and compliance. There are no monthly minimums or setup fees.",
       },
       {
-        question: "Polar vs Stripe — which should I use?",
+        question: "Polar vs Stripe: which should I use?",
         answer:
-          "Stripe gives you full control as a payment processor but you handle tax, invoicing, and compliance yourself. Polar is a merchant of record — they handle everything but take a larger cut. Choose Polar for simplicity; choose Stripe for maximum control.",
+          "Stripe gives you full control as a payment processor but you handle tax, invoicing, and compliance yourself. Polar is a merchant of record: they handle everything but take a larger cut. Choose Polar for simplicity; choose Stripe for maximum control.",
       },
       {
         question: "Can I use Polar for open source funding?",
         answer:
-          "Yes. Polar was built for this use case — issue-level funding, recurring sponsorships, and backer tiers. It's a GitHub Sponsors alternative with more features and flexibility.",
+          "Yes. Polar was built for this use case: issue-level funding, recurring sponsorships, and backer tiers. It's a GitHub Sponsors alternative with more features and flexibility.",
       },
     ],
     quickstart:
@@ -4154,7 +4155,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "The full-stack React framework for production",
     description:
-      "Next.js is our primary framework for React applications — App Router, Server Components, streaming SSR, and edge-ready APIs in one cohesive package. It's how we ship fast, SEO-friendly React apps.",
+      "Next.js is our primary framework for React applications: App Router, Server Components, streaming SSR, and edge-ready APIs in one cohesive package. It's how we ship fast, SEO-friendly React apps.",
     accentColor: "sky",
     visualizationKey: "nextjs",
     logo: "/logos/services/nextjs_icon_dark.svg",
@@ -4163,31 +4164,31 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Server",
         title: "App Router & RSC",
         description:
-          "Server Components, layouts, and streaming — fetch data on the server with zero client JS overhead.",
+          "Server Components, layouts, and streaming: fetch data on the server with zero client JS overhead.",
       },
       {
         icon: "Zap",
         title: "Partial Prerendering",
         description:
-          "Static shell with dynamic islands — the best of SSG and SSR in a single page.",
+          "Static shell with dynamic islands: the best of SSG and SSR in a single page.",
       },
       {
         icon: "Globe",
         title: "Edge middleware",
         description:
-          "Auth, geolocation, and A/B testing at the edge — runs before your page loads.",
+          "Auth, geolocation, and A/B testing at the edge: runs before your page loads.",
       },
       {
         icon: "FileCode2",
         title: "Server Actions",
         description:
-          "Mutate data from forms and components without writing API routes — type-safe server functions.",
+          "Mutate data from forms and components without writing API routes: type-safe server functions.",
       },
       {
         icon: "Gauge",
         title: "Image & font optimisation",
         description:
-          "Automatic WebP conversion, lazy loading, and self-hosted fonts — Core Web Vitals green by default.",
+          "Automatic WebP conversion, lazy loading, and self-hosted fonts: Core Web Vitals green by default.",
       },
       {
         icon: "GitBranch",
@@ -4203,7 +4204,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "better-auth" },
     ],
     overview:
-      "Next.js is the leading full-stack React framework, maintained by Vercel and used by companies from startups to Fortune 500. The App Router introduced React Server Components, streaming SSR, and Server Actions — fundamentally changing how React apps fetch data and handle mutations. With Partial Prerendering, edge middleware, image optimization, and zero-config deployments on Vercel (or self-hosted on Docker), Next.js is the most complete platform for building production React applications. At A Major, it's our primary framework for web applications, SaaS products, and content-driven sites.",
+      "Next.js is the leading full-stack React framework, maintained by Vercel and used by companies from startups to Fortune 500. The App Router introduced React Server Components, streaming SSR, and Server Actions: fundamentally changing how React apps fetch data and handle mutations. With Partial Prerendering, edge middleware, image optimization, and zero-config deployments on Vercel (or self-hosted on Docker), Next.js is the most complete platform for building production React applications. At A Major, it's our primary framework for web applications, SaaS products, and content-driven sites.",
     challenges: [
       {
         title: "Server vs. client component boundaries",
@@ -4218,7 +4219,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "App Router migration from Pages Router",
         description:
-          "Migrating from Pages Router to App Router is a significant effort — different data fetching patterns, layout model, and mental model. It's not a simple find-and-replace.",
+          "Migrating from Pages Router to App Router is a significant effort: different data fetching patterns, layout model, and mental model. It's not a simple find-and-replace.",
       },
       {
         title: "Build and deploy complexity at scale",
@@ -4245,7 +4246,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Partial Prerendering for dynamic pages",
         detail:
-          "PPR lets you statically render the shell of a page while streaming dynamic content — combining the speed of SSG with the freshness of SSR in a single response.",
+          "PPR lets you statically render the shell of a page while streaming dynamic content: combining the speed of SSG with the freshness of SSR in a single response.",
       },
     ],
     usefulLinks: [
@@ -4272,7 +4273,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Next.js vs. Remix (React Router v7) — which should I use?",
+        question: "Next.js vs. Remix (React Router v7): which should I use?",
         answer:
           "Next.js has a larger ecosystem, more deployment options, and Vercel's backing. Remix/React Router v7 offers simpler mental models for data loading and progressive enhancement. We recommend Next.js for most projects due to its maturity, but Remix for teams that value web standards and progressive enhancement.",
       },
@@ -4304,7 +4305,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "mobile",
     tagline: "Native iOS and Android from one React codebase",
     description:
-      "React Native lets us share code between your web product and mobile apps — same language, same patterns, native performance. We build with Expo for fast iteration and over-the-air updates.",
+      "React Native lets us share code between your web product and mobile apps: same language, same patterns, native performance. We build with Expo for fast iteration and over-the-air updates.",
     accentColor: "sky",
     visualizationKey: "react-native",
     logo: "/logos/services/react_dark.svg",
@@ -4319,36 +4320,36 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Shared TypeScript code",
         description:
-          "Business logic, API calls, and state management shared between web and mobile — one source of truth.",
+          "Business logic, API calls, and state management shared between web and mobile: one source of truth.",
       },
       {
         icon: "Layout",
         title: "React Native Reanimated",
         description:
-          "Smooth 60fps animations running on the UI thread — gesture-driven interfaces with Reanimated 3.",
+          "Smooth 60fps animations running on the UI thread: gesture-driven interfaces with Reanimated 3.",
       },
       {
         icon: "Globe",
         title: "New Architecture",
         description:
-          "JSI and Fabric for direct JS-to-native communication — faster bridge, no serialisation overhead.",
+          "JSI and Fabric for direct JS-to-native communication: faster bridge, no serialisation overhead.",
       },
       {
         icon: "Package",
         title: "Expo Router",
         description:
-          "File-based routing for React Native — same mental model as Next.js, works for web and native.",
+          "File-based routing for React Native: same mental model as Next.js, works for web and native.",
       },
       {
         icon: "Play",
         title: "EAS distribution",
         description:
-          "TestFlight and Play Store internal testing via EAS Submit — automated CI/CD for both platforms.",
+          "TestFlight and Play Store internal testing via EAS Submit: automated CI/CD for both platforms.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "tailwind" }],
     overview:
-      "React Native lets you build truly native iOS and Android apps using React and JavaScript/TypeScript. Unlike hybrid frameworks, React Native renders native platform components — your app feels native because it is native. With Expo's managed workflow, you get fast iteration via hot reloading, over-the-air updates without App Store review, and EAS Build for CI/CD. The New Architecture (JSI, Fabric, Turbo Modules) eliminates the old bridge bottleneck for near-native performance. We build React Native apps with Expo Router for file-based navigation, Reanimated for 60fps animations, and shared TypeScript code with your web product.",
+      "React Native lets you build truly native iOS and Android apps using React and JavaScript/TypeScript. Unlike hybrid frameworks, React Native renders native platform components: your app feels native because it is native. With Expo's managed workflow, you get fast iteration via hot reloading, over-the-air updates without App Store review, and EAS Build for CI/CD. The New Architecture (JSI, Fabric, Turbo Modules) eliminates the old bridge bottleneck for near-native performance. We build React Native apps with Expo Router for file-based navigation, Reanimated for 60fps animations, and shared TypeScript code with your web product.",
     challenges: [
       {
         title: "Native module compatibility",
@@ -4390,7 +4391,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Optimize lists with FlashList",
         detail:
-          "Replace FlatList with Shopify's FlashList for large lists — it recycles views like native list components and handles thousands of items without jank.",
+          "Replace FlatList with Shopify's FlashList for large lists: it recycles views like native list components and handles thousands of items without jank.",
       },
     ],
     usefulLinks: [
@@ -4417,7 +4418,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "React Native vs. Flutter — which should I choose?",
+        question: "React Native vs. Flutter: which should I choose?",
         answer:
           "Choose React Native if your team knows JavaScript/TypeScript or you want to share code with a React web app. Choose Flutter for pixel-perfect custom UI across platforms or if your team prefers Dart. React Native has a larger ecosystem; Flutter has better cross-platform UI consistency.",
       },
@@ -4449,7 +4450,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "The intuitive full-stack Vue framework",
     description:
-      "Nuxt 3 brings file-based routing, auto-imports, server API routes, and hybrid rendering to Vue — making full-stack Vue development feel as productive as any other modern framework.",
+      "Nuxt 3 brings file-based routing, auto-imports, server API routes, and hybrid rendering to Vue: making full-stack Vue development feel as productive as any other modern framework.",
     accentColor: "emerald",
     visualizationKey: "nuxt",
     logo: "/logos/services/nuxt.svg",
@@ -4458,13 +4459,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Route",
         title: "File-based routing",
         description:
-          "Pages, layouts, and middleware from the filesystem — no router config to maintain.",
+          "Pages, layouts, and middleware from the filesystem: no router config to maintain.",
       },
       {
         icon: "Zap",
         title: "Auto-imports",
         description:
-          "Components, composables, and utils auto-imported — no import statements cluttering your files.",
+          "Components, composables, and utils auto-imported: no import statements cluttering your files.",
       },
       {
         icon: "Server",
@@ -4476,13 +4477,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "Hybrid rendering",
         description:
-          "Per-route rendering: SSR, SSG, ISR, or SPA — mix modes in a single application.",
+          "Per-route rendering: SSR, SSG, ISR, or SPA: mix modes in a single application.",
       },
       {
         icon: "Database",
         title: "Nuxt Content",
         description:
-          "Markdown and MDX-powered content with a queryable API — perfect for docs and blogs.",
+          "Markdown and MDX-powered content with a queryable API: perfect for docs and blogs.",
       },
       {
         icon: "Globe",
@@ -4493,7 +4494,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     subTechs: [{ slug: "vue" }, { slug: "tailwind" }, { slug: "drizzle" }],
     overview:
-      "Nuxt is the full-stack Vue framework — it takes Vue 3 and adds file-based routing, auto-imports, server API routes, hybrid rendering, and the Nitro server engine. Nuxt 3 makes Vue development feel as productive as any modern full-stack framework, with conventions that eliminate boilerplate while remaining flexible. Its hybrid rendering lets you mix SSR, SSG, ISR, and SPA modes per route, and Nitro's universal runtime deploys to Vercel, Cloudflare Workers, Node, or static hosting. For Vue teams, Nuxt is the obvious choice for anything beyond a simple SPA.",
+      "Nuxt is the full-stack Vue framework: it takes Vue 3 and adds file-based routing, auto-imports, server API routes, hybrid rendering, and the Nitro server engine. Nuxt 3 makes Vue development feel as productive as any modern full-stack framework, with conventions that eliminate boilerplate while remaining flexible. Its hybrid rendering lets you mix SSR, SSG, ISR, and SPA modes per route, and Nitro's universal runtime deploys to Vercel, Cloudflare Workers, Node, or static hosting. For Vue teams, Nuxt is the obvious choice for anything beyond a simple SPA.",
     challenges: [
       {
         title: "Auto-import magic vs. explicitness",
@@ -4503,7 +4504,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Module ecosystem quality variance",
         description:
-          "Nuxt's module ecosystem is large but varies in quality — some modules are well-maintained, others are abandoned or incompatible with Nuxt 3. Evaluating module reliability requires due diligence.",
+          "Nuxt's module ecosystem is large but varies in quality: some modules are well-maintained, others are abandoned or incompatible with Nuxt 3. Evaluating module reliability requires due diligence.",
       },
       {
         title: "Nitro server configuration",
@@ -4513,7 +4514,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Nuxt 2 to Nuxt 3 migration",
         description:
-          "Migrating from Nuxt 2 (Options API, Vuex, webpack) to Nuxt 3 (Composition API, Pinia, Vite, Nitro) is a substantial rewrite — not an incremental upgrade.",
+          "Migrating from Nuxt 2 (Options API, Vuex, webpack) to Nuxt 3 (Composition API, Pinia, Vite, Nitro) is a substantial rewrite: not an incremental upgrade.",
       },
     ],
     bestPractices: [
@@ -4525,7 +4526,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use hybrid rendering strategically",
         detail:
-          "Configure rendering per route — SSG for marketing pages, SSR for dynamic content, SPA for authenticated dashboards. Nuxt's routeRules make this a one-liner per pattern.",
+          "Configure rendering per route: SSG for marketing pages, SSR for dynamic content, SPA for authenticated dashboards. Nuxt's routeRules make this a one-liner per pattern.",
       },
       {
         tip: "Write server routes in /server/api",
@@ -4535,7 +4536,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use useFetch and useAsyncData for data loading",
         detail:
-          "Nuxt's built-in data fetching composables handle SSR, caching, and hydration automatically. Avoid raw fetch() in components — useFetch gives you error handling and loading states for free.",
+          "Nuxt's built-in data fetching composables handle SSR, caching, and hydration automatically. Avoid raw fetch() in components: useFetch gives you error handling and loading states for free.",
       },
     ],
     usefulLinks: [
@@ -4558,7 +4559,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Nuxt vs. Next.js — which should I use?",
+        question: "Nuxt vs. Next.js: which should I use?",
         answer:
           "Nuxt is for Vue teams; Next.js is for React teams. Both offer SSR, file-based routing, and full-stack capabilities. Choose based on your team's framework preference. Nuxt's auto-imports and conventions make it more opinionated; Next.js has a larger ecosystem.",
       },
@@ -4601,25 +4602,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "PHP 8.x strict typing",
         description:
-          "Union types, enums, readonly properties, and fibers — modern PHP is statically typed when you want it.",
+          "Union types, enums, readonly properties, and fibers: modern PHP is statically typed when you want it.",
       },
       {
         icon: "Zap",
         title: "OPcache performance",
         description:
-          "Compiled bytecode caching with OPcache — PHP performance in the same ballpark as Node.js and Go.",
+          "Compiled bytecode caching with OPcache: PHP performance in the same ballpark as Node.js and Go.",
       },
       {
         icon: "Puzzle",
         title: "Composer ecosystem",
         description:
-          "Packagist has 400k+ packages — there's a battle-tested library for almost every use case.",
+          "Packagist has 400k+ packages: there's a battle-tested library for almost every use case.",
       },
       {
         icon: "FlaskConical",
         title: "Pest & PHPUnit",
         description:
-          "Expressive test suites with Pest's readable syntax or classical PHPUnit — TDD is first-class.",
+          "Expressive test suites with Pest's readable syntax or classical PHPUnit: TDD is first-class.",
       },
       {
         icon: "Server",
@@ -4631,12 +4632,12 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Security best practices",
         description:
-          "Prepared statements, CSRF protection, password hashing with bcrypt — we follow OWASP top 10.",
+          "Prepared statements, CSRF protection, password hashing with bcrypt: we follow OWASP top 10.",
       },
     ],
     subTechs: [{ slug: "laravel" }, { slug: "mysql" }, { slug: "wordpress" }],
     overview:
-      "PHP powers over 75% of websites with a known server-side language — from WordPress to Laravel to Symfony. Modern PHP 8.x features typed properties, enums, fibers, match expressions, and attributes that make it a genuinely capable backend language. At A Major, we build modern PHP applications that leverage the language's strengths — rapid development, a massive hosting ecosystem, and battle-tested frameworks.\n\nPHP's maturity is its superpower. Composer has 400K+ packages, hosting is available everywhere from shared servers to Kubernetes, and the developer talent pool is enormous. With OPcache, JIT compilation, and async runtimes like Swoole, modern PHP performance rivals Node.js.",
+      "PHP powers over 75% of websites with a known server-side language , from WordPress to Laravel to Symfony. Modern PHP 8.x features typed properties, enums, fibers, match expressions, and attributes that make it a genuinely capable backend language. At A Major, we build modern PHP applications that leverage the language's strengths , rapid development, a massive hosting ecosystem, and battle-tested frameworks.\n\nPHP's maturity is its superpower. Composer has 400K+ packages, hosting is available everywhere from shared servers to Kubernetes, and the developer talent pool is enormous. With OPcache, JIT compilation, and async runtimes like Swoole, modern PHP performance rivals Node.js.",
     challenges: [
       {
         title: "Legacy code and reputation",
@@ -4651,7 +4652,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Type system strictness",
         description:
-          "PHP's type system is opt-in. Codebases without strict typing accumulate type-related bugs — enforce declare(strict_types=1) project-wide.",
+          "PHP's type system is opt-in. Codebases without strict typing accumulate type-related bugs: enforce declare(strict_types=1) project-wide.",
       },
       {
         title: "Deployment fragmentation",
@@ -4678,7 +4679,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Deploy with OPcache preloading",
         detail:
-          "OPcache preloading compiles your entire application on startup — eliminating per-request compilation overhead.",
+          "OPcache preloading compiles your entire application on startup: eliminating per-request compilation overhead.",
       },
     ],
     usefulLinks: [
@@ -4715,7 +4716,7 @@ export const servicesConfig: ServiceConfig[] = [
           "PHP is free and open-source. The large developer pool makes rates competitive. Hosting starts at a few dollars/month on shared hosting and scales to enterprise cloud deployments.",
       },
       {
-        question: "PHP vs Node.js — which is better?",
+        question: "PHP vs Node.js: which is better?",
         answer:
           "PHP excels for content-heavy web applications and has the widest hosting availability. Node.js is better for real-time applications and full-stack JavaScript teams. Both are production-proven.",
       },
@@ -4747,7 +4748,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "Built-in admin panel",
         description:
-          "Auto-generated CRUD admin interface from your models — content management out of the box, no extra code.",
+          "Auto-generated CRUD admin interface from your models: content management out of the box, no extra code.",
       },
       {
         icon: "Database",
@@ -4765,19 +4766,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Security by default",
         description:
-          "CSRF protection, SQL injection prevention, clickjacking guards, and secure password hashing — enabled out of the box.",
+          "CSRF protection, SQL injection prevention, clickjacking guards, and secure password hashing: enabled out of the box.",
       },
       {
         icon: "GitBranch",
         title: "Schema migrations",
         description:
-          "Auto-detected model changes generate migration files — version-controlled schema evolution with zero manual SQL.",
+          "Auto-detected model changes generate migration files: version-controlled schema evolution with zero manual SQL.",
       },
       {
         icon: "Radio",
         title: "Django Channels",
         description:
-          "WebSocket support and async consumers for real-time features — chat, notifications, and live updates in Django.",
+          "WebSocket support and async consumers for real-time features: chat, notifications, and live updates in Django.",
       },
     ],
     subTechs: [{ slug: "python" }, { slug: "postgresql" }],
@@ -4792,7 +4793,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "ORM performance for complex queries",
         description:
-          "Django ORM generates clean SQL for simple queries but struggles with complex aggregations and window functions — raw SQL is sometimes the pragmatic choice.",
+          "Django ORM generates clean SQL for simple queries but struggles with complex aggregations and window functions: raw SQL is sometimes the pragmatic choice.",
       },
       {
         title: "Async support is still maturing",
@@ -4802,19 +4803,19 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Template layer limitations for SPAs",
         description:
-          "Django templates are server-rendered. Modern SPAs need Django REST Framework or GraphQL with a separate frontend — adding deployment and architectural complexity.",
+          "Django templates are server-rendered. Modern SPAs need Django REST Framework or GraphQL with a separate frontend: adding deployment and architectural complexity.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Django REST Framework for APIs",
         detail:
-          "DRF provides serializers, viewsets, authentication, and permissions out of the box — don't reinvent API patterns.",
+          "DRF provides serializers, viewsets, authentication, and permissions out of the box: don't reinvent API patterns.",
       },
       {
         tip: "Write custom management commands for operations",
         detail:
-          "Data migrations, imports, and maintenance tasks belong in management commands — runnable from CLI and schedulable in cron.",
+          "Data migrations, imports, and maintenance tasks belong in management commands: runnable from CLI and schedulable in cron.",
       },
       {
         tip: "Use select_related and prefetch_related everywhere",
@@ -4824,7 +4825,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage Django's built-in security",
         detail:
-          "CSRF protection, SQL injection prevention, XSS escaping, and clickjacking protection are enabled by default — don't disable them.",
+          "CSRF protection, SQL injection prevention, XSS escaping, and clickjacking protection are enabled by default: don't disable them.",
       },
     ],
     usefulLinks: [
@@ -4861,7 +4862,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Django is free and open-source. Development costs range from $15K–$80K depending on complexity. Django's built-in admin and auth save significant development time compared to building from scratch.",
       },
       {
-        question: "Django vs FastAPI — which should I choose?",
+        question: "Django vs FastAPI: which should I choose?",
         answer:
           "Django for full-featured web applications with admin panels, user management, and content systems. FastAPI for high-performance microservices, APIs, and ML endpoints where async I/O matters.",
       },
@@ -4884,7 +4885,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "High-performance async Python APIs",
     description:
-      "FastAPI is our choice for Python microservices and AI endpoints — async I/O, automatic OpenAPI docs, and Pydantic validation from a single function signature. Fast to write, fast to run.",
+      "FastAPI is our choice for Python microservices and AI endpoints: async I/O, automatic OpenAPI docs, and Pydantic validation from a single function signature. Fast to write, fast to run.",
     accentColor: "green",
     visualizationKey: "fastapi",
     logo: "/logos/services/fastapi.svg",
@@ -4893,47 +4894,47 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Async I/O performance",
         description:
-          "Native async/await with Starlette — handle thousands of concurrent connections without thread pool bottlenecks.",
+          "Native async/await with Starlette: handle thousands of concurrent connections without thread pool bottlenecks.",
       },
       {
         icon: "FileCode2",
         title: "Auto OpenAPI docs",
         description:
-          "Swagger UI and ReDoc generated automatically from your type hints — interactive API docs with zero config.",
+          "Swagger UI and ReDoc generated automatically from your type hints: interactive API docs with zero config.",
       },
       {
         icon: "Shield",
         title: "Pydantic validation",
         description:
-          "Request and response validation via Pydantic models — type coercion, nested objects, and clear error messages.",
+          "Request and response validation via Pydantic models: type coercion, nested objects, and clear error messages.",
       },
       {
         icon: "Brain",
         title: "AI & ML endpoints",
         description:
-          "Python-native framework ideal for serving ML models — integrate PyTorch, TensorFlow, or LangChain directly.",
+          "Python-native framework ideal for serving ML models: integrate PyTorch, TensorFlow, or LangChain directly.",
       },
       {
         icon: "Layers",
         title: "Dependency injection",
         description:
-          "Built-in DI system for database sessions, auth, and shared services — clean, testable endpoint signatures.",
+          "Built-in DI system for database sessions, auth, and shared services: clean, testable endpoint signatures.",
       },
       {
         icon: "Globe",
         title: "ASGI ecosystem",
         description:
-          "Full ASGI compatibility — deploy with Uvicorn, add middleware from Starlette, or mount sub-applications.",
+          "Full ASGI compatibility: deploy with Uvicorn, add middleware from Starlette, or mount sub-applications.",
       },
     ],
     subTechs: [{ slug: "python" }, { slug: "postgresql" }],
     overview:
-      "FastAPI is the fastest-growing Python web framework, built for modern async API development. Define your endpoints with Python type hints and get automatic request validation, OpenAPI documentation, and high-performance async I/O — all from a single function signature. At A Major, we use FastAPI for microservices, AI/ML inference endpoints, and any API where performance and developer speed both matter.\n\nFastAPI runs on Starlette (ASGI) and Pydantic, combining async request handling with runtime data validation. It's the natural choice for Python services that need to handle concurrent I/O efficiently — database queries, external API calls, and LLM inference in parallel.",
+      "FastAPI is the fastest-growing Python web framework, built for modern async API development. Define your endpoints with Python type hints and get automatic request validation, OpenAPI documentation, and high-performance async I/O , all from a single function signature. At A Major, we use FastAPI for microservices, AI/ML inference endpoints, and any API where performance and developer speed both matter.\n\nFastAPI runs on Starlette (ASGI) and Pydantic, combining async request handling with runtime data validation. It's the natural choice for Python services that need to handle concurrent I/O efficiently , database queries, external API calls, and LLM inference in parallel.",
     challenges: [
       {
         title: "No built-in ORM or database layer",
         description:
-          "FastAPI is intentionally minimal — you need to bring your own ORM (SQLAlchemy, Tortoise) and handle migrations (Alembic) separately.",
+          "FastAPI is intentionally minimal: you need to bring your own ORM (SQLAlchemy, Tortoise) and handle migrations (Alembic) separately.",
       },
       {
         title: "Async ecosystem gaps",
@@ -4950,7 +4951,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use dependency injection for shared resources",
         detail:
-          "FastAPI's Depends() system handles database sessions, auth, and configuration — compose dependencies cleanly.",
+          "FastAPI's Depends() system handles database sessions, auth, and configuration: compose dependencies cleanly.",
       },
       {
         tip: "Define response models explicitly",
@@ -4965,7 +4966,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Run with Uvicorn behind Gunicorn in production",
         detail:
-          "Gunicorn manages worker processes while Uvicorn handles async I/O — the recommended production deployment pattern.",
+          "Gunicorn manages worker processes while Uvicorn handles async I/O: the recommended production deployment pattern.",
       },
     ],
     usefulLinks: [
@@ -5002,7 +5003,7 @@ export const servicesConfig: ServiceConfig[] = [
           "FastAPI on Uvicorn handles comparable request throughput to Express.js for I/O-bound workloads. For CPU-bound tasks, Python is slower, but async I/O performance is competitive.",
       },
       {
-        question: "FastAPI vs Django REST Framework — which should I use?",
+        question: "FastAPI vs Django REST Framework: which should I use?",
         answer:
           "FastAPI for microservices, async APIs, and ML endpoints. DRF for full-featured backends that need Django's ORM, admin, and authentication ecosystem.",
       },
@@ -5024,7 +5025,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "End-to-end typesafe APIs without code generation",
     description:
-      "tRPC lets your frontend call server functions directly with full TypeScript type safety — no REST contracts, no GraphQL schemas, no code generation. If your server types change, your editor tells you instantly.",
+      "tRPC lets your frontend call server functions directly with full TypeScript type safety: no REST contracts, no GraphQL schemas, no code generation. If your server types change, your editor tells you instantly.",
     accentColor: "blue",
     visualizationKey: "trpc",
     logo: "/logos/services/trpc.svg",
@@ -5033,19 +5034,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Zero schema duplication",
         description:
-          "Define your API contract once — TypeScript infers input and output types on both client and server automatically.",
+          "Define your API contract once: TypeScript infers input and output types on both client and server automatically.",
       },
       {
         icon: "Zap",
         title: "React Query integration",
         description:
-          "First-class TanStack Query hooks — typed queries, mutations, and infinite scroll with automatic cache invalidation.",
+          "First-class TanStack Query hooks: typed queries, mutations, and infinite scroll with automatic cache invalidation.",
       },
       {
         icon: "Shield",
         title: "Zod input validation",
         description:
-          "Runtime validation and TypeScript types from the same Zod schema — one source of truth for your API inputs.",
+          "Runtime validation and TypeScript types from the same Zod schema: one source of truth for your API inputs.",
       },
       {
         icon: "Layers",
@@ -5057,13 +5058,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Any backend runtime",
         description:
-          "Works with Next.js, Express, Fastify, or any Node-compatible server — bring your own HTTP layer.",
+          "Works with Next.js, Express, Fastify, or any Node-compatible server: bring your own HTTP layer.",
       },
       {
         icon: "Server",
         title: "Server-side calls",
         description:
-          "Call tRPC procedures directly on the server without HTTP overhead — ideal for RSC and server actions.",
+          "Call tRPC procedures directly on the server without HTTP overhead: ideal for RSC and server actions.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "nextjs" }, { slug: "react" }],
@@ -5095,17 +5096,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Zod for all input validation",
         detail:
-          "Zod schemas validate input at runtime and provide TypeScript types at compile time — single source of truth for your API contract.",
+          "Zod schemas validate input at runtime and provide TypeScript types at compile time: single source of truth for your API contract.",
       },
       {
         tip: "Leverage React Query's caching",
         detail:
-          "tRPC wraps React Query — use staleTime, gcTime, and invalidation patterns to minimize unnecessary refetches.",
+          "tRPC wraps React Query: use staleTime, gcTime, and invalidation patterns to minimize unnecessary refetches.",
       },
       {
         tip: "Use middleware for auth and logging",
         detail:
-          "tRPC middleware runs before procedures — centralize authentication, authorization, and request logging in reusable middleware.",
+          "tRPC middleware runs before procedures: centralize authentication, authorization, and request logging in reusable middleware.",
       },
     ],
     usefulLinks: [
@@ -5132,7 +5133,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "tRPC vs REST — which should I use?",
+        question: "tRPC vs REST: which should I use?",
         answer:
           "Use tRPC for internal TypeScript-to-TypeScript communication where type safety matters most. Use REST for public APIs, multi-language consumers, and third-party integrations.",
       },
@@ -5144,12 +5145,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Does tRPC scale for large applications?",
         answer:
-          "Yes. tRPC routers compose like functions — split by domain, nest as needed. Companies like Cal.com run large production applications on tRPC.",
+          "Yes. tRPC routers compose like functions: split by domain, nest as needed. Companies like Cal.com run large production applications on tRPC.",
       },
       {
         question: "How much does tRPC cost?",
         answer:
-          "tRPC is free and open-source. It adds no runtime overhead — it's a thin layer over HTTP. Development costs are lower than REST because you write no schema definitions or client generation code.",
+          "tRPC is free and open-source. It adds no runtime overhead: it's a thin layer over HTTP. Development costs are lower than REST because you write no schema definitions or client generation code.",
       },
     ],
     quickstart: "npx create-t3-app@latest my-app\ncd my-app\nnpm run dev",
@@ -5164,7 +5165,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Memory-safe systems programming at native speed",
     description:
-      "We write Rust for performance-critical components — Tauri desktop backends, WebAssembly modules, CLI tools, and systems where memory safety and zero overhead matter.",
+      "We write Rust for performance-critical components: Tauri desktop backends, WebAssembly modules, CLI tools, and systems where memory safety and zero overhead matter.",
     accentColor: "orange",
     visualizationKey: "rust",
     logo: "/logos/services/rust.svg",
@@ -5174,13 +5175,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Memory safety without GC",
         description:
-          "Ownership and borrow checker eliminate data races and null pointer bugs at compile time — no garbage collector pauses.",
+          "Ownership and borrow checker eliminate data races and null pointer bugs at compile time: no garbage collector pauses.",
       },
       {
         icon: "Zap",
         title: "C-comparable performance",
         description:
-          "Zero-cost abstractions compile to machine code as fast as C/C++ — ideal for latency-sensitive services.",
+          "Zero-cost abstractions compile to machine code as fast as C/C++: ideal for latency-sensitive services.",
       },
       {
         icon: "Globe",
@@ -5198,13 +5199,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Server",
         title: "Axum & Actix web",
         description:
-          "Production-grade async web frameworks — type-safe extractors, middleware, and tower service integration.",
+          "Production-grade async web frameworks: type-safe extractors, middleware, and tower service integration.",
       },
       {
         icon: "Package",
         title: "Cargo ecosystem",
         description:
-          "Cargo handles builds, deps, testing, and publishing — 150k+ crates on crates.io for every use case.",
+          "Cargo handles builds, deps, testing, and publishing: 150k+ crates on crates.io for every use case.",
       },
     ],
     subTechs: [
@@ -5213,7 +5214,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "cloudflare-workers" },
     ],
     overview:
-      "Rust is a systems programming language that guarantees memory safety without a garbage collector, delivering C/C++-level performance with modern developer ergonomics. At A Major, we use Rust for performance-critical components — Tauri desktop backends, WebAssembly modules, CLI tools, high-throughput web services with Axum, and anywhere zero-cost abstractions and fearless concurrency matter.\n\nRust's ownership model eliminates entire classes of bugs at compile time: no null pointer dereferences, no data races, no use-after-free. Combined with Cargo's excellent package ecosystem, first-class WebAssembly support, and growing adoption in web infrastructure, Rust is our choice when correctness and performance are non-negotiable.",
+      "Rust is a systems programming language that guarantees memory safety without a garbage collector, delivering C/C++-level performance with modern developer ergonomics. At A Major, we use Rust for performance-critical components: Tauri desktop backends, WebAssembly modules, CLI tools, high-throughput web services with Axum, and anywhere zero-cost abstractions and fearless concurrency matter.\n\nRust's ownership model eliminates entire classes of bugs at compile time: no null pointer dereferences, no data races, no use-after-free. Combined with Cargo's excellent package ecosystem, first-class WebAssembly support, and growing adoption in web infrastructure, Rust is our choice when correctness and performance are non-negotiable.",
     challenges: [
       {
         title: "Steep learning curve",
@@ -5245,17 +5246,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage cargo clippy in CI",
         detail:
-          "Clippy catches common mistakes, anti-patterns, and performance issues — run it as a CI gate alongside cargo test.",
+          "Clippy catches common mistakes, anti-patterns, and performance issues: run it as a CI gate alongside cargo test.",
       },
       {
         tip: "Use wasm-pack for WebAssembly",
         detail:
-          "wasm-pack compiles Rust to WASM with TypeScript bindings and npm packaging — seamless integration with JavaScript projects.",
+          "wasm-pack compiles Rust to WASM with TypeScript bindings and npm packaging: seamless integration with JavaScript projects.",
       },
       {
         tip: "Embrace the type system for domain modeling",
         detail:
-          "Use Rust's enums and pattern matching to make invalid states unrepresentable — catch business logic errors at compile time.",
+          "Use Rust's enums and pattern matching to make invalid states unrepresentable: catch business logic errors at compile time.",
       },
     ],
     usefulLinks: [
@@ -5289,12 +5290,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Rust development cost?",
         answer:
-          "Rust is free and open-source. Development costs are higher than TypeScript or Python due to the smaller talent pool and steeper learning curve — expect 20–40% premium for equivalent features.",
+          "Rust is free and open-source. Development costs are higher than TypeScript or Python due to the smaller talent pool and steeper learning curve: expect 20–40% premium for equivalent features.",
       },
       {
         question: "Is Rust good for web development?",
         answer:
-          "Yes, but selectively. Axum and Actix handle web services efficiently. Rust shines for high-throughput APIs, WebAssembly modules, and compute-heavy backend components — not for typical CRUD apps.",
+          "Yes, but selectively. Axum and Actix handle web services efficiently. Rust shines for high-throughput APIs, WebAssembly modules, and compute-heavy backend components: not for typical CRUD apps.",
       },
       {
         question: "Can I compile Rust to WebAssembly?",
@@ -5317,7 +5318,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "businesses",
     tagline: "E-commerce on WordPress that converts",
     description:
-      "WooCommerce powers 30% of all online stores. We build custom WooCommerce experiences — bespoke product pages, checkout flows, payment gateway integrations, and headless storefronts with fast frontends.",
+      "WooCommerce powers 30% of all online stores. We build custom WooCommerce experiences: bespoke product pages, checkout flows, payment gateway integrations, and headless storefronts with fast frontends.",
     accentColor: "blue",
     visualizationKey: "woocommerce",
     logo: "/logos/services/wordpress.svg",
@@ -5326,47 +5327,47 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "ShoppingCart",
         title: "Custom checkout flows",
         description:
-          "Multi-step checkout with upsells, discount logic, and guest checkout — tailored to your conversion funnel.",
+          "Multi-step checkout with upsells, discount logic, and guest checkout: tailored to your conversion funnel.",
       },
       {
         icon: "Globe",
         title: "Headless storefront",
         description:
-          "WooCommerce REST API powering a React or Next.js frontend — editorial flexibility with modern performance.",
+          "WooCommerce REST API powering a React or Next.js frontend: editorial flexibility with modern performance.",
       },
       {
         icon: "Package",
         title: "Inventory management",
         description:
-          "Stock tracking, backorder rules, and warehouse sync — manage thousands of SKUs with real-time availability.",
+          "Stock tracking, backorder rules, and warehouse sync: manage thousands of SKUs with real-time availability.",
       },
       {
         icon: "Shield",
         title: "Payment gateways",
         description:
-          "Stripe, PayPal, Apple Pay, and 100+ gateway integrations — secure checkout for every market.",
+          "Stripe, PayPal, Apple Pay, and 100+ gateway integrations: secure checkout for every market.",
       },
       {
         icon: "Workflow",
         title: "Order automation",
         description:
-          "Automated order status emails, fulfillment triggers, and CRM sync — reduce manual work per order to zero.",
+          "Automated order status emails, fulfillment triggers, and CRM sync: reduce manual work per order to zero.",
       },
       {
         icon: "BarChart2",
         title: "Sales analytics",
         description:
-          "Revenue dashboards, conversion funnels, and product performance reports — data-driven merchandising decisions.",
+          "Revenue dashboards, conversion funnels, and product performance reports: data-driven merchandising decisions.",
       },
     ],
     subTechs: [{ slug: "wordpress" }, { slug: "stripe" }],
     overview:
-      "WooCommerce is the most popular e-commerce platform in the world, powering over 5 million online stores. Built on WordPress, it gives you full control over your store — products, checkout, shipping, taxes, and payments. But turning WooCommerce into a high-converting, fast, and scalable store requires custom development far beyond installing a theme. We build WooCommerce stores that are optimized for conversion, speed, and your specific business model.",
+      "WooCommerce is the most popular e-commerce platform in the world, powering over 5 million online stores. Built on WordPress, it gives you full control over your store: products, checkout, shipping, taxes, and payments. But turning WooCommerce into a high-converting, fast, and scalable store requires custom development far beyond installing a theme. We build WooCommerce stores that are optimized for conversion, speed, and your specific business model.",
     challenges: [
       {
         title: "Slow page loads hurt conversions",
         description:
-          "Default WooCommerce themes are bloated. Every extra second of load time can reduce conversions by 7% — and most stores load in 4+ seconds.",
+          "Default WooCommerce themes are bloated. Every extra second of load time can reduce conversions by 7%, and most stores load in 4+ seconds.",
       },
       {
         title: "Checkout abandonment",
@@ -5427,17 +5428,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can you migrate my Shopify store to WooCommerce?",
         answer:
-          "Yes. We handle full migrations from Shopify, Magento, BigCommerce, and other platforms — including products, orders, customers, and SEO redirects.",
+          "Yes. We handle full migrations from Shopify, Magento, BigCommerce, and other platforms: including products, orders, customers, and SEO redirects.",
       },
       {
-        question: "WooCommerce vs Shopify — which is better?",
+        question: "WooCommerce vs Shopify: which is better?",
         answer:
-          "Shopify is simpler to start with but charges transaction fees and limits customization. WooCommerce gives you full control, no transaction fees, and infinite flexibility — but requires proper development to get right. We make WooCommerce work like it should.",
+          "Shopify is simpler to start with but charges transaction fees and limits customization. WooCommerce gives you full control, no transaction fees, and infinite flexibility, but requires proper development to get right. We make WooCommerce work like it should.",
       },
       {
         question: "Do you build WooCommerce plugins?",
         answer:
-          "Yes. We build custom WooCommerce plugins for specific business logic — custom shipping calculators, product configurators, B2B pricing engines, and more.",
+          "Yes. We build custom WooCommerce plugins for specific business logic: custom shipping calculators, product configurators, B2B pricing engines, and more.",
       },
     ],
   },
@@ -5449,7 +5450,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "both",
     tagline: "The TypeScript-first headless CMS",
     description:
-      "Payload is an open-source headless CMS and app framework built entirely in TypeScript. We build Payload-powered projects — from content-heavy marketing sites to full SaaS backends with custom admin panels, access control, and API-first content delivery.",
+      "Payload is an open-source headless CMS and app framework built entirely in TypeScript. We build Payload-powered projects: from content-heavy marketing sites to full SaaS backends with custom admin panels, access control, and API-first content delivery.",
     accentColor: "blue",
     visualizationKey: "payload",
     logo: "/logos/services/payload.svg",
@@ -5459,42 +5460,42 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "TypeScript config-as-code",
         description:
-          "Your entire CMS schema lives in TypeScript config files — version-controlled, type-safe, and refactor-friendly.",
+          "Your entire CMS schema lives in TypeScript config files: version-controlled, type-safe, and refactor-friendly.",
       },
       {
         icon: "Server",
         title: "Next.js native",
         description:
-          "Payload v3 runs inside Next.js as a plugin — one deployment, one codebase, zero separate CMS servers.",
+          "Payload v3 runs inside Next.js as a plugin: one deployment, one codebase, zero separate CMS servers.",
       },
       {
         icon: "Shield",
         title: "Field-level access control",
         description:
-          "Row, field, and collection-level access policies in code — RBAC, tenant isolation, and custom auth flows without plugins.",
+          "Row, field, and collection-level access policies in code: RBAC, tenant isolation, and custom auth flows without plugins.",
       },
       {
         icon: "Layout",
         title: "Custom admin UI",
         description:
-          "The admin panel is React — swap fields, add custom views, build dashboards without fighting a plugin system.",
+          "The admin panel is React: swap fields, add custom views, build dashboards without fighting a plugin system.",
       },
       {
         icon: "Blocks",
         title: "Block-based content",
         description:
-          "Reusable layout blocks with typed fields that editors mix and match — structured content with visual flexibility.",
+          "Reusable layout blocks with typed fields that editors mix and match: structured content with visual flexibility.",
       },
       {
         icon: "Globe",
         title: "REST & GraphQL APIs",
         description:
-          "Auto-generated REST and GraphQL endpoints for every collection — consume content from any frontend or service.",
+          "Auto-generated REST and GraphQL endpoints for every collection: consume content from any frontend or service.",
       },
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "typescript" }, { slug: "react" }],
     overview:
-      "Payload CMS is an open-source, TypeScript-first headless CMS that's rapidly becoming the go-to choice for developers who want full control. Unlike traditional CMS platforms, Payload's entire schema is defined in code — collections, fields, hooks, access control, and admin UI customizations are all TypeScript config. Version 3 runs natively inside Next.js, so your CMS and frontend deploy as a single app. It's self-hosted by default (no vendor lock-in), supports Postgres and MongoDB, and gives you REST + GraphQL APIs out of the box. We use Payload for projects that need a real developer experience without sacrificing editor-friendly admin panels.",
+      "Payload CMS is an open-source, TypeScript-first headless CMS that's rapidly becoming the go-to choice for developers who want full control. Unlike traditional CMS platforms, Payload's entire schema is defined in code: collections, fields, hooks, access control, and admin UI customizations are all TypeScript config. Version 3 runs natively inside Next.js, so your CMS and frontend deploy as a single app. It's self-hosted by default (no vendor lock-in), supports Postgres and MongoDB, and gives you REST + GraphQL APIs out of the box. We use Payload for projects that need a real developer experience without sacrificing editor-friendly admin panels.",
     challenges: [
       {
         title: "Younger ecosystem",
@@ -5504,7 +5505,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Self-hosted complexity",
         description:
-          "Unlike hosted CMS platforms, Payload requires you to manage your own infrastructure — server, database, and deployment pipeline.",
+          "Unlike hosted CMS platforms, Payload requires you to manage your own infrastructure: server, database, and deployment pipeline.",
       },
       {
         title: "Migration from other CMS",
@@ -5521,12 +5522,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Co-locate Payload config with your Next.js app",
         detail:
-          "With Payload v3, keep your CMS config alongside your Next.js pages — single repo, single deploy, shared TypeScript types.",
+          "With Payload v3, keep your CMS config alongside your Next.js pages: single repo, single deploy, shared TypeScript types.",
       },
       {
         tip: "Use hooks for business logic instead of external services",
         detail:
-          "Payload's beforeChange/afterChange hooks are the right place for validation, transformation, and side effects — keep logic close to your data model.",
+          "Payload's beforeChange/afterChange hooks are the right place for validation, transformation, and side effects: keep logic close to your data model.",
       },
       {
         tip: "Define reusable field groups",
@@ -5536,7 +5537,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Set up access control early",
         detail:
-          "Define RBAC policies from day one. Payload's access functions receive the authenticated user — build tenant isolation, role gates, and field-level permissions before content grows.",
+          "Define RBAC policies from day one. Payload's access functions receive the authenticated user: build tenant isolation, role gates, and field-level permissions before content grows.",
       },
     ],
     usefulLinks: [
@@ -5565,10 +5566,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does a Payload CMS project cost?",
         answer:
-          "Payload is free and open-source. Project costs depend on complexity — a content site with custom collections typically ranges from $8,000 to $30,000. The CMS itself has zero licensing fees.",
+          "Payload is free and open-source. Project costs depend on complexity: a content site with custom collections typically ranges from $8,000 to $30,000. The CMS itself has zero licensing fees.",
       },
       {
-        question: "Payload vs Strapi — which should I choose?",
+        question: "Payload vs Strapi: which should I choose?",
         answer:
           "Both are open-source headless CMS platforms. Payload is TypeScript-native with config-as-code, runs inside Next.js, and gives you more control. Strapi has a larger plugin ecosystem and a GUI-based schema builder. We recommend Payload for TypeScript teams that want code-first control.",
       },
@@ -5612,36 +5613,36 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Users",
         title: "Built-in memberships",
         description:
-          "Native member signups, paid subscriptions via Stripe, and tiered access — no plugins or third-party tools required.",
+          "Native member signups, paid subscriptions via Stripe, and tiered access: no plugins or third-party tools required.",
       },
       {
         icon: "Mail",
         title: "Newsletter delivery",
         description:
-          "Send posts as emails directly from Ghost — segment by membership tier, track opens, and grow your audience in one place.",
+          "Send posts as emails directly from Ghost: segment by membership tier, track opens, and grow your audience in one place.",
       },
       {
         icon: "Globe",
         title: "Content API",
         description:
-          "Ghost's Content and Admin APIs let you use it as a headless CMS — power Next.js, Astro, or any frontend with Ghost's content.",
+          "Ghost's Content and Admin APIs let you use it as a headless CMS: power Next.js, Astro, or any frontend with Ghost's content.",
       },
       {
         icon: "BarChart2",
         title: "Audience analytics",
         description:
-          "Built-in analytics for signups, email engagement, and revenue — understand what content converts readers to paying members.",
+          "Built-in analytics for signups, email engagement, and revenue: understand what content converts readers to paying members.",
       },
       {
         icon: "Zap",
         title: "Blazing fast",
         description:
-          "Ghost is built on Node.js with server-side rendering — pages load in milliseconds with zero bloat.",
+          "Ghost is built on Node.js with server-side rendering: pages load in milliseconds with zero bloat.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "nextjs" }],
     overview:
-      "Ghost is an open-source publishing platform purpose-built for professional content creators, bloggers, and media businesses. Unlike WordPress, Ghost was designed from the ground up for modern publishing — with a clean editor, built-in memberships, newsletter delivery, and a headless Content API. It handles the full creator workflow: write content, grow your audience, monetize with paid subscriptions, and send newsletters — all in one platform. We build custom Ghost themes, set up headless Ghost + Next.js frontends, and integrate Ghost with your existing tools and workflows.",
+      "Ghost is an open-source publishing platform purpose-built for professional content creators, bloggers, and media businesses. Unlike WordPress, Ghost was designed from the ground up for modern publishing , with a clean editor, built-in memberships, newsletter delivery, and a headless Content API. It handles the full creator workflow: write content, grow your audience, monetize with paid subscriptions, and send newsletters , all in one platform. We build custom Ghost themes, set up headless Ghost + Next.js frontends, and integrate Ghost with your existing tools and workflows.",
     challenges: [
       {
         title: "Limited plugin ecosystem",
@@ -5661,24 +5662,24 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Self-hosting resource requirements",
         description:
-          "Self-hosted Ghost requires a Node.js server, MySQL database, and proper mail configuration — more involved than static hosting.",
+          "Self-hosted Ghost requires a Node.js server, MySQL database, and proper mail configuration: more involved than static hosting.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Ghost as a headless CMS for custom frontends",
         detail:
-          "Ghost's Content API is excellent — use it with Next.js or Astro for full design control while keeping Ghost's editor and membership features.",
+          "Ghost's Content API is excellent: use it with Next.js or Astro for full design control while keeping Ghost's editor and membership features.",
       },
       {
         tip: "Set up membership tiers early",
         detail:
-          "Define free and paid tiers before launching. Ghost's Stripe integration handles subscriptions natively — no WooCommerce or MemberPress needed.",
+          "Define free and paid tiers before launching. Ghost's Stripe integration handles subscriptions natively: no WooCommerce or MemberPress needed.",
       },
       {
         tip: "Leverage Ghost's email newsletter",
         detail:
-          "Use Ghost's built-in email delivery instead of a separate Mailchimp/ConvertKit setup — fewer tools, better integration, and member segments based on subscription tier.",
+          "Use Ghost's built-in email delivery instead of a separate Mailchimp/ConvertKit setup: fewer tools, better integration, and member segments based on subscription tier.",
       },
       {
         tip: "Optimize images with Ghost's built-in processing",
@@ -5715,9 +5716,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Ghost is free and open-source for self-hosting. Ghost(Pro) managed hosting starts at $9/month. Custom theme development and headless setups typically range from $5,000 to $20,000.",
       },
       {
-        question: "Ghost vs WordPress for blogging — which is better?",
+        question: "Ghost vs WordPress for blogging: which is better?",
         answer:
-          "Ghost is purpose-built for publishing — faster out of the box, built-in memberships, and native newsletters. WordPress is more flexible for non-blog content but requires plugins for everything Ghost does natively. For pure publishing, Ghost wins.",
+          "Ghost is purpose-built for publishing: faster out of the box, built-in memberships, and native newsletters. WordPress is more flexible for non-blog content but requires plugins for everything Ghost does natively. For pure publishing, Ghost wins.",
       },
       {
         question: "Can Ghost handle e-commerce?",
@@ -5727,7 +5728,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can you migrate my WordPress blog to Ghost?",
         answer:
-          "Yes. Ghost has a built-in WordPress importer. We handle the full migration — content, images, redirects, and custom theme development to match or improve your existing design.",
+          "Yes. Ghost has a built-in WordPress importer. We handle the full migration: content, images, redirects, and custom theme development to match or improve your existing design.",
       },
     ],
     quickstart:
@@ -5743,7 +5744,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "both",
     tagline: "The open-source headless CMS for modern apps",
     description:
-      "Strapi is an open-source headless CMS that lets you build APIs in minutes. We use Strapi for content-driven apps — custom content types, role-based access, and REST or GraphQL APIs powering React, Next.js, and mobile frontends.",
+      "Strapi is an open-source headless CMS that lets you build APIs in minutes. We use Strapi for content-driven apps: custom content types, role-based access, and REST or GraphQL APIs powering React, Next.js, and mobile frontends.",
     accentColor: "indigo",
     visualizationKey: "strapi",
     logo: "/svg/strapi.svg",
@@ -5752,37 +5753,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "Visual content-type builder",
         description:
-          "Define content schemas visually in the admin panel — fields, relations, components, and dynamic zones without writing code.",
+          "Define content schemas visually in the admin panel: fields, relations, components, and dynamic zones without writing code.",
       },
       {
         icon: "Globe",
         title: "REST & GraphQL out of the box",
         description:
-          "Every content type gets auto-generated REST and GraphQL endpoints — no boilerplate, immediate API access.",
+          "Every content type gets auto-generated REST and GraphQL endpoints: no boilerplate, immediate API access.",
       },
       {
         icon: "Shield",
         title: "Role-based access control",
         description:
-          "Granular permissions per role, per content type, per field — manage editors, authors, and API consumers with fine-grained policies.",
+          "Granular permissions per role, per content type, per field: manage editors, authors, and API consumers with fine-grained policies.",
       },
       {
         icon: "Puzzle",
         title: "Plugin ecosystem",
         description:
-          "SEO, i18n, email, upload, and dozens of community plugins — extend Strapi without building from scratch.",
+          "SEO, i18n, email, upload, and dozens of community plugins: extend Strapi without building from scratch.",
       },
       {
         icon: "Blocks",
         title: "Dynamic zones",
         description:
-          "Editors compose pages from reusable component blocks — flexible layouts without rigid templates.",
+          "Editors compose pages from reusable component blocks: flexible layouts without rigid templates.",
       },
       {
         icon: "Database",
         title: "Multi-database support",
         description:
-          "Postgres, MySQL, MariaDB, or SQLite — choose your database and Strapi handles the query layer.",
+          "Postgres, MySQL, MariaDB, or SQLite: choose your database and Strapi handles the query layer.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "react" }, { slug: "graphql" }],
@@ -5802,7 +5803,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Custom plugin development",
         description:
-          "Building Strapi plugins requires understanding its internal APIs, lifecycle hooks, and admin panel extension system — steeper learning curve than simple REST endpoints.",
+          "Building Strapi plugins requires understanding its internal APIs, lifecycle hooks, and admin panel extension system: steeper learning curve than simple REST endpoints.",
       },
       {
         title: "Self-hosting ops burden",
@@ -5819,7 +5820,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Limit population depth in API queries",
         detail:
-          "Strapi v5 uses a populate parameter. Avoid deep nested population — flatten your data model or use custom controllers for complex queries.",
+          "Strapi v5 uses a populate parameter. Avoid deep nested population: flatten your data model or use custom controllers for complex queries.",
       },
       {
         tip: "Version your Strapi schema in Git",
@@ -5829,7 +5830,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Set up Strapi Cloud or proper CI/CD early",
         detail:
-          "Automate deployments with GitHub Actions or Strapi Cloud. Never edit content types directly in production — use staging environments.",
+          "Automate deployments with GitHub Actions or Strapi Cloud. Never edit content types directly in production: use staging environments.",
       },
     ],
     usefulLinks: [
@@ -5861,9 +5862,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Strapi is free and open-source. Strapi Cloud starts at $29/month. Custom Strapi development typically ranges from $6,000 to $25,000 depending on content model complexity, custom plugins, and frontend integration.",
       },
       {
-        question: "Strapi vs Payload — which should I choose?",
+        question: "Strapi vs Payload: which should I choose?",
         answer:
-          "Strapi has a visual schema builder and larger plugin ecosystem — great for teams with non-technical admins. Payload is TypeScript-native with config-as-code — ideal for developer-led teams. We recommend Strapi when editors need to modify content types themselves.",
+          "Strapi has a visual schema builder and larger plugin ecosystem , great for teams with non-technical admins. Payload is TypeScript-native with config-as-code , ideal for developer-led teams. We recommend Strapi when editors need to modify content types themselves.",
       },
       {
         question: "Can Strapi handle a large content site?",
@@ -5873,7 +5874,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Does Strapi support multi-language content?",
         answer:
-          "Yes. Strapi has built-in i18n (internationalization) support — define locales, translate content per field, and query by language. It's included in the core, not a plugin.",
+          "Yes. Strapi has built-in i18n (internationalization) support: define locales, translate content per field, and query by language. It's included in the core, not a plugin.",
       },
     ],
     quickstart:
@@ -5889,7 +5890,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "both",
     tagline: "Structured content for composable experiences",
     description:
-      "Sanity is a composable content platform with a real-time editing studio and a powerful query language (GROQ). We build Sanity-powered projects — custom studio configurations, structured content models, and integrations with Next.js, Remix, and e-commerce platforms.",
+      "Sanity is a composable content platform with a real-time editing studio and a powerful query language (GROQ). We build Sanity-powered projects: custom studio configurations, structured content models, and integrations with Next.js, Remix, and e-commerce platforms.",
     accentColor: "red",
     visualizationKey: "sanity",
     logo: "/svg/sanity-light.svg",
@@ -5899,25 +5900,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "Sanity Studio",
         description:
-          "A fully customizable React-based editing environment — custom input components, live preview, and workspace plugins.",
+          "A fully customizable React-based editing environment: custom input components, live preview, and workspace plugins.",
       },
       {
         icon: "Search",
         title: "GROQ query language",
         description:
-          "Sanity's own query language for filtering, joining, and projecting content — more expressive than REST parameters, easier than GraphQL.",
+          "Sanity's own query language for filtering, joining, and projecting content: more expressive than REST parameters, easier than GraphQL.",
       },
       {
         icon: "Zap",
         title: "Real-time collaboration",
         description:
-          "Multiple editors work on the same document simultaneously — changes sync in real-time like Google Docs.",
+          "Multiple editors work on the same document simultaneously: changes sync in real-time like Google Docs.",
       },
       {
         icon: "Eye",
         title: "Live preview",
         description:
-          "See content changes reflected on your frontend instantly — draft content previewed in context before publishing.",
+          "See content changes reflected on your frontend instantly: draft content previewed in context before publishing.",
       },
       {
         icon: "GitBranch",
@@ -5929,12 +5930,12 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Cloud",
         title: "Hosted content lake",
         description:
-          "Sanity hosts your content in a globally distributed content lake — no database management, instant API access.",
+          "Sanity hosts your content in a globally distributed content lake: no database management, instant API access.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }, { slug: "typescript" }],
     overview:
-      "Sanity is a composable content platform trusted by companies like Figma, Shopify, and National Geographic. Unlike traditional CMS platforms, Sanity separates content from presentation completely — your content lives in Sanity's hosted content lake, and you query it with GROQ or GraphQL from any frontend. Sanity Studio is an open-source React app that you customize and deploy alongside your site. We use Sanity for projects that need structured content modeling, real-time collaboration, and the flexibility to power multiple frontends (web, mobile, kiosk) from a single content source.",
+      "Sanity is a composable content platform trusted by companies like Figma, Shopify, and National Geographic. Unlike traditional CMS platforms, Sanity separates content from presentation completely: your content lives in Sanity's hosted content lake, and you query it with GROQ or GraphQL from any frontend. Sanity Studio is an open-source React app that you customize and deploy alongside your site. We use Sanity for projects that need structured content modeling, real-time collaboration, and the flexibility to power multiple frontends (web, mobile, kiosk) from a single content source.",
     challenges: [
       {
         title: "GROQ learning curve",
@@ -6008,7 +6009,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Sanity has a generous free tier (3 users, 500K API requests/month). Growth plans start at $15/user/month. Custom development with Sanity typically ranges from $8,000 to $35,000 depending on Studio customization and frontend complexity.",
       },
       {
-        question: "Sanity vs Contentful — which is better?",
+        question: "Sanity vs Contentful: which is better?",
         answer:
           "Both are hosted headless CMS platforms. Sanity offers a fully customizable open-source Studio, GROQ queries, and real-time collaboration. Contentful has a more rigid but simpler admin UI and a larger enterprise track record. We recommend Sanity for teams that need custom editing experiences.",
       },
@@ -6046,31 +6047,31 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Cloud",
         title: "Fully managed cloud platform",
         description:
-          "No servers to manage — Contentful handles hosting, scaling, CDN, and 99.95% uptime SLA for enterprise teams.",
+          "No servers to manage: Contentful handles hosting, scaling, CDN, and 99.95% uptime SLA for enterprise teams.",
       },
       {
         icon: "Globe",
         title: "Content Delivery & Preview APIs",
         description:
-          "Separate APIs for published content (CDN-cached) and draft preview — fast delivery with editorial flexibility.",
+          "Separate APIs for published content (CDN-cached) and draft preview: fast delivery with editorial flexibility.",
       },
       {
         icon: "Puzzle",
         title: "App Framework",
         description:
-          "Build custom apps that extend the Contentful UI — custom field editors, sidebar widgets, and workflow automations.",
+          "Build custom apps that extend the Contentful UI: custom field editors, sidebar widgets, and workflow automations.",
       },
       {
         icon: "Layout",
         title: "Composable content models",
         description:
-          "Content types with references, rich text, and embedded entries — structure content once, publish everywhere.",
+          "Content types with references, rich text, and embedded entries: structure content once, publish everywhere.",
       },
       {
         icon: "Languages",
         title: "Native localization",
         description:
-          "Per-field localization across unlimited locales — manage translations within the same content entry.",
+          "Per-field localization across unlimited locales: manage translations within the same content entry.",
       },
       {
         icon: "Workflow",
@@ -6081,12 +6082,12 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "react" }, { slug: "graphql" }],
     overview:
-      "Contentful is a composable content platform trusted by 30% of the Fortune 500, including Spotify, Vodafone, and Staples. It provides a cloud-hosted content infrastructure with a web-based editor, multiple APIs (REST, GraphQL, Images), and a platform for custom apps. Contentful excels at multi-channel content delivery — the same structured content powers your website, mobile app, in-store kiosk, and partner feeds. We integrate Contentful with Next.js, Gatsby, and custom frontends, build Contentful Apps for custom editorial workflows, and optimize content delivery for performance and cost.",
+      "Contentful is a composable content platform trusted by 30% of the Fortune 500, including Spotify, Vodafone, and Staples. It provides a cloud-hosted content infrastructure with a web-based editor, multiple APIs (REST, GraphQL, Images), and a platform for custom apps. Contentful excels at multi-channel content delivery: the same structured content powers your website, mobile app, in-store kiosk, and partner feeds. We integrate Contentful with Next.js, Gatsby, and custom frontends, build Contentful Apps for custom editorial workflows, and optimize content delivery for performance and cost.",
     challenges: [
       {
         title: "Pricing for growing teams",
         description:
-          "Contentful's pricing scales with users, content types, and API calls. Costs can escalate quickly for larger teams — careful content modeling helps control usage.",
+          "Contentful's pricing scales with users, content types, and API calls. Costs can escalate quickly for larger teams: careful content modeling helps control usage.",
       },
       {
         title: "Rich text rendering complexity",
@@ -6108,7 +6109,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Contentful Compose for page-level editing",
         detail:
-          "Contentful Compose gives editors a page-builder experience on top of structured content types — visual composition without sacrificing content model integrity.",
+          "Contentful Compose gives editors a page-builder experience on top of structured content types: visual composition without sacrificing content model integrity.",
       },
       {
         tip: "Leverage environments for staging",
@@ -6123,7 +6124,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Automate migrations with the CLI",
         detail:
-          "Use Contentful's migration CLI to script content model changes — version-controlled, repeatable, and safe for production deployments.",
+          "Use Contentful's migration CLI to script content model changes: version-controlled, repeatable, and safe for production deployments.",
       },
     ],
     usefulLinks: [
@@ -6155,7 +6156,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Contentful's free Community tier includes 5 users and 25K API calls/month. Team plans start at $300/month. Enterprise pricing is custom. Development costs for Contentful integrations typically range from $8,000 to $40,000.",
       },
       {
-        question: "Contentful vs Sanity — which should I choose?",
+        question: "Contentful vs Sanity: which should I choose?",
         answer:
           "Contentful is a mature enterprise platform with established workflows and a simpler editing experience. Sanity offers deeper customization with its open-source Studio and GROQ queries. We recommend Contentful for enterprise teams that value stability and support, Sanity for teams that need custom editing UX.",
       },
@@ -6180,7 +6181,7 @@ export const servicesConfig: ServiceConfig[] = [
     targetAudience: "both",
     tagline: "Instant APIs on top of any SQL database",
     description:
-      "Directus wraps any SQL database with REST and GraphQL APIs and a no-code admin app. We use Directus for projects that need a flexible data platform — content management, internal tools, and custom dashboards powered by your existing database.",
+      "Directus wraps any SQL database with REST and GraphQL APIs and a no-code admin app. We use Directus for projects that need a flexible data platform: content management, internal tools, and custom dashboards powered by your existing database.",
     accentColor: "violet",
     visualizationKey: "directus",
     logo: "/svg/directus.svg",
@@ -6189,7 +6190,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "Database-first approach",
         description:
-          "Directus wraps your existing SQL database — Postgres, MySQL, SQLite, or others — with zero schema duplication.",
+          "Directus wraps your existing SQL database , Postgres, MySQL, SQLite, or others , with zero schema duplication.",
       },
       {
         icon: "Globe",
@@ -6201,30 +6202,30 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "No-code admin app",
         description:
-          "A beautiful admin panel for managing data — custom layouts, file management, and user-friendly interfaces for non-technical teams.",
+          "A beautiful admin panel for managing data: custom layouts, file management, and user-friendly interfaces for non-technical teams.",
       },
       {
         icon: "Workflow",
         title: "Flows automation",
         description:
-          "Visual workflow builder for automating tasks — trigger on data changes, schedule jobs, and chain operations without code.",
+          "Visual workflow builder for automating tasks: trigger on data changes, schedule jobs, and chain operations without code.",
       },
       {
         icon: "Shield",
         title: "Granular permissions",
         description:
-          "Role-based access with field-level, collection-level, and item-level permissions — control exactly who sees and edits what.",
+          "Role-based access with field-level, collection-level, and item-level permissions: control exactly who sees and edits what.",
       },
       {
         icon: "Eye",
         title: "Custom dashboards",
         description:
-          "Build analytics dashboards directly in Directus — charts, metrics, and data visualizations without a separate BI tool.",
+          "Build analytics dashboards directly in Directus: charts, metrics, and data visualizations without a separate BI tool.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "typescript" }, { slug: "vue" }],
     overview:
-      "Directus is an open-source data platform that wraps any SQL database with instant REST and GraphQL APIs and a no-code admin app. Unlike traditional CMS platforms that force a content model, Directus adapts to your existing database schema — add it to a new or existing Postgres, MySQL, or SQLite database and get APIs and an admin UI immediately. With over 30,000 GitHub stars, Directus is used as a headless CMS, backend-as-a-service, and internal tool builder. We use Directus when teams need a flexible data platform that goes beyond content management.",
+      "Directus is an open-source data platform that wraps any SQL database with instant REST and GraphQL APIs and a no-code admin app. Unlike traditional CMS platforms that force a content model, Directus adapts to your existing database schema: add it to a new or existing Postgres, MySQL, or SQLite database and get APIs and an admin UI immediately. With over 30,000 GitHub stars, Directus is used as a headless CMS, backend-as-a-service, and internal tool builder. We use Directus when teams need a flexible data platform that goes beyond content management.",
     challenges: [
       {
         title: "Complex relational data UI",
@@ -6256,12 +6257,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Directus Flows for automation",
         detail:
-          "Replace cron jobs and custom scripts with Directus Flows — trigger on data changes, send emails, call webhooks, and chain operations visually.",
+          "Replace cron jobs and custom scripts with Directus Flows: trigger on data changes, send emails, call webhooks, and chain operations visually.",
       },
       {
         tip: "Leverage database views for complex queries",
         detail:
-          "Create SQL views for complex aggregations or joins and expose them through Directus as read-only collections — better performance than deep API population.",
+          "Create SQL views for complex aggregations or joins and expose them through Directus as read-only collections: better performance than deep API population.",
       },
       {
         tip: "Set up Directus Cloud or Docker for production",
@@ -6298,19 +6299,19 @@ export const servicesConfig: ServiceConfig[] = [
           "Directus is free and open-source for self-hosting. Directus Cloud starts at $15/month. Custom Directus projects typically range from $5,000 to $25,000 depending on data model complexity and custom extensions.",
       },
       {
-        question: "Directus vs Strapi — which should I choose?",
+        question: "Directus vs Strapi: which should I choose?",
         answer:
-          "Strapi is a traditional headless CMS — great for content management. Directus is a data platform — it wraps any SQL database and works for content, internal tools, and data management. Choose Directus when you need to work with existing databases or build beyond just content.",
+          "Strapi is a traditional headless CMS , great for content management. Directus is a data platform , it wraps any SQL database and works for content, internal tools, and data management. Choose Directus when you need to work with existing databases or build beyond just content.",
       },
       {
         question: "Can Directus work with my existing database?",
         answer:
-          "Yes — that's Directus's superpower. Point it at any existing Postgres, MySQL, MariaDB, SQLite, or MS SQL database and it instantly generates APIs and an admin panel from your schema.",
+          "Yes. That's Directus's superpower. Point it at any existing Postgres, MySQL, MariaDB, SQLite, or MS SQL database and it instantly generates APIs and an admin panel from your schema.",
       },
       {
         question: "Is Directus good for internal tools?",
         answer:
-          "Absolutely. Directus's admin app, custom dashboards, Flows automation, and granular permissions make it an excellent low-code platform for internal tools — inventory management, CRM, project tracking, and more.",
+          "Absolutely. Directus's admin app, custom dashboards, Flows automation, and granular permissions make it an excellent low-code platform for internal tools: inventory management, CRM, project tracking, and more.",
       },
     ],
     quickstart:
@@ -6333,37 +6334,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "FileText",
         title: "Schema definitions",
         description:
-          "Define document structure with types, defaults, validators, and indexes — your data contract in code.",
+          "Define document structure with types, defaults, validators, and indexes: your data contract in code.",
       },
       {
         icon: "Workflow",
         title: "Middleware hooks",
         description:
-          "Pre/post hooks on save, validate, and remove — audit logs, hashing, and side effects without cluttering business logic.",
+          "Pre/post hooks on save, validate, and remove: audit logs, hashing, and side effects without cluttering business logic.",
       },
       {
         icon: "Code2",
         title: "TypeScript support",
         description:
-          "Typed document interfaces and query helpers — full IntelliSense from schema definition to query result.",
+          "Typed document interfaces and query helpers: full IntelliSense from schema definition to query result.",
       },
       {
         icon: "Database",
         title: "Aggregation pipeline",
         description:
-          "Build complex data transformations with MongoDB's aggregation framework — group, filter, join, and reshape documents.",
+          "Build complex data transformations with MongoDB's aggregation framework: group, filter, join, and reshape documents.",
       },
       {
         icon: "Puzzle",
         title: "Population",
         description:
-          "Reference documents across collections and auto-populate them in queries — relational-style joins in MongoDB.",
+          "Reference documents across collections and auto-populate them in queries: relational-style joins in MongoDB.",
       },
       {
         icon: "Layers",
         title: "Discriminators",
         description:
-          "Single-collection inheritance for polymorphic documents — share a base schema with type-specific fields.",
+          "Single-collection inheritance for polymorphic documents: share a base schema with type-specific fields.",
       },
     ],
     subTechs: [{ slug: "mongodb" }, { slug: "nodejs" }],
@@ -6392,12 +6393,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use lean() for read-only queries",
         detail:
-          "Lean queries return plain JavaScript objects instead of Mongoose documents — significantly faster when you don't need middleware or virtuals.",
+          "Lean queries return plain JavaScript objects instead of Mongoose documents: significantly faster when you don't need middleware or virtuals.",
       },
       {
         tip: "Define indexes in your schema",
         detail:
-          "Declare indexes in Mongoose schemas (schema.index()) so they're created automatically — don't rely on ad-hoc database administration.",
+          "Declare indexes in Mongoose schemas (schema.index()) so they're created automatically: don't rely on ad-hoc database administration.",
       },
       {
         tip: "Use pre/post middleware sparingly",
@@ -6431,17 +6432,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Mongoose development cost?",
         answer:
-          "Mongoose is free and open-source. The underlying MongoDB costs depend on hosting — Atlas has a free tier, with paid plans starting around $57/month. Development with Mongoose typically adds no extra cost over raw MongoDB driver usage.",
+          "Mongoose is free and open-source. The underlying MongoDB costs depend on hosting: Atlas has a free tier, with paid plans starting around $57/month. Development with Mongoose typically adds no extra cost over raw MongoDB driver usage.",
       },
       {
-        question: "Mongoose vs Prisma — which should I use with MongoDB?",
+        question: "Mongoose vs Prisma: which should I use with MongoDB?",
         answer:
           "Mongoose is purpose-built for MongoDB with deep feature support (middleware, virtuals, discriminators, population). Prisma supports MongoDB but treats it more like a relational database. Use Mongoose when you need MongoDB-specific features; use Prisma when you want a unified ORM across multiple database types.",
       },
       {
         question: "Is Mongoose still relevant with the native MongoDB driver?",
         answer:
-          "Yes. The native driver gives you raw access but no schema validation, middleware, or query building. Mongoose adds structure without sacrificing MongoDB's flexibility — most production Node.js + MongoDB projects use Mongoose.",
+          "Yes. The native driver gives you raw access but no schema validation, middleware, or query building. Mongoose adds structure without sacrificing MongoDB's flexibility: most production Node.js + MongoDB projects use Mongoose.",
       },
     ],
     quickstart:
@@ -6455,7 +6456,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "design",
     tagline: "Accessible component primitives you own",
     description:
-      "shadcn/ui gives us a starting point of accessible, unstyled Radix UI components styled with Tailwind CSS — copied into your codebase, not installed as a dependency. We customise every component to match your brand.",
+      "shadcn/ui gives us a starting point of accessible, unstyled Radix UI components styled with Tailwind CSS: copied into your codebase, not installed as a dependency. We customise every component to match your brand.",
     accentColor: "cyan",
     visualizationKey: "shadcn",
     logo: "/logos/services/shadcn.svg",
@@ -6465,44 +6466,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Component",
         title: "Owns the code",
         description:
-          "Components are copied into your project — no node_modules dependency, full control to customise anything.",
+          "Components are copied into your project: no node_modules dependency, full control to customise anything.",
       },
       {
         icon: "Accessibility",
         title: "Accessible by default",
         description:
-          "Built on Radix UI primitives — keyboard navigation, screen reader support, and focus management included.",
+          "Built on Radix UI primitives: keyboard navigation, screen reader support, and focus management included.",
       },
       {
         icon: "Paintbrush",
         title: "Tailwind themed",
         description:
-          "CSS variables and Tailwind utility classes for consistent theming — change your palette in one place.",
+          "CSS variables and Tailwind utility classes for consistent theming: change your palette in one place.",
       },
       {
         icon: "Moon",
         title: "Dark mode ready",
         description:
-          "Light and dark themes via CSS variables — toggle with next-themes and every component adapts automatically.",
+          "Light and dark themes via CSS variables: toggle with next-themes and every component adapts automatically.",
       },
       {
         icon: "Puzzle",
         title: "Composable",
         description:
-          "Compound component patterns — combine primitives like Dialog, Popover, and Command to build complex UIs.",
+          "Compound component patterns: combine primitives like Dialog, Popover, and Command to build complex UIs.",
       },
       {
         icon: "Layers",
         title: "Registry-based",
         description:
-          "Add components via the CLI from the registry — one command to install, update, or extend any component.",
+          "Add components via the CLI from the registry: one command to install, update, or extend any component.",
       },
     ],
     subTechs: [{ slug: "tailwind" }, { slug: "react" }, { slug: "nextjs" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "shadcn/ui is a collection of accessible, customizable React components built on Radix UI primitives and styled with Tailwind CSS. Unlike traditional component libraries, shadcn/ui copies components directly into your codebase — you own and control every line of code.\n\nThis approach gives you full customization freedom without fighting library abstractions. Components are accessible by default (via Radix), beautifully styled with Tailwind, and composable — use them as-is or modify them to match your exact design system. The registry system makes adding new components a single CLI command.",
+      "shadcn/ui is a collection of accessible, customizable React components built on Radix UI primitives and styled with Tailwind CSS. Unlike traditional component libraries, shadcn/ui copies components directly into your codebase , you own and control every line of code.\n\nThis approach gives you full customization freedom without fighting library abstractions. Components are accessible by default (via Radix), beautifully styled with Tailwind, and composable , use them as-is or modify them to match your exact design system. The registry system makes adding new components a single CLI command.",
     challenges: [
       {
         title: "Component customization overhead",
@@ -6524,7 +6525,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use the CLI to add components",
         detail:
-          "npx shadcn@latest add button adds the component with all dependencies — faster and less error-prone than manual copying.",
+          "npx shadcn@latest add button adds the component with all dependencies: faster and less error-prone than manual copying.",
       },
       {
         tip: "Define your theme in CSS variables",
@@ -6534,7 +6535,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Compose complex UI from primitives",
         detail:
-          "Build complex interfaces by composing shadcn primitives (Card, Dialog, Table, Form) — the components are designed to work together.",
+          "Build complex interfaces by composing shadcn primitives (Card, Dialog, Table, Form): the components are designed to work together.",
       },
     ],
     usefulLinks: [
@@ -6563,10 +6564,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does shadcn/ui cost?",
         answer:
-          "shadcn/ui is completely free and open-source (MIT license). The components are copied into your project — there's no paid tier, no premium components, and no vendor lock-in.",
+          "shadcn/ui is completely free and open-source (MIT license). The components are copied into your project: there's no paid tier, no premium components, and no vendor lock-in.",
       },
       {
-        question: "shadcn/ui vs Material UI — which component library?",
+        question: "shadcn/ui vs Material UI: which component library?",
         answer:
           "Material UI is a full component library installed as a dependency with Google's Material Design. shadcn/ui copies accessible primitives into your codebase for full customization with Tailwind CSS. Choose shadcn/ui for custom designs; choose MUI for Material Design adherence.",
       },
@@ -6587,7 +6588,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Documentation sites built on Astro",
     description:
-      "Starlight is Astro's official documentation framework — beautiful, accessible docs with full-text search, dark mode, i18n, and sidebar navigation out of the box. We build and customise Starlight for developer products.",
+      "Starlight is Astro's official documentation framework: beautiful, accessible docs with full-text search, dark mode, i18n, and sidebar navigation out of the box. We build and customise Starlight for developer products.",
     accentColor: "amber",
     visualizationKey: "starlight",
     logo: "/logos/services/astro-icon-light.svg",
@@ -6597,7 +6598,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Search",
         title: "Full-text search",
         description:
-          "Algolia or local search built in — instant results as users type, configurable relevance and facets.",
+          "Algolia or local search built in: instant results as users type, configurable relevance and facets.",
       },
       {
         icon: "Globe",
@@ -6609,7 +6610,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Moon",
         title: "Dark mode & accessibility",
         description:
-          "System-aware dark mode toggle and accessible markup — meets WCAG standards without extra configuration.",
+          "System-aware dark mode toggle and accessible markup: meets WCAG standards without extra configuration.",
       },
       {
         icon: "Layout",
@@ -6621,20 +6622,20 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "FileText",
         title: "MDX components",
         description:
-          "Embed React components in Markdown — tabs, admonitions, code blocks, and interactive examples inline.",
+          "Embed React components in Markdown: tabs, admonitions, code blocks, and interactive examples inline.",
       },
       {
         icon: "Gauge",
         title: "Perfect Lighthouse scores",
         description:
-          "Static site generation with optimised assets — 100/100 Lighthouse scores for performance, accessibility, and SEO.",
+          "Static site generation with optimised assets: 100/100 Lighthouse scores for performance, accessibility, and SEO.",
       },
     ],
     subTechs: [{ slug: "astro" }, { slug: "fumadocs" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Starlight is Astro's official documentation framework — purpose-built for creating beautiful, fast, and accessible documentation sites. It provides full-text search, dark mode, sidebar navigation, table of contents, i18n, and MDX component support out of the box, with perfect Lighthouse scores.\n\nStarlight leverages Astro's content-first architecture, shipping zero JavaScript by default and hydrating interactive components only when needed. It's the recommended choice for developer product documentation, API references, and knowledge bases.",
+      "Starlight is Astro's official documentation framework: purpose-built for creating beautiful, fast, and accessible documentation sites. It provides full-text search, dark mode, sidebar navigation, table of contents, i18n, and MDX component support out of the box, with perfect Lighthouse scores.\n\nStarlight leverages Astro's content-first architecture, shipping zero JavaScript by default and hydrating interactive components only when needed. It's the recommended choice for developer product documentation, API references, and knowledge bases.",
     challenges: [
       {
         title: "Customization beyond built-in themes",
@@ -6656,7 +6657,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use MDX for interactive documentation",
         detail:
-          "Starlight supports MDX — embed React or Astro components in your documentation for interactive examples, code playgrounds, and API explorers.",
+          "Starlight supports MDX: embed React or Astro components in your documentation for interactive examples, code playgrounds, and API explorers.",
       },
       {
         tip: "Configure sidebar groups logically",
@@ -6666,7 +6667,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable i18n from the start",
         detail:
-          "If you plan to support multiple languages, configure Starlight's i18n system early — retrofitting translations is harder than building with i18n from the beginning.",
+          "If you plan to support multiple languages, configure Starlight's i18n system early: retrofitting translations is harder than building with i18n from the beginning.",
       },
     ],
     usefulLinks: [
@@ -6698,7 +6699,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Starlight is free and open-source (MIT license). Documentation sites can be hosted for free on Vercel, Netlify, Cloudflare Pages, or GitHub Pages. There are no premium features or paid tiers.",
       },
       {
-        question: "Starlight vs Docusaurus — which should I use?",
+        question: "Starlight vs Docusaurus: which should I use?",
         answer:
           "Starlight ships zero JavaScript by default with perfect Lighthouse scores. Docusaurus has a larger ecosystem and more plugins. Choose Starlight for performance and simplicity; choose Docusaurus if you need specific plugins or have an existing Docusaurus site.",
       },
@@ -6721,7 +6722,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Smart monorepo build system with plugins for everything",
     description:
-      "Nx is a powerful build system with deep framework integration — generators, executors, computation caching, and affected-command detection. The right choice for large teams and complex monorepos.",
+      "Nx is a powerful build system with deep framework integration: generators, executors, computation caching, and affected-command detection. The right choice for large teams and complex monorepos.",
     accentColor: "blue",
     visualizationKey: "nx",
     logo: "/logos/services/nx_dark.svg",
@@ -6730,37 +6731,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Computation caching",
         description:
-          "Local and remote caching of task outputs — never rebuild what hasn't changed, even across CI machines.",
+          "Local and remote caching of task outputs: never rebuild what hasn't changed, even across CI machines.",
       },
       {
         icon: "GitBranch",
         title: "Affected commands",
         description:
-          "Only run tasks for projects affected by your changes — CI pipelines that scale with your monorepo.",
+          "Only run tasks for projects affected by your changes: CI pipelines that scale with your monorepo.",
       },
       {
         icon: "Puzzle",
         title: "Plugin ecosystem",
         description:
-          "First-party plugins for React, Next.js, Node, and more — generators, executors, and lint rules per framework.",
+          "First-party plugins for React, Next.js, Node, and more: generators, executors, and lint rules per framework.",
       },
       {
         icon: "Layers",
         title: "Project graph",
         description:
-          "Visual dependency graph of every project and library — understand the impact of changes at a glance.",
+          "Visual dependency graph of every project and library: understand the impact of changes at a glance.",
       },
       {
         icon: "Workflow",
         title: "Generators",
         description:
-          "Scaffold new apps, libraries, and components with code generators — enforce team conventions automatically.",
+          "Scaffold new apps, libraries, and components with code generators: enforce team conventions automatically.",
       },
       {
         icon: "Monitor",
         title: "Nx Cloud dashboard",
         description:
-          "Distributed task execution, remote cache analytics, and CI insights — see what's slow and why.",
+          "Distributed task execution, remote cache analytics, and CI insights: see what's slow and why.",
       },
     ],
     subTechs: [{ slug: "turborepo" }, { slug: "nodejs" }],
@@ -6772,12 +6773,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Configuration complexity",
         description:
-          "Nx has more configuration surface than Turborepo — project.json, nx.json, generators, and executors. The power comes with a learning curve, especially for teams new to monorepo tooling.",
+          "Nx has more configuration surface than Turborepo: project.json, nx.json, generators, and executors. The power comes with a learning curve, especially for teams new to monorepo tooling.",
       },
       {
         title: "Plugin version compatibility",
         description:
-          "Nx plugins (React, Angular, Node, etc.) must be kept in sync with the core Nx version. Version mismatches can cause cryptic build errors — use nx migrate for upgrades.",
+          "Nx plugins (React, Angular, Node, etc.) must be kept in sync with the core Nx version. Version mismatches can cause cryptic build errors: use nx migrate for upgrades.",
       },
       {
         title: "Migration from existing tooling",
@@ -6789,17 +6790,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use affected commands in CI",
         detail:
-          "nx affected:test and nx affected:build only run tasks for projects changed since the base branch — dramatically reducing CI time for large monorepos.",
+          "nx affected:test and nx affected:build only run tasks for projects changed since the base branch: dramatically reducing CI time for large monorepos.",
       },
       {
         tip: "Visualize with the project graph",
         detail:
-          "Run nx graph to see your project dependencies visually — essential for understanding and maintaining package boundaries in large codebases.",
+          "Run nx graph to see your project dependencies visually: essential for understanding and maintaining package boundaries in large codebases.",
       },
       {
         tip: "Use generators for consistency",
         detail:
-          "Nx generators scaffold new libraries, components, and services with consistent structure — enforcing team conventions automatically.",
+          "Nx generators scaffold new libraries, components, and services with consistent structure: enforcing team conventions automatically.",
       },
     ],
     usefulLinks: [
@@ -6831,9 +6832,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Nx is free and open-source (MIT license). Nx Cloud (distributed caching and CI) has a free tier for open-source projects. Paid plans start at $8/month per contributor for private repos.",
       },
       {
-        question: "Nx vs Turborepo — which should I pick?",
+        question: "Nx vs Turborepo: which should I pick?",
         answer:
-          "Nx offers more features — generators, executors, plugin ecosystem, and a visual project graph. Turborepo is simpler and focused on caching. Choose Nx for large teams needing scaffolding and governance; choose Turborepo for simpler monorepos that just need fast builds.",
+          "Nx offers more features: generators, executors, plugin ecosystem, and a visual project graph. Turborepo is simpler and focused on caching. Choose Nx for large teams needing scaffolding and governance; choose Turborepo for simpler monorepos that just need fast builds.",
       },
       {
         question: "Can Nx work with non-JavaScript projects?",
@@ -6852,7 +6853,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "JavaScript at the edge, globally distributed",
     description:
-      "Cloudflare Workers runs your code in 300+ data centres worldwide — zero cold starts, sub-millisecond latency, and access to KV, R2, D1, Durable Objects, and Queues from the same runtime.",
+      "Cloudflare Workers runs your code in 300+ data centres worldwide: zero cold starts, sub-millisecond latency, and access to KV, R2, D1, Durable Objects, and Queues from the same runtime.",
     accentColor: "amber",
     visualizationKey: "cloudflare-workers",
     logo: "/logos/services/cloudflare-workers.svg",
@@ -6861,37 +6862,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "300+ edge locations",
         description:
-          "Code runs within milliseconds of your users on Cloudflare's global network — latency measured in single digits.",
+          "Code runs within milliseconds of your users on Cloudflare's global network: latency measured in single digits.",
       },
       {
         icon: "Zap",
         title: "Zero cold starts",
         description:
-          "V8 isolates spin up in under 5ms — no container boot time, every request is fast from the first byte.",
+          "V8 isolates spin up in under 5ms: no container boot time, every request is fast from the first byte.",
       },
       {
         icon: "Database",
         title: "KV, R2, D1 storage",
         description:
-          "Key-value store, S3-compatible object storage, and SQLite at the edge — persistent data without external services.",
+          "Key-value store, S3-compatible object storage, and SQLite at the edge: persistent data without external services.",
       },
       {
         icon: "Layers",
         title: "Durable Objects",
         description:
-          "Stateful serverless with strong consistency — coordination, WebSockets, and counters at the edge.",
+          "Stateful serverless with strong consistency: coordination, WebSockets, and counters at the edge.",
       },
       {
         icon: "Code2",
         title: "Hono & tRPC compatible",
         description:
-          "Use Hono for routing and tRPC for type-safe APIs — modern frameworks that run natively on Workers.",
+          "Use Hono for routing and tRPC for type-safe APIs: modern frameworks that run natively on Workers.",
       },
       {
         icon: "Workflow",
         title: "Queues & Cron",
         description:
-          "Message queues for async processing and cron triggers for scheduled tasks — background work without servers.",
+          "Message queues for async processing and cron triggers for scheduled tasks: background work without servers.",
       },
     ],
     subTechs: [
@@ -6900,7 +6901,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "drizzle" },
     ],
     overview:
-      "Cloudflare Workers runs your code in 300+ data centres worldwide with zero cold starts and sub-millisecond startup latency. Your JavaScript, TypeScript, Rust, or WASM code executes at the edge — closest to your users — with access to KV (key-value), R2 (object storage), D1 (SQLite), Durable Objects (stateful coordination), and Queues from the same runtime. At A Major, we build edge-first APIs, middleware, and full-stack applications on Cloudflare Workers.\n\nThe Workers platform is uniquely powerful for latency-sensitive applications. Unlike traditional serverless (Lambda), Workers have no cold starts and bill per-request at fractions of a cent. Combined with Hono or tRPC for routing, Drizzle for D1 queries, and R2 for file storage, Cloudflare Workers is a complete edge computing platform.",
+      "Cloudflare Workers runs your code in 300+ data centres worldwide with zero cold starts and sub-millisecond startup latency. Your JavaScript, TypeScript, Rust, or WASM code executes at the edge , closest to your users , with access to KV (key-value), R2 (object storage), D1 (SQLite), Durable Objects (stateful coordination), and Queues from the same runtime. At A Major, we build edge-first APIs, middleware, and full-stack applications on Cloudflare Workers.\n\nThe Workers platform is uniquely powerful for latency-sensitive applications. Unlike traditional serverless (Lambda), Workers have no cold starts and bill per-request at fractions of a cent. Combined with Hono or tRPC for routing, Drizzle for D1 queries, and R2 for file storage, Cloudflare Workers is a complete edge computing platform.",
     challenges: [
       {
         title: "Execution time and memory limits",
@@ -6920,19 +6921,19 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Stateful patterns require Durable Objects",
         description:
-          "Workers are stateless by default. Coordination, counters, rate limiting, and WebSocket state require Durable Objects — a different programming model.",
+          "Workers are stateless by default. Coordination, counters, rate limiting, and WebSocket state require Durable Objects: a different programming model.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Hono for Workers routing",
         detail:
-          "Hono is built for edge runtimes — lightweight, fast, and provides Express-like routing with middleware on Workers.",
+          "Hono is built for edge runtimes: lightweight, fast, and provides Express-like routing with middleware on Workers.",
       },
       {
         tip: "Use D1 for relational data at the edge",
         detail:
-          "Cloudflare D1 runs SQLite in the same data centre as your Worker — eliminates database round-trip latency entirely.",
+          "Cloudflare D1 runs SQLite in the same data centre as your Worker: eliminates database round-trip latency entirely.",
       },
       {
         tip: "Cache aggressively with the Cache API",
@@ -6974,7 +6975,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Workers have a generous free tier (100K requests/day). The paid plan starts at $5/month for 10M requests. Compared to AWS Lambda, Workers are significantly cheaper for edge workloads with no cold start costs.",
       },
       {
-        question: "Cloudflare Workers vs AWS Lambda — which is better?",
+        question: "Cloudflare Workers vs AWS Lambda: which is better?",
         answer:
           "Workers have zero cold starts and run globally by default. Lambda has more compute power, longer timeouts, and broader AWS integration. Choose Workers for latency-sensitive edge work, Lambda for compute-heavy backend processing.",
       },
@@ -6986,7 +6987,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Do Cloudflare Workers support WebSockets?",
         answer:
-          "Yes, via Durable Objects. Each Durable Object can manage WebSocket connections with persistent state — ideal for chat, collaborative editing, and real-time features.",
+          "Yes, via Durable Objects. Each Durable Object can manage WebSocket connections with persistent state: ideal for chat, collaborative editing, and real-time features.",
       },
     ],
     quickstart:
@@ -7004,7 +7005,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "desktop",
     tagline: "Lightweight desktop apps with a web frontend",
     description:
-      "Tauri lets us build native desktop apps for Windows, macOS, and Linux using a Rust backend and any web frontend — React, Vue, Svelte. Smaller and faster than Electron, with full OS API access.",
+      "Tauri lets us build native desktop apps for Windows, macOS, and Linux using a Rust backend and any web frontend: React, Vue, Svelte. Smaller and faster than Electron, with full OS API access.",
     accentColor: "amber",
     visualizationKey: "tauri",
     logo: "/logos/services/tauri.svg",
@@ -7013,37 +7014,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Terminal",
         title: "Rust backend + typed IPC",
         description:
-          "Rust commands exposed to the frontend via typed IPC — type-safe bridge between web UI and native code.",
+          "Rust commands exposed to the frontend via typed IPC: type-safe bridge between web UI and native code.",
       },
       {
         icon: "Package",
         title: "Under 10MB bundles",
         description:
-          "Ship desktop apps under 10MB by leveraging the OS webview — no bundled Chromium, no bloat.",
+          "Ship desktop apps under 10MB by leveraging the OS webview: no bundled Chromium, no bloat.",
       },
       {
         icon: "Cpu",
         title: "Full OS API access",
         description:
-          "File system, shell commands, system tray, notifications, and clipboard — native capabilities from your web frontend.",
+          "File system, shell commands, system tray, notifications, and clipboard: native capabilities from your web frontend.",
       },
       {
         icon: "RefreshCw",
         title: "Auto-updater",
         description:
-          "Built-in update mechanism with delta updates and signature verification — seamless version rollouts.",
+          "Built-in update mechanism with delta updates and signature verification: seamless version rollouts.",
       },
       {
         icon: "Monitor",
         title: "Cross-platform targets",
         description:
-          "Build for Windows, macOS, and Linux from a single codebase — platform-specific packaging handled by Tauri.",
+          "Build for Windows, macOS, and Linux from a single codebase: platform-specific packaging handled by Tauri.",
       },
       {
         icon: "Globe",
         title: "OS webview rendering",
         description:
-          "Uses the OS native webview (WebView2, WebKit) — no Chromium overhead, consistent with user's system.",
+          "Uses the OS native webview (WebView2, WebKit): no Chromium overhead, consistent with user's system.",
       },
     ],
     subTechs: [
@@ -7056,7 +7057,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Tauri is a framework for building lightweight, secure desktop applications using a Rust backend and any web frontend (React, Vue, Svelte, Solid). Unlike Electron, Tauri uses the operating system's native webview instead of bundling Chromium, resulting in app bundles under 10MB and significantly lower memory usage.\n\nTauri 2.0 adds iOS and Android support, making it a true cross-platform solution. The Rust backend provides typed IPC commands, OS API access (filesystem, shell, notifications), auto-updating, and a plugin system — all while keeping the web frontend you're already familiar with.",
+      "Tauri is a framework for building lightweight, secure desktop applications using a Rust backend and any web frontend (React, Vue, Svelte, Solid). Unlike Electron, Tauri uses the operating system's native webview instead of bundling Chromium, resulting in app bundles under 10MB and significantly lower memory usage.\n\nTauri 2.0 adds iOS and Android support, making it a true cross-platform solution. The Rust backend provides typed IPC commands, OS API access (filesystem, shell, notifications), auto-updating, and a plugin system: all while keeping the web frontend you're already familiar with.",
     challenges: [
       {
         title: "Rust learning curve",
@@ -7078,12 +7079,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Tauri's IPC for typed commands",
         detail:
-          "Define Rust commands with #[tauri::command] and call them from your frontend with invoke() — type-safe communication between frontend and backend.",
+          "Define Rust commands with #[tauri::command] and call them from your frontend with invoke(): type-safe communication between frontend and backend.",
       },
       {
         tip: "Configure security allowlists",
         detail:
-          "Tauri's allowlist system restricts which OS APIs your app can access — enable only what you need for defense-in-depth security.",
+          "Tauri's allowlist system restricts which OS APIs your app can access: enable only what you need for defense-in-depth security.",
       },
       {
         tip: "Use multi-stage builds for CI",
@@ -7117,17 +7118,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Tauri development cost?",
         answer:
-          "Tauri is free and open-source. Development costs are comparable to web development plus Rust backend work — a typical Tauri app takes 6-12 weeks. The savings come from reusing your web frontend skills.",
+          "Tauri is free and open-source. Development costs are comparable to web development plus Rust backend work: a typical Tauri app takes 6-12 weeks. The savings come from reusing your web frontend skills.",
       },
       {
-        question: "Tauri vs Electron — which should I choose?",
+        question: "Tauri vs Electron: which should I choose?",
         answer:
           "Tauri produces 10x smaller bundles, uses 5-10x less memory, and has better security defaults. Electron has a larger ecosystem, better Node.js compatibility, and consistent Chromium rendering. Choose Tauri for new projects; choose Electron when Node.js ecosystem compatibility is critical.",
       },
       {
         question: "Does Tauri support mobile?",
         answer:
-          "Yes. Tauri 2.0 supports iOS and Android alongside Windows, macOS, and Linux — all from the same codebase. Mobile support uses the platform's native webview.",
+          "Yes. Tauri 2.0 supports iOS and Android alongside Windows, macOS, and Linux: all from the same codebase. Mobile support uses the platform's native webview.",
       },
     ],
     quickstart:
@@ -7143,7 +7144,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "desktop",
     tagline: "Desktop apps with Chromium and Node.js",
     description:
-      "Electron is the established choice for cross-platform desktop apps — VS Code, Slack, and Figma all use it. We build Electron apps where WebView compatibility or existing Node.js tooling makes it the right fit.",
+      "Electron is the established choice for cross-platform desktop apps: VS Code, Slack, and Figma all use it. We build Electron apps where WebView compatibility or existing Node.js tooling makes it the right fit.",
     accentColor: "sky",
     visualizationKey: "electron",
     logo: "/logos/services/electron.svg",
@@ -7152,44 +7153,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Monitor",
         title: "Chromium rendering",
         description:
-          "Full Chromium engine ensures pixel-perfect rendering — the same behaviour as Chrome on every desktop platform.",
+          "Full Chromium engine ensures pixel-perfect rendering: the same behaviour as Chrome on every desktop platform.",
       },
       {
         icon: "Package",
         title: "Node.js main process",
         description:
-          "Full Node.js runtime in the main process — access the file system, spawn processes, and use any npm package.",
+          "Full Node.js runtime in the main process: access the file system, spawn processes, and use any npm package.",
       },
       {
         icon: "Shield",
         title: "Sandboxed renderer",
         description:
-          "Renderer processes run in a sandboxed Chromium context — isolate untrusted content from system access.",
+          "Renderer processes run in a sandboxed Chromium context: isolate untrusted content from system access.",
       },
       {
         icon: "RefreshCw",
         title: "Auto-updater",
         description:
-          "electron-updater handles download, verification, and install — ship updates silently or with user confirmation.",
+          "electron-updater handles download, verification, and install: ship updates silently or with user confirmation.",
       },
       {
         icon: "Globe",
         title: "Web tech stack",
         description:
-          "Build your UI with React, Vue, or Svelte — reuse your web skills and component libraries for desktop.",
+          "Build your UI with React, Vue, or Svelte: reuse your web skills and component libraries for desktop.",
       },
       {
         icon: "GitBranch",
         title: "electron-builder CI",
         description:
-          "Package and sign for Windows, macOS, and Linux in CI — NSIS, DMG, AppImage, and Snap formats supported.",
+          "Package and sign for Windows, macOS, and Linux in CI: NSIS, DMG, AppImage, and Snap formats supported.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nodejs" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Electron is the established framework for building cross-platform desktop apps with web technologies. VS Code, Slack, Discord, Figma, and Notion all use Electron — it bundles Chromium and Node.js into a single runtime, so your web app runs as a native desktop application.\n\nElectron's mature ecosystem provides auto-updating (electron-updater), native menus, tray icons, notifications, file system access, and comprehensive CI/CD tooling via electron-builder. If you have a web app and need a desktop version, Electron is the fastest path to production.",
+      "Electron is the established framework for building cross-platform desktop apps with web technologies. VS Code, Slack, Discord, Figma, and Notion all use Electron: it bundles Chromium and Node.js into a single runtime, so your web app runs as a native desktop application.\n\nElectron's mature ecosystem provides auto-updating (electron-updater), native menus, tray icons, notifications, file system access, and comprehensive CI/CD tooling via electron-builder. If you have a web app and need a desktop version, Electron is the fastest path to production.",
     challenges: [
       {
         title: "Memory usage and bundle size",
@@ -7253,9 +7254,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Electron is free and open-source. If you have an existing web app, wrapping it in Electron takes 1-2 weeks. Building a full desktop app from scratch takes 6-12 weeks. Code signing certificates cost ~$200-500/year.",
       },
       {
-        question: "Electron vs Tauri — which desktop framework?",
+        question: "Electron vs Tauri: which desktop framework?",
         answer:
-          "Electron has a mature ecosystem, consistent Chromium rendering, and full Node.js compatibility — battle-tested by VS Code and Slack. Tauri is lighter (10x smaller bundles) but has a smaller ecosystem and requires Rust. Choose Electron for ecosystem compatibility; choose Tauri for size and performance.",
+          "Electron has a mature ecosystem, consistent Chromium rendering, and full Node.js compatibility: battle-tested by VS Code and Slack. Tauri is lighter (10x smaller bundles) but has a smaller ecosystem and requires Rust. Choose Electron for ecosystem compatibility; choose Tauri for size and performance.",
       },
       {
         question: "Is Electron still a good choice in 2025?",
@@ -7276,7 +7277,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "payments",
     tagline: "The developer-first payment platform",
     description:
-      "Stripe is the gold standard for payment infrastructure — from simple card payments to complex marketplace splits, subscription billing, and global tax compliance. We integrate Stripe into your product so payments just work.",
+      "Stripe is the gold standard for payment infrastructure: from simple card payments to complex marketplace splits, subscription billing, and global tax compliance. We integrate Stripe into your product so payments just work.",
     accentColor: "violet",
     visualizationKey: "stripe",
     logo: "/logos/services/stripe.svg",
@@ -7291,7 +7292,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "RefreshCw",
         title: "Subscriptions & billing",
         description:
-          "Recurring billing with trials, proration, usage-based pricing, and automated invoicing — Stripe handles the lifecycle.",
+          "Recurring billing with trials, proration, usage-based pricing, and automated invoicing: Stripe handles the lifecycle.",
       },
       {
         icon: "Globe",
@@ -7303,7 +7304,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Workflow",
         title: "Webhooks & events",
         description:
-          "Real-time event notifications for payment success, failures, disputes, and subscription changes — drive your backend logic.",
+          "Real-time event notifications for payment success, failures, disputes, and subscription changes: drive your backend logic.",
       },
       {
         icon: "Network",
@@ -7315,14 +7316,14 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Radar fraud protection",
         description:
-          "ML-powered fraud detection with customisable rules — block suspicious transactions before they cost you.",
+          "ML-powered fraud detection with customisable rules: block suspicious transactions before they cost you.",
       },
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "polar" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Stripe is the most widely used payment platform for internet businesses — processing billions of dollars annually for companies from startups to Fortune 500. It provides a comprehensive API for card payments, subscriptions, invoicing, marketplace payouts, fraud prevention, and tax calculation.\n\nStripe's developer experience is industry-leading: extensive documentation, client libraries in every major language, webhooks for event-driven architectures, and Stripe CLI for local testing. Whether you need simple checkout or complex marketplace splits with Connect, Stripe handles it.",
+      "Stripe is the most widely used payment platform for internet businesses: processing billions of dollars annually for companies from startups to Fortune 500. It provides a comprehensive API for card payments, subscriptions, invoicing, marketplace payouts, fraud prevention, and tax calculation.\n\nStripe's developer experience is industry-leading: extensive documentation, client libraries in every major language, webhooks for event-driven architectures, and Stripe CLI for local testing. Whether you need simple checkout or complex marketplace splits with Connect, Stripe handles it.",
     challenges: [
       {
         title: "Webhook reliability and idempotency",
@@ -7349,7 +7350,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Test with Stripe CLI locally",
         detail:
-          "stripe listen --forward-to forwards webhook events to your local server — essential for testing payment flows without deploying.",
+          "stripe listen --forward-to forwards webhook events to your local server: essential for testing payment flows without deploying.",
       },
       {
         tip: "Implement idempotent webhooks",
@@ -7359,7 +7360,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Stripe Tax for compliance",
         detail:
-          "Stripe Tax automatically calculates and collects sales tax, VAT, and GST based on customer location — essential for global SaaS.",
+          "Stripe Tax automatically calculates and collects sales tax, VAT, and GST based on customer location: essential for global SaaS.",
       },
     ],
     usefulLinks: [
@@ -7388,12 +7389,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Stripe cost?",
         answer:
-          "Stripe charges 2.9% + 30¢ per successful card charge (US pricing). International cards add 1.5%, currency conversion adds 1%. Subscriptions, invoicing, and the API are included — no monthly fee. Connect, Radar, and Tax have additional per-transaction fees.",
+          "Stripe charges 2.9% + 30¢ per successful card charge (US pricing). International cards add 1.5%, currency conversion adds 1%. Subscriptions, invoicing, and the API are included: no monthly fee. Connect, Radar, and Tax have additional per-transaction fees.",
       },
       {
-        question: "Stripe vs Polar — which payment platform?",
+        question: "Stripe vs Polar: which payment platform?",
         answer:
-          "Stripe is a payment processor — you're the merchant and handle tax/compliance yourself but get maximum control. Polar is a merchant of record that handles tax and compliance for you but takes a larger cut. Choose Stripe for control; choose Polar for simplicity.",
+          "Stripe is a payment processor: you're the merchant and handle tax/compliance yourself but get maximum control. Polar is a merchant of record that handles tax and compliance for you but takes a larger cut. Choose Stripe for control; choose Polar for simplicity.",
       },
       {
         question: "How long does Stripe integration take?",
@@ -7423,42 +7424,42 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "Utility + component",
         description:
-          "Utility classes for rapid layout plus pre-built components like modals, navbars, and cards — best of both approaches.",
+          "Utility classes for rapid layout plus pre-built components like modals, navbars, and cards: best of both approaches.",
       },
       {
         icon: "Paintbrush",
         title: "Sass variables",
         description:
-          "Customise colors, spacing, breakpoints, and typography via Sass variables — a consistent design system from one config file.",
+          "Customise colors, spacing, breakpoints, and typography via Sass variables: a consistent design system from one config file.",
       },
       {
         icon: "Accessibility",
         title: "Accessible components",
         description:
-          "ARIA attributes, focus states, and keyboard navigation baked into every component — accessibility by default.",
+          "ARIA attributes, focus states, and keyboard navigation baked into every component: accessibility by default.",
       },
       {
         icon: "Globe",
         title: "No JS framework lock-in",
         description:
-          "Works with vanilla HTML, React, Vue, Angular, or any framework — plain CSS classes with no runtime dependency.",
+          "Works with vanilla HTML, React, Vue, Angular, or any framework: plain CSS classes with no runtime dependency.",
       },
       {
         icon: "Moon",
         title: "Dark mode ready",
         description:
-          "Built-in color mode support with data attributes — toggle between light and dark with a single class.",
+          "Built-in color mode support with data attributes: toggle between light and dark with a single class.",
       },
       {
         icon: "Package",
         title: "Icon library",
         description:
-          "2,000+ Bootstrap Icons as SVGs and web fonts — consistent iconography that matches the component design language.",
+          "2,000+ Bootstrap Icons as SVGs and web fonts: consistent iconography that matches the component design language.",
       },
     ],
     subTechs: [{ slug: "php" }, { slug: "laravel" }],
     overview:
-      "Bootstrap is the world's most popular CSS framework — a comprehensive toolkit of pre-built components, responsive grid system, and utility classes that get projects off the ground fast. Bootstrap 5 dropped jQuery, added CSS custom properties, RTL support, and a refined utility API. It's the pragmatic choice for admin dashboards, internal tools, and projects where time-to-market beats pixel-perfect custom design. We customize Bootstrap with Sass variables to match your brand, extend it with custom components, and ensure accessibility compliance out of the box.",
+      "Bootstrap is the world's most popular CSS framework: a comprehensive toolkit of pre-built components, responsive grid system, and utility classes that get projects off the ground fast. Bootstrap 5 dropped jQuery, added CSS custom properties, RTL support, and a refined utility API. It's the pragmatic choice for admin dashboards, internal tools, and projects where time-to-market beats pixel-perfect custom design. We customize Bootstrap with Sass variables to match your brand, extend it with custom components, and ensure accessibility compliance out of the box.",
     challenges: [
       {
         title: "The 'Bootstrap look' problem",
@@ -7527,7 +7528,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Bootstrap vs. Tailwind CSS — which should I use?",
+        question: "Bootstrap vs. Tailwind CSS: which should I use?",
         answer:
           "Use Bootstrap when you need pre-built components fast (admin panels, internal tools, prototypes). Use Tailwind when you want full design control and are building a custom UI. Bootstrap is faster to start; Tailwind produces more unique designs and smaller bundles.",
       },
@@ -7544,7 +7545,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can I use Bootstrap with React or Vue?",
         answer:
-          "Yes — use react-bootstrap for React or bootstrap-vue-next for Vue 3. These libraries provide proper component wrappers that integrate Bootstrap's functionality with your framework's component model.",
+          "Yes. Use react-bootstrap for React or bootstrap-vue-next for Vue 3. These libraries provide proper component wrappers that integrate Bootstrap's functionality with your framework's component model.",
       },
     ],
     quickstart: "npm install bootstrap\nnpm install sass",
@@ -7561,7 +7562,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "Full-stack C# web apps without JavaScript",
     description:
-      "Blazor lets .NET teams build interactive web UIs in C# — shared models, validation, and business logic between server and client. The right choice when your team is .NET-native and wants to avoid context-switching to JavaScript.",
+      "Blazor lets .NET teams build interactive web UIs in C#: shared models, validation, and business logic between server and client. The right choice when your team is .NET-native and wants to avoid context-switching to JavaScript.",
     accentColor: "violet",
     visualizationKey: "blazor",
     logo: "/logos/services/blazor.svg",
@@ -7570,44 +7571,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "C# in the browser",
         description:
-          "Write interactive UI logic in C# via WebAssembly — share models, validation, and business logic with your backend.",
+          "Write interactive UI logic in C# via WebAssembly: share models, validation, and business logic with your backend.",
       },
       {
         icon: "Server",
         title: "Blazor Server mode",
         description:
-          "UI events sent over SignalR with server-side rendering — instant load times and thin client requirements.",
+          "UI events sent over SignalR with server-side rendering: instant load times and thin client requirements.",
       },
       {
         icon: "Component",
         title: "Razor components",
         description:
-          "Reusable .razor components with parameters, cascading values, and lifecycle methods — familiar to any ASP.NET developer.",
+          "Reusable .razor components with parameters, cascading values, and lifecycle methods: familiar to any ASP.NET developer.",
       },
       {
         icon: "Layers",
         title: "MudBlazor & Radzen",
         description:
-          "Rich component libraries with data grids, charts, and form controls — enterprise UI without building from scratch.",
+          "Rich component libraries with data grids, charts, and form controls: enterprise UI without building from scratch.",
       },
       {
         icon: "Database",
         title: "EF Core integration",
         description:
-          "Entity Framework Core for data access — LINQ queries, migrations, and change tracking from your Blazor app.",
+          "Entity Framework Core for data access: LINQ queries, migrations, and change tracking from your Blazor app.",
       },
       {
         icon: "Shield",
         title: "ASP.NET auth",
         description:
-          "ASP.NET Identity with cookie, JWT, and external provider auth — role-based access control built into the framework.",
+          "ASP.NET Identity with cookie, JWT, and external provider auth: role-based access control built into the framework.",
       },
     ],
     subTechs: [{ slug: "dotnet" }, { slug: "dotnet-mvc" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Blazor is Microsoft's framework for building interactive web UIs using C# instead of JavaScript. It lets .NET teams share models, validation logic, and business rules between server and client — no context-switching to a different language for the frontend.\n\nBlazor offers two hosting models: Blazor Server (UI updates via SignalR WebSocket) and Blazor WebAssembly (full .NET runtime in the browser). Blazor 8+ adds the best of both with automatic render mode selection and streaming SSR. Component libraries like MudBlazor and Radzen provide rich UI components.",
+      "Blazor is Microsoft's framework for building interactive web UIs using C# instead of JavaScript. It lets .NET teams share models, validation logic, and business rules between server and client: no context-switching to a different language for the frontend.\n\nBlazor offers two hosting models: Blazor Server (UI updates via SignalR WebSocket) and Blazor WebAssembly (full .NET runtime in the browser). Blazor 8+ adds the best of both with automatic render mode selection and streaming SSR. Component libraries like MudBlazor and Radzen provide rich UI components.",
     challenges: [
       {
         title: "WebAssembly download size",
@@ -7629,7 +7630,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Blazor 8+ auto render mode",
         detail:
-          "Blazor 8's auto render mode serves SSR on first load, then upgrades to interactive WASM — best of both worlds for performance and interactivity.",
+          "Blazor 8's auto render mode serves SSR on first load, then upgrades to interactive WASM: best of both worlds for performance and interactivity.",
       },
       {
         tip: "Share models between server and client",
@@ -7639,7 +7640,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use MudBlazor for component library",
         detail:
-          "MudBlazor provides Material Design components for Blazor — data grids, charts, forms, and dialogs with excellent documentation and active development.",
+          "MudBlazor provides Material Design components for Blazor: data grids, charts, forms, and dialogs with excellent documentation and active development.",
       },
     ],
     usefulLinks: [
@@ -7668,10 +7669,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Blazor development cost?",
         answer:
-          ".NET and Blazor are free and open-source. Visual Studio Community is free for individuals and small teams. Development costs are comparable to other frontend frameworks — a typical Blazor app takes 6-12 weeks. Teams already using .NET save time by sharing C# skills and code.",
+          ".NET and Blazor are free and open-source. Visual Studio Community is free for individuals and small teams. Development costs are comparable to other frontend frameworks: a typical Blazor app takes 6-12 weeks. Teams already using .NET save time by sharing C# skills and code.",
       },
       {
-        question: "Blazor vs React — which should I choose?",
+        question: "Blazor vs React: which should I choose?",
         answer:
           "React has a vastly larger ecosystem, more developer talent, and works with any backend. Blazor is the right choice when your team is .NET-native, you want to share C# code between frontend and backend, or you want to avoid JavaScript entirely. Choose based on your team's skills.",
       },
@@ -7692,7 +7693,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "The standard routing solution for React",
     description:
-      "React Router v7 / Remix is a full-stack framework built on React Router's data APIs — loaders, actions, nested routes, and error boundaries. We use it for data-heavy apps where fine-grained control over loading states matters.",
+      "React Router v7 / Remix is a full-stack framework built on React Router's data APIs: loaders, actions, nested routes, and error boundaries. We use it for data-heavy apps where fine-grained control over loading states matters.",
     accentColor: "red",
     visualizationKey: "react-router",
     logo: "/logos/services/react-router.svg",
@@ -7702,19 +7703,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Route",
         title: "Nested routing",
         description:
-          "Nested route layouts with parallel data loading — each segment fetches independently for faster page transitions.",
+          "Nested route layouts with parallel data loading: each segment fetches independently for faster page transitions.",
       },
       {
         icon: "Database",
         title: "Loader & action pattern",
         description:
-          "Loaders fetch data before render, actions handle mutations — clean separation of reads and writes per route.",
+          "Loaders fetch data before render, actions handle mutations: clean separation of reads and writes per route.",
       },
       {
         icon: "Zap",
         title: "Progressive enhancement",
         description:
-          "Forms work without JavaScript by default — then enhance with client-side transitions when JS loads.",
+          "Forms work without JavaScript by default: then enhance with client-side transitions when JS loads.",
       },
       {
         icon: "Shield",
@@ -7732,12 +7733,12 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Deploy anywhere",
         description:
-          "Runs on Node.js, Cloudflare Workers, Deno, or any standard web server — no vendor lock-in.",
+          "Runs on Node.js, Cloudflare Workers, Deno, or any standard web server: no vendor lock-in.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "tailwind" }],
     overview:
-      "React Router is the standard routing library for React, and with v7 (the spiritual successor to Remix), it's now a full-stack framework. It provides nested routes with data loaders and actions, error boundaries, progressive enhancement, and SSR — all built on web standards like the Fetch API and FormData. React Router v7's framework mode gives you file-based routing, server-side rendering, and streaming while maintaining the ability to deploy anywhere Node.js runs. It's the choice for teams that value web platform alignment and fine-grained control over data loading.",
+      "React Router is the standard routing library for React, and with v7 (the spiritual successor to Remix), it's now a full-stack framework. It provides nested routes with data loaders and actions, error boundaries, progressive enhancement, and SSR: all built on web standards like the Fetch API and FormData. React Router v7's framework mode gives you file-based routing, server-side rendering, and streaming while maintaining the ability to deploy anywhere Node.js runs. It's the choice for teams that value web platform alignment and fine-grained control over data loading.",
     challenges: [
       {
         title: "React Router v6/v7 migration complexity",
@@ -7806,19 +7807,19 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "React Router v7 vs. Next.js — which should I use?",
+        question: "React Router v7 vs. Next.js: which should I use?",
         answer:
           "React Router v7 excels at progressive enhancement, web standards alignment, and fine-grained loading control. Next.js offers a larger ecosystem, Vercel integration, and React Server Components. Choose React Router for web-standard apps; Next.js for the broadest ecosystem and RSC support.",
       },
       {
         question: "How much does it cost to build an app with React Router?",
         answer:
-          "React Router project costs align with standard React development — $10K–40K for a typical web application. Framework mode (Remix-style) apps with SSR and data loaders typically cost $20K–60K+ depending on complexity.",
+          "React Router project costs align with standard React development: $10K–40K for a typical web application. Framework mode (Remix-style) apps with SSR and data loaders typically cost $20K–60K+ depending on complexity.",
       },
       {
         question: "Should I use React Router's framework mode or library mode?",
         answer:
-          "Use framework mode for new full-stack apps — you get file-based routing, loaders, actions, and SSR. Use library mode when adding routing to an existing SPA or when you don't need server-side rendering.",
+          "Use framework mode for new full-stack apps: you get file-based routing, loaders, actions, and SSR. Use library mode when adding routing to an existing SPA or when you don't need server-side rendering.",
       },
       {
         question: "Is Remix dead? What happened to it?",
@@ -7839,7 +7840,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Type-safe routing with built-in search params",
     description:
-      "TanStack Router is the most type-safe React router available — every route, param, and search parameter is fully typed. Pairs naturally with TanStack Query for end-to-end typed data fetching.",
+      "TanStack Router is the most type-safe React router available: every route, param, and search parameter is fully typed. Pairs naturally with TanStack Query for end-to-end typed data fetching.",
     accentColor: "orange",
     visualizationKey: "tanstack-router",
     logo: "/logos/services/tanstack.svg",
@@ -7848,25 +7849,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "100% type-safe routes",
         description:
-          "Every route path, param, and search string is fully typed — broken links are compile-time errors.",
+          "Every route path, param, and search string is fully typed: broken links are compile-time errors.",
       },
       {
         icon: "Search",
         title: "Typed search params",
         description:
-          "Search params validated and typed with Zod or Valibot — no more manual parsing or runtime surprises.",
+          "Search params validated and typed with Zod or Valibot: no more manual parsing or runtime surprises.",
       },
       {
         icon: "Layers",
         title: "Route code splitting",
         description:
-          "Automatic code splitting per route with lazy loading — only ship the JavaScript each page actually needs.",
+          "Automatic code splitting per route with lazy loading: only ship the JavaScript each page actually needs.",
       },
       {
         icon: "Database",
         title: "Loaders & prefetch",
         description:
-          "Route loaders fetch data before navigation and prefetch on hover — instant page transitions with fresh data.",
+          "Route loaders fetch data before navigation and prefetch on hover: instant page transitions with fresh data.",
       },
       {
         icon: "Zap",
@@ -7878,7 +7879,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Framework agnostic",
         description:
-          "Works with React, Solid, Vue, and more — the same type-safe routing API regardless of your UI framework.",
+          "Works with React, Solid, Vue, and more: the same type-safe routing API regardless of your UI framework.",
       },
     ],
     subTechs: [
@@ -7887,12 +7888,12 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "tanstack-start" },
     ],
     overview:
-      "TanStack Router is the most type-safe routing solution for React — every route path, search parameter, path parameter, and loader return type is fully typed with zero runtime overhead. Unlike React Router's string-based routes, TanStack Router uses TypeScript inference to catch routing errors at compile time. It includes built-in search param validation with Zod, route-level code splitting, loader-based data fetching, and devtools. For teams building complex React applications where type safety and developer productivity matter, TanStack Router eliminates an entire category of runtime bugs.",
+      "TanStack Router is the most type-safe routing solution for React: every route path, search parameter, path parameter, and loader return type is fully typed with zero runtime overhead. Unlike React Router's string-based routes, TanStack Router uses TypeScript inference to catch routing errors at compile time. It includes built-in search param validation with Zod, route-level code splitting, loader-based data fetching, and devtools. For teams building complex React applications where type safety and developer productivity matter, TanStack Router eliminates an entire category of runtime bugs.",
     challenges: [
       {
         title: "Type-safe route tree configuration",
         description:
-          "Setting up the route tree with full type inference requires understanding TanStack Router's code generation or manual route tree definition — the initial setup is more complex than React Router.",
+          "Setting up the route tree with full type inference requires understanding TanStack Router's code generation or manual route tree definition: the initial setup is more complex than React Router.",
       },
       {
         title: "Search param serialization patterns",
@@ -7956,14 +7957,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "TanStack Router vs. React Router — which should I choose?",
+        question: "TanStack Router vs. React Router: which should I choose?",
         answer:
-          "Choose TanStack Router if type safety is a priority — it catches routing errors at compile time that React Router only catches at runtime. Choose React Router for ecosystem compatibility and if your team is already invested in the Remix/React Router ecosystem.",
+          "Choose TanStack Router if type safety is a priority: it catches routing errors at compile time that React Router only catches at runtime. Choose React Router for ecosystem compatibility and if your team is already invested in the Remix/React Router ecosystem.",
       },
       {
         question: "How much does it cost to build an app with TanStack Router?",
         answer:
-          "TanStack Router is free and open source. Development costs align with standard React projects — $15K–50K for typical apps. The type safety actually reduces debugging time and long-term maintenance costs.",
+          "TanStack Router is free and open source. Development costs align with standard React projects: $15K–50K for typical apps. The type safety actually reduces debugging time and long-term maintenance costs.",
       },
       {
         question: "Can I migrate from React Router to TanStack Router?",
@@ -7973,7 +7974,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Does TanStack Router support SSR?",
         answer:
-          "Yes — TanStack Start (the full-stack framework built on TanStack Router) provides SSR, streaming, and server functions. For client-only SPAs, TanStack Router works standalone without a server.",
+          "Yes. TanStack Start (the full-stack framework built on TanStack Router) provides SSR, streaming, and server functions. For client-only SPAs, TanStack Router works standalone without a server.",
       },
     ],
     quickstart:
@@ -7989,7 +7990,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "Full-stack React with TanStack's type-safe stack",
     description:
-      "TanStack Start is a full-stack React framework built on TanStack Router and Vinxi — SSR, streaming, server functions, and API routes with end-to-end type safety from day one.",
+      "TanStack Start is a full-stack React framework built on TanStack Router and Vinxi: SSR, streaming, server functions, and API routes with end-to-end type safety from day one.",
     accentColor: "orange",
     visualizationKey: "tanstack-start",
     logo: "/logos/services/tanstack.svg",
@@ -7998,13 +7999,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Server",
         title: "SSR & streaming",
         description:
-          "Server-side rendering with streaming HTML responses — fast first paint while data loads progressively.",
+          "Server-side rendering with streaming HTML responses: fast first paint while data loads progressively.",
       },
       {
         icon: "Code2",
         title: "Server functions",
         description:
-          "RPC-style server functions called directly from components — type-safe backend access without manual API routes.",
+          "RPC-style server functions called directly from components: type-safe backend access without manual API routes.",
       },
       {
         icon: "Database",
@@ -8016,19 +8017,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Route",
         title: "File-based routing",
         description:
-          "Convention-based file system routing with layouts, catch-all routes, and route groups — zero config.",
+          "Convention-based file system routing with layouts, catch-all routes, and route groups: zero config.",
       },
       {
         icon: "Globe",
         title: "Vinxi bundler",
         description:
-          "Powered by Vinxi and Nitro — deploy to Node.js, Cloudflare, Vercel, or any Nitro-compatible runtime.",
+          "Powered by Vinxi and Nitro: deploy to Node.js, Cloudflare, Vercel, or any Nitro-compatible runtime.",
       },
       {
         icon: "Zap",
         title: "Edge-ready",
         description:
-          "SolidStart apps run on edge runtimes for sub-50ms response times — global performance without infrastructure work.",
+          "SolidStart apps run on edge runtimes for sub-50ms response times: global performance without infrastructure work.",
       },
     ],
     subTechs: [
@@ -8037,7 +8038,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "trpc" },
     ],
     overview:
-      "TanStack Start is a full-stack React framework built on TanStack Router and Vinxi (a Nitro-powered bundler). It brings SSR, streaming, server functions, and API routes to the TanStack ecosystem with end-to-end type safety that flows from your database to your UI. Server functions are fully typed RPC calls — no separate API layer needed. TanStack Start is the natural evolution for teams already using TanStack Router and Query who want a complete full-stack solution without leaving the TanStack ecosystem.",
+      "TanStack Start is a full-stack React framework built on TanStack Router and Vinxi (a Nitro-powered bundler). It brings SSR, streaming, server functions, and API routes to the TanStack ecosystem with end-to-end type safety that flows from your database to your UI. Server functions are fully typed RPC calls: no separate API layer needed. TanStack Start is the natural evolution for teams already using TanStack Router and Query who want a complete full-stack solution without leaving the TanStack ecosystem.",
     challenges: [
       {
         title: "Early-stage ecosystem",
@@ -8057,7 +8058,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Server function patterns",
         description:
-          "Designing the boundary between server functions and client code — especially for real-time data, websockets, and complex mutations — requires understanding TanStack Start's specific patterns.",
+          "Designing the boundary between server functions and client code, especially for real-time data, websockets, and complex mutations: requires understanding TanStack Start's specific patterns.",
       },
     ],
     bestPractices: [
@@ -8074,7 +8075,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage TanStack Router's type-safe loaders",
         detail:
-          "Route loaders in TanStack Start run on the server during SSR and the client during navigation. Use them for page data — fully typed from loader to component.",
+          "Route loaders in TanStack Start run on the server during SSR and the client during navigation. Use them for page data: fully typed from loader to component.",
       },
       {
         tip: "Start simple, add complexity incrementally",
@@ -8106,7 +8107,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "TanStack Start vs. Next.js — which should I use?",
+        question: "TanStack Start vs. Next.js: which should I use?",
         answer:
           "Choose TanStack Start for maximum type safety with TanStack Router and Query integration. Choose Next.js for the largest ecosystem, React Server Components, and Vercel's platform. TanStack Start is newer but offers superior TypeScript DX for data-heavy apps.",
       },
@@ -8123,7 +8124,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can I use TanStack Start with tRPC?",
         answer:
-          "Yes — TanStack Start pairs naturally with tRPC for typed API endpoints. Server functions provide a similar typed RPC experience, so evaluate whether you need both or can use Start's built-in server functions.",
+          "Yes. TanStack Start pairs naturally with tRPC for typed API endpoints. Server functions provide a similar typed RPC experience, so evaluate whether you need both or can use Start's built-in server functions.",
       },
     ],
     quickstart:
@@ -8139,7 +8140,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "frontend",
     tagline: "Web apps that feel native on any device",
     description:
-      "Progressive Web Apps bring offline support, push notifications, home screen installation, and native-like performance to your existing web app — no app store, no SDK, just the web platform.",
+      "Progressive Web Apps bring offline support, push notifications, home screen installation, and native-like performance to your existing web app: no app store, no SDK, just the web platform.",
     accentColor: "indigo",
     visualizationKey: "pwa",
     logo: null,
@@ -8149,42 +8150,42 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Offline-first service worker",
         description:
-          "Service workers cache assets and API responses — your app works without a network connection.",
+          "Service workers cache assets and API responses: your app works without a network connection.",
       },
       {
         icon: "Smartphone",
         title: "Install to home screen",
         description:
-          "Web app manifest enables add-to-home-screen on mobile and desktop — no app store required.",
+          "Web app manifest enables add-to-home-screen on mobile and desktop: no app store required.",
       },
       {
         icon: "Radio",
         title: "Push notifications",
         description:
-          "Web Push API for re-engagement notifications — reach users even when the browser is closed.",
+          "Web Push API for re-engagement notifications: reach users even when the browser is closed.",
       },
       {
         icon: "Gauge",
         title: "App shell architecture",
         description:
-          "Cache the app shell for instant load, then fetch dynamic content — native-app-like speed on the web.",
+          "Cache the app shell for instant load, then fetch dynamic content: native-app-like speed on the web.",
       },
       {
         icon: "Package",
         title: "Workbox integration",
         description:
-          "Google's Workbox handles caching strategies, precaching, and background sync — production-grade service worker tooling.",
+          "Google's Workbox handles caching strategies, precaching, and background sync: production-grade service worker tooling.",
       },
       {
         icon: "Monitor",
         title: "Desktop installable",
         description:
-          "PWAs install as standalone desktop apps on Chrome, Edge, and Safari — full window, taskbar icon, no browser chrome.",
+          "PWAs install as standalone desktop apps on Chrome, Edge, and Safari: full window, taskbar icon, no browser chrome.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }],
     overview:
-      "Progressive Web Apps (PWAs) bring native app capabilities to the web — offline support, push notifications, home screen installation, and background sync — without requiring an app store listing or platform-specific code. PWAs use service workers to cache assets and data, web app manifests for installation, and modern browser APIs for device features. They're the practical choice when you want app-like experiences on mobile and desktop without maintaining separate native codebases. A well-built PWA loads instantly, works offline, and is discoverable via search engines — something no native app can match.",
+      "Progressive Web Apps (PWAs) bring native app capabilities to the web: offline support, push notifications, home screen installation, and background sync: without requiring an app store listing or platform-specific code. PWAs use service workers to cache assets and data, web app manifests for installation, and modern browser APIs for device features. They're the practical choice when you want app-like experiences on mobile and desktop without maintaining separate native codebases. A well-built PWA loads instantly, works offline, and is discoverable via search engines: something no native app can match.",
     challenges: [
       {
         title: "Service worker lifecycle management",
@@ -8194,7 +8195,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Cross-browser API support",
         description:
-          "Not all PWA features work everywhere — iOS Safari has limited push notification support, background sync availability varies, and web app manifest behavior differs between Chrome, Firefox, and Safari.",
+          "Not all PWA features work everywhere: iOS Safari has limited push notification support, background sync availability varies, and web app manifest behavior differs between Chrome, Firefox, and Safari.",
       },
       {
         title: "Offline data synchronization",
@@ -8204,14 +8205,14 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "iOS limitations and quirks",
         description:
-          "Safari on iOS limits PWA capabilities — no push notifications on older versions, limited background processing, and different installation UX. Testing and working around iOS-specific issues is essential.",
+          "Safari on iOS limits PWA capabilities: no push notifications on older versions, limited background processing, and different installation UX. Testing and working around iOS-specific issues is essential.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Workbox for service worker management",
         detail:
-          "Google's Workbox library abstracts service worker complexity — precaching, runtime caching strategies, background sync, and cache expiration with a declarative API.",
+          "Google's Workbox library abstracts service worker complexity: precaching, runtime caching strategies, background sync, and cache expiration with a declarative API.",
       },
       {
         tip: "Implement a stale-while-revalidate strategy",
@@ -8253,7 +8254,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "PWA vs. native app — which should I build?",
+        question: "PWA vs. native app: which should I build?",
         answer:
           "Build a PWA when you want broad reach via the web, SEO discoverability, and lower development costs. Build native (React Native, Flutter) when you need advanced device APIs, App Store presence, or complex offline functionality. Many businesses start with a PWA and add native apps later.",
       },
@@ -8270,7 +8271,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can PWAs be listed on app stores?",
         answer:
-          "Yes — tools like PWABuilder can package your PWA for the Microsoft Store and Google Play Store. Apple's App Store has stricter requirements but TWA (Trusted Web Activity) packaging is an option for Android.",
+          "Yes. Tools like PWABuilder can package your PWA for the Microsoft Store and Google Play Store. Apple's App Store has stricter requirements but TWA (Trusted Web Activity) packaging is an option for Android.",
       },
     ],
     quickstart: "npm install workbox-webpack-plugin\nnpx workbox wizard",
@@ -8287,7 +8288,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "mobile",
     tagline: "Beautiful native apps from a single Dart codebase",
     description:
-      "Flutter lets us ship to iOS, Android, web, and desktop from one Dart codebase — with pixel-perfect rendering via its own graphics engine (Skia/Impeller). The choice when you need true design fidelity across platforms.",
+      "Flutter lets us ship to iOS, Android, web, and desktop from one Dart codebase: with pixel-perfect rendering via its own graphics engine (Skia/Impeller). The choice when you need true design fidelity across platforms.",
     accentColor: "sky",
     visualizationKey: "flutter",
     logo: "/logos/services/flutter.svg",
@@ -8296,13 +8297,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Paintbrush",
         title: "Pixel-perfect on all platforms",
         description:
-          "Flutter draws every pixel itself via Skia/Impeller — no platform widget inconsistencies.",
+          "Flutter draws every pixel itself via Skia/Impeller: no platform widget inconsistencies.",
       },
       {
         icon: "Zap",
         title: "Hot reload",
         description:
-          "Sub-second hot reload during development — see changes without losing app state.",
+          "Sub-second hot reload during development: see changes without losing app state.",
       },
       {
         icon: "Layers",
@@ -8314,7 +8315,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Single codebase for 6 targets",
         description:
-          "iOS, Android, web, Windows, macOS, and Linux from one project — write once, run everywhere.",
+          "iOS, Android, web, Windows, macOS, and Linux from one project: write once, run everywhere.",
       },
       {
         icon: "Code2",
@@ -8326,7 +8327,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Package",
         title: "Pub.dev ecosystem",
         description:
-          "40k+ packages on pub.dev — Firebase, payments, maps, and more with first-party Flutter support.",
+          "40k+ packages on pub.dev: Firebase, payments, maps, and more with first-party Flutter support.",
       },
     ],
     subTechs: [{ slug: "react-native" }],
@@ -8338,7 +8339,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Dart language adoption",
         description:
-          "Dart is less widely known than JavaScript or Kotlin. Teams need to invest in learning Dart's syntax, null safety, and async patterns — though most developers pick it up quickly.",
+          "Dart is less widely known than JavaScript or Kotlin. Teams need to invest in learning Dart's syntax, null safety, and async patterns, though most developers pick it up quickly.",
       },
       {
         title: "Native platform integration",
@@ -8355,17 +8356,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Riverpod for state management",
         detail:
-          "Riverpod provides compile-safe, testable state management with dependency injection — the recommended choice for new Flutter projects.",
+          "Riverpod provides compile-safe, testable state management with dependency injection: the recommended choice for new Flutter projects.",
       },
       {
         tip: "Leverage hot reload during development",
         detail:
-          "Flutter's sub-second hot reload preserves app state while reflecting code changes — use it aggressively for rapid UI iteration.",
+          "Flutter's sub-second hot reload preserves app state while reflecting code changes: use it aggressively for rapid UI iteration.",
       },
       {
         tip: "Follow Material 3 design guidelines",
         detail:
-          "Flutter's Material 3 widgets provide dynamic color theming, updated components, and adaptive layouts — a polished look with minimal custom styling.",
+          "Flutter's Material 3 widgets provide dynamic color theming, updated components, and adaptive layouts: a polished look with minimal custom styling.",
       },
     ],
     usefulLinks: [
@@ -8394,10 +8395,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Flutter development cost?",
         answer:
-          "Flutter and Dart are free and open-source. Development costs depend on app complexity — a single codebase for both iOS and Android typically saves 30-40% compared to separate native apps. A typical Flutter app takes 8-16 weeks for a full-featured MVP.",
+          "Flutter and Dart are free and open-source. Development costs depend on app complexity: a single codebase for both iOS and Android typically saves 30-40% compared to separate native apps. A typical Flutter app takes 8-16 weeks for a full-featured MVP.",
       },
       {
-        question: "Flutter vs React Native — which is better?",
+        question: "Flutter vs React Native: which is better?",
         answer:
           "Flutter renders its own pixels for perfect design consistency and smooth animations. React Native uses native platform components and benefits from the JavaScript ecosystem. Choose Flutter for design-heavy apps; choose React Native when you want to leverage existing web/JS skills.",
       },
@@ -8418,7 +8419,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "mobile",
     tagline: "Styling React Native at 120fps",
     description:
-      "Unistyles 3.0 is a high-performance styling library for React Native — it runs on the C++ JSI layer with zero JavaScript overhead, supports design tokens, breakpoints, and variants, and pairs naturally with any RN component library.",
+      "Unistyles 3.0 is a high-performance styling library for React Native: it runs on the C++ JSI layer with zero JavaScript overhead, supports design tokens, breakpoints, and variants, and pairs naturally with any RN component library.",
     accentColor: "violet",
     visualizationKey: "unistyles",
     logo: null,
@@ -8428,44 +8429,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "JSI-powered zero overhead",
         description:
-          "Styles processed in C++ — no JS bridge, no serialisation, true 120fps without compromise.",
+          "Styles processed in C++: no JS bridge, no serialisation, true 120fps without compromise.",
       },
       {
         icon: "Paintbrush",
         title: "Design tokens",
         description:
-          "Centralised theme with colors, spacing, and typography — shared across the whole app from one definition.",
+          "Centralised theme with colors, spacing, and typography: shared across the whole app from one definition.",
       },
       {
         icon: "Smartphone",
         title: "Responsive breakpoints",
         description:
-          "Breakpoints for phone, tablet, and foldable layouts — same pattern as responsive web CSS.",
+          "Breakpoints for phone, tablet, and foldable layouts: same pattern as responsive web CSS.",
       },
       {
         icon: "Layers",
         title: "Variant system",
         description:
-          "Button variants, size modifiers, and compound variants — style logic in the stylesheet not the component.",
+          "Button variants, size modifiers, and compound variants: style logic in the stylesheet not the component.",
       },
       {
         icon: "Moon",
         title: "Dark mode",
         description:
-          "Theme switching with adaptive colors — your design tokens swap automatically on system preference change.",
+          "Theme switching with adaptive colors: your design tokens swap automatically on system preference change.",
       },
       {
         icon: "Code2",
         title: "TypeScript autocomplete",
         description:
-          "Full type safety for theme tokens, variants, and breakpoints — wrong token names are compile-time errors.",
+          "Full type safety for theme tokens, variants, and breakpoints: wrong token names are compile-time errors.",
       },
     ],
     subTechs: [{ slug: "react-native" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Unistyles 3.0 is a high-performance styling library for React Native that runs entirely on the C++ JSI layer — zero JavaScript bridge overhead, true 120fps styling without compromise. It brings web-like design tokens, responsive breakpoints, variants, and dark mode to React Native.\n\nUnistyles replaces StyleSheet.create with a more powerful API that supports theming, media queries, and compound variants while generating the same flat style objects React Native expects. It's the styling solution for teams that want design system capabilities without sacrificing performance.",
+      "Unistyles 3.0 is a high-performance styling library for React Native that runs entirely on the C++ JSI layer: zero JavaScript bridge overhead, true 120fps styling without compromise. It brings web-like design tokens, responsive breakpoints, variants, and dark mode to React Native.\n\nUnistyles replaces StyleSheet.create with a more powerful API that supports theming, media queries, and compound variants while generating the same flat style objects React Native expects. It's the styling solution for teams that want design system capabilities without sacrificing performance.",
     challenges: [
       {
         title: "JSI dependency requirements",
@@ -8475,7 +8476,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Migration from StyleSheet",
         description:
-          "Moving from StyleSheet.create to Unistyles' createStyleSheet requires updating every style definition. The API is similar but not identical — plan for incremental migration.",
+          "Moving from StyleSheet.create to Unistyles' createStyleSheet requires updating every style definition. The API is similar but not identical: plan for incremental migration.",
       },
       {
         title: "Community ecosystem size",
@@ -8487,17 +8488,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Define a theme with design tokens",
         detail:
-          "Create a centralized theme with colors, spacing, typography, and breakpoints — Unistyles distributes these tokens to every stylesheet automatically.",
+          "Create a centralized theme with colors, spacing, typography, and breakpoints: Unistyles distributes these tokens to every stylesheet automatically.",
       },
       {
         tip: "Use variants for component states",
         detail:
-          "Button sizes, color variants, and disabled states belong in the stylesheet as variants — not as conditional logic in your component.",
+          "Button sizes, color variants, and disabled states belong in the stylesheet as variants: not as conditional logic in your component.",
       },
       {
         tip: "Use responsive breakpoints for tablets",
         detail:
-          "Define breakpoints for phone, tablet, and foldable layouts — Unistyles applies the correct styles automatically based on screen size.",
+          "Define breakpoints for phone, tablet, and foldable layouts: Unistyles applies the correct styles automatically based on screen size.",
       },
     ],
     usefulLinks: [
@@ -8529,9 +8530,9 @@ export const servicesConfig: ServiceConfig[] = [
           "Unistyles is completely free and open-source (MIT license). There are no paid tiers or premium features.",
       },
       {
-        question: "Unistyles vs NativeWind — which should I use?",
+        question: "Unistyles vs NativeWind: which should I use?",
         answer:
-          "NativeWind brings Tailwind CSS utility classes to React Native — great if your team already knows Tailwind. Unistyles is a standalone design system with JSI performance, variants, and breakpoints — better for custom design systems. Choose based on your team's styling preference.",
+          "NativeWind brings Tailwind CSS utility classes to React Native , great if your team already knows Tailwind. Unistyles is a standalone design system with JSI performance, variants, and breakpoints , better for custom design systems. Choose based on your team's styling preference.",
       },
       {
         question: "Does Unistyles work with Expo?",
@@ -8552,7 +8553,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "End-to-end type-safe RPC with OpenAPI support",
     description:
-      "oRPC combines the DX of tRPC with OpenAPI spec generation — define your procedures once and get type-safe client calls and an auto-generated OpenAPI schema. Best of both worlds for APIs consumed by both internal clients and external partners.",
+      "oRPC combines the DX of tRPC with OpenAPI spec generation: define your procedures once and get type-safe client calls and an auto-generated OpenAPI schema. Best of both worlds for APIs consumed by both internal clients and external partners.",
     accentColor: "green",
     visualizationKey: "orpc",
     logo: null,
@@ -8562,19 +8563,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code2",
         title: "Type-safe from day one",
         description:
-          "Input and output types inferred from your procedure definitions — TypeScript errors if you break the contract.",
+          "Input and output types inferred from your procedure definitions: TypeScript errors if you break the contract.",
       },
       {
         icon: "FileCode2",
         title: "OpenAPI spec generation",
         description:
-          "Automatic OpenAPI 3.1 schema from your router — Swagger UI and partner integrations without extra work.",
+          "Automatic OpenAPI 3.1 schema from your router: Swagger UI and partner integrations without extra work.",
       },
       {
         icon: "Shield",
         title: "Zod / Valibot validation",
         description:
-          "Bring your own validation library — oRPC handles the plumbing, you write the schema.",
+          "Bring your own validation library: oRPC handles the plumbing, you write the schema.",
       },
       {
         icon: "Layers",
@@ -8586,18 +8587,18 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Framework adapters",
         description:
-          "Next.js, Hono, Fastify, and Node.js HTTP — plug oRPC into your existing server.",
+          "Next.js, Hono, Fastify, and Node.js HTTP: plug oRPC into your existing server.",
       },
       {
         icon: "Zap",
         title: "React Query client",
         description:
-          "First-class TanStack Query integration — oRPC procedures become typed query/mutation hooks.",
+          "First-class TanStack Query integration: oRPC procedures become typed query/mutation hooks.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "nextjs" }, { slug: "trpc" }],
     overview:
-      "oRPC combines the developer experience of tRPC with OpenAPI specification generation — define your procedures once and get type-safe client calls for internal consumers and a standards-compliant OpenAPI schema for external partners. At A Major, we recommend oRPC for teams that want tRPC-style DX but also need to expose documented REST APIs.\n\noRPC supports Zod and Valibot for validation, generates OpenAPI 3.1 schemas automatically, and integrates with Next.js, Hono, and Fastify. Its React Query client provides typed query and mutation hooks — the same ergonomics as tRPC with broader interoperability.",
+      "oRPC combines the developer experience of tRPC with OpenAPI specification generation , define your procedures once and get type-safe client calls for internal consumers and a standards-compliant OpenAPI schema for external partners. At A Major, we recommend oRPC for teams that want tRPC-style DX but also need to expose documented REST APIs.\n\noRPC supports Zod and Valibot for validation, generates OpenAPI 3.1 schemas automatically, and integrates with Next.js, Hono, and Fastify. Its React Query client provides typed query and mutation hooks , the same ergonomics as tRPC with broader interoperability.",
     challenges: [
       {
         title: "Early-stage ecosystem",
@@ -8619,12 +8620,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Zod for input/output schemas",
         detail:
-          "Zod schemas provide runtime validation, TypeScript types, and feed directly into OpenAPI generation — one schema does triple duty.",
+          "Zod schemas provide runtime validation, TypeScript types, and feed directly into OpenAPI generation: one schema does triple duty.",
       },
       {
         tip: "Organize procedures by domain",
         detail:
-          "Group related procedures into routers by domain feature — keeps the API surface navigable as it grows.",
+          "Group related procedures into routers by domain feature: keeps the API surface navigable as it grows.",
       },
       {
         tip: "Generate typed clients for external consumers",
@@ -8634,7 +8635,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use middleware for cross-cutting concerns",
         detail:
-          "Auth, rate limiting, and logging belong in oRPC middleware — not duplicated across individual procedures.",
+          "Auth, rate limiting, and logging belong in oRPC middleware: not duplicated across individual procedures.",
       },
     ],
     usefulLinks: [
@@ -8661,7 +8662,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "oRPC vs tRPC — what's the difference?",
+        question: "oRPC vs tRPC: what's the difference?",
         answer:
           "oRPC generates an OpenAPI spec alongside type-safe client calls. tRPC is TypeScript-only with no OpenAPI output. Choose oRPC when you need to serve both internal TypeScript clients and external REST consumers.",
       },
@@ -8694,7 +8695,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Standards-first HTTP APIs built to last",
     description:
-      "REST is still the most interoperable API style — consumed by any language, debuggable in any tool, and understood by every developer. We design and build REST APIs that are consistent, versioned, and documented.",
+      "REST is still the most interoperable API style: consumed by any language, debuggable in any tool, and understood by every developer. We design and build REST APIs that are consistent, versioned, and documented.",
     accentColor: "blue",
     visualizationKey: "rest-api",
     logo: null,
@@ -8710,25 +8711,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Auth & security",
         description:
-          "JWT bearer tokens, OAuth 2.0, and API key strategies — with rate limiting and CORS configured correctly.",
+          "JWT bearer tokens, OAuth 2.0, and API key strategies: with rate limiting and CORS configured correctly.",
       },
       {
         icon: "Layers",
         title: "Versioning strategy",
         description:
-          "URI versioning (/v1/, /v2/) or header versioning — backward-compatible evolution without breaking consumers.",
+          "URI versioning (/v1/, /v2/) or header versioning: backward-compatible evolution without breaking consumers.",
       },
       {
         icon: "Workflow",
         title: "Webhook delivery",
         description:
-          "Event-driven integrations via signed webhooks — retry logic, delivery logs, and failure alerting.",
+          "Event-driven integrations via signed webhooks: retry logic, delivery logs, and failure alerting.",
       },
       {
         icon: "Gauge",
         title: "Caching headers",
         description:
-          "ETags, Cache-Control, and conditional requests — reduce redundant data transfer and server load.",
+          "ETags, Cache-Control, and conditional requests: reduce redundant data transfer and server load.",
       },
       {
         icon: "Code2",
@@ -8739,17 +8740,17 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "fastapi" }, { slug: "laravel" }],
     overview:
-      "REST (Representational State Transfer) is the most widely adopted API architectural style — understood by every developer, consumed by any programming language, and debuggable with any HTTP tool. At A Major, we design and build REST APIs that follow industry best practices: consistent resource naming, proper HTTP semantics, versioning strategies, and comprehensive OpenAPI documentation.\n\nA well-designed REST API is a product in itself. We focus on developer experience for API consumers — clear error messages, pagination, filtering, rate limiting, and webhook delivery — ensuring your API is easy to integrate with and reliable at scale.",
+      "REST (Representational State Transfer) is the most widely adopted API architectural style: understood by every developer, consumed by any programming language, and debuggable with any HTTP tool. At A Major, we design and build REST APIs that follow industry best practices: consistent resource naming, proper HTTP semantics, versioning strategies, and comprehensive OpenAPI documentation.\n\nA well-designed REST API is a product in itself. We focus on developer experience for API consumers: clear error messages, pagination, filtering, rate limiting, and webhook delivery: ensuring your API is easy to integrate with and reliable at scale.",
     challenges: [
       {
         title: "Over-fetching and under-fetching",
         description:
-          "REST endpoints return fixed response shapes. Clients often receive more data than needed or must make multiple requests — consider sparse fieldsets or GraphQL for complex UIs.",
+          "REST endpoints return fixed response shapes. Clients often receive more data than needed or must make multiple requests: consider sparse fieldsets or GraphQL for complex UIs.",
       },
       {
         title: "Versioning strategy decisions",
         description:
-          "URL versioning, header versioning, or content negotiation — each approach has trade-offs. Choosing wrong creates migration pain for existing consumers.",
+          "URL versioning, header versioning, or content negotiation: each approach has trade-offs. Choosing wrong creates migration pain for existing consumers.",
       },
       {
         title: "Consistent error formatting",
@@ -8771,7 +8772,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Return RFC 7807 Problem Details for errors",
         detail:
-          "Structured error responses with type, title, status, and detail fields — machine-readable and consistent.",
+          "Structured error responses with type, title, status, and detail fields: machine-readable and consistent.",
       },
       {
         tip: "Implement cursor-based pagination",
@@ -8781,7 +8782,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Version from day one",
         detail:
-          "Even internal APIs benefit from versioning. Start with /v1/ in the URL path — it's the simplest approach for most teams.",
+          "Even internal APIs benefit from versioning. Start with /v1/ in the URL path: it's the simplest approach for most teams.",
       },
     ],
     usefulLinks: [
@@ -8808,14 +8809,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "REST vs GraphQL — which should I choose?",
+        question: "REST vs GraphQL: which should I choose?",
         answer:
           "REST for public APIs, simple CRUD, and broad interoperability. GraphQL for complex UIs with varied data needs and internal APIs. REST is simpler to cache and easier for external consumers.",
       },
       {
         question: "How much does REST API development cost?",
         answer:
-          "Costs depend on complexity — a simple CRUD API costs $5K–$15K. A production API with auth, versioning, rate limiting, webhooks, and SDK generation ranges from $20K–$80K.",
+          "Costs depend on complexity: a simple CRUD API costs $5K–$15K. A production API with auth, versioning, rate limiting, webhooks, and SDK generation ranges from $20K–$80K.",
       },
       {
         question: "What makes a REST API 'RESTful'?",
@@ -8841,7 +8842,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Near-native performance in any runtime",
     description:
-      "WebAssembly runs at near-native speed in browsers, on servers via WASI, and at the edge via Cloudflare Workers — compiled from Rust, C, or AssemblyScript. We use WASM for compute-heavy tasks that JavaScript can't handle efficiently.",
+      "WebAssembly runs at near-native speed in browsers, on servers via WASI, and at the edge via Cloudflare Workers: compiled from Rust, C, or AssemblyScript. We use WASM for compute-heavy tasks that JavaScript can't handle efficiently.",
     accentColor: "violet",
     visualizationKey: "wasm",
     logo: "/logos/services/webassembly.svg",
@@ -8850,7 +8851,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Near-native execution",
         description:
-          "WASM executes at 80–90% of native speed — image processing, crypto, parsers, and codecs in the browser.",
+          "WASM executes at 80–90% of native speed: image processing, crypto, parsers, and codecs in the browser.",
       },
       {
         icon: "Globe",
@@ -8862,13 +8863,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Memory-safe sandbox",
         description:
-          "WASM runs in a capability-based sandbox — no arbitrary memory access outside its linear memory.",
+          "WASM runs in a capability-based sandbox: no arbitrary memory access outside its linear memory.",
       },
       {
         icon: "Code2",
         title: "Rust → WASM",
         description:
-          "wasm-pack compiles Rust to WASM with TypeScript bindings — tight integration with npm packages.",
+          "wasm-pack compiles Rust to WASM with TypeScript bindings: tight integration with npm packages.",
       },
       {
         icon: "Cpu",
@@ -8880,12 +8881,12 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Package",
         title: "Component model",
         description:
-          "WASM Component Model enables language-agnostic interfaces — compose WASM modules from any language.",
+          "WASM Component Model enables language-agnostic interfaces: compose WASM modules from any language.",
       },
     ],
     subTechs: [{ slug: "rust" }, { slug: "cloudflare-workers" }],
     overview:
-      "WebAssembly (WASM) is a binary instruction format that runs at near-native speed in browsers, on servers via WASI, and at the edge on platforms like Cloudflare Workers. Compiled from Rust, C/C++, Go, or AssemblyScript, WASM executes compute-intensive tasks that JavaScript can't handle efficiently. At A Major, we use WASM for performance-critical browser features, edge computing, and portable server-side modules.\n\nWASM runs in a memory-safe sandbox with capability-based security — no arbitrary filesystem or network access. Combined with SIMD instructions, threading support, and the emerging Component Model for language-agnostic composition, WASM is becoming the universal runtime for portable, high-performance code.",
+      "WebAssembly (WASM) is a binary instruction format that runs at near-native speed in browsers, on servers via WASI, and at the edge on platforms like Cloudflare Workers. Compiled from Rust, C/C++, Go, or AssemblyScript, WASM executes compute-intensive tasks that JavaScript can't handle efficiently. At A Major, we use WASM for performance-critical browser features, edge computing, and portable server-side modules.\n\nWASM runs in a memory-safe sandbox with capability-based security: no arbitrary filesystem or network access. Combined with SIMD instructions, threading support, and the emerging Component Model for language-agnostic composition, WASM is becoming the universal runtime for portable, high-performance code.",
     challenges: [
       {
         title: "Debugging is harder than JavaScript",
@@ -8910,14 +8911,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     bestPractices: [
       {
-        tip: "Use Rust for WASM — it has the best tooling",
+        tip: "Use Rust for WASM: it has the best tooling",
         detail:
           "wasm-pack, wasm-bindgen, and the Rust → WASM compilation path are the most mature and produce the smallest binaries.",
       },
       {
         tip: "Offload compute, not DOM manipulation",
         detail:
-          "Use WASM for image processing, crypto, parsing, and computation. Keep DOM interaction in JavaScript — the interop overhead isn't worth it for UI work.",
+          "Use WASM for image processing, crypto, parsing, and computation. Keep DOM interaction in JavaScript: the interop overhead isn't worth it for UI work.",
       },
       {
         tip: "Use wasm-opt for binary size reduction",
@@ -8927,7 +8928,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Stream-compile with instantiateStreaming",
         detail:
-          "WebAssembly.instantiateStreaming() compiles WASM while downloading — faster startup than loading the entire binary first.",
+          "WebAssembly.instantiateStreaming() compiles WASM while downloading: faster startup than loading the entire binary first.",
       },
     ],
     usefulLinks: [
@@ -8956,7 +8957,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Will WebAssembly replace JavaScript?",
         answer:
-          "No. WASM complements JavaScript — it handles compute-heavy tasks while JavaScript manages DOM, events, and application logic. They work best together.",
+          "No. WASM complements JavaScript: it handles compute-heavy tasks while JavaScript manages DOM, events, and application logic. They work best together.",
       },
       {
         question: "What languages compile to WASM?",
@@ -8966,7 +8967,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Is WASM faster than JavaScript?",
         answer:
-          "For compute-heavy tasks (image processing, crypto, codecs), WASM runs at 80–90% of native speed — significantly faster than JavaScript. For I/O-bound work, the difference is minimal.",
+          "For compute-heavy tasks (image processing, crypto, codecs), WASM runs at 80–90% of native speed: significantly faster than JavaScript. For I/O-bound work, the difference is minimal.",
       },
       {
         question: "Can WASM run on the server?",
@@ -8987,7 +8988,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Structured MVC web apps with ASP.NET Core",
     description:
-      "ASP.NET Core MVC is the mature, convention-over-configuration approach to .NET web development — controllers, views, model binding, and filters in a well-understood pattern. Ideal for server-rendered apps and REST APIs in large .NET teams.",
+      "ASP.NET Core MVC is the mature, convention-over-configuration approach to .NET web development: controllers, views, model binding, and filters in a well-understood pattern. Ideal for server-rendered apps and REST APIs in large .NET teams.",
     accentColor: "violet",
     visualizationKey: "dotnet-mvc",
     logo: "/logos/services/csharp.svg",
@@ -8996,44 +8997,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "Convention over config",
         description:
-          "Route attributes, model binding, and view resolution follow consistent conventions — less ceremony, more consistency.",
+          "Route attributes, model binding, and view resolution follow consistent conventions: less ceremony, more consistency.",
       },
       {
         icon: "Shield",
         title: "Built-in filters",
         description:
-          "Action filters, exception filters, and result filters for cross-cutting concerns — auth, logging, and caching in one place.",
+          "Action filters, exception filters, and result filters for cross-cutting concerns: auth, logging, and caching in one place.",
       },
       {
         icon: "Database",
         title: "EF Core integration",
         description:
-          "Entity Framework Core with migrations, LINQ queries, and change tracking — the standard .NET ORM.",
+          "Entity Framework Core with migrations, LINQ queries, and change tracking: the standard .NET ORM.",
       },
       {
         icon: "FileCode2",
         title: "Swagger / OpenAPI",
         description:
-          "Swashbuckle generates OpenAPI specs from controller attributes — interactive docs with zero extra files.",
+          "Swashbuckle generates OpenAPI specs from controller attributes: interactive docs with zero extra files.",
       },
       {
         icon: "Server",
         title: "Minimal API side-by-side",
         description:
-          "Mix MVC controllers and Minimal API endpoints in the same app — adopt incrementally.",
+          "Mix MVC controllers and Minimal API endpoints in the same app: adopt incrementally.",
       },
       {
         icon: "Globe",
         title: "Blazor + MVC hybrid",
         description:
-          "Render Blazor components inside MVC views — add interactive islands to existing server-rendered pages.",
+          "Render Blazor components inside MVC views: add interactive islands to existing server-rendered pages.",
       },
     ],
     subTechs: [{ slug: "dotnet" }, { slug: "blazor" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "ASP.NET Core MVC is the convention-over-configuration web framework in the .NET ecosystem — providing controllers, views, model binding, filters, and a well-understood MVC pattern for server-rendered web applications and REST APIs.\n\nIt's the mature choice for large .NET teams building enterprise applications — with EF Core for data access, ASP.NET Identity for authentication, and Swashbuckle for auto-generated OpenAPI documentation. Blazor components can be embedded in MVC views for adding interactive islands to existing server-rendered pages.",
+      "ASP.NET Core MVC is the convention-over-configuration web framework in the .NET ecosystem , providing controllers, views, model binding, filters, and a well-understood MVC pattern for server-rendered web applications and REST APIs.\n\nIt's the mature choice for large .NET teams building enterprise applications , with EF Core for data access, ASP.NET Identity for authentication, and Swashbuckle for auto-generated OpenAPI documentation. Blazor components can be embedded in MVC views for adding interactive islands to existing server-rendered pages.",
     challenges: [
       {
         title: "Monolithic architecture tendencies",
@@ -9055,7 +9056,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Minimal API for new endpoints",
         detail:
-          "ASP.NET Core supports both MVC controllers and Minimal API endpoints in the same app — use Minimal API for new, simple endpoints and controllers for complex features.",
+          "ASP.NET Core supports both MVC controllers and Minimal API endpoints in the same app: use Minimal API for new, simple endpoints and controllers for complex features.",
       },
       {
         tip: "Implement the Repository pattern with EF Core",
@@ -9065,7 +9066,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Generate OpenAPI specs automatically",
         detail:
-          "Swashbuckle generates OpenAPI specs from controller attributes — interactive API documentation with zero manual maintenance.",
+          "Swashbuckle generates OpenAPI specs from controller attributes: interactive API documentation with zero manual maintenance.",
       },
     ],
     usefulLinks: [
@@ -9094,12 +9095,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does ASP.NET MVC development cost?",
         answer:
-          ".NET is free and open-source. Visual Studio Community is free for small teams. Development costs are comparable to other web frameworks — a typical MVC application takes 8-16 weeks for an enterprise CRUD app with authentication, roles, and reporting.",
+          ".NET is free and open-source. Visual Studio Community is free for small teams. Development costs are comparable to other web frameworks: a typical MVC application takes 8-16 weeks for an enterprise CRUD app with authentication, roles, and reporting.",
       },
       {
-        question: "ASP.NET MVC vs Blazor — which .NET framework?",
+        question: "ASP.NET MVC vs Blazor: which .NET framework?",
         answer:
-          "MVC is server-rendered with Razor views — proven, well-understood, and great for content-heavy sites and REST APIs. Blazor adds client-side interactivity with C#. For new projects, consider Blazor 8+ with auto render mode; for existing MVC apps, embed Blazor components incrementally.",
+          "MVC is server-rendered with Razor views: proven, well-understood, and great for content-heavy sites and REST APIs. Blazor adds client-side interactivity with C#. For new projects, consider Blazor 8+ with auto render mode; for existing MVC apps, embed Blazor components incrementally.",
       },
       {
         question: "Can I use ASP.NET MVC with modern frontend frameworks?",
@@ -9120,7 +9121,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Open source Firebase alternative on Postgres",
     description:
-      "Supabase wraps PostgreSQL with an instant REST and GraphQL API, real-time subscriptions, row-level security, edge functions, and storage — a full backend platform that doesn't lock you in to proprietary tech.",
+      "Supabase wraps PostgreSQL with an instant REST and GraphQL API, real-time subscriptions, row-level security, edge functions, and storage: a full backend platform that doesn't lock you in to proprietary tech.",
     accentColor: "green",
     visualizationKey: "supabase",
     logo: "/logos/services/supabase.svg",
@@ -9129,44 +9130,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "Postgres under the hood",
         description:
-          "Standard PostgreSQL — use pgvector, PostGIS, full-text search, and any Postgres extension.",
+          "Standard PostgreSQL: use pgvector, PostGIS, full-text search, and any Postgres extension.",
       },
       {
         icon: "Zap",
         title: "Instant REST & GraphQL",
         description:
-          "PostgREST auto-generates a REST API from your schema — every table is an API endpoint.",
+          "PostgREST auto-generates a REST API from your schema: every table is an API endpoint.",
       },
       {
         icon: "Radio",
         title: "Realtime subscriptions",
         description:
-          "Postgres logical replication powers real-time row changes via WebSockets — no polling.",
+          "Postgres logical replication powers real-time row changes via WebSockets: no polling.",
       },
       {
         icon: "Shield",
         title: "Row-level security",
         description:
-          "Policies enforce multi-tenant data access at the database layer — auth context flows through to RLS.",
+          "Policies enforce multi-tenant data access at the database layer: auth context flows through to RLS.",
       },
       {
         icon: "Globe",
         title: "Edge Functions",
         description:
-          "Deno-based serverless functions colocated with your database — custom logic without a separate server.",
+          "Deno-based serverless functions colocated with your database: custom logic without a separate server.",
       },
       {
         icon: "Package",
         title: "Storage & auth built-in",
         description:
-          "S3-compatible object storage and authentication included — a complete backend in one platform.",
+          "S3-compatible object storage and authentication included: a complete backend in one platform.",
       },
     ],
     subTechs: [{ slug: "postgresql" }, { slug: "drizzle" }, { slug: "prisma" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Supabase is an open-source Firebase alternative built on PostgreSQL. It provides an instant REST and GraphQL API (via PostgREST), real-time subscriptions, row-level security, edge functions (Deno), auth, and S3-compatible storage — all from a single platform.\n\nUnlike Firebase, Supabase doesn't lock you into proprietary tech. Your data lives in standard PostgreSQL, and you can use any Postgres extension (pgvector, PostGIS, pg_cron). Self-hosting is fully supported for teams that need it.",
+      "Supabase is an open-source Firebase alternative built on PostgreSQL. It provides an instant REST and GraphQL API (via PostgREST), real-time subscriptions, row-level security, edge functions (Deno), auth, and S3-compatible storage: all from a single platform.\n\nUnlike Firebase, Supabase doesn't lock you into proprietary tech. Your data lives in standard PostgreSQL, and you can use any Postgres extension (pgvector, PostGIS, pg_cron). Self-hosting is fully supported for teams that need it.",
     challenges: [
       {
         title: "Row-level security policy complexity",
@@ -9188,7 +9189,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Design RLS policies early",
         detail:
-          "Implement row-level security from day one — retrofitting RLS onto an existing schema is significantly harder than building with it from the start.",
+          "Implement row-level security from day one: retrofitting RLS onto an existing schema is significantly harder than building with it from the start.",
       },
       {
         tip: "Use the Supabase client library",
@@ -9198,7 +9199,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage Postgres extensions",
         detail:
-          "Enable pgvector for AI embeddings, PostGIS for geospatial queries, or pg_cron for scheduled tasks — all available through Supabase's dashboard.",
+          "Enable pgvector for AI embeddings, PostGIS for geospatial queries, or pg_cron for scheduled tasks: all available through Supabase's dashboard.",
       },
     ],
     usefulLinks: [
@@ -9230,7 +9231,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Supabase has a generous free tier (500MB database, 1GB storage, 50k monthly active users). The Pro plan starts at $25/month with 8GB database and 100GB storage. Enterprise plans are custom-priced.",
       },
       {
-        question: "Supabase vs Firebase — which should I use?",
+        question: "Supabase vs Firebase: which should I use?",
         answer:
           "Supabase gives you standard PostgreSQL (SQL, joins, RLS) with no vendor lock-in. Firebase offers a more polished mobile SDK and better offline support. Choose Supabase for web apps needing relational data; choose Firebase for mobile-first apps needing offline sync.",
       },
@@ -9251,7 +9252,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Serverless MySQL with non-blocking schema changes",
     description:
-      "PlanetScale brings Vitess's battle-tested horizontal sharding to a developer-friendly serverless MySQL platform — branching workflows, non-blocking DDL, and connection pooling that handles millions of connections.",
+      "PlanetScale brings Vitess's battle-tested horizontal sharding to a developer-friendly serverless MySQL platform: branching workflows, non-blocking DDL, and connection pooling that handles millions of connections.",
     accentColor: "neutral",
     visualizationKey: "planetscale",
     logo: "/logos/services/planetscale_dark.svg",
@@ -9260,19 +9261,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "GitBranch",
         title: "Database branching",
         description:
-          "Create database branches like Git branches — develop schema changes in isolation, then merge.",
+          "Create database branches like Git branches: develop schema changes in isolation, then merge.",
       },
       {
         icon: "Database",
         title: "Non-blocking DDL",
         description:
-          "ALTER TABLE runs without locking — zero-downtime schema migrations on a live production database.",
+          "ALTER TABLE runs without locking: zero-downtime schema migrations on a live production database.",
       },
       {
         icon: "Globe",
         title: "Global replicas",
         description:
-          "Read replicas in any region — reduce read latency by routing queries to the closest node.",
+          "Read replicas in any region: reduce read latency by routing queries to the closest node.",
       },
       {
         icon: "Zap",
@@ -9284,20 +9285,20 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Deploy requests",
         description:
-          "Schema changes reviewed as pull request equivalents — audited, reversible, and team-approved before merging.",
+          "Schema changes reviewed as pull request equivalents: audited, reversible, and team-approved before merging.",
       },
       {
         icon: "Gauge",
         title: "Vitess scaling",
         description:
-          "Horizontal sharding via Vitess under the hood — the same technology that powers YouTube's database.",
+          "Horizontal sharding via Vitess under the hood: the same technology that powers YouTube's database.",
       },
     ],
     subTechs: [{ slug: "mysql" }, { slug: "prisma" }, { slug: "drizzle" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "PlanetScale is a serverless MySQL platform powered by Vitess — the same technology that scales YouTube's database. It brings Git-like branching, non-blocking schema changes, and unlimited connections to MySQL, making it the most developer-friendly MySQL hosting available.\n\nDeploy requests let teams review schema changes like pull requests before merging to production. Global read replicas, built-in connection pooling, and the PlanetScale Boost query cache deliver sub-millisecond read latency at any scale.",
+      "PlanetScale is a serverless MySQL platform powered by Vitess: the same technology that scales YouTube's database. It brings Git-like branching, non-blocking schema changes, and unlimited connections to MySQL, making it the most developer-friendly MySQL hosting available.\n\nDeploy requests let teams review schema changes like pull requests before merging to production. Global read replicas, built-in connection pooling, and the PlanetScale Boost query cache deliver sub-millisecond read latency at any scale.",
     challenges: [
       {
         title: "No foreign key constraints",
@@ -9312,24 +9313,24 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Cost management at scale",
         description:
-          "PlanetScale's pricing is based on rows read/written. High-throughput analytics queries can be expensive — use PlanetScale Boost caching and query optimization to control costs.",
+          "PlanetScale's pricing is based on rows read/written. High-throughput analytics queries can be expensive: use PlanetScale Boost caching and query optimization to control costs.",
       },
     ],
     bestPractices: [
       {
         tip: "Use deploy requests for all schema changes",
         detail:
-          "Deploy requests show schema diffs, flag destructive changes, and require approval — preventing accidental production data loss.",
+          "Deploy requests show schema diffs, flag destructive changes, and require approval: preventing accidental production data loss.",
       },
       {
         tip: "Enable PlanetScale Boost for hot queries",
         detail:
-          "Boost caches query results at the edge with automatic invalidation — dramatically reducing latency for read-heavy workloads.",
+          "Boost caches query results at the edge with automatic invalidation: dramatically reducing latency for read-heavy workloads.",
       },
       {
         tip: "Create a branch per feature",
         detail:
-          "Database branches work like Git branches — each developer gets an isolated copy for schema development and testing.",
+          "Database branches work like Git branches: each developer gets an isolated copy for schema development and testing.",
       },
     ],
     usefulLinks: [
@@ -9361,7 +9362,7 @@ export const servicesConfig: ServiceConfig[] = [
           "PlanetScale offers a free Hobby plan (1 database, 5GB storage, 1 billion rows read/month). The Scaler plan starts at $39/month with 10GB storage and 100 billion rows read/month. Enterprise plans are custom-priced.",
       },
       {
-        question: "PlanetScale vs Neon — which serverless database?",
+        question: "PlanetScale vs Neon: which serverless database?",
         answer:
           "PlanetScale is MySQL (Vitess) with Git-like branching and non-blocking DDL. Neon is PostgreSQL with compute scaling and database branching. Choose PlanetScale for MySQL workloads; choose Neon for PostgreSQL and its richer feature set.",
       },
@@ -9382,7 +9383,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "SQLite at the edge, globally distributed",
     description:
-      "Cloudflare D1 brings SQLite to the edge — your database runs in the same data centre as your Cloudflare Worker, eliminating the latency of a remote database call entirely. Full SQL, D1 console, and Wrangler migrations included.",
+      "Cloudflare D1 brings SQLite to the edge: your database runs in the same data centre as your Cloudflare Worker, eliminating the latency of a remote database call entirely. Full SQL, D1 console, and Wrangler migrations included.",
     accentColor: "amber",
     visualizationKey: "cloudflare-d1",
     logo: "/logos/services/cloudflare-workers.svg",
@@ -9391,37 +9392,37 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Co-located with Workers",
         description:
-          "Database and compute in the same PoP — sub-millisecond query latency without a remote round-trip.",
+          "Database and compute in the same PoP: sub-millisecond query latency without a remote round-trip.",
       },
       {
         icon: "Database",
         title: "Full SQLite SQL",
         description:
-          "Complete SQLite compatibility — JOINs, transactions, FTS5, and JSON functions all work.",
+          "Complete SQLite compatibility: JOINs, transactions, FTS5, and JSON functions all work.",
       },
       {
         icon: "GitBranch",
         title: "Wrangler migrations",
         description:
-          "SQL migration files managed via Wrangler CLI — versioned schema changes checked into source control.",
+          "SQL migration files managed via Wrangler CLI: versioned schema changes checked into source control.",
       },
       {
         icon: "Layers",
         title: "D1 Console",
         description:
-          "Query your database from the Cloudflare dashboard — browse tables, run SQL, and inspect schema.",
+          "Query your database from the Cloudflare dashboard: browse tables, run SQL, and inspect schema.",
       },
       {
         icon: "Shield",
         title: "Automatic replication",
         description:
-          "D1 replicates reads globally — low-latency reads from any Cloudflare region.",
+          "D1 replicates reads globally: low-latency reads from any Cloudflare region.",
       },
       {
         icon: "Code2",
         title: "Drizzle & Prisma support",
         description:
-          "Use Drizzle ORM or raw D1 client bindings — typed queries without writing SQL strings.",
+          "Use Drizzle ORM or raw D1 client bindings: typed queries without writing SQL strings.",
       },
     ],
     subTechs: [
@@ -9442,7 +9443,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "SQLite feature boundaries",
         description:
-          "D1 inherits SQLite's limitations — no stored procedures, limited ALTER TABLE support, and single-writer concurrency. Design schemas with these constraints in mind.",
+          "D1 inherits SQLite's limitations: no stored procedures, limited ALTER TABLE support, and single-writer concurrency. Design schemas with these constraints in mind.",
       },
       {
         title: "Migration workflow differences",
@@ -9454,7 +9455,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Drizzle ORM with D1",
         detail:
-          "Drizzle's D1 driver provides type-safe queries with zero overhead — your TypeScript types match your SQLite schema exactly.",
+          "Drizzle's D1 driver provides type-safe queries with zero overhead: your TypeScript types match your SQLite schema exactly.",
       },
       {
         tip: "Keep databases small and focused",
@@ -9464,7 +9465,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Wrangler for local development",
         detail:
-          "wrangler dev --local runs D1 locally with a real SQLite file — test your Workers and database queries without deploying.",
+          "wrangler dev --local runs D1 locally with a real SQLite file: test your Workers and database queries without deploying.",
       },
     ],
     usefulLinks: [
@@ -9496,9 +9497,9 @@ export const servicesConfig: ServiceConfig[] = [
           "D1 has a generous free tier: 5GB storage, 5 million rows read/day, and 100k rows written/day. The paid Workers plan ($5/month) increases limits significantly. D1 is one of the cheapest database options for edge applications.",
       },
       {
-        question: "Cloudflare D1 vs Turso — which edge SQLite?",
+        question: "Cloudflare D1 vs Turso: which edge SQLite?",
         answer:
-          "D1 is tightly integrated with Cloudflare Workers via native bindings — zero network overhead. Turso (libSQL) works with any runtime and offers embedded replicas. Choose D1 if you're on Cloudflare; choose Turso for multi-cloud or non-Cloudflare deployments.",
+          "D1 is tightly integrated with Cloudflare Workers via native bindings: zero network overhead. Turso (libSQL) works with any runtime and offers embedded replicas. Choose D1 if you're on Cloudflare; choose Turso for multi-cloud or non-Cloudflare deployments.",
       },
       {
         question: "Is D1 ready for production?",
@@ -9517,7 +9518,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "The world's most popular open source RDBMS",
     description:
-      "MySQL powers some of the largest applications on the web — WordPress, Shopify, Airbnb. We deploy and optimise MySQL for projects that need a proven relational database, especially in Laravel and PHP stacks.",
+      "MySQL powers some of the largest applications on the web: WordPress, Shopify, Airbnb. We deploy and optimise MySQL for projects that need a proven relational database, especially in Laravel and PHP stacks.",
     accentColor: "blue",
     visualizationKey: "mysql",
     logo: "/logos/services/mysql-icon-dark.svg",
@@ -9532,7 +9533,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Query optimisation",
         description:
-          "EXPLAIN ANALYZE, index hints, and covering indexes — we tune slow queries to run in milliseconds.",
+          "EXPLAIN ANALYZE, index hints, and covering indexes: we tune slow queries to run in milliseconds.",
       },
       {
         icon: "Globe",
@@ -9544,13 +9545,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layers",
         title: "JSON column support",
         description:
-          "Native JSON column type with indexable generated columns — semi-structured data alongside relational.",
+          "Native JSON column type with indexable generated columns: semi-structured data alongside relational.",
       },
       {
         icon: "Shield",
         title: "User & privilege system",
         description:
-          "Fine-grained GRANT system with role-based permissions — least-privilege access by default.",
+          "Fine-grained GRANT system with role-based permissions: least-privilege access by default.",
       },
       {
         icon: "Package",
@@ -9594,7 +9595,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use PlanetScale for serverless workloads",
         detail:
-          "PlanetScale handles connection pooling, branching, and non-blocking DDL — solving MySQL's biggest operational pain points.",
+          "PlanetScale handles connection pooling, branching, and non-blocking DDL: solving MySQL's biggest operational pain points.",
       },
       {
         tip: "Index strategy: covering indexes",
@@ -9604,7 +9605,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Enable slow query log",
         detail:
-          "Set long_query_time to 1s and analyze slow queries with EXPLAIN — the fastest path to performance improvements.",
+          "Set long_query_time to 1s and analyze slow queries with EXPLAIN: the fastest path to performance improvements.",
       },
     ],
     usefulLinks: [
@@ -9633,10 +9634,10 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does MySQL development cost?",
         answer:
-          "MySQL Community Edition is free. PlanetScale starts with a free tier (1 database, 5GB) with paid plans from $39/month. Development costs depend on complexity — a typical CRUD API takes 2-4 weeks, while a complex multi-tenant platform takes 8-16 weeks.",
+          "MySQL Community Edition is free. PlanetScale starts with a free tier (1 database, 5GB) with paid plans from $39/month. Development costs depend on complexity: a typical CRUD API takes 2-4 weeks, while a complex multi-tenant platform takes 8-16 weeks.",
       },
       {
-        question: "MySQL vs PostgreSQL — which should I choose?",
+        question: "MySQL vs PostgreSQL: which should I choose?",
         answer:
           "MySQL is simpler to operate, has excellent replication, and dominates in PHP/WordPress ecosystems. PostgreSQL offers more advanced features (JSONB, FTS, extensions). For TypeScript projects, PostgreSQL usually wins. For Laravel/PHP or WordPress projects, MySQL is the natural choice.",
       },
@@ -9659,7 +9660,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Consistent environments from dev to production",
     description:
-      'Docker eliminates "works on my machine" — we containerise your application so dev, staging, and production run identically. From single-container apps to multi-service Compose stacks and Kubernetes-ready images.',
+      'Docker eliminates "works on my machine": we containerise your application so dev, staging, and production run identically. From single-container apps to multi-service Compose stacks and Kubernetes-ready images.',
     accentColor: "sky",
     visualizationKey: "docker",
     logo: "/logos/services/docker.svg",
@@ -9668,25 +9669,25 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Package",
         title: "Multi-stage builds",
         description:
-          "Small production images via multi-stage Dockerfiles — build tooling stays out of the final image.",
+          "Small production images via multi-stage Dockerfiles: build tooling stays out of the final image.",
       },
       {
         icon: "Layers",
         title: "Docker Compose stacks",
         description:
-          "Define your full stack — app, database, cache, and reverse proxy — in a single docker-compose.yml.",
+          "Define your full stack , app, database, cache, and reverse proxy , in a single docker-compose.yml.",
       },
       {
         icon: "GitBranch",
         title: "CI/CD integration",
         description:
-          "Build, tag, and push images in CI — GitHub Actions, GitLab CI, and Bitbucket Pipelines covered.",
+          "Build, tag, and push images in CI: GitHub Actions, GitLab CI, and Bitbucket Pipelines covered.",
       },
       {
         icon: "Globe",
         title: "Registry publishing",
         description:
-          "Push to Docker Hub, GitHub Container Registry, or AWS ECR — immutable tagged releases.",
+          "Push to Docker Hub, GitHub Container Registry, or AWS ECR: immutable tagged releases.",
       },
       {
         icon: "Shield",
@@ -9698,7 +9699,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Server",
         title: "Kubernetes-ready",
         description:
-          "Images built to work in Kubernetes — non-root user, health check endpoints, and graceful shutdown handling.",
+          "Images built to work in Kubernetes: non-root user, health check endpoints, and graceful shutdown handling.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "python" }],
@@ -9727,12 +9728,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use multi-stage builds",
         detail:
-          "Separate build and runtime stages — install dev dependencies and compile in the build stage, copy only the final artifact to a slim runtime image.",
+          "Separate build and runtime stages: install dev dependencies and compile in the build stage, copy only the final artifact to a slim runtime image.",
       },
       {
         tip: "Run as non-root user",
         detail:
-          "Add USER node (or equivalent) in your Dockerfile — running as root in production containers is a security risk.",
+          "Add USER node (or equivalent) in your Dockerfile: running as root in production containers is a security risk.",
       },
       {
         tip: "Scan images for vulnerabilities",
@@ -9742,7 +9743,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use .dockerignore",
         detail:
-          "Exclude node_modules, .git, and build artifacts from the Docker context — faster builds and smaller images.",
+          "Exclude node_modules, .git, and build artifacts from the Docker context: faster builds and smaller images.",
       },
     ],
     usefulLinks: [
@@ -9774,7 +9775,7 @@ export const servicesConfig: ServiceConfig[] = [
           "Docker Desktop is free for personal use and small businesses (under $10M revenue). Pro plans start at $5/month. Docker Hub offers free public repositories and one private repository. CI/CD integration is free with any registry.",
       },
       {
-        question: "Docker vs Kubernetes — what's the difference?",
+        question: "Docker vs Kubernetes: what's the difference?",
         answer:
           "Docker containerizes individual applications. Kubernetes orchestrates many containers across a cluster with auto-scaling, rolling deployments, and service discovery. Most projects start with Docker and Docker Compose, then graduate to Kubernetes when they need multi-node orchestration.",
       },
@@ -9795,7 +9796,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "Scalable file storage for any application",
     description:
-      "Amazon S3 and S3-compatible services (Cloudflare R2, Supabase Storage, MinIO) power file uploads, media delivery, and backup for your application — with presigned URLs, lifecycle policies, and CDN distribution.",
+      "Amazon S3 and S3-compatible services (Cloudflare R2, Supabase Storage, MinIO) power file uploads, media delivery, and backup for your application: with presigned URLs, lifecycle policies, and CDN distribution.",
     accentColor: "amber",
     visualizationKey: "s3",
     logo: "/logos/services/amazon-s3.svg",
@@ -9804,44 +9805,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "CloudUpload",
         title: "Direct browser uploads",
         description:
-          "Presigned URLs let clients upload directly to S3 — bypasses your server, no bandwidth cost.",
+          "Presigned URLs let clients upload directly to S3: bypasses your server, no bandwidth cost.",
       },
       {
         icon: "Globe",
         title: "CDN distribution",
         description:
-          "CloudFront, Cloudflare, or BunnyCDN in front of S3 — assets served from edge nodes near your users.",
+          "CloudFront, Cloudflare, or BunnyCDN in front of S3: assets served from edge nodes near your users.",
       },
       {
         icon: "Layers",
         title: "Lifecycle policies",
         description:
-          "Automatically tier old objects to cheaper storage classes or delete expired files — cost control on autopilot.",
+          "Automatically tier old objects to cheaper storage classes or delete expired files: cost control on autopilot.",
       },
       {
         icon: "Shield",
         title: "Signed URLs & access control",
         description:
-          "Private buckets with time-limited presigned URLs — secure file access without exposing bucket credentials.",
+          "Private buckets with time-limited presigned URLs: secure file access without exposing bucket credentials.",
       },
       {
         icon: "RefreshCw",
         title: "R2 zero egress",
         description:
-          "Cloudflare R2 is S3-compatible with zero egress fees — significant savings for high-bandwidth workloads.",
+          "Cloudflare R2 is S3-compatible with zero egress fees: significant savings for high-bandwidth workloads.",
       },
       {
         icon: "Monitor",
         title: "MinIO self-hosted",
         description:
-          "MinIO for on-premise or private cloud S3 — identical API, runs anywhere Docker does.",
+          "MinIO for on-premise or private cloud S3: identical API, runs anywhere Docker does.",
       },
     ],
     subTechs: [{ slug: "cloudflare-r2" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Amazon S3 (Simple Storage Service) is the industry standard for object storage — storing files, media, backups, and static assets at any scale. Its API has become the de facto standard, supported by compatible services like Cloudflare R2, Supabase Storage, and MinIO.\n\nS3 integrates with CDNs (CloudFront, Cloudflare) for global asset delivery, supports presigned URLs for secure direct browser uploads, and provides lifecycle policies for automatic data tiering and cleanup. Whether you're storing user uploads, serving a static site, or archiving terabytes of data, S3's API is the universal interface.",
+      "Amazon S3 (Simple Storage Service) is the industry standard for object storage: storing files, media, backups, and static assets at any scale. Its API has become the de facto standard, supported by compatible services like Cloudflare R2, Supabase Storage, and MinIO.\n\nS3 integrates with CDNs (CloudFront, Cloudflare) for global asset delivery, supports presigned URLs for secure direct browser uploads, and provides lifecycle policies for automatic data tiering and cleanup. Whether you're storing user uploads, serving a static site, or archiving terabytes of data, S3's API is the universal interface.",
     challenges: [
       {
         title: "Egress cost management",
@@ -9851,7 +9852,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Access control complexity",
         description:
-          "S3 bucket policies, IAM policies, and ACLs can interact in confusing ways. Start with private buckets and presigned URLs — avoid public bucket access unless absolutely necessary.",
+          "S3 bucket policies, IAM policies, and ACLs can interact in confusing ways. Start with private buckets and presigned URLs: avoid public bucket access unless absolutely necessary.",
       },
       {
         title: "Eventual consistency awareness",
@@ -9863,17 +9864,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use presigned URLs for uploads",
         detail:
-          "Generate server-side presigned URLs and let clients upload directly to S3 — bypasses your server, reduces bandwidth costs, and scales infinitely.",
+          "Generate server-side presigned URLs and let clients upload directly to S3: bypasses your server, reduces bandwidth costs, and scales infinitely.",
       },
       {
         tip: "Put a CDN in front of public assets",
         detail:
-          "CloudFront or Cloudflare in front of S3 caches assets at edge locations — faster delivery and lower S3 egress costs.",
+          "CloudFront or Cloudflare in front of S3 caches assets at edge locations: faster delivery and lower S3 egress costs.",
       },
       {
         tip: "Configure lifecycle policies",
         detail:
-          "Automatically transition old objects to cheaper storage classes (Glacier) or delete expired files — cost control without manual intervention.",
+          "Automatically transition old objects to cheaper storage classes (Glacier) or delete expired files: cost control without manual intervention.",
       },
     ],
     usefulLinks: [
@@ -9905,9 +9906,9 @@ export const servicesConfig: ServiceConfig[] = [
           "AWS S3 Standard costs ~$0.023/GB/month for storage. PUT requests cost $0.005 per 1,000. Egress is $0.09/GB (first 10TB). For zero egress costs, use Cloudflare R2 ($0.015/GB/month storage, free egress). MinIO is free and self-hosted.",
       },
       {
-        question: "S3 vs Cloudflare R2 — which should I use?",
+        question: "S3 vs Cloudflare R2: which should I use?",
         answer:
-          "R2 is S3-compatible with zero egress fees — ideal for high-bandwidth workloads. AWS S3 has a richer feature set (Glacier, analytics, event notifications) and deeper AWS ecosystem integration. Choose R2 for cost savings on bandwidth; choose S3 for the full AWS integration.",
+          "R2 is S3-compatible with zero egress fees: ideal for high-bandwidth workloads. AWS S3 has a richer feature set (Glacier, analytics, event notifications) and deeper AWS ecosystem integration. Choose R2 for cost savings on bandwidth; choose S3 for the full AWS integration.",
       },
       {
         question: "Can I use S3 for hosting a static website?",
@@ -9926,7 +9927,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Developer tools built for the terminal",
     description:
-      "We build CLI tools for developer products — internal automation, developer experience tooling, scaffolding CLIs, and deployment scripts. Built in TypeScript/Node or Rust depending on performance requirements.",
+      "We build CLI tools for developer products: internal automation, developer experience tooling, scaffolding CLIs, and deployment scripts. Built in TypeScript/Node or Rust depending on performance requirements.",
     accentColor: "neutral",
     visualizationKey: "cli",
     logo: null,
@@ -9936,7 +9937,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Terminal",
         title: "Interactive prompts",
         description:
-          "Clack, Inquirer, or Bubbletea for guided interactive prompts — the same UX as create-next-app.",
+          "Clack, Inquirer, or Bubbletea for guided interactive prompts: the same UX as create-next-app.",
       },
       {
         icon: "Code2",
@@ -9948,32 +9949,32 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Rust CLIs with Clap",
         description:
-          "Single-binary Rust CLIs with Clap — instant startup, no runtime dependency, distributable as a binary.",
+          "Single-binary Rust CLIs with Clap: instant startup, no runtime dependency, distributable as a binary.",
       },
       {
         icon: "Package",
         title: "npm / Homebrew distribution",
         description:
-          "Publish to npm, GitHub Releases, or Homebrew tap — users install with familiar package managers.",
+          "Publish to npm, GitHub Releases, or Homebrew tap: users install with familiar package managers.",
       },
       {
         icon: "GitBranch",
         title: "Auto-update mechanism",
         description:
-          "Detect new versions and prompt to update — CLIs that stay current without user intervention.",
+          "Detect new versions and prompt to update: CLIs that stay current without user intervention.",
       },
       {
         icon: "Monitor",
         title: "Manpage & shell completion",
         description:
-          "Generated man pages and bash/zsh/fish completion scripts — professional-grade CLI ergonomics.",
+          "Generated man pages and bash/zsh/fish completion scripts: professional-grade CLI ergonomics.",
       },
     ],
     subTechs: [{ slug: "rust" }, { slug: "nodejs" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "CLI (Command Line Interface) tools are the backbone of developer workflows — from project scaffolding and deployment scripts to internal automation and developer experience tooling. We build CLIs in TypeScript/Node.js for ecosystem compatibility or Rust for maximum performance and single-binary distribution.\n\nModern CLI development includes interactive prompts (Clack, Inquirer, Bubbletea), rich terminal output with colors and spinners, auto-update mechanisms, shell completion scripts, and distribution via npm, Homebrew, or GitHub Releases.",
+      "CLI (Command Line Interface) tools are the backbone of developer workflows: from project scaffolding and deployment scripts to internal automation and developer experience tooling. We build CLIs in TypeScript/Node.js for ecosystem compatibility or Rust for maximum performance and single-binary distribution.\n\nModern CLI development includes interactive prompts (Clack, Inquirer, Bubbletea), rich terminal output with colors and spinners, auto-update mechanisms, shell completion scripts, and distribution via npm, Homebrew, or GitHub Releases.",
     challenges: [
       {
         title: "Cross-platform compatibility",
@@ -9983,7 +9984,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Distribution and updates",
         description:
-          "Distributing CLIs to non-developers (outside npm) requires packaging strategies — Homebrew taps, standalone binaries, or installer scripts. Auto-update mechanisms keep tools current.",
+          "Distributing CLIs to non-developers (outside npm) requires packaging strategies: Homebrew taps, standalone binaries, or installer scripts. Auto-update mechanisms keep tools current.",
       },
       {
         title: "Error handling and help text",
@@ -9995,17 +9996,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use interactive prompts for complex inputs",
         detail:
-          "Libraries like Clack or Inquirer provide guided interactive flows — the same UX as create-next-app for your own CLI tools.",
+          "Libraries like Clack or Inquirer provide guided interactive flows: the same UX as create-next-app for your own CLI tools.",
       },
       {
         tip: "Provide shell completions",
         detail:
-          "Generate bash/zsh/fish completion scripts so users can tab-complete commands and flags — essential for professional CLI ergonomics.",
+          "Generate bash/zsh/fish completion scripts so users can tab-complete commands and flags: essential for professional CLI ergonomics.",
       },
       {
         tip: "Distribute as a single binary for Rust CLIs",
         detail:
-          "Rust CLIs compile to a single binary with no runtime dependencies — users download and run without installing Node.js or Python.",
+          "Rust CLIs compile to a single binary with no runtime dependencies: users download and run without installing Node.js or Python.",
       },
     ],
     usefulLinks: [
@@ -10034,7 +10035,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does CLI development cost?",
         answer:
-          "CLI tools are relatively quick to build — a basic CLI takes 1-2 weeks, a full-featured CLI with interactive prompts, auto-update, and shell completions takes 3-6 weeks. Rust CLIs take slightly longer due to the language learning curve but produce superior distributable binaries.",
+          "CLI tools are relatively quick to build: a basic CLI takes 1-2 weeks, a full-featured CLI with interactive prompts, auto-update, and shell completions takes 3-6 weeks. Rust CLIs take slightly longer due to the language learning curve but produce superior distributable binaries.",
       },
       {
         question: "TypeScript vs Rust for CLI tools?",
@@ -10058,7 +10059,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Rich terminal UIs with keyboard-driven interfaces",
     description:
-      "Terminal User Interfaces bring dashboard-style interactivity to the terminal — no web server needed. We build TUIs in Rust (Ratatui), Go (Bubble Tea), or Python (Textual) for internal tools, monitoring dashboards, and developer utilities.",
+      "Terminal User Interfaces bring dashboard-style interactivity to the terminal: no web server needed. We build TUIs in Rust (Ratatui), Go (Bubble Tea), or Python (Textual) for internal tools, monitoring dashboards, and developer utilities.",
     accentColor: "green",
     visualizationKey: "tui",
     logo: null,
@@ -10068,44 +10069,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Terminal",
         title: "Ratatui (Rust)",
         description:
-          "Ratatui renders reactive TUIs via crossterm — tables, charts, and input widgets at native speed.",
+          "Ratatui renders reactive TUIs via crossterm: tables, charts, and input widgets at native speed.",
       },
       {
         icon: "Layers",
         title: "Bubble Tea (Go)",
         description:
-          "Elm-inspired TUI framework for Go — single-binary, cross-platform, with composable components.",
+          "Elm-inspired TUI framework for Go: single-binary, cross-platform, with composable components.",
       },
       {
         icon: "Paintbrush",
         title: "Textual (Python)",
         description:
-          "CSS-styled terminal apps with Textual — familiar styling model, hot-reload during development.",
+          "CSS-styled terminal apps with Textual: familiar styling model, hot-reload during development.",
       },
       {
         icon: "Gauge",
         title: "Real-time dashboards",
         description:
-          "Live system metrics, log streaming, and status boards — useful diagnostics without a web browser.",
+          "Live system metrics, log streaming, and status boards: useful diagnostics without a web browser.",
       },
       {
         icon: "Keyboard",
         title: "Keyboard-first UX",
         description:
-          "Designed for power users — vim-style keybindings, modal navigation, and no mouse required.",
+          "Designed for power users: vim-style keybindings, modal navigation, and no mouse required.",
       },
       {
         icon: "Package",
         title: "Embeddable in CLIs",
         description:
-          "Add a TUI mode to existing CLIs — launch the dashboard UI when no arguments are passed.",
+          "Add a TUI mode to existing CLIs: launch the dashboard UI when no arguments are passed.",
       },
     ],
     subTechs: [{ slug: "rust" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Terminal User Interfaces (TUIs) bring dashboard-style interactivity to the terminal — tables, charts, input fields, and keyboard navigation without a web server. TUIs are built in Rust (Ratatui), Go (Bubble Tea), or Python (Textual) for internal tools, monitoring dashboards, and developer utilities.\n\nTUIs are ideal for power users who live in the terminal — system monitoring, log viewers, database browsers, and configuration tools that need rich interaction but not a web UI. They deploy as single binaries and work over SSH.",
+      "Terminal User Interfaces (TUIs) bring dashboard-style interactivity to the terminal , tables, charts, input fields, and keyboard navigation without a web server. TUIs are built in Rust (Ratatui), Go (Bubble Tea), or Python (Textual) for internal tools, monitoring dashboards, and developer utilities.\n\nTUIs are ideal for power users who live in the terminal , system monitoring, log viewers, database browsers, and configuration tools that need rich interaction but not a web UI. They deploy as single binaries and work over SSH.",
     challenges: [
       {
         title: "Terminal compatibility",
@@ -10127,12 +10128,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Elm architecture for state management",
         detail:
-          "Bubble Tea (Go) and Ratatui (Rust) both use an Elm-inspired model-update-view pattern — clean separation of state, logic, and rendering.",
+          "Bubble Tea (Go) and Ratatui (Rust) both use an Elm-inspired model-update-view pattern: clean separation of state, logic, and rendering.",
       },
       {
         tip: "Design for keyboard-first interaction",
         detail:
-          "TUI users expect vim-style keybindings, modal navigation, and no mouse requirement — design your interaction model around the keyboard.",
+          "TUI users expect vim-style keybindings, modal navigation, and no mouse requirement: design your interaction model around the keyboard.",
       },
       {
         tip: "Handle terminal resize gracefully",
@@ -10166,12 +10167,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does TUI development cost?",
         answer:
-          "TUI frameworks are free and open-source. Development costs depend on complexity — a simple dashboard takes 2-4 weeks, a full-featured interactive tool with multiple views and real-time updates takes 6-10 weeks. Rust and Go TUIs take slightly longer but produce superior performance.",
+          "TUI frameworks are free and open-source. Development costs depend on complexity: a simple dashboard takes 2-4 weeks, a full-featured interactive tool with multiple views and real-time updates takes 6-10 weeks. Rust and Go TUIs take slightly longer but produce superior performance.",
       },
       {
-        question: "Ratatui vs Bubble Tea — which TUI framework?",
+        question: "Ratatui vs Bubble Tea: which TUI framework?",
         answer:
-          "Ratatui (Rust) provides maximum performance and compile-time safety — best for system tools and high-throughput dashboards. Bubble Tea (Go) is simpler to learn with an excellent component ecosystem (Charm). Choose based on your team's language preference.",
+          "Ratatui (Rust) provides maximum performance and compile-time safety: best for system tools and high-throughput dashboards. Bubble Tea (Go) is simpler to learn with an excellent component ecosystem (Charm). Choose based on your team's language preference.",
       },
       {
         question: "When should I build a TUI vs a web dashboard?",
@@ -10190,7 +10191,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Give AI agents tools, resources, and context",
     description:
-      "Model Context Protocol (MCP) lets you expose your data and actions to AI assistants like Claude — we build custom MCP servers that connect your database, APIs, and workflows to AI agents with proper auth and access control.",
+      "Model Context Protocol (MCP) lets you expose your data and actions to AI assistants like Claude: we build custom MCP servers that connect your database, APIs, and workflows to AI agents with proper auth and access control.",
     accentColor: "amber",
     visualizationKey: "mcp",
     logo: null,
@@ -10206,43 +10207,43 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Shield",
         title: "Auth & access control",
         description:
-          "OAuth 2.1 and API key auth for MCP servers — AI agents authenticate like any other client.",
+          "OAuth 2.1 and API key auth for MCP servers: AI agents authenticate like any other client.",
       },
       {
         icon: "Code2",
         title: "TypeScript SDK",
         description:
-          "Anthropic's official MCP SDK for TypeScript — typed tool definitions, request handlers, and transport layers.",
+          "Anthropic's official MCP SDK for TypeScript: typed tool definitions, request handlers, and transport layers.",
       },
       {
         icon: "Database",
         title: "Database access",
         description:
-          "Query your database via MCP tools — let AI assistants read schema, run safe queries, and summarise data.",
+          "Query your database via MCP tools: let AI assistants read schema, run safe queries, and summarise data.",
       },
       {
         icon: "Workflow",
         title: "Workflow automation",
         description:
-          "Trigger business logic from AI conversations — CRM updates, ticket creation, and notifications via MCP tools.",
+          "Trigger business logic from AI conversations: CRM updates, ticket creation, and notifications via MCP tools.",
       },
       {
         icon: "Globe",
         title: "Remote & stdio transport",
         description:
-          "Serve MCP over HTTP/SSE for remote access or stdio for local integrations — flexible deployment options.",
+          "Serve MCP over HTTP/SSE for remote access or stdio for local integrations: flexible deployment options.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "rest-api" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Model Context Protocol (MCP) is an open standard for connecting AI assistants to external data sources, tools, and workflows. MCP servers expose callable tools (actions) and readable resources (data) that AI clients like Claude, Cursor, and Windsurf can use to interact with your systems.\n\nWe build custom MCP servers that connect your database, APIs, internal tools, and business workflows to AI agents — with proper authentication (OAuth 2.1), access control, and audit logging. MCP turns your existing infrastructure into AI-accessible capabilities.",
+      "Model Context Protocol (MCP) is an open standard for connecting AI assistants to external data sources, tools, and workflows. MCP servers expose callable tools (actions) and readable resources (data) that AI clients like Claude, Cursor, and Windsurf can use to interact with your systems.\n\nWe build custom MCP servers that connect your database, APIs, internal tools, and business workflows to AI agents: with proper authentication (OAuth 2.1), access control, and audit logging. MCP turns your existing infrastructure into AI-accessible capabilities.",
     challenges: [
       {
         title: "Tool design for AI agents",
         description:
-          "AI agents interact differently than humans — tool descriptions, parameter naming, and response formatting must be optimized for LLM understanding, not just human readability.",
+          "AI agents interact differently than humans: tool descriptions, parameter naming, and response formatting must be optimized for LLM understanding, not just human readability.",
       },
       {
         title: "Security and access control",
@@ -10259,17 +10260,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Write clear tool descriptions",
         detail:
-          "Tool names and descriptions are your API surface for AI agents — clear, specific descriptions with example inputs dramatically improve agent success rates.",
+          "Tool names and descriptions are your API surface for AI agents: clear, specific descriptions with example inputs dramatically improve agent success rates.",
       },
       {
         tip: "Implement OAuth 2.1 for remote servers",
         detail:
-          "Remote MCP servers should use OAuth 2.1 authentication — AI clients authenticate like any other API client with proper scopes and token management.",
+          "Remote MCP servers should use OAuth 2.1 authentication: AI clients authenticate like any other API client with proper scopes and token management.",
       },
       {
         tip: "Return structured, concise responses",
         detail:
-          "MCP tool responses are consumed by LLMs. Return structured data with clear labels — avoid dumping raw database rows or verbose error messages.",
+          "MCP tool responses are consumed by LLMs. Return structured data with clear labels: avoid dumping raw database rows or verbose error messages.",
       },
     ],
     usefulLinks: [
@@ -10298,12 +10299,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does MCP server development cost?",
         answer:
-          "MCP SDKs are free and open-source. A basic MCP server with a few tools takes 1-2 weeks. A comprehensive server with auth, database access, and workflow automation takes 4-8 weeks. Running costs depend on your hosting — MCP servers are lightweight Node.js or Python services.",
+          "MCP SDKs are free and open-source. A basic MCP server with a few tools takes 1-2 weeks. A comprehensive server with auth, database access, and workflow automation takes 4-8 weeks. Running costs depend on your hosting: MCP servers are lightweight Node.js or Python services.",
       },
       {
-        question: "MCP vs custom API — why use MCP?",
+        question: "MCP vs custom API: why use MCP?",
         answer:
-          "MCP provides a standardized protocol that works with any AI client (Claude, Cursor, Windsurf, etc.) without building custom integrations for each. Build one MCP server, and every AI tool can use it — similar to how REST APIs standardized web service communication.",
+          "MCP provides a standardized protocol that works with any AI client (Claude, Cursor, Windsurf, etc.) without building custom integrations for each. Build one MCP server, and every AI tool can use it: similar to how REST APIs standardized web service communication.",
       },
       {
         question: "Which AI tools support MCP?",
@@ -10324,7 +10325,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "full-stack",
     tagline: "Full-stack Svelte with adapters for every target",
     description:
-      "SvelteKit is the official Svelte meta-framework — file-based routing, server-only load functions, progressive form actions, and adapters that deploy to Vercel, Cloudflare Workers, Node, or static hosting. Fast by default, flexible by design.",
+      "SvelteKit is the official Svelte meta-framework: file-based routing, server-only load functions, progressive form actions, and adapters that deploy to Vercel, Cloudflare Workers, Node, or static hosting. Fast by default, flexible by design.",
     accentColor: "orange",
     visualizationKey: "sveltekit",
     logo: "/logos/services/svelte.svg",
@@ -10333,19 +10334,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Route",
         title: "File-based routing",
         description:
-          "Routes defined by the filesystem — +page.svelte, +layout.svelte, +error.svelte. No config, no magic strings.",
+          "Routes defined by the filesystem: +page.svelte, +layout.svelte, +error.svelte. No config, no magic strings.",
       },
       {
         icon: "Server",
         title: "Server load functions",
         description:
-          "+page.server.ts load functions run exclusively on the server — fetch data, read databases, no leaking secrets.",
+          "+page.server.ts load functions run exclusively on the server: fetch data, read databases, no leaking secrets.",
       },
       {
         icon: "MousePointerClick",
         title: "Progressive form actions",
         description:
-          "Form actions handle mutations on the server with progressive enhancement — works without JS, enhanced when available.",
+          "Form actions handle mutations on the server with progressive enhancement: works without JS, enhanced when available.",
       },
       {
         icon: "CloudUpload",
@@ -10357,13 +10358,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Streaming & defer",
         description:
-          "Stream slow data with SvelteKit's `defer` — fast shell renders immediately while slow promises resolve.",
+          "Stream slow data with SvelteKit's `defer`: fast shell renders immediately while slow promises resolve.",
       },
       {
         icon: "Shield",
         title: "Hooks & middleware",
         description:
-          "Server hooks for auth, logging, and request transformation — handle API requests and page loads in one place.",
+          "Server hooks for auth, logging, and request transformation: handle API requests and page loads in one place.",
       },
     ],
     subTechs: [
@@ -10373,7 +10374,7 @@ export const servicesConfig: ServiceConfig[] = [
       { slug: "better-auth" },
     ],
     overview:
-      "SvelteKit is the official full-stack framework for Svelte — providing file-based routing, server-only load functions, progressive form actions, and deployment adapters for every major platform. It compiles your Svelte components to minimal JavaScript while giving you a production-ready framework with SSR, streaming, code splitting, and edge deployment out of the box. SvelteKit's progressive enhancement philosophy means forms and navigation work without JavaScript and enhance when available. Combined with Svelte 5's runes for reactivity and adapters for Vercel, Cloudflare Workers, Node, or static output, SvelteKit is the complete platform for building fast, accessible web applications.",
+      "SvelteKit is the official full-stack framework for Svelte: providing file-based routing, server-only load functions, progressive form actions, and deployment adapters for every major platform. It compiles your Svelte components to minimal JavaScript while giving you a production-ready framework with SSR, streaming, code splitting, and edge deployment out of the box. SvelteKit's progressive enhancement philosophy means forms and navigation work without JavaScript and enhance when available. Combined with Svelte 5's runes for reactivity and adapters for Vercel, Cloudflare Workers, Node, or static output, SvelteKit is the complete platform for building fast, accessible web applications.",
     challenges: [
       {
         title: "Load function data flow patterns",
@@ -10388,7 +10389,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Adapter-specific deployment gotchas",
         description:
-          "Each deployment adapter (Vercel, Cloudflare, Node, static) has different capabilities and limitations — edge function size limits, environment variable access, and API behavior vary per target.",
+          "Each deployment adapter (Vercel, Cloudflare, Node, static) has different capabilities and limitations: edge function size limits, environment variable access, and API behavior vary per target.",
       },
       {
         title: "Svelte 5 runes + SvelteKit integration",
@@ -10405,7 +10406,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage form actions for mutations",
         detail:
-          "SvelteKit's form actions handle POST requests with progressive enhancement — they work without JavaScript and enhance with client-side behavior. Prefer them over manual fetch() for form submissions.",
+          "SvelteKit's form actions handle POST requests with progressive enhancement: they work without JavaScript and enhance with client-side behavior. Prefer them over manual fetch() for form submissions.",
       },
       {
         tip: "Use streaming for slow data",
@@ -10415,7 +10416,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Implement hooks for cross-cutting concerns",
         detail:
-          "SvelteKit's handle hook in hooks.server.ts runs on every request — use it for auth checks, request logging, security headers, and locale detection in one centralized location.",
+          "SvelteKit's handle hook in hooks.server.ts runs on every request: use it for auth checks, request logging, security headers, and locale detection in one centralized location.",
       },
     ],
     usefulLinks: [
@@ -10442,7 +10443,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "SvelteKit vs. Next.js — which should I use?",
+        question: "SvelteKit vs. Next.js: which should I use?",
         answer:
           "SvelteKit produces smaller bundles and faster runtime performance thanks to Svelte's compiler. Next.js has a larger ecosystem, more third-party integrations, and React Server Components. Choose SvelteKit for performance and simplicity; Next.js for ecosystem breadth.",
       },
@@ -10459,7 +10460,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can I deploy SvelteKit to Cloudflare Workers?",
         answer:
-          "Yes — SvelteKit has an official adapter-cloudflare that deploys to Cloudflare Workers and Pages. It supports KV storage, Durable Objects, and D1 databases through platform bindings.",
+          "Yes. SvelteKit has an official adapter-cloudflare that deploys to Cloudflare Workers and Pages. It supports KV storage, Durable Objects, and D1 databases through platform bindings.",
       },
     ],
     quickstart: "npx sv create my-app\ncd my-app\nnpm install\nnpm run dev",
@@ -10476,7 +10477,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "S3-compatible object storage with zero egress fees",
     description:
-      "Cloudflare R2 is an S3-compatible object storage service with no egress charges — making it dramatically cheaper than AWS S3 for high-bandwidth workloads. We use R2 for media storage, backups, and large-scale asset delivery.",
+      "Cloudflare R2 is an S3-compatible object storage service with no egress charges: making it dramatically cheaper than AWS S3 for high-bandwidth workloads. We use R2 for media storage, backups, and large-scale asset delivery.",
     accentColor: "amber",
     visualizationKey: "cloudflare-r2",
     logo: "/logos/services/cloudflare-workers.svg",
@@ -10485,49 +10486,49 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "CloudUpload",
         title: "Zero egress fees",
         description:
-          "Data transfer out of R2 is free — no surprise bandwidth bills when your content gets popular.",
+          "Data transfer out of R2 is free: no surprise bandwidth bills when your content gets popular.",
       },
       {
         icon: "Globe",
         title: "S3-compatible API",
         description:
-          "Drop-in replacement for AWS S3 — existing SDKs (aws-sdk, boto3) work with R2 via endpoint override.",
+          "Drop-in replacement for AWS S3: existing SDKs (aws-sdk, boto3) work with R2 via endpoint override.",
       },
       {
         icon: "Shield",
         title: "Presigned URLs",
         description:
-          "Time-limited presigned URLs for secure direct uploads and downloads — clients never see your credentials.",
+          "Time-limited presigned URLs for secure direct uploads and downloads: clients never see your credentials.",
       },
       {
         icon: "Zap",
         title: "R2 + Workers binding",
         description:
-          "Access R2 directly from Cloudflare Workers via native bindings — no HTTP round-trip, no auth headers.",
+          "Access R2 directly from Cloudflare Workers via native bindings: no HTTP round-trip, no auth headers.",
       },
       {
         icon: "Globe",
         title: "Custom domain delivery",
         description:
-          "Serve R2 assets from your own domain via Cloudflare's CDN — cached at 300+ edge locations worldwide.",
+          "Serve R2 assets from your own domain via Cloudflare's CDN: cached at 300+ edge locations worldwide.",
       },
       {
         icon: "Layers",
         title: "Lifecycle rules",
         description:
-          "Automatic object expiry and class transitions — clean up temp uploads and archive old data on a schedule.",
+          "Automatic object expiry and class transitions: clean up temp uploads and archive old data on a schedule.",
       },
     ],
     subTechs: [{ slug: "cloudflare-workers" }, { slug: "s3" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Cloudflare R2 is an S3-compatible object storage service with a game-changing pricing model — zero egress fees. Every byte of data transferred out of R2 is free, making it dramatically cheaper than AWS S3 for high-bandwidth workloads like media delivery, CDN origins, and large file distribution.\n\nR2 uses the same S3 API, so existing AWS SDKs (aws-sdk, boto3) work with a simple endpoint override. It integrates natively with Cloudflare Workers via bindings (no HTTP overhead), supports presigned URLs for secure uploads, and serves assets through Cloudflare's CDN at 300+ edge locations.",
+      "Cloudflare R2 is an S3-compatible object storage service with a game-changing pricing model: zero egress fees. Every byte of data transferred out of R2 is free, making it dramatically cheaper than AWS S3 for high-bandwidth workloads like media delivery, CDN origins, and large file distribution.\n\nR2 uses the same S3 API, so existing AWS SDKs (aws-sdk, boto3) work with a simple endpoint override. It integrates natively with Cloudflare Workers via bindings (no HTTP overhead), supports presigned URLs for secure uploads, and serves assets through Cloudflare's CDN at 300+ edge locations.",
     challenges: [
       {
         title: "Feature parity with S3",
         description:
-          "R2 doesn't support all S3 features — no object lock, limited event notifications, and no storage class tiering. Evaluate whether R2's feature set covers your specific requirements.",
+          "R2 doesn't support all S3 features: no object lock, limited event notifications, and no storage class tiering. Evaluate whether R2's feature set covers your specific requirements.",
       },
       {
         title: "Multi-region write strategy",
@@ -10537,24 +10538,24 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Migration from S3",
         description:
-          "Migrating large datasets from S3 to R2 requires careful planning — tools like rclone can sync buckets, but timing the DNS cutover to avoid downtime requires coordination.",
+          "Migrating large datasets from S3 to R2 requires careful planning: tools like rclone can sync buckets, but timing the DNS cutover to avoid downtime requires coordination.",
       },
     ],
     bestPractices: [
       {
         tip: "Use Workers bindings for zero-latency access",
         detail:
-          "Access R2 directly from Cloudflare Workers via native bindings — no HTTP round-trip, no auth headers, no SDK initialization.",
+          "Access R2 directly from Cloudflare Workers via native bindings: no HTTP round-trip, no auth headers, no SDK initialization.",
       },
       {
         tip: "Serve assets through a custom domain",
         detail:
-          "Configure a custom domain on R2 to serve files through Cloudflare's CDN — cached at 300+ edge locations with your own domain name.",
+          "Configure a custom domain on R2 to serve files through Cloudflare's CDN: cached at 300+ edge locations with your own domain name.",
       },
       {
         tip: "Use presigned URLs for browser uploads",
         detail:
-          "Generate presigned URLs server-side and let clients upload directly to R2 — same pattern as S3, but with zero egress cost on downloads.",
+          "Generate presigned URLs server-side and let clients upload directly to R2: same pattern as S3, but with zero egress cost on downloads.",
       },
     ],
     usefulLinks: [
@@ -10583,17 +10584,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "How much does Cloudflare R2 cost?",
         answer:
-          "R2 storage costs $0.015/GB/month. Class A operations (writes) cost $4.50 per million. Class B operations (reads) cost $0.36 per million. Egress (data transfer out) is completely free — this is R2's key advantage over AWS S3.",
+          "R2 storage costs $0.015/GB/month. Class A operations (writes) cost $4.50 per million. Class B operations (reads) cost $0.36 per million. Egress (data transfer out) is completely free: this is R2's key advantage over AWS S3.",
       },
       {
-        question: "Cloudflare R2 vs AWS S3 — which should I use?",
+        question: "Cloudflare R2 vs AWS S3: which should I use?",
         answer:
           "R2 is ideal for bandwidth-heavy workloads (media, downloads, CDN origins) where egress costs dominate. S3 offers more features (Glacier, analytics, Lambda triggers) and deeper AWS integration. For most web applications serving static assets, R2 saves significant money.",
       },
       {
         question: "Is R2 fully S3-compatible?",
         answer:
-          "R2 supports the core S3 API — GetObject, PutObject, DeleteObject, multipart upload, presigned URLs, and bucket policies. Most S3 SDKs work with R2 by changing the endpoint URL. Some advanced S3 features (Object Lock, S3 Select) are not yet supported.",
+          "R2 supports the core S3 API: GetObject, PutObject, DeleteObject, multipart upload, presigned URLs, and bucket policies. Most S3 SDKs work with R2 by changing the endpoint URL. Some advanced S3 features (Object Lock, S3 Select) are not yet supported.",
       },
     ],
     quickstart:
@@ -10630,7 +10631,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Headless with Hydrogen",
         description:
-          "Blazing-fast headless storefronts using Shopify Hydrogen and Oxygen — React Server Components, streaming SSR, and full Storefront API access.",
+          "Blazing-fast headless storefronts using Shopify Hydrogen and Oxygen: React Server Components, streaming SSR, and full Storefront API access.",
       },
       {
         icon: "Globe",
@@ -10642,7 +10643,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "RefreshCw",
         title: "Migrations & re-platforming",
         description:
-          "Seamless migration from WooCommerce, Magento, or BigCommerce to Shopify — product data, customers, orders, and SEO redirects preserved.",
+          "Seamless migration from WooCommerce, Magento, or BigCommerce to Shopify: product data, customers, orders, and SEO redirects preserved.",
       },
       {
         icon: "BarChart3",
@@ -10655,7 +10656,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "cms",
     targetAudience: "businesses",
     overview:
-      "Shopify is the world's most popular e-commerce platform, powering over four million online stores — from scrappy DTC startups to billion-dollar brands like Allbirds, Gymshark, and Heinz. It handles product management, inventory, payments, shipping, and taxes out of the box, letting merchants focus on selling rather than infrastructure. With Online Store 2.0, Shopify introduced a flexible section-based theme architecture that gives merchants granular control over every page without touching code.\n\nFor developers, Shopify offers two main build paths. The traditional route uses Liquid (Shopify's templating language) combined with JSON templates and metafields for theme development. The modern route is Hydrogen — Shopify's React-based headless framework built on Remix, deployed to Shopify's Oxygen hosting — which unlocks full creative control with React Server Components, streaming SSR, and the Storefront API.\n\nGetting Shopify right — especially at scale — is harder than it looks. Theme customization requires deep Liquid knowledge, headless builds demand full-stack React expertise, and performance optimization across checkout, cart, and collection pages requires e-commerce experience. A Major builds high-converting Shopify experiences, from custom themes and apps to headless Hydrogen storefronts, so your store loads fast and sells effectively.",
+      "Shopify is the world's most popular e-commerce platform, powering over four million online stores: from scrappy DTC startups to billion-dollar brands like Allbirds, Gymshark, and Heinz. It handles product management, inventory, payments, shipping, and taxes out of the box, letting merchants focus on selling rather than infrastructure. With Online Store 2.0, Shopify introduced a flexible section-based theme architecture that gives merchants granular control over every page without touching code.\n\nFor developers, Shopify offers two main build paths. The traditional route uses Liquid (Shopify's templating language) combined with JSON templates and metafields for theme development. The modern route is Hydrogen: Shopify's React-based headless framework built on Remix, deployed to Shopify's Oxygen hosting, which unlocks full creative control with React Server Components, streaming SSR, and the Storefront API.\n\nGetting Shopify right, especially at scale: is harder than it looks. Theme customization requires deep Liquid knowledge, headless builds demand full-stack React expertise, and performance optimization across checkout, cart, and collection pages requires e-commerce experience. A Major builds high-converting Shopify experiences, from custom themes and apps to headless Hydrogen storefronts, so your store loads fast and sells effectively.",
     challenges: [
       {
         title: "Liquid templating complexity",
@@ -10665,7 +10666,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Headless architecture decisions",
         description:
-          "Going headless with Hydrogen unlocks creative freedom but introduces complexity — managing the Storefront API, cart state, customer auth, checkout redirects, and preview environments requires careful full-stack planning.",
+          "Going headless with Hydrogen unlocks creative freedom but introduces complexity: managing the Storefront API, cart state, customer auth, checkout redirects, and preview environments requires careful full-stack planning.",
       },
       {
         title: "Checkout customization limits",
@@ -10682,7 +10683,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Online Store 2.0 architecture",
         detail:
-          "Build with JSON templates, sections everywhere, and metafields — this gives merchants maximum customization control in the theme editor without developer involvement for every change.",
+          "Build with JSON templates, sections everywhere, and metafields: this gives merchants maximum customization control in the theme editor without developer involvement for every change.",
       },
       {
         tip: "Optimize Liquid render performance",
@@ -10692,12 +10693,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage Shopify Functions for backend logic",
         detail:
-          "Use Shopify Functions (written in Rust/Wasm) for discounts, shipping rates, and payment customizations instead of external API calls — they run at the edge with sub-5ms execution.",
+          "Use Shopify Functions (written in Rust/Wasm) for discounts, shipping rates, and payment customizations instead of external API calls: they run at the edge with sub-5ms execution.",
       },
       {
         tip: "Implement structured data for SEO",
         detail:
-          "Add JSON-LD markup for Product, BreadcrumbList, Organization, and FAQ schemas — this powers rich snippets in Google and drives higher click-through rates from search results.",
+          "Add JSON-LD markup for Product, BreadcrumbList, Organization, and FAQ schemas: this powers rich snippets in Google and drives higher click-through rates from search results.",
       },
     ],
     usefulLinks: [
@@ -10724,19 +10725,19 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Shopify vs WooCommerce — which is better?",
+        question: "Shopify vs WooCommerce: which is better?",
         answer:
-          "Shopify is a fully hosted platform — it handles security, uptime, and updates. WooCommerce is a WordPress plugin that offers more customization but requires you to manage hosting, security patches, and PCI compliance. For most businesses, Shopify is faster to launch and cheaper to maintain; WooCommerce suits teams with in-house developers who need total control.",
+          "Shopify is a fully hosted platform: it handles security, uptime, and updates. WooCommerce is a WordPress plugin that offers more customization but requires you to manage hosting, security patches, and PCI compliance. For most businesses, Shopify is faster to launch and cheaper to maintain; WooCommerce suits teams with in-house developers who need total control.",
       },
       {
         question: "How much does Shopify cost?",
         answer:
-          "Shopify plans range from $39/month (Basic) to $399/month (Advanced). Shopify Plus — the enterprise tier — starts at $2,300/month. Transaction fees are 2.9% + 30¢ on Basic (lower on higher plans) using Shopify Payments. Additional costs include premium themes ($180–$350 one-time), apps ($5–$100+/month each), and custom development.",
+          "Shopify plans range from $39/month (Basic) to $399/month (Advanced). Shopify Plus , the enterprise tier , starts at $2,300/month. Transaction fees are 2.9% + 30¢ on Basic (lower on higher plans) using Shopify Payments. Additional costs include premium themes ($180–$350 one-time), apps ($5–$100+/month each), and custom development.",
       },
       {
         question: "Can I migrate from WooCommerce to Shopify?",
         answer:
-          "Yes. Products, customers, orders, and blog content can be migrated using Shopify's built-in importer or tools like LitExtension. The critical part is mapping URL structures and setting up 301 redirects to preserve SEO rankings — this is where most DIY migrations go wrong. A Major handles end-to-end migrations with zero SEO loss.",
+          "Yes. Products, customers, orders, and blog content can be migrated using Shopify's built-in importer or tools like LitExtension. The critical part is mapping URL structures and setting up 301 redirects to preserve SEO rankings: this is where most DIY migrations go wrong. A Major handles end-to-end migrations with zero SEO loss.",
       },
       {
         question: "What is Shopify Hydrogen?",
@@ -10757,7 +10758,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "cms",
     tagline: "Visual web development meets production-grade publishing",
     description:
-      "Webflow lets designers build responsive, production-ready websites visually — no code required. We help businesses maximize Webflow's potential and migrate to custom code when they outgrow it.",
+      "Webflow lets designers build responsive, production-ready websites visually: no code required. We help businesses maximize Webflow's potential and migrate to custom code when they outgrow it.",
     accentColor: "blue",
     visualizationKey: "webflow",
     logo: "/logos/services/webflow.svg",
@@ -10766,7 +10767,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Layout",
         title: "Visual site development",
         description:
-          "Pixel-perfect responsive websites built in Webflow's visual editor — semantic HTML, clean CSS, and fast load times without writing code.",
+          "Pixel-perfect responsive websites built in Webflow's visual editor: semantic HTML, clean CSS, and fast load times without writing code.",
       },
       {
         icon: "Database",
@@ -10784,7 +10785,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Code",
         title: "Custom code migration",
         description:
-          "When you outgrow Webflow — migrating to Next.js, Astro, or a headless CMS while preserving your design, content, and SEO rankings.",
+          "When you outgrow Webflow: migrating to Next.js, Astro, or a headless CMS while preserving your design, content, and SEO rankings.",
       },
       {
         icon: "Zap",
@@ -10796,14 +10797,14 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Search",
         title: "SEO optimization",
         description:
-          "On-page SEO setup — meta tags, Open Graph, canonical URLs, XML sitemaps, alt text, and structured data for maximum organic visibility.",
+          "On-page SEO setup: meta tags, Open Graph, canonical URLs, XML sitemaps, alt text, and structured data for maximum organic visibility.",
       },
     ],
     subTechs: [{ slug: "react" }, { slug: "nextjs" }],
     pageType: "cms",
     targetAudience: "businesses",
     overview:
-      "Webflow bridges the gap between design and development by letting designers build responsive, production-ready websites in a visual editor that generates clean, semantic HTML and CSS. It combines the creative freedom of tools like Figma with the publishing power of a CMS — and it's become the go-to platform for marketing sites, portfolios, and content-driven businesses that want to move fast without depending on developers for every change.\n\nWebflow's CMS is surprisingly capable: collections, reference fields, conditional visibility, and dynamic pages let you build complex content architectures visually. Its hosting is fast (backed by Fastly CDN), and the visual editor empowers marketing teams to update content, duplicate pages, and launch campaigns without code changes. For many businesses, Webflow is the right choice — it's faster than custom code and more capable than Squarespace.\n\nBut Webflow has real limits. Complex application logic, user authentication, dynamic server-side functionality, multi-language sites (without expensive workarounds), and large-scale e-commerce all push Webflow past its sweet spot. When you hit those walls, A Major helps you migrate to a custom-built solution — Next.js, Astro, or a headless CMS — while preserving your design and SEO equity. We also build Webflow sites for businesses that fit the platform perfectly.",
+      "Webflow bridges the gap between design and development by letting designers build responsive, production-ready websites in a visual editor that generates clean, semantic HTML and CSS. It combines the creative freedom of tools like Figma with the publishing power of a CMS, and it's become the go-to platform for marketing sites, portfolios, and content-driven businesses that want to move fast without depending on developers for every change.\n\nWebflow's CMS is surprisingly capable: collections, reference fields, conditional visibility, and dynamic pages let you build complex content architectures visually. Its hosting is fast (backed by Fastly CDN), and the visual editor empowers marketing teams to update content, duplicate pages, and launch campaigns without code changes. For many businesses, Webflow is the right choice , it's faster than custom code and more capable than Squarespace.\n\nBut Webflow has real limits. Complex application logic, user authentication, dynamic server-side functionality, multi-language sites (without expensive workarounds), and large-scale e-commerce all push Webflow past its sweet spot. When you hit those walls, A Major helps you migrate to a custom-built solution , Next.js, Astro, or a headless CMS, while preserving your design and SEO equity. We also build Webflow sites for businesses that fit the platform perfectly.",
     challenges: [
       {
         title: "Knowing when to leave Webflow",
@@ -10813,7 +10814,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "CMS scalability constraints",
         description:
-          "Webflow CMS has hard limits — 10,000 items per collection, 20 collection lists per page, and limited relational querying. Data-heavy sites hit these ceilings faster than expected.",
+          "Webflow CMS has hard limits: 10,000 items per collection, 20 collection lists per page, and limited relational querying. Data-heavy sites hit these ceilings faster than expected.",
       },
       {
         title: "SEO-safe migration to custom code",
@@ -10830,12 +10831,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Client-First or Lumos naming conventions",
         detail:
-          "Adopt a consistent class naming methodology like Client-First from Finsweet — it keeps Webflow projects maintainable, shareable between designers, and prevents CSS specificity nightmares.",
+          "Adopt a consistent class naming methodology like Client-First from Finsweet: it keeps Webflow projects maintainable, shareable between designers, and prevents CSS specificity nightmares.",
       },
       {
         tip: "Structure CMS collections for flexibility",
         detail:
-          "Plan your CMS architecture before building — use reference fields and multi-reference fields to create relationships between collections. Restructuring later is painful in Webflow.",
+          "Plan your CMS architecture before building: use reference fields and multi-reference fields to create relationships between collections. Restructuring later is painful in Webflow.",
       },
       {
         tip: "Optimize images and fonts",
@@ -10889,7 +10890,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can Webflow sites rank well on Google?",
         answer:
-          "Yes — Webflow generates clean, semantic HTML with fast CDN hosting. It supports custom meta tags, Open Graph, sitemaps, canonical URLs, and 301 redirects. Webflow sites regularly rank well when properly optimized. The platform's page speed is competitive with hand-coded sites.",
+          "Yes. Webflow generates clean, semantic HTML with fast CDN hosting. It supports custom meta tags, Open Graph, sitemaps, canonical URLs, and 301 redirects. Webflow sites regularly rank well when properly optimized. The platform's page speed is competitive with hand-coded sites.",
       },
     ],
     docsUrl: "https://developers.webflow.com/",
@@ -10902,7 +10903,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "backend",
     tagline: "Google's app development platform for web and mobile",
     description:
-      "Firebase provides a complete backend-as-a-service — real-time databases, authentication, cloud functions, hosting, and analytics. We build scalable Firebase architectures that keep costs predictable as you grow.",
+      "Firebase provides a complete backend-as-a-service: real-time databases, authentication, cloud functions, hosting, and analytics. We build scalable Firebase architectures that keep costs predictable as you grow.",
     accentColor: "amber",
     visualizationKey: "firebase",
     logo: "/logos/services/firebase.svg",
@@ -10911,44 +10912,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "Firestore & Realtime Database",
         description:
-          "NoSQL document databases with real-time sync, offline support, and automatic scaling — Firestore for complex queries, Realtime Database for low-latency sync.",
+          "NoSQL document databases with real-time sync, offline support, and automatic scaling: Firestore for complex queries, Realtime Database for low-latency sync.",
       },
       {
         icon: "Shield",
         title: "Firebase Authentication",
         description:
-          "Drop-in auth with email/password, phone, Google, Apple, GitHub, and custom providers — including multi-factor auth and anonymous sessions.",
+          "Drop-in auth with email/password, phone, Google, Apple, GitHub, and custom providers: including multi-factor auth and anonymous sessions.",
       },
       {
         icon: "Zap",
         title: "Cloud Functions",
         description:
-          "Serverless functions triggered by Firestore writes, Auth events, HTTP requests, or scheduled cron — auto-scaling, zero server management.",
+          "Serverless functions triggered by Firestore writes, Auth events, HTTP requests, or scheduled cron: auto-scaling, zero server management.",
       },
       {
         icon: "Globe",
         title: "Firebase Hosting",
         description:
-          "Global CDN hosting with automatic SSL, preview channels, and one-command deploys — integrated with Cloud Functions for server-rendered pages.",
+          "Global CDN hosting with automatic SSL, preview channels, and one-command deploys: integrated with Cloud Functions for server-rendered pages.",
       },
       {
         icon: "BarChart3",
         title: "Analytics & Crashlytics",
         description:
-          "Free, unlimited analytics for web and mobile — user funnels, retention, crash reports, and performance monitoring out of the box.",
+          "Free, unlimited analytics for web and mobile: user funnels, retention, crash reports, and performance monitoring out of the box.",
       },
       {
         icon: "Bell",
         title: "Cloud Messaging & Remote Config",
         description:
-          "Push notifications via FCM and feature flags via Remote Config — A/B test features and target user segments without app updates.",
+          "Push notifications via FCM and feature flags via Remote Config: A/B test features and target user segments without app updates.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "react" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Firebase is Google's comprehensive app development platform that gives developers a fully managed backend without provisioning servers. At its core are two databases — Cloud Firestore (a flexible NoSQL document database with powerful querying and real-time listeners) and the Realtime Database (an ultra-low-latency JSON tree ideal for presence and live collaboration features). Combined with Firebase Authentication, Cloud Functions, Hosting, Cloud Storage, and Analytics, Firebase provides everything you need to build and scale web and mobile applications.\n\nFirebase excels at rapid prototyping and real-time features. Firestore's real-time listeners push data changes to connected clients instantly — perfect for chat apps, live dashboards, and collaborative tools. The security rules system (a declarative language for Firestore and Storage) lets you enforce authorization without a backend. Cloud Functions run server-side logic in response to database writes, auth events, or HTTP requests, giving you serverless compute when you need it.\n\nThe challenge with Firebase is cost management and architectural decisions at scale. Firestore charges per read, write, and delete — a poorly designed data model can result in massive bills. Denormalization, composite indexes, and query optimization require Firebase-specific expertise. A Major architects Firebase backends that scale predictably, with proper data modeling, security rules, and Cloud Functions patterns that keep your costs in check.",
+      "Firebase is Google's comprehensive app development platform that gives developers a fully managed backend without provisioning servers. At its core are two databases: Cloud Firestore (a flexible NoSQL document database with powerful querying and real-time listeners) and the Realtime Database (an ultra-low-latency JSON tree ideal for presence and live collaboration features). Combined with Firebase Authentication, Cloud Functions, Hosting, Cloud Storage, and Analytics, Firebase provides everything you need to build and scale web and mobile applications.\n\nFirebase excels at rapid prototyping and real-time features. Firestore's real-time listeners push data changes to connected clients instantly: perfect for chat apps, live dashboards, and collaborative tools. The security rules system (a declarative language for Firestore and Storage) lets you enforce authorization without a backend. Cloud Functions run server-side logic in response to database writes, auth events, or HTTP requests, giving you serverless compute when you need it.\n\nThe challenge with Firebase is cost management and architectural decisions at scale. Firestore charges per read, write, and delete: a poorly designed data model can result in massive bills. Denormalization, composite indexes, and query optimization require Firebase-specific expertise. A Major architects Firebase backends that scale predictably, with proper data modeling, security rules, and Cloud Functions patterns that keep your costs in check.",
     challenges: [
       {
         title: "Cost unpredictability at scale",
@@ -10958,12 +10959,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Data modeling for NoSQL",
         description:
-          "Firestore is not a relational database — joins don't exist. You must denormalize data, use subcollections strategically, and design your schema around your query patterns rather than your data relationships.",
+          "Firestore is not a relational database: joins don't exist. You must denormalize data, use subcollections strategically, and design your schema around your query patterns rather than your data relationships.",
       },
       {
         title: "Security rules complexity",
         description:
-          "Firestore security rules are powerful but have a steep learning curve. Rules must cover every collection and document path. A single misconfiguration can expose user data or block legitimate access — and testing rules locally requires the emulator suite.",
+          "Firestore security rules are powerful but have a steep learning curve. Rules must cover every collection and document path. A single misconfiguration can expose user data or block legitimate access, and testing rules locally requires the emulator suite.",
       },
       {
         title: "Vendor lock-in",
@@ -10975,7 +10976,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Design your data model around queries",
         detail:
-          "In Firestore, you query documents — not tables. Structure your collections and subcollections around the exact queries your UI needs. Denormalize aggressively and use Cloud Functions to keep denormalized copies in sync.",
+          "In Firestore, you query documents: not tables. Structure your collections and subcollections around the exact queries your UI needs. Denormalize aggressively and use Cloud Functions to keep denormalized copies in sync.",
       },
       {
         tip: "Use the Firebase Emulator Suite locally",
@@ -10985,12 +10986,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Implement security rules from day one",
         detail:
-          "Never launch with open security rules. Write granular Firestore rules that validate authentication, field types, and ownership. Test rules in the emulator before deploying — production data breaches from open rules are common.",
+          "Never launch with open security rules. Write granular Firestore rules that validate authentication, field types, and ownership. Test rules in the emulator before deploying: production data breaches from open rules are common.",
       },
       {
         tip: "Batch reads and use collection group queries",
         detail:
-          "Minimize Firestore reads by batching, caching results client-side, and using collection group queries to query across subcollections. Each unnecessary read costs money — design your listeners carefully.",
+          "Minimize Firestore reads by batching, caching results client-side, and using collection group queries to query across subcollections. Each unnecessary read costs money: design your listeners carefully.",
       },
     ],
     usefulLinks: [
@@ -11017,14 +11018,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Firebase vs Supabase — which should I use?",
+        question: "Firebase vs Supabase: which should I use?",
         answer:
           "Firebase offers mature real-time sync, excellent mobile SDKs, and deep Google Cloud integration. Supabase provides a Postgres database with SQL, row-level security, and an open-source stack. Choose Firebase for real-time-heavy mobile apps; choose Supabase for apps that benefit from relational data and SQL. A Major works with both.",
       },
       {
         question: "Does Firebase scale for production apps?",
         answer:
-          "Yes — Firebase powers apps with millions of users. Firestore auto-scales reads and writes, and Cloud Functions scale to thousands of concurrent invocations. The key is data modeling: a poorly designed Firestore schema costs 10x more at scale than a well-designed one.",
+          "Yes. Firebase powers apps with millions of users. Firestore auto-scales reads and writes, and Cloud Functions scale to thousands of concurrent invocations. The key is data modeling: a poorly designed Firestore schema costs 10x more at scale than a well-designed one.",
       },
       {
         question: "How much does Firebase cost at scale?",
@@ -11066,7 +11067,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Lambda & serverless",
         description:
-          "Event-driven serverless functions with per-millisecond billing, up to 10GB memory, and 15-minute execution — triggered by 200+ AWS event sources.",
+          "Event-driven serverless functions with per-millisecond billing, up to 10GB memory, and 15-minute execution: triggered by 200+ AWS event sources.",
       },
       {
         icon: "HardDrive",
@@ -11078,13 +11079,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Database",
         title: "RDS, Aurora & DynamoDB",
         description:
-          "Managed Postgres, MySQL, and Aurora databases with automatic backups, replicas, and failover — plus DynamoDB for single-digit-millisecond NoSQL.",
+          "Managed Postgres, MySQL, and Aurora databases with automatic backups, replicas, and failover: plus DynamoDB for single-digit-millisecond NoSQL.",
       },
       {
         icon: "Container",
         title: "ECS, EKS & Fargate",
         description:
-          "Container orchestration with ECS (simpler) or EKS (Kubernetes), plus Fargate for serverless containers — no EC2 instance management.",
+          "Container orchestration with ECS (simpler) or EKS (Kubernetes), plus Fargate for serverless containers: no EC2 instance management.",
       },
       {
         icon: "Globe",
@@ -11097,12 +11098,12 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "both",
     overview:
-      "Amazon Web Services is the world's leading cloud platform, commanding roughly a third of the global cloud infrastructure market. With 200+ services spanning compute (EC2, Lambda, Fargate), storage (S3, EBS, EFS), databases (RDS, Aurora, DynamoDB, ElastiCache), networking (VPC, CloudFront, Route 53), AI/ML (SageMaker, Bedrock), and developer tools (CodeBuild, CloudFormation, CDK), AWS can host practically anything — from a static website to a globally distributed microservices architecture.\n\nFor startups and growing companies, AWS offers a compelling mix of free-tier generosity and enterprise-grade reliability. Lambda provides serverless compute with per-millisecond billing. S3 stores data with eleven nines of durability. Aurora delivers MySQL/Postgres performance at a fraction of the cost of commercial databases. Infrastructure as Code with CDK or Terraform turns your cloud architecture into version-controlled, repeatable deployments.\n\nBut AWS's breadth is also its challenge. Choosing between ECS and EKS, RDS and Aurora, ALB and NLB, CloudFormation and CDK — every decision has cost and operational implications. IAM policies, VPC networking, and cost optimization require specialized knowledge. A Major architects AWS infrastructure that's secure, cost-optimized, and operationally maintainable — from initial setup through production scaling.",
+      "Amazon Web Services is the world's leading cloud platform, commanding roughly a third of the global cloud infrastructure market. With 200+ services spanning compute (EC2, Lambda, Fargate), storage (S3, EBS, EFS), databases (RDS, Aurora, DynamoDB, ElastiCache), networking (VPC, CloudFront, Route 53), AI/ML (SageMaker, Bedrock), and developer tools (CodeBuild, CloudFormation, CDK), AWS can host practically anything: from a static website to a globally distributed microservices architecture.\n\nFor startups and growing companies, AWS offers a compelling mix of free-tier generosity and enterprise-grade reliability. Lambda provides serverless compute with per-millisecond billing. S3 stores data with eleven nines of durability. Aurora delivers MySQL/Postgres performance at a fraction of the cost of commercial databases. Infrastructure as Code with CDK or Terraform turns your cloud architecture into version-controlled, repeatable deployments.\n\nBut AWS's breadth is also its challenge. Choosing between ECS and EKS, RDS and Aurora, ALB and NLB, CloudFormation and CDK: every decision has cost and operational implications. IAM policies, VPC networking, and cost optimization require specialized knowledge. A Major architects AWS infrastructure that's secure, cost-optimized, and operationally maintainable: from initial setup through production scaling.",
     challenges: [
       {
         title: "Service selection overwhelm",
         description:
-          "AWS has multiple services for every need — at least three ways to run containers, four database engines, and dozens of storage options. Choosing the right service (and avoiding over-engineering) requires deep AWS experience.",
+          "AWS has multiple services for every need: at least three ways to run containers, four database engines, and dozens of storage options. Choosing the right service (and avoiding over-engineering) requires deep AWS experience.",
       },
       {
         title: "Cost management and optimization",
@@ -11124,7 +11125,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Infrastructure as Code from day one",
         detail:
-          "Define all AWS resources in CDK (TypeScript) or Terraform. Never create production resources via the console — manual changes drift, can't be reviewed, and aren't reproducible across environments.",
+          "Define all AWS resources in CDK (TypeScript) or Terraform. Never create production resources via the console: manual changes drift, can't be reviewed, and aren't reproducible across environments.",
       },
       {
         tip: "Implement a cost monitoring strategy",
@@ -11166,14 +11167,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "AWS vs GCP vs Azure — which should I choose?",
+        question: "AWS vs GCP vs Azure: which should I choose?",
         answer:
           "AWS has the broadest service catalog and largest ecosystem. GCP excels at data analytics (BigQuery) and Kubernetes (GKE). Azure integrates deeply with Microsoft tools (Active Directory, .NET, Teams). For most startups, AWS offers the best combination of documentation, community support, and hiring pool. A Major helps you choose based on your specific stack and team.",
       },
       {
         question: "How do I reduce my AWS bill?",
         answer:
-          "Start with right-sizing — most EC2 instances are over-provisioned. Use Savings Plans (up to 72% off on-demand pricing) for predictable workloads, Spot Instances for batch jobs, and S3 Intelligent Tiering for storage. Review unused resources monthly — orphaned EBS volumes, idle load balancers, and forgotten RDS instances are common cost leaks.",
+          "Start with right-sizing , most EC2 instances are over-provisioned. Use Savings Plans (up to 72% off on-demand pricing) for predictable workloads, Spot Instances for batch jobs, and S3 Intelligent Tiering for storage. Review unused resources monthly , orphaned EBS volumes, idle load balancers, and forgotten RDS instances are common cost leaks.",
       },
       {
         question: "Should I use managed services or self-host on EC2?",
@@ -11200,7 +11201,7 @@ export const servicesConfig: ServiceConfig[] = [
     tagline:
       "Google-scale infrastructure for data, AI, and modern applications",
     description:
-      "Google Cloud Platform combines world-class data analytics, AI/ML capabilities, and fully managed infrastructure. We build on GCP's strengths — Cloud Run, BigQuery, GKE, and Vertex AI — to deliver scalable, cost-efficient solutions.",
+      "Google Cloud Platform combines world-class data analytics, AI/ML capabilities, and fully managed infrastructure. We build on GCP's strengths , Cloud Run, BigQuery, GKE, and Vertex AI , to deliver scalable, cost-efficient solutions.",
     accentColor: "blue",
     visualizationKey: "gcp",
     logo: "/logos/services/google-cloud.svg",
@@ -11209,7 +11210,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Cloud Run",
         description:
-          "Fully managed serverless containers — deploy any Docker image with HTTPS, auto-scaling to zero, and per-second billing. No Kubernetes knowledge required.",
+          "Fully managed serverless containers: deploy any Docker image with HTTPS, auto-scaling to zero, and per-second billing. No Kubernetes knowledge required.",
       },
       {
         icon: "BarChart3",
@@ -11221,19 +11222,19 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Container",
         title: "Google Kubernetes Engine (GKE)",
         description:
-          "The most mature managed Kubernetes — Autopilot mode manages nodes for you, built by the team that created Kubernetes.",
+          "The most mature managed Kubernetes: Autopilot mode manages nodes for you, built by the team that created Kubernetes.",
       },
       {
         icon: "Cpu",
         title: "Vertex AI",
         description:
-          "Unified AI/ML platform — model training, fine-tuning, deployment, and access to Gemini models via API. MLOps pipelines and feature store included.",
+          "Unified AI/ML platform: model training, fine-tuning, deployment, and access to Gemini models via API. MLOps pipelines and feature store included.",
       },
       {
         icon: "Flame",
         title: "Firebase integration",
         description:
-          "Firebase runs on GCP — seamless integration with Cloud Functions (2nd gen), Firestore, Cloud Storage, and Identity Platform for web and mobile apps.",
+          "Firebase runs on GCP: seamless integration with Cloud Functions (2nd gen), Firestore, Cloud Storage, and Identity Platform for web and mobile apps.",
       },
       {
         icon: "Globe",
@@ -11246,12 +11247,12 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "both",
     overview:
-      "Google Cloud Platform brings Google's internal infrastructure — the same systems that power Search, YouTube, and Gmail — to developers and enterprises. While AWS leads in breadth, GCP leads in specific areas: BigQuery is the gold standard for serverless data analytics, GKE is the most mature managed Kubernetes (built by Kubernetes' creators), Cloud Run offers the smoothest serverless container experience, and Vertex AI provides state-of-the-art ML infrastructure including access to Google's Gemini models.\n\nGCP's developer experience is notably streamlined. Cloud Run deploys any Docker container to production with a single command — HTTPS, auto-scaling, custom domains, and per-second billing included. Cloud Build provides CI/CD. Cloud SQL offers managed Postgres and MySQL with automatic backups. And Firebase — which runs on GCP — provides real-time databases, authentication, and hosting for web and mobile apps, all within the same project and billing account.\n\nThe challenge with GCP is a smaller ecosystem compared to AWS — fewer third-party integrations, a smaller talent pool, and less community content. But for teams that prioritize data analytics, Kubernetes, AI/ML, or Firebase, GCP often delivers a better developer experience at a lower price point. A Major architects GCP solutions that leverage these strengths while maintaining portability for multi-cloud futures.",
+      "Google Cloud Platform brings Google's internal infrastructure: the same systems that power Search, YouTube, and Gmail: to developers and enterprises. While AWS leads in breadth, GCP leads in specific areas: BigQuery is the gold standard for serverless data analytics, GKE is the most mature managed Kubernetes (built by Kubernetes' creators), Cloud Run offers the smoothest serverless container experience, and Vertex AI provides state-of-the-art ML infrastructure including access to Google's Gemini models.\n\nGCP's developer experience is notably streamlined. Cloud Run deploys any Docker container to production with a single command: HTTPS, auto-scaling, custom domains, and per-second billing included. Cloud Build provides CI/CD. Cloud SQL offers managed Postgres and MySQL with automatic backups. And Firebase, which runs on GCP: provides real-time databases, authentication, and hosting for web and mobile apps, all within the same project and billing account.\n\nThe challenge with GCP is a smaller ecosystem compared to AWS: fewer third-party integrations, a smaller talent pool, and less community content. But for teams that prioritize data analytics, Kubernetes, AI/ML, or Firebase, GCP often delivers a better developer experience at a lower price point. A Major architects GCP solutions that leverage these strengths while maintaining portability for multi-cloud futures.",
     challenges: [
       {
         title: "Smaller ecosystem than AWS",
         description:
-          "GCP has fewer third-party integrations, less Stack Overflow content, and a smaller talent pool than AWS. Finding GCP-specific expertise — especially for enterprise services — can be harder in some markets.",
+          "GCP has fewer third-party integrations, less Stack Overflow content, and a smaller talent pool than AWS. Finding GCP-specific expertise, especially for enterprise services: can be harder in some markets.",
       },
       {
         title: "IAM and organization structure",
@@ -11278,17 +11279,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use BigQuery for all analytics",
         detail:
-          "Pipe logs, events, and business data into BigQuery early. Its serverless, pay-per-query model means you only pay when you analyze — and its performance on large datasets is unmatched.",
+          "Pipe logs, events, and business data into BigQuery early. Its serverless, pay-per-query model means you only pay when you analyze, and its performance on large datasets is unmatched.",
       },
       {
         tip: "Leverage GKE Autopilot over Standard",
         detail:
-          "GKE Autopilot manages nodes, scaling, and security patches for you. You pay per pod resource request, not per node — eliminating cluster right-sizing headaches and reducing costs.",
+          "GKE Autopilot manages nodes, scaling, and security patches for you. You pay per pod resource request, not per node: eliminating cluster right-sizing headaches and reducing costs.",
       },
       {
         tip: "Set up billing alerts and budgets",
         detail:
-          "GCP billing can surprise you — especially BigQuery on-demand pricing. Set project-level budgets, enable billing export to BigQuery, and review spending weekly with the Billing console.",
+          "GCP billing can surprise you, especially BigQuery on-demand pricing. Set project-level budgets, enable billing export to BigQuery, and review spending weekly with the Billing console.",
       },
     ],
     usefulLinks: [
@@ -11315,7 +11316,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "GCP vs AWS — which should I choose?",
+        question: "GCP vs AWS: which should I choose?",
         answer:
           "Choose GCP if your strengths are in data analytics (BigQuery), Kubernetes (GKE), AI/ML (Vertex AI), or Firebase. Choose AWS for the broadest service catalog, largest community, and deepest third-party integrations. For most startups building with Firebase or Kubernetes, GCP is the natural fit. A Major works with both and helps you choose based on your needs.",
       },
@@ -11343,7 +11344,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "Microsoft's enterprise cloud for hybrid and modern workloads",
     description:
-      "Microsoft Azure integrates deeply with the enterprise ecosystem — Active Directory, .NET, SQL Server, and Microsoft 365. We build Azure solutions for organizations that need enterprise-grade identity, compliance, and hybrid cloud capabilities.",
+      "Microsoft Azure integrates deeply with the enterprise ecosystem: Active Directory, .NET, SQL Server, and Microsoft 365. We build Azure solutions for organizations that need enterprise-grade identity, compliance, and hybrid cloud capabilities.",
     accentColor: "blue",
     visualizationKey: "azure",
     logo: "/logos/services/azure.svg",
@@ -11352,7 +11353,7 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Globe",
         title: "Azure App Service",
         description:
-          "Fully managed PaaS for web apps — deploy .NET, Node.js, Python, or Java with auto-scaling, deployment slots, and built-in CI/CD from GitHub or Azure DevOps.",
+          "Fully managed PaaS for web apps: deploy .NET, Node.js, Python, or Java with auto-scaling, deployment slots, and built-in CI/CD from GitHub or Azure DevOps.",
       },
       {
         icon: "Zap",
@@ -11364,32 +11365,32 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "GitBranch",
         title: "Azure DevOps",
         description:
-          "Complete CI/CD platform — repos, pipelines, boards, artifacts, and test plans in a single integrated suite for enterprise development teams.",
+          "Complete CI/CD platform: repos, pipelines, boards, artifacts, and test plans in a single integrated suite for enterprise development teams.",
       },
       {
         icon: "Database",
         title: "Azure SQL & Cosmos DB",
         description:
-          "Managed SQL Server, Postgres, and MySQL — plus Cosmos DB, a globally distributed multi-model database with single-digit millisecond latency and five consistency models.",
+          "Managed SQL Server, Postgres, and MySQL: plus Cosmos DB, a globally distributed multi-model database with single-digit millisecond latency and five consistency models.",
       },
       {
         icon: "Shield",
         title: "Entra ID (Azure AD)",
         description:
-          "Enterprise identity and access management — SSO, MFA, conditional access policies, and B2B/B2C identity services for applications and APIs.",
+          "Enterprise identity and access management: SSO, MFA, conditional access policies, and B2B/B2C identity services for applications and APIs.",
       },
       {
         icon: "Container",
         title: "AKS & Container Apps",
         description:
-          "Managed Kubernetes (AKS) for complex orchestration, or Azure Container Apps for serverless containers — both with integrated monitoring via Azure Monitor.",
+          "Managed Kubernetes (AKS) for complex orchestration, or Azure Container Apps for serverless containers: both with integrated monitoring via Azure Monitor.",
       },
     ],
     subTechs: [{ slug: "dotnet" }, { slug: "docker" }],
     pageType: "tech",
     targetAudience: "both",
     overview:
-      "Microsoft Azure is the cloud platform of choice for enterprises already invested in the Microsoft ecosystem. With native integration with Active Directory (now Entra ID), Microsoft 365, SQL Server, .NET, and Visual Studio, Azure reduces friction for organizations running Windows workloads, hybrid deployments, and enterprise identity management. It's the second-largest cloud provider globally, and in many enterprise sectors — finance, healthcare, government — it's the default choice.\n\nAzure's strengths extend beyond Microsoft lock-in. Cosmos DB is a genuinely unique globally distributed database with five tunable consistency models and single-digit millisecond reads worldwide. Azure Functions with Durable Functions enable complex stateful serverless workflows. Azure DevOps provides a complete CI/CD suite. And Azure's hybrid story (Azure Arc, Azure Stack) is the strongest in the industry for organizations that need on-premises and cloud workloads under a single control plane.\n\nThe trade-off is developer experience. Azure's portal and CLI can feel heavier than GCP's streamlined tooling or AWS's mature CDK. Documentation quality varies across services. And Azure's naming conventions change frequently (Azure AD became Entra ID, App Insights merged into Azure Monitor). A Major navigates Azure's complexity to build production-grade solutions — from App Service deployments to Cosmos DB architectures to Entra ID authentication flows.",
+      "Microsoft Azure is the cloud platform of choice for enterprises already invested in the Microsoft ecosystem. With native integration with Active Directory (now Entra ID), Microsoft 365, SQL Server, .NET, and Visual Studio, Azure reduces friction for organizations running Windows workloads, hybrid deployments, and enterprise identity management. It's the second-largest cloud provider globally, and in many enterprise sectors: finance, healthcare, government: it's the default choice.\n\nAzure's strengths extend beyond Microsoft lock-in. Cosmos DB is a genuinely unique globally distributed database with five tunable consistency models and single-digit millisecond reads worldwide. Azure Functions with Durable Functions enable complex stateful serverless workflows. Azure DevOps provides a complete CI/CD suite. And Azure's hybrid story (Azure Arc, Azure Stack) is the strongest in the industry for organizations that need on-premises and cloud workloads under a single control plane.\n\nThe trade-off is developer experience. Azure's portal and CLI can feel heavier than GCP's streamlined tooling or AWS's mature CDK. Documentation quality varies across services. And Azure's naming conventions change frequently (Azure AD became Entra ID, App Insights merged into Azure Monitor). A Major navigates Azure's complexity to build production-grade solutions: from App Service deployments to Cosmos DB architectures to Entra ID authentication flows.",
     challenges: [
       {
         title: "Complex naming and service organization",
@@ -11399,7 +11400,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Developer experience gaps",
         description:
-          "Azure's portal is feature-rich but cluttered. The CLI (az) is verbose compared to gcloud. ARM templates are notoriously complex — Bicep improves this significantly but still has a learning curve compared to AWS CDK or Terraform.",
+          "Azure's portal is feature-rich but cluttered. The CLI (az) is verbose compared to gcloud. ARM templates are notoriously complex: Bicep improves this significantly but still has a learning curve compared to AWS CDK or Terraform.",
       },
       {
         title: "Cost visibility and management",
@@ -11416,17 +11417,17 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Bicep instead of ARM templates",
         detail:
-          "Bicep is Azure's domain-specific language for IaC — it compiles to ARM but is dramatically more readable. Alternatively, use Terraform for multi-cloud portability. Never rely on portal-created resources for production.",
+          "Bicep is Azure's domain-specific language for IaC: it compiles to ARM but is dramatically more readable. Alternatively, use Terraform for multi-cloud portability. Never rely on portal-created resources for production.",
       },
       {
         tip: "Leverage Entra ID for all authentication",
         detail:
-          "Use Azure Entra ID (formerly Azure AD) as the identity provider for your apps — SSO, MFA, conditional access, and B2C identity flows. Don't build custom auth when Entra ID handles it at enterprise scale.",
+          "Use Azure Entra ID (formerly Azure AD) as the identity provider for your apps: SSO, MFA, conditional access, and B2C identity flows. Don't build custom auth when Entra ID handles it at enterprise scale.",
       },
       {
         tip: "Choose Cosmos DB consistency models carefully",
         detail:
-          "Cosmos DB offers five consistency levels from strong to eventual. Strong consistency costs 2x the RUs of eventual. Most web apps work well with session consistency — strong enough for user experience, efficient on cost.",
+          "Cosmos DB offers five consistency levels from strong to eventual. Strong consistency costs 2x the RUs of eventual. Most web apps work well with session consistency: strong enough for user experience, efficient on cost.",
       },
       {
         tip: "Use deployment slots for zero-downtime releases",
@@ -11458,7 +11459,7 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Azure vs AWS — which is better for my organization?",
+        question: "Azure vs AWS: which is better for my organization?",
         answer:
           "Azure is the natural choice for organizations using Microsoft 365, Active Directory, SQL Server, or .NET. Its hybrid capabilities (Azure Arc, Stack) are industry-leading. AWS offers a broader service catalog and larger developer community. For greenfield cloud-native projects, AWS often wins; for enterprises extending existing Microsoft investments, Azure is smoother.",
       },
@@ -11470,12 +11471,12 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Is Cosmos DB worth the cost?",
         answer:
-          "Cosmos DB is expensive compared to a single-region database — but it's globally distributed with five consistency models and single-digit millisecond latency. If you need multi-region writes, guaranteed low latency, or a multi-model database, Cosmos DB delivers what no other managed database can. For single-region apps, Azure SQL or Postgres is more cost-effective.",
+          "Cosmos DB is expensive compared to a single-region database, but it's globally distributed with five consistency models and single-digit millisecond latency. If you need multi-region writes, guaranteed low latency, or a multi-model database, Cosmos DB delivers what no other managed database can. For single-region apps, Azure SQL or Postgres is more cost-effective.",
       },
       {
         question: "How does Azure pricing work?",
         answer:
-          "Azure uses pay-as-you-go, reserved instances (1- or 3-year commitments for up to 72% savings), and spot pricing. Costs vary by service — VMs bill per second, Cosmos DB bills per RU/s, Azure SQL bills per DTU or vCore. Azure Hybrid Benefit lets you apply existing Windows Server and SQL Server licenses for additional savings.",
+          "Azure uses pay-as-you-go, reserved instances (1- or 3-year commitments for up to 72% savings), and spot pricing. Costs vary by service: VMs bill per second, Cosmos DB bills per RU/s, Azure SQL bills per DTU or vCore. Azure Hybrid Benefit lets you apply existing Windows Server and SQL Server licenses for additional savings.",
       },
     ],
     quickstart:
@@ -11489,9 +11490,9 @@ export const servicesConfig: ServiceConfig[] = [
     slug: "vercel",
     name: "Vercel",
     category: "tooling",
-    tagline: "The frontend cloud — ship fast, deploy globally",
+    tagline: "The frontend cloud: ship fast, deploy globally",
     description:
-      "Vercel is the platform built for frontend frameworks — instant deployments, edge functions, preview environments, and built-in analytics. We deploy and optimize Next.js and React applications on Vercel for maximum performance.",
+      "Vercel is the platform built for frontend frameworks: instant deployments, edge functions, preview environments, and built-in analytics. We deploy and optimize Next.js and React applications on Vercel for maximum performance.",
     accentColor: "neutral",
     visualizationKey: "vercel",
     logo: "/logos/services/vercel.svg",
@@ -11501,44 +11502,44 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Instant deployments",
         description:
-          "Every git push triggers an automatic build and deploy — production and preview environments with unique URLs for every branch and pull request.",
+          "Every git push triggers an automatic build and deploy: production and preview environments with unique URLs for every branch and pull request.",
       },
       {
         icon: "Globe",
         title: "Edge Functions & Middleware",
         description:
-          "Run code at the edge (300+ locations) with Vercel Edge Functions and Middleware — geo-routing, A/B testing, auth checks, and rewrites with sub-millisecond cold starts.",
+          "Run code at the edge (300+ locations) with Vercel Edge Functions and Middleware: geo-routing, A/B testing, auth checks, and rewrites with sub-millisecond cold starts.",
       },
       {
         icon: "RefreshCw",
         title: "ISR & on-demand revalidation",
         description:
-          "Incremental Static Regeneration serves cached pages instantly and rebuilds them in the background — on-demand revalidation via API for instant content updates.",
+          "Incremental Static Regeneration serves cached pages instantly and rebuilds them in the background: on-demand revalidation via API for instant content updates.",
       },
       {
         icon: "BarChart3",
         title: "Analytics & Speed Insights",
         description:
-          "Real User Monitoring (RUM) built in — Core Web Vitals, page-level performance, and traffic analytics without third-party scripts slowing your site.",
+          "Real User Monitoring (RUM) built in: Core Web Vitals, page-level performance, and traffic analytics without third-party scripts slowing your site.",
       },
       {
         icon: "Eye",
         title: "Preview deployments",
         description:
-          "Every pull request gets a live preview URL — shareable with stakeholders, automatically updated on push, with optional comment integration.",
+          "Every pull request gets a live preview URL: shareable with stakeholders, automatically updated on push, with optional comment integration.",
       },
       {
         icon: "Lock",
         title: "DDoS protection & firewall",
         description:
-          "Enterprise-grade DDoS mitigation, Web Application Firewall (WAF), and bot protection — included on Pro and Enterprise plans.",
+          "Enterprise-grade DDoS mitigation, Web Application Firewall (WAF), and bot protection: included on Pro and Enterprise plans.",
       },
     ],
     subTechs: [{ slug: "nextjs" }, { slug: "react" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Vercel is the deployment platform purpose-built for frontend frameworks — and it's the company behind Next.js, the most popular React framework. Vercel's platform turns every git push into a production deployment: builds are automatic, preview URLs are generated for every branch, and production deploys roll out globally across Vercel's Edge Network in seconds. The developer experience is best-in-class — zero-config deployments, instant rollbacks, and environment variables managed per branch.\n\nVercel's Edge Network is the differentiator. Edge Functions run server-side code at 300+ locations worldwide with near-zero cold starts. Middleware executes before every request — enabling auth checks, geo-routing, A/B tests, and feature flags at the edge. ISR (Incremental Static Regeneration) serves cached pages instantly and rebuilds them in the background, combining the speed of static sites with the freshness of server-rendered content. For Next.js apps, Vercel supports every rendering mode: SSG, SSR, ISR, and the App Router with React Server Components.\n\nVercel's free tier is generous for personal projects, but production teams typically need Pro ($20/user/month) for commercial use, team features, and higher limits. The trade-off is vendor coupling — Next.js features like Middleware, ISR, and Server Actions work best on Vercel, and self-hosting requires more operational effort. A Major deploys and optimizes applications on Vercel, configuring edge caching, ISR strategies, and preview workflows for maximum performance and developer productivity.",
+      "Vercel is the deployment platform purpose-built for frontend frameworks, and it's the company behind Next.js, the most popular React framework. Vercel's platform turns every git push into a production deployment: builds are automatic, preview URLs are generated for every branch, and production deploys roll out globally across Vercel's Edge Network in seconds. The developer experience is best-in-class: zero-config deployments, instant rollbacks, and environment variables managed per branch.\n\nVercel's Edge Network is the differentiator. Edge Functions run server-side code at 300+ locations worldwide with near-zero cold starts. Middleware executes before every request: enabling auth checks, geo-routing, A/B tests, and feature flags at the edge. ISR (Incremental Static Regeneration) serves cached pages instantly and rebuilds them in the background, combining the speed of static sites with the freshness of server-rendered content. For Next.js apps, Vercel supports every rendering mode: SSG, SSR, ISR, and the App Router with React Server Components.\n\nVercel's free tier is generous for personal projects, but production teams typically need Pro ($20/user/month) for commercial use, team features, and higher limits. The trade-off is vendor coupling: Next.js features like Middleware, ISR, and Server Actions work best on Vercel, and self-hosting requires more operational effort. A Major deploys and optimizes applications on Vercel, configuring edge caching, ISR strategies, and preview workflows for maximum performance and developer productivity.",
     challenges: [
       {
         title: "Vendor coupling with Next.js",
@@ -11565,7 +11566,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Maximize ISR and edge caching",
         detail:
-          "Use ISR with on-demand revalidation for content pages — serve from cache instantly and update via webhook when content changes. Configure Cache-Control headers for API routes to leverage Vercel's edge cache.",
+          "Use ISR with on-demand revalidation for content pages: serve from cache instantly and update via webhook when content changes. Configure Cache-Control headers for API routes to leverage Vercel's edge cache.",
       },
       {
         tip: "Use preview deployments for every PR",
@@ -11580,7 +11581,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use Edge Middleware sparingly",
         detail:
-          "Middleware runs on every request — keep it lightweight. Use it for auth checks, redirects, and geo-routing. Move heavy computation to Serverless or Edge Functions instead.",
+          "Middleware runs on every request: keep it lightweight. Use it for auth checks, redirects, and geo-routing. Move heavy computation to Serverless or Edge Functions instead.",
       },
     ],
     usefulLinks: [
@@ -11612,19 +11613,19 @@ export const servicesConfig: ServiceConfig[] = [
           "Vercel Hobby is free for personal, non-commercial projects. Pro is $20/user/month with 1TB bandwidth, 1M function invocations, and higher limits. Enterprise adds SLAs, SSO, and custom limits. Bandwidth overages on Pro cost $40/100GB. For most small-to-medium teams, Pro costs $60–$200/month total.",
       },
       {
-        question: "Vercel vs Netlify — which should I use?",
+        question: "Vercel vs Netlify: which should I use?",
         answer:
-          "Vercel is the best platform for Next.js — it's built by the same team. Netlify is better for static sites, Astro, Hugo, and projects that benefit from Netlify Forms and Identity. Both offer preview deployments and edge functions. Choose Vercel for Next.js/React; Netlify for JAMstack and multi-framework flexibility.",
+          "Vercel is the best platform for Next.js: it's built by the same team. Netlify is better for static sites, Astro, Hugo, and projects that benefit from Netlify Forms and Identity. Both offer preview deployments and edge functions. Choose Vercel for Next.js/React; Netlify for JAMstack and multi-framework flexibility.",
       },
       {
         question: "Can I self-host Next.js instead of using Vercel?",
         answer:
-          "Yes — Next.js runs on any Node.js server, Docker container, or serverless platform. However, features like ISR, Image Optimization, and Middleware require additional configuration when self-hosting. You'll need to set up your own CDN, build pipeline, and preview environments. Vercel handles all of this automatically.",
+          "Yes. Next.js runs on any Node.js server, Docker container, or serverless platform. However, features like ISR, Image Optimization, and Middleware require additional configuration when self-hosting. You'll need to set up your own CDN, build pipeline, and preview environments. Vercel handles all of this automatically.",
       },
       {
         question: "Is Vercel suitable for production enterprise apps?",
         answer:
-          "Yes — Vercel Enterprise includes SLAs (99.99% uptime), SOC 2 compliance, SSO/SAML, audit logs, spend management, and dedicated support. Companies like Washington Post, Under Armour, and HashiCorp run production sites on Vercel Enterprise.",
+          "Yes. Vercel Enterprise includes SLAs (99.99% uptime), SOC 2 compliance, SSO/SAML, audit logs, spend management, and dedicated support. Companies like Washington Post, Under Armour, and HashiCorp run production sites on Vercel Enterprise.",
       },
     ],
     quickstart:
@@ -11640,7 +11641,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "tooling",
     tagline: "The modern web platform for JAMstack and beyond",
     description:
-      "Netlify pioneered the JAMstack movement — combining static sites, serverless functions, and edge computing into a seamless developer workflow. We build and deploy fast, scalable sites on Netlify for teams that value simplicity.",
+      "Netlify pioneered the JAMstack movement: combining static sites, serverless functions, and edge computing into a seamless developer workflow. We build and deploy fast, scalable sites on Netlify for teams that value simplicity.",
     accentColor: "teal",
     visualizationKey: "netlify",
     logo: "/logos/services/netlify.svg",
@@ -11649,31 +11650,31 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Instant builds & deploys",
         description:
-          "Git-triggered builds with atomic deploys, instant rollbacks, and deploy previews for every pull request — zero-downtime deployments every time.",
+          "Git-triggered builds with atomic deploys, instant rollbacks, and deploy previews for every pull request: zero-downtime deployments every time.",
       },
       {
         icon: "Code",
         title: "Serverless Functions",
         description:
-          "AWS Lambda-powered serverless functions with zero configuration — deploy alongside your site, automatic API routing, and background functions for long tasks.",
+          "AWS Lambda-powered serverless functions with zero configuration: deploy alongside your site, automatic API routing, and background functions for long tasks.",
       },
       {
         icon: "Globe",
         title: "Edge Functions",
         description:
-          "Deno-based edge functions running at 300+ locations — transform responses, personalize content, handle auth, and run A/B tests at the edge with TypeScript.",
+          "Deno-based edge functions running at 300+ locations: transform responses, personalize content, handle auth, and run A/B tests at the edge with TypeScript.",
       },
       {
         icon: "FileText",
         title: "Netlify Forms",
         description:
-          "HTML-based form handling — add a netlify attribute to any form and submissions are captured, emailed, and accessible via API. No backend required.",
+          "HTML-based form handling: add a netlify attribute to any form and submissions are captured, emailed, and accessible via API. No backend required.",
       },
       {
         icon: "Shield",
         title: "Netlify Identity",
         description:
-          "Drop-in auth with email/password, magic links, and OAuth providers — JWT-based identity management with role-based access control for gated content.",
+          "Drop-in auth with email/password, magic links, and OAuth providers: JWT-based identity management with role-based access control for gated content.",
       },
       {
         icon: "RefreshCw",
@@ -11686,7 +11687,7 @@ export const servicesConfig: ServiceConfig[] = [
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Netlify helped define the modern JAMstack movement — the architectural approach of pre-rendering static pages, enhancing with JavaScript, and connecting to APIs and serverless functions for dynamic behavior. The platform turns any Git repository into a deployed website: push to main and Netlify builds, deploys, and serves your site on a global CDN with HTTPS, branch previews, and instant rollbacks. It supports virtually every static site generator and frontend framework — Astro, Next.js, Nuxt, SvelteKit, Hugo, Gatsby, and plain HTML.\n\nBeyond static hosting, Netlify provides a serverless backend layer. Serverless Functions (powered by AWS Lambda) deploy alongside your site with zero configuration. Edge Functions (powered by Deno) run at the edge for personalization, auth, and response transforms. Netlify Forms captures submissions from any HTML form without a backend. Netlify Identity provides JWT-based authentication. Together, these features let you build full-featured applications without managing any infrastructure.\n\nNetlify's sweet spot is marketing sites, documentation, blogs, and content-driven applications — projects where build-time rendering, CDN delivery, and simple serverless functions cover the majority of needs. For complex server-side applications, Netlify's serverless model has limits (function execution caps, cold starts, no persistent connections). A Major builds on Netlify when it's the right fit and helps teams evaluate when a more flexible platform is needed.",
+      "Netlify helped define the modern JAMstack movement: the architectural approach of pre-rendering static pages, enhancing with JavaScript, and connecting to APIs and serverless functions for dynamic behavior. The platform turns any Git repository into a deployed website: push to main and Netlify builds, deploys, and serves your site on a global CDN with HTTPS, branch previews, and instant rollbacks. It supports virtually every static site generator and frontend framework: Astro, Next.js, Nuxt, SvelteKit, Hugo, Gatsby, and plain HTML.\n\nBeyond static hosting, Netlify provides a serverless backend layer. Serverless Functions (powered by AWS Lambda) deploy alongside your site with zero configuration. Edge Functions (powered by Deno) run at the edge for personalization, auth, and response transforms. Netlify Forms captures submissions from any HTML form without a backend. Netlify Identity provides JWT-based authentication. Together, these features let you build full-featured applications without managing any infrastructure.\n\nNetlify's sweet spot is marketing sites, documentation, blogs, and content-driven applications: projects where build-time rendering, CDN delivery, and simple serverless functions cover the majority of needs. For complex server-side applications, Netlify's serverless model has limits (function execution caps, cold starts, no persistent connections). A Major builds on Netlify when it's the right fit and helps teams evaluate when a more flexible platform is needed.",
     challenges: [
       {
         title: "Build time limitations",
@@ -11718,7 +11719,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Leverage edge functions for personalization",
         detail:
-          "Use Netlify Edge Functions for geo-based redirects, A/B testing, authentication checks, and response transforms. They run at the edge with Deno — TypeScript, fast cold starts, and access to request geo data.",
+          "Use Netlify Edge Functions for geo-based redirects, A/B testing, authentication checks, and response transforms. They run at the edge with Deno: TypeScript, fast cold starts, and access to request geo data.",
       },
       {
         tip: "Cache aggressively with proper headers",
@@ -11728,7 +11729,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use build plugins for optimization",
         detail:
-          "Netlify Build Plugins automate tasks — lighthouse audits, image optimization, sitemap generation, and cache prewarming run as part of your build pipeline without custom CI scripts.",
+          "Netlify Build Plugins automate tasks: lighthouse audits, image optimization, sitemap generation, and cache prewarming run as part of your build pipeline without custom CI scripts.",
       },
     ],
     usefulLinks: [
@@ -11755,14 +11756,14 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Netlify vs Vercel — which should I use?",
+        question: "Netlify vs Vercel: which should I use?",
         answer:
-          "Vercel is the best platform for Next.js specifically. Netlify is more framework-agnostic — it excels with Astro, Hugo, 11ty, and multi-framework setups. Netlify's built-in Forms and Identity are unique conveniences. Choose Vercel for Next.js-first teams; Netlify for JAMstack diversity and teams using multiple frameworks.",
+          "Vercel is the best platform for Next.js specifically. Netlify is more framework-agnostic: it excels with Astro, Hugo, 11ty, and multi-framework setups. Netlify's built-in Forms and Identity are unique conveniences. Choose Vercel for Next.js-first teams; Netlify for JAMstack diversity and teams using multiple frameworks.",
       },
       {
         question: "What are the benefits of JAMstack?",
         answer:
-          "JAMstack (JavaScript, APIs, Markup) pre-renders pages at build time, serving them from a CDN — resulting in faster load times, better security (no server to attack), lower hosting costs, and easier scaling. Dynamic features are handled by APIs and serverless functions. It's ideal for content-driven sites, documentation, and marketing pages.",
+          "JAMstack (JavaScript, APIs, Markup) pre-renders pages at build time, serving them from a CDN: resulting in faster load times, better security (no server to attack), lower hosting costs, and easier scaling. Dynamic features are handled by APIs and serverless functions. It's ideal for content-driven sites, documentation, and marketing pages.",
       },
       {
         question: "How much does Netlify cost?",
@@ -11772,7 +11773,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         question: "Can Netlify handle high-traffic sites?",
         answer:
-          "Yes — Netlify serves pre-rendered pages from a global CDN, which handles traffic spikes effortlessly. Static content scales infinitely. The bottleneck is serverless functions — high-traffic dynamic features may need careful optimization or a dedicated backend service alongside Netlify's static hosting.",
+          "Yes , Netlify serves pre-rendered pages from a global CDN, which handles traffic spikes effortlessly. Static content scales infinitely. The bottleneck is serverless functions , high-traffic dynamic features may need careful optimization or a dedicated backend service alongside Netlify's static hosting.",
       },
     ],
     quickstart:
@@ -11788,7 +11789,7 @@ export const servicesConfig: ServiceConfig[] = [
     category: "database",
     tagline: "In-memory data store for caching, queues, and real-time systems",
     description:
-      "Redis is the world's fastest in-memory data store — used for caching, session management, rate limiting, queues, and real-time leaderboards. We architect Redis layers that slash response times and scale to millions of operations per second.",
+      "Redis is the world's fastest in-memory data store: used for caching, session management, rate limiting, queues, and real-time leaderboards. We architect Redis layers that slash response times and scale to millions of operations per second.",
     accentColor: "red",
     visualizationKey: "redis",
     logo: "/logos/services/redis.svg",
@@ -11797,13 +11798,13 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Zap",
         title: "Sub-millisecond caching",
         description:
-          "Cache database queries, API responses, and computed results in memory — reducing latency from hundreds of milliseconds to sub-millisecond for repeated requests.",
+          "Cache database queries, API responses, and computed results in memory: reducing latency from hundreds of milliseconds to sub-millisecond for repeated requests.",
       },
       {
         icon: "Shield",
         title: "Session storage",
         description:
-          "Store user sessions in Redis for fast, distributed session management — shared across multiple application servers with automatic TTL-based expiry.",
+          "Store user sessions in Redis for fast, distributed session management: shared across multiple application servers with automatic TTL-based expiry.",
       },
       {
         icon: "Bell",
@@ -11815,36 +11816,36 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "Clock",
         title: "Rate limiting",
         description:
-          "Implement API rate limiting with Redis counters and sliding windows — atomic increment operations ensure accurate throttling under high concurrency.",
+          "Implement API rate limiting with Redis counters and sliding windows: atomic increment operations ensure accurate throttling under high concurrency.",
       },
       {
         icon: "Layers",
         title: "Queues & background jobs",
         description:
-          "BullMQ and similar libraries use Redis as a job queue backend — reliable, priority-based task processing with retries, delays, and scheduled jobs.",
+          "BullMQ and similar libraries use Redis as a job queue backend: reliable, priority-based task processing with retries, delays, and scheduled jobs.",
       },
       {
         icon: "Search",
         title: "Redis Stack",
         description:
-          "Full-text search (RediSearch), JSON document storage (RedisJSON), graph queries (RedisGraph), and time-series data (RedisTimeSeries) — extending Redis beyond key-value.",
+          "Full-text search (RediSearch), JSON document storage (RedisJSON), graph queries (RedisGraph), and time-series data (RedisTimeSeries): extending Redis beyond key-value.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "postgresql" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "Redis is an in-memory data structure store that operates at sub-millisecond latency — making it the de facto standard for caching, session management, rate limiting, and real-time data processing. Unlike simple key-value stores, Redis supports rich data structures: strings, hashes, lists, sets, sorted sets, streams, and HyperLogLog — each with atomic operations that make complex patterns possible without external locking or coordination.\n\nThe most common Redis use case is caching: placing a Redis layer between your application and database reduces query load and cuts response times dramatically. But Redis powers much more — session storage across distributed servers, rate limiting for API protection, job queues (via BullMQ or Sidekiq), real-time leaderboards (sorted sets), pub/sub messaging for WebSocket fan-out, and distributed locks for coordinating microservices. Redis Streams provide a Kafka-like log data structure for event-driven architectures at a fraction of the operational complexity.\n\nRedis Stack extends the core with modules: RediSearch adds full-text search with secondary indexing, RedisJSON stores and queries JSON documents natively, and RedisTimeSeries handles time-series data efficiently. Managed Redis is available via Redis Cloud, AWS ElastiCache, Upstash (serverless), and others. A Major architects Redis caching layers, queue systems, and real-time data pipelines that handle millions of operations per second while remaining operationally simple.",
+      "Redis is an in-memory data structure store that operates at sub-millisecond latency: making it the de facto standard for caching, session management, rate limiting, and real-time data processing. Unlike simple key-value stores, Redis supports rich data structures: strings, hashes, lists, sets, sorted sets, streams, and HyperLogLog: each with atomic operations that make complex patterns possible without external locking or coordination.\n\nThe most common Redis use case is caching: placing a Redis layer between your application and database reduces query load and cuts response times dramatically. But Redis powers much more: session storage across distributed servers, rate limiting for API protection, job queues (via BullMQ or Sidekiq), real-time leaderboards (sorted sets), pub/sub messaging for WebSocket fan-out, and distributed locks for coordinating microservices. Redis Streams provide a Kafka-like log data structure for event-driven architectures at a fraction of the operational complexity.\n\nRedis Stack extends the core with modules: RediSearch adds full-text search with secondary indexing, RedisJSON stores and queries JSON documents natively, and RedisTimeSeries handles time-series data efficiently. Managed Redis is available via Redis Cloud, AWS ElastiCache, Upstash (serverless), and others. A Major architects Redis caching layers, queue systems, and real-time data pipelines that handle millions of operations per second while remaining operationally simple.",
     challenges: [
       {
         title: "Memory management and cost",
         description:
-          "Redis stores everything in RAM — which is expensive. A 100GB dataset requires 100GB+ of memory. Understanding memory efficiency (encoding, compression, TTL policies) is critical to keeping Redis costs manageable at scale.",
+          "Redis stores everything in RAM, which is expensive. A 100GB dataset requires 100GB+ of memory. Understanding memory efficiency (encoding, compression, TTL policies) is critical to keeping Redis costs manageable at scale.",
       },
       {
         title: "Persistence and durability trade-offs",
         description:
-          "Redis offers RDB snapshots and AOF logging for persistence, but both have trade-offs — RDB can lose recent data, AOF impacts performance. For critical data, understanding the persistence configuration and its failure modes is essential.",
+          "Redis offers RDB snapshots and AOF logging for persistence, but both have trade-offs: RDB can lose recent data, AOF impacts performance. For critical data, understanding the persistence configuration and its failure modes is essential.",
       },
       {
         title: "Cache invalidation strategies",
@@ -11861,7 +11862,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use appropriate TTLs on every key",
         detail:
-          "Never cache without a TTL — unbounded caches grow until memory runs out. Set TTLs based on data freshness requirements: 60s for API responses, 24h for user sessions, 7d for computed aggregations.",
+          "Never cache without a TTL: unbounded caches grow until memory runs out. Set TTLs based on data freshness requirements: 60s for API responses, 24h for user sessions, 7d for computed aggregations.",
       },
       {
         tip: "Choose the right data structure",
@@ -11876,7 +11877,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Use connection pooling",
         detail:
-          "Create a Redis connection pool (e.g., ioredis with lazyConnect) and reuse connections across requests. Each new TCP connection has overhead — pooling is essential for serverless environments and high-throughput apps.",
+          "Create a Redis connection pool (e.g., ioredis with lazyConnect) and reuse connections across requests. Each new TCP connection has overhead: pooling is essential for serverless environments and high-throughput apps.",
       },
     ],
     usefulLinks: [
@@ -11891,7 +11892,7 @@ export const servicesConfig: ServiceConfig[] = [
         type: "tutorial",
       },
       {
-        title: "BullMQ — Redis Queue for Node.js",
+        title: "BullMQ: Redis Queue for Node.js",
         url: "https://docs.bullmq.io/",
         type: "tool",
       },
@@ -11903,19 +11904,19 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "Redis vs Memcached — which should I use?",
+        question: "Redis vs Memcached: which should I use?",
         answer:
-          "Redis supports rich data structures (lists, sets, sorted sets, streams), persistence, pub/sub, and Lua scripting. Memcached is simpler — key-value only, multi-threaded, and slightly faster for pure string caching. For most applications, Redis's versatility makes it the better choice. Use Memcached only for simple, high-throughput string caching where Redis features aren't needed.",
+          "Redis supports rich data structures (lists, sets, sorted sets, streams), persistence, pub/sub, and Lua scripting. Memcached is simpler: key-value only, multi-threaded, and slightly faster for pure string caching. For most applications, Redis's versatility makes it the better choice. Use Memcached only for simple, high-throughput string caching where Redis features aren't needed.",
       },
       {
         question: "When should I use Redis?",
         answer:
-          "Use Redis for: caching database queries and API responses, user session storage, rate limiting, real-time leaderboards, job queues (BullMQ), pub/sub messaging, distributed locks, and temporary data with TTLs. Don't use Redis as a primary database for critical data — its persistence model has durability trade-offs compared to Postgres or MySQL.",
+          "Use Redis for: caching database queries and API responses, user session storage, rate limiting, real-time leaderboards, job queues (BullMQ), pub/sub messaging, distributed locks, and temporary data with TTLs. Don't use Redis as a primary database for critical data: its persistence model has durability trade-offs compared to Postgres or MySQL.",
       },
       {
         question: "What are Redis persistence options?",
         answer:
-          "Redis offers two persistence mechanisms: RDB (periodic snapshots — fast recovery, potential data loss between snapshots) and AOF (append-only log — better durability, larger files, slower recovery). You can use both simultaneously for the best of each. For pure caching, you can disable persistence entirely — faster performance, and data rebuilds from the source on restart.",
+          "Redis offers two persistence mechanisms: RDB (periodic snapshots: fast recovery, potential data loss between snapshots) and AOF (append-only log: better durability, larger files, slower recovery). You can use both simultaneously for the best of each. For pure caching, you can disable persistence entirely: faster performance, and data rebuilds from the source on restart.",
       },
       {
         question: "How much memory does Redis need?",
@@ -11934,9 +11935,9 @@ export const servicesConfig: ServiceConfig[] = [
     slug: "graphql",
     name: "GraphQL",
     category: "backend",
-    tagline: "A query language for APIs — ask for exactly what you need",
+    tagline: "A query language for APIs: ask for exactly what you need",
     description:
-      "GraphQL lets clients request exactly the data they need in a single query — no over-fetching, no under-fetching. We design GraphQL schemas, build performant resolvers, and implement federation for distributed teams.",
+      "GraphQL lets clients request exactly the data they need in a single query: no over-fetching, no under-fetching. We design GraphQL schemas, build performant resolvers, and implement federation for distributed teams.",
     accentColor: "pink",
     visualizationKey: "graphql",
     logo: "/logos/services/graphql.svg",
@@ -11945,54 +11946,54 @@ export const servicesConfig: ServiceConfig[] = [
         icon: "GitBranch",
         title: "Schema-first API design",
         description:
-          "Strongly typed schemas define your API contract — every query, mutation, and type is documented and validated at build time. No more guessing what an endpoint returns.",
+          "Strongly typed schemas define your API contract: every query, mutation, and type is documented and validated at build time. No more guessing what an endpoint returns.",
       },
       {
         icon: "Zap",
         title: "Precise data fetching",
         description:
-          "Clients request exactly the fields they need — one query replaces multiple REST calls. Mobile apps fetch minimal payloads, dashboards fetch rich data, from the same API.",
+          "Clients request exactly the fields they need: one query replaces multiple REST calls. Mobile apps fetch minimal payloads, dashboards fetch rich data, from the same API.",
       },
       {
         icon: "RefreshCw",
         title: "Real-time subscriptions",
         description:
-          "GraphQL Subscriptions push data to clients over WebSocket — live notifications, chat messages, and real-time dashboards powered by the same schema.",
+          "GraphQL Subscriptions push data to clients over WebSocket: live notifications, chat messages, and real-time dashboards powered by the same schema.",
       },
       {
         icon: "Layers",
         title: "Apollo Federation",
         description:
-          "Compose multiple GraphQL services into a single unified schema — each team owns their subgraph, the gateway stitches them together transparently.",
+          "Compose multiple GraphQL services into a single unified schema: each team owns their subgraph, the gateway stitches them together transparently.",
       },
       {
         icon: "Code",
         title: "Code generation",
         description:
-          "Generate TypeScript types, React hooks, and SDK clients directly from your schema — end-to-end type safety from backend schema to frontend component.",
+          "Generate TypeScript types, React hooks, and SDK clients directly from your schema: end-to-end type safety from backend schema to frontend component.",
       },
       {
         icon: "Search",
         title: "Introspection & tooling",
         description:
-          "GraphQL is self-documenting — introspection queries expose the full schema. Tools like GraphiQL and Apollo Studio provide visual exploration, query building, and performance tracing.",
+          "GraphQL is self-documenting: introspection queries expose the full schema. Tools like GraphiQL and Apollo Studio provide visual exploration, query building, and performance tracing.",
       },
     ],
     subTechs: [{ slug: "nodejs" }, { slug: "react" }, { slug: "trpc" }],
     pageType: "tech",
     targetAudience: "developers",
     overview:
-      "GraphQL is a query language and runtime for APIs that lets clients specify exactly what data they need. Instead of hitting multiple REST endpoints and filtering out unwanted fields, a GraphQL client sends a single query describing the shape of the response — and the server returns exactly that shape. This eliminates over-fetching (getting too much data) and under-fetching (needing multiple requests), which is particularly valuable for mobile apps on slow networks and complex UIs that aggregate data from multiple sources.\n\nAt its core, GraphQL is a type system. You define a schema — types, queries, mutations, and subscriptions — that serves as the contract between frontend and backend. This schema is introspectable (clients can discover what's available), validated at build time (invalid queries fail before they reach production), and enables powerful code generation. Tools like GraphQL Code Generator and Relay Compiler generate TypeScript types and React hooks directly from your schema, providing end-to-end type safety with zero manual type definitions.\n\nThe challenge with GraphQL is that it moves complexity from the client to the server. Resolvers must handle N+1 query problems (DataLoader is essential), authorization must be enforced at the resolver level, and query complexity limits prevent malicious deeply-nested queries. For large organizations, Apollo Federation composes multiple team-owned subgraphs into a unified API gateway. A Major designs GraphQL schemas, implements performant resolvers with proper batching, and sets up federation architectures for teams that need a flexible, strongly-typed API layer.",
+      "GraphQL is a query language and runtime for APIs that lets clients specify exactly what data they need. Instead of hitting multiple REST endpoints and filtering out unwanted fields, a GraphQL client sends a single query describing the shape of the response, and the server returns exactly that shape. This eliminates over-fetching (getting too much data) and under-fetching (needing multiple requests), which is particularly valuable for mobile apps on slow networks and complex UIs that aggregate data from multiple sources.\n\nAt its core, GraphQL is a type system. You define a schema , types, queries, mutations, and subscriptions , that serves as the contract between frontend and backend. This schema is introspectable (clients can discover what's available), validated at build time (invalid queries fail before they reach production), and enables powerful code generation. Tools like GraphQL Code Generator and Relay Compiler generate TypeScript types and React hooks directly from your schema, providing end-to-end type safety with zero manual type definitions.\n\nThe challenge with GraphQL is that it moves complexity from the client to the server. Resolvers must handle N+1 query problems (DataLoader is essential), authorization must be enforced at the resolver level, and query complexity limits prevent malicious deeply-nested queries. For large organizations, Apollo Federation composes multiple team-owned subgraphs into a unified API gateway. A Major designs GraphQL schemas, implements performant resolvers with proper batching, and sets up federation architectures for teams that need a flexible, strongly-typed API layer.",
     challenges: [
       {
         title: "N+1 query problem",
         description:
-          "Naive resolver implementations trigger a separate database query for each related item — fetching 50 users with posts can trigger 51 queries. DataLoader solves this by batching and caching, but it must be implemented for every relationship.",
+          "Naive resolver implementations trigger a separate database query for each related item: fetching 50 users with posts can trigger 51 queries. DataLoader solves this by batching and caching, but it must be implemented for every relationship.",
       },
       {
         title: "Query complexity and security",
         description:
-          "GraphQL's flexibility is a double-edged sword — clients can construct deeply nested, expensive queries. Without query depth limits, complexity analysis, and rate limiting, a single malicious query can overwhelm your server.",
+          "GraphQL's flexibility is a double-edged sword: clients can construct deeply nested, expensive queries. Without query depth limits, complexity analysis, and rate limiting, a single malicious query can overwhelm your server.",
       },
       {
         title: "Caching complexity",
@@ -12002,14 +12003,14 @@ export const servicesConfig: ServiceConfig[] = [
       {
         title: "Schema evolution and versioning",
         description:
-          "GraphQL schemas don't version like REST APIs (v1, v2). Instead, fields are deprecated and new fields are added. Managing this evolution across clients — especially mobile apps that can't be force-updated — requires careful deprecation policies and field tracking.",
+          "GraphQL schemas don't version like REST APIs (v1, v2). Instead, fields are deprecated and new fields are added. Managing this evolution across clients, especially mobile apps that can't be force-updated: requires careful deprecation policies and field tracking.",
       },
     ],
     bestPractices: [
       {
         tip: "Use DataLoader for every relationship",
         detail:
-          "Implement DataLoader for batching and caching at the resolver level. Without it, a list query fetching N items with M relations triggers N*M database queries. DataLoader collapses these into 2 queries — one for items, one for all related items.",
+          "Implement DataLoader for batching and caching at the resolver level. Without it, a list query fetching N items with M relations triggers N*M database queries. DataLoader collapses these into 2 queries: one for items, one for all related items.",
       },
       {
         tip: "Implement query complexity limits",
@@ -12024,7 +12025,7 @@ export const servicesConfig: ServiceConfig[] = [
       {
         tip: "Design schemas for client needs, not database structure",
         detail:
-          "GraphQL schemas should model the domain as clients need it — not mirror your database tables. Use connections for pagination, dedicated input types for mutations, and meaningful field names that read naturally in queries.",
+          "GraphQL schemas should model the domain as clients need it: not mirror your database tables. Use connections for pagination, dedicated input types for mutations, and meaningful field names that read naturally in queries.",
       },
     ],
     usefulLinks: [
@@ -12051,19 +12052,19 @@ export const servicesConfig: ServiceConfig[] = [
     ],
     faq: [
       {
-        question: "GraphQL vs REST — when should I use GraphQL?",
+        question: "GraphQL vs REST: when should I use GraphQL?",
         answer:
           "Use GraphQL when: multiple clients (web, mobile, third-party) need different data shapes from the same API, your UI aggregates data from multiple resources in a single view, or you want end-to-end type safety via code generation. Stick with REST for simple CRUD APIs, public APIs that benefit from HTTP caching, or teams without GraphQL experience. A Major helps you evaluate the trade-offs for your specific project.",
       },
       {
         question: "Is GraphQL slower than REST?",
         answer:
-          "Not inherently — but poorly implemented GraphQL can be. The N+1 problem, deeply nested queries, and lack of CDN caching can make naive GraphQL slower than REST. With DataLoader batching, query complexity limits, persisted queries, and proper resolver optimization, GraphQL performance matches or exceeds REST for complex data fetching patterns.",
+          "Not inherently, but poorly implemented GraphQL can be. The N+1 problem, deeply nested queries, and lack of CDN caching can make naive GraphQL slower than REST. With DataLoader batching, query complexity limits, persisted queries, and proper resolver optimization, GraphQL performance matches or exceeds REST for complex data fetching patterns.",
       },
       {
         question: "Should I use Apollo or Relay on the client?",
         answer:
-          "Apollo Client is more approachable — flexible, works with any GraphQL server, and has a gentler learning curve. Relay is Facebook's client — more opinionated, tighter schema conventions (connections, node IDs), but produces optimal queries and handles pagination elegantly. For most teams, Apollo Client is the practical choice. Relay shines in large-scale apps with strict schema conventions.",
+          "Apollo Client is more approachable , flexible, works with any GraphQL server, and has a gentler learning curve. Relay is Facebook's client , more opinionated, tighter schema conventions (connections, node IDs), but produces optimal queries and handles pagination elegantly. For most teams, Apollo Client is the practical choice. Relay shines in large-scale apps with strict schema conventions.",
       },
       {
         question: "Can GraphQL replace REST entirely?",

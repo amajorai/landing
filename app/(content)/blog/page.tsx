@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export const metadata = generateMetadata({
   title: "Blog",
   description:
-    "Insights on software engineering, web design, AI, and technology from the A Major team — a Singapore software agency.",
+    "Insights on software engineering, web design, AI, and technology from the A Major team, a Singapore software agency.",
   url: "/blog",
   tags: [
     "software engineering blog",

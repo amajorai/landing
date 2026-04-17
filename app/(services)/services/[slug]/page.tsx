@@ -34,7 +34,6 @@ export async function generateMetadata({
 
   const titleSuffix =
     service.pageType === "offering" ? "Services" : "Development";
-  const locationTag = " | Singapore Software Agency";
   const description =
     service.description +
     (service.overview
@@ -42,7 +41,7 @@ export async function generateMetadata({
       : "");
 
   return genMeta({
-    title: `${service.name} ${titleSuffix}${locationTag}`,
+    title: `${service.name} ${titleSuffix}`,
     description: description.slice(0, 320),
     url: `/services/${service.slug}`,
     tags: buildKeywords(service),

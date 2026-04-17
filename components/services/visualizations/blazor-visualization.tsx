@@ -213,7 +213,7 @@ export function BlazorVisualization() {
         ctx.fillStyle = textColor;
         ctx.globalAlpha = 0.7;
         ctx.textAlign = "left";
-        ctx.fillText("standalone — no server", browserX + 26, ey);
+        ctx.fillText("standalone: no server", browserX + 26, ey);
         ctx.globalAlpha = 1;
       }
 

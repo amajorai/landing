@@ -3,13 +3,18 @@
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRightLeft,
+  BookOpen,
+  Bot,
   Building2,
   FileBox,
+  FileText,
   Gauge,
   Globe,
   Lightbulb,
+  Mail,
   MessageCircle,
   Palette,
+  PenLine,
   Puzzle,
   RefreshCw,
   Rocket,
@@ -17,6 +22,7 @@ import {
   Server,
   Smartphone,
   Upload,
+  Workflow,
   Zap,
 } from "lucide-react";
 import Image from "next/image";
@@ -44,6 +50,12 @@ const featureSlugMap: Record<string, string> = {
   "SEO optimisation": "seo-optimization",
   "Full deployment": "full-deployment",
   Consultancy: "consultancy",
+  Copywriting: "copywriting",
+  "Content writing": "content-writing",
+  "Email marketing": "email-marketing",
+  "Technical documentation": "technical-documentation",
+  "Workflow automation": "workflow-automation",
+  "AI chatbot": "ai-chatbot",
 };
 
 // ── Visual components ───────────────────────────────────────────────────────
@@ -345,11 +357,15 @@ function KanbanBoard() {
                 {item}
               </div>
             ))}
-            {movingCardCol === colIdx && (
-              <div className="rounded border border-primary/30 bg-primary/10 px-2 py-1.5 text-[10px] text-primary/70 leading-tight transition-all duration-500">
-                {movingCard}
-              </div>
-            )}
+            <div
+              className={`rounded border px-2 py-1.5 text-[10px] leading-tight transition-all duration-500 ${
+                movingCardCol === colIdx
+                  ? "border-primary/30 bg-primary/10 text-primary/70"
+                  : "invisible border-transparent"
+              }`}
+            >
+              {movingCard}
+            </div>
           </div>
         ))}
       </div>
@@ -735,7 +751,7 @@ function DevOpsVisual() {
 
   return (
     <div className="mt-auto pt-3">
-      <div className="min-h-[64px] space-y-0.5 rounded-md border border-border/35 bg-zinc-950 px-3 py-2 font-mono text-[10px] dark:bg-zinc-900/80">
+      <div className="min-h-[110px] space-y-0.5 rounded-md border border-border/35 bg-zinc-950 px-3 py-2 font-mono text-[10px] dark:bg-zinc-900/80">
         {visibleLines.map((l, i) => (
           <div
             className={`flex items-center gap-1.5 ${l.startsWith("✓") ? "text-green-400/70" : l.startsWith("$") ? "" : "pl-3 text-muted-foreground/40"}`}
@@ -1037,34 +1053,36 @@ function ConsultancyVisual() {
   }, [visibleCount, charIdx]);
 
   return (
-    <div className="mt-auto space-y-2 pt-4">
-      {CHAT_MESSAGES.map((m, i) => {
-        if (i > visibleCount) return null;
-        const isTyping = i === visibleCount;
-        const displayText = isTyping ? m.text.slice(0, charIdx) : m.text;
-        return (
-          <div
-            className={`flex gap-2 ${m.role === "user" ? "" : "flex-row-reverse"}`}
-            key={i}
-          >
+    <div className="mt-auto h-[130px] overflow-hidden pt-4">
+      <div className="space-y-2">
+        {CHAT_MESSAGES.map((m, i) => {
+          if (i > visibleCount) return null;
+          const isTyping = i === visibleCount;
+          const displayText = isTyping ? m.text.slice(0, charIdx) : m.text;
+          return (
             <div
-              className={`size-6 shrink-0 rounded-full ring-1 ${m.role === "user" ? "bg-muted/40 ring-border/30" : "bg-primary/20 ring-primary/20"}`}
-            />
-            <div
-              className={`max-w-[75%] rounded-xl px-3 py-2 text-[10px] leading-relaxed ${
-                m.role === "user"
-                  ? "rounded-tl-sm bg-muted/25 text-muted-foreground"
-                  : "rounded-tr-sm bg-primary/10 text-foreground/70"
-              }`}
+              className={`flex gap-2 ${m.role === "user" ? "" : "flex-row-reverse"}`}
+              key={i}
             >
-              {displayText}
-              {isTyping && charIdx < m.text.length && (
-                <span className="animate-pulse">|</span>
-              )}
+              <div
+                className={`size-6 shrink-0 rounded-full ring-1 ${m.role === "user" ? "bg-muted/40 ring-border/30" : "bg-primary/20 ring-primary/20"}`}
+              />
+              <div
+                className={`max-w-[75%] rounded-xl px-3 py-2 text-[10px] leading-relaxed ${
+                  m.role === "user"
+                    ? "rounded-tl-sm bg-muted/25 text-muted-foreground"
+                    : "rounded-tr-sm bg-primary/10 text-foreground/70"
+                }`}
+              >
+                {displayText}
+                {isTyping && charIdx < m.text.length && (
+                  <span className="animate-pulse">|</span>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -1077,6 +1095,280 @@ interface FeatureLogo {
   width: number;
   height: number;
   darkInvert?: boolean;
+}
+
+function CopywritingVisual() {
+  const COPIES = [
+    {
+      before: "Get our product today.",
+      after: "Stop losing leads by tomorrow.",
+    },
+    { before: "We offer solutions.", after: "Ship in weeks, not months." },
+  ];
+  const [idx, setIdx] = useState(0);
+  const [show, setShow] = useState<"before" | "after">("before");
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setShow((s) => {
+        if (s === "before") return "after";
+        setIdx((i) => (i + 1) % COPIES.length);
+        return "before";
+      });
+    }, 1800);
+    return () => clearInterval(id);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const copy = COPIES[idx];
+  return (
+    <div className="mt-auto space-y-1.5 pt-4">
+      <p className="text-[9px] text-muted-foreground/40 uppercase tracking-widest">
+        {show === "before" ? "Draft" : "Converted"}
+      </p>
+      <div
+        className={`rounded border px-3 py-2 font-mono text-[10px] leading-snug transition-all duration-500 ${
+          show === "before"
+            ? "border-border/30 text-muted-foreground/50"
+            : "border-primary/25 bg-primary/5 text-foreground/80"
+        }`}
+      >
+        {show === "before" ? copy.before : copy.after}
+      </div>
+    </div>
+  );
+}
+
+function ContentWritingVisual() {
+  const [wordCount, setWordCount] = useState(0);
+  const [traffic, setTraffic] = useState(0);
+
+  useEffect(() => {
+    let step = 0;
+    const id = setInterval(() => {
+      step = (step + 1) % 60;
+      const t = step / 59;
+      setWordCount(Math.round(t * 2400));
+      setTraffic(Math.round(t * 8300));
+    }, 80);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-auto space-y-2 pt-4">
+      <div className="flex items-center justify-between rounded border border-border/30 px-3 py-1.5">
+        <span className="text-[9px] text-muted-foreground/55">
+          Words written
+        </span>
+        <span className="font-mono font-semibold text-[10px] text-foreground/80 tabular-nums">
+          {wordCount.toLocaleString()}
+        </span>
+      </div>
+      <div className="flex items-center justify-between rounded border border-green-500/25 bg-green-500/5 px-3 py-1.5">
+        <span className="text-[9px] text-muted-foreground/55">
+          Organic visits/mo
+        </span>
+        <span className="font-mono font-semibold text-[10px] text-green-500 tabular-nums">
+          +{traffic.toLocaleString()}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+const EMAIL_STAGES = [
+  { label: "Sent", value: 10_000, pct: 100 },
+  { label: "Opened", value: 4200, pct: 42 },
+  { label: "Clicked", value: 1800, pct: 18 },
+];
+
+function EmailMarketingVisual() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let step = 0;
+    const id = setInterval(() => {
+      step = (step + 1) % 50;
+      setProgress(step / 49);
+    }, 90);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-auto space-y-1.5 pt-4">
+      {EMAIL_STAGES.map((s) => (
+        <div className="space-y-0.5" key={s.label}>
+          <div className="flex justify-between text-[9px]">
+            <span className="text-muted-foreground/55">{s.label}</span>
+            <span className="text-muted-foreground/60 tabular-nums">
+              {Math.round(s.value * progress).toLocaleString()}
+            </span>
+          </div>
+          <div className="h-1 w-full rounded-full bg-muted/20">
+            <div
+              className="h-full rounded-full bg-primary/40 transition-all duration-75"
+              style={{ width: `${s.pct * progress}%` }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const DOC_LINES = [
+  { type: "h", text: "GET /v1/users/:id" },
+  { type: "p", text: "Returns a user object." },
+  { type: "code", text: '{ "id": "u_1", "name": "..." }' },
+];
+
+function TechnicalDocumentationVisual() {
+  const [visible, setVisible] = useState(1);
+
+  useEffect(() => {
+    let i = 1;
+    const id = setInterval(() => {
+      i++;
+      if (i > DOC_LINES.length + 1) i = 1;
+      setVisible(i <= DOC_LINES.length ? i : 0);
+    }, 650);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-auto space-y-1 pt-4">
+      {DOC_LINES.map((l, i) => (
+        <div
+          className={`overflow-hidden transition-all duration-300 ${visible > i ? "max-h-10 opacity-100" : "max-h-0 opacity-0"}`}
+          key={i}
+        >
+          {l.type === "h" && (
+            <p className="font-mono font-semibold text-[10px] text-primary/80">
+              {l.text}
+            </p>
+          )}
+          {l.type === "p" && (
+            <p className="text-[9px] text-muted-foreground/60">{l.text}</p>
+          )}
+          {l.type === "code" && (
+            <p className="rounded border border-border/25 bg-muted/20 px-2 py-0.5 font-mono text-[9px] text-muted-foreground/70">
+              {l.text}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const WORKFLOW_NODES = ["Trigger", "Filter", "Transform", "Notify"];
+
+function WorkflowAutomationVisual() {
+  const [activeNode, setActiveNode] = useState(-1);
+  const [runs, setRuns] = useState(0);
+
+  useEffect(() => {
+    let node = -1;
+    const id = setInterval(() => {
+      node = (node + 1) % (WORKFLOW_NODES.length + 2);
+      if (node < WORKFLOW_NODES.length) {
+        setActiveNode(node);
+      } else if (node === WORKFLOW_NODES.length) {
+        setRuns((r) => r + 1);
+        setActiveNode(-1);
+      }
+    }, 500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-auto pt-4">
+      <div className="flex items-center gap-1">
+        {WORKFLOW_NODES.map((n, i) => (
+          <div className="flex items-center gap-1" key={n}>
+            <div
+              className={`rounded border px-2 py-1 text-[9px] transition-all duration-200 ${
+                activeNode === i
+                  ? "border-primary/40 bg-primary/10 text-foreground/80"
+                  : "border-border/25 text-muted-foreground/40"
+              }`}
+            >
+              {n}
+            </div>
+            {i < WORKFLOW_NODES.length - 1 && (
+              <div
+                className={`h-px w-2 transition-colors duration-200 ${activeNode > i ? "bg-primary/40" : "bg-border/25"}`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 font-mono text-[9px] text-muted-foreground/45">
+        {runs} runs completed
+      </p>
+    </div>
+  );
+}
+
+const BOT_MESSAGES = [
+  { role: "user" as const, text: "What's my order status?" },
+  { role: "bot" as const, text: "Order #4821 shipped. Arrives Friday." },
+];
+
+function AiChatbotVisual() {
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+
+  useEffect(() => {
+    if (visibleCount >= BOT_MESSAGES.length) {
+      const id = setTimeout(() => {
+        setVisibleCount(0);
+        setCharIdx(0);
+      }, 2500);
+      return () => clearTimeout(id);
+    }
+    const msg = BOT_MESSAGES[visibleCount];
+    if (charIdx < msg.text.length) {
+      const id = setTimeout(() => setCharIdx((p) => p + 1), 30);
+      return () => clearTimeout(id);
+    }
+    const id = setTimeout(() => {
+      setVisibleCount((p) => p + 1);
+      setCharIdx(0);
+    }, 500);
+    return () => clearTimeout(id);
+  }, [visibleCount, charIdx]);
+
+  return (
+    <div className="mt-auto min-h-[80px] space-y-1.5 pt-4">
+      {BOT_MESSAGES.map((m, i) => {
+        if (i > visibleCount) return null;
+        const isTyping = i === visibleCount;
+        const text = isTyping ? m.text.slice(0, charIdx) : m.text;
+        return (
+          <div
+            className={`flex gap-2 ${m.role === "user" ? "" : "flex-row-reverse"}`}
+            key={i}
+          >
+            <div
+              className={`size-5 shrink-0 rounded-full ring-1 ${m.role === "user" ? "bg-muted/40 ring-border/30" : "bg-green-500/20 ring-green-500/30"}`}
+            />
+            <div
+              className={`max-w-[78%] rounded-xl px-2.5 py-1.5 text-[9px] leading-relaxed ${
+                m.role === "user"
+                  ? "rounded-tl-sm bg-muted/25 text-muted-foreground"
+                  : "rounded-tr-sm bg-green-500/10 text-foreground/70"
+              }`}
+            >
+              {text}
+              {isTyping && charIdx < m.text.length && (
+                <span className="animate-pulse text-primary/60">▋</span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 interface Feature {
@@ -1247,6 +1539,54 @@ const features: Feature[] = [
     className: "col-span-1 flex flex-col",
     icon: MessageCircle,
     visual: <ConsultancyVisual />,
+  },
+  {
+    title: "Copywriting",
+    description:
+      "Landing pages, ad copy, and website copy that converts. Written fast with AI, refined by humans.",
+    className: "col-span-1 flex flex-col",
+    icon: PenLine,
+    visual: <CopywritingVisual />,
+  },
+  {
+    title: "Content writing",
+    description:
+      "SEO articles, blog posts, and thought leadership that build organic traffic over time.",
+    className: "col-span-1 flex flex-col",
+    icon: FileText,
+    visual: <ContentWritingVisual />,
+  },
+  {
+    title: "Email marketing",
+    description:
+      "Welcome sequences, drip campaigns, and newsletters that retain users and move leads to close.",
+    className: "col-span-1 flex flex-col",
+    icon: Mail,
+    visual: <EmailMarketingVisual />,
+  },
+  {
+    title: "Technical documentation",
+    description:
+      "API references, developer guides, and user docs written by engineers: accurate, complete, and scannable.",
+    className: "col-span-1 flex flex-col",
+    icon: BookOpen,
+    visual: <TechnicalDocumentationVisual />,
+  },
+  {
+    title: "Workflow automation",
+    description:
+      "Eliminate manual, repetitive work with n8n, Make, and custom integrations that run in the background.",
+    className: "col-span-1 flex flex-col",
+    icon: Workflow,
+    visual: <WorkflowAutomationVisual />,
+  },
+  {
+    title: "AI chatbot",
+    description:
+      "Custom AI assistants trained on your own content that answer questions accurately, 24/7.",
+    className: "col-span-1 flex flex-col",
+    icon: Bot,
+    visual: <AiChatbotVisual />,
   },
 ];
 

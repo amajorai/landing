@@ -44,7 +44,7 @@ export async function generateMetadata({
   const comparison = getComparisonBySlug(slug);
   if (comparison) {
     return genMeta({
-      title: `${comparison.nameA} vs ${comparison.nameB} | Singapore Software Agency`,
+      title: `${comparison.nameA} vs ${comparison.nameB}`,
       description: comparison.description,
       url: `/compare/${comparison.slug}`,
       tags: [
@@ -62,7 +62,7 @@ export async function generateMetadata({
   const multi = getMultiComparisonBySlug(slug);
   if (multi) {
     return genMeta({
-      title: `${multi.title} | A Major Singapore`,
+      title: multi.title,
       description: multi.description,
       url: `/compare/${multi.slug}`,
       tags: [
@@ -273,7 +273,7 @@ export default async function ComparePage({
             <div className="border-border border-y border-dashed p-6">
               <div className="mb-2 font-semibold">
                 {comparison.verdict === "tie"
-                  ? "It's a tie — context determines the winner"
+                  ? "It's a tie: context determines the winner"
                   : `We recommend: ${comparison.verdict}`}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">

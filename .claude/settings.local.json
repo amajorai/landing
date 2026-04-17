@@ -53,7 +53,22 @@
       "Bash(npx svgls@latest add --help)",
       "Bash(npx svgls@latest add \"Anthropic\" \"OpenAI\" \"Google Gemini\" \"DeepSeek\" \"Meta\" \"Mistral AI\" \"xAI\" \"Cursor\" \"GitHub Copilot\" -p public/logos/ai --theme dark)",
       "Bash(npx svgls@latest add \"Anthropic\" \"OpenAI\" \"Mistral AI\" \"Cursor\" \"GitHub Copilot\" -p public/logos/ai --theme light)",
-      "Bash(npx svgls@latest add \"Gemini\" \"Google\" \"xAI\" \"Grok\" \"Claude\" -p public/logos/ai)"
+      "Bash(npx svgls@latest add \"Gemini\" \"Google\" \"xAI\" \"Grok\" \"Claude\" -p public/logos/ai)",
+      "WebFetch(domain:evoailabs.medium.com)",
+      "WebFetch(domain:lushbinary.com)",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:docs.x.ai)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:www.aimagicx.com)",
+      "WebFetch(domain:agentconn.com)",
+      "WebFetch(domain:theaiagentsbro.com)",
+      "WebFetch(domain:peterwoods.online)",
+      "WebFetch(domain:www.alibabacloud.com)",
+      "WebFetch(domain:www.nvidia.com)",
+      "WebFetch(domain:thenewstack.io)",
+      "WebFetch(domain:rywalker.com)",
+      "WebFetch(domain:vibecoding.app)"
     ]
   }
 }

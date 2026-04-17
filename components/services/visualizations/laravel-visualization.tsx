@@ -129,7 +129,7 @@ export function LaravelVisualization() {
           <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
           <span className="ml-2 font-mono text-[10px] text-zinc-500">
-            bash — laravel
+            bash: laravel
           </span>
         </div>
 

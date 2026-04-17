@@ -86,7 +86,7 @@ export default function FooterSection() {
             <a
               aria-label="X/Twitter"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://x.com/amajorai"
+              href="https://x.com/amajorhq"
               rel="noopener noreferrer"
               target="_blank"
             >

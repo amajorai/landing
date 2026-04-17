@@ -160,6 +160,7 @@ export default async function ComparePage({
                   alt={comparison.nameA}
                   logo={comparison.logoA}
                   logoDark={comparison.logoDarkA}
+                  logoDarkInvert={comparison.logoDarkInvertA}
                   size={32}
                 />
               )}
@@ -169,6 +170,7 @@ export default async function ComparePage({
                   alt={comparison.nameB}
                   logo={comparison.logoB}
                   logoDark={comparison.logoDarkB}
+                  logoDarkInvert={comparison.logoDarkInvertB}
                   size={32}
                 />
               )}

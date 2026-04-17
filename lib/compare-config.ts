@@ -17,6 +17,8 @@ export interface ComparisonConfig {
   logoB?: string | null;
   logoDarkA?: string | null;
   logoDarkB?: string | null;
+  logoDarkInvertA?: boolean;
+  logoDarkInvertB?: boolean;
   verdict: string;
   verdictDetail: string;
   points: ComparisonPoint[];
@@ -2891,6 +2893,7 @@ export const compareConfig: ComparisonConfig[] = [
     nameA: "Ghost",
     nameB: "WordPress",
     logoA: "/logos/services/ghost.svg",
+    logoDarkInvertA: true,
     logoB: "/logos/services/wordpress.svg",
     tagline: "Purpose-built publishing vs infinite extensibility",
     description:
@@ -2993,6 +2996,7 @@ export const compareConfig: ComparisonConfig[] = [
     logoA: "/logos/services/payload_dark.svg",
     logoDarkA: "/logos/services/payload.svg",
     logoB: "/logos/services/contentful.svg",
+    logoDarkInvertB: true,
     tagline: "Code-first control vs polished SaaS: pick your priority",
     description:
       "Payload CMS is an open-source, self-hosted, TypeScript-native headless CMS where schema is code. Contentful is a mature SaaS headless CMS with a polished UI, strong APIs, and a price that scales aggressively with usage.",

@@ -5,6 +5,7 @@ interface CompareLogoProps {
   alt: string;
   logo: string;
   logoDark?: string | null;
+  logoDarkInvert?: boolean;
   size?: number;
   className?: string;
 }
@@ -13,10 +14,12 @@ export function CompareLogo({
   alt,
   logo,
   logoDark,
+  logoDarkInvert,
   size = 20,
   className = "",
 }: CompareLogoProps) {
   const hasDark = !!logoDark && logoDark !== logo;
+  const invertDark = !hasDark && logoDarkInvert;
 
   return (
     <span
@@ -30,7 +33,8 @@ export function CompareLogo({
         alt={alt}
         className={cn(
           "max-h-full max-w-full object-contain",
-          hasDark && "dark:hidden"
+          hasDark && "dark:hidden",
+          invertDark && "dark:invert"
         )}
         height={size}
         src={logo}

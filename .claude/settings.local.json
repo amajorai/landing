@@ -68,7 +68,12 @@
       "WebFetch(domain:www.nvidia.com)",
       "WebFetch(domain:thenewstack.io)",
       "WebFetch(domain:rywalker.com)",
-      "WebFetch(domain:vibecoding.app)"
+      "WebFetch(domain:vibecoding.app)",
+      "Bash(sed -n '5595,5610p' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(sed -n '6035,6050p' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(sed -n '6454,6469p' /c/Code/amajor-landing/lib/services-config.ts)",
+      "Bash(sed -n '2888,2900p' /c/Code/amajor-landing/lib/compare-config.ts)",
+      "Bash(sed -n '2988,3000p' /c/Code/amajor-landing/lib/compare-config.ts)"
     ]
   }
 }

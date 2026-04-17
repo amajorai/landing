@@ -11,6 +11,7 @@ import SEO from "@/components/seo";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { StarMark } from "@/components/ui/star-mark";
+import { WebMCPProvider } from "@/components/webmcp-provider";
 import { analyticsConfig } from "@/lib/analytics-config";
 import { getNavProducts } from "@/lib/notion";
 import "./globals.css";
@@ -127,6 +128,7 @@ export default async function RootLayout({
             </div>
             <FooterSection />
             <TailwindIndicator />
+            <WebMCPProvider />
             <Toaster position="bottom-right" />
             {analyticsConfig.googleAnalytics.enabled && (
               <GoogleAnalytics gaId={analyticsConfig.googleAnalytics.gaId} />

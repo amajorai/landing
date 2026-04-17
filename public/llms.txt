@@ -52,7 +52,7 @@ A Major builds AI-native applications and Model Context Protocol (MCP) servers. 
 
 ## Contact
 
-- Email: hey@jiaweing.com
+- Email: contact@amajor.ai
 - Location: Singapore (serving clients worldwide)
 - LinkedIn: https://www.linkedin.com/company/amajor
 - X/Twitter: https://x.com/amajorai

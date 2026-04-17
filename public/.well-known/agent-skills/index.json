@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "ai-plugin",
+      "type": "openai-plugin",
+      "description": "OpenAI-compatible plugin manifest for A Major",
+      "url": "https://amajor.ai/.well-known/ai-plugin.json",
+      "sha256": "cbf9d998e9f96437ed2e24ca06aa15fb4d20f54736c47a22765879540bc76ace"
+    }
+  ]
+}

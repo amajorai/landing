@@ -1,0 +1,8 @@
+{
+  "serverInfo": { "name": "A Major", "version": "1.0.0" },
+  "transport": { "type": "http", "endpoint": "https://amajor.ai/api/mcp" },
+  "capabilities": { "tools": true, "resources": true },
+  "description": "A Major is a Singapore software agency specializing in web apps, mobile, SaaS, and AI agent development.",
+  "contact": "contact@amajor.ai",
+  "logo": "https://amajor.ai/logos/amajor-submark.svg"
+}

@@ -61,6 +61,8 @@ Allow: /
 Disallow: /private/
 Disallow: /api/
 
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 Sitemap: https://amajor.ai/sitemap.xml
 LLMs: https://amajor.ai/llms.txt
 `;

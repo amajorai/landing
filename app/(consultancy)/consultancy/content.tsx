@@ -1,10 +1,17 @@
 "use client";
 
 import { getCalApi } from "@calcom/embed-react";
-import { BookOpen, Calendar, Check, Lightbulb, ListChecks, Search } from "lucide-react";
-import Hyperspeed from "@/components/hyperspeed-dynamic";
+import {
+  BookOpen,
+  Calendar,
+  Check,
+  Lightbulb,
+  ListChecks,
+  Search,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 import { hyperspeedPresets } from "@/components/HyperSpeedPresets";
-import { useEffect, useRef, useState } from "react";
+import Hyperspeed from "@/components/hyperspeed-dynamic";
 import {
   Accordion,
   AccordionContent,
@@ -111,17 +118,23 @@ function ToolRecsVisual() {
         const shown = i <= active;
         return (
           <div
-            className={`flex items-center gap-2 transition-all duration-400 ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
+            className={`flex items-center gap-2 transition-all duration-400 ${shown ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"}`}
             key={tool.name}
           >
             <div
               className={`h-4 w-4 shrink-0 rounded-sm transition-all duration-300 ${i === active ? "bg-primary/30" : "bg-muted/25"}`}
             />
-            <span className={`flex-1 text-[10px] transition-colors duration-300 ${i === active ? "text-foreground/80" : "text-muted-foreground/60"}`}>
+            <span
+              className={`flex-1 text-[10px] transition-colors duration-300 ${i === active ? "text-foreground/80" : "text-muted-foreground/60"}`}
+            >
               {tool.name}
-              <span className="ml-1 text-muted-foreground/35">{tool.category}</span>
+              <span className="ml-1 text-muted-foreground/35">
+                {tool.category}
+              </span>
             </span>
-            <span className={`font-mono text-[9px] tabular-nums transition-colors duration-300 ${i === active ? "text-green-500" : "text-muted-foreground/30"}`}>
+            <span
+              className={`font-mono text-[9px] tabular-nums transition-colors duration-300 ${i === active ? "text-green-500" : "text-muted-foreground/30"}`}
+            >
               {tool.fit}%
             </span>
           </div>
@@ -153,7 +166,12 @@ function ActionPlanVisual() {
     PLAN_ITEMS.forEach((_, i) => {
       timers.push(
         setTimeout(
-          () => setChecked((prev) => { const n = [...prev]; n[i] = true; return n; }),
+          () =>
+            setChecked((prev) => {
+              const n = [...prev];
+              n[i] = true;
+              return n;
+            }),
           delay + i * 380
         )
       );
@@ -260,10 +278,14 @@ function ResourceListVisual() {
           }}
         >
           <div className="flex items-center gap-2 rounded border border-border/25 bg-muted/10 px-2.5 py-1.5">
-            <span className={`shrink-0 rounded px-1.5 py-0.5 font-medium text-[8px] uppercase tracking-wide ${typeColor[r.type]}`}>
+            <span
+              className={`shrink-0 rounded px-1.5 py-0.5 font-medium text-[8px] uppercase tracking-wide ${typeColor[r.type]}`}
+            >
               {r.type}
             </span>
-            <span className="truncate text-[10px] text-muted-foreground/70">{r.label}</span>
+            <span className="truncate text-[10px] text-muted-foreground/70">
+              {r.label}
+            </span>
           </div>
         </div>
       ))}
@@ -282,44 +304,68 @@ const INTAKE_FIELDS = [
 
 function BookVisual() {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  const slots = [true, false, false, true, true, false, false, true, true, false];
+  const slots = [
+    true,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    false,
+  ];
   const [bookedIdx, setBookedIdx] = useState<number | null>(null);
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
-    const available = slots.reduce<number[]>((acc, s, i) => (s ? [...acc, i] : acc), []);
+    const available = slots.reduce<number[]>(
+      (acc, s, i) => (s ? [...acc, i] : acc),
+      []
+    );
     const pick = available[tick % available.length];
     const id = setTimeout(() => setBookedIdx(pick), 400);
     const reset = setTimeout(() => {
       setBookedIdx(null);
       setTick((t) => t + 1);
     }, 2200);
-    return () => { clearTimeout(id); clearTimeout(reset); };
+    return () => {
+      clearTimeout(id);
+      clearTimeout(reset);
+    };
   }, [tick]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="mt-auto pt-5">
       <div className="mb-2 flex justify-between">
         {days.map((d) => (
-          <span className="flex-1 text-center text-[9px] text-muted-foreground/40" key={d}>{d}</span>
+          <span
+            className="flex-1 text-center text-[9px] text-muted-foreground/40"
+            key={d}
+          >
+            {d}
+          </span>
         ))}
       </div>
       <div className="grid grid-cols-5 gap-1">
         {slots.map((open, i) => (
           <div
             className={`flex h-7 items-center justify-center rounded transition-all duration-400 ${
-              !open
-                ? "bg-muted/10 text-muted-foreground/20"
-                : bookedIdx === i
+              open
+                ? bookedIdx === i
                   ? "bg-green-500/20 ring-1 ring-green-500/40"
                   : "cursor-pointer bg-primary/10 hover:bg-primary/15"
+                : "bg-muted/10 text-muted-foreground/20"
             }`}
             key={i}
           >
             {bookedIdx === i ? (
               <Check className="size-3 text-green-500" strokeWidth={3} />
             ) : (
-              <span className={`text-[9px] ${open ? "text-primary/60" : "text-muted-foreground/20"}`}>
+              <span
+                className={`text-[9px] ${open ? "text-primary/60" : "text-muted-foreground/20"}`}
+              >
                 {open ? "○" : "×"}
               </span>
             )}
@@ -362,10 +408,14 @@ function PrepareVisual() {
           key={f.label}
         >
           <div className="flex items-center justify-between">
-            <span className={`text-[9px] transition-colors duration-300 ${active === i ? "text-foreground/70" : "text-muted-foreground/40"}`}>
+            <span
+              className={`text-[9px] transition-colors duration-300 ${active === i ? "text-foreground/70" : "text-muted-foreground/40"}`}
+            >
               {f.label}
             </span>
-            <span className={`text-[9px] transition-colors duration-300 ${active === i ? "text-foreground/80 font-medium" : "text-muted-foreground/35"}`}>
+            <span
+              className={`text-[9px] transition-colors duration-300 ${active === i ? "font-medium text-foreground/80" : "text-muted-foreground/35"}`}
+            >
               {f.value}
             </span>
           </div>
@@ -393,13 +443,36 @@ function SessionVisual() {
       setPhase("idle");
       setTick((t) => t + 1);
     }, 6000);
-    return () => { timers.forEach(clearTimeout); clearTimeout(reset); };
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(reset);
+    };
   }, [tick]);
 
-  const steps: Array<{ label: string; key: SessionPhase; active: boolean; done: boolean }> = [
-    { label: "Audit", key: "audit", active: phase === "audit", done: ["recommend", "plan", "done"].includes(phase) },
-    { label: "Recommend", key: "recommend", active: phase === "recommend", done: ["plan", "done"].includes(phase) },
-    { label: "Plan", key: "plan", active: phase === "plan", done: phase === "done" },
+  const steps: Array<{
+    label: string;
+    key: SessionPhase;
+    active: boolean;
+    done: boolean;
+  }> = [
+    {
+      label: "Audit",
+      key: "audit",
+      active: phase === "audit",
+      done: ["recommend", "plan", "done"].includes(phase),
+    },
+    {
+      label: "Recommend",
+      key: "recommend",
+      active: phase === "recommend",
+      done: ["plan", "done"].includes(phase),
+    },
+    {
+      label: "Plan",
+      key: "plan",
+      active: phase === "plan",
+      done: phase === "done",
+    },
     { label: "Done", key: "done", active: phase === "done", done: false },
   ];
 
@@ -410,13 +483,19 @@ function SessionVisual() {
           <div
             className={[
               "size-2 shrink-0 rounded-full transition-all duration-400",
-              s.done ? "bg-green-500" : s.active ? "animate-pulse bg-primary" : "bg-muted/40",
+              s.done
+                ? "bg-green-500"
+                : s.active
+                  ? "animate-pulse bg-primary"
+                  : "bg-muted/40",
             ].join(" ")}
           />
           <span
             className={[
               "text-[10px] transition-colors duration-300",
-              s.done || s.active ? "text-foreground/70" : "text-muted-foreground/35",
+              s.done || s.active
+                ? "text-foreground/70"
+                : "text-muted-foreground/35",
             ].join(" ")}
           >
             {s.label}
@@ -427,8 +506,18 @@ function SessionVisual() {
             </span>
           )}
           {s.done && (
-            <svg className="ml-auto size-3 text-green-500/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} />
+            <svg
+              className="ml-auto size-3 text-green-500/70"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+              />
             </svg>
           )}
         </div>
@@ -539,9 +628,15 @@ export function ConsultancyContent() {
   };
 
   const now = new Date();
-  const currentMonth = now.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+  const currentMonth = now.toLocaleDateString("en-GB", {
+    month: "long",
+    year: "numeric",
+  });
   const prevDate = new Date(now.getFullYear(), now.getMonth() - 1);
-  const lastMonth = prevDate.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+  const lastMonth = prevDate.toLocaleDateString("en-GB", {
+    month: "long",
+    year: "numeric",
+  });
 
   return (
     <>
@@ -574,7 +669,9 @@ export function ConsultancyContent() {
               </FadeIn>
               <FadeIn delay={0.3} duration={0.5}>
                 <p className="mt-4 max-w-2xl text-muted-foreground text-sm leading-relaxed">
-                  We build AI agents and ship AI-native software for a living. One honest 30-minute audit before you spend a dollar on the wrong thing.
+                  We build AI agents and ship AI-native software for a living.
+                  One honest 30-minute audit before you spend a dollar on the
+                  wrong thing.
                 </p>
               </FadeIn>
               <FadeIn delay={0.4} duration={0.5}>
@@ -620,7 +717,10 @@ export function ConsultancyContent() {
                 <div
                   className="group cursor-pointer border-border border-r border-b border-dashed p-5 transition-colors duration-200 hover:bg-accent/50"
                   onClick={() => openCal("jiaweing/amajor")}
-                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") openCal("jiaweing/amajor"); }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ")
+                      openCal("jiaweing/amajor");
+                  }}
                   role="button"
                   tabIndex={0}
                 >
@@ -630,8 +730,14 @@ export function ConsultancyContent() {
                         Free
                       </span>
                       <div className="relative size-4">
-                        <Check className="absolute inset-0 size-4 text-green-600 transition-all duration-300 ease-out group-hover:rotate-90 group-hover:scale-0 group-hover:opacity-0 dark:text-green-400" strokeWidth={3} />
-                        <Calendar className="absolute inset-0 size-4 -rotate-90 scale-0 text-green-600 opacity-0 transition-all duration-300 ease-out group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100 dark:text-green-400" strokeWidth={3} />
+                        <Check
+                          className="absolute inset-0 size-4 text-green-600 transition-all duration-300 ease-out group-hover:rotate-90 group-hover:scale-0 group-hover:opacity-0 dark:text-green-400"
+                          strokeWidth={3}
+                        />
+                        <Calendar
+                          className="absolute inset-0 size-4 -rotate-90 scale-0 text-green-600 opacity-0 transition-all duration-300 ease-out group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100 dark:text-green-400"
+                          strokeWidth={3}
+                        />
                       </div>
                     </div>
                     <div className="space-y-1.5">
@@ -652,7 +758,10 @@ export function ConsultancyContent() {
                 <div
                   className="group cursor-pointer border-border border-b border-dashed p-5 transition-colors duration-200 hover:bg-accent/50"
                   onClick={() => openCal("jiaweing/amajor-paid")}
-                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") openCal("jiaweing/amajor-paid"); }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ")
+                      openCal("jiaweing/amajor-paid");
+                  }}
                   role="button"
                   tabIndex={0}
                 >
@@ -662,8 +771,14 @@ export function ConsultancyContent() {
                         $100
                       </span>
                       <div className="relative size-4">
-                        <Check className="absolute inset-0 size-4 text-muted-foreground transition-all duration-300 ease-out group-hover:rotate-90 group-hover:scale-0 group-hover:opacity-0" strokeWidth={3} />
-                        <Calendar className="absolute inset-0 size-4 -rotate-90 scale-0 text-muted-foreground opacity-0 transition-all duration-300 ease-out group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100" strokeWidth={3} />
+                        <Check
+                          className="absolute inset-0 size-4 text-muted-foreground transition-all duration-300 ease-out group-hover:rotate-90 group-hover:scale-0 group-hover:opacity-0"
+                          strokeWidth={3}
+                        />
+                        <Calendar
+                          className="absolute inset-0 size-4 -rotate-90 scale-0 text-muted-foreground opacity-0 transition-all duration-300 ease-out group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100"
+                          strokeWidth={3}
+                        />
                       </div>
                     </div>
                     <div className="space-y-1.5">
@@ -686,10 +801,14 @@ export function ConsultancyContent() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
                     <span className="relative inline-flex size-2 rounded-full bg-green-500" />
                   </span>
-                  <span className="font-medium text-foreground">Slots open in {currentMonth}</span>
+                  <span className="font-medium text-foreground">
+                    Slots open in {currentMonth}
+                  </span>
                 </span>
                 <span className="text-muted-foreground text-sm">
-                  <span className="font-medium text-muted-foreground/60 line-through">{lastMonth} fully booked</span>
+                  <span className="font-medium text-muted-foreground/60 line-through">
+                    {lastMonth} fully booked
+                  </span>
                 </span>
               </div>
             </div>
@@ -699,13 +818,26 @@ export function ConsultancyContent() {
 
       {/* ── What You Get ─────────────────────────────────────── */}
       <FadeIn>
-        <section className="relative overflow-hidden pt-10 md:pt-14" id="deliverables">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+        <section
+          className="relative overflow-hidden pt-10 md:pt-14"
+          id="deliverables"
+        >
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div className="mb-6 px-6">
-            <h2 className="font-medium text-2xl tracking-tighter">One session. Four things you leave with.</h2>
+            <h2 className="font-medium text-2xl tracking-tighter">
+              One session. Four things you leave with.
+            </h2>
           </div>
           <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-2">
             {deliverables.map((d, i) => {
@@ -736,25 +868,40 @@ export function ConsultancyContent() {
 
       {/* ── Pricing ──────────────────────────────────────────── */}
       <FadeIn>
-        <section className="relative overflow-hidden pt-10 md:pt-14" id="pricing">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+        <section
+          className="relative overflow-hidden pt-10 md:pt-14"
+          id="pricing"
+        >
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div className="mb-6 px-6">
-            <h2 className="font-medium text-2xl tracking-tighter">Two ways to book. Same session.</h2>
+            <h2 className="font-medium text-2xl tracking-tighter">
+              Two ways to book. Same session.
+            </h2>
           </div>
           <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-2">
-
             <div className="flex flex-col gap-4 border-border border-r border-b border-dashed p-6 md:p-10">
               <div>
                 <p className="font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
                   Free
                 </p>
-                <p className="mt-2 font-semibold text-4xl tracking-tighter">$0</p>
+                <p className="mt-2 font-semibold text-4xl tracking-tighter">
+                  $0
+                </p>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Same 30-minute session. Book any open slot. No payment, no catch.
+                Same 30-minute session. Book any open slot. No payment, no
+                catch.
               </p>
               <Button
                 className="mt-auto w-full rounded-full"
@@ -776,12 +923,17 @@ export function ConsultancyContent() {
                   Paid — net $50
                 </p>
                 <div className="mt-2 flex items-baseline gap-2">
-                  <p className="font-semibold text-4xl tracking-tighter">$100</p>
-                  <p className="text-muted-foreground text-sm">→ $50 back on arrival</p>
+                  <p className="font-semibold text-4xl tracking-tighter">
+                    $100
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    → $50 back on arrival
+                  </p>
                 </div>
               </div>
               <p className="relative z-10 text-muted-foreground text-sm leading-relaxed">
-                Pay $100 upfront. Show up and we refund $50. Net cost: $50. We only keep it if you don&apos;t show up.
+                Pay $100 upfront. Show up and we refund $50. Net cost: $50. We
+                only keep it if you don&apos;t show up.
               </p>
               <Button
                 className="relative z-10 mt-auto w-full rounded-full"
@@ -796,26 +948,63 @@ export function ConsultancyContent() {
 
       {/* ── Credibility ──────────────────────────────────────── */}
       <FadeIn>
-        <section className="relative overflow-hidden pt-10 md:pt-14" id="credibility">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+        <section
+          className="relative overflow-hidden pt-10 md:pt-14"
+          id="credibility"
+        >
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div className="mx-auto mb-6 max-w-5xl px-6">
             <div className="relative z-10 max-w-xl space-y-3">
               <h2 className="font-medium text-2xl tracking-tighter">
                 We build this stuff. We don&apos;t just talk about it.
               </h2>
               <p className="text-muted-foreground">
-                A Major ships AI agents and AI-native software for real businesses. We know what works in production, what looks good in demos, and the difference between the two.
+                A Major ships AI agents and AI-native software for real
+                businesses. We know what works in production, what looks good in
+                demos, and the difference between the two.
               </p>
             </div>
           </div>
           <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-3">
             {[
-              { stat: "Decosmic", label: "One of the world's first RAG-based AI startups. Before RAG was a buzzword.", logo: "/logos/decosmic.svg", logoAlt: "Decosmic", rounded: false, href: "https://decosmic.com" },
-              { stat: "Ryu", label: "End-to-end AI agent infrastructure, built before agents went mainstream.", logo: "/logos/ryu.png", logoAlt: "Ryu", rounded: false, href: "/products/ryu" },
-              { stat: "Update Night", label: "Calling AI trends before they go viral, because we're in the middle of them.", logo: "/logos/updatenight.png", logoAlt: "Update Night", rounded: true, href: "https://updatenight.com" },
+              {
+                stat: "Decosmic",
+                label:
+                  "One of the world's first RAG-based AI startups. Before RAG was a buzzword.",
+                logo: "/logos/decosmic.svg",
+                logoAlt: "Decosmic",
+                rounded: false,
+                href: "https://decosmic.com",
+              },
+              {
+                stat: "Ryu",
+                label:
+                  "End-to-end AI agent infrastructure, built before agents went mainstream.",
+                logo: "/logos/ryu.png",
+                logoAlt: "Ryu",
+                rounded: false,
+                href: "/products/ryu",
+              },
+              {
+                stat: "Update Night",
+                label:
+                  "Calling AI trends before they go viral, because we're in the middle of them.",
+                logo: "/logos/updatenight.png",
+                logoAlt: "Update Night",
+                rounded: true,
+                href: "https://updatenight.com",
+              },
             ].map((c, i) => (
               <a
                 className={[
@@ -824,12 +1013,20 @@ export function ConsultancyContent() {
                 ].join(" ")}
                 href={c.href}
                 key={c.stat}
-                rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                rel={
+                  c.href.startsWith("http") ? "noopener noreferrer" : undefined
+                }
                 target={c.href.startsWith("http") ? "_blank" : undefined}
               >
                 <div className="flex items-center gap-2">
-                  <img alt={c.logoAlt} className={`h-5 w-5 object-contain ${c.rounded ? "rounded" : ""}`} src={c.logo} />
-                  <p className="font-semibold text-2xl tracking-tighter">{c.stat}</p>
+                  <img
+                    alt={c.logoAlt}
+                    className={`h-5 w-5 object-contain ${c.rounded ? "rounded" : ""}`}
+                    src={c.logo}
+                  />
+                  <p className="font-semibold text-2xl tracking-tighter">
+                    {c.stat}
+                  </p>
                 </div>
                 <p className="text-muted-foreground text-sm">{c.label}</p>
               </a>
@@ -840,13 +1037,26 @@ export function ConsultancyContent() {
 
       {/* ── How It Works ─────────────────────────────────────── */}
       <FadeIn>
-        <section className="relative overflow-hidden pt-10 md:pt-14" id="process">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+        <section
+          className="relative overflow-hidden pt-10 md:pt-14"
+          id="process"
+        >
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div className="mb-6 px-6">
-            <h2 className="font-medium text-2xl tracking-tighter">Simple. Three steps.</h2>
+            <h2 className="font-medium text-2xl tracking-tighter">
+              Simple. Three steps.
+            </h2>
           </div>
           <div className="relative grid grid-cols-1 border-border border-y border-dashed md:grid-cols-3">
             {steps.map((step, index) => (
@@ -877,16 +1087,27 @@ export function ConsultancyContent() {
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <FadeIn>
         <section className="relative pt-10 md:pt-14" id="faq">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div className="mx-auto mb-2 max-w-5xl px-6">
-            <h2 className="font-medium text-2xl tracking-tighter">Things people usually ask</h2>
+            <h2 className="font-medium text-2xl tracking-tighter">
+              Things people usually ask
+            </h2>
           </div>
           <div className="mx-auto mb-6 max-w-5xl px-6">
             <p className="text-muted-foreground text-sm">
-              Still unsure? Book anyway. The session exists to answer exactly these questions.
+              Still unsure? Book anyway. The session exists to answer exactly
+              these questions.
             </p>
           </div>
           <div className="relative border-border border-y border-dashed">
@@ -894,12 +1115,17 @@ export function ConsultancyContent() {
               <Accordion className="w-full" collapsible type="single">
                 {faqItems.map((item) => (
                   <div className="group" key={item.id}>
-                    <AccordionItem className="peer border-none px-0 py-1" value={item.id}>
+                    <AccordionItem
+                      className="peer border-none px-0 py-1"
+                      value={item.id}
+                    >
                       <AccordionTrigger className="cursor-pointer font-semibold text-base hover:no-underline">
                         {item.question}
                       </AccordionTrigger>
                       <AccordionContent>
-                        <p className="text-muted-foreground text-sm">{item.answer}</p>
+                        <p className="text-muted-foreground text-sm">
+                          {item.answer}
+                        </p>
                       </AccordionContent>
                     </AccordionItem>
                     <hr className="border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
@@ -914,10 +1140,18 @@ export function ConsultancyContent() {
       {/* ── CTA ──────────────────────────────────────────────── */}
       <FadeIn>
         <section className="relative overflow-hidden py-20" id="book">
-          <StarMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-          <StarMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-          <StarMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-          <StarMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+          <StarMark
+            style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+          />
+          <StarMark
+            style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
+          />
+          <StarMark
+            style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
+          />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-pink-600),var(--color-white)_100%)] dark:opacity-100"
@@ -928,11 +1162,15 @@ export function ConsultancyContent() {
                 Start here before you spend anything on AI.
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Free slots available. Or pay $100 and get $50 back when you show up.
+                Free slots available. Or pay $100 and get $50 back when you show
+                up.
               </p>
               <div className="mx-auto mt-6 max-w-sm">
                 <div className="flex justify-center gap-3">
-                  <Button onClick={() => openCal("jiaweing/amajor")} variant="outline">
+                  <Button
+                    onClick={() => openCal("jiaweing/amajor")}
+                    variant="outline"
+                  >
                     Book free
                   </Button>
                   <Button onClick={() => openCal("jiaweing/amajor-paid")}>

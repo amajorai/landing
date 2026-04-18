@@ -9,11 +9,35 @@ export function HomeHeroCta() {
           <span className="btn-label">Contact Us</span>
         </a>
       </Button>
-      <a href="https://x.com/amajorhq" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter" className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100">
-        <Image alt="X/Twitter" src="/logos/x.svg" width={16} height={16} className="h-5 w-5 dark:invert" />
+      <a
+        aria-label="X/Twitter"
+        className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100"
+        href="https://x.com/amajorhq"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image
+          alt="X/Twitter"
+          className="h-5 w-5 dark:invert"
+          height={16}
+          src="/logos/x.svg"
+          width={16}
+        />
       </a>
-      <a href="https://www.linkedin.com/company/amajor" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100">
-        <Image alt="LinkedIn" src="/logos/linkedin.svg" width={16} height={16} className="h-5 w-5 dark:invert" />
+      <a
+        aria-label="LinkedIn"
+        className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100"
+        href="https://www.linkedin.com/company/amajor"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image
+          alt="LinkedIn"
+          className="h-5 w-5 dark:invert"
+          height={16}
+          src="/logos/linkedin.svg"
+          width={16}
+        />
       </a>
     </div>
   );

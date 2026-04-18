@@ -253,8 +253,8 @@ export default function ContentSection() {
                 Ryu
               </a>
               , end-to-end managed infrastructure for AI agents. Pick your
-              engine (Hermes, OpenClaw, ZeroClaw, or any compatible agent)
-              and Ryu handles everything around it.
+              engine (Hermes, OpenClaw, ZeroClaw, or any compatible agent) and
+              Ryu handles everything around it.
             </p>
           </div>
 

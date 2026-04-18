@@ -46,7 +46,6 @@ export interface Page {
   description?: string;
 }
 
-
 export interface NavProduct {
   id: string;
   name: string;
@@ -585,7 +584,6 @@ export const getPage = unstable_cache(
   ["page"],
   { revalidate: 1800 }
 );
-
 
 // Uncached fetch function for products (nav items)
 export const fetchNavProducts = async (): Promise<NavProduct[]> => {

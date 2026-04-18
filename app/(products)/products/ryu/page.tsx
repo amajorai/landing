@@ -23,7 +23,7 @@ export default function RyuPage() {
           dotRadius={1}
           spacing={28}
         />
-        <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-24 lg:pt-28">
+        <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-16 lg:pt-28">
           <StarMark
             style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
           />
@@ -71,8 +71,8 @@ export default function RyuPage() {
                 (OpenClaw, Hermes, ZeroClaw, IronClaw, Claude Code) already
                 exist. Ryu is the entire car built around them: security, model
                 routing, memory, tools, workflows, deployment, all sourced,
-                assembled, and managed. One Rust binary, three entry points.
-                Not another agent. The managed infrastructure everything runs
+                assembled, and managed. One Rust binary, three entry points. Not
+                another agent. The managed infrastructure everything runs
                 through.
               </p>
 
@@ -112,7 +112,6 @@ export default function RyuPage() {
       <FadeIn>
         <RyuSection />
       </FadeIn>
-
 
       <FadeIn>
         <section className="relative overflow-hidden py-20" id="contact">

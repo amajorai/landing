@@ -5,10 +5,7 @@ import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
 export async function GET() {
-  const [posts, pages] = await Promise.all([
-    getBlogPosts(),
-    getPages(),
-  ]);
+  const [posts, pages] = await Promise.all([getBlogPosts(), getPages()]);
 
   const routes = [
     "/",

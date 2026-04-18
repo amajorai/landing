@@ -2,15 +2,14 @@
 import { getCalApi } from "@calcom/embed-react";
 import {
   BookOpen,
-  ExternalLink,
   Home,
   Info,
   Layers,
   Package,
   Plus,
   Scale,
-  Search,
   Scroll,
+  Search,
   Users,
 } from "lucide-react";
 import Image from "next/image";
@@ -38,7 +37,10 @@ const generalNavItems = [
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Manifesto", href: "/manifesto" },
-  { name: "Careers", href: "/careers" },
+  {
+    name: "Careers",
+    href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
+  },
 ];
 
 // Agency-only additional items
@@ -87,15 +89,25 @@ export default function Header({ products = [] }: HeaderProps) {
         { name: "Blog", href: "/blog", icon: BookOpen },
         { name: "About", href: "/about", icon: Info },
         { name: "Manifesto", href: "/manifesto", icon: Scroll },
-        { name: "Careers", href: "/careers", icon: Users },
-        ...(hasProducts ? [{ name: "Products", href: "/products", icon: Package }] : []),
+        {
+          name: "Careers",
+          href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
+          icon: Users,
+        },
+        ...(hasProducts
+          ? [{ name: "Products", href: "/products", icon: Package }]
+          : []),
       ];
     }
     return [
       { name: "Blog", href: "/blog", icon: BookOpen },
       { name: "About", href: "/about", icon: Info },
       { name: "Manifesto", href: "/manifesto", icon: Scroll },
-      { name: "Careers", href: "/careers", icon: Users },
+      {
+        name: "Careers",
+        href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",
+        icon: Users,
+      },
     ];
   }, [isAgencyRealm, isConsultancyRealm, isProductsRealm, hasProducts]);
   const router = useRouter();
@@ -181,7 +193,7 @@ export default function Header({ products = [] }: HeaderProps) {
               </div>
 
               {/* Desktop: logo tab pills - left */}
-              <div className="hidden lg:flex ml-2">
+              <div className="ml-2 hidden lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <div className="flex items-center gap-0.5 rounded-full bg-muted/30 p-0.5 text-xs">
                     <Link
@@ -244,7 +256,10 @@ export default function Header({ products = [] }: HeaderProps) {
                   >
                     <NavigationMenuList className="gap-3 text-sm">
                       {isConsultancyRealm
-                        ? [...generalNavItems.slice(0, 2), ...agencyExtraItems].map((item) => (
+                        ? [
+                            ...generalNavItems.slice(0, 2),
+                            ...agencyExtraItems,
+                          ].map((item) => (
                             <NavigationMenuItem key={item.name}>
                               <Link
                                 className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
@@ -255,26 +270,29 @@ export default function Header({ products = [] }: HeaderProps) {
                             </NavigationMenuItem>
                           ))
                         : isAgencyRealm
-                        ? [...generalNavItems.slice(0, 2), ...agencyExtraItems].map((item) => (
-                            <NavigationMenuItem key={item.name}>
-                              <Link
-                                className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                                href={item.href as any}
-                              >
-                                {item.name}
-                              </Link>
-                            </NavigationMenuItem>
-                          ))
-                        : generalNavItems.map((item) => (
-                            <NavigationMenuItem key={item.name}>
-                              <Link
-                                className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                                href={item.href as any}
-                              >
-                                {item.name}
-                              </Link>
-                            </NavigationMenuItem>
-                          ))}
+                          ? [
+                              ...generalNavItems.slice(0, 2),
+                              ...agencyExtraItems,
+                            ].map((item) => (
+                              <NavigationMenuItem key={item.name}>
+                                <Link
+                                  className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                  href={item.href as any}
+                                >
+                                  {item.name}
+                                </Link>
+                              </NavigationMenuItem>
+                            ))
+                          : generalNavItems.map((item) => (
+                              <NavigationMenuItem key={item.name}>
+                                <Link
+                                  className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                  href={item.href as any}
+                                >
+                                  {item.name}
+                                </Link>
+                              </NavigationMenuItem>
+                            ))}
 
                       {hasProducts && (
                         <NavigationMenuItem>

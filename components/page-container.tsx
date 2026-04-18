@@ -7,7 +7,7 @@ export default function PageContainer({
 }) {
   return (
     <div className="relative mx-auto max-w-4xl">
-      <div className="relative divide-y divide-dashed divide-border border border-dashed border-border">
+      <div className="relative divide-y divide-dashed divide-border border border-border border-dashed">
         <StarMark
           style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
         />

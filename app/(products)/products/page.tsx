@@ -64,7 +64,9 @@ export default function ProductsPage() {
                   We build the ones that do.
                 </p>
                 <p className="mt-4 max-w-2xl text-muted-foreground text-sm leading-relaxed">
-                  Industry research puts real enterprise value from agents under 10%. We build the platform that makes delivering real value repeatable.
+                  Industry research puts real enterprise value from agents under
+                  10%. We build the platform that makes delivering real value
+                  repeatable.
                 </p>
               </FadeIn>
             </div>
@@ -75,19 +77,35 @@ export default function ProductsPage() {
         <FadeIn delay={0.15}>
           <div className="pb-16">
             <div className="relative grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
-              <CrossMark style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} />
-              <CrossMark style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }} />
-              <CrossMark style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }} />
-              <CrossMark style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }} />
+              <CrossMark
+                style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
+              />
+              <CrossMark
+                style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
+              />
+              <CrossMark
+                style={{
+                  bottom: 0,
+                  left: 0,
+                  transform: "translate(-50%, 50%)",
+                }}
+              />
+              <CrossMark
+                style={{
+                  bottom: 0,
+                  right: 0,
+                  transform: "translate(50%, 50%)",
+                }}
+              />
 
               {PRODUCTS.map((product) => (
                 <Link
-                  key={product.slug}
                   className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
                   href={product.href as any}
+                  key={product.slug}
                 >
                   <div className="relative z-10">
-                    <span className="mb-5 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-muted-foreground text-[10px] uppercase tracking-wider">
+                    <span className="mb-5 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
                       <span className="relative flex size-1.5">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/75" />
                         <span className="relative inline-flex size-1.5 rounded-full bg-amber-400" />
@@ -95,13 +113,19 @@ export default function ProductsPage() {
                       {product.status}
                     </span>
                     <div className="flex items-center gap-2">
-                      <p className="font-semibold text-xl tracking-tighter">{product.name}</p>
+                      <p className="font-semibold text-xl tracking-tighter">
+                        {product.name}
+                      </p>
                       {product.logo && (
-                        <img alt={product.name} className="h-5 w-5 object-contain" src={product.logo} />
+                        <img
+                          alt={product.name}
+                          className="h-5 w-5 object-contain"
+                          src={product.logo}
+                        />
                       )}
                     </div>
                     {product.tagline && (
-                      <p className="font-semibold text-xl text-muted-foreground tracking-tighter">
+                      <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
                         {product.tagline}
                       </p>
                     )}
@@ -117,10 +141,10 @@ export default function ProductsPage() {
               {/* Mystery teaser */}
               <div className="flex flex-col justify-center border-border border-r border-b border-dashed px-10 py-12">
                 <div className="relative z-10">
-                  <p className="font-semibold text-xl tracking-tighter text-muted-foreground/40">
+                  <p className="font-semibold text-muted-foreground/40 text-xl tracking-tighter">
                     Something's brewing.
                   </p>
-                  <p className="font-semibold text-xl text-muted-foreground/30 tracking-tighter">
+                  <p className="font-semibold text-muted-foreground/30 text-xl tracking-tighter">
                     We're not ready to talk about it yet.
                   </p>
                 </div>

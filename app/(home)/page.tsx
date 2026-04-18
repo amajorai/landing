@@ -1,16 +1,14 @@
 import { Check } from "lucide-react";
 import Link from "next/link";
-import { HomeHeroCta } from "@/components/home-hero-cta";
 import { GridScan } from "@/components/GridScan";
-import { TriggerResize } from "@/components/trigger-resize";
+import { HomeHeroCta } from "@/components/home-hero-cta";
 import PixelBlast from "@/components/PixelBlast";
 import Prism from "@/components/reactbits/prism";
+import { TriggerResize } from "@/components/trigger-resize";
+import { CrossMark } from "@/components/ui/cross-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
-import { CrossMark } from "@/components/ui/cross-mark";
 import { generateMetadata } from "@/lib/metadata";
-
-import HyperspeedFive from "@/components/hyperspeed-five";
 
 export const metadata = generateMetadata({
   title: "The foundation for AI agents",
@@ -24,22 +22,22 @@ export default function RootPage() {
     <main className="relative flex min-h-screen flex-col justify-center">
       <div aria-hidden className="fixed inset-0 z-0 opacity-10">
         <PixelBlast
-          variant="square"
-          pixelSize={3}
           color="#B497CF"
-          patternScale={2}
-          patternDensity={1}
+          edgeFade={0.5}
           enableRipples
+          patternDensity={1}
+          patternScale={2}
+          pixelSize={3}
+          rippleIntensityScale={1}
           rippleSpeed={0.3}
           rippleThickness={0.1}
-          rippleIntensityScale={1}
           speed={0.5}
           transparent
-          edgeFade={0.5}
+          variant="square"
         />
       </div>
       {/* Hero */}
-      <FadeIn className="relative z-10 mx-auto w-full max-w-5xl px-6 py-24 sm:py-14 min-h-[50vh] sm:min-h-0 flex flex-col justify-center sm:block">
+      <FadeIn className="relative z-10 mx-auto flex min-h-[50vh] w-full max-w-5xl flex-col justify-center px-6 py-24 sm:block sm:min-h-0 sm:py-14">
         <h1 className="font-semibold text-2xl text-foreground tracking-tighter">
           The foundation for AI agents
         </h1>
@@ -50,7 +48,11 @@ export default function RootPage() {
       </FadeIn>
 
       {/* Four selector panels */}
-      <FadeIn className="relative z-10 mx-auto w-full max-w-5xl pb-14" delay={0.25} duration={0.5}>
+      <FadeIn
+        className="relative z-10 mx-auto w-full max-w-5xl pb-14"
+        delay={0.25}
+        duration={0.5}
+      >
         <div className="relative grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
           <CrossMark
             style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
@@ -85,11 +87,13 @@ export default function RootPage() {
               <p className="font-semibold text-xl tracking-tighter">
                 Most AI agents didn't deliver.
               </p>
-              <p className="font-semibold text-xl text-muted-foreground tracking-tighter">
+              <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
                 We build the ones that do.
               </p>
               <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
-                Industry research puts real enterprise value from agents under 10%. We build the platform that makes delivering real value repeatable.
+                Industry research puts real enterprise value from agents under
+                10%. We build the platform that makes delivering real value
+                repeatable.
               </p>
             </div>
           </Link>
@@ -128,16 +132,20 @@ export default function RootPage() {
                 Software that just works. Experts you can talk to.
               </p>
               <div className="inline-flex items-center gap-2">
-                <p className="font-semibold text-xl text-muted-foreground tracking-tighter">
+                <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
                   Built for humans, by humans.
                 </p>
                 <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-600 dark:bg-blue-400">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75" />
-                  <Check className="relative size-3 text-white" strokeWidth={3} />
+                  <Check
+                    className="relative size-3 text-white"
+                    strokeWidth={3}
+                  />
                 </div>
               </div>
               <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
-                Websites, apps, and enterprise systems, with AI agents at the core. We handle the build so you can focus on the business.
+                Websites, apps, and enterprise systems, with AI agents at the
+                core. We handle the build so you can focus on the business.
               </p>
             </div>
           </Link>

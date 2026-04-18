@@ -90,7 +90,7 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
 
   const pageTitle =
     title && title !== siteConfig.name
-      ? `${title}\u2009•\u2009${siteConfig.name}`
+      ? `${title}\u00A0·\u00A0${siteConfig.name}`
       : siteConfig.name;
   const pageDescription = description || siteConfig.description;
   const pageUrl = url ? new URL(url, siteConfig.url) : siteConfig.url;

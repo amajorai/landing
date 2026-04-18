@@ -43,15 +43,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/consultancy",
-        destination: "/services/consultancy",
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {

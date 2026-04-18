@@ -130,7 +130,7 @@ export default function RyuPage() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-blue-600),var(--color-white)_100%)] dark:opacity-100"
+            className="pointer-events-none absolute inset-0 z-0 opacity-30 [background:radial-gradient(125%_125%_at_50%_0%,transparent_40%,var(--color-purple-600),var(--color-white)_100%)] dark:opacity-100"
           />
           <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
             <h2 className="font-medium text-2xl tracking-tighter">

@@ -61,11 +61,19 @@ export default function Header({ products = [] }: HeaderProps) {
   const isAgencyRealm =
     pathname.startsWith("/agency") ||
     pathname.startsWith("/services") ||
-    pathname.startsWith("/compare") ||
-    pathname.startsWith("/consultancy");
+    pathname.startsWith("/compare");
+  const isConsultancyRealm = pathname.startsWith("/consultancy");
   const isProductsRealm = pathname.startsWith("/products");
 
   const mobileNavItems = useMemo(() => {
+    if (isConsultancyRealm) {
+      return [
+        { name: "Blog", href: "/blog", icon: BookOpen },
+        { name: "Services", href: "/services", icon: Layers },
+        { name: "Compare", href: "/compare", icon: Scale },
+        { name: "About", href: "/about", icon: Info },
+      ];
+    }
     if (isAgencyRealm) {
       return [
         { name: "Blog", href: "/blog", icon: BookOpen },
@@ -78,8 +86,9 @@ export default function Header({ products = [] }: HeaderProps) {
       return [
         { name: "Blog", href: "/blog", icon: BookOpen },
         { name: "About", href: "/about", icon: Info },
+        { name: "Manifesto", href: "/manifesto", icon: Scroll },
+        { name: "Careers", href: "/careers", icon: Users },
         ...(hasProducts ? [{ name: "Products", href: "/products", icon: Package }] : []),
-        { name: "Ryu", href: "/products/ryu", icon: ExternalLink },
       ];
     }
     return [
@@ -88,7 +97,7 @@ export default function Header({ products = [] }: HeaderProps) {
       { name: "Manifesto", href: "/manifesto", icon: Scroll },
       { name: "Careers", href: "/careers", icon: Users },
     ];
-  }, [isAgencyRealm, isProductsRealm, hasProducts]);
+  }, [isAgencyRealm, isConsultancyRealm, isProductsRealm, hasProducts]);
   const router = useRouter();
   const [scrollState, setScrollState] = useState({
     visible: true,
@@ -194,16 +203,6 @@ export default function Header({ products = [] }: HeaderProps) {
                     </Link>
                     <Link
                       className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
-                        isAgencyRealm
-                          ? "bg-foreground text-background"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                      href="/agency"
-                    >
-                      Agency
-                    </Link>
-                    <Link
-                      className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
                         isProductsRealm
                           ? "bg-foreground text-background"
                           : "text-muted-foreground hover:text-foreground"
@@ -212,6 +211,26 @@ export default function Header({ products = [] }: HeaderProps) {
                     >
                       Products
                     </Link>
+                    <Link
+                      className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
+                        isAgencyRealm
+                          ? "bg-foreground text-background"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      href="/agency"
+                    >
+                      Agency
+                    </Link>
+                    {/* <Link
+                      className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
+                        isConsultancyRealm
+                          ? "bg-foreground text-background"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      href="/consultancy"
+                    >
+                      Consultancy
+                    </Link> */}
                   </div>
                 </FadeIn>
               </div>
@@ -224,7 +243,18 @@ export default function Header({ products = [] }: HeaderProps) {
                     viewport={false}
                   >
                     <NavigationMenuList className="gap-3 text-sm">
-                      {isAgencyRealm
+                      {isConsultancyRealm
+                        ? [...generalNavItems.slice(0, 2), ...agencyExtraItems].map((item) => (
+                            <NavigationMenuItem key={item.name}>
+                              <Link
+                                className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                href={item.href as any}
+                              >
+                                {item.name}
+                              </Link>
+                            </NavigationMenuItem>
+                          ))
+                        : isAgencyRealm
                         ? [...generalNavItems.slice(0, 2), ...agencyExtraItems].map((item) => (
                             <NavigationMenuItem key={item.name}>
                               <Link
@@ -292,7 +322,7 @@ export default function Header({ products = [] }: HeaderProps) {
               {/* Desktop: realm selector - left */}
 
               {/* Desktop: New Project + theme toggle - right */}
-              <div className="ml-auto hidden items-center gap-3 lg:flex">
+              <div className="ml-auto flex items-center gap-3">
                 {isAgencyRealm && (
                   <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                     <Button
@@ -311,9 +341,27 @@ export default function Header({ products = [] }: HeaderProps) {
                     </Button>
                   </FadeIn>
                 )}
+                {isConsultancyRealm && (
+                  <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
+                    <Button
+                      className="h-8 rounded-full px-3 text-xs"
+                      onClick={async () => {
+                        const cal = await getCalApi({ namespace: "amajor" });
+                        cal("modal", {
+                          calLink: "jiaweing/amajor",
+                          config: { layout: "month_view" },
+                        });
+                      }}
+                      size="sm"
+                    >
+                      <Plus className="mr-1 h-3 w-3" />
+                      Book Session
+                    </Button>
+                  </FadeIn>
+                )}
                 <button
                   aria-label="Search (⌘K)"
-                  className="flex items-center text-muted-foreground duration-150 hover:text-foreground"
+                  className="hidden items-center text-muted-foreground duration-150 hover:text-foreground lg:flex"
                   onClick={() => setIsSearchOpen(true)}
                   type="button"
                 >
@@ -379,29 +427,13 @@ export default function Header({ products = [] }: HeaderProps) {
                 );
               })}
 
-            {/* Floating center button - realm-aware */}
-            {isAgencyRealm ? (
-              <button
-                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
-                onClick={async () => {
-                  const cal = await getCalApi({ namespace: "amajor" });
-                  cal("modal", {
-                    calLink: "jiaweing/amajor",
-                    config: { layout: "month_view" },
-                  });
-                }}
-                type="button"
-              >
-                <Plus className="h-6 w-6" />
-              </button>
-            ) : (
-              <Link
-                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
-                href="/"
-              >
-                <Home className="h-6 w-6" />
-              </Link>
-            )}
+            {/* Floating center button - home */}
+            <Link
+              className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+              href="/"
+            >
+              <Home className="h-6 w-6" />
+            </Link>
           </div>
         </nav>
       </div>

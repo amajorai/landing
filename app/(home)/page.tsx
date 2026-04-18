@@ -10,6 +10,8 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { CrossMark } from "@/components/ui/cross-mark";
 import { generateMetadata } from "@/lib/metadata";
 
+import HyperspeedFive from "@/components/hyperspeed-five";
+
 export const metadata = generateMetadata({
   title: "The foundation for AI agents",
   description:
@@ -20,7 +22,7 @@ export const metadata = generateMetadata({
 export default function RootPage() {
   return (
     <main className="relative flex min-h-screen flex-col justify-center">
-      <div aria-hidden className="pointer-events-none fixed inset-0 z-0 opacity-10">
+      <div aria-hidden className="fixed inset-0 z-0 opacity-10">
         <PixelBlast
           variant="square"
           pixelSize={3}
@@ -167,8 +169,35 @@ export default function RootPage() {
             </div>
           </Link> */}
 
-          {/* Empty teaser cell */}
-          {/* <div className="border-border border-r border-b border-dashed px-10 py-12" /> */}
+          {/* Consultancy panel — temporarily hidden */}
+          {/* <Link
+            className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
+            href="/consultancy"
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-20"
+              style={{ zIndex: 0 }}
+            >
+              <HyperspeedFive />
+            </div>
+            <div className="relative z-10">
+              <p className="mb-4 font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
+                Consultancy
+              </p>
+              <p className="font-semibold text-xl tracking-tighter">
+                The biggest gap in AI isn&apos;t the technology.
+              </p>
+              <p className="font-semibold text-xl text-muted-foreground tracking-tighter">
+                It&apos;s knowing where to start.
+              </p>
+              <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
+                We build AI agents and ship AI-native software for a living. One honest 30-minute audit before you spend a dollar on the wrong thing.
+              </p>
+            </div>
+          </Link>
+
+          <div className="border-border border-r border-b border-dashed px-10 py-12" /> */}
         </div>
       </FadeIn>
     </main>

@@ -37,7 +37,7 @@ export default function RootPage() {
         />
       </div>
       {/* Hero */}
-      <FadeIn className="relative z-10 mx-auto w-full max-w-5xl px-6 py-14">
+      <FadeIn className="relative z-10 mx-auto w-full max-w-5xl px-6 py-24 sm:py-14 min-h-[50vh] sm:min-h-0 flex flex-col justify-center sm:block">
         <h1 className="font-semibold text-2xl text-foreground tracking-tighter">
           The foundation for AI agents
         </h1>
@@ -141,7 +141,7 @@ export default function RootPage() {
           </Link>
 
           {/* Ryu panel */}
-          <Link
+          {/* <Link
             className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
             href="/products/ryu"
           >
@@ -165,10 +165,10 @@ export default function RootPage() {
                 agent. Ryu handles everything around it.
               </p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Empty teaser cell */}
-          <div className="border-border border-r border-b border-dashed px-10 py-12" />
+          {/* <div className="border-border border-r border-b border-dashed px-10 py-12" /> */}
         </div>
       </FadeIn>
     </main>

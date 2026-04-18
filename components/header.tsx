@@ -131,7 +131,7 @@ export default function Header({ products = [] }: HeaderProps) {
       <CommandPalette onOpenChange={setIsSearchOpen} open={isSearchOpen} />
       <header>
         <nav
-          className={`fixed z-60 w-full transition-transform duration-300 ${
+          className={`fixed z-[46] w-full transition-transform duration-300 ${
             scrollState.visible || isMenuOpen
               ? "translate-y-0"
               : "-translate-y-full"
@@ -146,7 +146,7 @@ export default function Header({ products = [] }: HeaderProps) {
             className="hidden lg:block"
             useThemeBackground={true}
           />
-          <div className="relative z-[60] m-auto px-6 py-2">
+          <div className="relative z-[46] m-auto px-6 py-2">
             <div className="relative flex items-center pt-6 pb-3 lg:py-4">
               {/* Mobile left: search button */}
               <button
@@ -171,8 +171,8 @@ export default function Header({ products = [] }: HeaderProps) {
                 </FadeIn>
               </div>
 
-              {/* Desktop: logo tabs + nav centered */}
-              <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 lg:flex">
+              {/* Desktop: logo tab pills - left */}
+              <div className="hidden lg:flex ml-2">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <div className="flex items-center gap-0.5 rounded-full bg-muted/30 p-0.5 text-xs">
                     <Link
@@ -214,6 +214,10 @@ export default function Header({ products = [] }: HeaderProps) {
                     </Link>
                   </div>
                 </FadeIn>
+              </div>
+
+              {/* Desktop: nav links - centered */}
+              <div className="absolute left-1/2 hidden -translate-x-1/2 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <NavigationMenu
                     onValueChange={(value) => setIsMenuOpen(value !== "")}

@@ -57,7 +57,7 @@ const ProgressiveBlur = ({
 
   return (
     <div
-      className={`pointer-events-none fixed left-0 w-full select-none ${className} z-[55]`}
+      className={`pointer-events-none fixed left-0 w-full select-none ${className} z-[45]`}
       style={{
         [isTop ? "top" : "bottom"]: 0,
         height,

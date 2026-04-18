@@ -412,6 +412,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     composer?: EffectComposer;
     touch?: ReturnType<typeof createTouchTexture>;
     liquidEffect?: Effect;
+    _cleanupContextListeners?: () => void;
   } | null>(null);
   const prevConfigRef = useRef<ReinitConfig | null>(null);
   useEffect(() => {
@@ -434,6 +435,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         const t = threeRef.current;
         t.resizeObserver?.disconnect();
         cancelAnimationFrame(t.raf!);
+        t._cleanupContextListeners?.();
         t.quad?.geometry.dispose();
         t.material.dispose();
         t.composer?.dispose();
@@ -586,8 +588,22 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         passive: true
       });
       let raf = 0;
+      let contextLost = false;
+      const onContextLost = (e: Event) => {
+        e.preventDefault();
+        contextLost = true;
+      };
+      const onContextRestored = () => {
+        contextLost = false;
+      };
+      canvas.addEventListener('webglcontextlost', onContextLost);
+      canvas.addEventListener('webglcontextrestored', onContextRestored);
       const animate = () => {
         if (autoPauseOffscreen && !visibilityRef.current.visible) {
+          raf = requestAnimationFrame(animate);
+          return;
+        }
+        if (contextLost) {
           raf = requestAnimationFrame(animate);
           return;
         }
@@ -597,19 +613,25 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
           const timeUniform = liqEffect.uniforms.get('uTime');
           if (timeUniform) timeUniform.value = uniforms.uTime.value;
         }
-        if (composer) {
-          if (touch) touch.update();
-          composer.passes.forEach(p => {
-            const pass = p as { effects?: Array<Effect & { uniforms: Map<string, THREE.Uniform> }> };
-            if (pass.effects) {
-              pass.effects.forEach(eff => {
-                const timeUniform = eff.uniforms?.get('uTime');
-                if (timeUniform) timeUniform.value = uniforms.uTime.value;
-              });
-            }
-          });
-          composer.render();
-        } else renderer.render(scene, camera);
+        try {
+          if (composer) {
+            if (touch) touch.update();
+            composer.passes.forEach(p => {
+              const pass = p as { effects?: Array<Effect & { uniforms: Map<string, THREE.Uniform> }> };
+              if (pass.effects) {
+                pass.effects.forEach(eff => {
+                  const timeUniform = eff.uniforms?.get('uTime');
+                  if (timeUniform) timeUniform.value = uniforms.uTime.value;
+                });
+              }
+            });
+            composer.render();
+          } else renderer.render(scene, camera);
+        } catch {
+          contextLost = true;
+          raf = requestAnimationFrame(animate);
+          return;
+        }
         raf = requestAnimationFrame(animate);
       };
       raf = requestAnimationFrame(animate);
@@ -627,7 +649,11 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         timeOffset,
         composer,
         touch,
-        liquidEffect
+        liquidEffect,
+        _cleanupContextListeners: () => {
+          canvas.removeEventListener('webglcontextlost', onContextLost);
+          canvas.removeEventListener('webglcontextrestored', onContextRestored);
+        }
       };
     } else {
       const t = threeRef.current!;
@@ -660,6 +686,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       const t = threeRef.current;
       t.resizeObserver?.disconnect();
       cancelAnimationFrame(t.raf!);
+      t._cleanupContextListeners?.();
       t.quad?.geometry.dispose();
       t.material.dispose();
       t.composer?.dispose();

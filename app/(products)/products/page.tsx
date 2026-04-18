@@ -8,8 +8,20 @@ import { generateMetadata as genMeta } from "@/lib/metadata";
 export const metadata = genMeta({
   title: "Products",
   description:
-    "Agent-native products built by A Major. The agency is the runway. The products are the reason.",
+    "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, end-to-end managed infrastructure for AI agents.",
   url: "/products",
+  tags: [
+    "AI agents",
+    "AI agent infrastructure",
+    "agent-native products",
+    "Ryu",
+    "Ryu AI agents",
+    "managed AI infrastructure",
+    "agent orchestration",
+    "LLM integration",
+    "MCP server",
+    "A Major Products",
+  ],
 });
 
 const PRODUCTS = [

@@ -7,7 +7,23 @@ const organizationSchema = {
   logo: "https://amajor.ai/logos/amajor-submark.svg",
   sameAs: ["https://x.com/amajorai", "https://www.linkedin.com/company/amajor"],
   description:
-    "A Major is a Singapore-based software agency specialising in web design, software development, and digital solutions for businesses.",
+    "A Major is a software company for the agent era. The Agency builds websites, apps, and enterprise systems with AI agents at the core. Products ships agent-native software — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+  hasPart: [
+    {
+      "@type": "Organization",
+      name: "A Major Agency",
+      url: "https://amajor.ai/agency",
+      description:
+        "Software that just works. Experts you can talk to. Websites, apps, and enterprise systems with AI agents at the core.",
+    },
+    {
+      "@type": "Organization",
+      name: "A Major Products",
+      url: "https://amajor.ai/products",
+      description:
+        "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+    },
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
@@ -116,9 +132,10 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "A Major",
+    url: "https://amajor.ai",
   },
   description:
-    "Web design, software development, and digital solutions for businesses. From discovery through to launch.",
+    "Websites, apps, and enterprise systems with AI agents at the core — from the Agency arm. Agent-native products including Ryu, end-to-end managed AI agent infrastructure — from the Products arm.",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -132,7 +149,7 @@ const localBusinessSchema = {
   image: "https://amajor.ai/og/index.png",
   url: "https://amajor.ai",
   description:
-    "Singapore software agency offering web design, custom software development, SaaS, mobile apps, e-commerce, and engineering consultancy.",
+    "Singapore-based software company for the agent era. Agency: websites, apps, and enterprise systems with AI agents at the core. Products: agent-native software including Ryu, managed infrastructure for AI agents.",
   priceRange: "$$$",
   areaServed: [
     { "@type": "Country", name: "Singapore" },
@@ -163,10 +180,26 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What services does A Major offer?",
+      name: "What is A Major?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A Major offers web design, web app development, mobile app development (React Native, Swift, Flutter), SaaS product development, enterprise systems, UI/UX design, DevOps, performance optimization, MCP server development, AI agent infrastructure, MVP scoping, digital transformation, and engineering consultancy.",
+        text: "A Major is a software company for the agent era with two arms: an Agency that builds websites, apps, and enterprise systems with AI agents at the core; and Products, which ships agent-native software including Ryu, end-to-end managed infrastructure for AI agents.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does A Major Agency do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major Agency builds websites, apps, and enterprise systems with AI agents at the core. Software that just works, built by experts you can talk to — covering web apps, mobile apps (React Native, Swift, Flutter), SaaS products, enterprise systems, UI/UX design, DevOps, MCP servers, MVP scoping, and engineering consultancy.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does A Major Products do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major Products ships agent-native software. Most AI agents didn't deliver — A Major builds the ones that do. The flagship product is Ryu, end-to-end managed infrastructure for AI agents.",
       },
     },
     {
@@ -179,18 +212,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Do you work with international clients?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. While headquartered in Singapore, A Major works with founders and businesses across Southeast Asia, Europe, and North America.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "What is Ryu?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ryu is end-to-end managed infrastructure for AI agents, built by A Major. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
+        text: "Ryu is end-to-end managed infrastructure for AI agents, built by A Major Products. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
       },
     },
     {
@@ -198,7 +223,7 @@ const faqSchema = {
       name: "Do you build MCP servers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. A Major builds Model Context Protocol (MCP) servers that connect AI agents to databases, APIs, and internal tools, enabling reliable LLM-powered workflows in production environments.",
+        text: "Yes. A Major Agency builds Model Context Protocol (MCP) servers that connect AI agents to databases, APIs, and internal tools, enabling reliable LLM-powered workflows in production environments.",
       },
     },
   ],

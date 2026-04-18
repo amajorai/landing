@@ -241,17 +241,20 @@ export default function ContentSection() {
             </p>
             <p className="text-muted-foreground">
               We&apos;re also the team behind{" "}
-              <span className="inline-flex items-center gap-1 font-semibold text-accent-foreground">
+              <a
+                className="inline-flex items-center gap-1 font-semibold text-accent-foreground underline-offset-2 hover:underline"
+                href="/products/ryu"
+              >
                 <img
                   alt="Ryu"
                   className="inline-block h-3.5 w-3.5 object-contain"
                   src="/logos/ryu.png"
                 />
                 Ryu
-              </span>
-              , an orchestration layer for AI agents. Bring your own agent:
-              OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it with
-              security, memory, and tools.
+              </a>
+              , end-to-end managed infrastructure for AI agents. Pick your
+              engine (Hermes, OpenClaw, ZeroClaw, or any compatible agent)
+              and Ryu handles everything around it.
             </p>
           </div>
 

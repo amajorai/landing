@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { compareConfig } from "@/lib/compare-config";
 import { multiCompareConfig } from "@/lib/multi-compare-config";
-import { getBlogPosts, getPages, getProjects } from "@/lib/notion";
+import { getBlogPosts, getPages } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
@@ -23,9 +23,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://amajor.ai";
   const currentDate = new Date();
 
-  const [blogPosts, projects, pages] = await Promise.all([
+  const [blogPosts, pages] = await Promise.all([
     getBlogPosts().catch(() => []),
-    getProjects().catch(() => []),
     getPages().catch(() => []),
   ]);
 
@@ -58,12 +57,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/consultancy`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
@@ -129,15 +122,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.6,
-    });
-  });
-
-  projects.forEach((project) => {
-    routes.push({
-      url: `${baseUrl}/projects/${project.slug}`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
     });
   });
 

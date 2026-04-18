@@ -10,7 +10,6 @@ import { SeasonalEffects } from "@/components/SeasonalEffects";
 import SEO from "@/components/seo";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
-import { StarMark } from "@/components/ui/star-mark";
 import { WebMCPProvider } from "@/components/webmcp-provider";
 import { analyticsConfig } from "@/lib/analytics-config";
 import { getNavProducts } from "@/lib/notion";
@@ -90,42 +89,7 @@ export default async function RootLayout({
             <Header products={products} />
             <FloatingBookingButton />
             <SeasonalEffects />
-            <div className="relative mx-auto max-w-4xl">
-              {/* <Intersection2> */}
-              <div className="relative divide-y divide-dashed divide-border border border-border border-dashed">
-                {/* Page container corner stars */}
-                <StarMark
-                  style={{
-                    top: 0,
-                    left: 0,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-                <StarMark
-                  style={{
-                    top: 0,
-                    right: 0,
-                    transform: "translate(50%, -50%)",
-                  }}
-                />
-                <StarMark
-                  style={{
-                    bottom: 0,
-                    left: 0,
-                    transform: "translate(-50%, 50%)",
-                  }}
-                />
-                <StarMark
-                  style={{
-                    bottom: 0,
-                    right: 0,
-                    transform: "translate(50%, 50%)",
-                  }}
-                />
-                {children}
-              </div>
-              {/* </Intersection2> */}
-            </div>
+            {children}
             <FooterSection />
             <TailwindIndicator />
             <WebMCPProvider />

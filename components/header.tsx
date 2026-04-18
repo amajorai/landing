@@ -2,13 +2,18 @@
 import { getCalApi } from "@calcom/embed-react";
 import {
   BookOpen,
+  ExternalLink,
+  Home,
   Info,
   Layers,
   Package,
   Plus,
   Scale,
   Search,
+  Scroll,
+  Users,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -28,14 +33,19 @@ import {
 } from "@/components/ui/navigation-menu";
 import type { NavProduct } from "@/lib/notion";
 
-// Desktop nav items rendered before the Services dropdown
-const beforeServiceItems = [
+// Nav items for non-agency pages (home, products, blog, generic)
+const generalNavItems = [
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
+  { name: "Manifesto", href: "/manifesto" },
+  { name: "Careers", href: "/careers" },
 ];
 
-// Desktop nav items rendered after Services
-const afterServiceItems = [{ name: "Compare", href: "/compare" }];
+// Agency-only additional items
+const agencyExtraItems = [
+  { name: "Services", href: "/services" },
+  { name: "Compare", href: "/compare" },
+];
 
 // Desktop nav items rendered after the Products dropdown
 const afterProductsItems: { name: string; href: string }[] = [];
@@ -46,20 +56,39 @@ interface HeaderProps {
 
 export default function Header({ products = [] }: HeaderProps) {
   const hasProducts = products.length > 0;
+  const pathname = usePathname();
+
+  const isAgencyRealm =
+    pathname.startsWith("/agency") ||
+    pathname.startsWith("/services") ||
+    pathname.startsWith("/compare") ||
+    pathname.startsWith("/consultancy");
+  const isProductsRealm = pathname.startsWith("/products");
 
   const mobileNavItems = useMemo(() => {
-    const items = [
-      { name: "Blog", href: "/blog", icon: BookOpen },
-      { name: "Services", href: "/services", icon: Layers },
-    ];
-    if (hasProducts) {
-      items.push({ name: "Products", href: "/products", icon: Package });
+    if (isAgencyRealm) {
+      return [
+        { name: "Blog", href: "/blog", icon: BookOpen },
+        { name: "Services", href: "/services", icon: Layers },
+        { name: "Compare", href: "/compare", icon: Scale },
+        { name: "About", href: "/about", icon: Info },
+      ];
     }
-    items.push({ name: "Compare", href: "/compare", icon: Scale });
-    items.push({ name: "About", href: "/about", icon: Info });
-    return items;
-  }, [hasProducts]);
-  const pathname = usePathname();
+    if (isProductsRealm) {
+      return [
+        { name: "Blog", href: "/blog", icon: BookOpen },
+        { name: "About", href: "/about", icon: Info },
+        ...(hasProducts ? [{ name: "Products", href: "/products", icon: Package }] : []),
+        { name: "Ryu", href: "/products/ryu", icon: ExternalLink },
+      ];
+    }
+    return [
+      { name: "Blog", href: "/blog", icon: BookOpen },
+      { name: "About", href: "/about", icon: Info },
+      { name: "Manifesto", href: "/manifesto", icon: Scroll },
+      { name: "Careers", href: "/careers", icon: Users },
+    ];
+  }, [isAgencyRealm, isProductsRealm, hasProducts]);
   const router = useRouter();
   const [scrollState, setScrollState] = useState({
     visible: true,
@@ -142,54 +171,76 @@ export default function Header({ products = [] }: HeaderProps) {
                 </FadeIn>
               </div>
 
-              {/* Desktop: logo + nav centered */}
-              <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
+              {/* Desktop: logo tabs + nav centered */}
+              <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
-                  <Link
-                    aria-label="home"
-                    className="flex items-center"
-                    href="/"
-                  >
-                    <Logo />
-                  </Link>
+                  <div className="flex items-center gap-0.5 rounded-full bg-muted/30 p-0.5 text-xs">
+                    <Link
+                      aria-label="Home"
+                      className={`flex items-center rounded-full px-2.5 py-1.5 transition-colors duration-150 ${
+                        pathname === "/"
+                          ? "bg-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      href="/"
+                    >
+                      <Image
+                        alt="A Major"
+                        className={`mt-0.5 h-3.5 w-3.5 ${pathname === "/" ? "invert dark:invert-0" : "dark:invert"}`}
+                        height={14}
+                        src="/logos/amajor-submark.svg"
+                        width={14}
+                      />
+                    </Link>
+                    <Link
+                      className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
+                        isAgencyRealm
+                          ? "bg-foreground text-background"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      href="/agency"
+                    >
+                      Agency
+                    </Link>
+                    <Link
+                      className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
+                        isProductsRealm
+                          ? "bg-foreground text-background"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      href="/products"
+                    >
+                      Products
+                    </Link>
+                  </div>
                 </FadeIn>
-
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                   <NavigationMenu
                     onValueChange={(value) => setIsMenuOpen(value !== "")}
                     viewport={false}
                   >
                     <NavigationMenuList className="gap-3 text-sm">
-                      {beforeServiceItems.map((item) => (
-                        <NavigationMenuItem key={item.name}>
-                          <Link
-                            className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                            href={item.href as any}
-                          >
-                            {item.name}
-                          </Link>
-                        </NavigationMenuItem>
-                      ))}
-
-                      <NavigationMenuItem>
-                        <Link
-                          className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                          href={"/services" as any}
-                        >
-                          Services
-                        </Link>
-                      </NavigationMenuItem>
-
-                      {afterServiceItems.map((item) => (
-                        <NavigationMenuItem key={item.name}>
-                          <Link
-                            className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                            href={item.href as any}
-                          >
-                            {item.name}
-                          </Link>
-                        </NavigationMenuItem>
-                      ))}
+                      {isAgencyRealm
+                        ? [...generalNavItems.slice(0, 2), ...agencyExtraItems].map((item) => (
+                            <NavigationMenuItem key={item.name}>
+                              <Link
+                                className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                href={item.href as any}
+                              >
+                                {item.name}
+                              </Link>
+                            </NavigationMenuItem>
+                          ))
+                        : generalNavItems.map((item) => (
+                            <NavigationMenuItem key={item.name}>
+                              <Link
+                                className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                href={item.href as any}
+                              >
+                                {item.name}
+                              </Link>
+                            </NavigationMenuItem>
+                          ))}
 
                       {hasProducts && (
                         <NavigationMenuItem>
@@ -229,39 +280,41 @@ export default function Header({ products = [] }: HeaderProps) {
                           )}
                         </NavigationMenuItem>
                       ))}
-                      <NavigationMenuItem>
-                        <button
-                          aria-label="Search (⌘K)"
-                          className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground duration-150 hover:text-accent-foreground"
-                          onClick={() => setIsSearchOpen(true)}
-                          type="button"
-                        >
-                          <Search className="h-4 w-4" />
-                        </button>
-                      </NavigationMenuItem>
                     </NavigationMenuList>
                   </NavigationMenu>
                 </FadeIn>
               </div>
 
+              {/* Desktop: realm selector - left */}
+
               {/* Desktop: New Project + theme toggle - right */}
               <div className="ml-auto hidden items-center gap-3 lg:flex">
-                <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
-                  <Button
-                    asChild
-                    className="h-8 rounded-full px-3 text-xs"
-                    size="sm"
-                  >
-                    <a
-                      href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
-                      rel="noopener noreferrer"
-                      target="_blank"
+                {isAgencyRealm && (
+                  <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
+                    <Button
+                      asChild
+                      className="h-8 rounded-full px-3 text-xs"
+                      size="sm"
                     >
-                      <Plus className="mr-1 h-3 w-3" />
-                      New Project
-                    </a>
-                  </Button>
-                </FadeIn>
+                      <a
+                        href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <Plus className="mr-1 h-3 w-3" />
+                        New Project
+                      </a>
+                    </Button>
+                  </FadeIn>
+                )}
+                <button
+                  aria-label="Search (⌘K)"
+                  className="flex items-center text-muted-foreground duration-150 hover:text-foreground"
+                  onClick={() => setIsSearchOpen(true)}
+                  type="button"
+                >
+                  <Search className="h-4 w-4" />
+                </button>
                 <ThemeToggle />
               </div>
             </div>
@@ -322,20 +375,29 @@ export default function Header({ products = [] }: HeaderProps) {
                 );
               })}
 
-            {/* Floating center Book button - elevated above the bar */}
-            <button
-              className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
-              onClick={async () => {
-                const cal = await getCalApi({ namespace: "amajor" });
-                cal("modal", {
-                  calLink: "jiaweing/amajor",
-                  config: { layout: "month_view" },
-                });
-              }}
-              type="button"
-            >
-              <Plus className="h-6 w-6" />
-            </button>
+            {/* Floating center button - realm-aware */}
+            {isAgencyRealm ? (
+              <button
+                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+                onClick={async () => {
+                  const cal = await getCalApi({ namespace: "amajor" });
+                  cal("modal", {
+                    calLink: "jiaweing/amajor",
+                    config: { layout: "month_view" },
+                  });
+                }}
+                type="button"
+              >
+                <Plus className="h-6 w-6" />
+              </button>
+            ) : (
+              <Link
+                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+                href="/"
+              >
+                <Home className="h-6 w-6" />
+              </Link>
+            )}
           </div>
         </nav>
       </div>

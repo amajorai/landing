@@ -73,7 +73,11 @@
       "Bash(sed -n '6035,6050p' /c/Code/amajor-landing/lib/services-config.ts)",
       "Bash(sed -n '6454,6469p' /c/Code/amajor-landing/lib/services-config.ts)",
       "Bash(sed -n '2888,2900p' /c/Code/amajor-landing/lib/compare-config.ts)",
-      "Bash(sed -n '2988,3000p' /c/Code/amajor-landing/lib/compare-config.ts)"
+      "Bash(sed -n '2988,3000p' /c/Code/amajor-landing/lib/compare-config.ts)",
+      "Bash(bun x *)",
+      "Bash(npx --prefix \"C:\\\\Code\\\\amajor-landing\" tsc --noEmit)",
+      "Bash(sed -i -e 's/hover:bg-amber-500\\\\/5/hover:bg-muted\\\\/30/g' -e 's/bg-amber-500\\\\/10 px-2\\\\.5 py-1 font-medium text-amber-500/bg-muted\\\\/40 px-2.5 py-1 font-medium text-muted-foreground/g' -e 's/bg-amber-400 opacity-75/bg-foreground\\\\/40 opacity-75/g' -e 's/bg-amber-400\"/bg-foreground\\\\/60\"/g' -e 's/text-amber-500 text-sm transition-colors group-hover:text-amber-400/text-foreground\\\\/70 text-sm transition-colors group-hover:text-foreground/g' 'C:\\\\Code\\\\amajor-landing\\\\app\\\\\\(products\\)\\\\products\\\\page.tsx')",
+      "Bash(sed -i -e 's/bg-amber-500\\\\/10 px-3 py-1 font-medium text-amber-500/bg-muted\\\\/40 px-3 py-1 font-medium text-muted-foreground/g' -e 's/bg-amber-400 opacity-75/bg-foreground\\\\/40 opacity-75/g' -e 's/bg-amber-400\"/bg-foreground\\\\/60\"/g' 'C:\\\\Code\\\\amajor-landing\\\\app\\\\\\(products\\)\\\\products\\\\ryu\\\\page.tsx')"
     ]
   }
 }

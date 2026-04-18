@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { BlogPost, Page, Project } from "@/lib/notion";
+import type { BlogPost, Page } from "@/lib/notion";
 
 export const siteConfig = {
   name: "A Major",
@@ -84,7 +84,7 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
 
   const pageTitle =
     title && title !== siteConfig.name
-      ? `${title} • ${siteConfig.name}`
+      ? `${title}\u2009•\u2009${siteConfig.name}`
       : siteConfig.name;
   const pageDescription = description || siteConfig.description;
   const pageUrl = url ? new URL(url, siteConfig.url) : siteConfig.url;
@@ -195,17 +195,6 @@ export function generatePageMetadata(page: Page): Metadata {
   });
 }
 
-export function generateProjectMetadata(project: Project): Metadata {
-  return generateMetadata({
-    title: project.title,
-    description: project.description,
-    image: project.cover,
-    url: `/projects/${project.slug}`,
-    type: "article",
-    category: "project",
-    tags: project.techStack,
-  });
-}
 
 export function generateServiceMetadata(service: {
   name: string;

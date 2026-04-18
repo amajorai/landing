@@ -465,7 +465,7 @@ export default function RyuSection() {
                   className="order-last h-5 w-5 object-contain md:order-first"
                   src="/logos/ryu.png"
                 />
-                The agency behind Ryu
+                How Ryu works
               </h2>
               <span className="inline-flex items-center gap-1.5 text-muted-foreground text-xs">
                 <span className="relative flex size-2">
@@ -476,11 +476,11 @@ export default function RyuSection() {
               </span>
             </div>
             <p className="text-muted-foreground">
-              We built Ryu because running AI agents in production
-              shouldn&apos;t require a team of ML engineers. Bring your own
-              agent: OpenClaw, ZeroClaw, Hermes, or anything else. Ryu wraps it
-              with security, memory, and tools. Swap one URL. Get everything
-              else for free.
+              End-to-end managed infrastructure for AI agents. The engines
+              (OpenClaw, Hermes, ZeroClaw, IronClaw, Claude Code) already exist.
+              Ryu is the entire car built around them: security, model routing,
+              memory, tools, workflows, and deployment, all sourced, assembled,
+              and managed. Pick your engine. We build the car.
             </p>
             <a
               className="inline-flex items-center gap-1 font-medium text-foreground text-sm underline-offset-4 hover:underline"

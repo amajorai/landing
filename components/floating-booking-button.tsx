@@ -1,9 +1,12 @@
 "use client";
 import { getCalApi } from "@calcom/embed-react";
 import { Calendar } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export function FloatingBookingButton() {
+  const pathname = usePathname();
+  if (pathname === "/") return null;
   const handleBookCall = async () => {
     const cal = await getCalApi({ namespace: "amajor" });
     cal("modal", {

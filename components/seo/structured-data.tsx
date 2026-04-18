@@ -190,7 +190,7 @@ const faqSchema = {
       name: "What is Ryu?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ryu is an AI agent orchestration layer built by A Major. It enables teams to run, coordinate, and monitor AI agents at scale, connecting LLMs, tools, and workflows into reliable production systems.",
+        text: "Ryu is end-to-end managed infrastructure for AI agents, built by A Major. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
       },
     },
     {
@@ -210,7 +210,7 @@ const ryuSchema = {
   name: "Ryu",
   applicationCategory: "DeveloperApplication",
   description:
-    "Ryu is an AI agent orchestration layer that enables teams to run, coordinate, and monitor AI agents at scale. Connect LLMs, tools, and workflows into reliable production systems.",
+    "Ryu is end-to-end managed infrastructure for AI agents. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
   url: "https://amajor.ai/products",
   operatingSystem: "Web",
   author: {

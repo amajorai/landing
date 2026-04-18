@@ -138,6 +138,12 @@ export default function HeroSection() {
                 </div>
               </FadeIn>
 
+              <FadeIn delay={0.3} duration={0.5}>
+                <p className="mt-4 max-w-2xl text-muted-foreground text-sm leading-relaxed">
+                  Websites, apps, and enterprise systems, with AI agents at the core. We handle the build so you can focus on the business.
+                </p>
+              </FadeIn>
+
               <FadeIn delay={0.4} duration={0.5}>
                 <div className="mt-8 flex items-center gap-4">
                   <Button

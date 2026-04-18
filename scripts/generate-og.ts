@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
 import { compareConfig } from "@/lib/compare-config";
-import { fetchBlogPosts, fetchPages, fetchProjects } from "@/lib/notion";
+import { fetchBlogPosts, fetchPages } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
@@ -69,19 +69,18 @@ async function main() {
     // 1. Gather paths
     console.log("Fetching routes...");
     const pages = await fetchPages();
-    const projects = await fetchProjects();
     const blogPosts = await fetchBlogPosts();
 
     const routes = [
       "/",
+      "/agency",
       "/blog",
-      "/projects",
       "/services",
       "/products",
+      "/products/ryu",
       "/consultancy",
       "/compare",
       ...pages.map((p) => `/${p.slug}`),
-      ...projects.map((p) => `/projects/${p.slug}`),
       ...blogPosts.map((p) => `/blog/${p.slug}`),
       ...Array.from(
         new Set(blogPosts.flatMap((p) => p.authors.map((a) => a.slug)))

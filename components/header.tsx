@@ -445,13 +445,29 @@ export default function Header({ products = [] }: HeaderProps) {
                 );
               })}
 
-            {/* Floating center button - home */}
-            <Link
-              className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
-              href="/"
-            >
-              <Home className="h-6 w-6" />
-            </Link>
+            {/* Floating center button - plus (booking) on home, home icon elsewhere */}
+            {pathname === "/" ? (
+              <button
+                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+                onClick={async () => {
+                  const cal = await getCalApi({ namespace: "amajor" });
+                  cal("modal", {
+                    calLink: "jiaweing/amajor",
+                    config: { layout: "month_view" },
+                  });
+                }}
+                type="button"
+              >
+                <Plus className="h-6 w-6" />
+              </button>
+            ) : (
+              <Link
+                className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
+                href="/"
+              >
+                <Home className="h-6 w-6" />
+              </Link>
+            )}
           </div>
         </nav>
       </div>

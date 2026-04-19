@@ -87,7 +87,8 @@
       "Read(//c/Code/portfolio-dex/scripts/**)",
       "PowerShell(Remove-Item *)",
       "Bash(netstat -ano)",
-      "PowerShell(Stop-Process *)"
+      "PowerShell(Stop-Process *)",
+      "PowerShell(Get-ChildItem \".claude\\\\worktrees\" -Directory -Force | ForEach-Object { [System.IO.Directory]::Delete\\($_.FullName, $true\\) }; if \\(\\(Get-ChildItem \".claude\\\\worktrees\" -Force\\).Count -eq 0\\) { \"empty\" } else { \"still has items\" })"
     ]
   }
 }

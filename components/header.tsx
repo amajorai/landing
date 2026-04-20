@@ -285,12 +285,23 @@ export default function Header({ products = [] }: HeaderProps) {
                             ))
                           : generalNavItems.map((item) => (
                               <NavigationMenuItem key={item.name}>
-                                <Link
-                                  className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
-                                  href={item.href as any}
-                                >
-                                  {item.name}
-                                </Link>
+                                {item.href.startsWith("http") ? (
+                                  <a
+                                    className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                    href={item.href}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    {item.name}
+                                  </a>
+                                ) : (
+                                  <Link
+                                    className="inline-flex h-auto items-center px-2 py-1 text-muted-foreground text-sm duration-150 hover:text-accent-foreground"
+                                    href={item.href as any}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                )}
                               </NavigationMenuItem>
                             ))}
 
@@ -411,13 +422,23 @@ export default function Header({ products = [] }: HeaderProps) {
               .slice(0, Math.ceil(mobileNavItems.length / 2))
               .map((item) => {
                 const Icon = item.icon;
-                const isActive = pathname.startsWith(item.href);
-                return (
-                  <Link
-                    className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
-                    href={item.href as any}
+                const isActive =
+                  !item.href.startsWith("http") &&
+                  pathname.startsWith(item.href);
+                const cls = `flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`;
+                return item.href.startsWith("http") ? (
+                  <a
+                    className={cls}
+                    href={item.href}
                     key={item.name}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-[10px]">{item.name}</span>
+                  </a>
+                ) : (
+                  <Link className={cls} href={item.href as any} key={item.name}>
                     <Icon className="h-5 w-5" />
                     <span className="text-[10px]">{item.name}</span>
                   </Link>
@@ -432,13 +453,23 @@ export default function Header({ products = [] }: HeaderProps) {
               .slice(Math.ceil(mobileNavItems.length / 2))
               .map((item) => {
                 const Icon = item.icon;
-                const isActive = pathname.startsWith(item.href);
-                return (
-                  <Link
-                    className={`flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`}
-                    href={item.href as any}
+                const isActive =
+                  !item.href.startsWith("http") &&
+                  pathname.startsWith(item.href);
+                const cls = `flex flex-col items-center gap-1 duration-150 hover:text-accent-foreground ${isActive ? "text-foreground" : "text-muted-foreground"}`;
+                return item.href.startsWith("http") ? (
+                  <a
+                    className={cls}
+                    href={item.href}
                     key={item.name}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-[10px]">{item.name}</span>
+                  </a>
+                ) : (
+                  <Link className={cls} href={item.href as any} key={item.name}>
                     <Icon className="h-5 w-5" />
                     <span className="text-[10px]">{item.name}</span>
                   </Link>

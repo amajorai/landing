@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -65,14 +64,14 @@ export default function FAQsFour() {
       <div className="mx-auto mb-6 max-w-5xl px-6">
         <p className="text-muted-foreground text-sm">
           Have more questions?{" "}
-          <Link
+          <a
             className="font-medium text-primary hover:underline"
             href="https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106"
             rel="noopener noreferrer"
             target="_blank"
           >
             Get in touch and we'll get back to you within 24 hours
-          </Link>
+          </a>
           .
         </p>
       </div>

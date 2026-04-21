@@ -88,7 +88,11 @@
       "PowerShell(Remove-Item *)",
       "Bash(netstat -ano)",
       "PowerShell(Stop-Process *)",
-      "PowerShell(Get-ChildItem \".claude\\\\worktrees\" -Directory -Force | ForEach-Object { [System.IO.Directory]::Delete\\($_.FullName, $true\\) }; if \\(\\(Get-ChildItem \".claude\\\\worktrees\" -Force\\).Count -eq 0\\) { \"empty\" } else { \"still has items\" })"
+      "PowerShell(Get-ChildItem \".claude\\\\worktrees\" -Directory -Force | ForEach-Object { [System.IO.Directory]::Delete\\($_.FullName, $true\\) }; if \\(\\(Get-ChildItem \".claude\\\\worktrees\" -Force\\).Count -eq 0\\) { \"empty\" } else { \"still has items\" })",
+      "Bash(cp C:/Code/portfolio-dex/public/logos/claude.svg C:/Code/amajor-landing/public/logos/claude.svg)",
+      "Bash(cp C:/Code/portfolio-dex/public/logos/openai.svg C:/Code/amajor-landing/public/logos/openai.svg)",
+      "Bash(cp C:/Code/portfolio-dex/public/logos/gemini.svg C:/Code/amajor-landing/public/logos/gemini.svg)",
+      "Bash(cp C:/Code/portfolio-dex/public/logos/t3.svg C:/Code/amajor-landing/public/logos/t3.svg)"
     ]
   }
 }

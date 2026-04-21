@@ -1,7 +1,7 @@
 "use client";
 
 import { List } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { TocHeading } from "@/components/notion/TableOfContents";
 import { TableOfContents } from "@/components/notion/TableOfContents";
 import {
@@ -14,6 +14,22 @@ import {
 
 export function PageToc({ headings }: { headings: TocHeading[] }) {
   const [open, setOpen] = useState(false);
+  const pendingId = useRef<string | null>(null);
+
+  function handleOpenChange(val: boolean) {
+    setOpen(val);
+    if (!val && pendingId.current) {
+      const id = pendingId.current;
+      pendingId.current = null;
+      window.history.replaceState(null, "", `#${id}`);
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    }
+  }
 
   if (headings.length === 0) return null;
 
@@ -26,13 +42,13 @@ export function PageToc({ headings }: { headings: TocHeading[] }) {
 
       {/* Mobile — button bottom-right above nav bar */}
       <div className="fixed right-4 bottom-20 z-[200] xl:hidden">
-        <Drawer direction="right" onOpenChange={setOpen} open={open}>
+        <Drawer direction="right" onOpenChange={handleOpenChange} open={open}>
           <DrawerTrigger asChild>
             <button
-              className="rounded-full bg-transparent p-3 shadow-xs backdrop-blur-sm"
+              className="rounded-full bg-transparent p-4 shadow-xs backdrop-blur-sm"
               type="button"
             >
-              <List className="h-5 w-5" />
+              <List className="h-6 w-6" />
               <span className="sr-only">Page sections</span>
             </button>
           </DrawerTrigger>
@@ -44,7 +60,10 @@ export function PageToc({ headings }: { headings: TocHeading[] }) {
               <TableOfContents
                 alwaysExpanded
                 headings={headings}
-                onItemClick={() => setOpen(false)}
+                onItemClick={(id) => {
+                  pendingId.current = id;
+                  setOpen(false);
+                }}
               />
             </div>
           </DrawerContent>

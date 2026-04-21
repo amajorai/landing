@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogAuthor } from "@/components/blog/BlogAuthor";
+import { BlogLLMMenu } from "@/components/blog/BlogLLMMenu";
 import { BlogTextToSpeech } from "@/components/blog/BlogTextToSpeech";
 import { NotionRenderer } from "@/components/markdown-renderer";
 import { ReadingTime } from "@/components/notion/ReadingTime";
@@ -28,7 +29,12 @@ export async function generateStaticParams() {
   }));
 }
 
-import { generateBlogJsonLd, generateBlogMetadata } from "@/lib/metadata";
+import { createBlogMarkdown } from "@/lib/blog-markdown";
+import {
+  generateBlogJsonLd,
+  generateBlogMetadata,
+  siteConfig,
+} from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
@@ -63,6 +69,16 @@ export default async function BlogPostPage({
   const readingMinutes = extractReadingTimeFromBlocks(blocks);
   const headings = extractHeadingsFromBlocks(blocks);
 
+  const postUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const postMarkdown = createBlogMarkdown({
+    title: post.title,
+    description: post.description,
+    date: post.date,
+    tags: post.tags,
+    url: postUrl,
+    blocks,
+  });
+
   // Build Shiki-highlighted HTML map for all code blocks (server-side only)
   const highlightedCodeMap: Record<string, string> = {};
   await Promise.all(
@@ -94,9 +110,16 @@ export default async function BlogPostPage({
 
       <FadeIn delay={0.1}>
         <header className="mb-4 space-y-4">
-          <h1 className="font-medium text-3xl tracking-tight md:text-4xl">
-            {post.title}
-          </h1>
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="font-medium text-3xl tracking-tight md:text-4xl">
+              {post.title}
+            </h1>
+            <BlogLLMMenu
+              postMarkdown={postMarkdown}
+              postTitle={post.title}
+              postUrl={postUrl}
+            />
+          </div>
 
           <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
             {post.authors && post.authors.length > 0 && (

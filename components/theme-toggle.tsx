@@ -54,7 +54,7 @@ export function ThemeToggle() {
     <>
       <Button
         aria-label={`Current theme: ${getLabel()}. Click to change theme.`}
-        className="hidden rounded-full border-0 text-muted-foreground md:inline-flex"
+        className="inline-flex rounded-full border-0 text-muted-foreground"
         onClick={cycleTheme}
         size="icon"
         variant="ghost"

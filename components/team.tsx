@@ -152,7 +152,7 @@ function CareerTimeline() {
 
 export default function TeamSection() {
   return (
-    <section className="pt-10 md:pt-14" id="team">
+    <section className="scroll-mt-24 pt-10 md:pt-14" id="team">
       <div className="mb-6 px-6">
         <FadeIn duration={0.4}>
           <h2 className="mx-auto max-w-2xl font-medium text-2xl tracking-tighter">

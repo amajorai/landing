@@ -28,7 +28,10 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20" id="contact">
+    <section
+      className="relative scroll-mt-24 overflow-hidden py-20"
+      id="contact"
+    >
       <StarMark
         style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }}
       />

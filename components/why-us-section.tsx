@@ -105,7 +105,10 @@ function AnimatedNumber({
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden pt-10 md:pt-14" id="services">
+    <section
+      className="relative scroll-mt-24 overflow-hidden pt-10 md:pt-14"
+      id="services"
+    >
       <DotGridBackground
         className="text-zinc-950 opacity-[0.04] dark:text-white dark:opacity-[0.07]"
         fade="none"

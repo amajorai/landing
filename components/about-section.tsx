@@ -214,7 +214,7 @@ function ArchDiagram() {
 
 export default function ContentSection() {
   return (
-    <section className="relative pt-10 md:pt-14" id="about">
+    <section className="relative scroll-mt-24 pt-10 md:pt-14" id="about">
       <StarMark
         style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
       />

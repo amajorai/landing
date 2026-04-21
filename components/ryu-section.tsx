@@ -454,7 +454,7 @@ function AgentDeployVisual() {
 
 export default function RyuSection() {
   return (
-    <section className="relative pt-10 md:pt-14" id="ryu">
+    <section className="relative scroll-mt-24 pt-10 md:pt-14" id="ryu">
       <div className="mx-auto max-w-5xl space-y-6 px-6">
         <FadeIn duration={0.4}>
           <div className="space-y-3">

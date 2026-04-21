@@ -7,7 +7,7 @@ import { StarMark } from "@/components/ui/star-mark";
 export default function PartnersSection() {
   return (
     <section
-      className="relative z-10 bg-background py-10 md:py-14"
+      className="relative z-10 scroll-mt-24 bg-background py-10 md:py-14"
       id="partners"
     >
       <StarMark

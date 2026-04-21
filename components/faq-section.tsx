@@ -54,7 +54,7 @@ export default function FAQsFour() {
   ];
 
   return (
-    <section className="pt-10 md:pt-14" id="faq">
+    <section className="scroll-mt-24 pt-10 md:pt-14" id="faq">
       <div className="mx-auto mb-2 max-w-5xl px-6">
         <h2 className="font-medium text-2xl tracking-tighter">
           You should know these before working with us

@@ -301,7 +301,10 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="relative overflow-hidden pt-10 md:pt-14" id="process">
+    <section
+      className="relative scroll-mt-24 overflow-hidden pt-10 md:pt-14"
+      id="process"
+    >
       <div className="mb-6 px-6">
         <FadeIn duration={0.4}>
           <h2 className="font-medium text-2xl tracking-tighter">How we work</h2>

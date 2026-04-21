@@ -28,10 +28,7 @@ export function PageToc({ headings }: { headings: TocHeading[] }) {
       <div className="fixed right-4 bottom-20 z-[200] xl:hidden">
         <Drawer direction="right" onOpenChange={setOpen} open={open}>
           <DrawerTrigger asChild>
-            <button
-              className="rounded-full bg-transparent p-3 backdrop-blur-sm"
-              type="button"
-            >
+            <button className="rounded-full bg-transparent p-3" type="button">
               <List className="h-5 w-5" />
               <span className="sr-only">Page sections</span>
             </button>

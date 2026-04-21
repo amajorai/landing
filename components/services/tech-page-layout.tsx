@@ -383,7 +383,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {tocHeadings.length > 1 && <PageToc headings={tocHeadings} />}
 
       <FadeIn>
-        <section className="space-y-8" id="overview">
+        <section className="scroll-mt-24 space-y-8" id="overview">
           {Visualization && (
             <div className="mb-20 h-[200px] w-full lg:h-[260px]">
               <Visualization />
@@ -441,7 +441,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {/* Who This Is For — offering pages only */}
       {isOffering && service.targetAudience && (
         <FadeIn>
-          <section className="-mx-6" id="who-this-is-for">
+          <section className="-mx-6 scroll-mt-24" id="who-this-is-for">
             <h2 className="mb-6 px-6 font-semibold text-xl">Who this is for</h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
               {(service.targetAudience === "businesses" ||
@@ -503,7 +503,10 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.challenges && service.challenges.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl" id="challenges">
+            <h2
+              className="mb-6 scroll-mt-24 px-6 font-semibold text-xl"
+              id="challenges"
+            >
               {challengesHeading}
             </h2>
             <div className="grid grid-cols-1 border-border border-t border-l border-dashed sm:grid-cols-2">
@@ -530,7 +533,10 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {service.bestPractices && service.bestPractices.length > 0 && (
         <FadeIn>
           <section className="-mx-6">
-            <h2 className="mb-6 px-6 font-semibold text-xl" id="best-practices">
+            <h2
+              className="mb-6 scroll-mt-24 px-6 font-semibold text-xl"
+              id="best-practices"
+            >
               Best practices
             </h2>
             <div className="border-border border-t border-dashed">
@@ -560,7 +566,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         <FadeIn>
           <section className="-mx-6">
             <h2
-              className="mb-6 px-6 font-semibold text-xl"
+              className="mb-6 scroll-mt-24 px-6 font-semibold text-xl"
               id="useful-resources"
             >
               Useful resources
@@ -592,7 +598,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
       {/* Pricing guide — offering pages only */}
       {service.pricingNote && isOffering && (
         <FadeIn>
-          <section className="-mx-6" id="pricing">
+          <section className="-mx-6 scroll-mt-24" id="pricing">
             <h2 className="mb-6 px-6 font-semibold text-xl">Pricing guide</h2>
             <div className="border-border border-y border-dashed">
               <div className="flex items-start gap-4 px-6 py-6">
@@ -655,7 +661,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         <FadeIn>
           <section>
             <h2
-              className="mb-6 font-semibold text-xl"
+              className="mb-6 scroll-mt-24 font-semibold text-xl"
               id="related-technologies"
             >
               Related technologies
@@ -685,7 +691,10 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
         return (
           <FadeIn>
             <section>
-              <h2 className="mb-2 font-semibold text-xl" id="related-services">
+              <h2
+                className="mb-2 scroll-mt-24 font-semibold text-xl"
+                id="related-services"
+              >
                 Related services
               </h2>
               <p className="mb-6 text-muted-foreground text-sm">

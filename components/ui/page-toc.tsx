@@ -1,7 +1,7 @@
 "use client";
 
 import { List } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { TocHeading } from "@/components/notion/TableOfContents";
 import { TableOfContents } from "@/components/notion/TableOfContents";
 import {
@@ -16,20 +16,20 @@ export function PageToc({ headings }: { headings: TocHeading[] }) {
   const [open, setOpen] = useState(false);
   const pendingId = useRef<string | null>(null);
 
-  function handleOpenChange(val: boolean) {
-    setOpen(val);
-    if (!val && pendingId.current) {
+  useEffect(() => {
+    if (!open && pendingId.current) {
       const id = pendingId.current;
       pendingId.current = null;
       window.history.replaceState(null, "", `#${id}`);
-      requestAnimationFrame(() => {
+      const timer = setTimeout(() => {
         const el = document.getElementById(id);
         if (!el) return;
         const top = el.getBoundingClientRect().top + window.scrollY - 96;
         window.scrollTo({ top, behavior: "smooth" });
-      });
+      }, 350);
+      return () => clearTimeout(timer);
     }
-  }
+  }, [open]);
 
   if (headings.length === 0) return null;
 
@@ -42,7 +42,7 @@ export function PageToc({ headings }: { headings: TocHeading[] }) {
 
       {/* Mobile — button bottom-right above nav bar */}
       <div className="fixed right-4 bottom-20 z-[200] xl:hidden">
-        <Drawer direction="right" onOpenChange={handleOpenChange} open={open}>
+        <Drawer direction="right" onOpenChange={setOpen} open={open}>
           <DrawerTrigger asChild>
             <button
               className="rounded-full bg-transparent p-4 shadow-xs backdrop-blur-sm"

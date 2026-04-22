@@ -10,6 +10,7 @@ import { SeasonalEffects } from "@/components/SeasonalEffects";
 import SEO from "@/components/seo";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { WebMCPProvider } from "@/components/webmcp-provider";
 import { analyticsConfig } from "@/lib/analytics-config";
 import { getNavProducts } from "@/lib/notion";
@@ -73,27 +74,27 @@ export default async function RootLayout({
   const products = await getNavProducts();
   return (
     <PlausibleWrapper>
-      <html lang="en">
+      <html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
         <head>
           <SEO />
         </head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className="antialiased">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             disableTransitionOnChange
             enableSystem
           >
-            <Header products={products} />
-            <FloatingBookingButton />
-            <SeasonalEffects />
-            {children}
-            <FooterSection />
-            <TailwindIndicator />
-            <WebMCPProvider />
-            <Toaster position="bottom-right" />
+            <TooltipProvider>
+              <Header products={products} />
+              <FloatingBookingButton />
+              <SeasonalEffects />
+              {children}
+              <FooterSection />
+              <TailwindIndicator />
+              <WebMCPProvider />
+              <Toaster position="bottom-right" />
+            </TooltipProvider>
             {analyticsConfig.googleAnalytics.enabled && (
               <GoogleAnalytics gaId={analyticsConfig.googleAnalytics.gaId} />
             )}

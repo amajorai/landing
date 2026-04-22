@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Check, Globe, LinkedinIcon } from "lucide-react";
+import { BadgeCheck, Check, Globe } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
@@ -202,7 +202,11 @@ export default function TeamSection() {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <LinkedinIcon className="size-3.5" />
+                    <img
+                      alt="LinkedIn"
+                      className="size-3.5"
+                      src="/logos/linkedin.svg"
+                    />
                   </a>
                   <a
                     href="https://jiaweing.com"

@@ -8,7 +8,7 @@ import { StarMark } from "@/components/ui/star-mark";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 
 export const metadata = genMeta({
-  title: "Ryu — AI Agent Orchestration Platform",
+  title: "Ryu — End-to-End Managed Infrastructure for AI Agents",
   description:
     "Run AI agents in production without a team of ML engineers. Ryu wraps any agent framework with security, memory, routing, and tools.",
   url: "/products/ryu",

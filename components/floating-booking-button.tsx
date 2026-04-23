@@ -2,16 +2,19 @@
 import { getCalApi } from "@calcom/embed-react";
 import { Calendar } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
 export function FloatingBookingButton() {
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
   if (pathname === "/") return null;
   const handleBookCall = async () => {
-    const cal = await getCalApi({ namespace: "amajor" });
+    const calTheme = (resolvedTheme as "dark" | "light") ?? "light";
+    const cal = await getCalApi({ namespace: `amajor-${calTheme}` });
     cal("modal", {
       calLink: "jiaweing/amajor",
-      config: { layout: "month_view" },
+      config: { layout: "month_view", theme: calTheme },
     });
   };
 

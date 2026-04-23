@@ -73,7 +73,7 @@ function MenubarContent({
         align={align}
         alignOffset={alignOffset}
         className={cn(
-          "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:fade-in-0 data-open:zoom-in-95 z-50 min-w-48 origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-3xl bg-popover p-1.5 text-popover-foreground shadow-lg ring-1 ring-foreground/5 duration-100 data-open:animate-in dark:ring-foreground/10",
+          "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 open:fade-in-0 open:zoom-in-95 z-50 min-w-48 origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-3xl bg-popover p-1.5 text-popover-foreground shadow-lg ring-1 ring-foreground/5 duration-100 open:animate-in dark:ring-foreground/10",
           className
         )}
         data-slot="menubar-content"
@@ -231,7 +231,7 @@ function MenubarSubTrigger({
   return (
     <MenubarPrimitive.SubTrigger
       className={cn(
-        "flex cursor-default select-none items-center gap-2 rounded-2xl px-3 py-2 font-medium text-sm outline-none focus:bg-accent focus:text-accent-foreground data-open:bg-accent data-inset:pl-9.5 data-open:text-accent-foreground [&_svg:not([class*='size-'])]:size-4",
+        "flex cursor-default select-none items-center gap-2 rounded-2xl px-3 py-2 font-medium text-sm outline-none open:bg-accent open:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-inset:pl-9.5 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       data-inset={inset}
@@ -251,7 +251,7 @@ function MenubarSubContent({
   return (
     <MenubarPrimitive.SubContent
       className={cn(
-        "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:fade-in-0 data-open:zoom-in-95 data-closed:fade-out-0 data-closed:zoom-out-95 z-50 min-w-32 origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-3xl bg-popover p-1.5 text-popover-foreground shadow-lg ring-1 ring-foreground/5 duration-100 data-closed:animate-out data-open:animate-in dark:ring-foreground/10",
+        "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 open:fade-in-0 open:zoom-in-95 closed:fade-out-0 closed:zoom-out-95 z-50 min-w-32 origin-(--radix-menubar-content-transform-origin) closed:animate-out overflow-hidden rounded-3xl bg-popover p-1.5 text-popover-foreground shadow-lg ring-1 ring-foreground/5 duration-100 open:animate-in dark:ring-foreground/10",
         className
       )}
       data-slot="menubar-sub-content"

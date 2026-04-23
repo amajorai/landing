@@ -36,7 +36,7 @@ function DrawerOverlay({
   return (
     <DrawerPrimitive.Overlay
       className={cn(
-        "data-open:fade-in-0 data-closed:fade-out-0 fixed inset-0 z-50 bg-black/30 data-closed:animate-out data-open:animate-in supports-backdrop-filter:backdrop-blur-sm",
+        "open:fade-in-0 closed:fade-out-0 fixed inset-0 z-50 closed:animate-out bg-black/30 open:animate-in supports-backdrop-filter:backdrop-blur-sm",
         className
       )}
       data-slot="drawer-overlay"

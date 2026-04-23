@@ -20,7 +20,7 @@ export function PageHeader({
           {eyebrow}
         </p>
       )}
-      <h1 className="font-semibold text-2xl tracking-tighter">
+      <h1 className="text-2xl tracking-tighter">
         <span className="text-foreground">{line1}</span>
         {tag && <> {tag}</>}
         <span className="block text-muted-foreground">{line2}</span>

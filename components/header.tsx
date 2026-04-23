@@ -15,7 +15,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Logo } from "@/components/logo";
 import { ProductsNavContent } from "@/components/products-nav-content";
 import { ProgressiveBlur } from "@/components/progressive-blur";
@@ -59,6 +60,11 @@ interface HeaderProps {
 export default function Header({ products = [] }: HeaderProps) {
   const hasProducts = products.length > 0;
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
+  const themeRef = useRef(resolvedTheme);
+  useEffect(() => {
+    themeRef.current = resolvedTheme;
+  }, [resolvedTheme]);
 
   const isAgencyRealm =
     pathname.startsWith("/agency") ||
@@ -137,10 +143,33 @@ export default function Header({ products = [] }: HeaderProps) {
   }, [scrollState.prevScrollPos]);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+    const handleKeyDown = async (e: KeyboardEvent) => {
+      const ctrl = e.metaKey || e.ctrlKey;
+      if (ctrl && e.key === "k") {
         e.preventDefault();
         setIsSearchOpen((prev) => !prev);
+      } else if (ctrl && !e.shiftKey && e.key === "b") {
+        e.preventDefault();
+        const calTheme = (themeRef.current as "dark" | "light") ?? "light";
+        const cal = await getCalApi({ namespace: `amajor-${calTheme}` });
+        cal("modal", {
+          calLink: "jiaweing/amajor",
+          config: { layout: "month_view", theme: calTheme },
+        });
+      } else if (ctrl && !e.shiftKey && e.key === ".") {
+        e.preventDefault();
+        window.open(
+          "https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106",
+          "_blank",
+          "noopener,noreferrer"
+        );
+      } else if (ctrl && !e.shiftKey && e.key === ",") {
+        e.preventDefault();
+        window.open(
+          "mailto:contact@amajor.ai",
+          "_blank",
+          "noopener,noreferrer"
+        );
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -375,10 +404,14 @@ export default function Header({ products = [] }: HeaderProps) {
                     <Button
                       className="h-8 rounded-full px-3 text-xs"
                       onClick={async () => {
-                        const cal = await getCalApi({ namespace: "amajor" });
+                        const calTheme =
+                          (themeRef.current as "dark" | "light") ?? "light";
+                        const cal = await getCalApi({
+                          namespace: `amajor-${calTheme}`,
+                        });
                         cal("modal", {
                           calLink: "jiaweing/amajor",
-                          config: { layout: "month_view" },
+                          config: { layout: "month_view", theme: calTheme },
                         });
                       }}
                       size="sm"
@@ -481,10 +514,14 @@ export default function Header({ products = [] }: HeaderProps) {
               <button
                 className="absolute top-0 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-foreground text-background shadow-lg duration-150 active:scale-95"
                 onClick={async () => {
-                  const cal = await getCalApi({ namespace: "amajor" });
+                  const calTheme =
+                    (themeRef.current as "dark" | "light") ?? "light";
+                  const cal = await getCalApi({
+                    namespace: `amajor-${calTheme}`,
+                  });
                   cal("modal", {
                     calLink: "jiaweing/amajor",
-                    config: { layout: "month_view" },
+                    config: { layout: "month_view", theme: calTheme },
                   });
                 }}
                 type="button"

@@ -2,6 +2,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sileo";
+import { AgentationProvider } from "@/components/agentation-provider";
 import { PlausibleWrapper } from "@/components/analytics/plausible-provider";
 import { FloatingBookingButton } from "@/components/floating-booking-button";
 import FooterSection from "@/components/footer";
@@ -92,6 +93,7 @@ export default async function RootLayout({
               {children}
               <FooterSection />
               <TailwindIndicator />
+              <AgentationProvider />
               <WebMCPProvider />
               <Toaster position="bottom-right" />
             </TooltipProvider>

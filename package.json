@@ -95,6 +95,7 @@
     "@types/node": "^20",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "agentation": "^3.0.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "puppeteer": "^24.34.0",

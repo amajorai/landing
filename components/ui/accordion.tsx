@@ -27,7 +27,7 @@ function AccordionItem({
 }: React.ComponentProps<typeof AccordionPrimitive.Item>) {
   return (
     <AccordionPrimitive.Item
-      className={cn("not-last:border-b data-open:bg-muted/50", className)}
+      className={cn("not-last:border-b open:bg-muted/50", className)}
       data-slot="accordion-item"
       {...props}
     />
@@ -70,7 +70,7 @@ function AccordionContent({
 }: React.ComponentProps<typeof AccordionPrimitive.Content>) {
   return (
     <AccordionPrimitive.Content
-      className="overflow-hidden px-4 text-sm data-closed:animate-accordion-up data-open:animate-accordion-down"
+      className="closed:animate-accordion-up overflow-hidden px-4 text-sm open:animate-accordion-down"
       data-slot="accordion-content"
       {...props}
     >

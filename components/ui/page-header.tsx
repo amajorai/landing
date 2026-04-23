@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 interface PageHeaderProps {
   line1: string;
   line2?: string;
@@ -28,16 +30,19 @@ export function PageHeader({
           {eyebrow}
         </p>
       )}
-      <Tag className={`font-medium ${sizeClass[size]} tracking-tighter`}>
+      <Tag className={cn("font-medium", sizeClass[size], "tracking-tighter")}>
         <span
-          className={`text-foreground${tag ? "flex items-center gap-2" : ""}`}
+          className={cn("text-foreground", tag && "flex items-center gap-2")}
         >
           {line1}
           {tag}
         </span>
         {(line2 || line2Tag) && (
           <span
-            className={`text-muted-foreground${line2Tag ? "flex items-center gap-2" : "block"}`}
+            className={cn(
+              "text-muted-foreground",
+              line2Tag ? "flex items-center gap-2" : "block"
+            )}
           >
             {line2}
             {line2Tag}

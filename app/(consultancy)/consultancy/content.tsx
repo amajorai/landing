@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { CornerMark } from "@/components/ui/corner-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PageHeader } from "@/components/ui/page-header";
 import { StarMark } from "@/components/ui/star-mark";
 
 // ── Animated visuals ─────────────────────────────────────────────────────────
@@ -658,14 +659,10 @@ export function ConsultancyContent() {
           <div className="relative mx-auto max-w-5xl px-6 py-20 lg:py-14">
             <div className="relative z-10">
               <FadeIn direction="down" duration={0.6}>
-                <h1 className="font-semibold text-2xl text-foreground tracking-tighter">
-                  The biggest gap in AI isn&apos;t the technology.
-                </h1>
-              </FadeIn>
-              <FadeIn delay={0.2} duration={0.5}>
-                <p className="font-semibold text-2xl text-muted-foreground tracking-tighter">
-                  It&apos;s knowing where to start.
-                </p>
+                <PageHeader
+                  line1="The biggest gap in AI isn't the technology."
+                  line2="It's knowing where to start."
+                />
               </FadeIn>
               <FadeIn delay={0.3} duration={0.5}>
                 <p className="mt-4 max-w-2xl text-muted-foreground text-sm leading-relaxed">

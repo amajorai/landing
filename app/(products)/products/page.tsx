@@ -3,6 +3,7 @@ import { GridScan } from "@/components/GridScan";
 import { TriggerResize } from "@/components/trigger-resize";
 import { CrossMark } from "@/components/ui/cross-mark";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 
 export const metadata = genMeta({
@@ -55,14 +56,12 @@ export default function ProductsPage() {
           <div className="relative mx-auto max-w-5xl px-6 pt-20 pb-20 lg:pt-14 lg:pb-16">
             <div className="relative z-10 mx-auto">
               <FadeIn duration={0.6}>
-                <h1 className="font-semibold text-2xl tracking-tighter">
-                  Most AI agents didn't deliver.
-                </h1>
+                <PageHeader
+                  line1="Most AI agents didn't deliver."
+                  line2="We build the ones that do."
+                />
               </FadeIn>
               <FadeIn delay={0.2} duration={0.5}>
-                <p className="font-semibold text-2xl text-muted-foreground tracking-tighter">
-                  We build the ones that do.
-                </p>
                 <p className="mt-4 max-w-2xl text-muted-foreground text-sm leading-relaxed">
                   Industry research puts real enterprise value from agents under
                   10%. We build the platform that makes delivering real value
@@ -112,23 +111,23 @@ export default function ProductsPage() {
                       </span>
                       {product.status}
                     </span>
-                    <div className="flex items-center gap-2">
-                      <p className="font-semibold text-xl tracking-tighter">
-                        {product.name}
-                      </p>
-                      {product.logo && (
-                        <img
-                          alt={product.name}
-                          className="h-5 w-5 object-contain"
-                          src={product.logo}
-                        />
+                    <div className="font-medium text-xl tracking-tighter">
+                      <div className="flex items-center gap-2">
+                        <span className="text-foreground">{product.name}</span>
+                        {product.logo && (
+                          <img
+                            alt={product.name}
+                            className="h-5 w-5 object-contain"
+                            src={product.logo}
+                          />
+                        )}
+                      </div>
+                      {product.tagline && (
+                        <span className="block text-muted-foreground">
+                          {product.tagline}
+                        </span>
                       )}
                     </div>
-                    {product.tagline && (
-                      <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
-                        {product.tagline}
-                      </p>
-                    )}
                     {product.description && (
                       <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
                         {product.description}

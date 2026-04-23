@@ -8,6 +8,7 @@ import { TriggerResize } from "@/components/trigger-resize";
 import { CrossMark } from "@/components/ui/cross-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata = generateMetadata({
@@ -38,12 +39,10 @@ export default function RootPage() {
       </div>
       {/* Hero */}
       <FadeIn className="relative z-10 mx-auto flex min-h-[50vh] w-full max-w-5xl flex-col justify-center px-6 py-24 sm:block sm:min-h-0 sm:py-14">
-        <h1 className="font-semibold text-2xl text-foreground tracking-tighter">
-          The foundation for AI agents
-        </h1>
-        <p className="font-semibold text-2xl text-muted-foreground tracking-tighter">
-          A software company for the agent era
-        </p>
+        <PageHeader
+          line1="The foundation for AI agents"
+          line2="A software company for the agent era"
+        />
         <HomeHeroCta />
       </FadeIn>
 
@@ -84,12 +83,12 @@ export default function RootPage() {
               <p className="mb-4 font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
                 Products
               </p>
-              <p className="font-semibold text-xl tracking-tighter">
-                Most AI agents didn't deliver.
-              </p>
-              <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
-                We build the ones that do.
-              </p>
+              <PageHeader
+                as="div"
+                line1="Most AI agents didn't deliver."
+                line2="We build the ones that do."
+                size="xl"
+              />
               <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
                 Industry research puts real enterprise value from agents under
                 10%. We build the platform that makes delivering real value
@@ -128,21 +127,21 @@ export default function RootPage() {
               <p className="mb-4 font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
                 Agency
               </p>
-              <p className="font-semibold text-xl tracking-tighter">
-                Software that just works. Experts you can talk to.
-              </p>
-              <div className="inline-flex items-center gap-2">
-                <p className="font-semibold text-muted-foreground text-xl tracking-tighter">
-                  Built for humans, by humans.
-                </p>
-                <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-blue-600 dark:bg-blue-400">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75" />
-                  <Check
-                    className="relative size-3 text-white"
-                    strokeWidth={3}
-                  />
-                </div>
-              </div>
+              <PageHeader
+                as="div"
+                line1="Software that just works. Experts you can talk to."
+                line2="Built for humans, by humans."
+                line2Tag={
+                  <span className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-sky-500 dark:bg-sky-400">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-500 opacity-75" />
+                    <Check
+                      className="relative size-3 text-white"
+                      strokeWidth={3}
+                    />
+                  </span>
+                }
+                size="xl"
+              />
               <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
                 Websites, apps, and enterprise systems, with AI agents at the
                 core. We handle the build so you can focus on the business.

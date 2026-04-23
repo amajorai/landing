@@ -1,9 +1,14 @@
 "use client";
 
-import { BadgeCheck, Check, Globe } from "lucide-react";
+import { BadgeCheck, Globe } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 // ── Career timeline visual ────────────────────────────────────────────────────
 
@@ -153,7 +158,7 @@ function CareerTimeline() {
 export default function TeamSection() {
   return (
     <section className="scroll-mt-24 pt-10 md:pt-14" id="team">
-      <div className="mb-6 px-6">
+      <div className="mb-1 px-6">
         <FadeIn duration={0.4}>
           <h2 className="mx-auto max-w-2xl font-medium text-2xl tracking-tighter">
             Our founder
@@ -162,61 +167,79 @@ export default function TeamSection() {
       </div>
 
       <FadeIn duration={0.4}>
-        <div className="relative border-border border-y border-dashed">
+        <div className="relative border-border border-b border-dashed">
           <StarMark
             style={{ bottom: 0, left: 0, transform: "translate(-50%, 50%)" }}
           />
           <StarMark
             style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
           />
-          <div className="relative border-border border-b border-dashed p-6">
-            <div className="mx-auto flex max-w-2xl items-center gap-4">
-              <img
-                alt="Jia Wei Ng"
-                className="size-16 shrink-0 rounded-full object-cover"
-                height="460"
-                loading="lazy"
-                src="/team/jiawei-new.jpg"
-                width="460"
-              />
-              <div>
-                <div className="inline-flex items-center gap-1.5">
-                  <p className="font-medium text-sm">Jia Wei Ng</p>
-                  <div className="relative flex size-4 items-center justify-center">
+          <div className="relative border-border border-b border-dashed p-6 pb-16">
+            <div className="mx-auto max-w-2xl space-y-4">
+              <div className="flex items-center gap-4">
+                <img
+                  alt="Jia Wei Ng"
+                  className="size-16 shrink-0 rounded-full object-cover"
+                  height="460"
+                  loading="lazy"
+                  src="/team/jiawei-new.jpg"
+                  width="460"
+                />
+                <div>
+                  <div className="inline-flex items-center gap-1">
+                    <p className="font-medium text-sm">Jia Wei Ng</p>
                     <BadgeCheck
-                      className="size-4 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400"
-                      strokeWidth={3}
-                    />
-                    <Check
-                      className="absolute size-2 text-white"
-                      strokeWidth={5}
+                      className="size-4 text-background [&_path]:fill-sky-500 dark:[&_path]:fill-sky-400"
+                      strokeWidth={2}
                     />
                   </div>
-                </div>
-                <p className="text-muted-foreground text-xs">
-                  CEO & Co-Founder
-                </p>
-                <div className="mt-2 flex gap-3 text-muted-foreground">
-                  <a
-                    href="https://www.linkedin.com/in/jiaweing"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <img
-                      alt="LinkedIn"
-                      className="size-3.5"
-                      src="/logos/linkedin.svg"
-                    />
-                  </a>
-                  <a
-                    href="https://jiaweing.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Globe className="size-3.5" />
-                  </a>
+                  <p className="text-muted-foreground text-xs">
+                    CEO & Co-Founder
+                  </p>
+                  <div className="mt-2 flex gap-3">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a
+                          className="flex items-center justify-center text-muted-foreground hover:text-primary"
+                          href="https://www.linkedin.com/in/jiaweing"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <img
+                            alt="LinkedIn"
+                            className="size-3.5 opacity-50 grayscale transition-all duration-300 hover:opacity-100 dark:invert"
+                            src="/logos/linkedin.svg"
+                          />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>LinkedIn</TooltipContent>
+                    </Tooltip>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a
+                          className="text-muted-foreground/30 transition-colors hover:text-foreground"
+                          href="https://jiaweing.com"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Globe className="size-3.5" />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>Website</TooltipContent>
+                    </Tooltip>
+                  </div>
                 </div>
               </div>
+              <blockquote className="border-l-4 pl-4">
+                <p className="text-muted-foreground text-sm">
+                  In music theory, A Major is the key that defines the
+                  structure, letting every instrument play in harmony.
+                  That&apos;s what we build.
+                </p>
+                <cite className="mt-2 block font-medium text-sm not-italic">
+                  Jia Wei Ng, Founder
+                </cite>
+              </blockquote>
             </div>
           </div>
 
@@ -260,21 +283,6 @@ export default function TeamSection() {
                 Career journey
               </p>
               <CareerTimeline />
-            </div>
-          </div>
-
-          <div className="relative border-border border-t border-dashed p-6">
-            <div className="mx-auto max-w-2xl">
-              <blockquote className="border-l-4 pl-4">
-                <p className="text-muted-foreground text-sm">
-                  In music theory, A Major is the key that defines the
-                  structure, letting every instrument play in harmony.
-                  That&apos;s what we build.
-                </p>
-              </blockquote>
-              <cite className="mt-4 block pl-4 font-medium text-sm not-italic">
-                Jia Wei Ng, Founder
-              </cite>
             </div>
           </div>
         </div>

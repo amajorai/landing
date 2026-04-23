@@ -4,7 +4,12 @@ interface PageHeaderProps {
   eyebrow?: string;
   className?: string;
   tag?: React.ReactNode;
+  line2Tag?: React.ReactNode;
+  size?: "xl" | "2xl";
+  as?: "h1" | "h2" | "div";
 }
+
+const sizeClass = { xl: "text-xl", "2xl": "text-2xl" } as const;
 
 export function PageHeader({
   line1,
@@ -12,6 +17,9 @@ export function PageHeader({
   eyebrow,
   className,
   tag,
+  line2Tag,
+  size = "2xl",
+  as: Tag = "h1",
 }: PageHeaderProps) {
   return (
     <div className={className}>
@@ -20,11 +28,18 @@ export function PageHeader({
           {eyebrow}
         </p>
       )}
-      <h1 className="text-2xl tracking-tighter">
+      <Tag className={`font-medium ${sizeClass[size]} tracking-tighter`}>
         <span className="text-foreground">{line1}</span>
         {tag && <> {tag}</>}
-        <span className="block text-muted-foreground">{line2}</span>
-      </h1>
+        {line2Tag ? (
+          <span className="flex items-center gap-2 text-muted-foreground">
+            {line2}
+            {line2Tag}
+          </span>
+        ) : (
+          <span className="block text-muted-foreground">{line2}</span>
+        )}
+      </Tag>
     </div>
   );
 }

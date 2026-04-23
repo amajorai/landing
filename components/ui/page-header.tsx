@@ -1,6 +1,6 @@
 interface PageHeaderProps {
   line1: string;
-  line2: string;
+  line2?: string;
   eyebrow?: string;
   className?: string;
   tag?: React.ReactNode;
@@ -29,21 +29,19 @@ export function PageHeader({
         </p>
       )}
       <Tag className={`font-medium ${sizeClass[size]} tracking-tighter`}>
-        {tag ? (
-          <span className="flex items-center gap-2 text-foreground">
-            {line1}
-            {tag}
-          </span>
-        ) : (
-          <span className="text-foreground">{line1}</span>
-        )}
-        {line2Tag ? (
-          <span className="flex items-center gap-2 text-muted-foreground">
+        <span
+          className={`text-foreground${tag ? "flex items-center gap-2" : ""}`}
+        >
+          {line1}
+          {tag}
+        </span>
+        {(line2 || line2Tag) && (
+          <span
+            className={`text-muted-foreground${line2Tag ? "flex items-center gap-2" : "block"}`}
+          >
             {line2}
             {line2Tag}
           </span>
-        ) : (
-          <span className="block text-muted-foreground">{line2}</span>
         )}
       </Tag>
     </div>

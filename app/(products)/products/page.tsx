@@ -114,16 +114,16 @@ export default function ProductsPage() {
                     <PageHeader
                       as="div"
                       line1={product.name}
-                      line2={product.tagline ?? ""}
+                      line2={product.tagline}
                       size="xl"
                       tag={
-                        product.logo ? (
+                        product.logo && (
                           <img
                             alt={product.name}
                             className="h-5 w-5 object-contain"
                             src={product.logo}
                           />
-                        ) : undefined
+                        )
                       }
                     />
                     {product.description && (

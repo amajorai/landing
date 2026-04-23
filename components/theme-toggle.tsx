@@ -19,12 +19,17 @@ export function ThemeToggle() {
   }
 
   const cycleTheme = () => {
-    if (theme === "system") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("dark");
+    const next =
+      theme === "system" ? "light" : theme === "light" ? "dark" : "system";
+    if (document.startViewTransition) {
+      const goingDark = next === "dark";
+      if (goingDark) document.documentElement.classList.add("to-dark");
+      const transition = document.startViewTransition(() => setTheme(next));
+      transition.finished.finally(() => {
+        document.documentElement.classList.remove("to-dark");
+      });
     } else {
-      setTheme("system");
+      setTheme(next);
     }
   };
 

@@ -111,23 +111,21 @@ export default function ProductsPage() {
                       </span>
                       {product.status}
                     </span>
-                    <div className="font-medium text-xl tracking-tighter">
-                      <div className="flex items-center gap-2">
-                        <span className="text-foreground">{product.name}</span>
-                        {product.logo && (
+                    <PageHeader
+                      as="div"
+                      line1={product.name}
+                      line2={product.tagline ?? ""}
+                      size="xl"
+                      tag={
+                        product.logo ? (
                           <img
                             alt={product.name}
                             className="h-5 w-5 object-contain"
                             src={product.logo}
                           />
-                        )}
-                      </div>
-                      {product.tagline && (
-                        <span className="block text-muted-foreground">
-                          {product.tagline}
-                        </span>
-                      )}
-                    </div>
+                        ) : undefined
+                      }
+                    />
                     {product.description && (
                       <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
                         {product.description}

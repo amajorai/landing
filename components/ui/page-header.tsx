@@ -29,8 +29,14 @@ export function PageHeader({
         </p>
       )}
       <Tag className={`font-medium ${sizeClass[size]} tracking-tighter`}>
-        <span className="text-foreground">{line1}</span>
-        {tag && <> {tag}</>}
+        {tag ? (
+          <span className="flex items-center gap-2 text-foreground">
+            {line1}
+            {tag}
+          </span>
+        ) : (
+          <span className="text-foreground">{line1}</span>
+        )}
         {line2Tag ? (
           <span className="flex items-center gap-2 text-muted-foreground">
             {line2}

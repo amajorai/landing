@@ -179,7 +179,9 @@ export function generateBlogMetadata(post: BlogPost): Metadata {
   return generateMetadata({
     title: post.title,
     description: extractDescription(post.description || ""),
-    image: post.cover,
+    image: post.cover
+      ? `${siteConfig.url}/api/notion-image?pageId=${post.id}&prop=cover`
+      : undefined,
     url: `/blog/${post.slug}`,
     type: "article",
     publishedTime: post.date,
@@ -194,7 +196,9 @@ export function generatePageMetadata(page: Page): Metadata {
   return generateMetadata({
     title: page.title,
     description: page.description,
-    image: page.cover,
+    image: page.cover
+      ? `${siteConfig.url}/api/notion-image?pageId=${page.id}&prop=cover`
+      : undefined,
     modifiedTime: page.lastEdited,
     url: `/${page.slug}`,
     type: "website",
@@ -274,7 +278,9 @@ export function generateBlogJsonLd(post: BlogPost) {
   return generateJsonLd("BlogPosting", {
     headline: post.title,
     description: extractDescription(post.description || ""),
-    image: post.cover ? [post.cover] : undefined,
+    image: post.cover
+      ? [`${siteConfig.url}/api/notion-image?pageId=${post.id}&prop=cover`]
+      : undefined,
     datePublished: post.date,
     dateModified: post.lastEdited || post.date,
     author: authorNames.map((name) => ({

@@ -281,8 +281,9 @@ function extractAuthors(page: any): BlogPost["authors"] {
   const name = getProperty(page, "Author Name", "rich_text") as string;
   const slug = getProperty(page, "Author Slug", "rich_text") as string;
   const avatarFiles = page.properties?.["Author Avatar"]?.files;
-  const avatar =
-    avatarFiles?.[0]?.file?.url || avatarFiles?.[0]?.external?.url || undefined;
+  const avatar = avatarFiles?.[0]?.file?.url
+    ? `/api/notion-image?pageId=${page.id}&prop=avatar`
+    : avatarFiles?.[0]?.external?.url || undefined;
   console.log(
     "[extractAuthors] name:",
     name,

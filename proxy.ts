@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 const HTML_ROUTES = ["/", "/services", "/blog", "/projects"];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const accept = request.headers.get("accept") ?? "";
   if (accept.includes("text/markdown")) {
     const { pathname } = request.nextUrl;

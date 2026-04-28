@@ -689,7 +689,7 @@ export function NotionBlock({
         block.image.type === "external"
           ? block.image.external.url
           : block.image.type === "file"
-            ? block.image.file.url
+            ? `/api/notion-image?blockId=${block.id}&prop=block-image`
             : "";
       const caption = block.image.caption?.[0]?.plain_text || "";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import type { LucideIcon } from "lucide-react";
 import {
   Building2,
   Layers,
@@ -339,7 +340,7 @@ function SmBRevenueVisual() {
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 interface Audience {
-  icon: React.ElementType;
+  icon: LucideIcon;
   label: string;
   title: string;
   description: string;

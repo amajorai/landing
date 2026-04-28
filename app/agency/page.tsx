@@ -13,6 +13,7 @@ import ProcessSection from "@/components/process-section";
 import FeaturesSection from "@/components/services-section";
 import TeamSection from "@/components/team";
 import { FadeIn } from "@/components/ui/fade-in";
+import WhoIsThisFor from "@/components/who-is-this-for";
 import StatsSection from "@/components/why-us-section";
 import { getCachedContributions } from "@/lib/get-cached-contributions";
 import { generateMetadata } from "@/lib/metadata";
@@ -62,6 +63,10 @@ export default function AgencyPage() {
 
       <FadeIn>
         <ProcessSection />
+      </FadeIn>
+
+      <FadeIn>
+        <WhoIsThisFor />
       </FadeIn>
 
       <FadeIn>

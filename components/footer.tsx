@@ -8,6 +8,8 @@ import { FadeIn } from "@/components/ui/fade-in";
 const links = [
   { title: "Manifesto", href: "/manifesto" },
   { title: "Brand Story", href: "/story" },
+  { title: "Privacy", href: "/privacy" },
+  { title: "Terms", href: "/terms" },
   {
     title: "Careers",
     href: "https://www.notion.so/42d020b872164c31aaae5aa30b2c30fc?pvs=106",

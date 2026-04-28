@@ -87,9 +87,16 @@ Disallow: /private/
 Disallow: /api/
 
 User-agent: CCBot
-Allow: /
-Disallow: /private/
-Disallow: /api/
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
 
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 

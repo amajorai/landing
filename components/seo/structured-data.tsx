@@ -180,61 +180,6 @@ const localBusinessSchema = {
   ],
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is A Major?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Major is a software company for the agent era with two arms: an Agency that builds websites, apps, and enterprise systems with AI agents at the core; and Products, which ships agent-native software including Ryu, end-to-end managed infrastructure for AI agents.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does A Major Agency do?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Major Agency builds websites, apps, and enterprise systems with AI agents at the core. Software that just works, built by experts you can talk to — covering web apps, mobile apps (React Native, Swift, Flutter), SaaS products, enterprise systems, UI/UX design, DevOps, MCP servers, MVP scoping, and engineering consultancy.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does A Major Products do?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Major Products ships agent-native software. Most AI agents didn't deliver — A Major builds the ones that do. The flagship product is Ryu, end-to-end managed infrastructure for AI agents.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where is A Major based?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Major is based in Singapore and works with clients worldwide.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is Ryu?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ryu is end-to-end managed infrastructure for AI agents, built by A Major Products. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you build MCP servers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. A Major Agency builds Model Context Protocol (MCP) servers that connect AI agents to databases, APIs, and internal tools, enabling reliable LLM-powered workflows in production environments.",
-      },
-    },
-  ],
-};
-
 const ryuSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -284,10 +229,6 @@ export default function StructuredData() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessSchema),
         }}
-        type="application/ld+json"
-      />
-      <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         type="application/ld+json"
       />
       <script

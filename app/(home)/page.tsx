@@ -12,9 +12,9 @@ import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata = generateMetadata({
-  title: "The foundation for AI agents",
+  title: "Software & AI Agency Singapore",
   description:
-    "A software company for the agent era. We build agent-native products, and help teams ship theirs.",
+    "A Major builds web apps, mobile apps, enterprise systems, and AI agents for startups and enterprises in Singapore and worldwide.",
   url: "/",
 });
 

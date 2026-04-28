@@ -78,6 +78,12 @@ export default async function RootLayout({
       <html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
         <head>
           <SEO />
+          <link
+            crossOrigin="anonymous"
+            href="https://prod-files-secure.s3.us-west-2.amazonaws.com"
+            rel="preconnect"
+          />
+          <link href="https://www.notion.so" rel="preconnect" />
         </head>
         <body className="antialiased">
           <ThemeProvider

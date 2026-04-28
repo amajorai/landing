@@ -2,6 +2,7 @@
 
 import type { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { Check, Copy, Link2 } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 import { sileo } from "sileo";
 import { Frame, FramePanel } from "@/components/ui/frame";
@@ -697,10 +698,14 @@ export function NotionBlock({
 
       return (
         <figure className="my-6">
-          <img
+          <Image
             alt={caption || "Notion Image"}
             className="h-auto w-full rounded-lg"
+            height={0}
+            sizes="(max-width: 768px) 100vw, 800px"
             src={imageUrl}
+            style={{ height: "auto" }}
+            width={0}
           />
           {caption && (
             <figcaption className="mt-2 text-center text-muted-foreground text-sm">

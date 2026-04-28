@@ -18,6 +18,45 @@ import StatsSection from "@/components/why-us-section";
 import { getCachedContributions } from "@/lib/get-cached-contributions";
 import { generateMetadata } from "@/lib/metadata";
 
+const agencyFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is A Major Agency?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major Agency is a Singapore-based software agency that builds websites, web apps, mobile apps, SaaS products, and enterprise systems with AI agents at the core.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is A Major Agency based?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major Agency is based in Singapore and works with clients worldwide.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What services does A Major Agency offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Major Agency offers web design, web app development, mobile app development (React Native, Swift, Flutter), SaaS products, enterprise systems, UI/UX design, DevOps, MCP server development, MVP scoping, and engineering consultancy.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you build MCP servers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. A Major Agency builds Model Context Protocol (MCP) servers that connect AI agents to databases, APIs, and internal tools, enabling reliable LLM-powered workflows in production environments.",
+      },
+    },
+  ],
+};
+
 const GITHUB_USERNAME = "jiaweing";
 const GITHUB_PROFILE_URL = "https://github.com/jiaweing";
 
@@ -113,6 +152,15 @@ export default function AgencyPage() {
       <FadeIn>
         <CallToAction />
       </FadeIn>
+
+      <p className="pb-4 text-center text-muted-foreground text-xs">
+        Singapore-based · contact@amajor.ai
+      </p>
+
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(agencyFaqSchema) }}
+        type="application/ld+json"
+      />
     </>
   );
 }

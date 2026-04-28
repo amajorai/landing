@@ -40,6 +40,17 @@ const nextConfig: NextConfig = {
         hostname: "unavatar.io",
         pathname: "/**",
       },
+      // Notion CDN hostnames for inline images
+      {
+        protocol: "https",
+        hostname: "www.notion.so",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "notion.so",
+        pathname: "/**",
+      },
     ],
     localPatterns: [
       {

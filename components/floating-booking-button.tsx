@@ -46,7 +46,7 @@ export function FloatingBookingButton() {
       >
         <Calendar className="h-5 w-5 shrink-0" />
         <span className="morph-text overflow-hidden whitespace-nowrap font-medium text-sm">
-          Book a Call
+          Apply Now
         </span>
       </Button>
     </>

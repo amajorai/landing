@@ -69,7 +69,7 @@ export function ServiceCta({ techName, targetAudience }: ServiceCtaProps) {
 
           <div className="mx-auto mt-6 max-w-sm">
             <div className="flex justify-center">
-              <Button onClick={handleBookCall}>Book a Call</Button>
+              <Button onClick={handleBookCall}>Apply Now</Button>
             </div>
             <div className="mt-8 flex flex-col items-center gap-2">
               <span className="inline-flex items-center justify-center gap-2 text-sm">

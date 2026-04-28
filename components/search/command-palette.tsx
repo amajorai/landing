@@ -234,11 +234,11 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             <CommandItem
               className="gap-3 py-2"
               onSelect={openBooking}
-              value="action book a call schedule meeting session"
+              value="action apply now schedule meeting session"
             >
               <CalendarDays className="size-4 shrink-0 text-muted-foreground" />
               <div className="flex min-w-0 flex-col">
-                <span className="truncate">Book a Call</span>
+                <span className="truncate">Apply Now</span>
                 <span className="truncate text-muted-foreground text-xs">
                   Schedule a session with us
                 </span>
@@ -398,7 +398,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
           <kbd className="rounded bg-popover px-1 py-0.5 font-mono text-[10px]">
             ⌃B
           </kbd>
-          Book a Call
+          Apply Now
         </span>
         <span className="flex items-center gap-1 text-muted-foreground text-xs">
           <kbd className="rounded bg-popover px-1 py-0.5 font-mono text-[10px]">

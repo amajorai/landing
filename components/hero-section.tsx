@@ -146,7 +146,7 @@ export default function HeroSection() {
                     onClick={handleBookCall}
                     size="lg"
                   >
-                    <span className="btn-label">Book a Call</span>
+                    <span className="btn-label">Apply Now</span>
                   </Button>
                 </div>
               </FadeIn>

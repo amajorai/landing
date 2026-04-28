@@ -1,0 +1,118 @@
+# A Major — Full Content Corpus
+# Source: https://amajor.ai | Generated: 2026-04-28
+
+---
+
+# A Major
+
+A Major is a software company for the agent era, based in Singapore and serving clients worldwide. It operates two arms: Agency and Products.
+
+**Website:** https://amajor.ai
+**Email:** contact@amajor.ai
+**Location:** Singapore (serving clients worldwide)
+
+---
+
+## Agency
+
+> Software that just works. Experts you can talk to.
+
+A Major Agency builds websites, apps, and enterprise systems with AI agents at the core. Founded by Jia Wei Ng, the agency is fully founder-led — no subcontracting, no project managers relaying messages, direct access to the person building your product.
+
+### Services
+
+- **Web Design** — Custom websites, mobile-first, Core Web Vitals optimised. https://amajor.ai/services/web-design
+- **Web Apps** — Full-stack React/Next.js applications. https://amajor.ai/services/web-apps
+- **Mobile Apps** — React Native, Swift, Kotlin, Flutter. https://amajor.ai/services/mobile-apps
+- **SaaS Products** — Multi-tenant SaaS with billing and auth. https://amajor.ai/services/saas-products
+- **Enterprise Systems** — ERP, CRM, internal tooling at scale. https://amajor.ai/services/enterprise-systems
+- **API & MCP Development** — REST, GraphQL, tRPC, Model Context Protocol servers. https://amajor.ai/services/api-development
+- **DevOps** — CI/CD, Docker, Kubernetes, cloud deployments. https://amajor.ai/services/devops
+- **Engineering Consultancy** — Fractional CTO, architecture reviews, technical advisory. https://amajor.ai/services/consultancy
+- **MVP Scoping** — Product discovery, technical architecture, roadmap. https://amajor.ai/services/mvp-scoping
+- **Digital Transformation** — Modernise operations with software. https://amajor.ai/services/digital-transformation
+- **Legacy Modernisation** — Migrate and refactor legacy systems. https://amajor.ai/services/legacy-modernisation
+
+### Agency Differentiators
+
+- Fixed scope, no billing surprises
+- Direct access to the founder
+- Fast turnaround — finished product inside 30 days
+- Design, engineering, and project management in one team
+- Full deployment included
+- Post-launch support available
+- Clean, documented handover
+- No subcontracting, ever
+- Weekly progress updates
+- You own everything we build
+
+### Who This Is For
+
+- Founders who need a technical co-founder or first engineering hire
+- Businesses replacing spreadsheets and manual processes with software
+- Teams who've been burned by agencies that overpromise and underdeliver
+- Companies modernising legacy systems
+- Startups building MVPs with real engineering quality
+
+---
+
+## Products
+
+> Most AI agents didn't deliver. We build the ones that do.
+
+Industry research puts real enterprise value from AI agents under 10%. A Major Products builds agent-native software — not retrofitted AI wrappers — starting with Ryu.
+
+### Ryu
+
+Ryu is end-to-end managed infrastructure for AI agents.
+
+Pick your engine — Hermes, OpenClaw, ZeroClaw, Claude Code, or any compatible agent — and Ryu is the entire car built around them: security, model routing, memory, tools, workflows, and deployment. All sourced, assembled, and managed.
+
+- **Product page:** https://amajor.ai/products/ryu
+- **Homepage:** https://ryuhq.com
+
+**Why Ryu:** Most teams spend 80% of their AI budget on plumbing — auth, memory, routing, observability — and 20% on the actual agent logic. Ryu inverts that.
+
+---
+
+## Company
+
+### Manifesto
+
+A Major believes software should work for the people using it, not the agency billing for it. The Manifesto outlines the principles behind how A Major builds: scope first, ship fast, handover clean, no surprises.
+
+Full manifesto: https://amajor.ai/manifesto
+
+### Story
+
+A Major was founded by Jia Wei Ng, a software engineer with 7+ years of experience building production systems. After watching too many businesses pay for software they couldn't maintain, understand, or grow with, the agency was built on the opposite principle: founder-led, direct, honest.
+
+Full story: https://amajor.ai/story
+
+### Founder
+
+**Jia Wei Ng** — Founder
+Alumni of the University of Glasgow. 7+ years engineering experience. 20+ projects delivered.
+LinkedIn: https://www.linkedin.com/in/jiaweing
+GitHub: https://github.com/jiaweing
+
+---
+
+## Blog
+
+Technical articles and industry insights on AI agents, software development, and the agent era.
+
+https://amajor.ai/blog
+
+---
+
+## Contact
+
+- **Email:** contact@amajor.ai
+- **Location:** Singapore (serving clients worldwide)
+- **Apply / Book:** https://amajor.ai/agency
+- **LinkedIn:** https://www.linkedin.com/company/amajor
+- **X/Twitter:** https://x.com/amajorhq
+- **Threads:** https://www.threads.net/@amajorai
+- **Instagram:** https://instagram.com/amajorai
+- **GitHub:** https://github.com/amajor

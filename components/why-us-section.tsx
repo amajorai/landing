@@ -85,14 +85,18 @@ function AnimatedNumber({
   suffix?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const motionValue = useMotionValue(0);
+  const hasTriggered = useRef(false);
+  const motionValue = useMotionValue(value);
   const rounded = useTransform(motionValue, (latest) => Math.round(latest));
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    if (isInView) {
+    if (!isInView || hasTriggered.current) return;
+    hasTriggered.current = true;
+    requestAnimationFrame(() => {
+      motionValue.set(0);
       animate(motionValue, value, { duration: 1.5 });
-    }
+    });
   }, [isInView, motionValue, value]);
 
   return (

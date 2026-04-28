@@ -28,6 +28,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  lastEdited?: string;
   description: string;
   authors: { name: string; avatar?: string; slug: string }[];
   tags: string[];
@@ -365,6 +366,7 @@ export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
           slug: getProperty(page, "Slug", "rich_text") || "",
           title,
           date: getProperty(page, "Date", "date") || page.created_time,
+          lastEdited: page.last_edited_time,
           description: getProperty(page, "Excerpt", "rich_text") || "",
           authors: extractAuthors(page),
           tags,
@@ -458,12 +460,13 @@ export const getBlogPost = unstable_cache(
         slug: getProperty(page, "Slug", "rich_text") || "",
         title,
         date: getProperty(page, "Date", "date") || page.created_time,
+        lastEdited: page.last_edited_time,
         description: getProperty(page, "Excerpt", "rich_text") || "",
         authors: extractAuthors(page),
         tags,
         tagColors,
         cover: banner,
-        readingTime: 0, // Will be calculated below
+        readingTime: 0,
       };
 
       const blocks = await fetchPageBlocks(page.id);

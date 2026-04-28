@@ -5,7 +5,13 @@ const organizationSchema = {
   name: "A Major",
   url: "https://amajor.ai",
   logo: "https://amajor.ai/logos/amajor-submark.svg",
-  sameAs: ["https://x.com/amajorai", "https://www.linkedin.com/company/amajor"],
+  sameAs: [
+    "https://x.com/amajorhq",
+    "https://www.linkedin.com/company/amajor",
+    "https://github.com/amajor",
+    "https://www.threads.net/@amajorai",
+  ],
+  founder: { "@id": "https://amajor.ai/#founder" },
   description:
     "A Major is a software company for the agent era. The Agency builds websites, apps, and enterprise systems with AI agents at the core. Products ships agent-native software — starting with Ryu, end-to-end managed infrastructure for AI agents.",
   hasPart: [
@@ -121,7 +127,7 @@ const websiteSchema = {
   },
   speakable: {
     "@type": "SpeakableSpecification",
-    cssSelector: ["h1", ".hero-description", ".services-summary"],
+    cssSelector: ["h1"],
   },
 };
 
@@ -167,7 +173,7 @@ const localBusinessSchema = {
     longitude: "103.8198",
   },
   sameAs: [
-    "https://x.com/amajorai",
+    "https://x.com/amajorhq",
     "https://www.linkedin.com/company/amajor",
     "https://www.threads.net/@amajorai",
     "https://instagram.com/amajorai",
@@ -245,6 +251,20 @@ const ryuSchema = {
   },
 };
 
+const founderSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://amajor.ai/#founder",
+  name: "Jia Wei Ng",
+  jobTitle: "Founder",
+  worksFor: { "@id": "https://amajor.ai/#organization" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "University of Glasgow" },
+  sameAs: [
+    "https://www.linkedin.com/in/jiaweing",
+    "https://github.com/jiaweing",
+  ],
+};
+
 export default function StructuredData() {
   return (
     <>
@@ -272,6 +292,10 @@ export default function StructuredData() {
       />
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ryuSchema) }}
+        type="application/ld+json"
+      />
+      <script
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
         type="application/ld+json"
       />
     </>

@@ -4,11 +4,11 @@ import type { BlogPost, Page } from "@/lib/notion";
 export const siteConfig = {
   name: "A Major",
   description:
-    "A Major is a software company for the agent era. The Agency builds websites, apps, and enterprise systems with AI agents at the core. Products ships agent-native software — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+    "A Major is a Singapore software agency for the agent era. We build web apps, mobile apps, SaaS products, and enterprise systems with AI agents at the core.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amajor.ai",
   ogImage: "https://amajor.ai/og/index.png",
   links: {
-    twitter: "https://x.com/amajorai",
+    twitter: "https://x.com/amajorhq",
     github: "https://github.com/amajor",
   },
   authors: [{ name: "A Major Team" }],
@@ -183,7 +183,7 @@ export function generateBlogMetadata(post: BlogPost): Metadata {
     url: `/blog/${post.slug}`,
     type: "article",
     publishedTime: post.date,
-    modifiedTime: post.date,
+    modifiedTime: post.lastEdited || post.date,
     authors: authorNames,
     tags: post.tags,
     category: post.tags?.[0] || "blog",
@@ -276,7 +276,7 @@ export function generateBlogJsonLd(post: BlogPost) {
     description: extractDescription(post.description || ""),
     image: post.cover ? [post.cover] : undefined,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.lastEdited || post.date,
     author: authorNames.map((name) => ({
       "@type": "Person",
       name,

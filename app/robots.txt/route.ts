@@ -51,7 +51,37 @@ Allow: /
 Disallow: /private/
 Disallow: /api/
 
-User-agent: Googlebot-Extended
+User-agent: Google-Extended
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /private/
+Disallow: /api/
+
+User-agent: DuckAssistBot
 Allow: /
 Disallow: /private/
 Disallow: /api/

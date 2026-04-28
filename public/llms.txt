@@ -72,6 +72,6 @@ Ryu is end-to-end managed infrastructure for AI agents. The engines (OpenClaw, H
 - Email: contact@amajor.ai
 - Location: Singapore (serving clients worldwide)
 - LinkedIn: https://www.linkedin.com/company/amajor
-- X/Twitter: https://x.com/amajorai
+- X/Twitter: https://x.com/amajorhq
 - Threads: https://www.threads.net/@amajorai
 - Instagram: https://instagram.com/amajorai

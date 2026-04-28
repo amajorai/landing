@@ -93,9 +93,9 @@ const ACTIONS = [
 const SOCIAL = [
   {
     name: "X / Twitter",
-    href: "https://x.com/amajorai",
+    href: "https://x.com/amajorhq",
     icon: AtSign,
-    description: "@amajorai",
+    description: "@amajorhq",
   },
   {
     name: "LinkedIn",

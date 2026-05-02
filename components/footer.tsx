@@ -88,7 +88,7 @@ export default function FooterSection() {
             <a
               aria-label="X/Twitter"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://x.com/amajorhq"
+              href="https://amajor.link/x"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -103,7 +103,7 @@ export default function FooterSection() {
             <a
               aria-label="LinkedIn"
               className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
-              href="https://www.linkedin.com/company/amajor"
+              href="https://amajor.link/linkedin"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -112,6 +112,21 @@ export default function FooterSection() {
                 className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
                 height={16}
                 src="/logos/linkedin.svg"
+                width={16}
+              />
+            </a>
+            <a
+              aria-label="GitHub"
+              className="flex h-6 w-6 items-center justify-center text-center text-muted-foreground hover:text-primary"
+              href="https://amajor.link/github"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="GitHub - A Major"
+                className="h-5 w-5 opacity-50 grayscale transition-colors duration-300 hover:opacity-100 dark:invert"
+                height={16}
+                src="/logos/github_light.svg"
                 width={16}
               />
             </a>

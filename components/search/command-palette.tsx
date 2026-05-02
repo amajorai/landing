@@ -93,19 +93,19 @@ const ACTIONS = [
 const SOCIAL = [
   {
     name: "X / Twitter",
-    href: "https://x.com/amajorhq",
+    href: "https://amajor.link/x",
     icon: AtSign,
     description: "@amajorhq",
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/amajor",
+    href: "https://amajor.link/linkedin",
     icon: Briefcase,
     description: "linkedin.com/company/amajor",
   },
   {
     name: "GitHub",
-    href: "https://github.com/amajor",
+    href: "https://amajor.link/github",
     icon: Code2,
     description: "github.com/amajor",
   },

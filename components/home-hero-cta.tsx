@@ -12,7 +12,7 @@ export function HomeHeroCta() {
       <a
         aria-label="X/Twitter"
         className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100"
-        href="https://x.com/amajorhq"
+        href="https://amajor.link/x"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -27,7 +27,7 @@ export function HomeHeroCta() {
       <a
         aria-label="LinkedIn"
         className="flex h-6 w-6 items-center justify-center text-muted-foreground opacity-50 grayscale transition-all hover:opacity-100"
-        href="https://www.linkedin.com/company/amajor"
+        href="https://amajor.link/linkedin"
         rel="noopener noreferrer"
         target="_blank"
       >

@@ -4,6 +4,7 @@ import { GridScan } from "@/components/GridScan";
 import { HomeHeroCta } from "@/components/home-hero-cta";
 import PixelBlast from "@/components/PixelBlast";
 import Prism from "@/components/reactbits/prism";
+import SilkDynamic from "@/components/silk-dynamic";
 import { TriggerResize } from "@/components/trigger-resize";
 import { CrossMark } from "@/components/ui/cross-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
@@ -145,6 +146,47 @@ export default function RootPage() {
               <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
                 Websites, apps, and enterprise systems, with AI agents at the
                 core. We handle the build so you can focus on the business.
+              </p>
+            </div>
+          </Link>
+
+          {/* Referral panel */}
+          <Link
+            className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
+            href="/referral"
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 hidden dark:block"
+              style={{ zIndex: 0, opacity: 0.18 }}
+            >
+              <SilkDynamic
+                color="#9B8EC4"
+                noiseIntensity={1.2}
+                rotation={0}
+                scale={1.2}
+                speed={3}
+              />
+            </div>
+            <DotGridBackground
+              className="text-zinc-950 opacity-[0.03] dark:text-white dark:opacity-[0.04]"
+              dotRadius={1}
+              spacing={28}
+            />
+            <div className="relative z-10">
+              <p className="mb-4 font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
+                Referral Program
+              </p>
+              <PageHeader
+                as="div"
+                line1="Don't have a project?"
+                line2="Know someone who will?"
+                size="xl"
+              />
+              <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
+                Refer a client and earn 5% of the total project cost when it
+                completes. Anyone can refer. We bank transfer the fee directly
+                to you.
               </p>
             </div>
           </Link>

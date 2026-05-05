@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Suspense } from "react";
 
 import ContentSection from "@/components/about-section";
@@ -85,6 +86,25 @@ export const metadata = generateMetadata({
 
 export const revalidate = 3600;
 
+function ReferralBanner() {
+  return (
+    <Link
+      className="group flex items-center justify-between border-border border-t border-dashed px-6 py-4 transition-colors duration-200 hover:bg-muted/10"
+      href="/referral"
+    >
+      <div>
+        <p className="font-medium text-sm">Know someone who needs this?</p>
+        <p className="text-muted-foreground text-xs">
+          Refer a client and earn 5% of the total project cost on completion.
+        </p>
+      </div>
+      <span className="font-medium text-muted-foreground text-xs transition-colors duration-200 group-hover:text-foreground">
+        Referral program →
+      </span>
+    </Link>
+  );
+}
+
 export default function AgencyPage() {
   const contributions = getCachedContributions(GITHUB_USERNAME);
 
@@ -153,9 +173,9 @@ export default function AgencyPage() {
         <CallToAction />
       </FadeIn>
 
-      <p className="pb-4 text-center text-muted-foreground text-xs">
-        Singapore-based · contact@amajor.ai
-      </p>
+      <FadeIn>
+        <ReferralBanner />
+      </FadeIn>
 
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(agencyFaqSchema) }}

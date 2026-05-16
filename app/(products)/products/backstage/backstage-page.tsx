@@ -9,15 +9,11 @@ import {
   Sparkles,
   Wand2,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
-import { generateMetadata as genMeta } from "@/lib/metadata";
 import Link from "next/link";
-
-// Can't export metadata from a "use client" component — we'll handle it via a wrapper.
-// Move metadata to a separate server component if needed.
 
 // ── Feature cards ─────────────────────────────────────────────────────────────
 

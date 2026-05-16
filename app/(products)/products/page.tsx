@@ -21,6 +21,8 @@ export const metadata = genMeta({
     "agent orchestration",
     "LLM integration",
     "MCP server",
+    "Backstage",
+    "YouTube thumbnail studio",
     "A Major Products",
   ],
 });
@@ -37,6 +39,18 @@ const PRODUCTS = [
     href: "/products/ryu",
     externalUrl: "https://ryuhq.com",
     logo: "/logos/ryu.png",
+  },
+  {
+    slug: "backstage",
+    name: "Backstage",
+    tagline: "The open-source YouTube thumbnail studio",
+    description:
+      "A free, cross-platform desktop app for designing high-performing YouTube thumbnails. Layer-based editing, AI background removal, video frame extraction, and AI image generation — all running locally on your machine.",
+    status: "Available Now",
+    statusType: "live" as const,
+    href: "/products/backstage",
+    externalUrl: "https://github.com/amajorai/backstage",
+    logo: "/logos/youtube.svg",
   },
 ];
 
@@ -106,8 +120,8 @@ export default function ProductsPage() {
                   <div className="relative z-10">
                     <span className="mb-5 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
                       <span className="relative flex size-1.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/75" />
-                        <span className="relative inline-flex size-1.5 rounded-full bg-amber-400" />
+                        <span className={`absolute inline-flex h-full w-full animate-ping rounded-full ${product.statusType === "live" ? "bg-emerald-400/75" : "bg-amber-400/75"}`} />
+                        <span className={`relative inline-flex size-1.5 rounded-full ${product.statusType === "live" ? "bg-emerald-400" : "bg-amber-400"}`} />
                       </span>
                       {product.status}
                     </span>
@@ -136,7 +150,7 @@ export default function ProductsPage() {
               ))}
 
               {/* Mystery teaser */}
-              <div className="flex flex-col justify-center border-border border-r border-b border-dashed px-10 py-12">
+              <div className="flex flex-col justify-center border-border border-r border-b border-dashed px-10 py-12 sm:col-span-2">
                 <div className="relative z-10">
                   <p className="font-semibold text-muted-foreground/40 text-xl tracking-tighter">
                     Something's brewing.

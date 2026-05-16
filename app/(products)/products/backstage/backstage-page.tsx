@@ -3,7 +3,7 @@
 import {
   ExternalLink,
   Film,
-  Github,
+  GitFork,
   ImageIcon,
   Layers,
   Sparkles,
@@ -370,7 +370,7 @@ export default function BackstagePage() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Github className="h-3.5 w-3.5" />
+                  <GitFork className="h-3.5 w-3.5" />
                   View on GitHub
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
@@ -421,7 +421,7 @@ export default function BackstagePage() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <Github className="h-3.5 w-3.5" />
+                <GitFork className="h-3.5 w-3.5" />
                 Get Backstage on GitHub
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>

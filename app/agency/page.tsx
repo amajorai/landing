@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Suspense } from "react";
-
 import ContentSection from "@/components/about-section";
 import CallToAction from "@/components/call-to-action";
 import FAQsFour from "@/components/faq-section";
@@ -17,6 +16,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import WhoIsThisFor from "@/components/who-is-this-for";
 import StatsSection from "@/components/why-us-section";
 import { getCachedContributions } from "@/lib/get-cached-contributions";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { generateMetadata } from "@/lib/metadata";
 
 const agencyFaqSchema = {
@@ -178,7 +178,7 @@ export default function AgencyPage() {
       </FadeIn>
 
       <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(agencyFaqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(agencyFaqSchema) }}
         type="application/ld+json"
       />
     </>

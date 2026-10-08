@@ -1,0 +1,597 @@
+  // ─── HEALTHCARE SOFTWARE ─────────────────────────────────────────
+  {
+    slug: "healthcare-software",
+    name: "Healthcare Software",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "HIPAA-compliant software that improves patient outcomes and streamlines clinical workflows",
+    pricingNote:
+      "Patient portals and scheduling systems from $30,000. Full EHR-integrated platforms and telehealth applications from $80,000–200,000+. All projects include HIPAA-compliant architecture and BAA.",
+    description:
+      "We build secure, regulation-ready healthcare applications: from patient portals and telehealth platforms to EHR/EMR integrations and appointment scheduling systems. Every line of code is written with HIPAA compliance, data encryption, and audit logging as non-negotiable foundations.",
+    accentColor: "emerald",
+    visualizationKey: "healthcare-software",
+    logo: null,
+    lucideIcon: "HeartPulse",
+    features: [
+      {
+        icon: "HeartPulse",
+        title: "Patient portal development",
+        description:
+          "Secure self-service portals where patients can view records, schedule appointments, message providers, and manage prescriptions.",
+      },
+      {
+        icon: "FileText",
+        title: "EHR/EMR integration",
+        description:
+          "HL7 FHIR and legacy API integrations with Epic, Cerner, Allscripts, and other major electronic health record systems.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "HIPAA-compliant architecture",
+        description:
+          "End-to-end encryption, role-based access control, audit trails, and BAA-ready infrastructure from day one.",
+      },
+      {
+        icon: "Video",
+        title: "Telehealth & virtual care",
+        description:
+          "WebRTC-powered video consultations with waiting rooms, screen sharing, and integrated clinical notes.",
+      },
+      {
+        icon: "CalendarCheck",
+        title: "Appointment & scheduling systems",
+        description:
+          "Smart scheduling with provider availability, automated reminders, waitlist management, and calendar sync.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Clinical analytics dashboards",
+        description:
+          "Real-time reporting on patient outcomes, operational metrics, and population health trends for data-driven decisions.",
+      },
+    ],
+    subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "postgresql" }],
+    overview:
+      "Healthcare organizations face a unique intersection of technical complexity and regulatory pressure. Off-the-shelf software rarely fits the specific workflows of clinics, hospitals, and health-tech startups, and when it does, customization is locked behind expensive vendor contracts. Custom healthcare software solves this by mapping directly to your clinical processes, integrating with the systems your staff already use, and scaling as your patient base grows.\n\nAt A Major, we specialize in building healthcare applications that meet HIPAA requirements without sacrificing user experience. Our team understands HL7 FHIR standards, PHI data handling, role-based access patterns, and the audit trail requirements that regulators expect. Whether you're building a patient-facing portal, a telehealth platform, or an internal clinical tool, we deliver software that clinicians actually want to use.\n\nFrom initial compliance architecture through deployment on HIPAA-eligible cloud infrastructure, we handle the full lifecycle, so your team can focus on patient care, not debugging integrations.",
+    challenges: [
+      {
+        title: "HIPAA compliance is complex and non-negotiable",
+        description:
+          "A single data breach can cost millions in fines and destroy patient trust. Every component , database, API, frontend, hosting , must meet strict privacy and security requirements.",
+      },
+      {
+        title: "EHR integration is fragmented",
+        description:
+          "Each electronic health record system uses different APIs, data formats, and authentication methods. Connecting to Epic differs vastly from connecting to Cerner or Allscripts.",
+      },
+      {
+        title: "Clinical workflows vary across organizations",
+        description:
+          "No two clinics operate identically. Software must adapt to diverse scheduling patterns, documentation standards, and care team structures.",
+      },
+      {
+        title: "User adoption among clinical staff",
+        description:
+          "Healthcare workers are time-constrained and resistant to clunky interfaces. If the software adds friction to their day, they won't use it.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Design for HIPAA from the architecture layer",
+        detail:
+          "Retrofitting compliance is exponentially more expensive than building it in. Start with encrypted storage, access control, and audit logging before writing a single feature.",
+      },
+      {
+        tip: "Use HL7 FHIR as your interoperability standard",
+        detail:
+          "FHIR is the modern healthcare data exchange standard. Building on FHIR makes future integrations with EHRs, labs, and payers dramatically simpler.",
+      },
+      {
+        tip: "Test with real clinicians early and often",
+        detail:
+          "Healthcare UX is different from consumer UX. Get nurses, doctors, and admin staff involved in usability testing before you finalize workflows.",
+      },
+      {
+        tip: "Plan for audit trails from day one",
+        detail:
+          "Every access to PHI must be logged. Immutable audit logs are a regulatory requirement and a critical debugging tool.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "HHS HIPAA Security Rule",
+        url: "https://www.hhs.gov/hipaa/for-professionals/security/index.html",
+        type: "docs",
+      },
+      {
+        title: "HL7 FHIR Specification",
+        url: "https://www.hl7.org/fhir/",
+        type: "docs",
+      },
+      {
+        title: "ONC Health IT Certification",
+        url: "https://www.healthit.gov/topic/certification-ehrs/about-onc-health-it-certification-program",
+        type: "docs",
+      },
+      {
+        title: "OWASP Healthcare Security Guide",
+        url: "https://owasp.org/www-project-web-security-testing-guide/",
+        type: "docs",
+      },
+    ],
+    faq: [
+      {
+        question:
+          "How do you ensure HIPAA compliance in the software you build?",
+        answer:
+          "We architect HIPAA compliance into the foundation: encrypted databases, TLS everywhere, role-based access control, immutable audit logs, and deployment on HIPAA-eligible infrastructure (AWS GovCloud or Azure Healthcare). We also provide documentation for your compliance officer and support BAA execution with cloud providers.",
+      },
+      {
+        question: "How much does custom healthcare software development cost?",
+        answer:
+          "A patient portal or telehealth MVP typically ranges from $30,000–$80,000. Enterprise-grade platforms with EHR integrations, clinical dashboards, and multi-tenant architecture start at $80,000 and can exceed $250,000 depending on scope and compliance requirements.",
+      },
+      {
+        question: "Can you integrate with our existing EHR system?",
+        answer:
+          "Yes. We have experience integrating with Epic, Cerner, Allscripts, and other EHR platforms using HL7 FHIR, SMART on FHIR, and legacy HL7v2 interfaces. We also work with labs, pharmacies, and insurance payer APIs.",
+      },
+      {
+        question: "How long does it take to build a healthcare application?",
+        answer:
+          "A focused MVP (patient portal, scheduling, telehealth) takes 3–5 months. More complex platforms with multiple EHR integrations and compliance certifications typically take 6–12 months.",
+      },
+    ],
+  },
+
+  // ─── FINTECH DEVELOPMENT ─────────────────────────────────────────
+  {
+    slug: "fintech",
+    name: "Fintech Development",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "Secure, compliant financial software: from payment processing to banking platforms",
+    pricingNote:
+      "Payment integrations and financial dashboards from $25,000. Full neobanking or investment platforms from $80,000–300,000+. All projects include security architecture review and compliance documentation.",
+    description:
+      "We develop fintech applications that handle money with the reliability, security, and regulatory compliance the financial industry demands. From payment gateways and neobanking platforms to investment dashboards and crypto integrations, we build software that processes transactions accurately and passes audits confidently.",
+    accentColor: "green",
+    visualizationKey: "fintech",
+    logo: null,
+    lucideIcon: "Landmark",
+    features: [
+      {
+        icon: "CreditCard",
+        title: "Payment processing integration",
+        description:
+          "Stripe, Plaid, Adyen, and custom payment gateway integrations with PCI DSS-compliant data handling.",
+      },
+      {
+        icon: "Landmark",
+        title: "Banking & neobanking platforms",
+        description:
+          "Account management, fund transfers, KYC/AML verification, and multi-currency support for modern banking apps.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "PCI DSS & regulatory compliance",
+        description:
+          "Architecture designed to meet PCI DSS, SOC 2, and regional financial regulations from the ground up.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Financial dashboards & reporting",
+        description:
+          "Real-time portfolio views, transaction histories, P&L reporting, and custom analytics for financial decision-making.",
+      },
+      {
+        icon: "Lock",
+        title: "Fraud detection & prevention",
+        description:
+          "Transaction monitoring, anomaly detection, velocity checks, and risk scoring to protect users and reduce chargebacks.",
+      },
+      {
+        icon: "Coins",
+        title: "Crypto & blockchain integration",
+        description:
+          "Wallet integrations, token management, DeFi protocol connections, and blockchain transaction tracking.",
+      },
+    ],
+    subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "stripe" }],
+    overview:
+      "Financial software operates under constraints that most applications never encounter: every transaction must be accurate to the cent, every piece of user data must be encrypted and auditable, and every feature must comply with regulations that vary by jurisdiction. Fintech companies, whether building payment platforms, lending tools, or investment apps: need development partners who understand these constraints deeply.\n\nAt A Major, we build fintech software that treats security and compliance as first-class engineering concerns, not afterthoughts. Our team has experience with PCI DSS cardholder data environments, KYC/AML verification flows, Plaid and Stripe integrations, and the double-entry accounting patterns that financial accuracy demands. We architect for auditability, because in fintech, if you can't prove it happened correctly, it didn't.\n\nWhether you're a startup building your first payment product or an established firm modernizing legacy banking infrastructure, we deliver software that regulators approve and users trust.",
+    challenges: [
+      {
+        title: "Regulatory compliance across jurisdictions",
+        description:
+          "PCI DSS, SOC 2, PSD2, MiFID II: financial regulations vary by country and product type. Non-compliance means fines, license revocation, or worse.",
+      },
+      {
+        title: "Transaction accuracy at scale",
+        description:
+          "Financial systems can't have rounding errors or race conditions. Every calculation must be deterministic, and every state change must be idempotent and auditable.",
+      },
+      {
+        title: "Security threats are constant and sophisticated",
+        description:
+          "Fintech apps are high-value targets. Credential stuffing, API abuse, and social engineering require layered defenses well beyond basic authentication.",
+      },
+      {
+        title: "Legacy system modernization",
+        description:
+          "Many financial institutions run on COBOL or outdated Java systems. Migrating without downtime or data loss requires careful, incremental strategies.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use decimal arithmetic, never floating point",
+        detail:
+          "Floating-point math causes rounding errors. All monetary calculations should use integer cents or dedicated decimal libraries to guarantee accuracy.",
+      },
+      {
+        tip: "Design every transaction as idempotent",
+        detail:
+          "Network failures happen. Idempotency keys ensure that retried payments aren't processed twice: critical for user trust and reconciliation.",
+      },
+      {
+        tip: "Implement audit logging from the start",
+        detail:
+          "Every financial action should produce an immutable log entry. Auditors and regulators will ask for this: it's far easier to build it in than bolt it on.",
+      },
+      {
+        tip: "Separate sensitive data into isolated environments",
+        detail:
+          "PCI DSS requires cardholder data to be stored in segmented environments. Architect your infrastructure with clear data classification boundaries.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "PCI DSS Quick Reference Guide",
+        url: "https://www.pcisecuritystandards.org/document_library/",
+        type: "docs",
+      },
+      {
+        title: "Stripe API Documentation",
+        url: "https://stripe.com/docs/api",
+        type: "docs",
+      },
+      {
+        title: "Plaid Quickstart Guide",
+        url: "https://plaid.com/docs/quickstart/",
+        type: "docs",
+      },
+      {
+        title: "OWASP Fintech Security Checklist",
+        url: "https://owasp.org/www-project-web-security-testing-guide/",
+        type: "docs",
+      },
+    ],
+    faq: [
+      {
+        question: "What fintech regulations do you help comply with?",
+        answer:
+          "We architect for PCI DSS (payment card data), SOC 2 (operational controls), KYC/AML (identity verification), and regional frameworks like PSD2 (EU) and state-level money transmitter laws. We work with your compliance counsel to ensure the software meets all applicable requirements.",
+      },
+      {
+        question: "How much does fintech application development cost?",
+        answer:
+          "A payment integration or financial dashboard MVP typically costs $25,000–$60,000. Full neobanking platforms, lending systems, or multi-jurisdiction payment processors range from $80,000–$300,000+ depending on compliance scope and feature depth.",
+      },
+      {
+        question:
+          "What security measures do you implement for financial applications?",
+        answer:
+          "We implement end-to-end encryption, tokenized card storage, multi-factor authentication, rate limiting, fraud detection rules, penetration testing, and SOC 2-aligned operational controls. All sensitive data is stored in PCI-compliant segmented environments.",
+      },
+      {
+        question:
+          "Can you integrate with existing banking APIs and payment providers?",
+        answer:
+          "Yes. We integrate with Stripe, Plaid, Adyen, Square, Wise, and traditional banking APIs. We also build custom middleware for legacy banking systems that don't offer modern API access.",
+      },
+    ],
+  },
+
+  // ─── E-COMMERCE DEVELOPMENT ──────────────────────────────────────
+  {
+    slug: "ecommerce",
+    name: "E-commerce Development",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "Custom online stores built to sell: fast, conversion-optimized, and scalable",
+    pricingNote:
+      "Custom Shopify storefronts from $8,000. Headless e-commerce platforms with custom checkout and integrations from $25,000–80,000+. All builds include Core Web Vitals optimization.",
+    description:
+      "We build e-commerce experiences that go beyond templates. Whether you need a headless Shopify storefront, a custom WooCommerce build, or a fully bespoke shopping platform, we deliver stores that load fast, convert visitors into buyers, and scale with your inventory and traffic.",
+    accentColor: "orange",
+    visualizationKey: "ecommerce",
+    logo: null,
+    lucideIcon: "ShoppingCart",
+    features: [
+      {
+        icon: "ShoppingCart",
+        title: "Custom storefront development",
+        description:
+          "Unique, brand-aligned shopping experiences: not cookie-cutter templates that look like every other store in your niche.",
+      },
+      {
+        icon: "Layers",
+        title: "Headless commerce architecture",
+        description:
+          "Decoupled frontends with Shopify, WooCommerce, or Medusa backends for maximum performance and design flexibility.",
+      },
+      {
+        icon: "CreditCard",
+        title: "Payment & checkout optimization",
+        description:
+          "Stripe, PayPal, Apple Pay, and local payment method integrations with conversion-optimized single-page checkouts.",
+      },
+      {
+        icon: "Package",
+        title: "Inventory & order management",
+        description:
+          "Real-time stock tracking, multi-warehouse support, automated reorder alerts, and order lifecycle management.",
+      },
+      {
+        icon: "Globe",
+        title: "Multi-channel selling",
+        description:
+          "Sync products and orders across your website, Amazon, eBay, Instagram Shop, and brick-and-mortar POS systems.",
+      },
+      {
+        icon: "Search",
+        title: "Product search & filtering",
+        description:
+          "Fast, faceted product search with typo tolerance, filters, and AI-powered recommendations to increase average order value.",
+      },
+    ],
+    subTechs: [{ slug: "woocommerce" }, { slug: "stripe" }, { slug: "nextjs" }],
+    overview:
+      "E-commerce is one of the most competitive spaces on the internet. Shoppers expect sub-second load times, seamless mobile checkout, and personalized product discovery, and they'll abandon their cart at the first sign of friction. Template-based stores can get you started, but they hit a ceiling fast: limited customization, sluggish performance under load, and rigid checkout flows that tank conversion rates.\n\nA Major builds custom e-commerce solutions that prioritize the metrics that actually drive revenue: page speed, conversion rate, and average order value. We work with headless architectures: decoupling the frontend experience from the commerce backend, so your store can be blazing fast on Next.js while still powered by Shopify, WooCommerce, or a custom product catalog behind the scenes.\n\nFrom inventory management and multi-currency support to subscription billing and wholesale portals, we build the commerce infrastructure that grows with your business instead of constraining it.",
+    challenges: [
+      {
+        title: "Cart abandonment rates average 70%",
+        description:
+          "Most shoppers abandon before paying. Slow checkouts, surprise shipping costs, and forced account creation are the top killers. Every friction point costs revenue.",
+      },
+      {
+        title: "Performance degrades as catalogs grow",
+        description:
+          "Stores with 10,000+ products often suffer from slow search, sluggish filters, and page load times that drive shoppers to Amazon. Architecture matters at scale.",
+      },
+      {
+        title: "Platform lock-in limits growth",
+        description:
+          "Shopify and WooCommerce are great starting points, but their templating systems and plugin ecosystems create technical ceilings that require custom engineering to break through.",
+      },
+      {
+        title: "Multi-channel inventory sync is error-prone",
+        description:
+          "Selling across multiple channels without a centralized inventory system leads to overselling, stockouts, and customer complaints.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Optimize checkout to the fewest possible steps",
+        detail:
+          "Every additional form field or page in checkout increases abandonment. Guest checkout, autofill, and express payment options are table stakes.",
+      },
+      {
+        tip: "Use headless architecture for performance-critical stores",
+        detail:
+          "Decoupling the frontend from the commerce backend lets you serve static or ISR pages via CDN while keeping the cart and checkout dynamic.",
+      },
+      {
+        tip: "Invest in product search from early on",
+        detail:
+          "Shoppers who search convert at 2–3x the rate of browsers. Algolia, Meilisearch, or Typesense can transform your product discovery experience.",
+      },
+      {
+        tip: "Implement structured data for Google Shopping",
+        detail:
+          "Product schema markup gets your items into Google Shopping results and rich snippets: free, high-intent traffic.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Shopify Storefront API",
+        url: "https://shopify.dev/docs/api/storefront",
+        type: "docs",
+      },
+      {
+        title: "WooCommerce REST API",
+        url: "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+        type: "docs",
+      },
+      {
+        title: "Google Merchant Center",
+        url: "https://merchants.google.com/",
+        type: "tool",
+      },
+      {
+        title: "Baymard Institute UX Research",
+        url: "https://baymard.com/research",
+        type: "docs",
+      },
+    ],
+    faq: [
+      {
+        question: "Should I build a custom store or use Shopify/WooCommerce?",
+        answer:
+          "For most businesses starting out, Shopify or WooCommerce with a custom theme is the best path. You get proven commerce infrastructure with room to customize. We recommend going fully custom only when you've outgrown template limitations: typically at $1M+ annual revenue or when you need features platforms can't support.",
+      },
+      {
+        question: "What is headless e-commerce and do I need it?",
+        answer:
+          "Headless commerce separates your storefront (what shoppers see) from your commerce backend (products, cart, orders). This lets you build ultra-fast frontends with Next.js while keeping Shopify or WooCommerce as your admin panel. It's ideal for high-traffic stores where performance directly impacts revenue.",
+      },
+      {
+        question: "How much does a custom e-commerce store cost?",
+        answer:
+          "A custom WooCommerce or Shopify theme starts at $8,000–$20,000. Headless commerce builds with Next.js range from $25,000–$80,000. Enterprise multi-channel platforms with custom inventory management start at $60,000+.",
+      },
+      {
+        question: "Can you migrate my existing store to a new platform?",
+        answer:
+          "Yes. We handle full e-commerce migrations: products, customers, order history, SEO redirects, and payment configurations. We've migrated stores from Magento, BigCommerce, Squarespace, and custom platforms to Shopify and WooCommerce without losing search rankings.",
+      },
+    ],
+  },
+
+  // ─── EDUCATION & EDTECH ──────────────────────────────────────────
+
+  // ─── LOGISTICS & SUPPLY CHAIN ────────────────────────────────────
+  {
+    slug: "logistics-software",
+    name: "Logistics & Supply Chain Software",
+    category: "offering",
+    pageType: "offering",
+    targetAudience: "businesses",
+    tagline:
+      "Real-time visibility into your fleet, inventory, and supply chain: from warehouse to doorstep",
+    pricingNote:
+      "Fleet tracking and delivery management systems from $25,000. Full WMS/TMS platforms with ERP integrations from $60,000–200,000+. Built to handle real-time data at operational scale.",
+    description:
+      "We build logistics and supply chain software that gives you full operational visibility. Fleet management, route optimization, warehouse management, and real-time shipment tracking: engineered for reliability at scale and integration with your existing ERP and WMS systems.",
+    accentColor: "slate",
+    visualizationKey: "logistics-software",
+    logo: null,
+    lucideIcon: "Truck",
+    features: [
+      {
+        icon: "Truck",
+        title: "Fleet management & GPS tracking",
+        description:
+          "Real-time vehicle tracking, driver assignment, maintenance scheduling, and fuel consumption monitoring across your fleet.",
+      },
+      {
+        icon: "Route",
+        title: "Route optimization",
+        description:
+          "AI-powered routing algorithms that minimize delivery time, fuel cost, and driver hours while respecting vehicle capacity and time windows.",
+      },
+      {
+        icon: "Warehouse",
+        title: "Warehouse management systems",
+        description:
+          "Pick/pack/ship workflows, bin location management, barcode scanning, and inventory cycle counting for efficient warehouse operations.",
+      },
+      {
+        icon: "Package",
+        title: "Real-time shipment tracking",
+        description:
+          "End-to-end package visibility with automated status updates, delivery ETAs, and customer notification integrations.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Supply chain analytics",
+        description:
+          "Dashboards tracking on-time delivery rates, inventory turnover, carrier performance, and demand forecasting.",
+      },
+      {
+        icon: "Link",
+        title: "ERP & carrier integrations",
+        description:
+          "Connections to SAP, Oracle, NetSuite, and carrier APIs (FedEx, UPS, DHL) for seamless data flow across your supply chain.",
+      },
+    ],
+    subTechs: [{ slug: "react" }, { slug: "nodejs" }, { slug: "postgresql" }],
+    overview:
+      "Supply chain complexity is increasing every year. More SKUs, faster delivery expectations, global sourcing, and volatile demand patterns mean that spreadsheets and manual processes no longer cut it. Companies that lack real-time visibility into their logistics operations lose money to inefficient routes, stockouts, overstocking, and missed delivery windows.\n\nCustom logistics software bridges the gap between off-the-shelf tools that can't handle your specific workflows and enterprise platforms that cost millions and take years to implement. At A Major, we build logistics applications that connect your warehouses, fleet, carriers, and customers into a single operational view: with the real-time data and automation that keeps goods moving efficiently.\n\nWhether you're managing a last-mile delivery fleet, operating a 3PL warehouse, or coordinating a multi-supplier supply chain, our solutions are built for the throughput and reliability your operations demand. We integrate with your existing ERP, WMS, and carrier systems so you don't have to rip and replace your entire tech stack.",
+    challenges: [
+      {
+        title: "Real-time tracking across fragmented systems",
+        description:
+          "Shipments pass through multiple carriers, warehouses, and systems. Maintaining a unified, real-time view requires robust integration and event-driven architecture.",
+      },
+      {
+        title: "Route optimization is computationally complex",
+        description:
+          "The Vehicle Routing Problem (VRP) with time windows, capacity constraints, and dynamic conditions is NP-hard. Effective solutions require specialized algorithms.",
+      },
+      {
+        title: "Inventory accuracy degrades without automation",
+        description:
+          "Manual inventory counts are slow and error-prone. Warehouse operations need barcode/RFID scanning and real-time stock updates to maintain accuracy.",
+      },
+      {
+        title: "Legacy ERP integration is painful",
+        description:
+          "Many logistics companies run on SAP, Oracle, or custom ERPs with outdated APIs. Integrating modern web applications with these systems requires middleware expertise.",
+      },
+    ],
+    bestPractices: [
+      {
+        tip: "Use event-driven architecture for real-time updates",
+        detail:
+          "WebSockets and message queues (Kafka, RabbitMQ) enable real-time tracking and status updates that polling-based architectures can't match at scale.",
+      },
+      {
+        tip: "Implement barcode/RFID scanning at every touchpoint",
+        detail:
+          "Scan events create an audit trail of every inventory movement. This eliminates guesswork and reduces inventory discrepancies to near zero.",
+      },
+      {
+        tip: "Build for offline-first in field operations",
+        detail:
+          "Drivers and warehouse workers often have spotty connectivity. Offline-capable mobile apps that sync when connected prevent data loss and workflow interruptions.",
+      },
+      {
+        tip: "Start with visibility before optimization",
+        detail:
+          "You can't optimize what you can't measure. Build dashboards and tracking first, then layer in route optimization and demand forecasting once you have clean data.",
+      },
+    ],
+    usefulLinks: [
+      {
+        title: "Google OR-Tools (Route Optimization)",
+        url: "https://developers.google.com/optimization",
+        type: "tool",
+      },
+      {
+        title: "GS1 Barcode Standards",
+        url: "https://www.gs1.org/standards/barcodes",
+        type: "docs",
+      },
+      {
+        title: "ShipEngine API",
+        url: "https://www.shipengine.com/docs/",
+        type: "docs",
+      },
+      {
+        title: "EasyPost Shipping API",
+        url: "https://www.easypost.com/docs/api",
+        type: "docs",
+      },
+    ],
+    faq: [
+      {
+        question: "Can you integrate with our existing ERP system?",
+        answer:
+          "Yes. We integrate with SAP, Oracle, NetSuite, Microsoft Dynamics, and custom ERP systems using their APIs, EDI, or custom middleware. We also support real-time sync so inventory and order data stays consistent across platforms.",
+      },
+      {
+        question: "How does real-time tracking work technically?",
+        answer:
+          "We use GPS devices or driver mobile apps to capture location data, stream it through WebSocket connections, and display it on map-based dashboards. Events like pickup, transit, and delivery are tracked and push notifications are sent to stakeholders automatically.",
+      },
+      {
+        question: "How much does custom logistics software cost?",
+        answer:
+          "A fleet tracking or delivery management MVP starts at $25,000–$50,000. Full warehouse management systems with route optimization, carrier integrations, and analytics dashboards range from $60,000–$200,000+ depending on complexity.",
+      },
+      {
+        question: "Do you support mobile apps for drivers and warehouse staff?",
+        answer:
+          "Yes. We build cross-platform mobile apps (React Native) for drivers, warehouse pickers, and field staff: with barcode scanning, GPS tracking, offline mode, and push notifications.",
+      },
+    ],
+  },
+

@@ -148,10 +148,11 @@ def validate_bullets(orig, comp, result):
 
 
 def validate(original_path: Path, compressed_path: Path) -> ValidationResult:
-    result = ValidationResult()
+    return validate_text(read_file(original_path), read_file(compressed_path))
 
-    orig = read_file(original_path)
-    comp = read_file(compressed_path)
+
+def validate_text(orig: str, comp: str) -> ValidationResult:
+    result = ValidationResult()
 
     validate_headings(orig, comp, result)
     validate_code_blocks(orig, comp, result)

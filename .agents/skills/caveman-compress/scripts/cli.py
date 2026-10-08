@@ -10,7 +10,6 @@ import sys
 from pathlib import Path
 
 from .compress import compress_file
-from .detect import detect_file_type, should_compress
 
 
 def print_usage():
@@ -33,17 +32,7 @@ def main():
         print(f"❌ Not a file: {filepath}")
         sys.exit(1)
 
-    filepath = filepath.resolve()
-
-    # Detect file type
-    file_type = detect_file_type(filepath)
-
-    print(f"Detected: {file_type}")
-
-    # Check if compressible
-    if not should_compress(filepath):
-        print("Skipping: file is not natural language (code/config)")
-        sys.exit(0)
+    filepath = filepath.absolute()
 
     print("Starting caveman compression...\n")
 
@@ -57,7 +46,7 @@ def main():
             print(f"Original:   {backup_path}")
             sys.exit(0)
         else:
-            print("\n❌ Compression failed after retries")
+            print("\n❌ Compression skipped or validation failed")
             sys.exit(2)
 
     except KeyboardInterrupt:

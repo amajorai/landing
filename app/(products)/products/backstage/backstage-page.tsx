@@ -9,11 +9,11 @@ import {
   Sparkles,
   Wand2,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
-import Link from "next/link";
 
 // ── Feature cards ─────────────────────────────────────────────────────────────
 
@@ -22,7 +22,10 @@ function LayerEditorVisual() {
   const layers = ["Background", "Image", "Text", "Overlay"];
 
   useEffect(() => {
-    const id = setInterval(() => setActive((p) => (p + 1) % layers.length), 900);
+    const id = setInterval(
+      () => setActive((p) => (p + 1) % layers.length),
+      900
+    );
     return () => clearInterval(id);
   }, []);
 
@@ -30,12 +33,12 @@ function LayerEditorVisual() {
     <div className="flex h-full flex-col justify-center gap-1 px-4 py-4">
       {layers.map((layer, i) => (
         <div
-          key={layer}
           className={`flex items-center gap-2 rounded px-3 py-1.5 text-xs transition-all duration-300 ${
             i === active
               ? "bg-foreground/10 font-medium text-foreground"
               : "text-muted-foreground/60"
           }`}
+          key={layer}
         >
           <Layers className="h-3 w-3 shrink-0" />
           {layer}
@@ -50,10 +53,7 @@ function FrameExtractVisual() {
   const total = 24;
 
   useEffect(() => {
-    const id = setInterval(
-      () => setFrame((p) => (p + 1) % total),
-      120
-    );
+    const id = setInterval(() => setFrame((p) => (p + 1) % total), 120);
     return () => clearInterval(id);
   }, []);
 
@@ -73,12 +73,12 @@ function FrameExtractVisual() {
       <div className="flex items-center gap-1">
         {Array.from({ length: 8 }).map((_, i) => (
           <div
-            key={i}
             className={`h-1 w-4 rounded-full transition-all duration-100 ${
               Math.floor((frame / total) * 8) === i
                 ? "bg-foreground"
                 : "bg-muted-foreground/20"
             }`}
+            key={i}
           />
         ))}
       </div>
@@ -140,7 +140,7 @@ function AIGenerationVisual() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 px-4 py-4">
-      <div className="flex h-20 w-28 items-center justify-center rounded border border-dashed border-border bg-muted/10">
+      <div className="flex h-20 w-28 items-center justify-center rounded border border-border border-dashed bg-muted/10">
         <Sparkles className="h-6 w-6 text-muted-foreground/50" />
       </div>
       <p className="text-center text-[11px] text-muted-foreground">
@@ -158,7 +158,10 @@ function ExportVisual() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setActive((p) => (p + 1) % formats.length), 700);
+    const id = setInterval(
+      () => setActive((p) => (p + 1) % formats.length),
+      700
+    );
     return () => clearInterval(id);
   }, []);
 
@@ -168,12 +171,12 @@ function ExportVisual() {
       <div className="flex flex-wrap justify-center gap-1">
         {formats.map((fmt, i) => (
           <span
-            key={fmt}
-            className={`rounded px-2 py-0.5 text-[10px] font-medium transition-all duration-300 ${
+            className={`rounded px-2 py-0.5 font-medium text-[10px] transition-all duration-300 ${
               i === active
                 ? "bg-foreground text-background"
                 : "bg-muted/30 text-muted-foreground"
             }`}
+            key={fmt}
           >
             {fmt}
           </span>
@@ -198,8 +201,8 @@ function CarouselVisual() {
       <div className="relative flex h-16 w-36 items-center justify-center">
         {Array.from({ length: pages }).map((_, i) => (
           <div
-            key={i}
             className="absolute h-12 w-24 rounded border border-border bg-muted/20 transition-all duration-500"
+            key={i}
             style={{
               transform: `translateX(${(i - page + pages) % pages === 0 ? 0 : ((i - page + pages) % pages) * 8 - 4}px) scale(${(i - page + pages) % pages === 0 ? 1 : 0.85})`,
               zIndex: pages - ((i - page + pages) % pages),
@@ -211,10 +214,10 @@ function CarouselVisual() {
       <div className="flex gap-1">
         {Array.from({ length: pages }).map((_, i) => (
           <div
-            key={i}
             className={`h-1 w-4 rounded-full transition-all duration-300 ${
               i === page ? "bg-foreground" : "bg-muted-foreground/20"
             }`}
+            key={i}
           />
         ))}
       </div>
@@ -272,16 +275,16 @@ function BackstageSection() {
         style={{ top: 0, right: 0, transform: "translate(50%, -50%)" }}
       />
       <div className="mx-auto max-w-5xl px-6 py-16">
-        <p className="mb-8 text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <p className="mb-8 font-medium text-muted-foreground text-sm uppercase tracking-wider">
           Features
         </p>
-        <div className="grid grid-cols-1 gap-px border-border border border-dashed sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px border border-border border-dashed sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature) => (
             <div
-              key={feature.title}
               className="flex flex-col border-border border-dashed bg-background"
+              key={feature.title}
             >
-              <div className="h-36 border-b border-dashed border-border">
+              <div className="h-36 border-border border-b border-dashed">
                 {feature.visual}
               </div>
               <div className="flex flex-col gap-1 p-5">

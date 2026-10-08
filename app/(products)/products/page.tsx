@@ -120,8 +120,12 @@ export default function ProductsPage() {
                   <div className="relative z-10">
                     <span className="mb-5 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
                       <span className="relative flex size-1.5">
-                        <span className={`absolute inline-flex h-full w-full animate-ping rounded-full ${product.statusType === "live" ? "bg-emerald-400/75" : "bg-amber-400/75"}`} />
-                        <span className={`relative inline-flex size-1.5 rounded-full ${product.statusType === "live" ? "bg-emerald-400" : "bg-amber-400"}`} />
+                        <span
+                          className={`absolute inline-flex h-full w-full animate-ping rounded-full ${product.statusType === "live" ? "bg-emerald-400/75" : "bg-amber-400/75"}`}
+                        />
+                        <span
+                          className={`relative inline-flex size-1.5 rounded-full ${product.statusType === "live" ? "bg-emerald-400" : "bg-amber-400"}`}
+                        />
                       </span>
                       {product.status}
                     </span>

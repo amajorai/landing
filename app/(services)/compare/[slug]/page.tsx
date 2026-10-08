@@ -16,6 +16,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { PageToc } from "@/components/ui/page-toc";
 import { compareConfig, getComparisonBySlug } from "@/lib/compare-config";
+import { serializeJsonLd } from "@/lib/json-ld";
 import {
   generateBreadcrumbJsonLd,
   generateJsonLd,
@@ -142,11 +143,11 @@ export default async function ComparePage({
   return (
     <>
       <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
         type="application/ld+json"
       />
       <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
         type="application/ld+json"
       />
       <PageToc headings={tocHeadings} />

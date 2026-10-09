@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 import stat
+import secrets
 import tempfile
 from pathlib import Path
 from typing import List
@@ -122,6 +123,9 @@ def compress_file(filepath: Path) -> bool:
     descriptors = []
     source = None
     backup = None
+    staged = None
+    staged_name = None
+    committed = False
     try:
         parent = os.open(filepath.anchor, os.O_RDONLY | os.O_DIRECTORY)
         descriptors.append(parent)
@@ -132,6 +136,8 @@ def compress_file(filepath: Path) -> bool:
         original_stat = os.fstat(source)
         if not stat.S_ISREG(original_stat.st_mode) or original_stat.st_size > 500_000:
             raise ValueError("Compression requires a regular file of at most 500KB")
+        if original_stat.st_nlink != 1:
+            raise ValueError("Compression target must not have hardlink aliases")
         original_bytes = os.read(source, 500_001)
         if len(original_bytes) > 500_000:
             raise ValueError("File too large to compress safely")
@@ -157,6 +163,20 @@ def compress_file(filepath: Path) -> bool:
             if attempt == MAX_RETRIES - 1:
                 return False
             compressed = call_claude(build_fix_prompt(original_text, compressed, result.errors))
+        # Revalidate the selected pathname after the model call, including all
+        # retained ancestors: a renamed directory must not redirect the commit.
+        check = os.open(filepath.anchor, os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            for index, component in enumerate(filepath.parts[1:-1], start=1):
+                next_check = os.open(component, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=check)
+                os.close(check)
+                check = next_check
+                expected = os.fstat(descriptors[index])
+                actual = os.fstat(check)
+                if (actual.st_dev, actual.st_ino) != (expected.st_dev, expected.st_ino):
+                    raise RuntimeError("Compression parent changed during processing")
+        finally:
+            os.close(check)
         current = os.stat(filepath.name, dir_fd=parent, follow_symlinks=False)
         if (current.st_dev, current.st_ino) != (original_stat.st_dev, original_stat.st_ino):
             raise RuntimeError("Compression target changed during processing")
@@ -167,14 +187,30 @@ def compress_file(filepath: Path) -> bool:
         encoded = compressed.encode("utf-8")
         if len(encoded) > 500_000:
             raise ValueError("Compressed output exceeds size limit")
-        os.lseek(source, 0, os.SEEK_SET)
-        with os.fdopen(os.dup(source), "wb") as output:
+        # Replace only the selected directory entry. A hardlink created during
+        # the model call must never make an in-place write modify another path.
+        staged_name = ".caveman-" + secrets.token_hex(16)
+        staged = os.open(staged_name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600, dir_fd=parent)
+        os.fchmod(staged, stat.S_IMODE(original_stat.st_mode))
+        with os.fdopen(os.dup(staged), "wb") as output:
             output.write(encoded)
             output.flush()
-            os.ftruncate(source, len(encoded))
-            os.fsync(source)
+            os.fsync(staged)
+        os.rename(staged_name, filepath.name, src_dir_fd=parent, dst_dir_fd=parent)
+        committed = True
+        os.fsync(parent)
         return True
     finally:
+        if staged is not None:
+            if not committed:
+                try:
+                    entry = os.stat(staged_name, dir_fd=parent, follow_symlinks=False)
+                    own = os.fstat(staged)
+                    if (entry.st_dev, entry.st_ino) == (own.st_dev, own.st_ino):
+                        os.unlink(staged_name, dir_fd=parent)
+                except FileNotFoundError:
+                    pass
+            os.close(staged)
         if source is not None:
             os.close(source)
         if backup is not None:

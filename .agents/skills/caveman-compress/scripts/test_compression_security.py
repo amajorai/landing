@@ -72,3 +72,48 @@ class CompressionBoundaryTests(unittest.TestCase):
         with patch.object(compress, "call_claude", side_effect=swap_valid):
             with self.assertRaises(RuntimeError): compress.compress_file(self.target)
         self.assertEqual(self.target.read_text(), original)
+
+    def test_existing_hardlink_is_rejected_before_model_call(self):
+        alias = self.root / "alias.md"
+        os.link(self.target, alias)
+        original = self.target.read_text()
+        with patch.object(compress, "call_claude") as model:
+            with self.assertRaises(ValueError): compress.compress_file(self.target)
+            model.assert_not_called()
+        self.assertEqual(alias.read_text(), original)
+
+    def test_model_time_hardlink_preserves_the_other_alias(self):
+        original = self.target.read_text()
+        alias = self.root / "alias.md"
+        def link(_):
+            os.link(self.target, alias)
+            return "# Heading\nOrdinary words.\n"
+        with patch.object(compress, "call_claude", side_effect=link):
+            self.assertTrue(compress.compress_file(self.target))
+        self.assertEqual(alias.read_text(), original)
+        self.assertEqual(self.target.read_text(), "# Heading\nOrdinary words.\n")
+
+    def test_model_time_parent_rename_cannot_commit_outside_selected_path(self):
+        selected = self.root / "selected"
+        selected.mkdir()
+        target = selected / "note.md"
+        original = self.target.read_text()
+        target.write_text(original)
+        outside = self.root / "outside"
+        def move(_):
+            selected.rename(outside)
+            selected.mkdir()
+            (selected / "note.md").write_text("replacement")
+            return "# Heading\nOrdinary words.\n"
+        with patch.object(compress, "call_claude", side_effect=move):
+            with self.assertRaises(RuntimeError): compress.compress_file(target)
+        self.assertEqual((outside / "note.md").read_text(), original)
+        self.assertEqual(target.read_text(), "replacement")
+
+    def test_failed_commit_removes_only_own_staging_file(self):
+        original = self.target.read_text()
+        with patch.object(compress, "call_claude", return_value="# Heading\nOrdinary words.\n"):
+            with patch.object(compress.os, "rename", side_effect=OSError("rename failed")):
+                with self.assertRaises(OSError): compress.compress_file(self.target)
+        self.assertEqual(self.target.read_text(), original)
+        self.assertEqual(list(self.root.glob(".caveman-*")), [])

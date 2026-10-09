@@ -9,15 +9,6 @@ export interface OfferingConfig
   subTechs: ServiceConfig["subTechs"];
 }
 
-// Industry verticals hidden until compliance requirements are met.
-// Uncomment slugs below to re-enable when ready.
-const HIDDEN_OFFERINGS = new Set<string>([
-  "healthcare-software", // HIPAA, HL7 FHIR, PHI data handling
-  "fintech", // MAS regulations, PCI-DSS, AML/KYC
-  "ecommerce", // Payment compliance, consumer protection laws
-  "logistics-software", // Supply chain, customs, cross-border compliance
-]);
-
 const _allOfferings: OfferingConfig[] = [
   // ─── WEB DESIGN ────────────────────────────────────────────────
   {
@@ -3738,9 +3729,7 @@ const _allOfferings: OfferingConfig[] = [
   HIDDEN */
 ];
 
-export const offeringsConfig = _allOfferings.filter(
-  (o) => !HIDDEN_OFFERINGS.has(o.slug)
-);
+export const offeringsConfig = _allOfferings;
 
 export function getOfferingBySlug(slug: string): OfferingConfig | undefined {
   return offeringsConfig.find((s) => s.slug === slug);

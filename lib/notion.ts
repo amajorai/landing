@@ -258,7 +258,8 @@ const getProperty = (
   if (type === "date") return p.date?.start || "";
   if (type === "multi_select")
     return p.multi_select?.map((o: any) => o.name) || [];
-  if (type === "select") return p.select?.name || "";
+  if (type === "select")
+    return (p.type === "status" ? p.status?.name : p.select?.name) || "";
   if (type === "url") return p.url || "";
   if (type === "people")
     return (
@@ -301,7 +302,8 @@ function extractAuthors(page: any): BlogPost["authors"] {
 // Uncached fetch functions for OG generation script
 export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
   const notion = getNotionClient();
-  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
+  const databaseId =
+    process.env.NOTION_BLOG_DATABASE_ID || process.env.NOTION_DATABASE_ID;
 
   if (!databaseId) return [];
 
@@ -391,7 +393,7 @@ export const getBlogPosts = unstable_cache(fetchBlogPosts, ["blog-posts"], {
   revalidate: 1800,
 });
 
-export const getBlogPost = unstable_cache(
+const getBlogPostDetail = unstable_cache(
   async (
     slug: string
   ): Promise<{ post: BlogPost | null; blocks: BlockObjectResponse[] }> => {
@@ -429,7 +431,8 @@ export const getBlogPost = unstable_cache(
 
       // Status gate: only Published posts are accessible directly
       const status = getProperty(page, "Status", "select");
-      if (status && status !== "Published") return { post: null, blocks: [] };
+      if (status !== "Published" || page.archived || page.in_trash)
+        return { post: null, blocks: [] };
 
       // Future date gate: match the listing filter in getBlogPosts
       const postDate = getProperty(page, "Date", "date");
@@ -490,7 +493,8 @@ export const fetchPages = async (): Promise<Page[]> => {
   if (!databaseId) return [];
 
   try {
-    let response;
+    const results: any[] = [];
+    let cursor: string | undefined;
     const filter = {
       property: "Status",
       status: {
@@ -498,19 +502,25 @@ export const fetchPages = async (): Promise<Page[]> => {
       },
     };
 
-    if (notion.dataSources) {
-      response = await notion.dataSources.query({
-        data_source_id: databaseId,
-        filter,
-      });
-    } else {
-      response = await notion.databases.query({
-        database_id: databaseId,
-        filter,
-      });
-    }
+    do {
+      const response = notion.dataSources
+        ? await notion.dataSources.query({
+            data_source_id: databaseId,
+            filter,
+            start_cursor: cursor,
+          })
+        : await notion.databases.query({
+            database_id: databaseId,
+            filter,
+            start_cursor: cursor,
+          });
+      results.push(...response.results);
+      cursor = response.has_more
+        ? (response.next_cursor ?? undefined)
+        : undefined;
+    } while (cursor);
 
-    return response.results
+    return results
       .map((page: any) => ({
         id: page.id,
         slug: getProperty(page, "Slug", "rich_text") || "",
@@ -529,7 +539,7 @@ export const getPages = unstable_cache(fetchPages, ["pages"], {
   revalidate: 1800,
 });
 
-export const getPage = unstable_cache(
+const getPageDetail = unstable_cache(
   async (
     slug: string
   ): Promise<{ page: Page | null; blocks: BlockObjectResponse[] }> => {
@@ -565,7 +575,8 @@ export const getPage = unstable_cache(
 
       // Status gate: only Published pages are accessible directly
       const status = getProperty(pageData, "Status", "select");
-      if (status && status !== "Published") return { page: null, blocks: [] };
+      if (status !== "Published" || pageData.archived || pageData.in_trash)
+        return { page: null, blocks: [] };
 
       const page: Page = {
         id: pageData.id,
@@ -641,4 +652,75 @@ export const getNavProducts = unstable_cache(
   fetchNavProducts,
   ["nav-products"],
   { revalidate: 1800 }
+);
+
+function validPublicSlug(slug: string): boolean {
+  return (
+    slug.length > 0 &&
+    slug.length <= 200 &&
+    !/[/\\\u0000-\u001f\u007f]/.test(slug) &&
+    slug !== "." &&
+    slug !== ".."
+  );
+}
+
+export async function getBlogPost(
+  slug: string
+): Promise<{ post: BlogPost | null; blocks: BlockObjectResponse[] }> {
+  if (
+    !(
+      validPublicSlug(slug) &&
+      (await getBlogPosts()).some((post) => post.slug === slug)
+    )
+  )
+    return { post: null, blocks: [] };
+  return getBlogPostDetail(slug);
+}
+
+export async function getPage(
+  slug: string
+): Promise<{ page: Page | null; blocks: BlockObjectResponse[] }> {
+  if (
+    !(
+      validPublicSlug(slug) &&
+      (await getPages()).some((page) => page.slug === slug)
+    )
+  )
+    return { page: null, blocks: [] };
+  return getPageDetail(slug);
+}
+
+export const publishedImageIds = unstable_cache(
+  async () => {
+    const posts = await getBlogPosts();
+    const pages = await getPages();
+    const pageIds: string[] = [];
+    const blockIds: string[] = [];
+    const collect = (blocks: any[]) => {
+      for (const block of blocks) {
+        if (block.type === "image" && !block.archived && !block.in_trash)
+          blockIds.push(block.id);
+        if (Array.isArray(block.children)) collect(block.children);
+        if (Array.isArray(block[block.type]?.children))
+          collect(block[block.type].children);
+      }
+    };
+    for (const post of posts) {
+      const detail = await getBlogPostDetail(post.slug);
+      if (detail.post) {
+        pageIds.push(detail.post.id);
+        collect(detail.blocks);
+      }
+    }
+    for (const page of pages) {
+      const detail = await getPageDetail(page.slug);
+      if (detail.page) {
+        pageIds.push(detail.page.id);
+        collect(detail.blocks);
+      }
+    }
+    return { pageIds, blockIds };
+  },
+  ["published-image-ids"],
+  { revalidate: 1500 }
 );

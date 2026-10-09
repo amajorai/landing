@@ -4,6 +4,7 @@ import { CompareLogo } from "@/components/compare/compare-logo";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { compareConfig } from "@/lib/compare-config";
+import { serializeJsonLd } from "@/lib/json-ld";
 import {
   generateBreadcrumbJsonLd,
   generateJsonLd,
@@ -59,11 +60,11 @@ export default function ComparePage() {
   return (
     <>
       <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
         type="application/ld+json"
       />
       <script
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }}
         type="application/ld+json"
       />
 

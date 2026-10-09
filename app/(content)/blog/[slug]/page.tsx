@@ -10,6 +10,7 @@ import { NotionRenderer } from "@/components/markdown-renderer";
 import { ReadingTime } from "@/components/notion/ReadingTime";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageToc } from "@/components/ui/page-toc";
+import { serializeJsonLd } from "@/lib/json-ld";
 import {
   extractDescriptionFromBlocks,
   extractHeadingsFromBlocks,
@@ -162,7 +163,7 @@ export default async function BlogPostPage({
       )}
       <script
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBlogJsonLd(post)),
+          __html: serializeJsonLd(generateBlogJsonLd(post)),
         }}
         type="application/ld+json"
       />

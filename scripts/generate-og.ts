@@ -5,6 +5,7 @@ import puppeteer from "puppeteer";
 import { compareConfig } from "@/lib/compare-config";
 import { fetchBlogPosts, fetchPages } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
+import { ogFileName } from "@/lib/og-path";
 import { servicesConfig } from "@/lib/services-config";
 
 const PORT = 3459;
@@ -114,8 +115,7 @@ async function main() {
     for (const route of routes) {
       const url = `${BASE_URL}${route}`;
       // Clean filename: remove leading slash, replace others with dash
-      const fileName =
-        route === "/" ? "index" : route.replace(/^\//, "").replace(/\//g, "-"); // e.g. "projects/foo" -> "projects-foo"
+      const fileName = ogFileName(route); // e.g. "projects/foo" -> "projects-foo"
 
       const filePath = path.join(ogDir, `${fileName}.png`);
 

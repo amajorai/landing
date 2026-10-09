@@ -9,6 +9,8 @@ Usage:
 import os
 import re
 import subprocess
+import stat
+import tempfile
 from pathlib import Path
 from typing import List
 
@@ -25,7 +27,7 @@ def strip_llm_wrapper(text: str) -> str:
     return text
 
 from .detect import should_compress
-from .validate import validate
+from .validate import validate_text
 
 MAX_RETRIES = 2
 
@@ -114,63 +116,68 @@ Return ONLY the fixed compressed file. No explanation.
 
 
 def compress_file(filepath: Path) -> bool:
-    # Resolve and validate path
-    filepath = filepath.resolve()
-    MAX_FILE_SIZE = 500_000  # 500KB
-    if not filepath.exists():
-        raise FileNotFoundError(f"File not found: {filepath}")
-    if filepath.stat().st_size > MAX_FILE_SIZE:
-        raise ValueError(f"File too large to compress safely (max 500KB): {filepath}")
-
-    print(f"Processing: {filepath}")
-
-    if not should_compress(filepath):
-        print("Skipping (not natural language)")
-        return False
-
-    original_text = filepath.read_text(errors="ignore")
-    backup_path = filepath.with_name(filepath.stem + ".original.md")
-
-    # Check if backup already exists to prevent accidental overwriting
-    if backup_path.exists():
-        print(f"⚠️ Backup file already exists: {backup_path}")
-        print("The original backup may contain important content.")
-        print("Aborting to prevent data loss. Please remove or rename the backup file if you want to proceed.")
-        return False
-
-    # Step 1: Compress
-    print("Compressing with Claude...")
-    compressed = call_claude(build_compress_prompt(original_text))
-
-    # Save original as backup, write compressed to original path
-    backup_path.write_text(original_text)
-    filepath.write_text(compressed)
-
-    # Step 2: Validate + Retry
-    for attempt in range(MAX_RETRIES):
-        print(f"\nValidation attempt {attempt + 1}")
-
-        result = validate(backup_path, filepath)
-
-        if result.is_valid:
-            print("Validation passed")
-            break
-
-        print("❌ Validation failed:")
-        for err in result.errors:
-            print(f"   - {err}")
-
-        if attempt == MAX_RETRIES - 1:
-            # Restore original on failure
-            filepath.write_text(original_text)
-            backup_path.unlink(missing_ok=True)
-            print("❌ Failed after retries — original restored")
-            return False
-
-        print("Fixing with Claude...")
-        compressed = call_claude(
-            build_fix_prompt(original_text, compressed, result.errors)
-        )
-        filepath.write_text(compressed)
-
-    return True
+    if not hasattr(os, "O_NOFOLLOW") or not os.supports_dir_fd:
+        raise RuntimeError("Compression requires no-follow descriptor access on this platform")
+    filepath = Path(os.path.abspath(filepath))
+    descriptors = []
+    source = None
+    backup = None
+    try:
+        parent = os.open(filepath.anchor, os.O_RDONLY | os.O_DIRECTORY)
+        descriptors.append(parent)
+        for component in filepath.parts[1:-1]:
+            parent = os.open(component, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=parent)
+            descriptors.append(parent)
+        source = os.open(filepath.name, os.O_RDWR | os.O_NOFOLLOW, dir_fd=parent)
+        original_stat = os.fstat(source)
+        if not stat.S_ISREG(original_stat.st_mode) or original_stat.st_size > 500_000:
+            raise ValueError("Compression requires a regular file of at most 500KB")
+        original_bytes = os.read(source, 500_001)
+        if len(original_bytes) > 500_000:
+            raise ValueError("File too large to compress safely")
+        original_text = original_bytes.decode("utf-8", errors="strict")
+        # Detection reads a private snapshot, never reopens the caller's path.
+        with tempfile.TemporaryDirectory(prefix="caveman-detect-") as snapshot_dir:
+            snapshot = Path(snapshot_dir) / filepath.name
+            snapshot.write_text(original_text)
+            if not should_compress(snapshot):
+                return False
+        backup_name = filepath.stem + ".original.md"
+        # Exclusive creation rejects existing files and both live/dangling links.
+        backup = os.open(backup_name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600, dir_fd=parent)
+        with os.fdopen(os.dup(backup), "wb") as output:
+            output.write(original_bytes)
+            output.flush()
+            os.fsync(output.fileno())
+        compressed = call_claude(build_compress_prompt(original_text))
+        for attempt in range(MAX_RETRIES):
+            result = validate_text(original_text, compressed)
+            if result.is_valid:
+                break
+            if attempt == MAX_RETRIES - 1:
+                return False
+            compressed = call_claude(build_fix_prompt(original_text, compressed, result.errors))
+        current = os.stat(filepath.name, dir_fd=parent, follow_symlinks=False)
+        if (current.st_dev, current.st_ino) != (original_stat.st_dev, original_stat.st_ino):
+            raise RuntimeError("Compression target changed during processing")
+        retained = os.stat(backup_name, dir_fd=parent, follow_symlinks=False)
+        created = os.fstat(backup)
+        if (retained.st_dev, retained.st_ino) != (created.st_dev, created.st_ino):
+            raise RuntimeError("Compression backup changed during processing")
+        encoded = compressed.encode("utf-8")
+        if len(encoded) > 500_000:
+            raise ValueError("Compressed output exceeds size limit")
+        os.lseek(source, 0, os.SEEK_SET)
+        with os.fdopen(os.dup(source), "wb") as output:
+            output.write(encoded)
+            output.flush()
+            os.ftruncate(source, len(encoded))
+            os.fsync(source)
+        return True
+    finally:
+        if source is not None:
+            os.close(source)
+        if backup is not None:
+            os.close(backup)
+        for descriptor in reversed(descriptors):
+            os.close(descriptor)

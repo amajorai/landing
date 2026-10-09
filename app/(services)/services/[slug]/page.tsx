@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { TechPageLayout } from "@/components/services/tech-page-layout";
+import { serializeJsonLd } from "@/lib/json-ld";
 import {
   generateBreadcrumbJsonLd,
   generateJsonLd,
@@ -164,7 +165,7 @@ export default async function ServicePage({
     <>
       {jsonLd.map((schema, i) => (
         <script
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
           key={i}
           type="application/ld+json"
         />

@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
-import { getNotionClient } from "@/lib/notion";
+import { getNotionClient, publishedImageIds } from "@/lib/notion";
 
 const fetchImageUrl = unstable_cache(
   async (id: string, prop: string): Promise<string | null> => {
@@ -49,6 +49,20 @@ export async function GET(request: NextRequest) {
     return new NextResponse("Missing pageId or blockId", { status: 400 });
 
   try {
+    if (
+      !(
+        /^[a-fA-F0-9-]{32,36}$/.test(id) &&
+        ["cover", "avatar", "block-image"].includes(prop)
+      )
+    )
+      return new NextResponse("Image not found", { status: 404 });
+    const published = await publishedImageIds();
+    if (
+      !(
+        prop === "block-image" ? published.blockIds : published.pageIds
+      ).includes(id)
+    )
+      return new NextResponse("Image not found", { status: 404 });
     const url = await fetchImageUrl(id, prop);
     if (!url) return new NextResponse("Image not found", { status: 404 });
 

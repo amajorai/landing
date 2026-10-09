@@ -95,16 +95,7 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
   const pageDescription = description || siteConfig.description;
   const pageUrl = url ? new URL(url, siteConfig.url) : siteConfig.url;
 
-  // Use dynamic OG image route for per-page images
-  let dynamicOgUrl = `${siteConfig.url}/api/og`;
-  if (title && title !== siteConfig.name) {
-    const params = new URLSearchParams({ title });
-    if (description) params.set("subtitle", description.slice(0, 100));
-    dynamicOgUrl = `${siteConfig.url}/api/og?${params.toString()}`;
-  }
-
-  // Use custom image if provided, otherwise use dynamic OG image
-  const ogImageUrl = image || dynamicOgUrl;
+  const ogImageUrl = image || siteConfig.ogImage;
 
   const openGraphImages = [
     {

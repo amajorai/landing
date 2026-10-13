@@ -225,19 +225,15 @@ export default function Header({ products = [] }: HeaderProps) {
               {/* Desktop: logo tab pills - left */}
               <div className="ml-2 hidden lg:flex">
                 <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
-                  <div className="flex items-center gap-0.5 rounded-full bg-muted/30 p-0.5 text-xs">
+                  <div className="flex items-center gap-0.5 p-0.5 text-xs">
                     <Link
                       aria-label="Home"
-                      className={`flex items-center rounded-full px-2.5 py-1.5 transition-colors duration-150 ${
-                        pathname === "/"
-                          ? "bg-foreground"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
+                      className="flex items-center rounded-full px-2.5 py-1.5 transition-opacity duration-150 hover:opacity-70"
                       href="/"
                     >
                       <Image
                         alt="A Major"
-                        className={`mt-0.5 h-3.5 w-3.5 ${pathname === "/" ? "invert dark:invert-0" : "dark:invert"}`}
+                        className="mt-0.5 h-3.5 w-3.5 dark:invert"
                         height={14}
                         src="/logos/amajor-submark.svg"
                         width={14}

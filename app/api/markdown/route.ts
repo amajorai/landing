@@ -16,25 +16,24 @@ Ryu is a managed platform for AI agents, built on open-source infrastructure. St
 - Email: contact@amajor.ai
 - Website: https://amajor.ai
 `,
-  // Agency — temporarily disabled while we focus on Ryu.
-  //   "/services": `# A Major — Services
-  //
-  // We build software that scales. Our core services:
-  //
-  // ## Web Development
-  // Custom web apps, landing pages, and full-stack SaaS platforms.
-  //
-  // ## Mobile Development
-  // iOS and Android apps built with React Native and Expo.
-  //
-  // ## AI & Agents
-  // MCP server development, AI agent pipelines, and LLM integrations.
-  //
-  // ## Consultancy
-  // Technical advisory, architecture reviews, and team augmentation for Singapore enterprises.
-  //
-  // Learn more: https://amajor.ai/services
-  // `,
+  "/services": `# A Major — Services
+
+We build software that scales. Our core services:
+
+## Web Development
+Custom web apps, landing pages, and full-stack SaaS platforms.
+
+## Mobile Development
+iOS and Android apps built with React Native and Expo.
+
+## AI & Agents
+MCP server development, AI agent pipelines, and LLM integrations.
+
+## Consultancy
+Technical advisory, architecture reviews, and team augmentation for Singapore enterprises.
+
+Learn more: https://amajor.ai/services
+`,
   "/blog": `# A Major — Blog
 
 Articles and insights from the A Major team.

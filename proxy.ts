@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-const HTML_ROUTES = ["/", "/blog", "/products"]; // "/services" — agency, temporarily disabled
+const HTML_ROUTES = ["/", "/services", "/blog", "/products"];
 
 export function proxy(request: NextRequest) {
   const accept = request.headers.get("accept") ?? "";

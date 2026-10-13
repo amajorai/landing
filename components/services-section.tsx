@@ -1660,7 +1660,7 @@ export default function FeaturesSection() {
               return (
                 <Link
                   className={cardClass}
-                  href={`/services/${slug}` as any}
+                  href={`/services/${slug}`}
                   key={index}
                   style={cardStyle}
                 >

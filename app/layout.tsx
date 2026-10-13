@@ -14,7 +14,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { WebMCPProvider } from "@/components/webmcp-provider";
 import { analyticsConfig } from "@/lib/analytics-config";
-import { getNavProducts } from "@/lib/notion";
+import { getNavProducts } from "@/lib/nav-products";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,23 +67,17 @@ export const viewport = {
   viewportFit: "cover",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const products = await getNavProducts();
+  const products = getNavProducts();
   return (
     <PlausibleWrapper>
       <html className={`${geistSans.variable} ${geistMono.variable}`} lang="en">
         <head>
           <SEO />
-          <link
-            crossOrigin="anonymous"
-            href="https://prod-files-secure.s3.us-west-2.amazonaws.com"
-            rel="preconnect"
-          />
-          <link href="https://www.notion.so" rel="preconnect" />
         </head>
         <body className="antialiased">
           <ThemeProvider

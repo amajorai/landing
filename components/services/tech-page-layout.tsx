@@ -11,7 +11,7 @@ import {
   Wrench,
 } from "lucide-react";
 import Link from "next/link";
-import type { TocHeading } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {
   Accordion,
@@ -705,7 +705,7 @@ export function TechPageLayout({ service }: TechPageLayoutProps) {
                 {relatedOfferings.map((offering) => (
                   <Link
                     className="group block border-border border-r border-b border-dashed p-5 transition-colors hover:bg-muted/30"
-                    href={`/services/${offering.slug}`}
+                    href={`/services/${offering.slug}` as any}
                     key={offering.slug}
                   >
                     <h3 className="mb-1 font-medium text-sm group-hover:text-foreground">

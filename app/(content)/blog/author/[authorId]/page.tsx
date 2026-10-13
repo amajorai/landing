@@ -4,8 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogPostList } from "@/components/blog/BlogPostList";
 import { FadeIn } from "@/components/ui/fade-in";
+import { getBlogPosts } from "@/lib/content";
 import { generateMetadata as genMeta } from "@/lib/metadata";
-import { getBlogPosts } from "@/lib/notion";
 
 export const revalidate = 3600;
 
@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ authorId: string }>;
 }): Promise<Metadata> {
   const { authorId } = await params;
-  const posts = await getBlogPosts();
+  const posts = getBlogPosts();
   const author = posts
     .flatMap((p) => p.authors)
     .find((a) => a.slug === authorId);
@@ -39,7 +39,7 @@ export default async function AuthorPage({
   params: Promise<{ authorId: string }>;
 }) {
   const { authorId } = await params;
-  const posts = await getBlogPosts();
+  const posts = getBlogPosts();
 
   const author = posts
     .flatMap((p) => p.authors)

@@ -6,36 +6,34 @@ import { notFound } from "next/navigation";
 import { BlogAuthor } from "@/components/blog/BlogAuthor";
 import { BlogLLMMenu } from "@/components/blog/BlogLLMMenu";
 import { BlogTextToSpeech } from "@/components/blog/BlogTextToSpeech";
-import { NotionRenderer } from "@/components/markdown-renderer";
-import { ReadingTime } from "@/components/notion/ReadingTime";
+import { mdxComponents } from "@/components/content/mdx-components";
+import { ReadingTime } from "@/components/content/ReadingTime";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageToc } from "@/components/ui/page-toc";
-import { serializeJsonLd } from "@/lib/json-ld";
 import {
-  extractDescriptionFromBlocks,
-  extractHeadingsFromBlocks,
-  extractReadingTimeFromBlocks,
   getBlogPost,
   getBlogPosts,
-} from "@/lib/notion";
-import { highlightCode } from "@/lib/shiki";
-import { getTagColorClass } from "@/lib/tag-colors";
-
-export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  const posts = await getBlogPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
-import { createBlogMarkdown } from "@/lib/blog-markdown";
+  getMarkdown,
+  markdownToPlainText,
+  markdownToSpeechText,
+  readingTimeMinutes,
+  tocToHeadings,
+} from "@/lib/content";
+import { serializeJsonLd } from "@/lib/json-ld";
 import {
   generateBlogJsonLd,
   generateBlogMetadata,
   siteConfig,
 } from "@/lib/metadata";
+import { getTagColorClass } from "@/lib/tag-colors";
+
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+  return getBlogPosts().map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,
@@ -43,16 +41,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { post, blocks } = await getBlogPost(slug);
+  const result = getBlogPost(slug);
 
-  if (!post) {
+  if (!result) {
     return {
       title: "Post Not Found",
     };
   }
 
-  const description = post.description || extractDescriptionFromBlocks(blocks);
-  return generateBlogMetadata({ ...post, description });
+  return generateBlogMetadata(result.post);
 }
 
 export default async function BlogPostPage({
@@ -61,39 +58,30 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { post, blocks } = await getBlogPost(slug);
+  const result = getBlogPost(slug);
 
-  if (!post) {
+  if (!result) {
     notFound();
   }
 
-  const readingMinutes = extractReadingTimeFromBlocks(blocks);
-  const headings = extractHeadingsFromBlocks(blocks);
+  const { post, entry } = result;
+  const MDX = entry.data.body;
+  const markdown = await getMarkdown(entry);
+  const readingMinutes = readingTimeMinutes(markdownToPlainText(markdown));
+  const headings = tocToHeadings(entry.data.toc);
 
   const postUrl = `${siteConfig.url}/blog/${post.slug}`;
-  const postMarkdown = createBlogMarkdown({
-    title: post.title,
-    description: post.description,
-    date: post.date,
-    tags: post.tags,
-    url: postUrl,
-    blocks,
-  });
-
-  // Build Shiki-highlighted HTML map for all code blocks (server-side only)
-  const highlightedCodeMap: Record<string, string> = {};
-  await Promise.all(
-    blocks
-      .filter((b) => b.type === "code")
-      .map(async (b) => {
-        const code = (b as any).code.rich_text
-          .map((t: any) => t.plain_text)
-          .join("");
-        const lang = (b as any).code.language;
-        const html = await highlightCode(code, lang);
-        if (html) highlightedCodeMap[b.id] = html;
-      })
-  );
+  const frontmatter = [
+    "---",
+    `title: ${JSON.stringify(post.title)}`,
+    `date: "${post.date}"`,
+    `url: "${postUrl}"`,
+    post.tags.length ? `tags: ${JSON.stringify(post.tags)}` : undefined,
+    "---",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  const postMarkdown = `${frontmatter}\n\n# ${post.title}\n\n${markdown}`;
 
   return (
     <>
@@ -123,7 +111,7 @@ export default async function BlogPostPage({
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
-            {post.authors && post.authors.length > 0 && (
+            {post.authors.length > 0 && (
               <>
                 <BlogAuthor authors={post.authors} avatarSize="medium" />
                 <span>•</span>
@@ -149,18 +137,13 @@ export default async function BlogPostPage({
         </header>
       </FadeIn>
 
-      {blocks && blocks.length > 0 && (
-        <BlogTextToSpeech blocks={blocks}>
-          <FadeIn delay={0.2} duration={0.5}>
-            <div className="mt-10 mb-16">
-              <NotionRenderer
-                blocks={blocks}
-                highlightedCodeMap={highlightedCodeMap}
-              />
-            </div>
-          </FadeIn>
-        </BlogTextToSpeech>
-      )}
+      <BlogTextToSpeech text={markdownToSpeechText(markdown)}>
+        <FadeIn delay={0.2} duration={0.5}>
+          <div className="mt-10 mb-16">
+            <MDX components={mdxComponents} />
+          </div>
+        </FadeIn>
+      </BlogTextToSpeech>
       <script
         dangerouslySetInnerHTML={{
           __html: serializeJsonLd(generateBlogJsonLd(post)),

@@ -2,11 +2,7 @@ import { type ChildProcess, spawn } from "child_process";
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
-import { compareConfig } from "@/lib/compare-config";
-import { fetchBlogPosts, fetchPages } from "@/lib/notion";
-import { offeringsConfig } from "@/lib/offerings-config";
 import { ogFileName } from "@/lib/og-path";
-import { servicesConfig } from "@/lib/services-config";
 
 const PORT = 3459;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${PORT}`;
@@ -33,7 +29,6 @@ async function startServer(): Promise<ChildProcess> {
       ...process.env,
       NODE_ENV: "production",
       PORT: String(PORT),
-      OG_BUILD_INCLUDE_UNPUBLISHED: "true",
     },
   });
 
@@ -59,9 +54,6 @@ async function main() {
 
   if (isRunning) {
     console.log("Using existing server instance.");
-    console.warn(
-      "Existing server may not include unpublished posts unless OG_BUILD_INCLUDE_UNPUBLISHED=true is set."
-    );
   } else {
     serverProcess = await startServer();
   }
@@ -69,27 +61,12 @@ async function main() {
   try {
     // 1. Gather paths
     console.log("Fetching routes...");
-    const pages = await fetchPages();
-    const blogPosts = await fetchBlogPosts();
-
-    const routes = [
-      "/",
-      "/agency",
-      "/blog",
-      "/services",
-      "/products",
-      "/products/ryu",
-      "/consultancy",
-      "/compare",
-      ...pages.map((p) => `/${p.slug}`),
-      ...blogPosts.map((p) => `/blog/${p.slug}`),
-      ...Array.from(
-        new Set(blogPosts.flatMap((p) => p.authors.map((a) => a.slug)))
-      ).map((slug) => `/blog/author/${slug}`),
-      ...servicesConfig.map((s) => `/services/${s.slug}`),
-      ...offeringsConfig.map((o) => `/services/${o.slug}`),
-      ...compareConfig.map((c) => `/compare/${c.slug}`),
-    ];
+    // Content lives in Fumadocs collections that only load inside Next, so
+    // ask the running server for the route list.
+    const routesRes = await fetch(`${BASE_URL}/api/og-routes`);
+    if (!routesRes.ok)
+      throw new Error(`Failed to fetch routes: ${routesRes.status}`);
+    const routes = (await routesRes.json()) as string[];
 
     console.log(`Found ${routes.length} routes to screenshot.`);
 

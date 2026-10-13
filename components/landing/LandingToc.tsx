@@ -1,6 +1,6 @@
 "use client";
 
-import type { TocHeading } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
 import { PageToc } from "@/components/ui/page-toc";
 
 const BASE_SECTIONS: TocHeading[] = [

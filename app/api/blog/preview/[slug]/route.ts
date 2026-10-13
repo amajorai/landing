@@ -1,29 +1,30 @@
 import { NextResponse } from "next/server";
 import {
-  extractDescriptionFromBlocks,
-  extractReadingTimeFromBlocks,
   getBlogPost,
-} from "@/lib/notion";
+  getMarkdown,
+  markdownToPlainText,
+  readingTimeMinutes,
+} from "@/lib/content";
 
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const { post, blocks } = await getBlogPost(slug);
+  const result = getBlogPost(slug);
 
-  if (!post) {
+  if (!result) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }
 
-  const description = post.description || extractDescriptionFromBlocks(blocks);
-  const readingTime = extractReadingTimeFromBlocks(blocks);
+  const { post, entry } = result;
+  const text = markdownToPlainText(await getMarkdown(entry));
 
   return NextResponse.json({
     title: post.title,
     date: post.date,
-    description,
-    readingTime,
+    description: post.description,
+    readingTime: readingTimeMinutes(text),
     cover: post.cover,
   });
 }

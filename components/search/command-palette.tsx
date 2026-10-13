@@ -10,19 +10,19 @@ import {
   FileText,
   Globe,
   Info,
-  Layers,
+  // Layers,
   Mail,
   Monitor,
   Moon,
   Package,
-  Plus,
+  // Plus,
   Sun,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
 import { ScrollFadeEffect } from "@/components/scroll-fade-effect";
-import { ServiceLogo } from "@/components/services/service-logo";
+// import { ServiceLogo } from "@/components/services/service-logo";
 import {
   CommandDialog,
   CommandEmpty,
@@ -32,8 +32,9 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command";
-import { offeringsConfig } from "@/lib/offerings-config";
-import { servicesConfig } from "@/lib/services-config";
+
+// import { offeringsConfig } from "@/lib/offerings-config";
+// import { servicesConfig } from "@/lib/services-config";
 
 interface SearchableBlogPost {
   slug: string;
@@ -54,12 +55,12 @@ const PAGES = [
     icon: BookOpen,
     description: "Articles and insights",
   },
-  {
-    name: "Services",
-    href: "/services",
-    icon: Layers,
-    description: "Everything we build",
-  },
+  // {
+  //   name: "Services",
+  //   href: "/services",
+  //   icon: Layers,
+  //   description: "Everything we build",
+  // },
   {
     name: "Products",
     href: "/products",
@@ -213,6 +214,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
           </CommandGroup>
 
           <CommandGroup heading="Actions">
+            {/* Agency new-project intake — temporarily disabled.
             <CommandItem
               className="gap-3 py-2"
               onSelect={() =>
@@ -231,6 +233,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               </div>
               <CommandShortcut>⌃.</CommandShortcut>
             </CommandItem>
+            */}
             <CommandItem
               className="gap-3 py-2"
               onSelect={openBooking}
@@ -289,6 +292,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             })}
           </CommandGroup>
 
+          {/* Agency — temporarily disabled while we focus on Ryu.
           <CommandGroup heading="Services">
             {offeringsConfig.map((offering) => (
               <CommandItem
@@ -326,6 +330,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               </CommandItem>
             ))}
           </CommandGroup>
+          */}
 
           {blogPosts.length > 0 && (
             <CommandGroup heading="Blog Posts">

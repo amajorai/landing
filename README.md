@@ -5,7 +5,7 @@
     </td>
     <td align="right">
       <h1>A Major</h1>
-      <h3 style="margin-top: -10px;">Software that just works. Experts you can talk to. Built for humans, by humans.
+      <h3 style="margin-top: -10px;">The foundation for AI agents. A software company for the agent era.
 </h3>
     </td>
   </tr>
@@ -28,14 +28,33 @@
    bun install
    ```
 
-3. Set up environment variables
-
-   ```bash
-   cp .env.example .env.local
-   ```
-
-4. Start the development server
+3. Start the development server
 
    ```bash
    bun dev
    ```
+
+### Content
+
+Blog posts and standalone pages are MDX files managed with [Fumadocs MDX](https://fumadocs.dev/docs/mdx):
+
+- `content/blog/<slug>.mdx` → `/blog/<slug>`
+- `content/pages/<slug>.mdx` → `/<slug>` (about, manifesto, privacy, …)
+
+Collections and their frontmatter schemas live in `source.config.ts`; `lib/content.ts` loads them. Blog frontmatter:
+
+```yaml
+---
+title: "Post title"
+description: "Shown in listings, search and meta tags."
+date: 2026-10-13 # posts dated in the future stay hidden until that day
+authors:
+  - jiaweing # keys of `authors` in lib/content.ts
+tags:
+  - "Guides"
+draft: false # true hides the entry everywhere
+---
+```
+
+Use `<Callout icon="💡">…</Callout>` for callouts. Static files (author avatars, images) go in `public/`.
+

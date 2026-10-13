@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  AlignLeft,
   ChevronUp,
   Minus,
   Pause,
@@ -24,7 +23,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
 
 interface TextToSpeechControlsProps {
   text: string;
@@ -42,8 +40,6 @@ interface TextToSpeechControlsProps {
   setRate: (rate: number) => void;
   volume: number;
   setVolume: (volume: number) => void;
-  autoScroll: boolean;
-  setAutoScroll: (v: boolean) => void;
   isSupported: boolean;
   progress: number;
   elapsedSeconds: number;
@@ -71,8 +67,6 @@ export function TextToSpeechControls({
   setRate,
   volume,
   setVolume,
-  autoScroll,
-  setAutoScroll,
   progress,
   totalSeconds,
 }: TextToSpeechControlsProps) {
@@ -261,25 +255,6 @@ export function TextToSpeechControls({
                     stepSize={0.1}
                   />
                 </div>
-
-                {/* Auto-scroll */}
-                <div className="flex items-center justify-between gap-4 rounded-lg border bg-muted/40 px-3 py-2.5">
-                  <div className="flex items-start gap-2.5">
-                    <AlignLeft className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-                    <div>
-                      <p className="font-medium text-sm leading-none">
-                        Auto-scroll
-                      </p>
-                      <p className="mt-1 text-muted-foreground text-xs">
-                        Follow the highlighted text as it plays
-                      </p>
-                    </div>
-                  </div>
-                  <Switch
-                    checked={autoScroll}
-                    onCheckedChange={setAutoScroll}
-                  />
-                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -418,14 +393,6 @@ export function TextToSpeechControls({
                             }
                             startingValue={0.5}
                             stepSize={0.1}
-                          />
-                        </div>
-
-                        <div className="flex items-center justify-between rounded-lg border bg-muted/40 px-3 py-2">
-                          <p className="text-sm">Auto-scroll</p>
-                          <Switch
-                            checked={autoScroll}
-                            onCheckedChange={setAutoScroll}
                           />
                         </div>
                       </motion.div>

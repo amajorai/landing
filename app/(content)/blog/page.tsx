@@ -1,15 +1,15 @@
 import { Suspense } from "react";
 import { BlogPostList } from "@/components/blog/BlogPostList";
 import { FadeIn } from "@/components/ui/fade-in";
+import { getBlogPosts } from "@/lib/content";
 import { generateMetadata } from "@/lib/metadata";
-import { getBlogPosts } from "@/lib/notion";
 
 export const revalidate = 3600;
 
 export const metadata = generateMetadata({
   title: "Blog",
   description:
-    "Insights on software engineering, web design, AI, and technology from the A Major team, a Singapore software agency.",
+    "Insights on AI agents, software engineering, and building for the agent era from the A Major team.",
   url: "/blog",
   tags: [
     "software engineering blog",
@@ -25,7 +25,7 @@ export const metadata = generateMetadata({
 });
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  const posts = getBlogPosts();
 
   return (
     <>

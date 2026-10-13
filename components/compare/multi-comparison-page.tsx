@@ -1,7 +1,7 @@
 import { Bot, Brain } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { TocHeading } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
 import { ServiceCta } from "@/components/services/service-cta";
 import {
   Accordion,

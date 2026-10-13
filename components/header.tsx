@@ -31,7 +31,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import type { NavProduct } from "@/lib/notion";
+import type { NavProduct } from "@/lib/nav-products";
 
 // Nav items for non-agency pages (home, products, blog, generic)
 const generalNavItems = [
@@ -156,13 +156,14 @@ export default function Header({ products = [] }: HeaderProps) {
           calLink: "jiaweing/amajor",
           config: { layout: "month_view", theme: calTheme },
         });
-      } else if (ctrl && !e.shiftKey && e.key === ".") {
-        e.preventDefault();
-        window.open(
-          "https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106",
-          "_blank",
-          "noopener,noreferrer"
-        );
+        // Agency new-project intake — temporarily disabled.
+        // } else if (ctrl && !e.shiftKey && e.key === ".") {
+        //   e.preventDefault();
+        //   window.open(
+        //     "https://www.notion.so/f9ac6e86fafa4ca28ed6c2af11d498cf?pvs=106",
+        //     "_blank",
+        //     "noopener,noreferrer"
+        //   );
       } else if (ctrl && !e.shiftKey && e.key === ",") {
         e.preventDefault();
         window.open(
@@ -252,6 +253,7 @@ export default function Header({ products = [] }: HeaderProps) {
                     >
                       Products
                     </Link>
+                    {/* Agency — temporarily disabled while we focus on Ryu.
                     <Link
                       className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
                         isAgencyRealm
@@ -262,6 +264,7 @@ export default function Header({ products = [] }: HeaderProps) {
                     >
                       Agency
                     </Link>
+                    */}
                     {/* <Link
                       className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
                         isConsultancyRealm
@@ -381,6 +384,7 @@ export default function Header({ products = [] }: HeaderProps) {
 
               {/* Desktop: New Project + theme toggle - right */}
               <div className="ml-auto flex items-center gap-3">
+                {/* Agency new-project button — temporarily disabled.
                 {isAgencyRealm && (
                   <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                     <Button
@@ -399,6 +403,7 @@ export default function Header({ products = [] }: HeaderProps) {
                     </Button>
                   </FadeIn>
                 )}
+                */}
                 {isConsultancyRealm && (
                   <FadeIn duration={0.4} viewOptions={{ margin: "0px" }}>
                     <Button

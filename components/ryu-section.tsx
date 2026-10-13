@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
-import { RYU_PITCH, RYU_STATUS, RYU_URL } from "@/lib/ryu";
 
 // ── Inline visuals ────────────────────────────────────────────────────────────
 
@@ -427,23 +426,11 @@ export default function RyuSection() {
                 />
                 How Ryu works
               </h2>
-              <span className="inline-flex items-center gap-1.5 text-muted-foreground text-xs">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-amber-400" />
-                </span>
-                {RYU_STATUS}
-              </span>
             </div>
-            <p className="text-muted-foreground">{RYU_PITCH}</p>
-            <a
-              className="inline-flex items-center gap-1 font-medium text-foreground text-sm underline-offset-4 hover:underline"
-              href={RYU_URL}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Learn more about Ryu →
-            </a>
+            <p className="max-w-xl text-muted-foreground">
+              Five things Ryu handles for every agent you run, so you can focus
+              on what the agent actually does.
+            </p>
           </div>
         </FadeIn>
       </div>

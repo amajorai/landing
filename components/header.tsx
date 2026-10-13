@@ -243,6 +243,7 @@ export default function Header({ products = [] }: HeaderProps) {
                         width={14}
                       />
                     </Link>
+                    {/* Products — temporarily disabled while we focus on Ryu.
                     <Link
                       className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${
                         isProductsRealm
@@ -253,6 +254,7 @@ export default function Header({ products = [] }: HeaderProps) {
                     >
                       Products
                     </Link>
+                    */}
                     {/* Agency — temporarily disabled while we focus on Ryu.
                     <Link
                       className={`rounded-full px-3 py-1 font-medium transition-colors duration-150 ${

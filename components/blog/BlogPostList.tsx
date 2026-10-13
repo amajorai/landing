@@ -9,7 +9,7 @@ import { PostTags } from "@/components/blog/PostTags";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Input } from "@/components/ui/input";
 import { Toggle } from "@/components/ui/toggle";
-import type { BlogPost } from "@/lib/notion";
+import type { BlogPost } from "@/lib/content";
 import { getTagColorClass } from "@/lib/tag-colors";
 import { cn } from "@/lib/utils";
 
@@ -189,7 +189,7 @@ export function BlogPostList({ posts }: BlogPostListProps) {
                   {group.posts.map((post) => (
                     <article
                       className="group relative flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
-                      key={post.id}
+                      key={post.slug}
                     >
                       <div className="flex min-w-0 items-center gap-2">
                         {post.date && (

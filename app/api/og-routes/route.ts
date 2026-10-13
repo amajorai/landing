@@ -1,21 +1,24 @@
 import { NextResponse } from "next/server";
 import { compareConfig } from "@/lib/compare-config";
-import { getBlogPosts, getPages } from "@/lib/notion";
+import { getBlogPosts, getPages } from "@/lib/content";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
-export async function GET() {
-  const [posts, pages] = await Promise.all([getBlogPosts(), getPages()]);
+export function GET() {
+  const posts = getBlogPosts();
+  const pages = getPages();
 
   const routes = [
     "/",
     "/blog",
-    "/services",
     "/products",
+    "/products/ryu",
+    "/products/backstage",
+    "/services",
     "/consultancy",
     "/compare",
     "/agency",
-    "/products/ryu",
+    "/referral",
     ...posts.map((post) => `/blog/${post.slug}`),
     ...Array.from(
       new Set(posts.flatMap((post) => post.authors.map((a) => a.slug)))

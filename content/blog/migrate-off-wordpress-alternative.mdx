@@ -1,0 +1,99 @@
+---
+title: "Why we migrate clients off WordPress (and what we build instead)"
+description: "WordPress changed the web. It gave millions of businesses an affordable way to get online. If your company launched a website in the last decade, there's a…"
+date: 2026-05-23
+lastModified: 2026-04-13T14:49:00.000Z
+authors:
+  - jiaweing
+tags:
+  - "Engineering"
+---
+
+## WordPress Was the Right Choice. In 2015.
+
+WordPress changed the web. It gave millions of businesses an affordable way to get online. If your company launched a website in the last decade, there's a good chance it was built on WordPress.
+
+But in 2026, the landscape has shifted. And the problems we see across client sites keep repeating.
+
+## The Problems We Keep Seeing
+
+### Security Vulnerabilities
+
+WordPress sites are the #1 target for automated attacks. Every plugin is a potential entry point. Every missed update is an open door. We've onboarded clients who didn't know their site had been compromised for months -- hidden malware injecting spam links into their pages without them noticing.
+
+### Plugin Dependency Hell
+
+A typical WordPress site runs 15-30 plugins. Each plugin is maintained by a different developer, updated on a different schedule, and tested against different PHP versions. When one plugin breaks, it can cascade. We've seen sites go down because a contact form plugin conflicted with a caching plugin after a routine update.
+
+### Performance Degradation
+
+WordPress sites slow down over time. More plugins, more database queries, more bloat. That loading spinner costs you real money. Google penalises slow sites in search rankings, and visitors abandon sites that take more than 3 seconds to load.
+
+### Hosting Lock-in
+
+Managed WordPress hosting in Singapore runs $30-100/month. Sounds reasonable until you realise a modern static or hybrid site can be hosted for $5-20/month with better performance.
+
+### The "Just Add a Plugin" Trap
+
+Need analytics? Plugin. Need SEO? Plugin. Need a contact form? Plugin. Need security? Plugin. Each "simple" addition adds weight, complexity, and maintenance burden. The site that started clean becomes a Frankenstein of interdependent parts.
+
+## What We Build Instead
+
+We've moved our clients to a modern stack that solves these problems:
+
+### Next.js + Headless CMS
+
+- **Next.js** handles the frontend -- fast, secure, and SEO-optimised out of the box
+- **A headless CMS** (like Sanity, Strapi, or Payload) gives clients an easy content editor without the WordPress baggage
+- **Static generation** means pages load instantly -- no database queries on every visit
+
+### The Benefits
+
+|  | **WordPress** | **Next.js + Headless CMS** |
+| --- | --- | --- |
+| **Page load time** | 2-5 seconds | Under 1 second |
+| **Security surface** | Large (PHP + plugins) | Minimal (static files) |
+| **Monthly hosting** | $30-100 | $5-20 |
+| **Content editing** | WordPress admin | Custom CMS dashboard |
+| **SEO performance** | Needs plugins (Yoast etc.) | Built-in (meta, sitemap, structured data) |
+| **Maintenance needed** | Weekly plugin updates | Minimal |
+
+### But I Need to Edit Content Easily
+
+This is the #1 concern we hear. "WordPress is easy to use."
+
+A headless CMS gives you the same (often better) editing experience. You get a clean dashboard where you update text, swap images, and publish pages -- without touching code. The difference is that your editor and your website are decoupled. The editor can be simple while the site stays fast and secure.
+
+## When WordPress Still Makes Sense
+
+We're not anti-WordPress. It still works well for:
+
+- **Blog-heavy sites** where you publish daily and need the ecosystem of editorial plugins
+- **Very tight budgets** where a pre-built theme gets you 80% of the way there
+- **Sites managed by non-technical teams** who are already comfortable with WordPress
+
+But if you're a business investing in a site redesign, and performance, security, and long-term costs matter to you, there's a better way.
+
+## The Migration Process
+
+When we migrate a client off WordPress, here's what happens:
+
+1. **Audit the current site** -- what content exists, what's working, what's broken
+2. **Content migration** -- move all pages, posts, images, and metadata to the new CMS
+3. **Design refresh** -- we rebuild the design with modern standards (or redesign if needed)
+4. **SEO preservation** -- 301 redirects for every URL so you don't lose search rankings
+5. **Training** -- we walk you through the new CMS so you're comfortable editing
+6. **Launch & monitoring** -- cutover with zero downtime, then monitor for 2 weeks
+
+The whole process typically takes 4-6 weeks for a standard business site.
+
+_A Major is a Singapore-based software agency that builds fast, secure websites on modern stacks. If your WordPress site is giving you headaches,_ [_let's talk_](https://amajor.ai/)
+
+## References
+
+- [WordPress.org](http://wordpress.org/) - open-source CMS
+- [Next.js](https://nextjs.org/) - React framework for production websites
+- [Sanity](https://www.sanity.io/) - headless CMS
+- [Strapi](https://strapi.io/) - open-source headless CMS
+- [Payload CMS](https://payloadcms.com/) - TypeScript headless CMS
+- [Yoast SEO](https://yoast.com/) - WordPress SEO plugin

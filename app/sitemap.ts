@@ -1,17 +1,15 @@
 import type { MetadataRoute } from "next";
 import { compareConfig } from "@/lib/compare-config";
+import { getBlogPosts, getPages } from "@/lib/content";
 import { multiCompareConfig } from "@/lib/multi-compare-config";
-import { getBlogPosts, getPages } from "@/lib/notion";
 import { offeringsConfig } from "@/lib/offerings-config";
 import { servicesConfig } from "@/lib/services-config";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://amajor.ai";
 
-  const [blogPosts, pages] = await Promise.all([
-    getBlogPosts().catch(() => []),
-    getPages().catch(() => []),
-  ]);
+  const blogPosts = getBlogPosts();
+  const pages = getPages();
 
   const routes: MetadataRoute.Sitemap = [
     { url: baseUrl },
@@ -19,6 +17,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/agency` },
     { url: `${baseUrl}/blog` },
     { url: `${baseUrl}/products` },
+    { url: `${baseUrl}/products/ryu` },
+    { url: `${baseUrl}/products/backstage` },
     { url: `${baseUrl}/consultancy` },
     { url: `${baseUrl}/compare` },
   ];
@@ -42,7 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   blogPosts.forEach((post) => {
     routes.push({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.date ?? Date.now()),
+      lastModified: new Date(post.lastEdited ?? post.date),
     });
   });
 
@@ -54,10 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   pages.forEach((page) => {
-    routes.push({
-      url: `${baseUrl}/${page.slug}`,
-      lastModified: new Date(page.lastEdited),
-    });
+    routes.push({ url: `${baseUrl}/${page.slug}` });
   });
 
   return routes;

@@ -2,8 +2,8 @@
 
 import { List } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { TocHeading } from "@/components/notion/TableOfContents";
-import { TableOfContents } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
+import { TableOfContents } from "@/components/content/TableOfContents";
 import {
   Drawer,
   DrawerContent,

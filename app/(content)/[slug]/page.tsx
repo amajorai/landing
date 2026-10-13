@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { NotionRenderer } from "@/components/markdown-renderer";
+import { mdxComponents } from "@/components/content/mdx-components";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageToc } from "@/components/ui/page-toc";
-import {
-  extractDescriptionFromBlocks,
-  extractHeadingsFromBlocks,
-  getPage,
-  getPages,
-} from "@/lib/notion";
+import { getPage, getPages, tocToHeadings } from "@/lib/content";
+import { generatePageMetadata } from "@/lib/metadata";
 
 export const revalidate = 3600;
+export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  const pages = await getPages();
-  return pages.map((page) => ({
+export function generateStaticParams() {
+  return getPages().map((page) => ({
     slug: page.slug,
   }));
 }
-
-import { generatePageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
@@ -27,16 +21,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { page, blocks } = await getPage(slug);
+  const result = getPage(slug);
 
-  if (!page) {
+  if (!result) {
     return {
       title: "Page Not Found",
     };
   }
 
-  const description = page.description || extractDescriptionFromBlocks(blocks);
-  return generatePageMetadata({ ...page, description });
+  return generatePageMetadata(result.page);
 }
 
 export default async function GenericPage({
@@ -45,28 +38,27 @@ export default async function GenericPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { page, blocks } = await getPage(slug);
+  const result = getPage(slug);
 
-  if (!page) {
+  if (!result) {
     notFound();
   }
 
-  const headings = extractHeadingsFromBlocks(blocks);
+  const { page, entry } = result;
+  const MDX = entry.data.body;
 
   return (
     <>
-      <PageToc headings={headings} />
+      <PageToc headings={tocToHeadings(entry.data.toc)} />
       <FadeIn>
         <h3 className="mb-4 font-semibold">{page.title}</h3>
       </FadeIn>
 
-      {blocks && blocks.length > 0 && (
-        <FadeIn delay={0.2} duration={0.5}>
-          <div className="mb-16">
-            <NotionRenderer blocks={blocks} />
-          </div>
-        </FadeIn>
-      )}
+      <FadeIn delay={0.2} duration={0.5}>
+        <div className="mb-16">
+          <MDX components={mdxComponents} />
+        </div>
+      </FadeIn>
     </>
   );
 }

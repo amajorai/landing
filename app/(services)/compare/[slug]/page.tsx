@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CompareLogo } from "@/components/compare/compare-logo";
 import { MultiComparisonPage } from "@/components/compare/multi-comparison-page";
-import type { TocHeading } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
 import { ServiceCta } from "@/components/services/service-cta";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {

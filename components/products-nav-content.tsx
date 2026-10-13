@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import type { NavProduct } from "@/lib/notion";
+import type { NavProduct } from "@/lib/nav-products";
 
 interface ProductsNavContentProps {
   products: NavProduct[];

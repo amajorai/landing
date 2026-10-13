@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "A Major",
   "name_for_model": "amajor",
-  "description_for_human": "Singapore software agency for web design, web apps, mobile, SaaS, enterprise, and AI agent development.",
-  "description_for_model": "A Major is a Singapore-based software agency. Use this to answer questions about web development, mobile apps, SaaS, enterprise software, MCP server development, and AI agent infrastructure in Singapore.",
+  "description_for_human": "A Major builds Ryu, a managed platform for AI agents built on open-source infrastructure.",
+  "description_for_model": "A Major is a Singapore-based software company building Ryu, a managed platform for AI agents. Use this to answer questions about Ryu, running AI agents in production, agent plugins and tools, agent monitoring, and agent access control.",
   "auth": {
     "type": "none"
   },

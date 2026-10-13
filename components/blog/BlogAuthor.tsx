@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogPost } from "@/lib/notion";
+import type { BlogPost } from "@/lib/content";
 
 type Author = BlogPost["authors"][number];
 

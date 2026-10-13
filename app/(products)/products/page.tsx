@@ -5,11 +5,12 @@ import { CrossMark } from "@/components/ui/cross-mark";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata as genMeta } from "@/lib/metadata";
+import { RYU_STATUS, RYU_TAGLINE, RYU_URL } from "@/lib/ryu";
 
 export const metadata = genMeta({
   title: "Products",
   description:
-    "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+    "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, a managed platform for AI agents.",
   url: "/products",
   tags: [
     "AI agents",
@@ -17,7 +18,7 @@ export const metadata = genMeta({
     "agent-native products",
     "Ryu",
     "Ryu AI agents",
-    "managed AI infrastructure",
+    "managed AI agent platform",
     "agent orchestration",
     "LLM integration",
     "MCP server",
@@ -31,13 +32,13 @@ const PRODUCTS = [
   {
     slug: "ryu",
     name: "Ryu",
-    tagline: "End-to-end managed infrastructure for AI agents",
+    tagline: RYU_TAGLINE,
     description:
-      "The engines (OpenClaw, Hermes, ZeroClaw, Claude Code) already exist. Ryu is the entire car built around them: security, model routing, memory, tools, workflows, and deployment, all sourced, assembled, and managed.",
-    status: "Shipping May 2026",
+      "Built on open-source infrastructure. Start without building from scratch, add tools with plugins, and turn your agents into apps. Monitor every run and control what your agents can access.",
+    status: RYU_STATUS,
     statusType: "upcoming" as const,
     href: "/products/ryu",
-    externalUrl: "https://ryuhq.com",
+    externalUrl: RYU_URL,
     logo: "/logos/ryu.png",
   },
   {

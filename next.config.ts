@@ -1,3 +1,4 @@
+import { createMDX } from "fumadocs-mdx/next";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -40,17 +41,6 @@ const nextConfig: NextConfig = {
         hostname: "unavatar.io",
         pathname: "/**",
       },
-      // Notion CDN hostnames for inline images
-      {
-        protocol: "https",
-        hostname: "www.notion.so",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "notion.so",
-        pathname: "/**",
-      },
     ],
     localPatterns: [
       {
@@ -86,4 +76,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarMark } from "@/components/ui/star-mark";
@@ -23,7 +22,7 @@ const RYU_MESSAGES = [
   { role: "agent" as const, text: "Escalated. Jia Wei notified on Slack." },
 ];
 
-function RyuAppVisual() {
+function AgentAppVisual() {
   const [visibleCount, setVisibleCount] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -109,29 +108,24 @@ function RyuAppVisual() {
   );
 }
 
-const GATEWAY_ROUTES = [
-  { from: "OpenClaw", to: "Ryu", latency: 42 },
-  { from: "ZeroClaw", to: "Ryu", latency: 61 },
-  { from: "Hermes Agent", to: "Ryu", latency: 38 },
-];
+const ACCESS_RULES = [
+  { agent: "Support agent", resource: "Gmail", access: "read" },
+  { agent: "Ops agent", resource: "GitHub", access: "approval" },
+  { agent: "Sales agent", resource: "Billing", access: "denied" },
+] as const;
 
-function GatewayVisual() {
-  const [latencies, setLatencies] = useState(
-    GATEWAY_ROUTES.map((r) => r.latency)
-  );
+const ACCESS_STYLES = {
+  read: "bg-green-500/10 text-green-500/80",
+  approval: "bg-amber-400/10 text-amber-500/80",
+  denied: "bg-red-500/10 text-red-500/80",
+} as const;
+
+function AccessVisual() {
   const [pulsing, setPulsing] = useState<number | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => {
-      const idx = Math.floor(Math.random() * GATEWAY_ROUTES.length);
-      const base = GATEWAY_ROUTES[idx].latency;
-      const jitter = Math.floor(Math.random() * 20) - 10;
-      setPulsing(idx);
-      setLatencies((prev) => {
-        const next = [...prev];
-        next[idx] = base + jitter;
-        return next;
-      });
+      setPulsing(Math.floor(Math.random() * ACCESS_RULES.length));
       setTimeout(() => setPulsing(null), 400);
     }, 1200);
     return () => clearInterval(id);
@@ -139,26 +133,24 @@ function GatewayVisual() {
 
   return (
     <div className="mt-3 space-y-1.5">
-      {GATEWAY_ROUTES.map((r, i) => (
-        <div className="flex items-center gap-2 text-[9px]" key={i}>
+      {ACCESS_RULES.map((r, i) => (
+        <div className="flex items-center gap-2 text-[9px]" key={r.agent}>
           <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-muted-foreground/70">
-            {r.from}
+            {r.agent}
           </span>
-          <div className="flex flex-1 items-center gap-1">
-            <div
-              className={`h-px flex-1 border-t transition-all duration-300 ${pulsing === i ? "border-green-500/60 border-solid" : "border-border/40 border-dashed"}`}
-            />
-            <span
-              className={`tabular-nums transition-all duration-300 ${pulsing === i ? "text-green-400" : "text-green-500/60"}`}
-            >
-              {latencies[i]}ms
-            </span>
-            <div
-              className={`h-px flex-1 border-t transition-all duration-300 ${pulsing === i ? "border-green-500/60 border-solid" : "border-border/40 border-dashed"}`}
-            />
-          </div>
-          <span className="rounded bg-amber-500/10 px-1.5 py-0.5 font-mono text-amber-500/70">
-            {r.to}
+          <div
+            className={`h-px flex-1 border-t transition-all duration-300 ${pulsing === i ? "border-foreground/40 border-solid" : "border-border/40 border-dashed"}`}
+          />
+          <span
+            className={`rounded px-1.5 py-0.5 font-mono transition-opacity duration-300 ${ACCESS_STYLES[r.access]} ${pulsing === i ? "opacity-100" : "opacity-70"}`}
+          >
+            {r.access}
+          </span>
+          <div
+            className={`h-px flex-1 border-t transition-all duration-300 ${pulsing === i ? "border-foreground/40 border-solid" : "border-border/40 border-dashed"}`}
+          />
+          <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-muted-foreground/70">
+            {r.resource}
           </span>
         </div>
       ))}
@@ -166,13 +158,13 @@ function GatewayVisual() {
   );
 }
 
-const AI_FEATURES = [
-  { label: "Copilot", target: 90 },
-  { label: "Summaries", target: 70 },
-  { label: "Semantic search", target: 55 },
+const PLUGINS = [
+  { label: "Slack", target: 90 },
+  { label: "GitHub", target: 70 },
+  { label: "Postgres", target: 55 },
 ];
 
-function AIIntegrationVisual() {
+function PluginsVisual() {
   const [widths, setWidths] = useState([0, 0, 0]);
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -195,7 +187,7 @@ function AIIntegrationVisual() {
 
   useEffect(() => {
     if (!inView) return;
-    setWidths(AI_FEATURES.map((f) => f.target));
+    setWidths(PLUGINS.map((f) => f.target));
   }, [inView]);
 
   // Subtle pulse after in view
@@ -205,14 +197,12 @@ function AIIntegrationVisual() {
     const id = setInterval(() => {
       setWidths((prev) => {
         const next = prev.map((w, i) => {
-          const t = AI_FEATURES[i].target;
+          const t = PLUGINS[i].target;
           return Math.max(t - 6, Math.min(t, w + pulseDirRef.current * 3));
         });
         // flip direction if all bars hit a bound
-        const allAtTop = next.every((w, i) => w >= AI_FEATURES[i].target);
-        const allAtBottom = next.every(
-          (w, i) => w <= AI_FEATURES[i].target - 6
-        );
+        const allAtTop = next.every((w, i) => w >= PLUGINS[i].target);
+        const allAtBottom = next.every((w, i) => w <= PLUGINS[i].target - 6);
         if (allAtTop) pulseDirRef.current = -1;
         if (allAtBottom) pulseDirRef.current = 1;
         return next;
@@ -223,7 +213,7 @@ function AIIntegrationVisual() {
 
   return (
     <div className="mt-3 space-y-1.5" ref={ref}>
-      {AI_FEATURES.map((f, i) => (
+      {PLUGINS.map((f, i) => (
         <div className="flex items-center gap-2" key={f.label}>
           <div className="size-1.5 rounded-full bg-amber-400/60" />
           <div className="h-1.5 flex-1 rounded-full bg-muted/20">
@@ -232,7 +222,7 @@ function AIIntegrationVisual() {
               style={{
                 width: `${widths[i]}%`,
                 transitionDuration:
-                  inView && widths[i] === AI_FEATURES[i].target
+                  inView && widths[i] === PLUGINS[i].target
                     ? "1000ms"
                     : "400ms",
                 transitionDelay:
@@ -249,98 +239,45 @@ function AIIntegrationVisual() {
   );
 }
 
-const CHATBOT_FULL_RESPONSE =
-  "Sure, I'll book a 30-min call with the team for you. What's your availability?";
-
-function ChatbotVisual() {
-  const [typed, setTyped] = useState("");
-  const [phase, setPhase] = useState<"idle" | "typing" | "done">("idle");
-
-  useEffect(() => {
-    const startId = setTimeout(() => setPhase("typing"), 800);
-    return () => clearTimeout(startId);
-  }, []);
-
-  useEffect(() => {
-    if (phase !== "typing") return;
-    if (typed.length < CHATBOT_FULL_RESPONSE.length) {
-      const id = setTimeout(() => {
-        setTyped(CHATBOT_FULL_RESPONSE.slice(0, typed.length + 1));
-      }, 40);
-      return () => clearTimeout(id);
-    }
-    const id = setTimeout(() => {
-      setPhase("done");
-      // Restart
-      setTimeout(() => {
-        setTyped("");
-        setPhase("typing");
-      }, 3000);
-    }, 500);
-    return () => clearTimeout(id);
-  }, [phase, typed]);
-
-  return (
-    <div className="mt-3 space-y-1.5">
-      <div className="flex items-start gap-1.5">
-        <div className="mt-0.5 size-4 shrink-0 rounded-full bg-muted/30" />
-        <div className="rounded-xl rounded-tl-sm bg-muted/25 px-2 py-1 text-[9px] text-muted-foreground/70">
-          I&apos;d like to discuss a project. What&apos;s next?
-        </div>
-      </div>
-      <div className="flex flex-row-reverse items-start gap-1.5">
-        <div className="mt-0.5 size-4 shrink-0 rounded-full bg-amber-400/20" />
-        <div className="min-h-[24px] rounded-xl rounded-tr-sm bg-amber-400/10 px-2 py-1 text-[9px] text-muted-foreground/70">
-          {typed}
-          {phase === "typing" &&
-            typed.length < CHATBOT_FULL_RESPONSE.length && (
-              <span className="animate-pulse">|</span>
-            )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const WORKFLOW_STEPS = [
+const RUN_STEPS = [
   {
-    label: "Form submit",
-    desc: "User fills form",
+    label: "Run started",
+    desc: "Triggered by Slack",
     color: "bg-blue-400/20 border-blue-400/30",
     activeColor: "bg-blue-400/40 border-blue-400/60",
   },
   {
-    label: "Validate",
-    desc: "Rules checked",
+    label: "Plan",
+    desc: "Model call",
     color: "bg-amber-400/20 border-amber-400/30",
     activeColor: "bg-amber-400/40 border-amber-400/60",
   },
   {
-    label: "Notify team",
-    desc: "Slack + email",
+    label: "Tool call",
+    desc: "GitHub · read",
     color: "bg-violet-400/20 border-violet-400/30",
     activeColor: "bg-violet-400/40 border-violet-400/60",
   },
   {
-    label: "Update CRM",
-    desc: "Record synced",
+    label: "Approval",
+    desc: "Access checked",
     color: "bg-indigo-400/20 border-indigo-400/30",
     activeColor: "bg-indigo-400/40 border-indigo-400/60",
   },
   {
-    label: "Done",
-    desc: "All automated",
+    label: "Completed",
+    desc: "Logged",
     color: "bg-green-400/20 border-green-400/30",
     activeColor: "bg-green-400/40 border-green-400/60",
   },
 ];
 
-function WorkflowVisual() {
+function RunTraceVisual() {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % WORKFLOW_STEPS.length);
+      setActiveStep((prev) => (prev + 1) % RUN_STEPS.length);
     }, 1000);
     return () => clearInterval(id);
   }, []);
@@ -349,7 +286,7 @@ function WorkflowVisual() {
     <>
       {/* Mobile: 2-col grid, no arrows */}
       <div className="mt-4 grid grid-cols-2 gap-2 sm:hidden">
-        {WORKFLOW_STEPS.map((s, i) => (
+        {RUN_STEPS.map((s, i) => (
           <div
             className={`flex flex-col gap-1 rounded-lg border p-3 transition-all duration-300 ${activeStep === i ? s.activeColor : s.color}`}
             key={i}
@@ -367,7 +304,7 @@ function WorkflowVisual() {
       </div>
       {/* Desktop: horizontal flow with arrows */}
       <div className="mt-4 hidden grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-2 sm:grid">
-        {WORKFLOW_STEPS.flatMap((s, i) => [
+        {RUN_STEPS.flatMap((s, i) => [
           <div
             className={`flex min-w-0 flex-col gap-1 rounded-lg border p-3 transition-all duration-300 ${activeStep === i ? s.activeColor : s.color}`}
             key={s.label}
@@ -381,7 +318,7 @@ function WorkflowVisual() {
               {s.desc}
             </span>
           </div>,
-          ...(i < WORKFLOW_STEPS.length - 1
+          ...(i < RUN_STEPS.length - 1
             ? [
                 <span
                   className={`text-center text-xs transition-colors duration-300 ${activeStep > i ? "text-foreground/40" : "text-muted-foreground/30"}`}
@@ -397,14 +334,14 @@ function WorkflowVisual() {
   );
 }
 
-const AGENT_LAYERS = [
+const PLATFORM_LAYERS = [
   { label: "Your agent", stable: true },
+  { label: "Plugins (12)", stable: true },
   { label: "Memory", stable: true },
-  { label: "Tools (12)", stable: true },
-  { label: "Ryu runtime", stable: true },
+  { label: "Open-source runtime", stable: true },
 ];
 
-function AgentDeployVisual() {
+function PlatformVisual() {
   const [pulseIdx, setPulseIdx] = useState<number | null>(null);
 
   useEffect(() => {
@@ -412,7 +349,7 @@ function AgentDeployVisual() {
       // Pulse through layers sequentially
       setPulseIdx((prev) => {
         if (prev === null) return 0;
-        return (prev + 1) % AGENT_LAYERS.length;
+        return (prev + 1) % PLATFORM_LAYERS.length;
       });
     }, 700);
     return () => clearInterval(id);
@@ -420,7 +357,7 @@ function AgentDeployVisual() {
 
   return (
     <div className="mt-3 space-y-1">
-      {AGENT_LAYERS.map((l, i) => (
+      {PLATFORM_LAYERS.map((l, i) => (
         <div className="flex items-center gap-2" key={i}>
           <div
             className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
@@ -452,6 +389,28 @@ function AgentDeployVisual() {
 
 // ── Section ───────────────────────────────────────────────────────────────────
 
+function Card({
+  title,
+  description,
+  className = "",
+  children,
+}: {
+  title: string;
+  description: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className={`col-span-1 flex min-w-0 flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 ${className}`}
+    >
+      <h3 className="font-medium text-base">{title}</h3>
+      <p className="text-muted-foreground text-sm">{description}</p>
+      {children}
+    </div>
+  );
+}
+
 export default function RyuSection() {
   return (
     <section className="relative scroll-mt-24 pt-10 md:pt-14" id="ryu">
@@ -467,29 +426,11 @@ export default function RyuSection() {
                 />
                 How Ryu works
               </h2>
-              <span className="inline-flex items-center gap-1.5 text-muted-foreground text-xs">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-amber-400" />
-                </span>
-                Shipping May 2026
-              </span>
             </div>
-            <p className="text-muted-foreground">
-              End-to-end managed infrastructure for AI agents. The engines
-              (OpenClaw, Hermes, ZeroClaw, IronClaw, Claude Code) already exist.
-              Ryu is the entire car built around them: security, model routing,
-              memory, tools, workflows, and deployment, all sourced, assembled,
-              and managed. Pick your engine. We build the car.
+            <p className="max-w-xl text-muted-foreground">
+              Five things Ryu handles for every agent you run, so you can focus
+              on what the agent actually does.
             </p>
-            <a
-              className="inline-flex items-center gap-1 font-medium text-foreground text-sm underline-offset-4 hover:underline"
-              href="https://ryuhq.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Learn more about Ryu →
-            </a>
           </div>
         </FadeIn>
       </div>
@@ -509,112 +450,44 @@ export default function RyuSection() {
           <StarMark
             style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
           />
-          {/* Ryu App - tall left card */}
-          <div className="relative col-span-1 flex h-[380px] flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:row-span-2 md:h-[560px]">
-            <h3 className="flex items-center gap-1.5 font-medium text-base">
-              <img
-                alt="Ryu"
-                className="h-3.5 w-3.5 object-contain"
-                src="/logos/ryu.png"
-              />
-              Ryu App
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              Premium desktop agent UI. Bring your own agent, any framework, any
-              backend. One interface to run, monitor, and chat with it.
-            </p>
-            <div className="flex items-center gap-2 pt-1">
-              <span className="text-muted-foreground text-xs">
-                Available on:
-              </span>
-              <Image
-                alt="Apple macOS"
-                className="h-3.5 w-auto dark:invert"
-                height={14}
-                src="/logos/apple.svg"
-                width={14}
-              />
-              <Image
-                alt="Microsoft Windows"
-                className="h-3.5 w-auto"
-                height={14}
-                src="/logos/microsoft.svg"
-                width={14}
-              />
-            </div>
-            <RyuAppVisual />
-          </div>
 
-          {/* Ryu Gateway */}
-          <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10">
-            <h3 className="flex items-center gap-1.5 font-medium text-base">
-              <img
-                alt="Ryu"
-                className="h-3.5 w-3.5 object-contain"
-                src="/logos/ryu.png"
-              />
-              Ryu Gateway
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              Self-hostable agent gateway. Point any agent framework at Ryu and
-              get observability, rate limiting, auth, and access control. No
-              code changes to your agent.
-            </p>
-            <div className="flex items-center gap-2 pt-1">
-              <span className="text-muted-foreground text-xs">Works with:</span>
-              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
-                OpenClaw
-              </span>
-              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
-                ZeroClaw
-              </span>
-              <span className="rounded bg-muted/30 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground/70">
-                Hermes
-              </span>
-              <span className="text-[9px] text-muted-foreground/40">+ any</span>
-            </div>
-            <GatewayVisual />
-          </div>
+          <Card
+            className="h-[380px] md:row-span-2 md:h-[560px]"
+            description="Give your agents an interface your team and customers can use."
+            title="Turn your agents into apps"
+          >
+            <AgentAppVisual />
+          </Card>
 
-          {/* AI integration */}
-          <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10">
-            <h3 className="font-medium text-base">AI integration</h3>
-            <p className="text-muted-foreground text-sm">
-              Add AI capabilities to existing products. Copilots, summaries,
-              semantic search, generation, and more.
-            </p>
-            <AIIntegrationVisual />
-          </div>
+          <Card
+            description="Ryu is built on open-source infrastructure, so you never start from scratch."
+            title="Start without building from scratch"
+          >
+            <PlatformVisual />
+          </Card>
 
-          {/* Chatbots */}
-          <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10">
-            <h3 className="font-medium text-base">Chatbots & AI interfaces</h3>
-            <p className="text-muted-foreground text-sm">
-              Conversational interfaces powered by LLMs. Customer support, lead
-              capture, or internal assistants.
-            </p>
-            <ChatbotVisual />
-          </div>
+          <Card
+            description="Give your agents the tools they need by adding plugins."
+            title="Add tools with plugins"
+          >
+            <PluginsVisual />
+          </Card>
 
-          {/* Ryu agent deployments - beside Chatbots */}
-          <div className="col-span-1 flex flex-col space-y-2 border-border border-r border-b border-dashed p-10">
-            <h3 className="font-medium text-base">Ryu agent deployments</h3>
-            <p className="text-muted-foreground text-sm">
-              Production-ready AI agent infrastructure using Ryu. Security,
-              routing, memory, and tools out of the box.
-            </p>
-            <AgentDeployVisual />
-          </div>
+          <Card
+            className="md:col-span-2"
+            description="Decide which tools and data each agent can reach, and require approval where it matters."
+            title="Control what your agents can access"
+          >
+            <AccessVisual />
+          </Card>
 
-          {/* Workflow automation */}
-          <div className="col-span-1 flex min-w-0 flex-col space-y-2 overflow-hidden border-border border-r border-b border-dashed p-10 md:col-span-2">
-            <h3 className="font-medium text-base">Workflow automation</h3>
-            <p className="text-muted-foreground text-sm">
-              Replace manual processes with code. If your team is doing it by
-              hand, we can automate it.
-            </p>
-            <WorkflowVisual />
-          </div>
+          <Card
+            className="md:col-span-2"
+            description="See every run step by step, from trigger to tool call to result."
+            title="Monitor every run"
+          >
+            <RunTraceVisual />
+          </Card>
         </div>
       </FadeIn>
     </section>

@@ -3,18 +3,17 @@ import type { NextRequest } from "next/server";
 const MARKDOWN: Record<string, string> = {
   "/": `# A Major
 
-A Major is a Singapore software agency specializing in web apps, mobile, SaaS, and AI agent development.
+A Major is a software company for the agent era, based in Singapore.
 
-## Services
-- Web design and development
-- Mobile app development
-- SaaS product development
-- AI agent and MCP server development
-- Enterprise software consultancy
+## Ryu
+
+Ryu is a managed platform for AI agents, built on open-source infrastructure. Start without building from scratch, add tools with plugins, and turn your agents into apps. Monitor every run and control what your agents can access.
+
+- Product page: https://amajor.ai/products/ryu
+- Homepage: https://ryuhq.com
 
 ## Contact
 - Email: contact@amajor.ai
-- Book a call: https://cal.com/jiaweing/amajor
 - Website: https://amajor.ai
 `,
   "/services": `# A Major — Services
@@ -37,21 +36,21 @@ Learn more: https://amajor.ai/services
 `,
   "/blog": `# A Major — Blog
 
-Technical articles on web development, AI agents, SaaS, and software engineering.
+Articles and insights from the A Major team.
 
 Visit: https://amajor.ai/blog
 `,
-  "/projects": `# A Major — Projects
+  "/products": `# A Major — Products
 
-A selection of products and client work built by A Major.
+Most AI agents didn't deliver. We build the ones that do — starting with Ryu, a managed platform for AI agents.
 
-Visit: https://amajor.ai/projects
+Visit: https://amajor.ai/products
 `,
 };
 
 const FALLBACK = `# A Major
 
-Singapore software agency. Web apps, mobile, SaaS, AI agents.
+A software company for the agent era. We build Ryu, a managed platform for AI agents.
 
 Contact: contact@amajor.ai
 Website: https://amajor.ai

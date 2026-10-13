@@ -13,21 +13,22 @@ const organizationSchema = {
   ],
   founder: { "@id": "https://amajor.ai/#founder" },
   description:
-    "A Major is a software company for the agent era. The Agency builds websites, apps, and enterprise systems with AI agents at the core. Products ships agent-native software — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+    "A Major is a software company for the agent era. We build Ryu, a managed platform for AI agents built on open-source infrastructure.",
   hasPart: [
-    {
-      "@type": "Organization",
-      name: "A Major Agency",
-      url: "https://amajor.ai/agency",
-      description:
-        "Software that just works. Experts you can talk to. Websites, apps, and enterprise systems with AI agents at the core.",
-    },
+    // Agency — temporarily disabled while we focus on Ryu.
+    // {
+    //   "@type": "Organization",
+    //   name: "A Major Agency",
+    //   url: "https://amajor.ai/agency",
+    //   description:
+    //     "Software that just works. Experts you can talk to. Websites, apps, and enterprise systems with AI agents at the core.",
+    // },
     {
       "@type": "Organization",
       name: "A Major Products",
       url: "https://amajor.ai/products",
       description:
-        "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, end-to-end managed infrastructure for AI agents.",
+        "Most AI agents didn't deliver. A Major builds the ones that do — starting with Ryu, a managed platform for AI agents.",
     },
   ],
   contactPoint: {
@@ -56,60 +57,61 @@ const organizationSchema = {
     "Agent Orchestration",
     "Ryu AI Orchestration",
   ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Software Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Web Design",
-          url: "https://amajor.ai/services/web-design",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Web Apps",
-          url: "https://amajor.ai/services/web-apps",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Mobile Apps",
-          url: "https://amajor.ai/services/mobile-apps",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "SaaS Products",
-          url: "https://amajor.ai/services/saas-products",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Enterprise Systems",
-          url: "https://amajor.ai/services/enterprise-systems",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "MCP Server Development",
-          url: "https://amajor.ai/services/api-development",
-        },
-      },
-    ],
-  },
+  // Agency services — temporarily disabled while we focus on Ryu.
+  // hasOfferCatalog: {
+  //   "@type": "OfferCatalog",
+  //   name: "Software Services",
+  //   itemListElement: [
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "Web Design",
+  //         url: "https://amajor.ai/services/web-design",
+  //       },
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "Web Apps",
+  //         url: "https://amajor.ai/services/web-apps",
+  //       },
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "Mobile Apps",
+  //         url: "https://amajor.ai/services/mobile-apps",
+  //       },
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "SaaS Products",
+  //         url: "https://amajor.ai/services/saas-products",
+  //       },
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "Enterprise Systems",
+  //         url: "https://amajor.ai/services/enterprise-systems",
+  //       },
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       itemOffered: {
+  //         "@type": "Service",
+  //         name: "MCP Server Development",
+  //         url: "https://amajor.ai/services/api-development",
+  //       },
+  //     },
+  //   ],
+  // },
 };
 
 const websiteSchema = {
@@ -121,7 +123,7 @@ const websiteSchema = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://amajor.ai/services?q={search_term_string}",
+      urlTemplate: "https://amajor.ai/blog?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -141,7 +143,7 @@ const serviceSchema = {
     url: "https://amajor.ai",
   },
   description:
-    "Websites, apps, and enterprise systems with AI agents at the core — from the Agency arm. Agent-native products including Ryu, end-to-end managed AI agent infrastructure — from the Products arm.",
+    "Websites, apps, and enterprise systems with AI agents at the core — from the Agency arm. Agent-native products including Ryu, a managed platform for AI agents — from the Products arm.",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -155,7 +157,7 @@ const localBusinessSchema = {
   image: "https://amajor.ai/og/index.png",
   url: "https://amajor.ai",
   description:
-    "Singapore-based software company for the agent era. Agency: websites, apps, and enterprise systems with AI agents at the core. Products: agent-native software including Ryu, managed infrastructure for AI agents.",
+    "Singapore-based software company for the agent era, building Ryu, a managed platform for AI agents.",
   priceRange: "$$$",
   areaServed: [
     { "@type": "Country", name: "Singapore" },
@@ -186,8 +188,8 @@ const ryuSchema = {
   name: "Ryu",
   applicationCategory: "DeveloperApplication",
   description:
-    "Ryu is end-to-end managed infrastructure for AI agents. Pick your engine — Hermes, OpenClaw, ZeroClaw, or any compatible agent — and Ryu handles security, model routing, memory, tools, workflows, and deployment.",
-  url: "https://amajor.ai/products",
+    "Ryu is a managed platform for AI agents, built on open-source infrastructure. Start without building from scratch, add tools with plugins, and turn your agents into apps. Monitor every run and control what your agents can access.",
+  url: "https://amajor.ai/products/ryu",
   operatingSystem: "Web",
   author: {
     "@type": "Organization",
@@ -221,10 +223,12 @@ export default function StructuredData() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         type="application/ld+json"
       />
+      {/* Agency service schema — temporarily disabled.
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         type="application/ld+json"
       />
+      */}
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessSchema),

@@ -11,7 +11,7 @@ import {
   Wrench,
 } from "lucide-react";
 import Link from "next/link";
-import type { TocHeading } from "@/components/notion/TableOfContents";
+import type { TocHeading } from "@/components/content/TableOfContents";
 import { ServiceLogo } from "@/components/services/service-logo";
 import {
   Accordion,

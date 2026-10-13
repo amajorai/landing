@@ -10,7 +10,7 @@ export default function OGTestPage() {
       <div className="grid gap-8">
         {[
           { title: "Default OG Image", url: "/og/index.png" },
-          { title: "Agency OG Image", url: "/og/agency.png" },
+          // { title: "Agency OG Image", url: "/og/agency.png" }, // agency — temporarily disabled
         ].map((image) => (
           <div key={image.url}>
             <h2 className="mb-4 font-semibold text-xl">{image.title}</h2>

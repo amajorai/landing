@@ -1,27 +1,29 @@
-import { Check } from "lucide-react";
+// import { Check } from "lucide-react";
 import Link from "next/link";
-import { GridScan } from "@/components/GridScan";
+// import { GridScan } from "@/components/GridScan";
 import { HomeHeroCta } from "@/components/home-hero-cta";
-import PixelBlast from "@/components/PixelBlast";
-import Prism from "@/components/reactbits/prism";
-import SilkDynamic from "@/components/silk-dynamic";
-import { TriggerResize } from "@/components/trigger-resize";
+// import PixelBlast from "@/components/PixelBlast";
+// import Prism from "@/components/reactbits/prism";
+// import SilkDynamic from "@/components/silk-dynamic";
+// import { TriggerResize } from "@/components/trigger-resize";
 import { CrossMark } from "@/components/ui/cross-mark";
 import { DotGridBackground } from "@/components/ui/dot-grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PageHeader } from "@/components/ui/page-header";
 import { generateMetadata } from "@/lib/metadata";
+import { RYU_PITCH, RYU_STATUS } from "@/lib/ryu";
 
 export const metadata = generateMetadata({
-  title: "Software & AI Agency Singapore",
+  title: "The foundation for AI agents",
   description:
-    "A Major builds web apps, mobile apps, enterprise systems, and AI agents for startups and enterprises in Singapore and worldwide.",
+    "A Major builds Ryu, a managed platform for AI agents built on open-source infrastructure. Start without building from scratch, add tools with plugins, and turn your agents into apps.",
   url: "/",
 });
 
 export default function RootPage() {
   return (
     <main className="relative flex min-h-screen flex-col justify-center">
+      {/* Page background — temporarily disabled.
       <div aria-hidden className="fixed inset-0 z-0 opacity-10">
         <PixelBlast
           color="#B497CF"
@@ -38,6 +40,7 @@ export default function RootPage() {
           variant="square"
         />
       </div>
+      */}
       {/* Hero */}
       <FadeIn className="relative z-10 mx-auto flex min-h-[50vh] w-full max-w-5xl flex-col justify-center px-6 py-24 sm:block sm:min-h-0 sm:py-14">
         <PageHeader
@@ -67,7 +70,57 @@ export default function RootPage() {
             style={{ bottom: 0, right: 0, transform: "translate(50%, 50%)" }}
           />
 
-          {/* Products panel */}
+          {/* Ryu panel */}
+          <Link
+            className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
+            href="/products/ryu"
+          >
+            <DotGridBackground
+              className="text-zinc-950 opacity-[0.05] dark:text-white dark:opacity-[0.09]"
+              dotRadius={1}
+              spacing={28}
+            />
+            <div className="relative z-10">
+              <span className="mb-4 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+                <span className="relative flex size-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/75" />
+                  <span className="relative inline-flex size-1.5 rounded-full bg-amber-400" />
+                </span>
+                {RYU_STATUS}
+              </span>
+              <PageHeader
+                as="div"
+                line1="Ryu"
+                line2="A managed platform for AI agents"
+                size="xl"
+                tag={
+                  <img
+                    alt="Ryu"
+                    className="h-5 w-5 object-contain"
+                    src="/logos/ryu.png"
+                  />
+                }
+              />
+              <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
+                {RYU_PITCH}
+              </p>
+            </div>
+          </Link>
+
+          {/* Teaser panel */}
+          <div className="flex flex-col justify-center border-border border-r border-b border-dashed px-10 py-12">
+            <p className="mb-4 font-medium text-[10px] text-muted-foreground/50 uppercase tracking-widest">
+              Coming soon
+            </p>
+            <p className="font-semibold text-muted-foreground/40 text-xl tracking-tighter">
+              Something&apos;s brewing.
+            </p>
+            <p className="font-semibold text-muted-foreground/30 text-xl tracking-tighter">
+              We&apos;re not ready to talk about it yet.
+            </p>
+          </div>
+
+          {/* Products panel
           <Link
             className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
             href="/products"
@@ -97,8 +150,10 @@ export default function RootPage() {
               </p>
             </div>
           </Link>
+          */}
 
-          {/* Agency panel */}
+          {/* Agency + Referral panels — temporarily disabled while we focus on Ryu.
+          Agency panel
           <Link
             className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
             href="/agency"
@@ -150,7 +205,7 @@ export default function RootPage() {
             </div>
           </Link>
 
-          {/* Referral panel */}
+          Referral panel
           <Link
             className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
             href="/referral"
@@ -190,33 +245,7 @@ export default function RootPage() {
               </p>
             </div>
           </Link>
-
-          {/* Ryu panel */}
-          {/* <Link
-            className="group relative flex flex-col justify-center overflow-hidden border-border border-r border-b border-dashed px-10 py-12 transition-colors duration-200 hover:bg-muted/10"
-            href="/products/ryu"
-          >
-            <div className="relative z-10">
-              <span className="mb-5 inline-flex items-center gap-1.5 px-0 py-1 font-medium text-muted-foreground text-[10px] uppercase tracking-wider">
-                <span className="relative flex size-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/75" />
-                  <span className="relative inline-flex size-1.5 rounded-full bg-amber-400" />
-                </span>
-                Shipping May 2026
-              </span>
-              <div className="flex items-center gap-2">
-                <p className="font-semibold text-xl tracking-tighter">Ryu</p>
-                <img alt="Ryu" className="h-5 w-5 object-contain" src="/logos/ryu.png" />
-              </div>
-              <p className="font-semibold text-xl text-muted-foreground tracking-tighter">
-                End-to-end managed infrastructure for AI agents
-              </p>
-              <p className="mt-3 max-w-xs text-muted-foreground text-sm leading-relaxed">
-                Pick your engine: Hermes, OpenClaw, ZeroClaw, or any compatible
-                agent. Ryu handles everything around it.
-              </p>
-            </div>
-          </Link> */}
+          */}
 
           {/* Consultancy panel — temporarily hidden */}
           {/* <Link

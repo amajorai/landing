@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import type { BlogPost, Page } from "@/lib/notion";
+import type { BlogPost, Page } from "@/lib/content";
 
 export const siteConfig = {
   name: "A Major",
   description:
-    "A Major is a Singapore software agency for the agent era. We build web apps, mobile apps, SaaS products, and enterprise systems with AI agents at the core.",
+    "A Major is a software company for the agent era. We build Ryu, a managed platform for AI agents built on open-source infrastructure.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://amajor.ai",
   ogImage: "https://amajor.ai/og/index.png",
   links: {
@@ -19,23 +19,24 @@ export const siteConfig = {
     "Singapore",
     "founder-led",
     "software company agent era",
-    "A Major Agency",
+    // Agency keywords — temporarily disabled while we focus on Ryu.
+    // "A Major Agency",
     "A Major Products",
-    "software agency Singapore",
-    "web development Singapore",
-    "web design Singapore",
-    "mobile app development Singapore",
-    "SaaS development Singapore",
-    "enterprise software Singapore",
-    "e-commerce development Singapore",
-    "technical consultancy Singapore",
-    "Next.js agency Singapore",
-    "React developer Singapore",
-    "web app development",
-    "custom software development",
-    "MVP development",
-    "startup development",
-    "full stack development",
+    // "software agency Singapore",
+    // "web development Singapore",
+    // "web design Singapore",
+    // "mobile app development Singapore",
+    // "SaaS development Singapore",
+    // "enterprise software Singapore",
+    // "e-commerce development Singapore",
+    // "technical consultancy Singapore",
+    // "Next.js agency Singapore",
+    // "React developer Singapore",
+    // "web app development",
+    // "custom software development",
+    // "MVP development",
+    // "startup development",
+    // "full stack development",
     "AI agents",
     "AI agent infrastructure",
     "agent-native products",
@@ -48,10 +49,16 @@ export const siteConfig = {
     "AI infrastructure Singapore",
     "Ryu",
     "Ryu AI agents",
-    "Ryu managed infrastructure",
-    "web design",
-    "software development",
-    "digital solutions",
+    "Ryu managed platform",
+    "managed AI agent platform",
+    "open-source agent infrastructure",
+    "AI agent plugins",
+    "agentic apps",
+    "agent observability",
+    "agent access control",
+    // "web design",
+    // "software development",
+    // "digital solutions",
   ],
 };
 
@@ -171,7 +178,7 @@ export function generateBlogMetadata(post: BlogPost): Metadata {
     title: post.title,
     description: extractDescription(post.description || ""),
     image: post.cover
-      ? `${siteConfig.url}/api/notion-image?pageId=${post.id}&prop=cover`
+      ? new URL(post.cover, siteConfig.url).toString()
       : undefined,
     url: `/blog/${post.slug}`,
     type: "article",
@@ -188,7 +195,7 @@ export function generatePageMetadata(page: Page): Metadata {
     title: page.title,
     description: page.description,
     image: page.cover
-      ? `${siteConfig.url}/api/notion-image?pageId=${page.id}&prop=cover`
+      ? new URL(page.cover, siteConfig.url).toString()
       : undefined,
     modifiedTime: page.lastEdited,
     url: `/${page.slug}`,
@@ -270,7 +277,7 @@ export function generateBlogJsonLd(post: BlogPost) {
     headline: post.title,
     description: extractDescription(post.description || ""),
     image: post.cover
-      ? [`${siteConfig.url}/api/notion-image?pageId=${post.id}&prop=cover`]
+      ? [new URL(post.cover, siteConfig.url).toString()]
       : undefined,
     datePublished: post.date,
     dateModified: post.lastEdited || post.date,

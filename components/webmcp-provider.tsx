@@ -9,9 +9,8 @@ export function WebMCPProvider() {
     ctx.provideContext({
       tools: [
         {
-          name: "contact_agency",
-          description:
-            "Get contact info and book a discovery call with A Major agency",
+          name: "contact",
+          description: "Get contact info and book a call with A Major",
           inputSchema: { type: "object", properties: {} },
           execute: async () => ({
             email: "contact@amajor.ai",
